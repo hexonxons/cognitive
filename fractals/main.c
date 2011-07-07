@@ -45,7 +45,6 @@ int WINAPI WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszA
 LRESULT CALLBACK WindowProcedure(HWND Handle, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	HDC hdc;
-	RECT rect;
 
 	// max
 	double M = 4;
@@ -72,10 +71,22 @@ LRESULT CALLBACK WindowProcedure(HWND Handle, UINT message, WPARAM wParam, LPARA
 			{
 				for(y = -YWindowSz / 2; y < YWindowSz / 2; ++y)
 				{
-					Z.im = x * 0.005;
-					Z.re = y * 0.005;
+					// Julia
+					
+					Z.re = x * 0.005;
+					Z.im = y * 0.005;
 					C.re = 0.2733400;
-					C.im = 0.0074200;
+					C.im = 0.0074200; 
+					
+
+					// Mandelbrot
+					/*
+					Z.re = 0;
+					Z.im = 0;
+					C.re = x * 0.005;
+					C.im = y * 0.005;
+					*/
+
 					n = 0;
 
 					while (Z.im * Z.im + Z.re * Z.re < M * M && n < iter)
