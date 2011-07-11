@@ -206,6 +206,14 @@ int checkWordTruePairs(const string &src)
     return 1;
 }
 
+int wordSubPtr(const string &src, const string &word)
+{
+    const char *ptr = strstr(src.c_str(), word.c_str());
+    int b = ptr - src.c_str();
+    string temp(src, 0, ptr - src.c_str());
+    return getWordCount(temp);
+}
+
 int main()
 {
     // Входной файл
@@ -220,6 +228,7 @@ int main()
 	vector< pair<int, int> > realTagPosition;
     // Позиция тега в modifiedData
 	vector< pair<int, int> > modifiedTagPosition;
+    vector< pair<int, int> > clearedTagPosition;
 	int i = 0;
 	int j = 0;
 	pair <int, int> tagPosition = make_pair(-1, -1);
@@ -315,6 +324,7 @@ int main()
             alphabet.insert(tag);
             //fout << tag;// << '\n';
             clearedData += tag;
+            clearedTagPosition.push_back(modifiedTagPosition[i]);
         }
 
     }
@@ -353,8 +363,10 @@ int main()
         //fout << it->first << " " << it->second << '\n';
     }
     sort(temp.begin(), temp.end(), pred());
-    vector<pair<string, int>>::iterator itt;
-    for (itt = temp.begin(); itt != temp.end() - 1; ++itt)
+    vector<pair<string, int>>::iterator itt = temp.end();
+    --itt;
+    
+    /*for (itt = temp.begin(); itt != temp.end() - 1; ++itt)
     {
         if (!strstr(temp.back().first.c_str(), itt->first.c_str()))
         {
@@ -365,6 +377,39 @@ int main()
 
     fout << (finish - start) / CLOCKS_PER_SEC;
     //fout << modifiedData;*/
+    
+    while (strstr(temp.back().first.c_str(), itt->first.c_str()))
+    {
+        --itt;
+    }
+    pair<string, string> block = make_pair(itt->first, temp.back().first);
 
+
+    const char *ptr = strstr(clearedData.c_str(), block.first.c_str());
+    //  если block.first - начало блока
+    int num = strstr(clearedData.c_str(), block.first.c_str()) - strstr(clearedData.c_str(), block.second.c_str());
+    if (num < 0)
+        ptr = strstr(clearedData.c_str(), block.first.c_str());
+    else
+        ptr = strstr(clearedData.c_str(), block.second.c_str());
+
+    int begin = wordSubPtr(clearedData, block.second.c_str());
+    int end = wordSubPtr(clearedData, block.first.c_str());
+    int rbegin;
+    int rend;
+    
+    for(i = 0; i < modifiedTagPosition.size(); ++i)
+    {
+        if (clearedTagPosition[begin].first == modifiedTagPosition[i].first)
+            rbegin = i;
+    }
+
+    for(i = 0; i < modifiedTagPosition.size(); ++i)
+    {
+        if (clearedTagPosition[end].first == modifiedTagPosition[i].first)
+            rend = i;
+    }
+
+    string res(data, realTagPosition[rbegin].first, realTagPosition[rend].first);
 	return 0;
 }
