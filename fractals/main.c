@@ -64,17 +64,6 @@ LRESULT CALLBACK WindowProcedure(HWND Handle, UINT message, WPARAM wParam, LPARA
 			}
 			ReleaseDC(Handle, hdc);
 			break;
-		case WM_RBUTTONDOWN:
-			hdc = GetDC(Handle);
-			for (x = -XWindowSz / 2; x < XWindowSz / 2; ++x)
-			{
-				for(y = -YWindowSz / 2; y < YWindowSz / 2; ++y)
-				{
-					fractal1(x, y, hdc);
-				}
-			}
-			ReleaseDC(Handle, hdc);
-			break;
 		default :
 			return DefWindowProc (Handle, message, wParam, lParam);
 	}
