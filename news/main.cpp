@@ -214,6 +214,14 @@ int wordSubPtr(const string &src, const string &word)
     return getWordCount(temp);
 }
 
+int wordSubPtr(const string &src, const string &word, int offset)
+{
+    const char *ptr = strstr(src.c_str() + offset, word.c_str());
+    int b = ptr - src.c_str();
+    string temp(src, 0, ptr - src.c_str());
+    return getWordCount(temp);
+}
+
 int main()
 {
     // ¬ходной файл
@@ -307,8 +315,6 @@ int main()
     remTag.push_back("<p>");
     remTag.push_back("</p>");
 
-   
-
     removeTags(&modifiedTagPosition, modifiedData, remTag);
     removeTags(&modifiedTagPosition, modifiedData, remDoubleTag);
    
@@ -347,7 +353,7 @@ int main()
                  int f = getWordFreq(clearedData, ret);
                  if (f < 5)
                      continue;
-                 freq.insert(make_pair(ret, 4 * f + 2 * getWordCount(ret)));
+                 freq.insert(make_pair(ret, 1 * f + 30 * getWordCount(ret)));
                  //i -= getWordCount(ret);
              }
         }
@@ -363,38 +369,16 @@ int main()
         //fout << it->first << " " << it->second << '\n';
     }
     sort(temp.begin(), temp.end(), pred());
-    vector<pair<string, int>>::iterator itt = temp.end();
-    --itt;
-    
-    /*for (itt = temp.begin(); itt != temp.end() - 1; ++itt)
-    {
-        if (!strstr(temp.back().first.c_str(), itt->first.c_str()))
-        {
-            fout << itt->first << " " << itt->second << '\n';
-        }
-    }
-    fout << temp.back().first << " " << temp.back().second << '\n';
 
-    fout << (finish - start) / CLOCKS_PER_SEC;
-    //fout << modifiedData;*/
-    
-    while (strstr(temp.back().first.c_str(), itt->first.c_str()))
-    {
-        --itt;
-    }
-    pair<string, string> block = make_pair(itt->first, temp.back().first);
+    string BestString = temp.back().first;
 
 
-    const char *ptr = strstr(clearedData.c_str(), block.first.c_str());
-    //  если block.first - начало блока
-    int num = strstr(clearedData.c_str(), block.first.c_str()) - strstr(clearedData.c_str(), block.second.c_str());
-    if (num < 0)
-        ptr = strstr(clearedData.c_str(), block.first.c_str());
-    else
-        ptr = strstr(clearedData.c_str(), block.second.c_str());
+    const char *ptr = strstr(clearedData.c_str(), temp.back().first.c_str());
 
-    int begin = wordSubPtr(clearedData, block.second.c_str());
-    int end = wordSubPtr(clearedData, block.first.c_str());
+    int begin = wordSubPtr(clearedData, temp.back().first);
+    const char *Rptr = strstr(clearedData.c_str(), temp.back().first.c_str());
+    int end = wordSubPtr(Rptr, temp.back().first, 1) + begin;
+
     int rbegin;
     int rend;
     
@@ -406,10 +390,10 @@ int main()
 
     for(i = 0; i < modifiedTagPosition.size(); ++i)
     {
-        if (clearedTagPosition[end].first == modifiedTagPosition[i].first)
+        if (clearedTagPosition[end].second == modifiedTagPosition[i].second)
             rend = i;
     }
-
-    string res(data, realTagPosition[rbegin].first, realTagPosition[rend].first);
+    string res(data, realTagPosition[rbegin].first, realTagPosition[rend].first - realTagPosition[rbegin].first);
+    fout << res;
 	return 0;
 }
