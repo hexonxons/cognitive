@@ -5,8 +5,21 @@
 #include <algorithm>
 #include <set>
 #include <stack>
+#include <time.h>
 
 using namespace std;
+
+struct pred
+{
+    bool operator()(pair<string, int> left, pair<string, int> right)
+    {
+        if(left.second != right.second)
+            return left.second < right.second;
+        else
+            return left.first.length() > right.first.length();
+    }
+};
+
 
 // получение тега по его позиции (начало-конец строки)
 string getTag(pair<int, int> &tagPos, const string &src)
@@ -21,15 +34,16 @@ string getTag(int tagPos, const string &src)
     int i = 0;
     int cnt = 0;
     string ret;
-    for (i = 0; i < src.size() && cnt != tagPos; ++i)
+    for (i = 0; i < src.size() && cnt != tagPos + 1; ++i)
     {
         if (src[i] == '<')
             ++cnt;
     }
+    ret = src[i - 1];
 
-    while (src[cnt] != '>')
+    while (src[i] != '>')
     {
-        ret += src[cnt++];
+        ret += src[i++];
     }
     ret += '>';
     return ret;
@@ -76,6 +90,9 @@ void removeTags(vector< pair<int, int> > *tagsPos, const string &src,
                                             tagsToRemove[j].second.size() - 1))
                 {
                     ++i;
+                    if ((*tagsPos)[i].first == -1)
+                        continue;
+
                     tag = getTag((*tagsPos)[i], src);
                     (*tagsPos)[i] = make_pair(-1, -1);
                 }
@@ -150,13 +167,14 @@ int checksum(const string &src)
         if (src[i] == '/')
             ++cnt;
     }
-    if (cnt > getWordCount(src) / 2)
+    if (cnt > getWordCount(src) / 2 + 1)
     {
         return 0;
     }
     return 1;
 }
 
+// проверяет, что каждому закрывающему тегу соответствует открывающий
 int checkWordTruePairs(const string &src)
 {
     int i;
@@ -169,11 +187,18 @@ int checkWordTruePairs(const string &src)
             st.push(str);
         else
         {
+            if (st.empty())
+                return 0;
             string temp = st.top();
-            if (strncmp(temp.c_str() + 1, str.c_str() + 2, 10));
+            if (strncmp(temp.c_str() + 1, str.c_str() + 2, 10))
             {
-                if (!strncmp(str.c_str(), "</a", 3) || !strncmp(str.c_str(), "</span", 6))
-                    return 0;
+                while (strncmp(temp.c_str() + 1, str.c_str() + 2, 10))
+                {
+                    st.pop();
+                    if (st.empty())
+                        return 0;
+                    temp = st.top();
+                }
             }
             st.pop();
         }
@@ -195,8 +220,8 @@ int main()
 	vector< pair<int, int> > realTagPosition;
     // Позиция тега в modifiedData
 	vector< pair<int, int> > modifiedTagPosition;
-	unsigned int i = 0;
-	unsigned int j = 0;
+	int i = 0;
+	int j = 0;
 	pair <int, int> tagPosition = make_pair(-1, -1);
 	pair <int, int> modTagPosition = make_pair(-1, -1);
 
@@ -247,6 +272,14 @@ int main()
 	vector<pair<string, string>> remDoubleTag;
     vector<string> remTag;
 
+    remDoubleTag.push_back(make_pair("<script>", "</script>"));
+    remDoubleTag.push_back(make_pair("<noscript>", "</noscript>"));
+    remDoubleTag.push_back(make_pair("<form>", "</form>"));
+    remDoubleTag.push_back(make_pair("<iframe>", "</iframe>"));
+    remDoubleTag.push_back(make_pair("<ul>", "</ul>"));
+    remDoubleTag.push_back(make_pair("<span>", "</span>"));
+    //remDoubleTag.push_back(make_pair("<p>", "</p>"));
+
     remTag.push_back("<html>");
     remTag.push_back("</html>");
     remTag.push_back("<head>");
@@ -260,10 +293,12 @@ int main()
     remTag.push_back("</meta>");
     remTag.push_back("<base>");
     remTag.push_back("<!-->");
-    remDoubleTag.push_back(make_pair("<script>", "</script>"));
-    remDoubleTag.push_back(make_pair("<noscript>", "</noscript>"));
-    remDoubleTag.push_back(make_pair("<form>", "</form>"));
-    remDoubleTag.push_back(make_pair("<iframe>", "</iframe>"));
+    remTag.push_back("<li>");
+    remTag.push_back("</li>");
+    remTag.push_back("<p>");
+    remTag.push_back("</p>");
+
+   
 
     removeTags(&modifiedTagPosition, modifiedData, remTag);
     removeTags(&modifiedTagPosition, modifiedData, remDoubleTag);
@@ -283,13 +318,18 @@ int main()
         }
 
     }
+    //fout << "\n";
+
+    time_t start;
+    time_t finish;
     
-    int step = 10;
-    while (step != getWordCount(clearedData))
+    start = clock();
+    int step = getWordCount(clearedData);
+    while (step > 8)
     {
-        for (i = 0; i + step < getWordCount(clearedData); ++i)
+        for (i = getWordCount(clearedData) / step; i - step > 0; --i)
         {
-             string ret = getWord(clearedData, i, i + step);
+             string ret = getWord(clearedData, i - step, i);
              if (ret[1] == '/')
                  continue;
              if (checksum(ret) && checkWordTruePairs(ret))
@@ -297,18 +337,34 @@ int main()
                  int f = getWordFreq(clearedData, ret);
                  if (f < 5)
                      continue;
-                 freq.insert(make_pair(ret, f));
+                 freq.insert(make_pair(ret, 4 * f + 2 * getWordCount(ret)));
+                 //i -= getWordCount(ret);
              }
         }
-        ++step;
+        --step;
     }
+    finish = clock();
     
     set<pair<string, int>>::iterator it;
+    vector<pair<string, int>> temp;
     for(it = freq.begin(); it != freq.end(); it++ )
     {
-        fout << it->first << " " << it->second << '\n';
+        temp.push_back(*it);
+        //fout << it->first << " " << it->second << '\n';
     }
-    //fout << modifiedData;
+    sort(temp.begin(), temp.end(), pred());
+    vector<pair<string, int>>::iterator itt;
+    for (itt = temp.begin(); itt != temp.end() - 1; ++itt)
+    {
+        if (!strstr(temp.back().first.c_str(), itt->first.c_str()))
+        {
+            fout << itt->first << " " << itt->second << '\n';
+        }
+    }
+    fout << temp.back().first << " " << temp.back().second << '\n';
+
+    fout << (finish - start) / CLOCKS_PER_SEC;
+    //fout << modifiedData;*/
 
 	return 0;
 }
