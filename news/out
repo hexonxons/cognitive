@@ -1,0 +1,104 @@
+<div class=news id="topic-6487270"> 
+ 
+<h2> 
+  <a href="/news/linux-general/6487270">Вышел Pardus 2011.1 Dama dama</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/linux-general/"> 
+  <img src="/tango/img/general-logo.png" width=55 height=65 border=0 alt="Группа Linux General"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Pardus - это независимый дистрибутив, в котором используются много собственных разработок, например YALI(инсталлятор), COMAR(демон управления конфигурацией и системными сервисами), PiSi(пакетный менеджер). Основной рабочей средой является KDE. Dama dama, кодовое имя этой версии, в переводе с турецкого означает <a href="http://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D1%8C">лань</a>.<p>Основные изменения по сравнению с 2011:<ul><li>В YALI добавлена функция восстановления системы и опция &quot;yali=nolvm&quot;<li>Приложение QuickFormat для форматирования USB-накопителей<li>Для облегчения перехода с версии 2009 на 2011, в стабильном репозитории 2009 вскоре будет доступен пакет upgrade-manager.<li>В 64-битный репозиторий были добавлены пакеты Skype и Wine<li>Множество багфиксов</ul><p>
+
+Версии основных компонентов:<ul><li>KDE SC 4.6.5<li>kernell 2.6.37.6<li>LibreOffice 3.4.1.3<li>Mozilla Firefox Web Browser 5.0<li>Xorg 1.9.5<li>Gimp 2.6.11<li>Python 2.7.1<li>GCC 4.5.3<li>Glibc 2.12</ul><p>
+
+<br>Установочный образы: <a href="http://ftp.pardus.org.tr/pub/ISO/Installation/2011.1/Pardus-2011.1-Dama-Dama-i686.iso">i686</a>, <a href="http://ftp.pardus.org.tr/pub/ISO/Installation/2011.1/Pardus-2011.1-Dama-Dama-x86_64.iso">x86_64</a><br>
+
+LiveCD: <a href="http://ftp.pardus.org.tr/pub/ISO/Live/2011.1/Pardus-2011.1-Dama-Dama-Live-i686.iso">32-bit</a>, <a href="http://ftp.pardus.org.tr/pub/ISO/Live/2011.1/Pardus-2011.1-Dama-Dama-Live-x86_64.iso">x86_64</a><p><a href="http://www.pardus.org.tr/eng/news/pardus-2011-is-ready/">Анонс на официальном сайте</a>,
+
+<a href="http://liste.pardus.org.tr/pardus-announce/2011-July/000098.html">в списках рассылках</a>.
+<p>&gt;&gt;&gt; <a href="/news/linux-general/6487270">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=kde">kde</a>, <a href="view-news.jsp?tag=pardus">pardus</a>, <a href="view-news.jsp?tag=pisi">pisi</a>, <a href="view-news.jsp?tag=%D0%B4%D0%B8%D1%81%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D0%B8%D0%B2">дистрибутив</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
+    
+      
+ 
+ 
+ 
+ 
+ 
+<a href="/people/filosof/profile">filosof</a> 
+ 
+ 
+ 
+(12.07.2011 20:14:47)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6487270">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/linux-general/6487270">82&nbsp;комментария</a>&nbsp;(стр. <a href="/news/linux-general/6487270/page1">2</a>)]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+    
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
