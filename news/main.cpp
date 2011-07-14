@@ -16,10 +16,13 @@ int main()
 	string data((std::istreambuf_iterator<char>(fin)), std::istreambuf_iterator<char>());
     // измененна€ строчка входного файла
 	string modifiedData;
+    // измененна€ modifiedData. ¬ clearedData нет удаленных тегов
+    string clearedData;
     // позици€ тега в data
 	vector< pair<int, int> > realTagPosition;
     // ѕозици€ тега в modifiedData
 	vector< pair<int, int> > modifiedTagPosition;
+    // ѕозици€ тега в modifiedData
     vector< pair<int, int> > clearedTagPosition;
 	int i = 0;
 	int j = 0;
@@ -39,7 +42,7 @@ int main()
 			tagPosition.first = i;
 			modTagPosition.first = j;
 			// пока не дойдем до пробела/закрывающей скобки - записываем
-			// ! пробелы... < a >? 
+			// ;TODO1 пробелы... < a >? 
 			while (data[i] != ' ' && data[i] != '>')
 			{
 				modifiedData += data[i];
@@ -94,55 +97,74 @@ int main()
     removeTags(&modifiedTagPosition, modifiedData, remTag);
     removeTags(&modifiedTagPosition, modifiedData, remDoubleTag);
    
-    // in process
-    set<string> alphabet;
-    set<pair<string, int>> freq;
-    string clearedData;
+    // составл€ем clearedData
+    // ;TODO2 убрать этот костыль и сделать одно: clearedData или 
+    // modifiedData
     for(i = 1; i < modifiedTagPosition.size(); ++i)
     {
         if (modifiedTagPosition[i].first != -1)
         {
             string tag = getTag(modifiedTagPosition[i], modifiedData);
-            alphabet.insert(tag);
-            //fout << tag;// << '\n';
             clearedData += tag;
             clearedTagPosition.push_back(modifiedTagPosition[i]);
         }
-
     }
 
+    // составл€ем set из пар (строка, частота встречи этой строки)
+    // set - повтор€ющиес€ элементы удал€ютс€
+    // ;TODO3 ”брать этот костыль и составить нормальное составление
+    set <pair <string, int>> freq;
+
+    // Ўаг. ѕоследовательности какой длины мы ищем.
+    // ;TODO4 ѕоставить шаг не с количества слов, а с меньшего числа
+    // последовательности длиной в всю строку встрет€тс€ немного раз.
     int step = getWordCount(clearedData);
+
+    // минимум длина = 8
     while (step > 8)
     {
         for (i = getWordCount(clearedData) / step; i - step >= 0; --i)
         {
-             string ret = getWordString(clearedData, i - step, i);
-             if (ret[1] == '/')
-                 continue;
-             if (checksum(ret) && checkWordTruePairs(ret))
-             {
-                 int f = getWordFreq(clearedData, ret);
-                 if (f < 8)
-                     continue;
-                 freq.insert(make_pair(ret, 1 * f + 30 * getWordCount(ret)));
-             }
+            // получаем строку из слов
+            string ret = getWordString(clearedData, i - step, i);
+            // если она начинаетс€ с закрывающего тега - отбрасываем
+            if (ret[1] == '/')
+                continue;
+            // выполн€ем проверки
+            if (checksum(ret) && checkWordTruePairs(ret))
+            {
+                // поучаем частоту встречи нашей фразы в clearedData
+                int f = getWordFreq(clearedData, ret);
+                if (f < 8)
+                    continue;
+                // ~эвристика, хехе
+                // ¬ставл€ем в set пар
+                freq.insert(make_pair(ret, 1 * f + 30 * getWordCount(ret)));
+            }
         }
+        // уменьшаем длину фразы.
         --step;
     }
     
     set<pair<string, int>>::iterator it;
     vector<pair<string, int>> temp;
+    // перекидываем из set в массив
+    // ;TODO5 см. ;TODO3
     for(it = freq.begin(); it != freq.end(); it++ )
     {
         temp.push_back(*it);
     }
+    // сортируем пары
     sort(temp.begin(), temp.end(), pred());
 
+    // —читаем, что последн€€ пара в массиве - блок, с которого начинаетс€
+    // новость
     string BestString = temp.back().first;
 
-
-    const char *ptr = strstr(clearedData.c_str(), temp.back().first.c_str());
-
+    // »щем по позици€м в clearedTagPosition позиции в realTagPosition
+    // следующ€€ новость будет располагатьс€ с начала следующего блока.
+    // совпадающего с BestString, так как считаем новости идущими подр€д
+    // ;TODO6 см ;TODO2
     int begin = wordSubPtr(clearedData, temp.back().first);
     const char *Rptr = strstr(clearedData.c_str(), temp.back().first.c_str());
     int end = wordSubPtr(Rptr, temp.back().first, 1) + begin;
@@ -161,7 +183,9 @@ int main()
         if (clearedTagPosition[end].second == modifiedTagPosition[i].second)
             rend = i;
     }
-    string res(data, realTagPosition[rbegin].first, realTagPosition[rend].first - realTagPosition[rbegin].first);
+    // ѕолучаем строчку новости и выводим еЄ
+    string res(data, realTagPosition[rbegin].first, 
+               realTagPosition[rend].first - realTagPosition[rbegin].first);
     fout << res;
 	return 0;
 }
