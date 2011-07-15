@@ -347,7 +347,7 @@ int main()
                  int f = getWordFreq(clearedData, ret);
                  if (f < 5)
                      continue;
-                 freq.insert(make_pair(ret, 4 * f + 2 * getWordCount(ret)));
+                 freq.insert(make_pair(ret, 4 * f + 80* getWordCount(ret)));
                  //i -= getWordCount(ret);
              }
         }
