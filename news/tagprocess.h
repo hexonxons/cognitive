@@ -27,12 +27,20 @@ using std::stack;
  */
 struct pred
 {
-    bool operator()(pair<string, int> left, pair<string, int> right)
+    bool operator()(pair<string, int> left, pair<string, int> right) const
     {
         if(left.second != right.second)
             return left.second < right.second;
         else
             return left.first.length() > right.first.length();
+    }
+};
+
+struct ltstr
+{
+    bool operator()(pair<string, int> left, pair<string, int> right) const
+    {
+        return strcmp(left.first.c_str(), right.first.c_str()) < 0;
     }
 };
 
@@ -163,6 +171,7 @@ int getWordCount(const string &src);
  * 			0 иначе
  */
 int checksum(const string &src);
+int checksum(const string &src, int flag);
 
 /**
  * \fn  int checkWordTruePairs(const string &src);
@@ -179,7 +188,7 @@ int checksum(const string &src);
  * 			0, иначе
  */
 int checkWordTruePairs(const string &src);
-
+int checkWordTruePairs(const string &src, int flag);
 /**
  * \fn  int wordSubPtr(const string &src, const string &word);
  *

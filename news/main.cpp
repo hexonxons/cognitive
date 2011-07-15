@@ -6,6 +6,8 @@
 
 using namespace std;
 
+#define MINSZ 2
+
 int main()
 {
     // ¬ходной файл
@@ -100,12 +102,17 @@ int main()
     // составл€ем clearedData
     // ;TODO2 убрать этот костыль и сделать одно: clearedData или 
     // modifiedData
-    for(i = 1; i < modifiedTagPosition.size(); ++i)
+    for(i = 0; i < modifiedTagPosition.size(); ++i)
     {
         if (modifiedTagPosition[i].first != -1)
         {
             string tag = getTag(modifiedTagPosition[i], modifiedData);
-            clearedData += tag;
+            int ch = 0;
+            if (tag[1] != '/')
+                ch = tag[1];
+            else
+                ch = '/' + tag[2]; 
+            clearedData += ch;
             clearedTagPosition.push_back(modifiedTagPosition[i]);
         }
     }
@@ -113,15 +120,92 @@ int main()
     // составл€ем set из пар (строка, частота встречи этой строки)
     // set - повтор€ющиес€ элементы удал€ютс€
     // ;TODO3 ”брать этот костыль и составить нормальное составление
-    set <pair <string, int>> freq;
+    set <pair <string, int>, ltstr> freq;
+    set <pair <string, int>, ltstr>::iterator setIter;
 
-    // Ўаг. ѕоследовательности какой длины мы ищем.
+    //////////////////////////////////////////////////////////////////////////
+    int sz = clearedData.size();
+    short **table;
+    table = new short *[sz];
+    for (i = 0; i < sz; ++i)
+        table[i] = new short[sz];
+    for (i = 0; i < sz; ++i)
+    {
+        for (j = 0; j < sz; ++j)
+        {
+            if (clearedData[i] == clearedData[j])
+            {
+                table[i][j] = 1;
+            }
+            else
+                table[i][j] = 0;
+        }
+    }
+
+    // получаем строчку
+    int diag = 1;
+    while(diag != sz)
+    {
+        for (i = 0; i < sz - diag; ++i)
+        {
+            if (table[i][i + diag] != 0)
+            {
+                string str;
+                int beg = i;
+                while (i < sz - diag && table[i][i + diag] != 0)
+                {
+                    str += clearedData[i];
+                    ++i;
+                }
+                // если еЄ размер меньше MINSZ тегов - не нужна.
+                if (str.size() == MINSZ)
+                {
+                    setIter = freq.find(make_pair(str, 0));
+                    if (setIter == freq.end())
+                    {
+                        if (checksum(str, 0) && checkWordTruePairs(str, 0))
+                        {
+                            freq.insert(make_pair(str, 1));
+                        }
+                    }
+                    else
+                        setIter->second++;
+                }
+                // если больше MINSZ - выбираем все подпоследовательности длины >= MINSZ символов
+                if (str.size() > MINSZ)
+                {
+                    int ind = 0;
+                    int jnd = 0;
+                    for(ind = MINSZ; ind <= str.size(); ++ind)
+                    {
+                        for (jnd = 0; jnd + ind <= str.size(); ++jnd)
+                        {
+                            string subs(str.c_str() + jnd, ind);
+                            if (checksum(subs, 0) && checkWordTruePairs(subs, 0))
+                            {
+                                setIter = freq.find(make_pair(subs, 0));
+                                if (setIter == freq.end())
+                                    freq.insert(make_pair(subs, 1));
+                                else
+                                    setIter->second++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ++diag;
+    }
+    
+    //////////////////////////////////////////////////////////////////////////
+
+/*    // Ўаг. ѕоследовательности какой длины мы ищем.
     // ;TODO4 ѕоставить шаг не с количества слов, а с меньшего числа
     // последовательности длиной в всю строку встрет€тс€ немного раз.
     int step = getWordCount(clearedData);
 
-    // минимум длина = 8
-    while (step > 8)
+    // минимум длина = MINSZ
+    while (step > MINSZ)
     {
         for (i = getWordCount(clearedData) / step; i - step >= 0; --i)
         {
@@ -133,9 +217,9 @@ int main()
             // выполн€ем проверки
             if (checksum(ret) && checkWordTruePairs(ret))
             {
-                // поучаем частоту встречи нашей фразы в clearedData
+                // получаем частоту встречи нашей фразы в clearedData
                 int f = getWordFreq(clearedData, ret);
-                if (f < 8)
+                if (f < MINSZ)
                     continue;
                 // ~эвристика, хехе
                 // ¬ставл€ем в set пар
@@ -145,21 +229,27 @@ int main()
         // уменьшаем длину фразы.
         --step;
     }
+    */
     
-    set<pair<string, int>>::iterator it;
+    set<pair<string, int>, ltstr>::iterator it;
     vector<pair<string, int>> temp;
+    int sum = 0;
     // перекидываем из set в массив
     // ;TODO5 см. ;TODO3
     for(it = freq.begin(); it != freq.end(); it++ )
     {
-        temp.push_back(*it);
+        if (it->second >= 8)
+        {
+            temp.push_back(*it);
+            sum += it->second;
+        }
     }
     // сортируем пары
     sort(temp.begin(), temp.end(), pred());
-
     // —читаем, что последн€€ пара в массиве - блок, с которого начинаетс€
     // новость
     string BestString = temp.back().first;
+   
 
     // »щем по позици€м в clearedTagPosition позиции в realTagPosition
     // следующ€€ новость будет располагатьс€ с начала следующего блока.

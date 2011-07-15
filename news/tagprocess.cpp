@@ -194,6 +194,22 @@ int checksum(const string &src)
     return 1;
 }
 
+int checksum(const string &src, int flag)
+{
+    unsigned int i = 0;
+    int cnt = 0;
+
+    for (i = 0; i < src.size(); ++i)
+        // если встретили '/' - тег закрывающий. Увеличиваем счетчик.
+        if (src[i] < 0)
+            ++cnt;
+    // если закрывающих тегов больше, чем открывающих - возвратим 0
+    if (cnt > src.size() / 2 + 1)
+        return 0;
+
+    return 1;
+}
+
 int checkWordTruePairs(const string &src)
 {
     int i;
@@ -220,6 +236,43 @@ int checkWordTruePairs(const string &src)
                 // пока не получим открывающий для текущего тега, извлекаем
                 // теги из стека и проверяем их
                 while (strncmp(topTag.c_str() + 1, str.c_str() + 2, 10))
+                {
+                    st.pop();
+                    if (st.empty())
+                        return 0;
+                    topTag = st.top();
+                }
+            }
+            st.pop();
+        }
+    }
+    return 1;
+}
+
+int checkWordTruePairs(const string &src, int flag)
+{
+    int i;
+    stack<char> st;
+
+    for(i = 0; i < src.size(); ++i)
+    {
+        // если он - открывающий - положим в стек
+        if (src[i] > 0)
+            st.push(src[i]);
+        else
+        {
+            // если стек пуст - закрывающему тегу нет открывающего.
+            if (st.empty())
+                return 0;
+            // возьмем верхний тег
+            char topTag = st.top();
+            // если он не является открывающим для данного закрывающего
+            if (topTag > 0)
+            {
+                // пока не получим открывающий для текущего тега, извлекаем
+                // теги из стека и проверяем их
+                char ch = topTag + '/';
+                while (ch != src[i])
                 {
                     st.pop();
                     if (st.empty())
