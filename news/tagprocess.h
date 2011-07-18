@@ -32,7 +32,7 @@ struct pred
         if(left.second != right.second)
             return left.second < right.second;
         else
-            return left.first.length() > right.first.length();
+            return left.first.length() < right.first.length();
     }
 };
 

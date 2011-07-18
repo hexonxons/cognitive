@@ -1,1 +1,2268 @@
-<a><b><c><b><c><b><c><a><b><c><a><b><a><c>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang=ru>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="/common.css">
+  
+    <LINK REL=STYLESHEET TYPE="text/css" HREF="/white2/hover.css">
+  
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript"></script>
+<script src="/js/head.js" type="text/javascript"></script>
+
+
+<title>LINUX.ORG.RU - Русская информация об ОС Linux</title>
+<META NAME="Keywords" CONTENT="linux линукс операционная система документация gnu бесплатное свободное програмное обеспечение софт unix юникс software free documentation operating system новости news">
+<META NAME="Description" CONTENT="Все о Linux на русском языке">
+<LINK REL="alternate" TITLE="L.O.R RSS" HREF="section-rss.jsp?section=1" TYPE="application/rss+xml">
+
+
+
+
+
+
+
+<link rel="search" title="Search L.O.R." href="/search.jsp">
+<link rel="top" title="Linux.org.ru" href="/">
+<script src="/js/lor.js" type="text/javascript">;</script>
+
+
+
+
+  <base href="http://www.linux.org.ru/">
+
+
+
+
+
+
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="/white2/combined.css" TITLE="Normal">
+<LINK REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" ALINK="#ff0000">
+
+<!-- #defefc #aea6f2 -->
+
+<table width="100%" border=0 cellpadding=0 cellspacing=0>
+<tr><td class="bluehead"><img src="/white2/h1.png" alt="Русская информация об ОС Linux" width=452 height=72></td><td class="bluehead" align=right valign=top><span class=head></span>
+</td>
+  <td align="right" valign="top" class="bluehead">
+    
+      
+  добро пожаловать, <a style="text-decoration: none" href="/people/killgamesh666/profile">killgamesh666</a>
+  [<a href="logout.jsp?sessionId=A2FB1DB77703E21195AB7E9F17A37B46" title="Выйти">x</a>]
+  <br>
+
+
+
+</td>
+</tr>
+<tr><td><img src="/white2/h2.png" alt="" width=452 height=49></td></tr>
+</table>
+
+<div align="center">
+<table width="80%">
+<tr>
+<td valign="top">
+  [<a href="/">Новости</a>]
+</td>
+<td valign="top">
+  [<a href="/gallery/">Галерея</a>]
+</td>
+<td valign="top">
+  [<a href="/forum/">Форум</a>]
+</td>
+<td valign="top">
+  [<a href="/tracker.jsp">Трекер</a>]
+</td>
+<td valign="top">
+  [<a href="/wiki/">Wiki</a>]
+</td>
+<td valign="top">
+  [<a href="search.jsp">Поиск</a>]
+</td>
+</tr>
+</table>
+</div>
+<div style="margin-bottom: 1em"></div>
+
+
+<!--TopList COUNTER-->
+<img height=1 width=1 src="http://top.list.ru/counter?id=71642" alt="">
+<!--TopList COUNTER-->
+<div id="bd">
+
+
+
+<div style="clear: both"></div>
+<div class="newsblog">
+  <div class="newsblog-in">
+
+<h1><a href="/news/">Новости</a></h1>
+
+
+  <div class="infoblock" style="border: 1px solid #777; text-align: justify;">
+    <a href="http://job.samsung.ru/"><img width="130" height="43" src="/adv/Samsung_Logo.png" alt="" style="float: left; border: 0"></a>
+    <div style="margin-left: 135px">
+
+    SAMSUNG Electronics&nbsp;&mdash; мировой лидер в&nbsp;производстве полупроводников,
+телекоммуникационного оборудования и&nbsp;цифровой конвергенции&nbsp;&mdash; объявляет о&nbsp;приеме
+на&nbsp;работу программистов, инженеров-разработчик, физиков и&nbsp;химиков: LINUX,
+Android, C/C++, Smart Phones, Smart TV, 3D&nbsp;Imaging, 3D&nbsp;Graphics, ASIC, FPGA,
+SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная информация:
+    <a href="http://job.samsung.ru/" style="color: white">http://job.samsung.ru</a>
+    </div>
+  </div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6492114">
+Мини-новость:
+  <a href="/news/opensource/6492114">Вышел в свет dwm 5.9</a>
+
+
+
+  [<a href="/news/opensource/6492114">47&nbsp;комментариев</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6498954">
+
+<h2>
+  <a href="/news/security/6498954">Toyota присоединяется к Linux Foundation</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/security/">
+  <img src="/white2/img/secure-logo.png" width=48 height=48 border=0 alt="Группа Безопасность">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>И это уже не первая компания решившая сделать акцент на безопасности, за счёт стабильной и защищенной ОС.<p>«Linux представляет собой гибкую и зрелую технологию, которая нужна для развития наших автомобильных компьютеров In-Vehicle-Infotainment и систем коммуникаций, чтобы соответствовать ожиданиям пользователей. Организация Linux Foundation — это нейтральный форум, где мы можем сотрудничать с лучшими в мире технологическими компаниями над открытыми инновациями, которые помогают общему прогрессу», — считает руководитель отдела Electronics Development Div. 1 компании Toyota Motor Corp. Кенити Мурата (Kenichi Murata).<p>
+<p>&gt;&gt;&gt; <a href="http://www.linuxfoundation.org/news-media/announcements/2011/07/toyota-joins-linux-foundation">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=%D0%B0%D0%B2%D1%82%D0%BE">авто</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/rsavelev/profile">rsavelev</a>
+
+
+
+(17.07.2011 17:22:58)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6498954">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/security/6498954">97&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/security/6498954/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6504361">
+
+<h2>
+  <a href="/news/russia/6504361">Каталог ПО для Linux</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/russia/">
+  <img src="/white2/img/russia-logo.png" width=54 height=65 border=0 alt="Группа Linux в России">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Хочу немного попиарить свой новый сайт <a href="http://linsoft.info">http://linsoft.info.</a> 
+Это систематизированный каталог ПО для GNU/Linux. Собираю тут ссылки на программные продукты 
+для Линукс, причем стараюсь сопроводить краткое описание ссылками на различные статьи и 
+руководства по данному продукту. Сайт может быть полезен тем, кто ищет программу для решения 
+какой-то задачи. Но я очень надеюсь, что сайт станет местом обсуждения достоинств и недостатков 
+программ, что на сайте будут обсуждения, комментарии и что сайт таким образом станет полезен 
+и разработчикам. 
+Собираются в основном ссылки на бесплатное и свободное ПО, хотя иногда встречаются и проприетарные 
+продукты.
+Буду очень рад, если ЛОРовцы выскажут замечания по структуре каталога, по организации сайта вообще.
+<p>&gt;&gt;&gt; <a href="http://linsoft.info">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F">документация</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/vikos/profile">vikos</a>
+
+
+
+(17.07.2011 17:21:27)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6504361">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/russia/6504361">99&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/russia/6504361/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6505232">
+Мини-новость:
+  <a href="/news/internet/6505232">Релиз Jappix 0.7 &quot;Stelo&quot;</a>
+
+
+
+  [<a href="/news/internet/6505232">18&nbsp;комментариев</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6505260">
+Мини-новость:
+  <a href="/news/conference/6505260">Gentoo Summer Camp 2011</a>
+
+
+
+  [<a href="/news/conference/6505260">12&nbsp;комментариев</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6503910">
+
+<h2>
+  <a href="/news/android/6503910">Вышел Android 3.2</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/android/">
+  <img src="/white2/img/android.png" width=64 height=64 border=0 alt="Группа Android">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Обновилась версия Android для планшетных компьютеров, в которой повысили уровень API до 13го, вследствие новых изменений в нем.<p>Релиз в основном направлен на поддержку программ, которые не оптимизированы для использования на планшетах.
+<ul><li>Добавлена поддержка большего числа планшетов (В основном с 7&quot; дисплеем).<li>Теперь приложения с фиксированным размером могут масштабироваться автоматически для их отображения на более крупных устройствах (Раньше для этого приходилось использовать Spare Parts).<li>На устройствах, которые поддерживают SD-карты, пользователи могут загружать мультимедийные файлы непосредственно с SD-карты в приложения, которые их используют. Система позволяет использование файлов с SD-карты для любого приложения из маркета.<li>Переработан API поддержки экрана. Теперь разработчики могут &quot;подгонять&quot; внешний вид приложения в зависимости от разрешения устройства. Соответственно, в зависимости от устройства приложение может выглядеть по-разному.</ul><p>
+Кроме того, вышел новый SDK для разработчиков SDK Tools r12 (включая исходный код платформы), Eclipse плагин (ADT 12) и обновили NDK на R6.
+<p>&gt;&gt;&gt; <a href="http://developer.android.com/sdk/android-3.2.html">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=android">android</a>, <a href="view-news.jsp?tag=google">google</a>, <a href="view-news.jsp?tag=tablets">tablets</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/tazhate/profile">tazhate</a>
+
+
+
+(17.07.2011 17:18:39)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6503910">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/android/6503910">67&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/android/6503910/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6498962">
+Мини-новость:
+  <a href="/news/hardware/6498962">Установка mplayer на телевизор SHARP 42SH7</a>
+
+
+
+  [<a href="/news/hardware/6498962">58&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/hardware/6498962/page1">2</a>)]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6501246">
+
+<h2>
+  <a href="/news/games/6501246">Релиз Beep для Linux</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/games/">
+  <img src="/white2/img/games-logo.png" width=64 height=53 border=0 alt="Группа Игры">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>После двух месяцев тестирования состоялся выпуск версии аркады Beep для Linux.<p>Beep - необычная аркада, в которой игрок управляет роботом, вооружённым пушкой и антигравитационным манипулятором. Игра включает 24 уровня и продаётся на сайте gameolith.com, стоимость -- $9.99; в следующем релизе Ubuntu игру можно будет купить прямо из фронтэнда к менеджеру пакетов. По доброй традиции инди-разработчиков игра свободна от DRM.<p>Разработчик благодарит всех, кто принимал участие в тестировании, они получат ссылку для бесплатного скачивания игры.<p>Багрепорты по-прежнему принимаются.
+<p>&gt;&gt;&gt; <a href="http://www.gameolith.com/game/beep/">Игра на Gameolith</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=%D0%B8%D0%B3%D1%80%D1%8B">игры</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/Hoodoo/profile">Hoodoo</a>
+
+
+
+(16.07.2011 18:47:09)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6501246">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/games/6501246">61&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/games/6501246/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6500795">
+
+<h2>
+  <a href="/news/hardware/6500795">Gallium3D-драйвер для карт ATI наверстывает отставание в скорости от Catalyst</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/hardware/">
+  <img src="/white2/img/hardware-logo.png" width=50 height=53 border=0 alt="Группа Hardware and Drivers">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Ресурс Phoronix представил результаты оценки производительности современного состояния открытого Gallium3D-драйвера для видеокарт AMD/ATI из состава пакета Mesa, в сравнении с проприетарным драйвером AMD Catalyst. В тестах отмечается значительный прогресс, скорость Gallium3D-драйвера в среднем теперь отстает от Catalyst на 60-70% (в тесте Urban Terror на 80%). Для сравнения, в проведенных в <a href="http://www.phoronix.com/scan.php?page=article&amp;item=nvidia_nouveau_q111">начале года</a> тестах Gallium3D-драйвер отставал в 4-5 раз. <p>Тестирование производилось на системах с видеокартами Radeon HD 6570, Radeon HD 6870 и Radeon HD 6950. В тесте на базе игры Nexuiz отставание Gallium3D-драйвера составило 46%, 69% и 61%. В тесте OpenArena - 50-60%, World of Padman - 70%, Urban Terror - 80%. Отдельный интерес представляет собой тест VDrift, при его выполнении открытый Gallium3D-драйвер заметно обогнал проприетарного конкурента.<p>Кроме того, отмечается решение проблем со стабильностью: в связке из последнего тестового выпуска Linux-ядра 3.0, Mesa 7.12-devel и xf86-video-ati, больше не отмечаются ранее наблюдаемые крахи и зацикливания. При проведении теста на базе последних экспериментальных версий Linux-ядра 3.0, Mesa 7.12-devel и xf86-video-ati разрыв в производительности между Gallium3D-драйвером и Catalyst уменьшился до 50-60%.<p><a href="http://www.phoronix.com/data/img/results/amd_hd6000_open/1.png">Результаты</a>
+<p>&gt;&gt;&gt; <a href="http://www.phoronix.com/scan.php?page=article&amp;item=amd_hd6000_open&amp;num=1">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=ati">ati</a>, <a href="view-news.jsp?tag=benchmark">benchmark</a>, <a href="view-news.jsp?tag=catalyst">catalyst</a>, <a href="view-news.jsp?tag=gallium3d">gallium3d</a>, <a href="view-news.jsp?tag=mesa">mesa</a>, <a href="view-news.jsp?tag=%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D1%8B">драйверы</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/papochka/profile">papochka</a>
+
+
+
+(16.07.2011 18:46:58)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6500795">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/hardware/6500795">147&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/hardware/6500795/page1">2</a> <a href="/news/hardware/6500795/page2">3</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6499727">
+
+<h2>
+  <a href="/news/games/6499727">Вышел SuperTuxKart 0.7.2</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/games/">
+  <img src="/white2/img/games-logo.png" width=64 height=53 border=0 alt="Группа Игры">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>SuperTuxKart - это аркадная гонка с участием Тукса, талисмана ОС Linux. SuperTuxKart - форк TuxKart.<br>Игра написана на языке C++, для вывода звука задействован OpenAL. Начиная с версии 0.7 игра перешла на использование графического движка Irrlicht.<p>Изменения по сравнению с предыдущей версией 0.7.1:<ul><li> в игру добавлен менеджер дополнений (<a href="http://stkaddons.net/">SuperTuxKartAddons</a>)<br><li> устранены значительные утечки памяти<br><li> переработан трек Снежная Вершина (Snow Peak)<br><li> добавлен новый карт Beastie<br><li> индикатор установки нового рекорда<br><li> улучшена возможность настройки геймпадов под Windows (добавалена возможность использовать несколько геймпадов одновременно)<br><li> другие различные улучшения и исправления</ul><p>
+<a href="http://2.bp.blogspot.com/-1fZv6SbPHbg/TiA7CRy2OgI/AAAAAAAAALk/KNquweWWdNE/s1600/Stk0.7.2_1.jpg">Скриншот</a><p><a href="http://sourceforge.net/projects/supertuxkart/files/SuperTuxKart/0.7.2/">Ссылка на загрузку</a>.<p>Частично использован материал с <a href="http://www.opennet.ru/opennews/art.shtml?num=31198">opennet.ru</a> и <a href="http://ru.wikipedia.org/wiki/SuperTuxKart">wikipedia</a>.
+<p>&gt;&gt;&gt; <a href="http://supertuxkart.blogspot.com/2011/07/supertuxkart-072-final-released.html">Оригинал</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=supertuxkart">supertuxkart</a>, <a href="view-news.jsp?tag=tux">tux</a>, <a href="view-news.jsp?tag=%D0%B3%D0%BE%D0%BD%D0%BA%D0%B8">гонки</a>, <a href="view-news.jsp?tag=%D0%B8%D0%B3%D1%80%D1%8B">игры</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/HerrWeigel/profile">HerrWeigel</a>
+
+
+
+(16.07.2011 11:51:47)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6499727">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/games/6499727">87&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/games/6499727/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6495054">
+
+<h2>
+  <a href="/news/doc/6495054">Библиотека libevent для асинхронного неблокирующего ввода/вывода</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/doc/">
+  <img src="/white2/img/info-logo.png" width=64 height=64 border=0 alt="Группа Документация">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>В этом цикле статей рассматривается библиотека libevent, предназначенная для обработки оповещений о событиях и организации асинхронного ввода/вывода. <br>
+<a href="http://www.ibm.com/developerworks/ru/library/l-Libevent1/index.html?S_TACT=105AGX99&amp;S_CMP=GR01">
+В первой статье</a> описывается общая структура библиотеки. <br>
+<a href="http://www.ibm.com/developerworks/ru/library/l-Libevent2/index.html?S_TACT=105AGX99&amp;S_CMP=GR01">Вторая статья</a> посвящена основам использования libevent: наибольшее внимание уделено обработке событий. <br>
+В третьей статьеречь идёт о механизмах буферизации ввода/вывода. 
+Тема четвёртой, заключительной статьи - применение libevent в сетевых приложениях.
+<p>&gt;&gt;&gt; <a href="http://www.ibm.com/developerworks/ru/library/l-Libevent1/index.html?S_TACT=105AGX99&amp;S_CMP=GR01">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=linux">linux</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/IBM_dW/profile">IBM_dW</a>
+
+
+
+(16.07.2011 11:48:53)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6495054">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/doc/6495054">15&nbsp;комментариев</a>]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6500911">
+
+<h2>
+  <a href="/news/games/6500911">Battle Jump для Linux</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/games/">
+  <img src="/white2/img/games-logo.png" width=64 height=53 border=0 alt="Группа Игры">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>После нескольких месяцев разработки авторы игры <a href="http://www.battlejump.com/">Battle Jump</a> выпустили <a href="http://www.battlejump.com/news-en-27-battle-jump.html">новую версию</a> с поддержкой Linux.<p>Внешний вид и игровой процесс Battle Jump во многом напоминают другую популярную в среде пользователей Linux игру — <a href="http://neverball.org/screenshots.php">Neverball</a>, только вместо катающегося по висящим в облаках платформам шарика главным героем игры является прыгающая по таким же платформам пружинистая кегля.<p>Из интересных возможностей стоит отметить поддержку одновременной игры вдвоем на одном компьютере в режиме раздельного экрана.<p>Игру можно <a href="http://www.battlejump.com/download-en-battle-jump-last-version-release.html">бесплатно скачать</a> с сайта разработчиков — поддерживаются Linux (32 и 64 бит), Mac и Windows.<p>&gt;&gt;&gt; <a href="http://www.indiedb.com/games/battle-jump/images">Скриншоты</a> и <a href="http://www.indiedb.com/games/battle-jump/videos">видео</a><p>&gt;&gt;&gt; Страница проекта на <a href="http://www.indiedb.com/games/battle-jump">indiedb</a><p>&gt;&gt;&gt; <a href="http://www.battlejump.com/download-en-battle-jump-last-version-release.html">Скачать бесплатно</a>
+<p>&gt;&gt;&gt; <a href="http://www.battlejump.com/news-en-27-battle-jump.html">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=%D0%B8%D0%B3%D1%80%D1%8B">игры</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/bender/profile">bender</a>
+
+
+
+(16.07.2011 11:46:04)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6500911">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/games/6500911">20&nbsp;комментариев</a>]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6499564">
+Мини-новость:
+  <a href="/news/hardware/6499564">Релиз проприетарного видеодрайвера NVIDIA 275.19</a>
+
+
+
+  [<a href="/news/hardware/6499564">82&nbsp;комментария</a>&nbsp;(стр. <a href="/news/hardware/6499564/page1">2</a>)]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6496573">
+
+<h2>
+  <a href="/news/conference/6496573">LinuxFest XIII (Калужская область)</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/conference/">
+  <img src="/white2/img/x-office-presentation.png" width=64 height=64 border=0 alt="Группа Конференции и встречи">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Команда единомышленников и сайт LinuxFest.ru приглашают вас посетить 13 ежегодный фестиваль LinuxFest. ﻿<br>
+<br>
+Если вы чего-то не знаете об OpenSource и боитесь спросить – тогда вам НЕ СЮДА! Этот фестиваль для тех, кто знает что такое Открытое программное обеспечение (Open Source) и не боится спрашивать о том, чего не знает. Зачем молчать когда можно говорить “делаю make” и если вас не понимают в обычной среде, тогда вам сюда. “Я свободный человек и люблю компьютеры, общение и природу” – так говорите вы о себе – значит место и событие выбраны правильно. Интересные собеседники, без разницы какая погода – то что нужно для позитивного и продуктивного отдыха.<br>
+<br>
+Организационный взнос – 300 рублей с одного участника, оплачивается на месте сбора и направляется на возмещение организационных расходов (пиломатериалы, дрова, бензин, мусор и т.д.)
+<p>&gt;&gt;&gt; <a href="http://linuxfest.ru/">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=linuxfest">linuxfest</a>, <a href="view-news.jsp?tag=%D0%B1%D0%BE%D1%80%D0%BE%D0%B2%D1%81%D0%BA">боровск</a>, <a href="view-news.jsp?tag=%D1%84%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D1%8C">фестиваль</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/Vitls/profile">Vitls</a>
+
+
+
+(15.07.2011 23:43:20)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6496573">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/conference/6496573">43&nbsp;комментария</a>]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6496434">
+
+<h2>
+  <a href="/news/openoffice/6496434">IBM передает исходные тексты Lotus Symphony проекту Apache OpenOffice.org</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/openoffice/">
+  <img src="/white2/img/openoffice.png" width=49 height=19 border=0 alt="Группа OpenOffice">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Rob Weir из IBM анонсировал планы по передаче исходных текстов <a href="http://www-03.ibm.com/software/lotus/symphony/home.nsf/home">Lotus Symphony</a> фонду Apache для интеграции с OpenOffice.org. Lotus Symphony — проприетарный бесплатный офисный пакет, основанный на OpenOffice.org. <p>Symphony содержит значительно переработанный интерфейс, большие наработки в поддержке людей с ограниченными возможностями, улучшения совместимости с другими офисными пакетами, а так же ряд других улучшений.<p>До этого момента разработка пакета велась внутри IBM, патчи достаточно редко передавались сообществу OpenOffice.org. Теперь планируется изменить это и развивать продукт совместно с OpenOffice.org. Разработчики планируют помочь с интеграцией Symphony и OO. Кроме того, IBM провела работу по замене ряда GPL/LGPL компонент, что должно ускорить процесс перелицензирования исходных текстов OpenOffice.org и выход первого релиза от Apache.<p>Yong Lin Ma, архитектор проекта Symphony, <a href="http://mail-archives.apache.org/mod_mbox/incubator-ooo-dev/201107.mbox/%3COFFE6EAA9D.2C929E08-ON482578CD.000D5E79-482578CD.001169DF@cn.ibm.com%3E">сообщил</a> что IBM не останавливает свою разработку.<p>Вместе с Symphony, IBM займется передачей в инкубатор Apache набора библиотек ODF Toolkit, предназначенных для работы с офисными документами OpenDocument.
+<p>&gt;&gt;&gt; <a href="http://mail-archives.apache.org/mod_mbox/incubator-ooo-dev/201107.mbox/%3CCAP-ksojJnTAYZDBoTY6gfOEnh9fcmEoxcd8DX=X3hD3S6BQ2WQ@mail.gmail.com%3E">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=apache">apache</a>, <a href="view-news.jsp?tag=ibm">ibm</a>, <a href="view-news.jsp?tag=lotus">lotus</a>, <a href="view-news.jsp?tag=odf">odf</a>, <a href="view-news.jsp?tag=opendocument">opendocument</a>, <a href="view-news.jsp?tag=openoffice">openoffice</a>, <a href="view-news.jsp?tag=symphony">symphony</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/maxcom/profile">maxcom</a>
+
+
+
+(15.07.2011 9:35:30)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6496434">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/openoffice/6496434">166&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/openoffice/6496434/page1">2</a> <a href="/news/openoffice/6496434/page2">3</a> <a href="/news/openoffice/6496434/page3">4</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6495470">
+Мини-новость:
+  <a href="/news/conference/6495470">SysAdmin`s Day в Салавате</a>
+
+
+
+  [<a href="/news/conference/6495470">45&nbsp;комментариев</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6495182">
+
+<h2>
+  <a href="/news/internet/6495182">Закрывается проект TinyOGG</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/internet/">
+  <img src="/white2/img/applications-internet.png" width=64 height=64 border=0 alt="Группа Интернет">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>15 июля закрывается проект <a href="http://tinyogg.com">TinyOGG</a>, начавший своё существование <a href="http://www.linux.org.ru/news/internet/4547577">18 месяцев назад</a>). Автор считает проект морально устаревшим, поскольку Google представил формат WebM, поддерживаемый большинством современных браузеров, и <a href="http://youtube-global.blogspot.com/2011/04/mmm-mmm-good-youtube-videos-now-served.html">99% популярного видео на youtube</a>  теперь доступно в этом формате. Ссылки на tinyogg будут переадресовываться на оригинальное видео, окончательно проект закроется ещё через 18 месяцев.<p>Этот проект был <a href="http://www.linux.org.ru/search.jsp?q=tinyogg&amp;oldQ=tinyogg&amp;range=ALL&amp;interval=ALL&amp;user=&amp;_usertopic=on&amp;sort=DATE&amp;section=0">любим ЛОРом</a> и являлся для многих самым простым способом посмотреть флеш-ролики с youtube и других ресурсов.
+<p>&gt;&gt;&gt; <a href="http://osamak.wordpress.com/2011/07/04/tinyogg-end/">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=fsf">fsf</a>, <a href="view-news.jsp?tag=gnu">gnu</a>, <a href="view-news.jsp?tag=multimedia">multimedia</a>, <a href="view-news.jsp?tag=ogg">ogg</a>, <a href="view-news.jsp?tag=theora">theora</a>, <a href="view-news.jsp?tag=tinyogg">tinyogg</a>, <a href="view-news.jsp?tag=youtube">youtube</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/GreyDoom/profile">GreyDoom</a>
+
+
+
+(14.07.2011 20:56:01)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6495182">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/internet/6495182">95&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/internet/6495182/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6493408">
+
+<h2>
+  <a href="/news/games/6493408">Золото Короля Артура</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/games/">
+  <img src="/white2/img/games-logo.png" width=64 height=53 border=0 alt="Группа Игры">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p><a href="http://www.kag2d.com/index.php">Золото Короля Артура</a> (King Arthur's Gold) — новая многопользовательская игра от польского программиста Михала Марчинковски (Michał Marcinkowski) — автора небезызвестного двумерного шутера <a href="http://soldat.thd.vg/en/">Soldat</a>. Игра была начата и выпущена в 2011м году. По словам авторов, при ее создании они были вдохновлены такими играми, как <a href="http://soldat.thd.vg/en/">Soldat</a>, <a href="http://www.minecraft.net/">Minecraft</a>, <a href="http://en.wikipedia.org/wiki/King_Arthur%27s_World">King Arthur's World</a> для SNES и <a href="http://ace-spades.com/">Ace Of Spades</a>.<p>Цель игры — построить замок и наблюдать за тем, как гибнут враги. Основные возможности:<ul><li>Можно играть Рыцарем, Лучником или Строителем<li>Многопользовательский режим с более чем 64ю игроками в реальном времени<li>Добыча ресурсов и строительство осадных машин<li>Полностью разрушаемая 2D физика</ul><p>
+Игра работает на Linux и Windows (Mac в разработке) и на данный момент <a href="http://www.kag2d.com/download.php">доступна бесплатно</a> на сайте разработчиков.<p>&gt;&gt;&gt; <a href="http://www.youtube.com/user/kingarthurdev">Видео</a> и <a href="http://www.indiedb.com/games/king-arthurs-gold/images">скриншоты</a><p>&gt;&gt;&gt; Обзоры игры на <a href="http://gamin.ru/blog/mini-reviews/5881">gamin.ru</a>, <a href="http://www.pcgamer.com/2011/05/30/competitive-mining-in-sidescroller-king-arthurs-gold/">pcgamer.com</a> и <a href="http://www.diygamer.com/2011/06/freeware-friday-king-arthurs-gold/">diygamer.com</a>.<p>&gt;&gt;&gt; Страница проекта на <a href="http://www.indiedb.com/games/king-arthurs-gold">indiedb</a><p>&gt;&gt;&gt; <a href="http://www.kag2d.com/download.php">Скачать</a> клиент (Linux и Windows) и сервер (Linux).
+<p>&gt;&gt;&gt; <a href="http://www.indiedb.com/games/king-arthurs-gold/news/build-80-released">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=king+arthurs+gold">king arthurs gold</a>, <a href="view-news.jsp?tag=%D0%B8%D0%B3%D1%80%D1%8B">игры</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/bender/profile">bender</a>
+
+
+
+(14.07.2011 17:51:53)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?msgid=6493408">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/games/6493408">118&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/games/6493408/page1">2</a> <a href="/news/games/6493408/page2">3</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6493564">
+Мини-новость:
+  <a href="/news/internet/6493564">Adobe выпустил Flash Player 11 Beta с поддержкой 64-bit для Linux</a>
+
+
+
+  [<a href="/news/internet/6493564">121&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/internet/6493564/page1">2</a> <a href="/news/internet/6493564/page2">3</a>)]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6489891">
+Мини-новость:
+  <a href="/news/opensource/6489891">PuTTY 0.61</a>
+
+
+
+  [<a href="/news/opensource/6489891">227&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6489891/page1">2</a> <a href="/news/opensource/6489891/page2">3</a> <a href="/news/opensource/6489891/page3">4</a> <a href="/news/opensource/6489891/page4">5</a>)]
+</div>
+
+
+    
+<div class="nav">
+  [<a href="/news/?offset=20">← предыдущие</a>]
+  [<a href="add-section.jsp?section=1">добавить новость</a>]
+  [<a href="view-all.jsp?section=1">непроверенные новости</a>]
+  [<a href="section-rss.jsp?section=1">RSS</a>]
+</div>
+</div>
+</div>
+<div class=column>
+
+  
+    <div class=boxlet>
+      <h2>Добро пожаловать!</h2>
+
+      <div class="boxlet_content">
+        Ваш статус: новый пользователь
+        <ul>
+          <li><a href="tracker.jsp?filter=mine">Мои темы</a></li>
+          <li><a href="/people/killgamesh666/favs">Избранные темы</a></li>
+          <li><a href="show-comments.jsp?nick=killgamesh666">Мои комментарии</a></li>
+          
+          <li><a href="show-replies.jsp?nick=killgamesh666" onclick="$('#events_form').submit(); return false;"
+          >Уведомления (1)</a>
+
+  <form id="events_form" action="/show-replies.jsp" method="POST" style="display: none;">
+    <input type="hidden" name="nick" value="killgamesh666">
+  </form></li>
+        </ul>
+        <ul>
+          <li><a href="edit-profile.jsp">Настройки</a></li>
+        </ul>
+      </div>
+    </div>
+  
+
+  
+      
+        <div class="boxlet">
+            
+
+
+<h2>Новые материалы на IBM developerWorks</h2>
+<div class="boxlet_content">
+  <iframe src="dw.jsp?height=400&amp;width=219&amp;main=1" width="222" height="400" scrolling="no"
+          frameborder="0"></iframe>
+  <h3>My developerWorks!</h3>
+  <a style="text-decoration: underline" href="http://www.ibm.com/developerworks/mydeveloperworks/?lang=ru" title="">Вступай</a> в сообщество профессионалов&nbsp;IBM!<br>
+Нас уже более 3000 только в России.
+</div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+
+  
+  <h2><a href="/polls/">Опрос</a></h2>
+
+  <div class="boxlet_content">
+    <h3>Какие памятки вы используете для найденного в интернет СПО, примеров настроек, статей и т. п.?</h3>
+
+    <form action="/vote.jsp" method="POST">
+      <input type="hidden" name="voteid" value="1355"/>
+      
+        
+          <input type="checkbox" name="vote" id="poll-10248" value="10248"><label for="poll-10248">Всё держу в голове</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-10249" value="10249"><label for="poll-10249">Записываю в бумажный блокнот/ежедневник/на стикер</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-10250" value="10250"><label for="poll-10250">Делаю закладку в браузере</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-10251" value="10251"><label for="poll-10251">Сохраняю на диск в текстовый файл или веб-страницей</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-10252" value="10252"><label for="poll-10252">Пользуюсь ПО для заметок</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-10253" value="10253"><label for="poll-10253">Заполняю локальную Wiki</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-10254" value="10254"><label for="poll-10254">Пишу в личный блог</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-10255" value="10255"><label for="poll-10255">Использую для этого облачные хранилища данных</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-10256" value="10256"><label for="poll-10256">Приспособил что-то другое</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-10257" value="10257"><label for="poll-10257">Не запоминаю, когда понадобится — тогда и найду</label> <br/>
+        
+        
+      
+      <input type="submit" value="vote"/>
+    </form>
+    <br/>
+    
+    <a href="/view-vote.jsp?vote=1355">результаты</a> (1784 голосов)
+    <br/>
+    <a href="/polls/">итоги прошедших опросов...</a>
+    <br/>
+    [<a href="/add-poll.jsp">добавить опрос</a>]
+  </div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+<h2>Top 10</h2>
+
+<div class="boxlet_content">
+  <h3>Наиболее обсуждаемые темы этого месяца</h3>
+  <ul>
+    
+      <li>
+      
+      <a href="/forum/development/6456700">Что круче: Лисп или Хаскелль?</a>
+      
+        
+        (стр. <a href="/forum/development/6456700/page20?lastmod=1310941675178">21</a>)
+      
+      (1010)
+      </li>
+    
+      <li>
+      
+      <a href="/news/linux-general/6395201">Systemd 29</a>
+      
+        
+        (стр. <a href="/news/linux-general/6395201/page14?lastmod=1309757939679">15</a>)
+      
+      (745)
+      </li>
+    
+      <li>
+      
+      <a href="/news/redhat/6476358">Релиз CentOS 6</a>
+      
+        
+        (стр. <a href="/news/redhat/6476358/page10?lastmod=1310646358906">11</a>)
+      
+      (530)
+      </li>
+    
+      <li>
+      
+      <a href="/news/internet/6435135">Opera 11.50 &quot;Swordfish&quot;</a>
+      
+        
+        (стр. <a href="/news/internet/6435135/page9?lastmod=1310456769388">10</a>)
+      
+      (500)
+      </li>
+    
+      <li>
+      
+      <a href="/news/java/6469250">Вышел первый release candidate JDK 7</a>
+      
+        
+        (стр. <a href="/news/java/6469250/page9?lastmod=1310637349810">10</a>)
+      
+      (475)
+      </li>
+    
+      <li>
+      
+      <a href="/news/commercial/6444670">Многократный чемпион среди шахматных программ - Rybka дисквалифицирована за нарушение GPL</a>
+      
+        
+        (стр. <a href="/news/commercial/6444670/page8?lastmod=1310762544889">9</a>)
+      
+      (431)
+      </li>
+    
+      <li>
+      
+      <a href="/polls/polls/6396277">Какая ОС установлена на вашем рабочем компьютере?</a>
+      
+        
+        (стр. <a href="/polls/polls/6396277/page7?lastmod=1310710224340">8</a>)
+      
+      (386)
+      </li>
+    
+      <li>
+      
+      <a href="/news/pda/6407991">Nokia N9 - первый смартфон на OS MeeGo</a>
+      
+        
+        (стр. <a href="/news/pda/6407991/page7?lastmod=1310746094434">8</a>)
+      
+      (359)
+      </li>
+    
+      <li>
+      
+      <a href="/news/opensource/6451999">Вышел Mercurial 1.9</a>
+      
+        
+        (стр. <a href="/news/opensource/6451999/page6?lastmod=1310683290510">7</a>)
+      
+      (321)
+      </li>
+    
+      <li>
+      
+      <a href="/news/opensource/6404546">Haiku 1 Alpha 3</a>
+      
+        
+        (стр. <a href="/news/opensource/6404546/page6?lastmod=1310721184012">7</a>)
+      
+      (313)
+      </li>
+    
+  </ul>
+</div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+  <h2><a href="/gallery/">Галерея</a></h2>
+
+  <div class="boxlet_content">
+    <h3>Последние скриншоты</h3>
+    
+      <div style="margin-bottom: 1em">
+      <div align="center">
+        
+        <a href="/gallery/screenshots/6505695">
+          
+            
+              <img src="gallery/6505695-icon.jpg" alt="Скриншот: yet another gnome shell" width=200 height=160/>
+            
+            
+          
+        </a>
+      </div>
+      <i>
+        
+          
+            1280x1024
+          
+          
+        
+        
+      </i> yet another gnome shell от <a href="/people/silw/profile">silw</a> (24)
+      </div>
+    
+      <div style="margin-bottom: 1em">
+      <div align="center">
+        
+        <a href="/gallery/screenshots/6477257">
+          
+            
+              <img src="gallery/6477257-icon.jpg" alt="Скриншот: уютный dwm + conky + dzen" width=200 height=113/>
+            
+            
+          
+        </a>
+      </div>
+      <i>
+        
+          
+            1920x1080
+          
+          
+        
+        
+      </i> уютный dwm + conky + dzen от <a href="/people/qbbr/profile">qbbr</a> (18)
+      </div>
+    
+      <div style="margin-bottom: 1em">
+      <div align="center">
+        
+        <a href="/gallery/screenshots/6505238">
+          
+            
+              <img src="gallery/6505238-icon.jpg" alt="Скриншот: Мой Gnome Shell" width=200 height=160/>
+            
+            
+          
+        </a>
+      </div>
+      <i>
+        
+          
+            1280x1024
+          
+          
+        
+        
+      </i> Мой Gnome Shell от <a href="/people/KivApple/profile">KivApple</a> (23)
+      </div>
+    
+    <a href="/gallery/">другие скриншоты...</a>
+  </div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+  <h2>Облако Меток</h2>
+
+  <div class="boxlet_content">
+    <div align="center">
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=3d">3d</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=amd">amd</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=android">android</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=arch">arch</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=ati">ati</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=bsd">bsd</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=conky">conky</a>
+      
+        
+        <a class="cloud6" href="/view-news.jsp?tag=debian">debian</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=embedded+linux">embedded linux</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=fedora">fedora</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=firefox">firefox</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=gentoo">gentoo</a>
+      
+        
+        <a class="cloud7" href="/view-news.jsp?tag=gnome">gnome</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=gnu">gnu</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=google">google</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=gpl">gpl</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=java">java</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=kde">kde</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=kde4">kde4</a>
+      
+        
+        <a class="cloud10" href="/view-news.jsp?tag=linux">linux</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=microsoft">microsoft</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=mozilla">mozilla</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=nvidia">nvidia</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=openbox">openbox</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=openoffice">openoffice</a>
+      
+        
+        <a class="cloud8" href="/view-news.jsp?tag=opensource">opensource</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=oracle">oracle</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=python">python</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=qt">qt</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=redhat">redhat</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=sun">sun</a>
+      
+        
+        <a class="cloud9" href="/view-news.jsp?tag=ubuntu">ubuntu</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=web">web</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=windows">windows</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=wine">wine</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=xfce">xfce</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d1%8c">безопасность</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b0%d0%bb%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%8f">виртуализация</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d0%ba%d0%b0">графика</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d0%b0%d1%86%d0%b8%d1%8f">документация</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=%d0%b4%d1%80%d0%b0%d0%b9%d0%b2%d0%b5%d1%80%d1%8b">драйверы</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%b7%d0%b2%d1%83%d0%ba">звук</a>
+      
+        
+        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d0%b3%d1%80%d1%8b">игры</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b2%d1%8c%d1%8e">интервью</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d1%8f+%d1%83%d1%81%d0%bf%d0%b5%d1%85%d0%b0">история успеха</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%ba%d0%be%d0%bd%d1%84%d0%b5%d1%80%d0%b5%d0%bd%d1%86%d0%b8%d1%8f">конференция</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">образование</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=%d0%bf%d0%b0%d1%82%d0%b5%d0%bd%d1%82%d1%8b">патенты</a>
+      
+        
+        <a class="cloud7" href="/view-news.jsp?tag=%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">программирование</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=%d1%8f%d0%b4%d1%80%d0%be">ядро</a>
+      
+    </div>
+  </div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+
+
+<h2><a href="/news/">Архив Новостей</a></h2>
+
+<div class="boxlet_content">
+  
+    
+    
+    <a href="/news/archive/2011/7">2011 Июль
+      (65)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/6">2011 Июнь
+      (128)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/5">2011 Май
+      (123)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/4">2011 Апрель
+      (111)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/3">2011 Март
+      (111)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/2">2011 Февраль
+      (80)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/1">2011 Январь
+      (88)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2010/12">2010 Декабрь
+      (119)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2010/11">2010 Ноябрь
+      (141)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2010/10">2010 Октябрь
+      (137)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2010/9">2010 Сентябрь
+      (133)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2010/8">2010 Август
+      (135)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2010/7">2010 Июль
+      (159)</a> <br/>
+  
+  <br>&gt;&gt;&gt; <a href="/news/archive/"> Предыдущие месяцы</a> (с октября 1998)
+</div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+<h2>Футболки linux.org.ru</h2>
+<div class="boxlet_content">
+  <a href="/view-message.jsp?msgid=3989453"><img src="/adv/tshirt.jpg" width="150" height="150"> </a><br>
+  <a href="/view-message.jsp?msgid=3989453">Заказ футболки Linux.org.ru</a>
+</div>
+        </div>
+      
+  
+</div>
+
+
+<div style="clear: both"></div>
+
+
+
+
+
+
+</div>
+<div id="ft">
+  <p id="ft-info">
+    <a href="server.jsp">О Сервере</a> -
+    <a href="rules.jsp">Правила форума</a><br>
+
+  Разработка и&nbsp;поддержка&nbsp;&#8212; <a href="/people/maxcom/profile">Максим Валянский</a> 1998&ndash;2011<br>
+  Размещение сервера и&nbsp;подключение его к&nbsp;сети Интернет осуществляется компанией
+  ООО &laquo;<a href="http://www.ratel.ru">НИИР-РадиоНет</a>&raquo;
+  </p>
+
+<div id="ft-buttons">
+<!-- begin of Top100 logo -->
+<a href="http://top100.rambler.ru/home?id=29833" target="_blank"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-black2.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
+<!-- end of Top100 logo -->
+  <!--TopList LOGO-->
+  <a target="_top" href="http://top.list.ru/jump?from=71642"><img src="http://top.list.ru/counter?id=71642;t=11;l=1" border=0 height=31 width=88 alt="TopList"></a>
+  <!--TopList LOGO-->
+  
+</div>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2184304-1");
+pageTracker._setCustomVar(1, "Authorized", "true");
+pageTracker._setCustomVar(2, "Style", "white2");
+
+pageTracker._trackPageview();
+pageTracker._trackPageLoadTime();
+} catch(err) {}</script>
+
+</div>
+
+
+
+<!-- begin of Top100 code -->
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?29833"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?29833" alt="" width="1" height="1" border="0"/></noscript>
+<!-- end of Top100 code -->
+
+</body>
+</html>
+

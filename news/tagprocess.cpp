@@ -200,9 +200,11 @@ int checksum(const string &src, int flag)
     int cnt = 0;
 
     for (i = 0; i < src.size(); ++i)
+    {
         // если встретили '/' - тег закрывающий. Увеличиваем счетчик.
         if (src[i] < 0)
             ++cnt;
+    }
     // если закрывающих тегов больше, чем открывающих - возвратим 0
     if (cnt > src.size() / 2 + 1)
         return 0;
@@ -271,7 +273,7 @@ int checkWordTruePairs(const string &src, int flag)
             {
                 // пока не получим открывающий для текущего тега, извлекаем
                 // теги из стека и проверяем их
-                char ch = topTag + '/';
+                char ch = topTag % 128 - 128;
                 while (ch != src[i])
                 {
                     st.pop();

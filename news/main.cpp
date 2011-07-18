@@ -6,7 +6,104 @@
 
 using namespace std;
 
-#define MINSZ 2
+#define MINSZ 8
+
+
+int getStringFreq(const string &src, const string &str, short **table, 
+                  int tableSz, int pos)
+{
+    int freq = 0;
+    int i = 0;
+    int j = 0;
+   
+    for (i = 0; i < tableSz; ++i)
+    {
+        if (table[i][pos] != 0)
+        {
+            int temp = i;
+            string data;
+            while (j < str.size() && temp < tableSz && table[temp][pos + j] != 0)
+            {
+                data += src[temp];
+                ++temp;
+                ++j;
+            }
+            if (!strcmp(str.c_str(), data.c_str()))
+                ++freq;
+            j = 0;
+        }
+    }
+    return freq;
+}
+
+int abracadabra(set <pair <string, int>, ltstr> &freq, const string &src, const string &dataString,
+                short **table, int tableSz, int pos, int &avgLen, int &avgFreq)
+{
+    string first(src, 0, src.size() - 1);
+    string second(src, 1 ,src.size() - 1);
+    set <pair <string, int>, ltstr>::iterator setIter;
+    int flag = 0;
+    if (first.size() < MINSZ)
+        return 1;
+
+    if (first.size() == MINSZ)
+    {
+        setIter = freq.find(make_pair(first, 0));
+        if (setIter == freq.end())
+        {
+            if (checksum(first, 0) && checkWordTruePairs(first, 0))
+            {
+                int strFreq = getStringFreq(dataString, first, table, tableSz, pos);
+                if (strFreq < MINSZ)
+                    return 0;
+                freq.insert(make_pair(first, strFreq));
+                avgLen += first.size();
+                avgFreq += strFreq;
+            }
+        }
+    }
+    // в любом случае if не нужен
+    if (second.size() == MINSZ)
+    {
+        setIter = freq.find(make_pair(second, 0));
+        if (setIter == freq.end())
+        {
+            if (checksum(second, 0) && checkWordTruePairs(second, 0))
+            {
+                int strFreq = getStringFreq(dataString, second, table, tableSz, pos + 1);
+                if (strFreq < MINSZ)
+                    return 0;
+                freq.insert(make_pair(second, strFreq));
+                avgLen += second.size();
+                avgFreq += strFreq;
+            }
+        }
+        return 1;
+    }
+
+    if (abracadabra(freq, first, dataString, table, tableSz, pos, avgLen, avgFreq) != 0 && 
+        abracadabra(freq, second, dataString, table, tableSz, pos, avgLen, avgFreq) != 0)
+    {
+        setIter = freq.find(make_pair(src, 0));
+        if (setIter == freq.end())
+        {
+            if (checksum(src, 0) && checkWordTruePairs(src, 0))
+            {
+                int strFreq = getStringFreq(dataString, src, table, tableSz, pos);
+                if (strFreq < MINSZ)
+                    return 0;
+                freq.insert(make_pair(src, strFreq));
+                avgLen += src.size();
+                avgFreq += strFreq;
+            }
+        }
+    }
+    else
+        return 0;
+
+    return 0;
+
+}
 
 int main()
 {
@@ -78,6 +175,7 @@ int main()
     remDoubleTag.push_back(make_pair("<span>", "</span>"));
     remDoubleTag.push_back(make_pair("<p>", "</p>"));
 
+    remTag.push_back("<!doctype>");
     remTag.push_back("<html>");
     remTag.push_back("</html>");
     remTag.push_back("<head>");
@@ -100,8 +198,6 @@ int main()
     removeTags(&modifiedTagPosition, modifiedData, remDoubleTag);
    
     // составляем clearedData
-    // ;TODO2 убрать этот костыль и сделать одно: clearedData или 
-    // modifiedData
     for(i = 0; i < modifiedTagPosition.size(); ++i)
     {
         if (modifiedTagPosition[i].first != -1)
@@ -109,9 +205,15 @@ int main()
             string tag = getTag(modifiedTagPosition[i], modifiedData);
             int ch = 0;
             if (tag[1] != '/')
-                ch = tag[1];
+                // <tag[1]>           -- tag[1] + 47
+                // <tag[1]tag[2]..>   -- tag[1] + tag[2]
+                // VV Overflow 256    -> "ch > 0"
+                ch = tag[1] + tag[2] + 128;
             else
-                ch = '/' + tag[2]; 
+                // </tag[2]>          -- tag[2] + 47
+                // </tag[2][tag[3]..> -- tag[2] + tag[3]
+                // VV Overflow 128    -> "ch < 0"
+                ch = 128 + (tag[2] + tag[3]) % 128; 
             clearedData += ch;
             clearedTagPosition.push_back(modifiedTagPosition[i]);
         }
@@ -119,7 +221,6 @@ int main()
 
     // составляем set из пар (строка, частота встречи этой строки)
     // set - повторяющиеся элементы удаляются
-    // ;TODO3 Убрать этот костыль и составить нормальное составление
     set <pair <string, int>, ltstr> freq;
     set <pair <string, int>, ltstr>::iterator setIter;
 
@@ -142,6 +243,8 @@ int main()
         }
     }
 
+    int avgLen = 0;
+    int avgFreq = 0;
     // получаем строчку
     int diag = 1;
     while(diag != sz)
@@ -150,6 +253,7 @@ int main()
         {
             if (table[i][i + diag] != 0)
             {
+                int temp = i;
                 string str;
                 int beg = i;
                 while (i < sz - diag && table[i][i + diag] != 0)
@@ -157,80 +261,16 @@ int main()
                     str += clearedData[i];
                     ++i;
                 }
-                // если её размер меньше MINSZ тегов - не нужна.
-                if (str.size() == MINSZ)
-                {
-                    setIter = freq.find(make_pair(str, 0));
-                    if (setIter == freq.end())
-                    {
-                        if (checksum(str, 0) && checkWordTruePairs(str, 0))
-                        {
-                            freq.insert(make_pair(str, 1));
-                        }
-                    }
-                    else
-                        setIter->second++;
-                }
-                // если больше MINSZ - выбираем все подпоследовательности длины >= MINSZ символов
-                if (str.size() > MINSZ)
-                {
-                    int ind = 0;
-                    int jnd = 0;
-                    for(ind = MINSZ; ind <= str.size(); ++ind)
-                    {
-                        for (jnd = 0; jnd + ind <= str.size(); ++jnd)
-                        {
-                            string subs(str.c_str() + jnd, ind);
-                            if (checksum(subs, 0) && checkWordTruePairs(subs, 0))
-                            {
-                                setIter = freq.find(make_pair(subs, 0));
-                                if (setIter == freq.end())
-                                    freq.insert(make_pair(subs, 1));
-                                else
-                                    setIter->second++;
-                            }
-                        }
-                    }
-                }
+                abracadabra(freq, str, clearedData, table, sz, temp + diag, avgLen, avgFreq);
             }
         }
         ++diag;
     }
     
     //////////////////////////////////////////////////////////////////////////
+    avgLen = avgLen / freq.size();
+    avgFreq = avgFreq / freq.size();
 
-/*    // Шаг. Последовательности какой длины мы ищем.
-    // ;TODO4 Поставить шаг не с количества слов, а с меньшего числа
-    // последовательности длиной в всю строку встретятся немного раз.
-    int step = getWordCount(clearedData);
-
-    // минимум длина = MINSZ
-    while (step > MINSZ)
-    {
-        for (i = getWordCount(clearedData) / step; i - step >= 0; --i)
-        {
-            // получаем строку из слов
-            string ret = getWordString(clearedData, i - step, i);
-            // если она начинается с закрывающего тега - отбрасываем
-            if (ret[1] == '/')
-                continue;
-            // выполняем проверки
-            if (checksum(ret) && checkWordTruePairs(ret))
-            {
-                // получаем частоту встречи нашей фразы в clearedData
-                int f = getWordFreq(clearedData, ret);
-                if (f < MINSZ)
-                    continue;
-                // ~эвристика, хехе
-                // Вставляем в set пар
-                freq.insert(make_pair(ret, 1 * f + 30 * getWordCount(ret)));
-            }
-        }
-        // уменьшаем длину фразы.
-        --step;
-    }
-    */
-    
     set<pair<string, int>, ltstr>::iterator it;
     vector<pair<string, int>> temp;
     int sum = 0;
@@ -238,7 +278,7 @@ int main()
     // ;TODO5 см. ;TODO3
     for(it = freq.begin(); it != freq.end(); it++ )
     {
-        if (it->second >= 8)
+        if (it->second >= 8 && it->first.size() < avgLen * 1.5 && it->second < avgFreq * 1.5)
         {
             temp.push_back(*it);
             sum += it->second;
@@ -246,18 +286,28 @@ int main()
     }
     // сортируем пары
     sort(temp.begin(), temp.end(), pred());
+
     // Считаем, что последняя пара в массиве - блок, с которого начинается
     // новость
-    string BestString = temp.back().first;
    
 
     // Ищем по позициям в clearedTagPosition позиции в realTagPosition
     // следующяя новость будет располагаться с начала следующего блока.
     // совпадающего с BestString, так как считаем новости идущими подряд
     // ;TODO6 см ;TODO2
-    int begin = wordSubPtr(clearedData, temp.back().first);
-    const char *Rptr = strstr(clearedData.c_str(), temp.back().first.c_str());
-    int end = wordSubPtr(Rptr, temp.back().first, 1) + begin;
+    int begin = strstr(clearedData.c_str(), temp.back().first.c_str()) - clearedData.c_str();
+    string back;
+    vector<pair<string, int>>::iterator vit = temp.end();
+    --vit;
+    for (;;--vit)
+    {
+        if (strstr(temp.back().first.c_str(), vit->first.c_str()) == NULL)
+        {
+            back = vit->first;
+            break;
+        }
+    }
+    int end = strstr(clearedData.c_str(), back.c_str()) - clearedData.c_str();
 
     int rbegin;
     int rend;
@@ -266,13 +316,10 @@ int main()
     {
         if (clearedTagPosition[begin].first == modifiedTagPosition[i].first)
             rbegin = i;
-    }
-
-    for(i = 0; i < modifiedTagPosition.size(); ++i)
-    {
         if (clearedTagPosition[end].second == modifiedTagPosition[i].second)
             rend = i;
     }
+
     // Получаем строчку новости и выводим её
     string res(data, realTagPosition[rbegin].first, 
                realTagPosition[rend].first - realTagPosition[rbegin].first);
