@@ -13,16 +13,42 @@ int main()
 	fstream fout("out", ios::out);
     // Строчка, содержащая в себе входной файл
 	string data((std::istreambuf_iterator<char>(fin)), std::istreambuf_iterator<char>());
-    // измененная строчка входного файла
+    // Измененная строчка входного файла
 	string modifiedData;
-    // измененная modifiedData. В clearedData нет удаленных тегов
+    // Измененная modifiedData. В clearedData нет удаленных тегов
     string clearedData;
-    // позиция тега в data
+    // Позиция тега в data
 	vector< pair<int, int> > realTagPosition;
     // Позиция тега в modifiedData
 	vector< pair<int, int> > modifiedTagPosition;
     // Позиция тега в modifiedData
     vector< pair<int, int> > clearedTagPosition;
+    // Set из пар <строка, частота встречи строки>
+    // Повторяющиеся строки не добавляются
+    // От частот никак не зависит
+    set <pair <string, int>, ltstr> freq;
+    set <pair <string, int>, ltstr>::iterator setIter;
+    // Таблица для поиска повторяющихся строк
+    // Например: abcabcac
+    //   a b c a b c a c
+    // a * 0 0 * 0 0 * 0
+    // b 0 * 0 0 * 0 0 0
+    // c 0 0 * 0 0 * 0 *
+    // a * 0 0 * 0 0 * 0
+    // b 0 * 0 0 * 0 0 0
+    // c 0 0 * 0 0 * 0 *
+    // a * 0 0 * 0 0 * 0
+    // c 0 0 * 0 0 * 0 *
+    short **table;
+    // Размер таблицы - tableSize X tableSize
+    int tableSize = 0;
+    // Средняя длина строки в freq
+    int avgLen = 0;
+    // Средняя частота встречи строки
+    int avgFreq = 0;
+    // массив возможных начал/концов новостей
+    vector<pair<string, int>> possibleTags;
+    vector<pair<string, int>>::iterator vectorIter;
 	int i = 0;
 	int j = 0;
 	pair <int, int> tagPosition = make_pair(-1, -1);
@@ -41,7 +67,6 @@ int main()
 			tagPosition.first = i;
 			modTagPosition.first = j;
 			// пока не дойдем до пробела/закрывающей скобки - записываем
-			// ;TODO1 пробелы... < a >? 
 			while (data[i] != ' ' && data[i] != '>')
 			{
 				modifiedData += data[i];
@@ -119,20 +144,17 @@ int main()
         }
     }
 
-    // составляем set из пар (строка, частота встречи этой строки)
-    // set - повторяющиеся элементы удаляются
-    set <pair <string, int>, ltstr> freq;
-    set <pair <string, int>, ltstr>::iterator setIter;
+    // Задаем размер таблицы
+    tableSize = clearedData.size();
+    // Выделяем память на таблицу
+    table = new short *[tableSize];
+    for (i = 0; i < tableSize; ++i)
+        table[i] = new short[tableSize];
 
-    //////////////////////////////////////////////////////////////////////////
-    int sz = clearedData.size();
-    short **table;
-    table = new short *[sz];
-    for (i = 0; i < sz; ++i)
-        table[i] = new short[sz];
-    for (i = 0; i < sz; ++i)
+    // Заполняем таблицу
+    for (i = 0; i < tableSize; ++i)
     {
-        for (j = 0; j < sz; ++j)
+        for (j = 0; j < tableSize; ++j)
         {
             if (clearedData[i] == clearedData[j])
             {
@@ -143,80 +165,69 @@ int main()
         }
     }
 
-    int avgLen = 0;
-    int avgFreq = 0;
-    // получаем строчку
+    // Читаем в table по диагоналям
+    // diag - Номер диагонали
+    // diag = 0 - главная диагональ, заполнена 
     int diag = 1;
-    while(diag != sz)
+    while(diag != tableSize)
     {
-        for (i = 0; i < sz - diag; ++i)
+        for (i = 0; i < tableSize - diag; ++i)
         {
             if (table[i][i + diag] != 0)
             {
-                int temp = i;
+                // Считываем строчку
                 string str;
                 int beg = i;
-                while (i < sz - diag && table[i][i + diag] != 0)
+                while (i < tableSize - diag && table[i][i + diag] != 0)
                 {
                     str += clearedData[i];
                     ++i;
                 }
-                getTagSubs(freq, str, clearedData, table, sz, temp + diag, avgLen, avgFreq);
+                // И проверяем возможность этой строчки(или её подстрок) быть началом или концом новости
+                getTagSubs(freq, str, clearedData, table, tableSize, beg + diag, avgLen, avgFreq);
             }
         }
+        // Читаем следующую диагональ
         ++diag;
     }
-    
-    //////////////////////////////////////////////////////////////////////////
+    // Вычисляем средние длины/частоты строк
     avgLen = avgLen / freq.size();
     avgFreq = avgFreq / freq.size();
 
-    set<pair<string, int>, ltstr>::iterator it;
-    vector<pair<string, int>> temp;
-    int sum = 0;
-    // перекидываем из set в массив
-    // ;TODO5 см. ;TODO3
-    for(it = freq.begin(); it != freq.end(); it++ )
+    for(setIter = freq.begin(); setIter != freq.end(); ++setIter)
     {
-        if (it->second >= 8 && it->first.size() < avgLen * 1.5 && it->second < avgFreq * 1.5)
-        {
-            temp.push_back(*it);
-            sum += it->second;
-        }
+        if (setIter->second >= 8 && setIter->first.size() < avgLen * 1.5 && setIter->second < avgFreq * 1.5)
+            possibleTags.push_back(*setIter);
     }
     // сортируем пары
-    sort(temp.begin(), temp.end(), pred());
+    sort(possibleTags.begin(), possibleTags.end(), pred());
 
 
     // Ищем по позициям в clearedTagPosition позиции в realTagPosition
-    // следующяя новость будет располагаться с начала следующего блока.
-    // совпадающего с BestString, так как считаем новости идущими подряд
-    // ;TODO6 см ;TODO2
-    vector<pair<string, int>>::iterator vit = temp.end();
-    --vit;
-    while (vit->second != (vit - 1)->second)
+    // Количество встреч начал и концов новостей должно быть одинаково
+    vectorIter = possibleTags.end();
+    --vectorIter;
+    while (vectorIter->second != (vectorIter - 1)->second)
     {
-        --vit;
+        --vectorIter;
     }
-    int begin = strstr(clearedData.c_str(), vit->first.c_str()) - clearedData.c_str();
-    string back;
-   
-    for (;;--vit)
+    // Ищем позицию, с которой начинается новость
+    int begin = strstr(clearedData.c_str(), vectorIter->first.c_str()) - clearedData.c_str();
+    while (!strstr(vectorIter->first.c_str(), (vectorIter - 1)->first.c_str()) == NULL)
     {
-        if (strstr(vit->first.c_str(), (vit - 1)->first.c_str()) == NULL)
-        {
-            back = (vit - 1)->first;
-            break;
-        }
+        --vectorIter;
     }
-    int end = strstr(clearedData.c_str(), back.c_str()) - clearedData.c_str();
-
+    // Позиция, на которой новость заканчивается
+    int end = strstr(clearedData.c_str(), (vectorIter - 1)->first.c_str()) - clearedData.c_str();
+    
+    // Если в possibleTags мы перепутали начало и конец
     if (begin > end)
     {
         int t = begin;
         begin = end;
         end  = t;
     }
+    // номер тега, с которого новость начинается и заканчивается, в modifiedTagPosition
     int rbegin;
     int rend;
     

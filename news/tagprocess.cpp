@@ -183,17 +183,17 @@ int checkWordTruePairs(const string &src)
 }
 
 int getStringFreq(const string &src, const string &str, short **table, 
-                  int tableSz, int pos)
+                  unsigned int tableSz, int pos)
 {
-    int freq = 0;
-    int i = 0;
-    int j = 0;
+    unsigned int freq = 0;
+    unsigned int i = 0;
+    unsigned int j = 0;
 
     for (i = 0; i < tableSz; ++i)
     {
         if (table[i][pos] != 0)
         {
-            int temp = i;
+            unsigned int temp = i;
             string data;
             while (j < str.size() && temp < tableSz && table[temp][pos + j] != 0)
             {
@@ -210,7 +210,7 @@ int getStringFreq(const string &src, const string &str, short **table,
 }
 
 int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const string &dataString,
-               short **table, int tableSz, int pos, int &avgLen, int &avgFreq)
+               short **table, unsigned int tableSz, int pos, int &avgLen, int &avgFreq)
 {
     string first(src, 0, src.size() - 1);
     string second(src, 1 ,src.size() - 1);
@@ -225,10 +225,6 @@ int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const s
     if (first.size() == MINSZ)
     {
         setIter = freq.find(make_pair(first, 0));
-        if (first[0] == 77 && first[1] == 31 && first[2] == -97 && first[3] == -51)
-        {
-            int a = 0;
-        }
         if (setIter == freq.end())
         {
             if (checksum(first) && checkWordTruePairs(first))
@@ -247,10 +243,6 @@ int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const s
     if (second.size() == MINSZ)
     {
         setIter = freq.find(make_pair(second, 0));
-        if (second[0] == 77 && second[1] == 31 && second[2] == -97 && second[3] == -51)
-        {
-            int a = 0;
-        }
         if (setIter == freq.end())
         {
             if (checksum(second) && checkWordTruePairs(second))

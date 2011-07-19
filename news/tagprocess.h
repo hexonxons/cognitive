@@ -188,7 +188,7 @@ int checkWordTruePairs(const string &src);
  */
 
 int getStringFreq(const string &src, const string &str, short **table, 
-                  int tableSz, int pos);
+                  unsigned int tableSz, int pos);
 
 /**
  * \fn  int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src,
@@ -213,5 +213,5 @@ int getStringFreq(const string &src, const string &str, short **table,
  */
 
 int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &str, const string &dataString,
-               short **table, int tableSz, int pos, int &avgLen, int &avgFreq);
+               short **table, unsigned int tableSz, int pos, int &avgLen, int &avgFreq);
 #endif
