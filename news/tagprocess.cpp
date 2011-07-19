@@ -282,3 +282,45 @@ int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const s
     return 0;
 
 }
+
+string getNews(const string &data, char *srcBegin, const string &newsBegin, const string &newsEnd,
+               vector< pair<int, int> > &clearedTagPosition, vector< pair<int, int> > &modifiedTagPosition,
+               vector< pair<int, int> > &realTagPosition, int &offset)
+{
+    int i = 0;
+    // Ищем позицию, с которой начинается новость
+    int begin = strstr(srcBegin + offset, newsBegin.c_str()) - srcBegin;
+    // Позиция, на которой новость заканчивается
+    int end = strstr(srcBegin + offset, newsEnd.c_str()) - srcBegin;
+    if (end < 0)
+    {
+        string str;
+        return str;
+    }
+    int nextBegin = strstr(srcBegin + begin + 1, newsBegin.c_str()) - srcBegin;
+    int nextEnd = strstr(srcBegin + end + 1, newsEnd.c_str()) - srcBegin;
+
+    while (nextEnd < nextBegin)
+    {
+        if (nextEnd < 0)
+            break;
+        end = nextEnd;
+        nextEnd = strstr(srcBegin + end + 1, newsEnd.c_str()) - srcBegin;
+    }
+    offset = end + 1;
+    // номер тега, с которого новость начинается и заканчивается, в modifiedTagPosition
+    int rbegin;
+    int rend;
+
+    for(i = 0; i < modifiedTagPosition.size(); ++i)
+    {
+        if (clearedTagPosition[begin].first == modifiedTagPosition[i].first)
+            rbegin = i;
+        if (clearedTagPosition[end].second == modifiedTagPosition[i].second)
+            rend = i;
+    }
+    string ret(data, realTagPosition[rbegin].first, 
+        realTagPosition[rend].first - realTagPosition[rbegin].first);
+    return ret;
+
+}

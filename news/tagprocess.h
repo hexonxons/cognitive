@@ -214,4 +214,8 @@ int getStringFreq(const string &src, const string &str, short **table,
 
 int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &str, const string &dataString,
                short **table, unsigned int tableSz, int pos, int &avgLen, int &avgFreq);
+
+string getNews(const string &data, char *srcBegin, const string &newsBegin, const string &newsEnd,
+               vector< pair<int, int> > &clearedTagPosition, vector< pair<int, int> > &modifiedTagPosition,
+               vector< pair<int, int> > &realTagPosition, int &offset);
 #endif

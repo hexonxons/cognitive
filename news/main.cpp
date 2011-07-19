@@ -211,21 +211,28 @@ int main()
     {
         --vectorIter;
     }
+    string newsBegin;
+    string newsEnd;
+
     // »щем позицию, с которой начинаетс€ новость
     int begin = strstr(clearedData.c_str(), vectorIter->first.c_str()) - clearedData.c_str();
+    newsBegin = vectorIter->first;
     while (!strstr(vectorIter->first.c_str(), (vectorIter - 1)->first.c_str()) == NULL)
     {
         --vectorIter;
     }
     // ѕозици€, на которой новость заканчиваетс€
     int end = strstr(clearedData.c_str(), (vectorIter - 1)->first.c_str()) - clearedData.c_str();
-    
+    newsEnd = (vectorIter - 1)->first;
     // ≈сли в possibleTags мы перепутали начало и конец
     if (begin > end)
     {
         int t = begin;
+        string ts = newsBegin;
         begin = end;
+        newsBegin = newsEnd;
         end  = t;
+        newsEnd = ts;
     }
     // номер тега, с которого новость начинаетс€ и заканчиваетс€, в modifiedTagPosition
     int rbegin;
@@ -238,10 +245,17 @@ int main()
         if (clearedTagPosition[end].second == modifiedTagPosition[i].second)
             rend = i;
     }
-
+    char *strBegin = (char *)clearedData.c_str();
+    int offset = 0;
     // ѕолучаем строчку новости и выводим еЄ
-    string res(data, realTagPosition[rbegin].first, 
-               realTagPosition[rend].first - realTagPosition[rbegin].first);
-    fout << res;
+    while (strlen(strBegin) > offset)
+    {
+        string res = getNews(data, strBegin, newsBegin, newsEnd, clearedTagPosition,
+            modifiedTagPosition, realTagPosition, offset);
+        if (res.empty())
+            break;
+        fout << res;
+    }
+
 	return 0;
 }
