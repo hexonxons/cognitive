@@ -74,21 +74,6 @@ struct ltstr
 string getTag(pair<int, int> &tagPos, const string &src);
 
 /**
- * \fn  string getTag(int tagNum, const string &src);
- *
- * \brief   Получение тега по его порядковому номеру
- *
- * \author  Alexander
- * \date    7/13/2011
- *
- * \param   tagNum  Порядковый номер тега.
- * \param   src     Строчка с тегами.
- *
- * \return  Тег.
- */
-string getTag(int tagNum, const string &src);
-
-/**
  * \fn  void removeTags(vector< pair<int, int> > *tagsPos, 
  * 		const string &src, vector<string> &tagsToRemove);
  *

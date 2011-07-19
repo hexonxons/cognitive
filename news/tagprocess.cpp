@@ -14,32 +14,6 @@ string getTag(pair<int, int> &tagPos, const string &src)
     return ret;
 }
 
-string getTag(int tagNum, const string &src)
-{
-    // счетчик тегов
-    unsigned int cnt = 0;
-    unsigned int i = 0;
-    string ret;
-
-    // Отсчитываем до начала tagNum`го тега 
-    for (i = 0; i < src.size() && cnt != tagNum + 1; ++i)
-    {
-        if (src[i] == '<')
-            ++cnt;
-    }
-    // заносим в ret '<'
-    ret = '<';
-    // пока не встретим '>', записываем в ret символы тега
-    while (src[i] != '>')
-    {
-        ret += src[i++];
-    }
-    // записываем конец тега, '>'
-    ret += '>';
-    // возвращаем тег
-    return ret;
-}
-
 void removeTags(vector< pair<int, int> > *tagsPos, const string &src, vector<string> &tagsToRemove)
 {
     unsigned int i = 0;
@@ -278,8 +252,6 @@ int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const s
             else
                 return 0;
         }
-        else
-            return 1;
     }
     else
         return 0;

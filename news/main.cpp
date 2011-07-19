@@ -196,7 +196,7 @@ int main()
 
     for(setIter = freq.begin(); setIter != freq.end(); ++setIter)
     {
-        if (setIter->second >= 8 && setIter->first.size() < avgLen * 1.5 && setIter->second < avgFreq * 1.5)
+        if (setIter->second >= 8 && setIter->first.size() < avgLen * 1.5 && setIter->second < avgFreq * 1.6)
             possibleTags.push_back(*setIter);
     }
     // сортируем пары
