@@ -11,11 +11,16 @@
 #include <vector>
 #include <algorithm>
 #include <stack>
+#include <set>
 
 using std::pair;
 using std::string;
 using std::vector;
 using std::stack;
+using std::set;
+
+// magic...
+#define MINSZ 6
 
 /**
  * \struct  pred
@@ -35,6 +40,15 @@ struct pred
             return left.first.length() < right.first.length();
     }
 };
+
+/**
+ * \struct  ltstr
+ *
+ * \brief   Предикат сравнения в set. 
+ *
+ * \author  Alexander
+ * \date    7/19/2011
+ */
 
 struct ltstr
 {
@@ -106,39 +120,6 @@ void removeTags(vector< pair<int, int> > *tagsPos, const string &src,
 void removeTags(vector< pair<int, int> > *tagsPos, const string &src, 
                 vector< pair<string, string> > &tagsToRemove);
 
-/**
- * \fn  int getWordFreq(const string &src, const string &word);
- *
- * \brief   Получение количества встреч word в src. 
- *
- * \author  Alexander
- * \date    7/13/2011
- *
- * \param   src     Строка слов.
- * \param   word    Слово.
- *
- * \return  Частота встречи word в src.
- */
-int getWordFreq(const string &src, const string &word);
-
-/**
- * \fn  string getWordString(const string &src, int begin, int end);
- *
- * \brief   Получает строку из слов, с begin`го до end`го слова
- * 			Слово - <*>. Нумерация слов - 1..n
- *
- * \author  Alexander
- * \date    7/13/2011
- *
- * \param   src     Строка.
- * \param   begin   Позиция в src, с которой считывать слова.
- * \param   end     Позиция в src, по которую считывать слова.
- *
- * \return  Строчку из слов c с begin`го до end`го, или до последнего, если
- * 			end > количества слов.
- * 			NULL, если begin > количества слов.
- */
-string getWordString(const string &src, int begin, int end);
 
 /**
  * \fn  int getWordCount(const string &src);
@@ -171,7 +152,6 @@ int getWordCount(const string &src);
  * 			0 иначе
  */
 int checksum(const string &src);
-int checksum(const string &src, int flag);
 
 /**
  * \fn  int checkWordTruePairs(const string &src);
@@ -188,39 +168,50 @@ int checksum(const string &src, int flag);
  * 			0, иначе
  */
 int checkWordTruePairs(const string &src);
-int checkWordTruePairs(const string &src, int flag);
-/**
- * \fn  int wordSubPtr(const string &src, const string &word);
- *
- * \brief   Возвращает количество тегов в строке, предшествующее началу
- * 			искомой последовательности word
- *
- * \author  Alexander
- * \date    7/13/2011
- *
- * \param   src     Строка.
- * \param   word    Последовательность тегов-слов, подстрока src.
- *
- * \return  Количество тегов.
- */
-int wordSubPtr(const string &src, const string &word);
 
 /**
- * \fn  int wordSubPtr(const string &src, const string &word, int offset);
+ * \fn  int getStringFreq(const string &src, const string &str, short **table, int tableSz,
+ *      int pos);
  *
- * \brief   Возвращает количество тегов в строке со сдвигом на offset 
- * 			элементов, предшествующее началу искомой последовательности
- * 			word
+ * \brief   Получает частоту встречи str в src
  *
  * \author  Alexander
- * \date    7/13/2011
+ * \date    7/19/2011
  *
- * \param   src     Строка.
- * \param   word    Последовательность тегов-слов, подстрока src.
- * \param   offset  Сдвиг в src.
+ * \param   src             Исходная строка.
+ * \param   str             Строка, частоту встречи которой мы ищем.
+ * \param [in,out]  table   Таблица по которой ищем повторения.
+ * \param   tableSz         Размер таблицы.
+ * \param   pos             Позиция в таблице по вертикали, с которой начались совпадения str c src.
  *
- * \return  Количество тегов.
+ * \return  Честота встречи str в src.
  */
-int wordSubPtr(const string &src, const string &word, int offset);
 
+int getStringFreq(const string &src, const string &str, short **table, 
+                  int tableSz, int pos);
+
+/**
+ * \fn  int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src,
+ *      const string &dataString, short **table, int tableSz, int pos, int &avgLen, int &avgFreq);
+ *
+ * \brief   Получает все последовательности тегов, подходящие под условия.
+ *
+ * \author  Alexander
+ * \date    7/19/2011
+ *
+ * \param [in,out]  freq        Set пар строка - частота встречи строки.
+ * \param   str                 Строка тегов, для которой (и всех её подстрок) мы хотим найти частоту
+ * 								встречи и которая является возможным началом/концом новости
+ * \param   src                 Исходная строка.
+ * \param [in,out]  table       Таблица по которой ищем повторения.
+ * \param   tableSz             Размер таблицы.
+ * \param   pos                 Позиция в таблице по вертикали, с которой начались совпадения str c src.
+ * \param [in,out]  avgLen      Средняя длина последовательности.
+ * \param [in,out]  avgFreq     Средняя частота последовательности.
+ *
+ * \return  1/0.
+ */
+
+int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &str, const string &dataString,
+               short **table, int tableSz, int pos, int &avgLen, int &avgFreq);
 #endif

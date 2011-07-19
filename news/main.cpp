@@ -1,122 +1,9 @@
 #include "tagprocess.h"
 
 #include <iostream>
-#include <set>
 #include <fstream>
 
 using namespace std;
-
-#define MINSZ 6
-
-
-int getStringFreq(const string &src, const string &str, short **table, 
-                  int tableSz, int pos)
-{
-    int freq = 0;
-    int i = 0;
-    int j = 0;
-   
-    for (i = 0; i < tableSz; ++i)
-    {
-        if (table[i][pos] != 0)
-        {
-            int temp = i;
-            string data;
-            while (j < str.size() && temp < tableSz && table[temp][pos + j] != 0)
-            {
-                data += src[temp];
-                ++temp;
-                ++j;
-            }
-            if (!strcmp(str.c_str(), data.c_str()))
-                ++freq;
-            j = 0;
-        }
-    }
-    return freq;
-}
-
-int abracadabra(set <pair <string, int>, ltstr> &freq, const string &src, const string &dataString,
-                short **table, int tableSz, int pos, int &avgLen, int &avgFreq)
-{
-    string first(src, 0, src.size() - 1);
-    string second(src, 1 ,src.size() - 1);
-    set <pair <string, int>, ltstr>::iterator setIter;
-    int flag = 0;
-    if (first.size() < MINSZ)
-        return 1;
-    // useless
-    if (second.size() < MINSZ)
-        return 1;
-
-    if (first.size() == MINSZ)
-    {
-        setIter = freq.find(make_pair(first, 0));
-        if (first[0] == 77 && first[1] == 31 && first[2] == -97 && first[3] == -51)
-        {
-            int a = 0;
-        }
-        if (setIter == freq.end())
-        {
-            if (checksum(first, 0) && checkWordTruePairs(first, 0))
-            {
-                int strFreq = getStringFreq(dataString, first, table, tableSz, pos);
-                if (strFreq >= MINSZ)
-                {
-                    freq.insert(make_pair(first, strFreq));
-                    avgLen += first.size();
-                    avgFreq += strFreq;
-                }
-            }
-        }
-    }
-    // в любом случае if не нужен
-    if (second.size() == MINSZ)
-    {
-        setIter = freq.find(make_pair(second, 0));
-        if (second[0] == 77 && second[1] == 31 && second[2] == -97 && second[3] == -51)
-        {
-            int a = 0;
-        }
-        if (setIter == freq.end())
-        {
-            if (checksum(second, 0) && checkWordTruePairs(second, 0))
-            {
-                int strFreq = getStringFreq(dataString, second, table, tableSz, pos + 1);
-                if (strFreq >= MINSZ)
-                {
-                    freq.insert(make_pair(second, strFreq));
-                    avgLen += second.size();
-                    avgFreq += strFreq;
-                }
-            }
-        }
-        return 1;
-    }
-
-    if (abracadabra(freq, first, dataString, table, tableSz, pos, avgLen, avgFreq) != 0 && 
-        abracadabra(freq, second, dataString, table, tableSz, pos, avgLen, avgFreq) != 0)
-    {
-        setIter = freq.find(make_pair(src, 0));
-        if (setIter == freq.end())
-        {
-            if (checksum(src, 0) && checkWordTruePairs(src, 0))
-            {
-                int strFreq = getStringFreq(dataString, src, table, tableSz, pos);
-                if (strFreq < MINSZ)
-                    return 0;
-                freq.insert(make_pair(src, strFreq));
-                avgLen += src.size();
-                avgFreq += strFreq;
-            }
-        }
-    }
-    else
-        return 0;
-
-    return 0;
-
-}
 
 int main()
 {
@@ -274,17 +161,7 @@ int main()
                     str += clearedData[i];
                     ++i;
                 }
-                string tmp;
-                tmp.push_back(77);
-                tmp.push_back(31);
-                tmp.push_back(-97);
-                tmp.push_back(-51);
-                tmp.push_back(77);
-                if (strstr(str.c_str(), tmp.c_str()))
-                {
-                    int a  = 0;
-                }
-                abracadabra(freq, str, clearedData, table, sz, temp + diag, avgLen, avgFreq);
+                getTagSubs(freq, str, clearedData, table, sz, temp + diag, avgLen, avgFreq);
             }
         }
         ++diag;
@@ -310,9 +187,6 @@ int main()
     // сортируем пары
     sort(temp.begin(), temp.end(), pred());
 
-    // Считаем, что последняя пара в массиве - блок, с которого начинается
-    // новость
-   
 
     // Ищем по позициям в clearedTagPosition позиции в realTagPosition
     // следующяя новость будет располагаться с начала следующего блока.

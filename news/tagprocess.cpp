@@ -116,55 +116,6 @@ void removeTags(vector< pair<int, int> > *tagsPos, const string &src,
     }
 }
 
-int getWordFreq(const string &src, const string &word)
-{
-    unsigned int cnt = 0;
-    unsigned int i = 0;
-
-    // проходим по всей строке
-    for(i = 0; i < src.size(); ++i)
-    {
-        // если слово нашлось в строке
-        if (!strncmp(src.c_str() + i, word.c_str(), word.size()))
-        {
-            // увеличиваем счетчик повторений
-            ++cnt;
-            // пропускаем word.size() символов в src (++i)
-            i += word.size() - 1;
-        }
-    }
-    return cnt;
-}
-
-string getWordString(const string &src, int begin, int end)
-{
-    unsigned int i = 0;
-    unsigned int cnt = 0;
-    string ret;
-
-    // проходим по всей строке
-    for (i = 0; i < src.size(); ++i)
-    {
-        // считаем каждое слово
-        if (src[i] == '<')
-            ++cnt;
-        // как досчитали до нужного
-        if (cnt == begin + 1)
-        {
-            // пока не дойдем до конца end-го слова, пишем все в строку ret
-            while (cnt != end + 1 && i < src.size())
-            {
-                ret += src[i];
-                if (src[i] == '>')
-                    ++cnt;
-                ++i;
-            }
-            return ret;
-        }
-    }
-    return NULL;
-}
-
 int getWordCount(const string &src)
 {
     unsigned int cnt = 0;
@@ -194,66 +145,9 @@ int checksum(const string &src)
     return 1;
 }
 
-int checksum(const string &src, int flag)
-{
-    unsigned int i = 0;
-    int cnt = 0;
-
-    for (i = 0; i < src.size(); ++i)
-    {
-        // если встретили '/' - тег закрывающий. Увеличиваем счетчик.
-        if (src[i] < 0)
-            ++cnt;
-    }
-    // если закрывающих тегов больше, чем открывающих - возвратим 0
-    if (cnt > src.size() / 2 + 1)
-        return 0;
-
-    return 1;
-}
-
 int checkWordTruePairs(const string &src)
 {
-    int i;
-    stack<string> st;
-    string str;
-
-    for(i = 0; i < getWordCount(src); ++i)
-    {
-        // получим очередной тег
-        str = getTag(i, src);
-        // если он - открывающий - положим в стек
-        if (strncmp(str.c_str(), "</", 2))
-            st.push(str);
-        else
-        {
-            // если стек пуст - закрывающему тегу нет открывающего.
-            if (st.empty())
-                return 0;
-            // возьмем верхний тег
-            string topTag = st.top();
-            // если он не является открывающим для данного закрывающего
-            if (strncmp(topTag.c_str() + 1, str.c_str() + 2, 10))
-            {
-                // пока не получим открывающий для текущего тега, извлекаем
-                // теги из стека и проверяем их
-                while (strncmp(topTag.c_str() + 1, str.c_str() + 2, 10))
-                {
-                    st.pop();
-                    if (st.empty())
-                        return 0;
-                    topTag = st.top();
-                }
-            }
-            st.pop();
-        }
-    }
-    return 1;
-}
-
-int checkWordTruePairs(const string &src, int flag)
-{
-    int i;
+    unsigned int i;
     stack<char> st;
 
     for(i = 0; i < src.size(); ++i)
@@ -288,22 +182,111 @@ int checkWordTruePairs(const string &src, int flag)
     return 1;
 }
 
-int wordSubPtr(const string &src, const string &word)
+int getStringFreq(const string &src, const string &str, short **table, 
+                  int tableSz, int pos)
 {
-    // находим первое совпадение word с src
-    const char *ptr = strstr(src.c_str(), word.c_str());
-    // строим строчку с 0 символа до начала совпадения
-    string temp(src, 0, ptr - src.c_str());
-    // возвращаем количество слов в этой строчке
-    return getWordCount(temp);
+    int freq = 0;
+    int i = 0;
+    int j = 0;
+
+    for (i = 0; i < tableSz; ++i)
+    {
+        if (table[i][pos] != 0)
+        {
+            int temp = i;
+            string data;
+            while (j < str.size() && temp < tableSz && table[temp][pos + j] != 0)
+            {
+                data += src[temp];
+                ++temp;
+                ++j;
+            }
+            if (!strcmp(str.c_str(), data.c_str()))
+                ++freq;
+            j = 0;
+        }
+    }
+    return freq;
 }
 
-int wordSubPtr(const string &src, const string &word, int offset)
+int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const string &dataString,
+               short **table, int tableSz, int pos, int &avgLen, int &avgFreq)
 {
-    // находим первое совпадение word с src, начиная с позиции src + offset
-    const char *ptr = strstr(src.c_str() + offset, word.c_str());
-    // строим строчку с 0 символа до начала совпадения
-    string temp(src, 0, ptr - src.c_str());
-    // возвращаем количество слов в этой строчке
-    return getWordCount(temp);
+    string first(src, 0, src.size() - 1);
+    string second(src, 1 ,src.size() - 1);
+    set <pair <string, int>, ltstr>::iterator setIter;
+    int flag = 0;
+    if (first.size() < MINSZ)
+        return 1;
+    // useless
+    if (second.size() < MINSZ)
+        return 1;
+
+    if (first.size() == MINSZ)
+    {
+        setIter = freq.find(make_pair(first, 0));
+        if (first[0] == 77 && first[1] == 31 && first[2] == -97 && first[3] == -51)
+        {
+            int a = 0;
+        }
+        if (setIter == freq.end())
+        {
+            if (checksum(first) && checkWordTruePairs(first))
+            {
+                int strFreq = getStringFreq(dataString, first, table, tableSz, pos);
+                if (strFreq >= MINSZ)
+                {
+                    freq.insert(make_pair(first, strFreq));
+                    avgLen += first.size();
+                    avgFreq += strFreq;
+                }
+            }
+        }
+    }
+    // в любом случае if не нужен
+    if (second.size() == MINSZ)
+    {
+        setIter = freq.find(make_pair(second, 0));
+        if (second[0] == 77 && second[1] == 31 && second[2] == -97 && second[3] == -51)
+        {
+            int a = 0;
+        }
+        if (setIter == freq.end())
+        {
+            if (checksum(second) && checkWordTruePairs(second))
+            {
+                int strFreq = getStringFreq(dataString, second, table, tableSz, pos + 1);
+                if (strFreq >= MINSZ)
+                {
+                    freq.insert(make_pair(second, strFreq));
+                    avgLen += second.size();
+                    avgFreq += strFreq;
+                }
+            }
+        }
+        return 1;
+    }
+
+    if (getTagSubs(freq, first, dataString, table, tableSz, pos, avgLen, avgFreq) != 0 && 
+        getTagSubs(freq, second, dataString, table, tableSz, pos, avgLen, avgFreq) != 0)
+    {
+        setIter = freq.find(make_pair(src, 0));
+        if (setIter == freq.end())
+        {
+            if (checksum(src) && checkWordTruePairs(src))
+            {
+                int strFreq = getStringFreq(dataString, src, table, tableSz, pos);
+                if (strFreq < MINSZ)
+                    return 0;
+                freq.insert(make_pair(src, strFreq));
+                avgLen += src.size();
+                avgFreq += strFreq;
+            }
+        }
+    }
+    else
+        return 0;
+
+    return 0;
+
 }
