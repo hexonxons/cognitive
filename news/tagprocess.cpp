@@ -212,14 +212,13 @@ int getStringFreq(const string &src, const string &str, short **table,
 int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const string &dataString,
                short **table, unsigned int tableSz, int pos, int &avgLen, int &avgFreq)
 {
+    // выбираем две подстроки длины на 1 меньше
     string first(src, 0, src.size() - 1);
     string second(src, 1 ,src.size() - 1);
     set <pair <string, int>, ltstr>::iterator setIter;
     int flag = 0;
+
     if (first.size() < MINSZ)
-        return 1;
-    // useless
-    if (second.size() < MINSZ)
         return 1;
 
     if (first.size() == MINSZ)
@@ -236,12 +235,10 @@ int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const s
                     avgLen += first.size();
                     avgFreq += strFreq;
                 }
+                else
+                    flag = 1;
             }
         }
-    }
-    // в любом случае if не нужен
-    if (second.size() == MINSZ)
-    {
         setIter = freq.find(make_pair(second, 0));
         if (setIter == freq.end())
         {
@@ -254,8 +251,12 @@ int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const s
                     avgLen += second.size();
                     avgFreq += strFreq;
                 }
+                else
+                    flag = 1;
             }
         }
+        if (flag)
+            return 0;
         return 1;
     }
 
@@ -274,15 +275,16 @@ int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const s
                 avgLen += src.size();
                 avgFreq += strFreq;
             }
+            else
+                return 0;
         }
+        else
+            return 1;
     }
     else
         return 0;
-
-    return 0;
-
+    return 1;
 }
-
 string getNews(const string &data, char *srcBegin, const string &newsBegin, const string &newsEnd,
                vector< pair<int, int> > &clearedTagPosition, vector< pair<int, int> > &modifiedTagPosition,
                vector< pair<int, int> > &realTagPosition, int &offset)
@@ -292,7 +294,7 @@ string getNews(const string &data, char *srcBegin, const string &newsBegin, cons
     int begin = strstr(srcBegin + offset, newsBegin.c_str()) - srcBegin;
     // Позиция, на которой новость заканчивается
     int end = strstr(srcBegin + offset, newsEnd.c_str()) - srcBegin;
-    if (end < 0)
+    if (end < 0 || begin < 0)
     {
         string str;
         return str;
