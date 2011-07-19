@@ -1,6 +1,5 @@
 #include "tagprocess.h"
 
-#include <iostream>
 #include <fstream>
 
 using namespace std;
@@ -53,6 +52,9 @@ int main()
 	int j = 0;
 	pair <int, int> tagPosition = make_pair(-1, -1);
 	pair <int, int> modTagPosition = make_pair(-1, -1);
+    // чистка от ненужных тегов
+	vector<pair<string, string>> remDoubleTag;
+    vector<string> remTag;
 
 	// проходим по всему файлу
 	for(i = 0; i < data.size(); ++i)
@@ -87,10 +89,6 @@ int main()
 			tagPosition.second = -1;
 		}
 	}
-
-    // чистка от ненужных тегов
-	vector<pair<string, string>> remDoubleTag;
-    vector<string> remTag;
 
     remDoubleTag.push_back(make_pair("<script>", "</script>"));
     remDoubleTag.push_back(make_pair("<noscript>", "</noscript>"));
@@ -203,7 +201,6 @@ int main()
     sort(possibleTags.begin(), possibleTags.end(), pred());
 
 
-    // Ищем по позициям в clearedTagPosition позиции в realTagPosition
     // Количество встреч начал и концов новостей должно быть одинаково
     vectorIter = possibleTags.end();
     --vectorIter;
@@ -234,17 +231,7 @@ int main()
         end  = t;
         newsEnd = ts;
     }
-    // номер тега, с которого новость начинается и заканчивается, в modifiedTagPosition
-    int rbegin;
-    int rend;
     
-    for(i = 0; i < modifiedTagPosition.size(); ++i)
-    {
-        if (clearedTagPosition[begin].first == modifiedTagPosition[i].first)
-            rbegin = i;
-        if (clearedTagPosition[end].second == modifiedTagPosition[i].second)
-            rend = i;
-    }
     char *strBegin = (char *)clearedData.c_str();
     int offset = 0;
     // Получаем строчку новости и выводим её
