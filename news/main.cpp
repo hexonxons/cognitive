@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define MINSZ 8
+#define MINSZ 6
 
 
 int getStringFreq(const string &src, const string &str, short **table, 
@@ -45,20 +45,28 @@ int abracadabra(set <pair <string, int>, ltstr> &freq, const string &src, const 
     int flag = 0;
     if (first.size() < MINSZ)
         return 1;
+    // useless
+    if (second.size() < MINSZ)
+        return 1;
 
     if (first.size() == MINSZ)
     {
         setIter = freq.find(make_pair(first, 0));
+        if (first[0] == 77 && first[1] == 31 && first[2] == -97 && first[3] == -51)
+        {
+            int a = 0;
+        }
         if (setIter == freq.end())
         {
             if (checksum(first, 0) && checkWordTruePairs(first, 0))
             {
                 int strFreq = getStringFreq(dataString, first, table, tableSz, pos);
-                if (strFreq < MINSZ)
-                    return 0;
-                freq.insert(make_pair(first, strFreq));
-                avgLen += first.size();
-                avgFreq += strFreq;
+                if (strFreq >= MINSZ)
+                {
+                    freq.insert(make_pair(first, strFreq));
+                    avgLen += first.size();
+                    avgFreq += strFreq;
+                }
             }
         }
     }
@@ -66,16 +74,21 @@ int abracadabra(set <pair <string, int>, ltstr> &freq, const string &src, const 
     if (second.size() == MINSZ)
     {
         setIter = freq.find(make_pair(second, 0));
+        if (second[0] == 77 && second[1] == 31 && second[2] == -97 && second[3] == -51)
+        {
+            int a = 0;
+        }
         if (setIter == freq.end())
         {
             if (checksum(second, 0) && checkWordTruePairs(second, 0))
             {
                 int strFreq = getStringFreq(dataString, second, table, tableSz, pos + 1);
-                if (strFreq < MINSZ)
-                    return 0;
-                freq.insert(make_pair(second, strFreq));
-                avgLen += second.size();
-                avgFreq += strFreq;
+                if (strFreq >= MINSZ)
+                {
+                    freq.insert(make_pair(second, strFreq));
+                    avgLen += second.size();
+                    avgFreq += strFreq;
+                }
             }
         }
         return 1;
@@ -261,6 +274,16 @@ int main()
                     str += clearedData[i];
                     ++i;
                 }
+                string tmp;
+                tmp.push_back(77);
+                tmp.push_back(31);
+                tmp.push_back(-97);
+                tmp.push_back(-51);
+                tmp.push_back(77);
+                if (strstr(str.c_str(), tmp.c_str()))
+                {
+                    int a  = 0;
+                }
                 abracadabra(freq, str, clearedData, table, sz, temp + diag, avgLen, avgFreq);
             }
         }
@@ -295,20 +318,31 @@ int main()
     // следующяя новость будет располагаться с начала следующего блока.
     // совпадающего с BestString, так как считаем новости идущими подряд
     // ;TODO6 см ;TODO2
-    int begin = strstr(clearedData.c_str(), temp.back().first.c_str()) - clearedData.c_str();
-    string back;
     vector<pair<string, int>>::iterator vit = temp.end();
     --vit;
+    while (vit->second != (vit - 1)->second)
+    {
+        --vit;
+    }
+    int begin = strstr(clearedData.c_str(), vit->first.c_str()) - clearedData.c_str();
+    string back;
+   
     for (;;--vit)
     {
-        if (strstr(temp.back().first.c_str(), vit->first.c_str()) == NULL)
+        if (strstr(vit->first.c_str(), (vit - 1)->first.c_str()) == NULL)
         {
-            back = vit->first;
+            back = (vit - 1)->first;
             break;
         }
     }
     int end = strstr(clearedData.c_str(), back.c_str()) - clearedData.c_str();
 
+    if (begin > end)
+    {
+        int t = begin;
+        begin = end;
+        end  = t;
+    }
     int rbegin;
     int rend;
     
