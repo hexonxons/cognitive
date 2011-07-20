@@ -19,7 +19,7 @@ using std::vector;
 using std::stack;
 using std::set;
 
-// magic...
+// magick...
 #define MINSZ 6
 
 /**
@@ -155,10 +155,10 @@ int checksum(const string &src);
 int checkWordTruePairs(const string &src);
 
 /**
- * \fn  int getStringFreq(const string &src, const string &str, short **table, int tableSz,
- *      int pos);
+ * \fn  int getStringFreq(const string &src, const string &str, short **table,
+ *      unsigned int tableSz, int pos);
  *
- * \brief   Получает частоту встречи str в src
+ * \brief   Получает частоту встречи str в src.
  *
  * \author  Alexander
  * \date    7/19/2011
@@ -167,7 +167,8 @@ int checkWordTruePairs(const string &src);
  * \param   str             Строка, частоту встречи которой мы ищем.
  * \param [in,out]  table   Таблица по которой ищем повторения.
  * \param   tableSz         Размер таблицы.
- * \param   pos             Позиция в таблице по вертикали, с которой начались совпадения str c src.
+ * \param   pos             Позиция в таблице по вертикали, с которой начались совпадения str c
+ *                          src.
  *
  * \return  Честота встречи str в src.
  */
@@ -176,8 +177,9 @@ int getStringFreq(const string &src, const string &str, short **table,
                   unsigned int tableSz, int pos);
 
 /**
- * \fn  void getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src,
- *      const string &dataString, short **table, int tableSz, int pos, int &avgLen, int &avgFreq);
+ * \fn  int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src,
+ *      const string &dataString, short **table, unsigned int tableSz, int pos, int &avgLen,
+ *      int &avgFreq);
  *
  * \brief   Получает все последовательности тегов, подходящие под условия.
  *
@@ -185,19 +187,45 @@ int getStringFreq(const string &src, const string &str, short **table,
  * \date    7/19/2011
  *
  * \param [in,out]  freq        Set пар строка - частота встречи строки.
- * \param   str                 Строка тегов, для которой (и всех её подстрок) мы хотим найти частоту
- * 								встречи и которая является возможным началом/концом новости
- * \param   src                 Исходная строка.
+ * \param   src                 Строка тегов, для которой (и всех её подстрок) мы хотим найти
+ *                              частоту встречи и которая является возможным началом/концом
+ *                              новости.
+ * \param   dataString          Исходная строка.
  * \param [in,out]  table       Таблица по которой ищем повторения.
  * \param   tableSz             Размер таблицы.
- * \param   pos                 Позиция в таблице по вертикали, с которой начались совпадения str c src.
+ * \param   pos                 Позиция в таблице по вертикали, с которой начались совпадения str
+ *                              c src.
  * \param [in,out]  avgLen      Средняя длина последовательности.
  * \param [in,out]  avgFreq     Средняя частота последовательности.
  *
+ * \return  1/0.
  */
 
-int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &str, const string &dataString,
+int getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const string &dataString,
                short **table, unsigned int tableSz, int pos, int &avgLen, int &avgFreq);
+
+/**
+ * \fn  string getNews(const string &data, char *srcBegin, const string &newsBegin,
+ *      const string &newsEnd, vector< pair<int, int> > &clearedTagPosition,
+ *      vector< pair<int, int> > &modifiedTagPosition, vector< pair<int, int> > &realTagPosition,
+ *      int &offset);
+ *
+ * \brief   возвращает текст новости.
+ *
+ * \author  Alexander
+ * \date    7/20/2011
+ *
+ * \param   data                        Строка, содержащая весь файл.
+ * \param [in,out]  srcBegin            Начало строки тегов
+ * \param   newsBegin                   Строка тегов, с которой начинается новость.
+ * \param   newsEnd                     Строка тегов, которой заканчивается новость.
+ * \param [in,out]  clearedTagPosition  Позиция тегов в clearedData.
+ * \param [in,out]  modifiedTagPosition Позиция тегов в modifiedData.
+ * \param [in,out]  realTagPosition     Позиция тегов в data/
+ * \param [in,out]  offset              Сдвиг в srcBegin.
+ *
+ * \return  Текст новости.
+ */
 
 string getNews(const string &data, char *srcBegin, const string &newsBegin, const string &newsEnd,
                vector< pair<int, int> > &clearedTagPosition, vector< pair<int, int> > &modifiedTagPosition,

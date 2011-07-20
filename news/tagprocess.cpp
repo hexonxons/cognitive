@@ -265,21 +265,11 @@ string getNews(const string &data, char *srcBegin, const string &newsBegin, cons
     // Ищем позицию, с которой начинается новость
     int begin = strstr(srcBegin + offset, newsBegin.c_str()) - srcBegin;
     // Позиция, на которой новость заканчивается
-    int end = strstr(srcBegin + offset, newsEnd.c_str()) - srcBegin;
+    int end = strstr(srcBegin + begin, newsEnd.c_str()) - srcBegin;
     if (end < 0 || begin < 0)
     {
         string str;
         return str;
-    }
-    int nextBegin = strstr(srcBegin + begin + 1, newsBegin.c_str()) - srcBegin;
-    int nextEnd = strstr(srcBegin + end + 1, newsEnd.c_str()) - srcBegin;
-
-    while (nextEnd < nextBegin)
-    {
-        if (nextEnd < 0)
-            break;
-        end = nextEnd;
-        nextEnd = strstr(srcBegin + end + 1, newsEnd.c_str()) - srcBegin;
     }
     offset = end + 1;
     // номер тега, с которого новость начинается и заканчивается, в modifiedTagPosition
