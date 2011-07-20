@@ -72,6 +72,7 @@ int main()
     finder.getPossibleRanges();
     finder.getNewsRange();
     finder.writeNews();
+                 freq.insert(make_pair(ret, 4 * f + 80* getWordCount(ret)));
 
 	return 0;
 }
