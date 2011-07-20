@@ -13,7 +13,9 @@ CNewsFinder::CNewsFinder(char *filename, unsigned int minSize):
     MINSZ(minSize),
     fin(filename, ios::in),
     fout("out", ios::out),
-    data((std::istreambuf_iterator<char>(fin)), std::istreambuf_iterator<char>())
+    data((std::istreambuf_iterator<char>(fin)), std::istreambuf_iterator<char>()),
+    avgLen(0),
+    avgFreq(0)
 {
 }
 
@@ -36,7 +38,7 @@ void CNewsFinder::removeTags(vector<string> &tagsToRemove)
         if (modifiedTagPosition[i].first == -1)
             continue;
         // получим тег с данной позиции
-        tag = getTag(modifiedTagPosition[i], src);
+        tag = getTag(modifiedTagPosition[i], modifiedData);
         // приведем его к нижнему регистру
         transform(tag.begin(), tag.end(), tag.begin(), tolower);
         // проходим по всему массиву тегов для удаления
@@ -61,13 +63,13 @@ void CNewsFinder::removeTags(vector< pair<string, string> > &tagsToRemove)
     string tag;
 
     // проходим по всем тегам
-    for (i = 0; i < modifiedTagPosition->size(); ++i)
+    for (i = 0; i < modifiedTagPosition.size(); ++i)
     {
         // если этот тег уже стертый, то продолжаем
-        if ((*modifiedTagPosition)[i].first == -1)
+        if (modifiedTagPosition[i].first == -1)
             continue;
         // получим тег с данной позиции
-        tag = getTag((*modifiedTagPosition)[i], src);
+        tag = getTag(modifiedTagPosition[i], modifiedData);
         // приведем его к нижнему регистру
         transform(tag.begin(), tag.end(), tag.begin(), tolower);
         // проходим по всему массиву тегов для удаления
@@ -78,18 +80,18 @@ void CNewsFinder::removeTags(vector< pair<string, string> > &tagsToRemove)
                 tagsToRemove[j].first.size() - 1))
             {
                 // стираем тег
-                (*modifiedTagPosition)[i] = make_pair(-1, -1);
+                modifiedTagPosition[i] = make_pair(-1, -1);
                 // пока не получим закрывающий тег
                 while (strncmp(tag.c_str(), tagsToRemove[j].second.c_str(),
                     tagsToRemove[j].second.size() - 1))
                 {
                     ++i;
-                    if ((*modifiedTagPosition)[i].first == -1)
+                    if (modifiedTagPosition[i].first == -1)
                         continue;
                     // получаем следующий тег
-                    tag = getTag((*modifiedTagPosition)[i], src);
+                    tag = getTag(modifiedTagPosition[i], modifiedData);
                     // и стираем его
-                    (*modifiedTagPosition)[i] = make_pair(-1, -1);
+                    modifiedTagPosition[i] = make_pair(-1, -1);
                 }
                 // идем к следующему тегу
                 break;
@@ -164,20 +166,19 @@ int CNewsFinder::checkWordTruePairs(const string &src)
     return 1;
 }
 
-int CNewsFinder::getStringFreq(const string &src, const string &str, short **table, 
-                  unsigned int tableSz, int pos)
+int CNewsFinder::getStringFreq(const string &src, const string &str, unsigned int pos)
 {
     unsigned int freq = 0;
     unsigned int i = 0;
     unsigned int j = 0;
 
-    for (i = 0; i < tableSz; ++i)
+    for (i = 0; i < tableSize; ++i)
     {
         if (table[i][pos] != 0)
         {
             unsigned int temp = i;
             string data;
-            while (j < str.size() && temp < tableSz && table[temp][pos + j] != 0)
+            while (j < str.size() && temp < tableSize && table[temp][pos + j] != 0)
             {
                 data += src[temp];
                 ++temp;
@@ -191,8 +192,7 @@ int CNewsFinder::getStringFreq(const string &src, const string &str, short **tab
     return freq;
 }
 
-int CNewsFinder::getTagSubs(set <pair <string, int>, ltstr> &freq, const string &src, const string &dataString,
-               short **table, unsigned int tableSz, int pos, int &avgLen, int &avgFreq)
+int CNewsFinder::getTagSubs(const string &src, int pos)
 {
     // выбираем две подстроки длины на 1 меньше
     string first(src, 0, src.size() - 1);
@@ -210,7 +210,7 @@ int CNewsFinder::getTagSubs(set <pair <string, int>, ltstr> &freq, const string 
         {
             if (checksum(first) && checkWordTruePairs(first))
             {
-                int strFreq = getStringFreq(dataString, first, table, tableSz, pos);
+                unsigned int strFreq = getStringFreq(clearedData, first, pos);
                 if (strFreq >= MINSZ)
                 {
                     freq.insert(make_pair(first, strFreq));
@@ -226,7 +226,7 @@ int CNewsFinder::getTagSubs(set <pair <string, int>, ltstr> &freq, const string 
         {
             if (checksum(second) && checkWordTruePairs(second))
             {
-                int strFreq = getStringFreq(dataString, second, table, tableSz, pos + 1);
+                unsigned int strFreq = getStringFreq(clearedData, second, pos + 1);
                 if (strFreq >= MINSZ)
                 {
                     freq.insert(make_pair(second, strFreq));
@@ -242,15 +242,16 @@ int CNewsFinder::getTagSubs(set <pair <string, int>, ltstr> &freq, const string 
         return 1;
     }
 
-    if (getTagSubs(freq, first, dataString, table, tableSz, pos, avgLen, avgFreq) != 0 && 
-        getTagSubs(freq, second, dataString, table, tableSz, pos, avgLen, avgFreq) != 0)
+
+    if (getTagSubs(first, pos) != 0 && 
+        getTagSubs(second, pos) != 0)
     {
         setIter = freq.find(make_pair(src, 0));
         if (setIter == freq.end())
         {
             if (checksum(src) && checkWordTruePairs(src))
             {
-                int strFreq = getStringFreq(dataString, src, table, tableSz, pos);
+                unsigned int strFreq = getStringFreq(clearedData, src, pos);
                 if (strFreq < MINSZ)
                     return 0;
                 freq.insert(make_pair(src, strFreq));
@@ -265,11 +266,9 @@ int CNewsFinder::getTagSubs(set <pair <string, int>, ltstr> &freq, const string 
         return 0;
     return 1;
 }
-string CNewsFinder::getNews(const string &data, char *srcBegin, const string &newsBegin, const string &newsEnd,
-               vector< pair<int, int> > &clearedTagPosition, vector< pair<int, int> > &modifiedTagPosition,
-               vector< pair<int, int> > &realTagPosition, int &offset)
+string CNewsFinder::getNews(char *srcBegin, const string &newsBegin, const string &newsEnd, unsigned int &offset)
 {
-    int i = 0;
+    unsigned int i = 0;
     // Ищем позицию, с которой начинается новость
     int begin = strstr(srcBegin + offset, newsBegin.c_str()) - srcBegin;
     if (begin < 0)
@@ -302,10 +301,10 @@ string CNewsFinder::getNews(const string &data, char *srcBegin, const string &ne
 
 }
 
-void CNewsFinder::init()
+void CNewsFinder::init(vector<pair<string, string>> &remDoubleTag, vector<string> remTag)
 {
-    int i = 0;
-    int j = 0;
+    unsigned int i = 0;
+    unsigned int j = 0;
 
     // проходим по всему файлу
     for(i = 0; i < data.size(); ++i)
@@ -341,42 +340,15 @@ void CNewsFinder::init()
         }
     }
 
-    remDoubleTag.push_back(make_pair("<script>", "</script>"));
-    remDoubleTag.push_back(make_pair("<noscript>", "</noscript>"));
-    remDoubleTag.push_back(make_pair("<form>", "</form>"));
-    remDoubleTag.push_back(make_pair("<iframe>", "</iframe>"));
-    remDoubleTag.push_back(make_pair("<ul>", "</ul>"));
-    remDoubleTag.push_back(make_pair("<span>", "</span>"));
-    remDoubleTag.push_back(make_pair("<p>", "</p>"));
+    removeTags(remTag);
+    removeTags(remDoubleTag);
 
-    remTag.push_back("<!doctype>");
-    remTag.push_back("<html>");
-    remTag.push_back("</html>");
-    remTag.push_back("<head>");
-    remTag.push_back("</head>");
-    remTag.push_back("<body>");
-    remTag.push_back("</body>");
-    remTag.push_back("<link>");
-    remTag.push_back("<title>");
-    remTag.push_back("</title>");
-    remTag.push_back("<meta>");
-    remTag.push_back("</meta>");
-    remTag.push_back("<base>");
-    remTag.push_back("<!-->");
-    remTag.push_back("<li>");
-    remTag.push_back("</li>");
-    remTag.push_back("<p>");
-    remTag.push_back("</p>");
-
-    finder.removeTags(remTag);
-    finder.removeTags(remDoubleTag);
-   
     // составляем clearedData
     for(i = 0; i < modifiedTagPosition.size(); ++i)
     {
         if (modifiedTagPosition[i].first != -1)
         {
-            string tag =finder.getTag(modifiedTagPosition[i], modifiedData);
+            string tag = getTag(modifiedTagPosition[i], modifiedData);
             int ch = 0;
             if (tag[1] != '/')
                 // <tag[1]>           -- tag[1] + 47
@@ -417,6 +389,7 @@ void CNewsFinder::init()
 
 void CNewsFinder::getPossibleRanges()
 {
+    unsigned int i = 0;
     // Читаем в table по диагоналям
     // diag - Номер диагонали
     // diag = 0 - главная диагональ, заполнена 
@@ -436,7 +409,8 @@ void CNewsFinder::getPossibleRanges()
                     ++i;
                 }
                 // И проверяем возможность этой строчки(или её подстрок) быть началом или концом новости
-                finder.getTagSubs(freq, str, clearedData, table, tableSize, beg + diag, avgLen, avgFreq);
+                if (str.size() >= MINSZ)
+                    getTagSubs(str, beg + diag);
             }
         }
         // Читаем следующую диагональ
@@ -449,6 +423,9 @@ void CNewsFinder::getPossibleRanges()
 
 void CNewsFinder::getNewsRange()
 {
+    set <pair <string, int>, CNewsFinder::ltstr>::iterator setIter;
+    vector<pair<string, int>>::iterator vectorIter;
+
     for(setIter = freq.begin(); setIter != freq.end(); ++setIter)
     {
         if (setIter->second >= 8 && setIter->first.size() < avgLen * 1.5 && setIter->second < avgFreq * 1.6)
@@ -465,8 +442,6 @@ void CNewsFinder::getNewsRange()
     {
         --vectorIter;
     }
-    string newsBegin;
-    string newsEnd;
 
     // Ищем позицию, с которой начинается новость
     int begin = strstr(clearedData.c_str(), vectorIter->first.c_str()) - clearedData.c_str();
@@ -493,14 +468,14 @@ void CNewsFinder::getNewsRange()
 void CNewsFinder::writeNews()
 {
     char *strBegin = (char *)clearedData.c_str();
-    int offset = 0;
+    unsigned int offset = 0;
     // Получаем строчку новости и выводим её
     while (strlen(strBegin) > offset)
     {
-        string res = finder.getNews(data, strBegin, newsBegin, newsEnd, clearedTagPosition,
-            modifiedTagPosition, realTagPosition, offset);
+        string res = getNews(strBegin, newsBegin, newsEnd, offset);
         if (res.empty())
             break;
         fout << res;
     }
 }
+

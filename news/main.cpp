@@ -65,14 +65,45 @@ using namespace std;
  * \return  Exit-code for the process - 0 for success, else an error code.
  */
 
+
 int main()
 {
-    CNewsFinder finder("news", 8);
-    finder.init();
+    // массивы ненужных тегов
+    vector<pair<string, string>> remDoubleTag;
+    vector<string> remTag;
+    CNewsFinder finder("news", 2);
+
+    remDoubleTag.push_back(make_pair("<script>", "</script>"));
+    remDoubleTag.push_back(make_pair("<noscript>", "</noscript>"));
+    remDoubleTag.push_back(make_pair("<form>", "</form>"));
+    remDoubleTag.push_back(make_pair("<iframe>", "</iframe>"));
+    remDoubleTag.push_back(make_pair("<ul>", "</ul>"));
+    remDoubleTag.push_back(make_pair("<span>", "</span>"));
+    remDoubleTag.push_back(make_pair("<p>", "</p>"));
+
+    remTag.push_back("<!doctype>");
+    remTag.push_back("<html>");
+    remTag.push_back("</html>");
+    remTag.push_back("<head>");
+    remTag.push_back("</head>");
+    remTag.push_back("<body>");
+    remTag.push_back("</body>");
+    remTag.push_back("<link>");
+    remTag.push_back("<title>");
+    remTag.push_back("</title>");
+    remTag.push_back("<meta>");
+    remTag.push_back("</meta>");
+    remTag.push_back("<base>");
+    remTag.push_back("<!-->");
+    remTag.push_back("<li>");
+    remTag.push_back("</li>");
+    remTag.push_back("<p>");
+    remTag.push_back("</p>");
+
+    finder.init(remDoubleTag, remTag);
     finder.getPossibleRanges();
     finder.getNewsRange();
     finder.writeNews();
-                 freq.insert(make_pair(ret, 4 * f + 80* getWordCount(ret)));
 
 	return 0;
 }
