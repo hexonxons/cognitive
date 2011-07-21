@@ -211,7 +211,7 @@ private:
     /**
      * \fn  int CNewsFinder::getWordCount(const string &src);
      *
-     * \brief   &gt;.
+     * \brief   Получает количество слов в строке. Слово - &lt;*&gt;.
      *
      * \author  Alexander
      * \date    7/13/2011
