@@ -242,12 +242,10 @@ int CNewsFinder::getTagSubs(const string &src, int pos)
         return 1;
     }
 
-
-    if (getTagSubs(first, pos) != 0 && 
-        getTagSubs(second, pos) != 0)
+    setIter = freq.find(make_pair(src, 0));
+    if (setIter == freq.end())
     {
-        setIter = freq.find(make_pair(src, 0));
-        if (setIter == freq.end())
+        if (getTagSubs(first, pos) != 0 && getTagSubs(second, pos + 1) != 0)
         {
             if (checksum(src) && checkWordTruePairs(src))
             {
@@ -258,12 +256,11 @@ int CNewsFinder::getTagSubs(const string &src, int pos)
                 avgLen += src.size();
                 avgFreq += strFreq;
             }
-            else
-                return 0;
         }
+        else
+            return 0;
     }
-    else
-        return 0;
+    
     return 1;
 }
 string CNewsFinder::getNews(char *srcBegin, const string &newsBegin, const string &newsEnd, unsigned int &offset)
@@ -410,7 +407,10 @@ void CNewsFinder::getPossibleRanges()
                 }
                 // И проверяем возможность этой строчки(или её подстрок) быть началом или концом новости
                 if (str.size() >= MINSZ)
+                {
                     getTagSubs(str, beg + diag);
+                    diag += str.size() - 1;
+                }
             }
         }
         // Читаем следующую диагональ
@@ -428,7 +428,7 @@ void CNewsFinder::getNewsRange()
 
     for(setIter = freq.begin(); setIter != freq.end(); ++setIter)
     {
-        if (setIter->second >= 8 && setIter->first.size() < avgLen * 1.5 && setIter->second < avgFreq * 1.6)
+        if (setIter->second >= MINSZ && setIter->first.size() < avgLen && setIter->second < avgFreq)
             possibleTags.push_back(*setIter);
     }
     // сортируем пары
