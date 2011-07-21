@@ -73,7 +73,6 @@ int main()
     vector<pair<string, string>> remDoubleTag;
     vector<string> remTag;
     CNewsFinder finder("news", 8);
-
     remDoubleTag.push_back(make_pair("<script>", "</script>"));
     remDoubleTag.push_back(make_pair("<noscript>", "</noscript>"));
     remDoubleTag.push_back(make_pair("<form>", "</form>"));

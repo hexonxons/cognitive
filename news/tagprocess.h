@@ -21,10 +21,19 @@ using std::stack;
 using std::set;
 using std::fstream;
 
+/**
+ * \class   CNewsFinder
+ *
+ * \brief   Класс поиска новостей. 
+ *
+ * \author  Alexander
+ * \date    7/21/2011
+ */
 
 class CNewsFinder
 {
 public:
+
     /**
      * \fn  CNewsFinder::CNewsFinder(char *filename, unsigned int minSize);
      *
@@ -34,9 +43,10 @@ public:
      * \date    7/20/2011
      *
      * \param [in,out]  filename    Имя файла с новостями.
-     * \param   minSize             Минимальная длина последовательности тегов, ограничивающих новость
-     * 								и частота встречи новости.
+     * \param   minSize             Минимальная длина последовательности тегов, ограничивающих
+     *                              новость и частота встречи новости.
      */
+
     CNewsFinder(char *filename, unsigned int minSize);
 
     /**
@@ -49,6 +59,7 @@ public:
      *
      * \param [in,out]  tagsToRemove    Массив тегов для удаления.
      */
+
     void removeTags(vector<string> &tagsToRemove);
 
     /**
@@ -61,6 +72,7 @@ public:
      *
      * \param [in,out]  tagsToRemove    Массив пар тегов для удаления.
      */
+
     void removeTags(vector< pair<string, string> > &tagsToRemove);
 
     /**
@@ -74,6 +86,7 @@ public:
      * \param [in,out]  remDoubleTag    Список двойных тегов.
      * \param   remTag                  Список одинарных тегов.
      */
+
     void init(vector<pair<string, string>> &remDoubleTag, vector<string> remTag);
 
     /**
@@ -84,6 +97,7 @@ public:
      * \author  Alexander
      * \date    7/20/2011
      */
+
     void getPossibleRanges();
 
     /**
@@ -94,6 +108,7 @@ public:
      * \author  Alexander
      * \date    7/20/2011
      */
+
     void getNewsRange();
 
     /**
@@ -104,6 +119,7 @@ public:
      * \author  Alexander
      * \date    7/20/2011
      */
+
     void writeNews();
 
 private:
@@ -116,6 +132,7 @@ private:
      * \author  Alexander
      * \date    7/13/2011
      */
+
     struct pred
     {
         bool operator()(pair<string, int> left, pair<string, int> right) const
@@ -135,6 +152,7 @@ private:
      * \author  Alexander
      * \date    7/19/2011
      */
+
     struct ltstr
     {
         bool operator()(pair<string, int> left, pair<string, int> right) const
@@ -156,6 +174,7 @@ private:
      *
      * \return  Тег.
      */
+
     string getTag(pair<int, int> &tagPos, const string &src);
 
     /**
@@ -170,6 +189,7 @@ private:
      *
      * \return  1, если количество открывающих тегов больше количества закрывающих 0 иначе.
      */
+
     int checksum(const string &src);
 
     /**
@@ -185,11 +205,13 @@ private:
      *
      * \return  1, если для каждого закрывающего тега есть открывающий 0, иначе.
      */
+
     int checkWordTruePairs(const string &src);
-/**
+
+    /**
      * \fn  int CNewsFinder::getWordCount(const string &src);
      *
-     * \brief   Получает количество слов в строке. Слово - &lt;*&gt;.
+     * \brief   &gt;.
      *
      * \author  Alexander
      * \date    7/13/2011
@@ -198,6 +220,7 @@ private:
      *
      * \return  Количество слов.
      */
+
     int getWordCount(const string &src);
 
     /**
@@ -214,6 +237,7 @@ private:
      *
      * \return  Честота встречи str в src.
      */
+
     int getStringFreq(const string &src, const string &str, unsigned int pos);
 
     /**
@@ -230,6 +254,7 @@ private:
      *
      * \return  1/0.
      */
+
     int getTagSubs(const string &src, int pos);
 
     /**
@@ -248,30 +273,33 @@ private:
      *
      * \return  Текст новости.
      */
+
     string getNews(char *srcBegin, const string &newsBegin, const string &newsEnd, unsigned int &offset);
 
+
     unsigned int MINSZ;
-    // Входной файл
+    ///< Входной файл
     fstream fin;
-    // Выходной файл
+    ///< Выходной файл
     fstream fout;
-    // Строчка, содержащая в себе входной файл
+    ///< Строчка, содержащая в себе входной файл
     string data;
-    // Измененная строчка входного файла
+    ///< Измененная строчка входного файла
     string modifiedData;
-    // Измененная modifiedData. В clearedData нет удаленных тегов
+    ///< Измененная modifiedData. В clearedData нет удаленных тегов
     string clearedData;
-    // Позиция тега в data
+    ///< Позиция тега в data
     vector< pair<int, int> > realTagPosition;
-    // Позиция тега в modifiedData
+    ///< Позиция тега в modifiedData
     vector< pair<int, int> > modifiedTagPosition;
-    // Позиция тега в modifiedData
+    ///< Позиция тега в modifiedData
     vector< pair<int, int> > clearedTagPosition;
-    // Set из пар <строка, частота встречи строки>
-    // Повторяющиеся строки не добавляются
-    // От частот никак не зависит
+
+    ///< Set из пар <строка, частота встречи строки>
+    //   Повторяющиеся строки не добавляются
+    //   От частот никак не зависит
     set <pair <string, int>, CNewsFinder::ltstr> freq;
-    // Таблица для поиска повторяющихся строк
+    ///<  Таблица для поиска повторяющихся строк
     // Например: abcabcac
     //   a b c a b c a c
     // a * 0 0 * 0 0 * 0
@@ -283,13 +311,13 @@ private:
     // a * 0 0 * 0 0 * 0
     // c 0 0 * 0 0 * 0 *
     short **table;
-    // Размер таблицы - tableSize X tableSize
+    ///< Размер таблицы - tableSize X tableSize
     unsigned int tableSize;
-    // Средняя длина строки в freq
+    ///< Средняя длина строки в freq
     int avgLen;
-    // Средняя частота встречи строки
+    ///< Средняя частота встречи строки
     int avgFreq;
-    // массив возможных начал/концов новостей
+    ///< массив возможных начал/концов новостей
     vector<pair<string, int>> possibleTags;
     pair <int, int> tagPosition;
     pair <int, int> modTagPosition;
