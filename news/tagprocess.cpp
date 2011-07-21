@@ -295,7 +295,6 @@ string CNewsFinder::getNews(char *srcBegin, const string &newsBegin, const strin
     string ret(data, realTagPosition[rbegin].first, 
         realTagPosition[rend].first - realTagPosition[rbegin].first);
     return ret;
-
 }
 
 void CNewsFinder::init(vector<pair<string, string>> &remDoubleTag, vector<string> remTag)
