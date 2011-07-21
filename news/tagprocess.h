@@ -237,9 +237,7 @@ private:
      *
      * \return  Честота встречи str в src.
      */
-
     int getStringFreq(const string &src, const string &str, unsigned int pos);
-
     /**
      * \fn  int CNewsFinder::getTagSubs(const string &src, int pos);
      *
