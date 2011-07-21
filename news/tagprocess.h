@@ -250,6 +250,7 @@ private:
      */
     string getNews(char *srcBegin, const string &newsBegin, const string &newsEnd, unsigned int &offset);
 
+
     unsigned int MINSZ;
     // ¬ходной файл
     fstream fin;
