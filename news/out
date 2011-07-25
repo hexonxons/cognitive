@@ -1,0 +1,523 @@
+<div class=news id="topic-6534965"> 
+ 
+<h2> 
+  <a href="/news/kernel/6534965">Представлен набор RT-патчей для ядра Linux 3.0</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/kernel/"> 
+  <img src="/tango/img/linux-logo.png" width=65 height=75 border=0 alt="Группа Ядро Linux"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Томас Глейкснер (Thomas Gleixner), основной разработчик и мейнтейнер RT-ветки ядра Linux, <a href="https://lkml.org/lkml/2011/7/24/35">сообщил</a> о выпуске третьей верcии набора патчей с реализацией режима реального времени (Realtime-Preempt&quot;, PREEMPT_RT или &quot;-rt&quot;) для ядра Linux 3.0. Ядро &quot;-rt&quot; с реализацией жёсткого режима реального времени используется в real-time редакциях промышленных Linux дистрибутивов MontaVista, Red Hat и Novell. Это первое крупное обновление RT-Linux за последние несколько лет, которое знаменует собой уход от ядра версии 2.6.33, которое было использовано в качестве базы для RT-ветки несколько лет подряд.<p>В письме, отправленном в список рассылки Linux-ядра, Томас Глейкснер отмечает существенное отличие новой версии патчей от предыдущих. Логика работы многих подсистем была кардинально переработана, код стал намного чище и проще для анализа, общий размер патчей сократился более чем в два раза. Теперь код затрагивает гораздо меньше подсистем и структур данных ядра, что, по мнению автора, позволит ускорить процесс его включения в основную ветку. 223 подготовленных в рамках проекта патча, затрагивающих 374 файла разбиты на 4 группы, из которых одна группа устраняет недоработки уже находящихся в ядре подсистем, одна группа уже отправлена для включения в состав основного ядра, одна признана готовой для отправки заявки на включение в состав ядра и одна требует доработки и проверки. Для сравнения, для ветки 2.6.33 было подготовлено 462 патча, затрагивающих 690 файлов.<p>Ядро с наложенными патчами было протестировано на платформах x86 и x86_64, а также на ARM, MIPS и PowerPC и, по словам Thomas Gleixner оказалось &quot;удивительно стабильным&quot; (amazinlgy stable). Событие знаменательно тем, что это первый случай когда RT-патчи адаптированы для последней актуальной версии Linux-ядра, ранее выпуск патчей существенно отставал, что было связано с большой трудоёмкостью процесса портирования и тестирования.<p> 
+<p>&gt;&gt;&gt; <a href="https://lkml.org/lkml/2011/7/24/35">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=linux+rt">linux rt</a>, <a href="view-news.jsp?tag=%D1%8F%D0%B4%D1%80%D0%BE">ядро</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6530425"> 
+ 
+<h2> 
+  <a href="/news/games/6530425">Релиз игры BZFlag 2.4</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/games/"> 
+  <img src="/tango/img/games-logo.png" width=64 height=53 border=0 alt="Группа Игры"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Состоялся релиз игры BZFlag 2.4 «Пробуждение Мертвецов» (&quot;Wake the Dead&quot;). В связи со сложностями при создании релиза 3.0 было решено перенести отдельные изменения из третьей ветви разработки во вторую. Добавлялись также исправления ошибок и возможности помимо них.<p>BZFlag — многопользовательская компьютерная онлайн игра, трёхмерный шутер от первого лица; жанр — артиллерия. Игра основана на классической игре Battlezone.<p>Вам даётся управление танком, боевые действия разворачиваются в определённом игровом мире. В арсенале предусмотрено оружие и специальные средства различного типа, такие как: самонаводящиеся снаряды, лазеры, невидимость, форсаж и многие другие.<p>В версии 2.4 частично сломана совместимость с 2.0: игроки с клиентом версии 2.4 не могут подключаться к серверу версии 2.0. А если наоборот, игроки с клиентом 2.0, а сервер версии 2.4, то всё работает. Владельцам уже работающих серверов предлагается следовать инструкциям, доступным по <a href="http://my.bzflag.org/w/BZFS_2.4_Upgrade">этим</a> <a href="http://my.bzflag.org/w/BZFS_API_2.4_Upgrade">гиперссылкам</a>.<p>Основные изменения:
+<ul><li> Возможность запрещения teamkilling для сервера. Teamkilling — снижение здоровья от выстрела в игрока коллегой по команде.<li> Игровой режим OpenFFA, позволяющий атаковать любого игрока независимо от его цвета.<li> Пообъектный рикошет для создателей карт: включение рикошета для отдельных объектов.<li> Удалена локальная аутентификация.<li> Возможность скрытия флагов на радаре для сервера.<li> Заблокирована возможность отключения тумана.<li> Исправлена задержка при создании скриншотов.<li> Задача идентификации ID флагов передана серверу.<li> Теперь публичные серверы должны обязательно иметь публичный ключ.<li> Голосование касается только тех участников игры, которые имеют возможность проголосовать.</ul><p>
+Полный список изменений, на английском языке размером с 1 страницу формата А4, вы можете найти по ссылке подробностей<p>&gt;&gt;&gt; <a href="https://bzflag.svn.sourceforge.net/svnroot/bzflag/tags/v2_4_0/ChangeLog">Подробности</a> 
+<p>&gt;&gt;&gt; <a href="http://sourceforge.net/projects/bzflag/files/">Загрузка</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=fps">fps</a>, <a href="view-news.jsp?tag=%D0%B8%D0%B3%D1%80%D1%8B">игры</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6533868"> 
+ 
+<h2> 
+  <a href="/news/conference/6533868">Начало регистрации команд ко Дню свободы программного обеспечения</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/conference/"> 
+  <img src="/tango/img/x-office-presentation.png" width=64 height=64 border=0 alt="Группа Конференции и встречи"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>C 22 июля началась регистрация команд на сайте <a href="http://softwarefreedomday.org/">http://softwarefreedomday.org/</a> для участия в международном Дне свободы программного обеспечения, который в очередной раз будет проводиться 17 сентября. Главная цель этого события — познакомить людей со свободным и открытым программным обеспечением. <p>В настоящее время в России участвуют только две команды: омские и саратовские линуксоиды.
+<p>&gt;&gt;&gt; <a href="http://www.softwarefreedomday.org/cgi-bin/register.py">Регистрация команды</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=softwarefreedomday">softwarefreedomday</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6525084"> 
+ 
+<h2> 
+  <a href="/news/multimedia/6525084">FAUST 0.9.43</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/multimedia/"> 
+  <img src="/tango/img/multimedia.png" width=65 height=75 border=0 alt="Группа Мультимедиа"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Выпущена первая за последние восемь месяцев новая версия средств разработки на функциональном языке <a href="http://faust.grame.fr/">FAUST</a> (Functional AUdio STream), предназначенном для физического моделирования и обработки звука.<p>Язык FAUST пользуется растущей популярностью среди разработчиков свободных эффектов и инструментов, поскольку позволяет создавать достаточно правдоподобные виртуальные копии винтажных синтезаторов и электроорганов. Это связано с тем, что на языке можно с лёгкостью воспроизводить принципиальные схемы.<p>Изменения затронули практически все части SDK:
+<ul><li> улучшен компилятор;<li> добавлена масса примеров с виртуальными духовыми, клавишными, струнными и перкуссионными инструментами;<li> добавлены трансляторы в LADSPA, DSSI и SuperCollider;<li> добавлены новые фильтры, включая ревербераторы на основе сетей задержки отклика.</ul><p>
+&gt;&gt;<a href="http://sourceforge.net/projects/faudiostream/files/faust-0.9.43.tar.gz/download">Скачать</a> 
+<p>&gt;&gt;&gt; <a href="http://sourceforge.net/projects/faudiostream/files/WHATSNEW/download">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=%D0%B7%D0%B2%D1%83%D0%BA">звук</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6528517"> 
+ 
+<h2> 
+  <a href="/news/redhat/6528517">Релиз Red Hat Enterprise Linux 5.7</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/redhat/"> 
+  <img src="/tango/img/redhat-logo.png" width=65 height=75 border=0 alt="Группа Red Hat"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>В этом релизе повышена гибкость, безопасность и стабильность среды Red Hat Enterprise Linux; включен ряд особенностей, взятых из Red Hat Enterprise Linux 6.<p>Главное в Red Hat Enterprise Linux 5.7:<ol type="disc"><li><b>Работа с аппаратным обеспечением:</b><br>
+Есть поддержка нового оборудования, выпущенного в 2011 году и доступного для платформ Intel, AMD, POWER и IBM System z. Обновлены драйвера для систем хранения (Broadcom NetXtreme II iSCSI, LSI SAS, Areca RAID, Brocade Fibre Channel, QLogic Fibre Channel, Emulex Fibre Channel, HP Smart Array), сетевых адаптеров (Chelsio Terminator4 10G, Chelsio T3, Intel PRO/1000, Cisco 10G, Myricom Myri-10G, Intel Gigabit Ethernet, Broadcom Tigon3, Brocade 10Gb, Intel 10 Gigabit, Atheros GbE) и графических чипов (для карт ATI RV635/RV730 добавлен поддержка DisplayPort).<li><b>Улучшение виртуализации:</b><br>
+Улучшена поддержка системы виртуализации KVM: увеличена скорость live-миграции, улучшена поддержка эмуляции CD-ROM, решены проблемы с нарушением порядка загрузки виртуальных машин.<br>
+Улучшена работа Xen: увеличена производительность работы гостевых систем на 32-разрядных хост-системах; ограничение на максимальное число дисков, привязанное к одному Xen-окружению, увеличено со 100 до 256; ускорено выполнение операции загрузки гостевых окружений; в Xen PyGrub добавлена поддержка xz-сжатия; для гостевых систем обеспечена возможность работ с 4 последовательными портами.<li><b>Поддержка протокола SCAP и связанных с ним библиотек и утилит:</b><br>
+SCAP (Security Content Automation Protocol) предоставляет стандартизированный подход к проверке безопасности Red Hat Enterprise Linux.<li><b>Введен Менеджер Подписок (Subscribtion Manager):</b><br>
+Новый, основанный на сертификатах, Менеджер Подписок предоставляет гибкий, масштабируемый и безопасный способ управления сервисами подписок и программного обеспечения.<li><b>Улучшения работы в сети и хранения данных:</b><br>
+Реализация средств для использования LDAP для задания параметров доступа и централизованного управления пользовательскими файловыми системами.</ol><p>
+Для получения большей информации о Red Hat Enterprise Linux посетите <a href="http://www.redhat.com/rhel/">эту страницу</a>. Более подробная информация о релизе <a href="https://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/5/html/5.7_Release_Notes/index.html">здесь</a>. Детализированная техническая информация находится по этой <a href="https://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/5/html/5.7_Technical_Notes/index.html">ссылке</a>.
+ 
+<p>&gt;&gt;&gt; <a href="http://www.redhat.com/about/news/blog/Red-Hat-Enterprise-Linux-5-7-Now-Available">Оригинал статьи</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=redhat">redhat</a>, <a href="view-news.jsp?tag=rhel">rhel</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6504811"> 
+ 
+<h2> 
+  <a href="/news/kernel/6504811">Linux 3.0</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/kernel/"> 
+  <img src="/tango/img/linux-logo.png" width=65 height=75 border=0 alt="Группа Ядро Linux"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>После двух месяцев разработки представлена новая версия ядра Linux 3.0.<p>Из изменений следует отметить такие:
+<ul><li>организационные:<ul><li>произошла смена мажорного номера и системы нумерации в целом. Это не повлекло за собой кардинальных изменений кода, но правильным образом укрепило модель разработки, принятую для ветки 2.6;</ul><p><li>в сетевой подсистеме:<ul><li>включен <a href="http://git.kernel.org/linus/0a14842f5a3c0e88a1e59fac5c3025db39721f74">JIT-компилятор</a> для BPF (для платформы x86_64);<li>добавлена возможность посылать и принимать пакеты ICMP_ECHO непривилегированными пользователями через новый сокет <a href="http://git.kernel.org/linus/c319b4d76b9e583a5d88d6bf190e079c4e43213d">IPPROTO_ICMP</a>;<li>произведены <a href="http://git.kernel.org/linus/228e548e602061b08ee8e8966f567c12aa079682">улучшения</a> в подсистеме Samba;<li>добавлена новая дисциплина планирования <a href="http://git.kernel.org/linus/0545a3037773512d3448557ba048cebb73b3e4af">QFQ</a>;<li>добавлена <a href="http://thread.gmane.org/gmane.linux.kernel/1145742">возможность изолирования</a> соединений VPN;<li>добавлены и обновлены драйверы проводных и беспроводных сетевых устройств;<li><a href="http://git.kernel.org/linus/eecc48000afe2ca6da22122d553b7cad294e42fc">добавлена</a> <a href="http://git.kernel.org/linus/ff1b6e69ad4f31fb3c9c6da2665655f2e798dd70">поддержка</a> WoWLAN;</ul><p><li>в файловых системах:<ul><li>произведены множественные улучшения в btrfs, отдельно следует выделить <a href="http://git.kernel.org/linus/4cb5300bc839b8a943eb19c9f27f25470e22d0ca">автоматическую дефрагментацию</a> (<i>применима к небольшим файлам</i>);<li>в ext4 <a href="http://git.kernel.org/linus/a4bb6b64e39abc0e41ca077725f2a72c868e7622">добавлена</a> поддержка информирования программами файловой системы о том, что некоторые области файлов не содержат данных;<li>в tmpfs добавлена базовая поддержка <a href="http://git.kernel.org/linus/b09e0fa4b4ea66266058eead43350bd7d55fec67">расширенных атрибутов</a>;<li>в xfs добавлена поддержка оповещения носителей об освобождаемом месте непосредственно в момент удаления файлов;</ul><p><li>в подсистеме виртуализации:<ul><li>в Xen <a href="http://git.kernel.org/linus/4d05a28db56225bbab5e1321d818f318e92a4657">добавлен</a> backend хранения данных, что позволяет использовать ванильное ядро как хост-систему без применения дополнительных патчей;</ul><p><li>в архитектуре:<ul><li>начата реорганизация дерева ARM с целью унификации;<li>выключена оптимизация по размеру по умолчанию;<li>в KVM добавлена <a href="http://git.kernel.org/linus/4429d5dc1197aaf8188e4febcde54d26a51baf6c">поддержка</a> процессоров VIA;<li>теперь <a href="http://git.kernel.org/linus/18aecc2b645bbb07851b196452a2af314222069b">ядро поддерживает</a> 64-разрядную архитектуру Tilera;<li><a href="http://git.kernel.org/linus/de5397ad5b9ad22e2401c4dacdf1bb3b19c05679">реализована</a> поддержка режима SMEP (Supervisor Mode Execution Protection) для современных процессоров Intel. При его включении ядру аппаратно запрещается исполнять код из непривилегированных страниц пространства пользователя. SMEP предохраняет ядро от некоторых видов атак и эксплоитов.<li>функция подсистемы управления памятью mmu_gather теперь <a href="http://thread.gmane.org/gmane.linux.kernel.mm/60859">может вытесняться</a>, что значительно улучшило масштабируемость ядра;</ul><p><li>в видеоподсистеме:<ul><li><a href="http://git.kernel.org/linus/c76b615c43a1189c32058ff3ab5634fc3fa97ae5">обновлены</a> драйверы i915;<li>в драйвере Radeon улучшена <a href="http://git.kernel.org/linus/224d94b1445e2a836cd3790ff29f1866c052de4d">поддержка DisplayPort</a>;<li>в драйвер Nouveau добавлена поддержка технологии Pmpeg для чипов <a href="http://git.kernel.org/linus/a02ccc7f97d9e9121aa641aca33ba2a2978aef31">nv40</a> и <a href="http://git.kernel.org/linus/c0924326c8306249aaae27016b80f3c07bb51705">nv84</a>;<li>улучшена поддержка <a href="http://git.kernel.org/linus/99b38b4acc0d7dbbab443273577cff60080fcfad">NVIDIA Optimus</a>;<li>в код DRM <a href="http://thread.gmane.org/gmane.linux.kernel/1144704">добавлена</a> поддержка 30-разрядной цветовой глубины;</ul><p><li>другое:<ul><li>добавлена поддержка драйвера <a href="http://git.kernel.org/linus/6f231dda68080759f1aed3769896e94c73099f0f">isci</a> для контроллера SAS в сервере Intel C600;<li>в драйвере mvsas добавлена поддержка чипов 88SE9445 и 88SE9485;<li>теперь неиспользованные порты SATA <a href="http://git.kernel.org/linus/8a745f1f39b7a20047a362b67ce9151c07d14440">можно</a> полностью отключать;</ul><p><li>также было сделано множество других полезных и интересных изменений, перечислять которые можно очень долго.</ul><p>
+&gt;&gt;&gt; <a href="http://article.gmane.org/gmane.linux.kernel/1170070">Официальный анонс</a><p>&gt;&gt;&gt; Статьи, по мотивам которых подготовлена эта новость: <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-0-Part-1-Networking-1257847.html">1</a>, <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-0-Part-2-Filesystems-1263681.html">2</a>, <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-0-Part-3-Infrastructure-1275463.html">3</a>, <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-0-Part-4-Drivers-1276887.html">4</a><p>&gt;&gt;&gt; <a href="http://www.h-online.com/open/features/What-s-new-in-Linux-3-0-1279552.html">Обзорная статья о нововведениях</a><p>&gt;&gt;&gt; <a href="http://kernelnewbies.org/Linux_3.0">Список основных изменений</a><p>&gt;&gt;&gt; <a href="http://kernelnewbies.org/Linux_3.0_DriverArch">Список изменений в драйверах</a><p>&gt;&gt;&gt; <a href="http://www.kernel.org/pub/linux/kernel/v3.0/patch-3.0.bz2">Патч на 2.6.39</a> 
+<p>&gt;&gt;&gt; <a href="http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.0.tar.bz2">Архив исходных кодов</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=kernel">kernel</a>, <a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=%D1%80%D0%B5%D0%BB%D0%B8%D0%B7">релиз</a>, <a href="view-news.jsp?tag=%D1%8F%D0%B4%D1%80%D0%BE">ядро</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6523668"> 
+ 
+<h2> 
+  <a href="/news/commercial/6523668">Oracle купил компанию Ksplice</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/commercial/"> 
+  <img src="/tango/img/money-logo.png" width=65 height=75 border=0 alt="Группа Коммерческое ПО"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>В четверг, 21 июля 2011 года компания <a href="http://www.oracle.com/">Oracle</a> объявила о завершении сделки по приобретению частной компании <a href="http://www.ksplice.com/">Ksplice</a>, известной своей инновационной технологией Ksplice Uptrack, которая позволяет устанавливать обновления для ядра Linux без перезагрузки. По данным с сайта разработчика Ksplice Uptrack используется на более чем 100000 серверов в 700 компаниях.<p>Поддержка RedHat, CentOS, Ubuntu, SuSe и многих других дистрибутивов будет упразднена, так как в Oracle считают, что только <a href="http://www.oracle.com/us/technologies/linux/index.html">Oracle Linux</a> будет позволять работать серверам непрерывно без перезагрузок для применения обновлений ядра. Фактически же, Ksplice останется только для подписчиков Oracle, новые клиенты сторонних производителей регистрироваться не будут.<p>Данное приобретение должно укрепить позиции Oracle на рынке решений на базе Linux и характерно показывает отношение Oracle к сообществу.<p>&gt;&gt;&gt; <a href="http://www.oracle.com/us/corporate/acquisitions/ksplice/general-presentation-430138.pdf">Презентация</a> 
+<p>&gt;&gt;&gt; <a href="http://www.oracle.com/us/corporate/press/435791">Пресс-релиз</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=ksplice">ksplice</a>, <a href="view-news.jsp?tag=oracle">oracle</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6523621"> 
+ 
+<h2> 
+  <a href="/news/opensource/6523621">Новая оболочка для duplicity</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/opensource/"> 
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Российская компания <a href="http://www.skycover.ru">SkyCover</a> опубликовала код web и shell интерфейса для программы резервного копирования duplicity.<p><a href="http://duplicity.nongnu.org">Duplicity</a> - утилита командной строки, предназначенная для резервного копировния на любые файловые ресурсы, включая Amazon S3. Duplicity поддерживает шифрование GPG, инкрементальные копии с помощью librsync (сохраняются только различающиеся блоки внутри файлов), реализует полезные команды для управления архивом.<p><a href="http://www.skycover.ru/opensource/scduply">SkyCover Duply</a> и <a href="http://www.skycover.ru/opensource/scdw">SkyCover Duply Web</a> - это (еще один) интерфейс к duplicity, делающий ее более дружественной. Программы ориентированы на серверные задачи и созданы для упрощения работы с сервисом <a href="http://www.skycover.ru/skycover-backup">SkyCover Бэкап</a>. В то же время, они универсальны, не привязаны к сервису и распространяются под лицензией GPLv3.<p><a href="http://www.skycover.ru/opensource/scduply">SkyCover Duply</a> (scduply) - утилита командной строки для управления duplicity через файлы конфигурации. Основана на <a href="http://duply.net">duply</a> (v.1.5.2.3), но имеет ряд приятных расширений.<p><a href="http://www.skycover.ru/opensource/scdw">SkyCover Duply Web</a> (SCDW) - веб-интерфейс (django) для настройки профилей scduply, позволяющий удобно указывать файловые пути и исключения, в т. ч. под Windows/CygWin.
+<p>&gt;&gt;&gt; <a href="http://www.skycover.ru/opensource">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=backup">backup</a>, <a href="view-news.jsp?tag=duplicity">duplicity</a>, <a href="view-news.jsp?tag=skycover">skycover</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6521895"> 
+ 
+<h2> 
+  <a href="/news/opensource/6521895">Первое за 18 лет обновление dmesg(1)</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/opensource/"> 
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Karel Zak, один из разработчиков пакета <a href="http://www.kernel.org/pub/linux/utils/util-linux/"><b>util-linux</b></a>, содержащего основные системные утилиты Linux, впервые подверг изменению утилиту <b>dmesg</b> этого пакета. Обновление станет доступным для пользователей с выходом util-linux версии 2.20.<p>dmesg выводит все сообщения ядра, начиная с этапа загрузки системы, в stdout.<p>Новые функции включают:<ul><li> Ключ <b>--decode</b>, преобразующий числовое значение уровней загрузки и параметры операции в понятные текстовые примечания:
+<div class=code><pre class="no-highlight"><code>$ dmesg --decode
+kern  :info  : &#91;26443.677632&#93; ata1.00: configured for UDMA/100
+kern  :info  : &#91;26443.830225&#93; PM: resume of devices complete after 2452.856 msecs
+kern  :debug : &#91;26443.830606&#93; PM: Finishing wakeup.
+kern  :warn  : &#91;26443.830608&#93; Restarting tasks ... done.
+</code></pre></div><p><li> Фильтрация сообщений в соответствии с опциями <b>--facility</b> и --<b>level</b>:
+<div class=code><pre class="no-highlight"><code>$ dmesg --level=err,warn
+$ dmesg --facility=daemon,user
+$ dmesg --facility=daemon --level=debug
+</code></pre></div><p><li> Ключ <b>-u</b>, <b>--userspace</b> для вывода сообщений, полученных с пользовательского уровня;<li> Ключ <b>-k</b>, <b>--kernel</b> для вывода сообщений уровня ядра;<li> Ключ <b>-t</b>, <b>--notime</b> для удаления из вывода временных отметок;<li> Ключ <b>-T</b>, <b>--ctime</b> для вывода времени в формате, подобном ctime(). Однако этот ключ бесполезен после использования ждущего режима и выхода из него. (Для printk() после окончания ждущего режима ядро не использует обычное системное время и поэтому временные значения не изменяются.)<li> Ключ <b>--show-delta</b> для вывода длительности промежутка между сообщениями:
+<div class=code><pre class="no-highlight"><code>$ dmesg --show-delta
+&#91;35523.876281 &lt;    4.016887&gt;&#93; usb 1-4.1: new low speed USB device using  hci_hcd and address 12
+&#91;35523.968398 &lt;    0.092117&gt;&#93; usb 1-4.1: New USB device found, idVendor=413c, idProduct=2003
+&#91;35523.968408 &lt;    0.000010&gt;&#93; usb 1-4.1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+&#91;35523.968416 &lt;    0.000008&gt;&#93; usb 1-4.1: Product: Dell USB Keyboard
+</code></pre></div><p></ul><p> 
+<p>&gt;&gt;&gt; <a href="http://karelzak.blogspot.com/2011/07/dmesg1-changes-for-util-linux-220.html">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=dmesg">dmesg</a>, <a href="view-news.jsp?tag=util-linux">util-linux</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6520040"> 
+ 
+<h2> 
+  <a href="/news/opensource/6520040">theMeStream - аналог Google Wave</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/opensource/"> 
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Проект theMeStream представляет из себя клон знаменитого, ныне закрываемого, проекта Google Wave. В отличие от GWave, tMS написан на PHP и JavaScript, в качестве б/д используется mysql. Код проекта открыт под лицензией AGPLv3.<p>theMeStream – это платформа для общения, данные в которой обновляются в реальном времени. Данный сервис комбинирует такие повседневные сетевые инструменты как электронная почта, веб-чат, социальная сеть и возможность коллективной работы над одним проектом.
+<p>&gt;&gt;&gt; <a href="http://theMeStream.ru/?act=view&amp;ids=TVRRdw">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=google+wave">google wave</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6520095"> 
+ 
+<h2> 
+  <a href="/news/android/6520095">Google поддержит HTC в разбирательстве с Apple</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/android/"> 
+  <img src="/tango/img/android.png" width=64 height=64 border=0 alt="Группа Android"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>На проходящей в Токио конференции &quot;Мобильная революция&quot; Эрик Шмидт, руководитель компании Google, выступил с критикой патентного нападения компании Apple на производителя мобильных телефонов HTC. Шмидт заявил, что Google не намерена сложа руки наблюдать за происходящими событиями и приложит все усилия для того, чтобы на финальном заседании Комиссии США по международной торговле, которое состоится в декабре, окончательное решение было вынесено в пользу HTC. Напомним, что опубликованное на днях предварительное решение комиссии усматривает нарушение двух патентов Apple в телефонах HTC, основанных на платформе Android. <p>Шмидт не уточнил, какие конкретно действия намерена предпринять компания Google для снятия патентной агрессии против платформы Android. В настоящее время, кроме Apple, свои права на используемую в Android интеллектуальную собственность предъявляют компании Microsoft и Oracle. В случае Microsoft используется политика нагнетания атмосферы неопределенности, умалчивания фактов и заключения за закрытыми дверями соглашений с производителями устройств о выплате лицензионных отчислений. Oracle намерена отсудить несколько миллиардов долларов у Google, как создателя платформы Android, мотивируя свои действия нарушением интеллектуальной собственности, связанной с Java-технологиями. <p>По мнению Шмидта, ошеломляющий успех телефонов на базе платформы Android не дает покоя компаниям, развивающим конкурирующие платформы. К сожалению, оказавшись неспособными ответить инновациями, некоторые из производителей не могут сдержать зависть и пытаются подорвать распространение платформы Android инициированием судебных тяжб. Но Google не отчаивается, так как уверена, что не нарушает чужих прав, и воспринимает подобные нападки как подтверждение успеха Android. <p>В своем выступлении Эрик Шмидт упомянул, что в настоящее время ежедневно активируется около 550 тысяч новых Android-устройств, при этом еще два месяца назад число ежедневных активаций составляло 400 тыс. Общее число активированных с 2008 года телефонов достигло отметки в 135 млн, на рынке присутствует 410 моделей устройств на базе Android. По мнению Шмидта, в развитии мобильной индустрии наблюдается соблюдение закона Мура: за последние 18 месяцев скорость выхода в сеть мобильных устройств возросла на 60%, а средняя стоимость смартфонов упала с 500 до 200 долларов. Шмидт считает, что в ближайшем будущем стоимость Android-смартфонов вполне может упасть до 50-70 долларов. В более отдаленной перспективе, если закон Мура действует, то в ближайшие 10 лет мобильные устройства могут стать до 30 раз дешевле, лучше и быстрее.<p><i>Взято с <a href="http://www.opennet.ru/opennews/art.shtml?num=31244">opennet.ru</a></i> 
+<p>&gt;&gt;&gt; <a href="http://www.zdnetasia.com/schmidt-android-to-be-asias-mobile-gateway-62301256.htm">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=android">android</a>, <a href="view-news.jsp?tag=apple">apple</a>, <a href="view-news.jsp?tag=google">google</a>, <a href="view-news.jsp?tag=%D0%BF%D0%B0%D1%82%D0%B5%D0%BD%D1%82%D1%8B">патенты</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################
+<div class=news id="topic-6519436"> 
+ 
+<h2> 
+  <a href="/news/opensource/6519436">Вышла очередная референсная реализация компиляторов языков D1 и D2</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/opensource/"> 
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>10 июля стала доступна для загрузки очередная референсная реализация компиляторов языков D1 и D2. Как повелось с предыдущего выпуска, <a href="http://digitalmars.com/d/download.html">готовы пакеты для Ubuntu, Fedora, и openSUSE</a>, как 32-х, так и 64-хбитные. <p>Некоторые нововведения:<ul><li>введены атрибуты @safe, @property, сделан автоматический интерфейс для @safe, pure, nothrow;<li> 
+В inline assembler добавлена поддержка инструкций SSSE3;<li>добавлены новые предупреждения о свойствах, подлежащих удалению, часть свойств объявлены удалёнными;<li>расширены ядро языка и стандартная библиотека, в частности, добавлены core.sys.posix.netdb, td.array.uninitializedArray, std.array.minimallyInitializedArray;<li>часть функций, в первую очередь в модулях std.string и std.uni, была переименована для соответствия с разработанными правилами именования, старые названия частично сохранены для совместимости, но будут удалены из последующих версий;<li>добавлена возможность использовать логические переменные в качестве ключей в ассоциативных массивах, ранее с этою целью можно было использовать только целые числа и строки.</ul><p>Авторы также рапортуют об устранении 127 ошибок различной природы.<p><a href="http://digitalmars.com/d/2.0/changelog.html">Подробный список изменений</a> можно посмотреть на официальном сайте.
+<p>&gt;&gt;&gt; <a href="http://digitalmars.com/d/download.html">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=d">d</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  
+#########################################################################################

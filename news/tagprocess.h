@@ -13,6 +13,7 @@
 #include <stack>
 #include <set>
 #include <fstream>
+#include <windows.h>
 
 using std::pair;
 using std::string;
@@ -160,6 +161,20 @@ private:
             return strcmp(left.first.c_str(), right.first.c_str()) < 0;
         }
     };
+
+    /**
+     * \fn  inline void CNewsFinder::LowerCase(CtDK::string * pstr)
+     *
+     * \brief   Приведение строки к строчным буквам.
+     *
+     * \param [in,out]  pstr    - Изменяемая строка.
+     */
+
+    inline void LowerCase(string * pstr)
+    {
+        if(pstr->size())
+            CharLower(&(*pstr->begin()));
+    }
 
     /**
      * \fn  string CNewsFinder::getTag(pair<int, int> &tagPos, const string &src);
