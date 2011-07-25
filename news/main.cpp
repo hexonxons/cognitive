@@ -72,7 +72,7 @@ int main()
     // массивы ненужных тегов
     vector<pair<string, string>> remDoubleTag;
     vector<string> remTag;
-    CNewsFinder finder("news", 8);
+    CNewsFinder finder("news", 5, 10);
     remDoubleTag.push_back(make_pair("<script>", "</script>"));
     remDoubleTag.push_back(make_pair("<noscript>", "</noscript>"));
     remDoubleTag.push_back(make_pair("<form>", "</form>"));
@@ -80,6 +80,7 @@ int main()
     remDoubleTag.push_back(make_pair("<ul>", "</ul>"));
     remDoubleTag.push_back(make_pair("<span>", "</span>"));
     remDoubleTag.push_back(make_pair("<p>", "</p>"));
+    remDoubleTag.push_back(make_pair("<style>", "</style>"));
 
     remTag.push_back("<!doctype>");
     remTag.push_back("<html>");

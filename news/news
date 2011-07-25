@@ -16,6 +16,7 @@
  
  
  
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
  
 <html lang=ru> 
@@ -25,14 +26,16 @@
     <LINK REL=STYLESHEET TYPE="text/css" HREF="/tango/hover.css"> 
   
  
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script> 
 <script src="/js/head.js" type="text/javascript"></script> 
  
+	<title>Новости</title> 
  
-<title>LINUX.ORG.RU - Русская информация об ОС Linux</title> 
-<META NAME="Keywords" CONTENT="linux линукс операционная система документация gnu бесплатное свободное програмное обеспечение софт unix юникс software free documentation operating system новости news"> 
-<META NAME="Description" CONTENT="Все о Linux на русском языке"> 
-<LINK REL="alternate" TITLE="L.O.R RSS" HREF="section-rss.jsp?section=1" TYPE="application/rss+xml"> 
+ 
+ 
+  <LINK REL="alternate" HREF="/section-rss.jsp?section=1" TYPE="application/rss+xml"> 
+ 
+ 
  
  
  
@@ -48,6 +51,11 @@
  
  
   <base href="http://www.linux.org.ru/"> 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -122,38 +130,1202 @@
 <div style="clear: both"></div> 
  
  
+ 
+ 
 <!--TopList COUNTER--> 
 <img height=1 width=1 src="http://top.list.ru/counter?id=71642" alt=""> 
 <!--TopList COUNTER--> 
 <div id="bd"> 
  
+  <table class=nav><tr> 
+    <td align=left valign=middle id="navPath"> 
+      Новости
+    </td> 
+    <td align=right valign=middle> 
+      
+      
+        
+          [<a href="/view-all.jsp?section=1">Неподтвержденные</a>]
+        
+        [<a href="add-section.jsp?section=1">Добавить</a>]
+      
+ 
+      
+        [<a href="/news/archive/">Архив</a>]
+      
+ 
+      
+ 
+      
+        [<a href="/section-rss.jsp?section=1">RSS</a>]
+      
+    </td> 
+  </tr> 
+</table> 
+ 
+<H1 class="optional">Новости</H1> 
+ 
+  
  
  
-<div style="clear: both"></div> 
-<div class="newsblog"> 
-  <div class="newsblog-in"> 
- 
-<h1><a href="/news/">Новости</a></h1> 
  
  
-  <div class="infoblock" style="border: 1px solid #777; text-align: justify;"> 
-    <a href="http://job.samsung.ru/"><img width="130" height="43" src="/adv/Samsung_Logo.png" alt="" style="float: left; border: 0"></a> 
-    <div style="margin-left: 135px"> 
  
-    SAMSUNG Electronics&nbsp;&mdash; мировой лидер в&nbsp;производстве полупроводников,
-телекоммуникационного оборудования и&nbsp;цифровой конвергенции&nbsp;&mdash; объявляет о&nbsp;приеме
-на&nbsp;работу программистов, инженеров-разработчик, физиков и&nbsp;химиков: LINUX,
-Android, C/C++, Smart Phones, Smart TV, 3D&nbsp;Imaging, 3D&nbsp;Graphics, ASIC, FPGA,
-SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная информация:
-    <a href="http://job.samsung.ru/" style="color: white">http://job.samsung.ru</a> 
-    </div> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=news id="topic-6534965"> 
+ 
+<h2> 
+  <a href="/news/kernel/6534965">Представлен набор RT-патчей для ядра Linux 3.0</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/kernel/"> 
+  <img src="/tango/img/linux-logo.png" width=65 height=75 border=0 alt="Группа Ядро Linux"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Томас Глейкснер (Thomas Gleixner), основной разработчик и мейнтейнер RT-ветки ядра Linux, <a href="https://lkml.org/lkml/2011/7/24/35">сообщил</a> о выпуске третьей верcии набора патчей с реализацией режима реального времени (Realtime-Preempt&quot;, PREEMPT_RT или &quot;-rt&quot;) для ядра Linux 3.0. Ядро &quot;-rt&quot; с реализацией жёсткого режима реального времени используется в real-time редакциях промышленных Linux дистрибутивов MontaVista, Red Hat и Novell. Это первое крупное обновление RT-Linux за последние несколько лет, которое знаменует собой уход от ядра версии 2.6.33, которое было использовано в качестве базы для RT-ветки несколько лет подряд.<p>В письме, отправленном в список рассылки Linux-ядра, Томас Глейкснер отмечает существенное отличие новой версии патчей от предыдущих. Логика работы многих подсистем была кардинально переработана, код стал намного чище и проще для анализа, общий размер патчей сократился более чем в два раза. Теперь код затрагивает гораздо меньше подсистем и структур данных ядра, что, по мнению автора, позволит ускорить процесс его включения в основную ветку. 223 подготовленных в рамках проекта патча, затрагивающих 374 файла разбиты на 4 группы, из которых одна группа устраняет недоработки уже находящихся в ядре подсистем, одна группа уже отправлена для включения в состав основного ядра, одна признана готовой для отправки заявки на включение в состав ядра и одна требует доработки и проверки. Для сравнения, для ветки 2.6.33 было подготовлено 462 патча, затрагивающих 690 файлов.<p>Ядро с наложенными патчами было протестировано на платформах x86 и x86_64, а также на ARM, MIPS и PowerPC и, по словам Thomas Gleixner оказалось &quot;удивительно стабильным&quot; (amazinlgy stable). Событие знаменательно тем, что это первый случай когда RT-патчи адаптированы для последней актуальной версии Linux-ядра, ранее выпуск патчей существенно отставал, что было связано с большой трудоёмкостью процесса портирования и тестирования.<p> 
+<p>&gt;&gt;&gt; <a href="https://lkml.org/lkml/2011/7/24/35">Подробности</a> 
   </div> 
  
+  
  
  
  
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=linux+rt">linux rt</a>, <a href="view-news.jsp?tag=%D1%8F%D0%B4%D1%80%D0%BE">ядро</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
     
       
+ 
+ 
+ 
+ 
+ 
+<a href="/people/papochka/profile">papochka</a> 
+ 
+ 
+ 
+(25.07.2011 12:29:15)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6534965">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/kernel/6534965">15&nbsp;комментариев</a>]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=infoblock id="topic-6526648"> 
+Мини-новость:
+  <a href="/news/opensource/6526648">Computable Document Format — альтернатива PDF?</a> 
+ 
+ 
+ 
+  [<a href="/news/opensource/6526648">55&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6526648/page1">2</a>)]
+</div> 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=news id="topic-6530425"> 
+ 
+<h2> 
+  <a href="/news/games/6530425">Релиз игры BZFlag 2.4</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/games/"> 
+  <img src="/tango/img/games-logo.png" width=64 height=53 border=0 alt="Группа Игры"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Состоялся релиз игры BZFlag 2.4 «Пробуждение Мертвецов» (&quot;Wake the Dead&quot;). В связи со сложностями при создании релиза 3.0 было решено перенести отдельные изменения из третьей ветви разработки во вторую. Добавлялись также исправления ошибок и возможности помимо них.<p>BZFlag — многопользовательская компьютерная онлайн игра, трёхмерный шутер от первого лица; жанр — артиллерия. Игра основана на классической игре Battlezone.<p>Вам даётся управление танком, боевые действия разворачиваются в определённом игровом мире. В арсенале предусмотрено оружие и специальные средства различного типа, такие как: самонаводящиеся снаряды, лазеры, невидимость, форсаж и многие другие.<p>В версии 2.4 частично сломана совместимость с 2.0: игроки с клиентом версии 2.4 не могут подключаться к серверу версии 2.0. А если наоборот, игроки с клиентом 2.0, а сервер версии 2.4, то всё работает. Владельцам уже работающих серверов предлагается следовать инструкциям, доступным по <a href="http://my.bzflag.org/w/BZFS_2.4_Upgrade">этим</a> <a href="http://my.bzflag.org/w/BZFS_API_2.4_Upgrade">гиперссылкам</a>.<p>Основные изменения:
+<ul><li> Возможность запрещения teamkilling для сервера. Teamkilling — снижение здоровья от выстрела в игрока коллегой по команде.<li> Игровой режим OpenFFA, позволяющий атаковать любого игрока независимо от его цвета.<li> Пообъектный рикошет для создателей карт: включение рикошета для отдельных объектов.<li> Удалена локальная аутентификация.<li> Возможность скрытия флагов на радаре для сервера.<li> Заблокирована возможность отключения тумана.<li> Исправлена задержка при создании скриншотов.<li> Задача идентификации ID флагов передана серверу.<li> Теперь публичные серверы должны обязательно иметь публичный ключ.<li> Голосование касается только тех участников игры, которые имеют возможность проголосовать.</ul><p>
+Полный список изменений, на английском языке размером с 1 страницу формата А4, вы можете найти по ссылке подробностей<p>&gt;&gt;&gt; <a href="https://bzflag.svn.sourceforge.net/svnroot/bzflag/tags/v2_4_0/ChangeLog">Подробности</a> 
+<p>&gt;&gt;&gt; <a href="http://sourceforge.net/projects/bzflag/files/">Загрузка</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=fps">fps</a>, <a href="view-news.jsp?tag=%D0%B8%D0%B3%D1%80%D1%8B">игры</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
+    
+      
+ 
+ 
+ 
+ 
+ 
+<a href="/people/ZenitharChampion/profile">ZenitharChampion</a> 
+ 
+ 
+ 
+(25.07.2011 10:29:21)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6530425">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/games/6530425">24&nbsp;комментария</a>]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=news id="topic-6533868"> 
+ 
+<h2> 
+  <a href="/news/conference/6533868">Начало регистрации команд ко Дню свободы программного обеспечения</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/conference/"> 
+  <img src="/tango/img/x-office-presentation.png" width=64 height=64 border=0 alt="Группа Конференции и встречи"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>C 22 июля началась регистрация команд на сайте <a href="http://softwarefreedomday.org/">http://softwarefreedomday.org/</a> для участия в международном Дне свободы программного обеспечения, который в очередной раз будет проводиться 17 сентября. Главная цель этого события — познакомить людей со свободным и открытым программным обеспечением. <p>В настоящее время в России участвуют только две команды: омские и саратовские линуксоиды.
+<p>&gt;&gt;&gt; <a href="http://www.softwarefreedomday.org/cgi-bin/register.py">Регистрация команды</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=softwarefreedomday">softwarefreedomday</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
+    
+      
+ 
+ 
+ 
+ 
+ 
+<a href="/people/linuxmaster/profile">linuxmaster</a> 
+ 
+ 
+ 
+(25.07.2011 10:25:20)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6533868">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/conference/6533868">9&nbsp;комментариев</a>]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=infoblock id="topic-6531929"> 
+Мини-новость:
+  <a href="/news/opensource/6531929">Релиз файлового менеджера emelFM2 0.8.0</a> 
+ 
+ 
+ 
+  [<a href="/news/opensource/6531929">166&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6531929/page1">2</a> <a href="/news/opensource/6531929/page2">3</a> <a href="/news/opensource/6531929/page3">4</a>)]
+</div> 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=infoblock id="topic-6532315"> 
+Мини-новость:
+  <a href="/news/internet/6532315">Deluge 1.3.3</a> 
+ 
+ 
+ 
+  [<a href="/news/internet/6532315">66&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/internet/6532315/page1">2</a>)]
+</div> 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=infoblock id="topic-6532425"> 
+Мини-новость:
+  <a href="/news/calculate-linux/6532425">Вышел Calculate Linux 11.6.1</a> 
+ 
+ 
+ 
+  [<a href="/news/calculate-linux/6532425">50&nbsp;комментариев</a>]
+</div> 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=infoblock id="topic-6532160"> 
+Мини-новость:
+  <a href="/news/gnome/6532160">GTK 3.1.10</a> 
+ 
+ 
+ 
+  [<a href="/news/gnome/6532160">80&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/gnome/6532160/page1">2</a>)]
+</div> 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=infoblock id="topic-6530572"> 
+Мини-новость:
+  <a href="/news/games/6530572">Doom2D:Rembo 1.35.1 — порт легендарной игры для Linux</a> 
+ 
+ 
+ 
+  [<a href="/news/games/6530572">79&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/games/6530572/page1">2</a>)]
+</div> 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=news id="topic-6525084"> 
+ 
+<h2> 
+  <a href="/news/multimedia/6525084">FAUST 0.9.43</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/multimedia/"> 
+  <img src="/tango/img/multimedia.png" width=65 height=75 border=0 alt="Группа Мультимедиа"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Выпущена первая за последние восемь месяцев новая версия средств разработки на функциональном языке <a href="http://faust.grame.fr/">FAUST</a> (Functional AUdio STream), предназначенном для физического моделирования и обработки звука.<p>Язык FAUST пользуется растущей популярностью среди разработчиков свободных эффектов и инструментов, поскольку позволяет создавать достаточно правдоподобные виртуальные копии винтажных синтезаторов и электроорганов. Это связано с тем, что на языке можно с лёгкостью воспроизводить принципиальные схемы.<p>Изменения затронули практически все части SDK:
+<ul><li> улучшен компилятор;<li> добавлена масса примеров с виртуальными духовыми, клавишными, струнными и перкуссионными инструментами;<li> добавлены трансляторы в LADSPA, DSSI и SuperCollider;<li> добавлены новые фильтры, включая ревербераторы на основе сетей задержки отклика.</ul><p>
+&gt;&gt;<a href="http://sourceforge.net/projects/faudiostream/files/faust-0.9.43.tar.gz/download">Скачать</a> 
+<p>&gt;&gt;&gt; <a href="http://sourceforge.net/projects/faudiostream/files/WHATSNEW/download">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=%D0%B7%D0%B2%D1%83%D0%BA">звук</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
+    
+      
+ 
+ 
+ 
+ 
+ 
+<a href="/people/AP/profile">AP</a> 
+ 
+ 
+ 
+(24.07.2011 11:25:59)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6525084">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/multimedia/6525084">17&nbsp;комментариев</a>]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=news id="topic-6528517"> 
+ 
+<h2> 
+  <a href="/news/redhat/6528517">Релиз Red Hat Enterprise Linux 5.7</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/redhat/"> 
+  <img src="/tango/img/redhat-logo.png" width=65 height=75 border=0 alt="Группа Red Hat"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>В этом релизе повышена гибкость, безопасность и стабильность среды Red Hat Enterprise Linux; включен ряд особенностей, взятых из Red Hat Enterprise Linux 6.<p>Главное в Red Hat Enterprise Linux 5.7:<ol type="disc"><li><b>Работа с аппаратным обеспечением:</b><br>
+Есть поддержка нового оборудования, выпущенного в 2011 году и доступного для платформ Intel, AMD, POWER и IBM System z. Обновлены драйвера для систем хранения (Broadcom NetXtreme II iSCSI, LSI SAS, Areca RAID, Brocade Fibre Channel, QLogic Fibre Channel, Emulex Fibre Channel, HP Smart Array), сетевых адаптеров (Chelsio Terminator4 10G, Chelsio T3, Intel PRO/1000, Cisco 10G, Myricom Myri-10G, Intel Gigabit Ethernet, Broadcom Tigon3, Brocade 10Gb, Intel 10 Gigabit, Atheros GbE) и графических чипов (для карт ATI RV635/RV730 добавлен поддержка DisplayPort).<li><b>Улучшение виртуализации:</b><br>
+Улучшена поддержка системы виртуализации KVM: увеличена скорость live-миграции, улучшена поддержка эмуляции CD-ROM, решены проблемы с нарушением порядка загрузки виртуальных машин.<br>
+Улучшена работа Xen: увеличена производительность работы гостевых систем на 32-разрядных хост-системах; ограничение на максимальное число дисков, привязанное к одному Xen-окружению, увеличено со 100 до 256; ускорено выполнение операции загрузки гостевых окружений; в Xen PyGrub добавлена поддержка xz-сжатия; для гостевых систем обеспечена возможность работ с 4 последовательными портами.<li><b>Поддержка протокола SCAP и связанных с ним библиотек и утилит:</b><br>
+SCAP (Security Content Automation Protocol) предоставляет стандартизированный подход к проверке безопасности Red Hat Enterprise Linux.<li><b>Введен Менеджер Подписок (Subscribtion Manager):</b><br>
+Новый, основанный на сертификатах, Менеджер Подписок предоставляет гибкий, масштабируемый и безопасный способ управления сервисами подписок и программного обеспечения.<li><b>Улучшения работы в сети и хранения данных:</b><br>
+Реализация средств для использования LDAP для задания параметров доступа и централизованного управления пользовательскими файловыми системами.</ol><p>
+Для получения большей информации о Red Hat Enterprise Linux посетите <a href="http://www.redhat.com/rhel/">эту страницу</a>. Более подробная информация о релизе <a href="https://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/5/html/5.7_Release_Notes/index.html">здесь</a>. Детализированная техническая информация находится по этой <a href="https://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/5/html/5.7_Technical_Notes/index.html">ссылке</a>.
+ 
+<p>&gt;&gt;&gt; <a href="http://www.redhat.com/about/news/blog/Red-Hat-Enterprise-Linux-5-7-Now-Available">Оригинал статьи</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=redhat">redhat</a>, <a href="view-news.jsp?tag=rhel">rhel</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
+    
+      
+ 
+ 
+ 
+ 
+ 
+<a href="/people/HerrWeigel/profile">HerrWeigel</a> 
+ 
+ 
+ 
+(23.07.2011 22:25:48)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6528517">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/redhat/6528517">48&nbsp;комментариев</a>]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=infoblock id="topic-6526089"> 
+Мини-новость:
+  <a href="/news/opensource/6526089">Leechcraft 0.4.85 &quot;Co-tick&quot;</a> 
+ 
+ 
+ 
+  [<a href="/news/opensource/6526089">113&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6526089/page1">2</a> <a href="/news/opensource/6526089/page2">3</a>)]
+</div> 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=news id="topic-6504811"> 
+ 
+<h2> 
+  <a href="/news/kernel/6504811">Linux 3.0</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/kernel/"> 
+  <img src="/tango/img/linux-logo.png" width=65 height=75 border=0 alt="Группа Ядро Linux"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>После двух месяцев разработки представлена новая версия ядра Linux 3.0.<p>Из изменений следует отметить такие:
+<ul><li>организационные:<ul><li>произошла смена мажорного номера и системы нумерации в целом. Это не повлекло за собой кардинальных изменений кода, но правильным образом укрепило модель разработки, принятую для ветки 2.6;</ul><p><li>в сетевой подсистеме:<ul><li>включен <a href="http://git.kernel.org/linus/0a14842f5a3c0e88a1e59fac5c3025db39721f74">JIT-компилятор</a> для BPF (для платформы x86_64);<li>добавлена возможность посылать и принимать пакеты ICMP_ECHO непривилегированными пользователями через новый сокет <a href="http://git.kernel.org/linus/c319b4d76b9e583a5d88d6bf190e079c4e43213d">IPPROTO_ICMP</a>;<li>произведены <a href="http://git.kernel.org/linus/228e548e602061b08ee8e8966f567c12aa079682">улучшения</a> в подсистеме Samba;<li>добавлена новая дисциплина планирования <a href="http://git.kernel.org/linus/0545a3037773512d3448557ba048cebb73b3e4af">QFQ</a>;<li>добавлена <a href="http://thread.gmane.org/gmane.linux.kernel/1145742">возможность изолирования</a> соединений VPN;<li>добавлены и обновлены драйверы проводных и беспроводных сетевых устройств;<li><a href="http://git.kernel.org/linus/eecc48000afe2ca6da22122d553b7cad294e42fc">добавлена</a> <a href="http://git.kernel.org/linus/ff1b6e69ad4f31fb3c9c6da2665655f2e798dd70">поддержка</a> WoWLAN;</ul><p><li>в файловых системах:<ul><li>произведены множественные улучшения в btrfs, отдельно следует выделить <a href="http://git.kernel.org/linus/4cb5300bc839b8a943eb19c9f27f25470e22d0ca">автоматическую дефрагментацию</a> (<i>применима к небольшим файлам</i>);<li>в ext4 <a href="http://git.kernel.org/linus/a4bb6b64e39abc0e41ca077725f2a72c868e7622">добавлена</a> поддержка информирования программами файловой системы о том, что некоторые области файлов не содержат данных;<li>в tmpfs добавлена базовая поддержка <a href="http://git.kernel.org/linus/b09e0fa4b4ea66266058eead43350bd7d55fec67">расширенных атрибутов</a>;<li>в xfs добавлена поддержка оповещения носителей об освобождаемом месте непосредственно в момент удаления файлов;</ul><p><li>в подсистеме виртуализации:<ul><li>в Xen <a href="http://git.kernel.org/linus/4d05a28db56225bbab5e1321d818f318e92a4657">добавлен</a> backend хранения данных, что позволяет использовать ванильное ядро как хост-систему без применения дополнительных патчей;</ul><p><li>в архитектуре:<ul><li>начата реорганизация дерева ARM с целью унификации;<li>выключена оптимизация по размеру по умолчанию;<li>в KVM добавлена <a href="http://git.kernel.org/linus/4429d5dc1197aaf8188e4febcde54d26a51baf6c">поддержка</a> процессоров VIA;<li>теперь <a href="http://git.kernel.org/linus/18aecc2b645bbb07851b196452a2af314222069b">ядро поддерживает</a> 64-разрядную архитектуру Tilera;<li><a href="http://git.kernel.org/linus/de5397ad5b9ad22e2401c4dacdf1bb3b19c05679">реализована</a> поддержка режима SMEP (Supervisor Mode Execution Protection) для современных процессоров Intel. При его включении ядру аппаратно запрещается исполнять код из непривилегированных страниц пространства пользователя. SMEP предохраняет ядро от некоторых видов атак и эксплоитов.<li>функция подсистемы управления памятью mmu_gather теперь <a href="http://thread.gmane.org/gmane.linux.kernel.mm/60859">может вытесняться</a>, что значительно улучшило масштабируемость ядра;</ul><p><li>в видеоподсистеме:<ul><li><a href="http://git.kernel.org/linus/c76b615c43a1189c32058ff3ab5634fc3fa97ae5">обновлены</a> драйверы i915;<li>в драйвере Radeon улучшена <a href="http://git.kernel.org/linus/224d94b1445e2a836cd3790ff29f1866c052de4d">поддержка DisplayPort</a>;<li>в драйвер Nouveau добавлена поддержка технологии Pmpeg для чипов <a href="http://git.kernel.org/linus/a02ccc7f97d9e9121aa641aca33ba2a2978aef31">nv40</a> и <a href="http://git.kernel.org/linus/c0924326c8306249aaae27016b80f3c07bb51705">nv84</a>;<li>улучшена поддержка <a href="http://git.kernel.org/linus/99b38b4acc0d7dbbab443273577cff60080fcfad">NVIDIA Optimus</a>;<li>в код DRM <a href="http://thread.gmane.org/gmane.linux.kernel/1144704">добавлена</a> поддержка 30-разрядной цветовой глубины;</ul><p><li>другое:<ul><li>добавлена поддержка драйвера <a href="http://git.kernel.org/linus/6f231dda68080759f1aed3769896e94c73099f0f">isci</a> для контроллера SAS в сервере Intel C600;<li>в драйвере mvsas добавлена поддержка чипов 88SE9445 и 88SE9485;<li>теперь неиспользованные порты SATA <a href="http://git.kernel.org/linus/8a745f1f39b7a20047a362b67ce9151c07d14440">можно</a> полностью отключать;</ul><p><li>также было сделано множество других полезных и интересных изменений, перечислять которые можно очень долго.</ul><p>
+&gt;&gt;&gt; <a href="http://article.gmane.org/gmane.linux.kernel/1170070">Официальный анонс</a><p>&gt;&gt;&gt; Статьи, по мотивам которых подготовлена эта новость: <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-0-Part-1-Networking-1257847.html">1</a>, <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-0-Part-2-Filesystems-1263681.html">2</a>, <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-0-Part-3-Infrastructure-1275463.html">3</a>, <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-0-Part-4-Drivers-1276887.html">4</a><p>&gt;&gt;&gt; <a href="http://www.h-online.com/open/features/What-s-new-in-Linux-3-0-1279552.html">Обзорная статья о нововведениях</a><p>&gt;&gt;&gt; <a href="http://kernelnewbies.org/Linux_3.0">Список основных изменений</a><p>&gt;&gt;&gt; <a href="http://kernelnewbies.org/Linux_3.0_DriverArch">Список изменений в драйверах</a><p>&gt;&gt;&gt; <a href="http://www.kernel.org/pub/linux/kernel/v3.0/patch-3.0.bz2">Патч на 2.6.39</a> 
+<p>&gt;&gt;&gt; <a href="http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.0.tar.bz2">Архив исходных кодов</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=kernel">kernel</a>, <a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=%D1%80%D0%B5%D0%BB%D0%B8%D0%B7">релиз</a>, <a href="view-news.jsp?tag=%D1%8F%D0%B4%D1%80%D0%BE">ядро</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
+    
+      
+ 
+ 
+ 
+ 
+ 
+<a href="/people/post-factum/profile">post-factum</a> 
+ 
+ 
+ 
+(22.07.2011 8:54:37)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6504811">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/kernel/6504811">352&nbsp;комментария</a>&nbsp;(стр. <a href="/news/kernel/6504811/page1">2</a> <a href="/news/kernel/6504811/page2">3</a> <a href="/news/kernel/6504811/page3">4</a> <a href="/news/kernel/6504811/page4">5</a> <a href="/news/kernel/6504811/page5">6</a> <a href="/news/kernel/6504811/page6">7</a> <a href="/news/kernel/6504811/page7">8</a>)]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=news id="topic-6523668"> 
+ 
+<h2> 
+  <a href="/news/commercial/6523668">Oracle купил компанию Ksplice</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/commercial/"> 
+  <img src="/tango/img/money-logo.png" width=65 height=75 border=0 alt="Группа Коммерческое ПО"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>В четверг, 21 июля 2011 года компания <a href="http://www.oracle.com/">Oracle</a> объявила о завершении сделки по приобретению частной компании <a href="http://www.ksplice.com/">Ksplice</a>, известной своей инновационной технологией Ksplice Uptrack, которая позволяет устанавливать обновления для ядра Linux без перезагрузки. По данным с сайта разработчика Ksplice Uptrack используется на более чем 100000 серверов в 700 компаниях.<p>Поддержка RedHat, CentOS, Ubuntu, SuSe и многих других дистрибутивов будет упразднена, так как в Oracle считают, что только <a href="http://www.oracle.com/us/technologies/linux/index.html">Oracle Linux</a> будет позволять работать серверам непрерывно без перезагрузок для применения обновлений ядра. Фактически же, Ksplice останется только для подписчиков Oracle, новые клиенты сторонних производителей регистрироваться не будут.<p>Данное приобретение должно укрепить позиции Oracle на рынке решений на базе Linux и характерно показывает отношение Oracle к сообществу.<p>&gt;&gt;&gt; <a href="http://www.oracle.com/us/corporate/acquisitions/ksplice/general-presentation-430138.pdf">Презентация</a> 
+<p>&gt;&gt;&gt; <a href="http://www.oracle.com/us/corporate/press/435791">Пресс-релиз</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=ksplice">ksplice</a>, <a href="view-news.jsp?tag=oracle">oracle</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
+    
+      
+ 
+ 
+ 
+ 
+ 
+<a href="/people/mukoh/profile">mukoh</a> 
+ 
+ 
+ 
+(22.07.2011 8:53:04)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6523668">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/commercial/6523668">197&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/commercial/6523668/page1">2</a> <a href="/news/commercial/6523668/page2">3</a> <a href="/news/commercial/6523668/page3">4</a>)]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=news id="topic-6523621"> 
+ 
+<h2> 
+  <a href="/news/opensource/6523621">Новая оболочка для duplicity</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/opensource/"> 
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Российская компания <a href="http://www.skycover.ru">SkyCover</a> опубликовала код web и shell интерфейса для программы резервного копирования duplicity.<p><a href="http://duplicity.nongnu.org">Duplicity</a> - утилита командной строки, предназначенная для резервного копировния на любые файловые ресурсы, включая Amazon S3. Duplicity поддерживает шифрование GPG, инкрементальные копии с помощью librsync (сохраняются только различающиеся блоки внутри файлов), реализует полезные команды для управления архивом.<p><a href="http://www.skycover.ru/opensource/scduply">SkyCover Duply</a> и <a href="http://www.skycover.ru/opensource/scdw">SkyCover Duply Web</a> - это (еще один) интерфейс к duplicity, делающий ее более дружественной. Программы ориентированы на серверные задачи и созданы для упрощения работы с сервисом <a href="http://www.skycover.ru/skycover-backup">SkyCover Бэкап</a>. В то же время, они универсальны, не привязаны к сервису и распространяются под лицензией GPLv3.<p><a href="http://www.skycover.ru/opensource/scduply">SkyCover Duply</a> (scduply) - утилита командной строки для управления duplicity через файлы конфигурации. Основана на <a href="http://duply.net">duply</a> (v.1.5.2.3), но имеет ряд приятных расширений.<p><a href="http://www.skycover.ru/opensource/scdw">SkyCover Duply Web</a> (SCDW) - веб-интерфейс (django) для настройки профилей scduply, позволяющий удобно указывать файловые пути и исключения, в т. ч. под Windows/CygWin.
+<p>&gt;&gt;&gt; <a href="http://www.skycover.ru/opensource">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=backup">backup</a>, <a href="view-news.jsp?tag=duplicity">duplicity</a>, <a href="view-news.jsp?tag=skycover">skycover</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
+    
+      
+ 
+ 
+ 
+ 
+ 
+<a href="/people/dch/profile">dch</a> 
+ 
+ 
+ 
+(22.07.2011 8:46:30)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6523621">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/opensource/6523621">12&nbsp;комментариев</a>]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<div class=news id="topic-6521895"> 
+ 
+<h2> 
+  <a href="/news/opensource/6521895">Первое за 18 лет обновление dmesg(1)</a> 
+</h2> 
+ 
+ 
+ 
+ 
+<div class="entry-userpic"> 
+  <a href="/news/opensource/"> 
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
+    </a> 
+</div> 
+ 
+ 
+<div class="entry-body"> 
+<div class=msg> 
+  
+  
+  <p>Karel Zak, один из разработчиков пакета <a href="http://www.kernel.org/pub/linux/utils/util-linux/"><b>util-linux</b></a>, содержащего основные системные утилиты Linux, впервые подверг изменению утилиту <b>dmesg</b> этого пакета. Обновление станет доступным для пользователей с выходом util-linux версии 2.20.<p>dmesg выводит все сообщения ядра, начиная с этапа загрузки системы, в stdout.<p>Новые функции включают:<ul><li> Ключ <b>--decode</b>, преобразующий числовое значение уровней загрузки и параметры операции в понятные текстовые примечания:
+<div class=code><pre class="no-highlight"><code>$ dmesg --decode
+kern  :info  : &#91;26443.677632&#93; ata1.00: configured for UDMA/100
+kern  :info  : &#91;26443.830225&#93; PM: resume of devices complete after 2452.856 msecs
+kern  :debug : &#91;26443.830606&#93; PM: Finishing wakeup.
+kern  :warn  : &#91;26443.830608&#93; Restarting tasks ... done.
+</code></pre></div><p><li> Фильтрация сообщений в соответствии с опциями <b>--facility</b> и --<b>level</b>:
+<div class=code><pre class="no-highlight"><code>$ dmesg --level=err,warn
+$ dmesg --facility=daemon,user
+$ dmesg --facility=daemon --level=debug
+</code></pre></div><p><li> Ключ <b>-u</b>, <b>--userspace</b> для вывода сообщений, полученных с пользовательского уровня;<li> Ключ <b>-k</b>, <b>--kernel</b> для вывода сообщений уровня ядра;<li> Ключ <b>-t</b>, <b>--notime</b> для удаления из вывода временных отметок;<li> Ключ <b>-T</b>, <b>--ctime</b> для вывода времени в формате, подобном ctime(). Однако этот ключ бесполезен после использования ждущего режима и выхода из него. (Для printk() после окончания ждущего режима ядро не использует обычное системное время и поэтому временные значения не изменяются.)<li> Ключ <b>--show-delta</b> для вывода длительности промежутка между сообщениями:
+<div class=code><pre class="no-highlight"><code>$ dmesg --show-delta
+&#91;35523.876281 &lt;    4.016887&gt;&#93; usb 1-4.1: new low speed USB device using  hci_hcd and address 12
+&#91;35523.968398 &lt;    0.092117&gt;&#93; usb 1-4.1: New USB device found, idVendor=413c, idProduct=2003
+&#91;35523.968408 &lt;    0.000010&gt;&#93; usb 1-4.1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+&#91;35523.968416 &lt;    0.000008&gt;&#93; usb 1-4.1: Product: Dell USB Keyboard
+</code></pre></div><p></ul><p> 
+<p>&gt;&gt;&gt; <a href="http://karelzak.blogspot.com/2011/07/dmesg1-changes-for-util-linux-220.html">Подробности</a> 
+  </div> 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+<p class="tags"> 
+ 
+  Метки: <span class=tag><a href="view-news.jsp?tag=dmesg">dmesg</a>, <a href="view-news.jsp?tag=util-linux">util-linux</a></span> 
+</p> 
+ 
+ 
+ 
+ 
+ 
+  <div class=sign> 
+  
+    
+      
+ 
+ 
+ 
+ 
+ 
+<a href="/people/ins3y3d/profile">ins3y3d</a> 
+ 
+ 
+ 
+(21.07.2011 17:33:29)
+    
+    
+  
+</div> 
+<div class="nav"> 
+ 
+  [<a href="comment-message.jsp?msgid=6521895">Добавить&nbsp;комментарий</a>]
+ 
+  
+  [<a href="/news/opensource/6521895">208&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6521895/page1">2</a> <a href="/news/opensource/6521895/page2">3</a> <a href="/news/opensource/6521895/page3">4</a> <a href="/news/opensource/6521895/page4">5</a>)]
+  </div> 
+  </div> 
+</div> 
+ 
+ 
+ 
+ 
+ 
+  
  
  
  
@@ -240,7 +1412,7 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
   [<a href="comment-message.jsp?msgid=6520040">Добавить&nbsp;комментарий</a>]
  
   
-  [<a href="/news/opensource/6520040">56&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6520040/page1">2</a>)]
+  [<a href="/news/opensource/6520040">75&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6520040/page1">2</a>)]
   </div> 
   </div> 
 </div> 
@@ -248,8 +1420,8 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
  
  
  
-    
-      
+ 
+  
  
  
  
@@ -277,7 +1449,7 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
 <div class=news id="topic-6520095"> 
  
 <h2> 
-  <a href="/news/android/6520095">Google поддержит HTC в разбирательстве с Apple. </a> 
+  <a href="/news/android/6520095">Google поддержит HTC в разбирательстве с Apple</a> 
 </h2> 
  
  
@@ -294,7 +1466,7 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
 <div class=msg> 
   
   
-  <p>На проходящей в Токио конференции &quot;Мобильная революция&quot;, Эрик Шмидт, руководитель компании Google, выступил с критикой патентного нападения компании Apple на производителя мобильных телефонов HTC. Шмидт заявил, что Google не намерена сложа руки наблюдать за происходящими событиями и приложит все усилия для того, что бы на финальном заседании Комиссии США по международной торговле, которое состоится в декабре, окончательное решение было вынесено в пользу HTC. Напомним, что опубликованное на днях предварительное решение комиссии усматривает нарушение двух патентов Apple в телефонах HTC, основанных на платформе Android. <p>Шмидт не уточнил, какие конкретно действия намерена предпринять компания Google для снятия патентной агрессии против платформы Android. В настоящее время, кроме Apple, свои права на используемую в Android интеллектуальную собственность предъявляют компании Microsoft и Oracle. В случае Microsoft используется политика нагнетания атмосферы неопределенности, умалчивания фактов, и заключение за закрытыми дверями соглашений с производителями устройств о выплате лицензионных отчислений. Oracle намерена отсудить несколько миллиардов долларов у Google, как создателя платформы Android, мотивируя свои действия нарушением интеллектуальной собственности, связанной с Java-технологиями. <p>По мнению Шмидта ошеломляющий успех телефонов на базе платформы Android не дает покоя компаниям, развивающим конкурирующие платформы. К сожалению, оказавшись неспособными ответить инновациями, некоторые из производителей не могут сдержать зависть и пытаются подорвать распространение платформы Android инициированием судебных тяжб. Но Google не отчаивается, так как уверена, что не нарушает чужих прав, и воспринимает подобные нападки как подтверждение успеха Android. <p>В своем выступлении Эрик Шмидт упомянул, что в настоящее время ежедневно активируется около 550 тысяч новых Android-устройств, при этом еще два месяца назад число ежедневных активаций составляло 400 тыс. Общее число активированных с 2008 года телефонов достигло отметки в 135 млн, на рынке присутствует 410 моделей устройств на базе Android. По мнению Шмидта, в развитии мобильной индустрии наблюдается соблюдение закона Мура: за последние 18 месяцев скорость выхода в сеть мобильных устройств возросла на 60%, а средняя стоимость смартфонов упала с 500 до 200 долларов. Шмидт считает, что в ближайшем будущем стоимость Android-смартфонов вполне может упасть до 50-70 долларов. В более отдаленной перспективе, если закон Мура действует, то в ближайшие 10 лет мобильные устройства могут стать до 30 раз дешевле, лучше и быстрее.<p><i>Взято с <a href="http://www.opennet.ru/opennews/art.shtml?num=31244">opennet.ru</a></i> 
+  <p>На проходящей в Токио конференции &quot;Мобильная революция&quot; Эрик Шмидт, руководитель компании Google, выступил с критикой патентного нападения компании Apple на производителя мобильных телефонов HTC. Шмидт заявил, что Google не намерена сложа руки наблюдать за происходящими событиями и приложит все усилия для того, чтобы на финальном заседании Комиссии США по международной торговле, которое состоится в декабре, окончательное решение было вынесено в пользу HTC. Напомним, что опубликованное на днях предварительное решение комиссии усматривает нарушение двух патентов Apple в телефонах HTC, основанных на платформе Android. <p>Шмидт не уточнил, какие конкретно действия намерена предпринять компания Google для снятия патентной агрессии против платформы Android. В настоящее время, кроме Apple, свои права на используемую в Android интеллектуальную собственность предъявляют компании Microsoft и Oracle. В случае Microsoft используется политика нагнетания атмосферы неопределенности, умалчивания фактов и заключения за закрытыми дверями соглашений с производителями устройств о выплате лицензионных отчислений. Oracle намерена отсудить несколько миллиардов долларов у Google, как создателя платформы Android, мотивируя свои действия нарушением интеллектуальной собственности, связанной с Java-технологиями. <p>По мнению Шмидта, ошеломляющий успех телефонов на базе платформы Android не дает покоя компаниям, развивающим конкурирующие платформы. К сожалению, оказавшись неспособными ответить инновациями, некоторые из производителей не могут сдержать зависть и пытаются подорвать распространение платформы Android инициированием судебных тяжб. Но Google не отчаивается, так как уверена, что не нарушает чужих прав, и воспринимает подобные нападки как подтверждение успеха Android. <p>В своем выступлении Эрик Шмидт упомянул, что в настоящее время ежедневно активируется около 550 тысяч новых Android-устройств, при этом еще два месяца назад число ежедневных активаций составляло 400 тыс. Общее число активированных с 2008 года телефонов достигло отметки в 135 млн, на рынке присутствует 410 моделей устройств на базе Android. По мнению Шмидта, в развитии мобильной индустрии наблюдается соблюдение закона Мура: за последние 18 месяцев скорость выхода в сеть мобильных устройств возросла на 60%, а средняя стоимость смартфонов упала с 500 до 200 долларов. Шмидт считает, что в ближайшем будущем стоимость Android-смартфонов вполне может упасть до 50-70 долларов. В более отдаленной перспективе, если закон Мура действует, то в ближайшие 10 лет мобильные устройства могут стать до 30 раз дешевле, лучше и быстрее.<p><i>Взято с <a href="http://www.opennet.ru/opennews/art.shtml?num=31244">opennet.ru</a></i> 
 <p>&gt;&gt;&gt; <a href="http://www.zdnetasia.com/schmidt-android-to-be-asias-mobile-gateway-62301256.htm">Подробности</a> 
   </div> 
  
@@ -336,7 +1508,7 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
   [<a href="comment-message.jsp?msgid=6520095">Добавить&nbsp;комментарий</a>]
  
   
-  [<a href="/news/android/6520095">52&nbsp;комментария</a>&nbsp;(стр. <a href="/news/android/6520095/page1">2</a>)]
+  [<a href="/news/android/6520095">78&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/android/6520095/page1">2</a>)]
   </div> 
   </div> 
 </div> 
@@ -344,8 +1516,8 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
  
  
  
-    
-      
+ 
+  
  
  
  
@@ -433,7 +1605,7 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
   [<a href="comment-message.jsp?msgid=6519436">Добавить&nbsp;комментарий</a>]
  
   
-  [<a href="/news/opensource/6519436">97&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6519436/page1">2</a>)]
+  [<a href="/news/opensource/6519436">154&nbsp;комментария</a>&nbsp;(стр. <a href="/news/opensource/6519436/page1">2</a> <a href="/news/opensource/6519436/page2">3</a> <a href="/news/opensource/6519436/page3">4</a>)]
   </div> 
   </div> 
 </div> 
@@ -441,8 +1613,8 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
  
  
  
-    
-      
+ 
+  
  
  
  
@@ -475,1857 +1647,26 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
  
  
  
-  [<a href="/news/internet/6517455">67&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/internet/6517455/page1">2</a>)]
-</div> 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=infoblock id="topic-6518906"> 
-Мини-новость:
-  <a href="/news/opensource/6518906">Релиз TeX Live и MacTeX 2011</a> 
- 
- 
- 
-  [<a href="/news/opensource/6518906">59&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6518906/page1">2</a>)]
-</div> 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6517053"> 
- 
-<h2> 
-  <a href="/news/android/6517053">Американские и канадские антимонопольные службы могут блокировать сделку Nortel-Rockstar</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/android/"> 
-  <img src="/tango/img/android.png" width=64 height=64 border=0 alt="Группа Android"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>Напомним, что <a href="http://www.linux.org.ru/news/android/6455266">неделю назад</a> консорциум Rockstar Bidco LP, куда входят такие компании, как Apple, Microsoft, Research in Motion, EMC, Sony и Ericsson, выиграл аукцион за право выкупить пакет из более 6000 патентов, ранее принадлежавших обанкротившейся компании Nortel и касавшихся, в основном, технологий передачи данных.<p>Ряд юристов с сайта Groklaw опубликовали открытое письмо в Американский антимонопольный институт (American Antitrust Institute), в котором призвали внимательнее изучить складывающуюся ситуацию и по возможности заблокировать сделку. Сегодня на Groklaw был опубликован ответ AAI, и, более того, указано, что сделкой заинтересовались также и антимонопольные органы Канады.<p>В ответе AAI выражено недоумение по поводу более ранней сделки между Novell Inc. и другим холдингом — CPTN LLC, куда входят те же Apple, Microsoft, EMC и Oracle. В рамках этой сделки Novell могла передать холдингу примерно 882 патента, часть из которых тоже может касаться передачи данных и работы вычислительных устройств. Тогда Министерство юстиции США отклонило сделку ради «сохранения конкуренции и инновационности сообщества свободного программного обеспечения». На этот раз Министерство юстиции, напротив, форсирует сроки совершения сделки.<p>Передачу столь большого патентного портфолио в руки консорциума, состоящего практически из всех конкурентов свободной ОС Android, в AAI считают «смертельной ошибкой» и потребуют от Министерства юстиции детального расследования перед одобрением сделки.
-<p>&gt;&gt;&gt; <a href="http://www.groklaw.net/article.php?story=20110718172600767">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=%D0%BF%D0%B0%D1%82%D0%B5%D0%BD%D1%82%D1%8B">патенты</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/Aceler/profile">Aceler</a> 
- 
- 
- 
-(20.07.2011 15:44:46)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6517053">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/android/6517053">62&nbsp;комментария</a>&nbsp;(стр. <a href="/news/android/6517053/page1">2</a>)]
-  </div> 
-  </div> 
+  [<a href="/news/internet/6517455">70&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/internet/6517455/page1">2</a>)]
 </div> 
  
  
  
  
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6516716"> 
- 
-<h2> 
-  <a href="/news/opensource/6516716">Встречайте: MPLAB X IDE</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/opensource/"> 
-  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>Один из крупнейших разработчиков и производителей микроконтроллеров и цифровых сигнальных контроллеров, компания <a href="http://www.microchip.com/"><b>Microchip Technology</b></a>, пополнила список сред разработки для микроконтроллеров семейства PIC и цифровых сигнальных контроллеров семейства dsPIC новым программным продуктом — <a href="http://www.microchip.com/en_US/family/mplabx/index.html"><b>MPLAB X</b></a>.<p>В отличие от среды разработки MPLAB IDE, доступной только для ОС Windows, MPLAB X, будучи основан на <a href="http://netbeans.org/"><b>NetBeans</b></a>, имеет также версии для Linux и Mac OS X. Кроме кроссплатформенности MPLAB X IDE выгодно отличают от MPLAB IDE:
-<ul><li> гибкие настройки интерфейса;<li> расширенные возможности редактора;<li> поддержка plug-in'ов, разрабатываемых сообществом, а не только самой Microchip;<li> встроенная система управления версиями.</ul><p>
-На данный момент продолжается тестирование бета-версии. Участникам тестирования рекомендуется посетить <a href="http://www.microchip.com/forums/f238.aspx">страницу форума Microchip</a>, посвящённую MPLAB X.<br><br>&gt;&gt;&gt; <a href="http://ww1.microchip.com/downloads/mplab/X_Beta/index.html">Страница загрузки</a> 
-<p>&gt;&gt;&gt; <a href="http://www.microchip.com/en_US/family/mplabx/index.html">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=dspic">dspic</a>, <a href="view-news.jsp?tag=microchip">microchip</a>, <a href="view-news.jsp?tag=mplab">mplab</a>, <a href="view-news.jsp?tag=netbeans">netbeans</a>, <a href="view-news.jsp?tag=pic">pic</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/win7/profile">win7</a> 
- 
- 
- 
-(20.07.2011 15:22:38)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6516716">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/opensource/6516716">95&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6516716/page1">2</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=infoblock id="topic-6512672"> 
-Мини-новость:
-  <a href="/news/russia/6512672">Начались испытания специальной версии операционной системы Mandriva 2011 на соответствие требованиям ФСТЭК России</a> 
- 
- 
- 
-  [<a href="/news/russia/6512672">162&nbsp;комментария</a>&nbsp;(стр. <a href="/news/russia/6512672/page1">2</a> <a href="/news/russia/6512672/page2">3</a> <a href="/news/russia/6512672/page3">4</a>)]
-</div> 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=infoblock id="topic-6514659"> 
-Мини-новость:
-  <a href="/news/multimedia/6514659">MiniDLNA 1.0.21</a> 
- 
- 
- 
-  [<a href="/news/multimedia/6514659">37&nbsp;комментариев</a>]
-</div> 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=infoblock id="topic-6514662"> 
-Мини-новость:
-  <a href="/news/opensource/6514662">QStarDict 1.0</a> 
- 
- 
- 
-  [<a href="/news/opensource/6514662">56&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6514662/page1">2</a>)]
-</div> 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6508443"> 
- 
-<h2> 
-  <a href="/news/debian/6508443">DoudouLinux — дистрибутив для детей</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/debian/"> 
-  <img src="/tango/img/debian-logo.png" width=65 height=75 border=0 alt="Группа Debian"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>В середине июня стал доступен для загрузки первый стабильный выпуск <a href="http://www.doudoulinux.org/"><b>DoudouLinux</b></a> — дистрибутива для детей (а также их мам и пап), основанного на <a href="http://www.debian.org/"><b>Debian</b></a>, под кодовым именем &quot;Gondwana&quot;.<br><br>DoudouLinux представляет из себя Live CD/USB с большим количеством образовательных, развивающих приложений и игр.<br>Дистрибутив имеет красочный внешний вид, интерфейс прост и не перегружен лишней текстовой информацией, разработчики утверждают, что пользоваться DoudouLinux могут дети возрастом от двух лет, даже не умея читать.<br><br>&quot;Doudou&quot; — французское слово, означающее &quot;плюшевый медвежонок&quot; (wubby, the teddy bear).<br><br>В стабильный выпуск вошли приложения <a href="http://home.gna.org/oomadness/en/songwrite/">Songwrite2</a> (редактор нот и песенник) и <a href="http://stopmotion.bjoernen.com/">Stopmotion</a> (генератор анимационных роликов из подборки фотографий), было увеличено число поддерживаемых устройств (Wi-Fi адаптеры, вебкамеры, тачскрины, планшетные ПК), запуск и выключение системы получило звуковое и графическое сопровождение.<br><br>DoudouLinux локализирован на 15 языках, в том числе на русском и украинском. Поддержка ещё шести находится на стадии доработки.<br><br>Значительный вклад в перевод дистрибутива на русский язык принадлежит студентам Института прикладной информатики Томского государственного педагогического университета и Института международного образования и языковой коммуникации Томского политехнического университета.<br><br>К настоящему времени Live CD/USB образы DoudouLinux были скачаны более 120000 раз, причём больше всего — на русском языке.<br><br>&gt;&gt;&gt; <a href="http://www.doudoulinux.org/web/russkij/article/skachat.html">Страница загрузки</a> 
-<p>&gt;&gt;&gt; <a href="http://doudoulinux.org/web/russkij/index.html">Подробности на сайте проекта</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=debian">debian</a>, <a href="view-news.jsp?tag=doudoulinux">doudoulinux</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/ipitgpu/profile">ipitgpu</a> 
- 
- 
- 
-(19.07.2011 21:43:57)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6508443">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/debian/6508443">127&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/debian/6508443/page1">2</a> <a href="/news/debian/6508443/page2">3</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6513623"> 
- 
-<h2> 
-  <a href="/news/opensource/6513623">VirtualBox 4.1</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/opensource/"> 
-  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>Вышла новая версия открытой виртуальной машины VirtualBox 4.1.<p>Основные изменения:<ul><li> появилась поддержка клонирования виртуальных машин;<li> улучшен мастер по созданию виртуальных дисков;<li> представлен новый мастер по клонированию виртуальных дисков;<li> сохраняется соотношение сторон в режиме масштабирования в Windows и Mac OS X;<li> лимит памяти увеличен до 1 ТБ для 64-битных систем;<li> появилась экспериментальная поддержка проброса PCI-устройств в Linux;<li> для гостевой Windows добавлен экспериментальный WDDM-драйвер, поддерживающий режим Windows Aero и позволяющий устанавливать поддержку Direct3D без необходимости перезагрузки гостевой ОС в безопасный режим;<li> статус модулей и возможностей дополнений гостевой ОС может быть запрошен отдельно;<li> добавлен новый тип сетевого подключения «Generic Driver», предоставляющий открытую архитектуру расширений для независимых реализаций виртуальной сети;<li> добавлена экспериментальная поддержка «горячей» замены SATA-дисков.</ul><p> 
-<p>&gt;&gt;&gt; <a href="http://www.virtualbox.org/wiki/Changelog">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=oracle">oracle</a>, <a href="view-news.jsp?tag=virtualbox">virtualbox</a>, <a href="view-news.jsp?tag=%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F">виртуализация</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/krakatau/profile">krakatau</a> 
- 
- 
- 
-(19.07.2011 20:45:21)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6513623">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/opensource/6513623">118&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6513623/page1">2</a> <a href="/news/opensource/6513623/page2">3</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6512564"> 
- 
-<h2> 
-  <a href="/news/opensource/6512564">Вышел GNAT GPL 2011</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/opensource/"> 
-  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>Не так давно компания <a href="http://www.adacore.com">AdaCore</a> выпустила новую версию компилятора языка Ada — GNAT GPL 2011. В новой версии:<ul><li> улучшена поддержка стандарта Ada 2012;<li> улучшения в системе разработки GNAT Programming Studio и в GtkAda;<li> поддержка Lego Mindstorms, в том числе аудио и датчиков I²C.</ul><p>
-Загрузить компилятор и сопутствующее ПО можно <a href="http://libre.adacore.com/libre/download/">отсюда</a>.
-<p>&gt;&gt;&gt; <a href="http://libre.adacore.com/libre/tools/gnat-gpl-edition/">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=ada">ada</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/undet/profile">undet</a> 
- 
- 
- 
-(19.07.2011 17:44:11)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6512564">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/opensource/6512564">56&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6512564/page1">2</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6512235"> 
- 
-<h2> 
-  <a href="/news/bsd/6512235">BSD сдерживает развитие СПО</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/bsd/"> 
-  <img src="/tango/img/bsd.png" width=65 height=75 border=0 alt="Группа BSD"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>Разработчик PulseAudio, Avahi и systemd Ленарт Поттеринг, который уже <a href="http://www.omgubuntu.co.uk/2011/05/gnome-to-drop-support-for-bsd-solaris-unix">предлагал</a> прекратить поддержку BSD, Solaris и прочих Unix в Gnome, заявил, что поддержка совместимости с BSD замедляет развитие СПО:<div class="quote"><h3>Цитата</h3><p>Да, я считаю, что BSD уже особо не важен, и я думаю, что эта подразумеваемая совместимость с BSD - бремя, которое сдерживает нас и почти ничего не дает.
-Я не считаю, что они (BSD-системы) никому не нужны: все таки есть люди, которые их используют. Просто думаю, не в наших интересах тратить силы на поддержку, если мы хотим, чтобы Linux повсеместно вошел в мейнстрим (а не только серверы и ограниченные платформы, как Android)...</div><p> 
-<p>&gt;&gt;&gt; <a href="http://linuxfr.org/nodes/86687/comments/1249943">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=bsd">bsd</a>, <a href="view-news.jsp?tag=gnome">gnome</a>, <a href="view-news.jsp?tag=linux">linux</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/x4DA/profile">x4DA</a> 
- 
- 
- 
-(19.07.2011 15:22:59)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6512235">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/bsd/6512235">929&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/bsd/6512235/page1">2</a> <a href="/news/bsd/6512235/page2">3</a> <a href="/news/bsd/6512235/page3">4</a> ... <a href="/news/bsd/6512235/page16">17</a> <a href="/news/bsd/6512235/page17">18</a> <a href="/news/bsd/6512235/page18">19</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6510700"> 
- 
-<h2> 
-  <a href="/news/novell/6510700">Достигнуто соглашение между Мигелем де Иказой и Attachmate по поводу Mono</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/novell/"> 
-  <img src="/tango/img/novell-logo.png" width=64 height=57 border=0 alt="Группа Novell"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>Между компанией <a href="http://www.linux.org.ru/news/opensource/6273044">Xamarin</a>, основанной Мигелем де Иказой и другими разработчиками Mono, уволенными после приобретения Novell компанией Attachmate, достигнуто соглашение о партнёрстве. по этому соглашению, компания Xamarin получает бессрочные широкие права на все программные продукты, разработанные в рамках проекта Mono, в том числе проприетарные (MonoTouch, Mono for Android).<p>В результате этого соглашения:<ul><li>Xamarin будет оказывать поддержку текущим пользователям MonoTouch, Mono for Android and Mono for Visual Studio.<li>Текущие и будущие пользователи Mono на SUSE Linux Enterprise, пользующиеся Mono, будут получать поддержку от Xamarin.<li>Xamarin получает бессрочную лицензию на Mono, MonoTouch, Mono for Android, Mono for Visual Studio и будет развивать и продавать эти продукты.<li>С этого момента можно будет приобрести MonoTouch и Mono for Android с <a href="http://store.xamarin.com/">Xamarin store</a>.<li>Xamarin возьмёт на себя руководство открытым сообществом Mono.</ul><p>
-<a href="http://tirania.org/blog/archive/2011/Jul-18.html">Сообщение в блоге Мигеля де Иказы</a> 
-<p>&gt;&gt;&gt; <a href="http://www.novell.com/news/press/2011/7/suse-and-xamarin-partner-to-accelerate-innovation-and-support-mono-customers-and-community.html">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=attachmate">attachmate</a>, <a href="view-news.jsp?tag=mono">mono</a>, <a href="view-news.jsp?tag=novell">novell</a>, <a href="view-news.jsp?tag=xamarin">xamarin</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/Ttt/profile">Ttt</a> 
- 
- 
- 
-(19.07.2011 1:18:00)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6510700">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/novell/6510700">146&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/novell/6510700/page1">2</a> <a href="/news/novell/6510700/page2">3</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6509401"> 
- 
-<h2> 
-  <a href="/news/opensource/6509401">nginx company</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/opensource/"> 
-  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>Сегодня, 18 июля, Игорь Сысоев, автор всемирно известного легковесного веб-сервера и обратного прокси-сервера <a href="http://wiki.nginx.org/"><b>nginx</b></a> в списках рассылки проекта (<a href="http://nginx.org/pipermail/nginx-ru/2011-July/041856.html">[1]</a>, <a href="http://nginx.org/pipermail/nginx/2011-July/028021.html">[2]</a>) объявил о создании одноимённой программному продукту компании, которая сосредоточится на развитии проекта:<div class="quote"><h3>Цитата</h3><p>Компания объединяет небольшую пока группу энтузиастов, задачей которых будет улучшение качества поддержки пользователей nginx (документация, исправление ошибок, интегрирование полезных патчей и тому подобное), реорганизация процесса разработки с целью обеспечить по-настоящему командную работу над кодом, написание нового функционала.</div><p>Также Игорь Сысоев поспешил успокоить сообщество, отметив, что nginx продолжит существование как свободный открытый проект под лицензией <a href="http://nginx.org/LICENSE"><b>BSD</b></a>.
-<p>&gt;&gt;&gt; <a href="http://sysoev.ru/">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=nginx">nginx</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/encoded_reality/profile">encoded_reality</a> 
- 
- 
- 
-(18.07.2011 23:46:37)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6509401">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/opensource/6509401">106&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6509401/page1">2</a> <a href="/news/opensource/6509401/page2">3</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6510279"> 
- 
-<h2> 
-  <a href="/news/multimedia/6510279">Audacious 3.0</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/multimedia/"> 
-  <img src="/tango/img/multimedia.png" width=65 height=75 border=0 alt="Группа Мультимедиа"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>Вышла новая версия аудиоплеера <a href="http://audacious-media-player.org/"><b>Audacious</b></a>. Главным изменением в этом выпуске является полная поддержка тулкита <a href="http://www.gtk.org/"><b>GTK+ 3.0</b></a>, который теперь используется по умолчанию.<br>Это повлекло за собой отказ от ряда неподдерживаемых плагинов, несовместимых с GTK+ 3.0, в их числе alarm, evdev-plug, ladspa, lirc, paranormal, projectm-1.0, spectrum, streambrowser.<br><br>В подсистему плагинов были внесены изменения, упрощающие использование параллельной обработки в несколько потоков, что должно положительно сказаться на производительности.<br><br>Среди других изменений:<ul><li>устранена задержка при переключении между плейлистами в случае, когда их открыто много;<li>MP3-декодер теперь использует системную библиотеку libmpg123 вместо встроенной;<li>при скрытии меню, доступ к его пунктам можно получить по нажатию правой кнопки мыши на элементах управления;<li>среди глобальных горячих клавиш теперь можно настроить переключение режимов повторения и перемешивания;<li>поддерживается отображение обложек альбомов, встроенных в файлы формата Ogg Vorbis;<li>скрипт ./configure теперь определяет OSSv4 и автоматически включает соответствующий плагин;<li>используется новый FFmpeg API для операций ввода-вывода, необходимый для проигрывания файлов форматов WMA, ALAC и некоторых других.</ul><p> 
-<p>&gt;&gt;&gt; <a href="http://boards.audacious-media-player.org/viewtopic.php?f=1&amp;t=495">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=audacious">audacious</a>, <a href="view-news.jsp?tag=gtk3">gtk3</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/krakatau/profile">krakatau</a> 
- 
- 
- 
-(18.07.2011 22:37:30)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6510279">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/multimedia/6510279">99&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/multimedia/6510279/page1">2</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=infoblock id="topic-6492114"> 
-Мини-новость:
-  <a href="/news/opensource/6492114">Вышел в свет dwm 5.9</a> 
- 
- 
- 
-  [<a href="/news/opensource/6492114">81&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/opensource/6492114/page1">2</a>)]
-</div> 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6498954"> 
- 
-<h2> 
-  <a href="/news/security/6498954">Toyota присоединяется к Linux Foundation</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/security/"> 
-  <img src="/tango/img/secure-logo.png" width=65 height=75 border=0 alt="Группа Безопасность"> 
-    </a> 
-</div> 
- 
  
-<div class="entry-body"> 
-<div class=msg> 
   
   
-  <p>И это уже не первая компания решившая сделать акцент на безопасности, за счёт стабильной и защищенной ОС.<p>«Linux представляет собой гибкую и зрелую технологию, которая нужна для развития наших автомобильных компьютеров In-Vehicle-Infotainment и систем коммуникаций, чтобы соответствовать ожиданиям пользователей. Организация Linux Foundation — это нейтральный форум, где мы можем сотрудничать с лучшими в мире технологическими компаниями над открытыми инновациями, которые помогают общему прогрессу», — считает руководитель отдела Electronics Development Div. 1 компании Toyota Motor Corp. Кенити Мурата (Kenichi Murata).<p> 
-<p>&gt;&gt;&gt; <a href="http://www.linuxfoundation.org/news-media/announcements/2011/07/toyota-joins-linux-foundation">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=%D0%B0%D0%B2%D1%82%D0%BE">авто</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/rsavelev/profile">rsavelev</a> 
- 
- 
- 
-(17.07.2011 17:22:58)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6498954">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/security/6498954">141&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/security/6498954/page1">2</a> <a href="/news/security/6498954/page2">3</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<div class=news id="topic-6504361"> 
- 
-<h2> 
-  <a href="/news/russia/6504361">Каталог ПО для Linux</a> 
-</h2> 
- 
- 
- 
- 
-<div class="entry-userpic"> 
-  <a href="/news/russia/"> 
-  <img src="/tango/img/russia-logo.png" width=65 height=75 border=0 alt="Группа Linux в России"> 
-    </a> 
-</div> 
- 
- 
-<div class="entry-body"> 
-<div class=msg> 
-  
-  
-  <p>Хочу немного попиарить свой новый сайт <a href="http://linsoft.info">http://linsoft.info.</a> 
-Это систематизированный каталог ПО для GNU/Linux. Собираю тут ссылки на программные продукты 
-для Линукс, причем стараюсь сопроводить краткое описание ссылками на различные статьи и 
-руководства по данному продукту. Сайт может быть полезен тем, кто ищет программу для решения 
-какой-то задачи. Но я очень надеюсь, что сайт станет местом обсуждения достоинств и недостатков 
-программ, что на сайте будут обсуждения, комментарии и что сайт таким образом станет полезен 
-и разработчикам. 
-Собираются в основном ссылки на бесплатное и свободное ПО, хотя иногда встречаются и проприетарные 
-продукты.
-Буду очень рад, если ЛОРовцы выскажут замечания по структуре каталога, по организации сайта вообще.
-<p>&gt;&gt;&gt; <a href="http://linsoft.info">Подробности</a> 
-  </div> 
- 
-  
- 
- 
- 
- 
- 
-<p class="tags"> 
- 
-  Метки: <span class=tag><a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F">документация</a></span> 
-</p> 
- 
- 
- 
- 
- 
-  <div class=sign> 
-  
-    
-      
- 
- 
- 
- 
- 
-<a href="/people/vikos/profile">vikos</a> 
- 
- 
- 
-(17.07.2011 17:21:27)
-    
-    
-  
-</div> 
-<div class="nav"> 
- 
-  [<a href="comment-message.jsp?msgid=6504361">Добавить&nbsp;комментарий</a>]
- 
-  
-  [<a href="/news/russia/6504361">136&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/russia/6504361/page1">2</a> <a href="/news/russia/6504361/page2">3</a>)]
-  </div> 
-  </div> 
-</div> 
- 
- 
- 
- 
-    
-<div class="nav"> 
-  [<a href="/news/?offset=20">← предыдущие</a>]
-  [<a href="add-section.jsp?section=1">добавить новость</a>]
-  [<a href="view-all.jsp?section=1">непроверенные новости</a>]
-  [<a href="section-rss.jsp?section=1">RSS</a>]
-</div> 
-</div> 
-</div> 
-<div class=column> 
- 
-  
- 
-  
-      
-        <div class="boxlet"> 
-            
- 
- 
-<h2>Новые материалы на IBM developerWorks</h2> 
-<div class="boxlet_content"> 
-  <iframe src="dw.jsp?height=400&amp;width=219&amp;main=1" width="222" height="400" scrolling="no"
-          frameborder="0"></iframe> 
-  <h3>My developerWorks!</h3> 
-  <a style="text-decoration: underline" href="http://www.ibm.com/developerworks/mydeveloperworks/?lang=ru" title="">Вступай</a> в сообщество профессионалов&nbsp;IBM!<br> 
-Нас уже более 3000 только в России.
-</div> 
-        </div> 
-      
-        <div class="boxlet"> 
-            
- 
- 
- 
- 
- 
- 
- 
-  
-  <h2><a href="/polls/">Опрос</a></h2> 
- 
-  <div class="boxlet_content"> 
-    <h3>Оцените степень вашей приверженности к Линуксу</h3> 
- 
-    <form action="/vote.jsp" method="POST"> 
-      <input type="hidden" name="voteid" value="1358"/> 
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10274" value="10274"><label for="poll-10274">Единственная ОС — виндовс, убежденный оффтопикосятник</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10275" value="10275"><label for="poll-10275">Линукс только по удалёнке — заставляют настраивать разные линуксы</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10276" value="10276"><label for="poll-10276">Виртуалка с Линуксом уже есть — не хватило денег на антивирус по интернетам шастать</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10277" value="10277"><label for="poll-10277">Линукс в дуалбуте, но второй — вдруг любимый виндовс надо починить</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10278" value="10278"><label for="poll-10278">Виндовс в дуалбуте — мало игр под Линукс</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10279" value="10279"><label for="poll-10279">Виртуалка с виндовс, нужно для работы</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10280" value="10280"><label for="poll-10280">Линукс+wine — фотошопить надо, да</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10281" value="10281"><label for="poll-10281">Виндовс только по удалёнке — жизнь заставила</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10282" value="10282"><label for="poll-10282">Должен остаться только один Линукс</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10449" value="10449"><label for="poll-10449">Я маковод ^_^</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10450" value="10450"><label for="poll-10450">У меня BSD</label> <br/> 
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10451" value="10451"><label for="poll-10451">Я не имею отношения ко всем вышеперечисленным вариантам</label> <br/> 
-        
-      
-      <input type="submit" value="vote"/> 
-    </form> 
-    <br/> 
-    
-    <a href="/view-vote.jsp?vote=1358">результаты</a> (1283 голосов)
-    <br/> 
-    <a href="/polls/">итоги прошедших опросов...</a> 
-    <br/> 
-    [<a href="/add-poll.jsp">добавить опрос</a>]
-  </div> 
-        </div> 
-      
-        <div class="boxlet"> 
-            
- 
- 
- 
- 
-<h2>Top 10</h2> 
- 
-<div class="boxlet_content"> 
-  <h3>Наиболее обсуждаемые темы этого месяца</h3> 
-  <ul> 
-    
-      <li> 
-      
-      <a href="/forum/development/6456700">Что круче: Лисп или Хаскелль?</a> 
-      
-        
-        (стр. <a href="/forum/development/6456700/page20?lastmod=1311007480614">21</a>)
-      
-      (1011)
-      </li> 
-    
-      <li> 
-      
-      <a href="/news/bsd/6512235">BSD сдерживает развитие СПО</a> 
-      
-        
-        (стр. <a href="/news/bsd/6512235/page18?lastmod=1311247394463">19</a>)
-      
-      (929)
-      </li> 
-    
-      <li> 
-      
-      <a href="/news/redhat/6476358">Релиз CentOS 6</a> 
-      
-        
-        (стр. <a href="/news/redhat/6476358/page10?lastmod=1310646358906">11</a>)
-      
-      (530)
-      </li> 
-    
-      <li> 
-      
-      <a href="/news/internet/6435135">Opera 11.50 &quot;Swordfish&quot;</a> 
-      
-        
-        (стр. <a href="/news/internet/6435135/page9?lastmod=1310456769388">10</a>)
-      
-      (500)
-      </li> 
-    
-      <li> 
-      
-      <a href="/news/java/6469250">Вышел первый release candidate JDK 7</a> 
-      
-        
-        (стр. <a href="/news/java/6469250/page9?lastmod=1311113943807">10</a>)
-      
-      (477)
-      </li> 
-    
-      <li> 
-      
-      <a href="/news/commercial/6444670">Многократный чемпион среди шахматных программ - Rybka дисквалифицирована за нарушение GPL</a> 
-      
-        
-        (стр. <a href="/news/commercial/6444670/page8?lastmod=1311190355834">9</a>)
-      
-      (433)
-      </li> 
-    
-      <li> 
-      
-      <a href="/news/pda/6407991">Nokia N9 - первый смартфон на OS MeeGo</a> 
-      
-        
-        (стр. <a href="/news/pda/6407991/page7?lastmod=1310746094434">8</a>)
-      
-      (359)
-      </li> 
-    
-      <li> 
-      
-      <a href="/news/opensource/6451999">Вышел Mercurial 1.9</a> 
-      
-        
-        (стр. <a href="/news/opensource/6451999/page6?lastmod=1310683290510">7</a>)
-      
-      (321)
-      </li> 
-    
-      <li> 
-      
-      <a href="/news/android/6455266">900 патентов касающихся Android и Chrome перейдут к Miсrosoft и Apple </a> 
-      
-        
-        (стр. <a href="/news/android/6455266/page6?lastmod=1310747424934">7</a>)
-      
-      (309)
-      </li> 
-    
-      <li> 
-      
-      <a href="/news/linux-general/6437596">Лидер  проекта GPL-violations обеспокоен  очень вольными трактовками GPL  во время слушаний в Верховном суде о.Маврикий</a> 
-      
-        
-        (стр. <a href="/news/linux-general/6437596/page4?lastmod=1309790436210">5</a>)
-      
-      (240)
-      </li> 
-    
-  </ul> 
-</div> 
-        </div> 
-      
-        <div class="boxlet"> 
-            
- 
- 
- 
- 
- 
- 
-  <h2><a href="/gallery/">Галерея</a></h2> 
- 
-  <div class="boxlet_content"> 
-    <h3>Последние скриншоты</h3> 
-    
-      <div style="margin-bottom: 1em"> 
-      <div align="center"> 
-        
-        <a href="/gallery/screenshots/6517188"> 
-          
-            
-              <img src="gallery/6517188-icon.jpg" alt="Скриншот: Arch, Gnome3. Попытка настроить шрифты." width=200 height=113/> 
-            
-            
-          
-        </a> 
-      </div> 
-      <i> 
-        
-          
-            1920x1080
-          
-          
-        
-        
-      </i> Arch, Gnome3. Попытка настроить шрифты. от <a href="/people/sht0rm/profile">sht0rm</a> (42)
-      </div> 
-    
-      <div style="margin-bottom: 1em"> 
-      <div align="center"> 
-        
-        <a href="/gallery/screenshots/6514743"> 
-          
-            
-              <img src="gallery/6514743-icon.jpg" alt="Скриншот: Очередной арчебокс :)" width=200 height=112/> 
-            
-            
-          
-        </a> 
-      </div> 
-      <i> 
-        
-          
-            1366x768
-          
-          
-        
-        
-      </i> Очередной арчебокс :) от <a href="/people/MORLOK/profile">MORLOK</a> (17)
-      </div> 
-    
-      <div style="margin-bottom: 1em"> 
-      <div align="center"> 
-        
-        <a href="/gallery/screenshots/6514443"> 
-          
-            
-              <img src="gallery/6514443-icon.jpg" alt="Скриншот: Дефолтное ШГ&amp;УГ" width=200 height=112/> 
-            
-            
-          
-        </a> 
-      </div> 
-      <i> 
-        
-          
-            1366x768
-          
-          
-        
-        
-      </i> Дефолтное ШГ&amp;УГ от <a href="/people/Crow/profile">Crow</a> (54)
-      </div> 
-    
-    <a href="/gallery/">другие скриншоты...</a> 
-  </div> 
-        </div> 
-      
-        <div class="boxlet"> 
-            
- 
- 
- 
- 
- 
- 
-  <h2>Облако Меток</h2> 
- 
-  <div class="boxlet_content"> 
-    <div align="center"> 
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=3d">3d</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=amd">amd</a> 
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=android">android</a> 
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=arch">arch</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=ati">ati</a> 
-      
-        
-        <a class="cloud0" href="/view-news.jsp?tag=bsd">bsd</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=conky">conky</a> 
-      
-        
-        <a class="cloud6" href="/view-news.jsp?tag=debian">debian</a> 
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=embedded+linux">embedded linux</a> 
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=fedora">fedora</a> 
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=firefox">firefox</a> 
-      
-        
-        <a class="cloud3" href="/view-news.jsp?tag=gentoo">gentoo</a> 
-      
-        
-        <a class="cloud7" href="/view-news.jsp?tag=gnome">gnome</a> 
+  <table class="nav"> 
+    <tr> 
       
-        
-        <a class="cloud2" href="/view-news.jsp?tag=gnu">gnu</a> 
+        <td align="left" width="35%"> 
+          <a href="/news/?offset=20">← предыдущие</a> 
+        </td> 
       
-        
-        <a class="cloud4" href="/view-news.jsp?tag=google">google</a> 
       
-        
-        <a class="cloud1" href="/view-news.jsp?tag=gpl">gpl</a> 
       
-        
-        <a class="cloud4" href="/view-news.jsp?tag=java">java</a> 
-      
-        
-        <a class="cloud5" href="/view-news.jsp?tag=kde">kde</a> 
-      
-        
-        <a class="cloud5" href="/view-news.jsp?tag=kde4">kde4</a> 
-      
-        
-        <a class="cloud10" href="/view-news.jsp?tag=linux">linux</a> 
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=microsoft">microsoft</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=mozilla">mozilla</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=nvidia">nvidia</a> 
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=openbox">openbox</a> 
-      
-        
-        <a class="cloud0" href="/view-news.jsp?tag=openoffice">openoffice</a> 
-      
-        
-        <a class="cloud8" href="/view-news.jsp?tag=opensource">opensource</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=oracle">oracle</a> 
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=python">python</a> 
-      
-        
-        <a class="cloud3" href="/view-news.jsp?tag=qt">qt</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=redhat">redhat</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=sun">sun</a> 
-      
-        
-        <a class="cloud9" href="/view-news.jsp?tag=ubuntu">ubuntu</a> 
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=web">web</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=windows">windows</a> 
-      
-        
-        <a class="cloud0" href="/view-news.jsp?tag=wine">wine</a> 
-      
-        
-        <a class="cloud0" href="/view-news.jsp?tag=xfce">xfce</a> 
-      
-        
-        <a class="cloud5" href="/view-news.jsp?tag=%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d1%8c">безопасность</a> 
-      
-        
-        <a class="cloud0" href="/view-news.jsp?tag=%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b0%d0%bb%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%8f">виртуализация</a> 
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d0%ba%d0%b0">графика</a> 
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d0%b0%d1%86%d0%b8%d1%8f">документация</a> 
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=%d0%b4%d1%80%d0%b0%d0%b9%d0%b2%d0%b5%d1%80%d1%8b">драйверы</a> 
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%b7%d0%b2%d1%83%d0%ba">звук</a> 
-      
-        
-        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d0%b3%d1%80%d1%8b">игры</a> 
-      
-        
-        <a class="cloud0" href="/view-news.jsp?tag=%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b2%d1%8c%d1%8e">интервью</a> 
-      
-        
-        <a class="cloud5" href="/view-news.jsp?tag=%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d1%8f+%d1%83%d1%81%d0%bf%d0%b5%d1%85%d0%b0">история успеха</a> 
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%ba%d0%be%d0%bd%d1%84%d0%b5%d1%80%d0%b5%d0%bd%d1%86%d0%b8%d1%8f">конференция</a> 
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">образование</a> 
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=%d0%bf%d0%b0%d1%82%d0%b5%d0%bd%d1%82%d1%8b">патенты</a> 
-      
-        
-        <a class="cloud7" href="/view-news.jsp?tag=%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">программирование</a> 
-      
-        
-        <a class="cloud3" href="/view-news.jsp?tag=%d1%8f%d0%b4%d1%80%d0%be">ядро</a> 
-      
-    </div> 
-  </div> 
-        </div> 
-      
-        <div class="boxlet"> 
-            
- 
- 
- 
- 
- 
- 
- 
- 
-<h2><a href="/news/">Архив Новостей</a></h2> 
- 
-<div class="boxlet_content"> 
-  
-    
-    
-    <a href="/news/archive/2011/7">2011 Июль
-      (82)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2011/6">2011 Июнь
-      (128)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2011/5">2011 Май
-      (123)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2011/4">2011 Апрель
-      (111)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2011/3">2011 Март
-      (111)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2011/2">2011 Февраль
-      (80)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2011/1">2011 Январь
-      (88)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2010/12">2010 Декабрь
-      (119)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2010/11">2010 Ноябрь
-      (141)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2010/10">2010 Октябрь
-      (137)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2010/9">2010 Сентябрь
-      (133)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2010/8">2010 Август
-      (135)</a> <br/> 
-  
-    
-    
-    <a href="/news/archive/2010/7">2010 Июль
-      (159)</a> <br/> 
-  
-  <br>&gt;&gt;&gt; <a href="/news/archive/"> Предыдущие месяцы</a> (с октября 1998)
-</div> 
-        </div> 
-      
-        <div class="boxlet"> 
-            
- 
- 
-<h2>Футболки linux.org.ru</h2> 
-<div class="boxlet_content"> 
-  <a href="/view-message.jsp?msgid=3989453"><img src="/adv/tshirt.jpg" width="150" height="150"> </a><br> 
-  <a href="/view-message.jsp?msgid=3989453">Заказ футболки Linux.org.ru</a> 
-</div> 
-        </div> 
-      
-  
-</div> 
- 
- 
-<div style="clear: both"></div> 
+    </tr> 
+  </table> 
  
  
  
@@ -2334,28 +1675,21 @@ SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная инф
  
 </div> 
 <div id="ft"> 
-  <p id="ft-info"> 
-    <a href="server.jsp">О Сервере</a> -
-    <a href="rules.jsp">Правила форума</a><br> 
  
-  Разработка и&nbsp;поддержка&nbsp;&#8212; <a href="/people/maxcom/profile">Максим Валянский</a> 1998&ndash;2011<br> 
-  Размещение сервера и&nbsp;подключение его к&nbsp;сети Интернет осуществляется компанией
-  ООО &laquo;<a href="http://www.ratel.ru">НИИР-РадиоНет</a>&raquo;
-  </p> 
+<p id="ft-info"> 
+  <a href="server.jsp">О Сервере</a> -
+  <a href="rules.jsp">Правила форума</a><br> 
+  <a href="http://www.linux.org.ru/">http://www.linux.org.ru/</a> 
+</p> 
  
 <div id="ft-buttons"> 
-<!-- begin of Top100 logo --> 
-<a href="http://top100.rambler.ru/home?id=29833" target="_blank"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-black2.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a> 
-<!-- end of Top100 logo --> 
+  <!-- begin of Top100 logo --> 
+  <a href="http://top100.rambler.ru/home?id=29833" target="_blank"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-black2.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a> 
+  <!-- end of Top100 logo --> 
   <!--TopList LOGO--> 
-  <a target="_top" href="http://top.list.ru/jump?from=71642"><img src="http://top.list.ru/counter?id=71642;t=11;l=1" border=0 height=31 width=88 alt="TopList"></a> 
+  <a target=_top href="http://top.list.ru/jump?from=71642"><img src="http://top.list.ru/counter?id=71642;t=11;l=1" border=0 height=31 width=88 alt="TopList"></a> 
   <!--TopList LOGO--> 
-  <br> 
-           Стиль: <a href="#" rel="dark" class="styleswitch">Dark</a></li> -
-            <a href="#" rel="swamp" class="styleswitch">Swamp</a></li> 
-  
 </div> 
- 
  
 <script type="text/javascript"> 
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -2366,7 +1700,6 @@ try {
 var pageTracker = _gat._getTracker("UA-2184304-1");
 pageTracker._setCustomVar(1, "Authorized", "false");
 pageTracker._setCustomVar(2, "Style", "tango");
- 
 pageTracker._trackPageview();
 pageTracker._trackPageLoadTime();
 } catch(err) {}</script> 
@@ -2381,6 +1714,5 @@ pageTracker._trackPageLoadTime();
 <script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?29833"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?29833" alt="" width="1" height="1" border="0"/></noscript> 
 <!-- end of Top100 code --> 
  
-</body> 
-</html> 
+</body></html> 
  

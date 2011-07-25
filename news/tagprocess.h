@@ -47,7 +47,7 @@ public:
      *                              новость и частота встречи новости.
      */
 
-    CNewsFinder(char *filename, unsigned int minSize);
+    CNewsFinder(char *filename, unsigned int minSize, unsigned int minFreq);
 
     /**
      * \fn  void CNewsFinder::removeTags(vector<string> &tagsToRemove);
@@ -278,27 +278,28 @@ private:
 
 
     unsigned int MINSZ;
+    unsigned int m_minFreq;
     ///< Входной файл
-    fstream fin;
+    fstream m_fileIn;
     ///< Выходной файл
-    fstream fout;
+    fstream m_fileOut;
     ///< Строчка, содержащая в себе входной файл
-    string data;
+    string m_fileData;
     ///< Измененная строчка входного файла
-    string modifiedData;
+    string m_modifiedData;
     ///< Измененная modifiedData. В clearedData нет удаленных тегов
-    string clearedData;
+    string m_clearedData;
     ///< Позиция тега в data
-    vector< pair<int, int> > realTagPosition;
+    vector< pair<int, int> > m_realTagPosition;
     ///< Позиция тега в modifiedData
-    vector< pair<int, int> > modifiedTagPosition;
+    vector< pair<int, int> > m_modifiedTagPosition;
     ///< Позиция тега в modifiedData
-    vector< pair<int, int> > clearedTagPosition;
+    vector< pair<int, int> > m_clearedTagPosition;
 
     ///< Set из пар <строка, частота встречи строки>
     //   Повторяющиеся строки не добавляются
     //   От частот никак не зависит
-    set <pair <string, int>, CNewsFinder::ltstr> freq;
+    set <pair <string, int>, CNewsFinder::ltstr> m_freq;
     ///<  Таблица для поиска повторяющихся строк
     // Например: abcabcac
     //   a b c a b c a c
@@ -310,18 +311,19 @@ private:
     // c 0 0 * 0 0 * 0 *
     // a * 0 0 * 0 0 * 0
     // c 0 0 * 0 0 * 0 *
-    short **table;
+    short **m_pTable;
     ///< Размер таблицы - tableSize X tableSize
-    unsigned int tableSize;
+    unsigned int m_tableSize;
     ///< Средняя длина строки в freq
-    int avgLen;
+    int m_avgLen;
     ///< Средняя частота встречи строки
-    int avgFreq;
+    int m_avgFreq;
     ///< массив возможных начал/концов новостей
     vector<pair<string, int>> possibleTags;
     pair <int, int> tagPosition;
     pair <int, int> modTagPosition;
     string newsBegin;
     string newsEnd;
+    set <string> m_subsArr;
 };
 #endif
