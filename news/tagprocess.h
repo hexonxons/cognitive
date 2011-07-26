@@ -127,6 +127,49 @@ public:
 
 private:
 
+    struct CTag
+    {
+        CTag(short _Val1, char _Val2);
+        CTag();
+        short tag;
+        char isClose;
+    };
+
+    template <class _Ty1, class _Ty2> struct CPair
+    {
+        CPair()
+        {
+            first = _Ty1();
+            second = _Ty2();
+        }
+        CPair(_Ty1 _Val1, _Ty2 _Val2)
+        {
+            first = _Val1;
+            second = _Val2;
+        }
+        _Ty1 first;
+        _Ty2 second;
+    };
+
+    template <class _Ty1, class _Ty2, class _Ty3> struct CTriple
+    {
+        CTriple()
+        {
+            first = _Ty1();
+            second = _Ty2();
+            third = _Ty3();
+        }
+        CTriple(_Ty1 _Val1, _Ty2 _Val2, _Ty3 _Val3)
+        {
+            first = _Val1;
+            second = _Val2;
+            third = _Val3;
+        }
+        _Ty1 first;
+        _Ty2 second;
+        _Ty3 third;
+    };
+
     /**
      * \struct  pred
      *
@@ -164,6 +207,15 @@ private:
         }
     };
 
+    struct alphacpr
+    {
+        bool operator()(CPair <CTag, string> left, CPair <CTag, string> right) const
+        {
+            return strcmp(left.second.c_str(), right.second.c_str()) < 0;
+        }
+    };
+
+
     /**
      * \fn  inline void CNewsFinder::LowerCase(string * pstr)
      *
@@ -192,8 +244,9 @@ private:
      * \return  “ег.
      */
 
-    string getTag(pair<int, int> &tagPos, const string &src);
+    unsigned short CNewsFinder::getTagCode(const string &tag);
 
+    CTriple<CTag, CPair<int, int>, string> getNextTag();
     /**
      * \fn  int CNewsFinder::checksum(const string &src);
      *
@@ -338,10 +391,12 @@ private:
     unsigned int m_avgFreq;
     ///< массив возможных начал/концов новостей.
     vector<pair<string, unsigned int>> possibleTags;
-    pair <int, int> tagPosition;
     pair <int, int> modTagPosition;
     string m_newsBegin;
     string m_newsEnd;
     set <string> m_subsArr;
+    vector<CPair<CTag, CPair<int, int>>> mod;
+    set <CPair <CTag, string>, alphacpr> alphabet;
+    unsigned int currFileDataPos;
 };
 #endif

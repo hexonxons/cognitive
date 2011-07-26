@@ -6,8 +6,9 @@
 
 #include "tagprocess.h"
 
-using std::make_pair;
 using std::ios;
+using std::make_pair;
+
 
 CNewsFinder::CNewsFinder(char *filename, unsigned int minSize, unsigned int minFreq):
     m_minSz(minSize),
@@ -16,40 +17,37 @@ CNewsFinder::CNewsFinder(char *filename, unsigned int minSize, unsigned int minF
     m_fileData((std::istreambuf_iterator<char>(m_fileIn)), std::istreambuf_iterator<char>()),
     m_avgLen(0),
     m_avgFreq(0),
-    m_minFreq(minFreq)
+    m_minFreq(minFreq),
+    currFileDataPos(0)
 {
 }
 
-string CNewsFinder::getTag(pair<int, int> &tagPos, const string &src)
+unsigned short CNewsFinder::getTagCode(const string &tag)
 {
-    string ret(src, tagPos.first, tagPos.second - tagPos.first);
-    return ret;
+    unsigned short code = 0;
+    for (int i = 0; i < tag.size(); ++i)
+    {
+        code += tag[i];
+    }
+    
+    return code;
 }
 
 void CNewsFinder::removeTags(vector<string> &tagsToRemove)
 {
     unsigned int i = 0;
     unsigned int j = 0;
-    string tag;
 
     // проходим по всем тегам
-    for (i = 0; i < m_modifiedTagPosition.size(); ++i)
+    for (i = 0; i < mod.size(); ++i)
     {
-        // если этот тег уже стертый, то продолжаем
-        if (m_modifiedTagPosition[i].first == -1)
-            continue;
-        // получим тег с данной позиции
-        tag = getTag(m_modifiedTagPosition[i], m_modifiedData);
-        // приведем его к нижнему регистру
-        LowerCase(&tag);
         // проходим по всему массиву тегов для удаления
         for (j = 0; j < tagsToRemove.size(); ++j)
         {
             // если тег совпал с тегом для удаления, то стираем его
-            if (!strncmp(tag.c_str(), tagsToRemove[j].c_str(), tagsToRemove[j].size() - 1))
+            if (getTagCode(tagsToRemove[j]) == mod[i].first.tag)
             {
-                m_modifiedTagPosition[i] = make_pair(-1, -1);
-                // идем к следующему тегу
+                mod.erase(mod.begin() + i);
                 break;
             }
         }
@@ -61,38 +59,22 @@ void CNewsFinder::removeTags(vector< pair<string, string> > &tagsToRemove)
 {
     unsigned int i = 0;
     unsigned int j = 0;
-    string tag;
 
     // проходим по всем тегам
-    for (i = 0; i < m_modifiedTagPosition.size(); ++i)
+    for (i = 0; i < mod.size(); ++i)
     {
-        // если этот тег уже стертый, то продолжаем
-        if (m_modifiedTagPosition[i].first == -1)
-            continue;
-        // получим тег с данной позиции
-        tag = getTag(m_modifiedTagPosition[i], m_modifiedData);
-        // приведем его к нижнему регистру
-        transform(tag.begin(), tag.end(), tag.begin(), tolower);
         // проходим по всему массиву тегов для удаления
         for (j = 0; j < tagsToRemove.size(); ++j)
         {
             // если тег совпал с тегом для удаления
-            if (!strncmp(tag.c_str(), tagsToRemove[j].first.c_str(),
-                tagsToRemove[j].first.size() - 1))
+            if (getTagCode(tagsToRemove[j].first) == mod[i].first.tag)
             {
                 // стираем тег
-                m_modifiedTagPosition[i] = make_pair(-1, -1);
+                mod.erase(mod.begin() + i);
                 // пока не получим закрывающий тег
-                while (strncmp(tag.c_str(), tagsToRemove[j].second.c_str(),
-                    tagsToRemove[j].second.size() - 1))
+                while (getTagCode(tagsToRemove[j].second) != mod[i].first.tag)
                 {
-                    ++i;
-                    if (m_modifiedTagPosition[i].first == -1)
-                        continue;
-                    // получаем следующий тег
-                    tag = getTag(m_modifiedTagPosition[i], m_modifiedData);
-                    // и стираем его
-                    m_modifiedTagPosition[i] = make_pair(-1, -1);
+                    mod.erase(mod.begin() + i);
                 }
                 // идем к следующему тегу
                 break;
@@ -267,6 +249,7 @@ int CNewsFinder::getTagSubs(const string &src, int pos)
     
     return 1;
 }
+
 string CNewsFinder::getNews(char *srcBegin, const string &newsBegin, const string &newsEnd, unsigned int &offset)
 {
     unsigned int i = 0;
@@ -301,72 +284,91 @@ string CNewsFinder::getNews(char *srcBegin, const string &newsBegin, const strin
     return ret;
 }
 
+CNewsFinder::CTag::CTag(short _Val1, char _Val2)
+{
+    tag = _Val1;
+    isClose = _Val2;
+}
+CNewsFinder::CTag::CTag()
+{
+    tag = 0;
+    isClose = 0;
+}
+
+CNewsFinder::CTriple<CNewsFinder::CTag, CNewsFinder::CPair<int, int>, string> CNewsFinder::getNextTag()
+{
+    CTag tagCode(0,0);
+    CTriple<CTag, CPair<int, int>, string> reti;
+    string tag;
+    CPair<int, int> tagPosition(-1,-1);
+
+    while (currFileDataPos != m_fileData.size())
+    {
+        // если (возможно) открывающий тег
+        if (m_fileData[currFileDataPos] == '<')
+        {
+            // к примеру, знак < в js
+            if (tagPosition.first != -1)
+            {
+                tagPosition.first = currFileDataPos;
+                ++currFileDataPos;
+            }
+            else
+                tagPosition.first = currFileDataPos;
+
+            // пока не дойдем до пробела/закрывающей скобки - записываем
+            while (m_fileData[currFileDataPos] != ' ' && m_fileData[currFileDataPos] != '>')
+            {
+                tag += m_fileData[currFileDataPos];
+                tagCode.tag += m_fileData[currFileDataPos];
+                ++currFileDataPos;				
+            }
+        }
+        // если закрывающая скобка - записываем
+        if (m_fileData[currFileDataPos] == '>')
+        {
+            tag += m_fileData[currFileDataPos];
+            //LowerCase(&tag);
+            tagCode.tag += m_fileData[currFileDataPos];
+            tagPosition.second = currFileDataPos;
+
+            if(tag[1] == '/')
+                tagCode.isClose = 1;
+            ++currFileDataPos;
+            reti.first = tagCode;
+            reti.second = tagPosition;
+            reti.third = tag;
+            return reti;
+        }
+        ++currFileDataPos;
+    }
+    return CTriple<CNewsFinder::CTag, CNewsFinder::CPair<int, int>, string>(CTag(-1, -1), CPair<int, int>(-1, -1), "");
+}
+
 void CNewsFinder::init(vector<pair<string, string>> &remDoubleTag, vector<string> &remTag)
 {
     unsigned int i = 0;
     unsigned int j = 0;
+    int flag = 0;
+    LowerCase(&m_fileData);
+    CTriple<CTag, CPair<int, int>, string> tagCode;
+    while (tagCode.third != "<body>")
+        tagCode = getNextTag();
 
-    // проходим по всему файлу
-    for(i = 0; i < m_fileData.size(); ++i)
+    tagCode = getNextTag();
+    while (tagCode.first.tag != -1)
     {
-        // если (возможно) открывающий тег
-        if (m_fileData[i] == '<')
-        {
-            // к примеру, знак < в js
-            if (tagPosition.first != -1)
-                tagPosition.first = i;
-            // знаем, с какой позиции лежит тег
-            tagPosition.first = i;
-            modTagPosition.first = j;
-            // пока не дойдем до пробела/закрывающей скобки - записываем
-            while (m_fileData[i] != ' ' && m_fileData[i] != '>')
-            {
-                m_modifiedData += m_fileData[i];
-                ++j;
-                ++i;				
-            }
-        }
-        // если закрывающая скобка - записываем
-        if (m_fileData[i] == '>')
-        {
-            m_modifiedData += m_fileData[i];
-            ++j;
-            tagPosition.second = i;
-            modTagPosition.second = j;
-            m_realTagPosition.push_back(tagPosition);
-            m_modifiedTagPosition.push_back(modTagPosition);
-            tagPosition.first = -1;
-            tagPosition.second = -1;
-        }
+        alphabet.insert(CPair<CTag, string>(tagCode.first, tagCode.third));
+        mod.push_back(CPair<CTag, CPair<int, int>>(tagCode.first, tagCode.second));
+        tagCode = getNextTag();
     }
+    
 
     removeTags(remTag);
     removeTags(remDoubleTag);
 
-    // составляем clearedData
-    for(i = 0; i < m_modifiedTagPosition.size(); ++i)
-    {
-        if (m_modifiedTagPosition[i].first != -1)
-        {
-            string tag = getTag(m_modifiedTagPosition[i], m_modifiedData);
-            int ch = 0;
-            if (tag[1] != '/')
-                // <tag[1]>           -- tag[1] + 47
-                // <tag[1]tag[2]..>   -- tag[1] + tag[2]
-                // VV Overflow 256    -> "ch > 0"
-                ch = tag[1] + tag[2] + 128;
-            else
-                // </tag[2]>          -- tag[2] + 47
-                // </tag[2][tag[3]..> -- tag[2] + tag[3]
-                // VV Overflow 128    -> "ch < 0"
-                ch = 128 + (tag[2] + tag[3]) % 128; 
-            m_clearedData += ch;
-            m_clearedTagPosition.push_back(m_modifiedTagPosition[i]);
-        }
-    }
-
     // Задаем размер таблицы
-    m_tableSize = m_clearedData.size();
+    m_tableSize = mod.size();
     // Выделяем память на таблицу
     m_pTable = new short *[m_tableSize];
     for (i = 0; i < m_tableSize; ++i)
@@ -377,7 +379,7 @@ void CNewsFinder::init(vector<pair<string, string>> &remDoubleTag, vector<string
     {
         for (j = 0; j < m_tableSize; ++j)
         {
-            if (m_clearedData[i] == m_clearedData[j])
+            if (mod[i].first.tag == mod[j].first.tag)
             {
                 m_pTable[i][j] = 1;
             }
