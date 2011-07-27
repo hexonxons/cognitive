@@ -169,6 +169,10 @@
 				RelativePath=".\tagprocess.cpp"
 				>
 			</File>
+			<File
+				RelativePath=".\utils.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -177,6 +181,10 @@
 			>
 			<File
 				RelativePath=".\tagprocess.h"
+				>
+			</File>
+			<File
+				RelativePath=".\utils.h"
 				>
 			</File>
 		</Filter>

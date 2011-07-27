@@ -5,6 +5,7 @@
  */
 
 #include "tagprocess.h"
+#include <iostream>
 
 using std::ios;
 using std::make_pair;
@@ -37,6 +38,9 @@ void CNewsFinder::removeTags(vector<string> &tagsToRemove)
 {
     unsigned int i = 0;
     unsigned int j = 0;
+    if (tagsToRemove.size() == 0)
+        return;
+    
 
     // проходим по всем тегам
     for (i = 0; i < mod.size(); ++i)
@@ -76,10 +80,24 @@ void CNewsFinder::removeTags(vector< pair<string, string> > &tagsToRemove)
                 {
                     mod.erase(mod.begin() + i);
                 }
+                mod.erase(mod.begin() + i);
+                --i;
                 // идем к следующему тегу
                 break;
             }
         }
+    }
+}
+
+void CNewsFinder::printTable()
+{
+    for (int i = 0; i < m_tableSize; ++i)
+    {
+        for (int j = 0; j < m_tableSize; ++j)
+        {
+            std::cout << m_pTable[i][j] << " ";
+        }
+        std::cout << "\n";
     }
 }
 
@@ -96,52 +114,44 @@ int CNewsFinder::getWordCount(const string &src)
     return cnt;
 }
 
-int CNewsFinder::checksum(const string &src)
+int CNewsFinder::checksum(const vector<CPair<CTag, CPair<int, int>>> &src)
 {
     unsigned int i = 0;
     int cnt = 0;
 
     for (i = 0; i < src.size(); ++i)
         // если встретили '/' - тег закрывающий. Увеличиваем счетчик.
-        if (src[i] == '/')
+        if (src[i].first.isClose == 1)
             ++cnt;
     // если закрывающих тегов больше, чем открывающих - возвратим 0
-    if (cnt > getWordCount(src) / 2 + 1)
+    if (cnt > src.size() / 2 + 1)
         return 0;
 
     return 1;
 }
 
-int CNewsFinder::checkWordTruePairs(const string &src)
+int CNewsFinder::checkWordTruePairs(const vector<CPair<CTag, CPair<int, int>>> &src)
 {
     unsigned int i;
-    stack<char> st;
+    stack<CPair<CTag, CPair<int, int>>> st;
 
     for(i = 0; i < src.size(); ++i)
     {
         // если он - открывающий - положим в стек
-        if (src[i] > 0)
+        if (src[i].first.isClose == 0)
             st.push(src[i]);
         else
         {
             // если стек пуст - закрывающему тегу нет открывающего.
             if (st.empty())
                 return 0;
-            // возьмем верхний тег
-            char topTag = st.top();
-            // если он не является открывающим для данного закрывающего
-            if (topTag > 0)
+            // пока не получим открывающий для текущего тега, извлекаем
+            // теги из стека и проверяем их
+            while (st.top().first.tag + '/' != src[i].first.tag)
             {
-                // пока не получим открывающий для текущего тега, извлекаем
-                // теги из стека и проверяем их
-                char ch = topTag % 128 - 128;
-                while (ch != src[i])
-                {
-                    st.pop();
-                    if (st.empty())
-                        return 0;
-                    topTag = st.top();
-                }
+                st.pop();
+                if (st.empty())
+                    return 0;
             }
             st.pop();
         }
@@ -149,7 +159,9 @@ int CNewsFinder::checkWordTruePairs(const string &src)
     return 1;
 }
 
-int CNewsFinder::getStringFreq(const string &src, const string &str, unsigned int pos)
+int CNewsFinder::getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &src,
+                               const vector<CPair<CTag, CPair<int, int>>> &str,
+                               unsigned int pos)
 {
     unsigned int freq = 0;
     unsigned int i = 0;
@@ -160,14 +172,14 @@ int CNewsFinder::getStringFreq(const string &src, const string &str, unsigned in
         if (m_pTable[i][pos] != 0)
         {
             unsigned int temp = i;
-            string data;
+            vector<CPair<CTag, CPair<int, int>>> data;
             while (j < str.size() && temp < m_tableSize && m_pTable[temp][pos + j] != 0)
             {
-                data += src[temp];
+                data.push_back(src[temp]);
                 ++temp;
-                ++j;
+                ++j; 
             }
-            if (!strcmp(str.c_str(), data.c_str()))
+            if (!vStrCmp(str, data))
                 ++freq;
             j = 0;
         }
@@ -175,12 +187,13 @@ int CNewsFinder::getStringFreq(const string &src, const string &str, unsigned in
     return freq;
 }
 
-int CNewsFinder::getTagSubs(const string &src, int pos)
+
+int CNewsFinder::getTagSubs(const vector<CPair<CTag, CPair<int, int>>> &src, int pos)
 {
     // выбираем две подстроки длины на 1 меньше
-    string first(src, 0, src.size() - 1);
-    string second(src, 1 ,src.size() - 1);
-    set <string>::iterator setIter;
+    vector<CPair<CTag, CPair<int, int>>> first(src.begin(), src.end() - 1);
+    vector<CPair<CTag, CPair<int, int>>> second(src.begin() + 1 ,src.end());
+    set <vector<CPair<CTag, CPair<int, int>>>, tagcodecpr>::iterator setIter;
     int flag = 0;
 
     if (first.size() < m_minSz)
@@ -194,10 +207,10 @@ int CNewsFinder::getTagSubs(const string &src, int pos)
             m_subsArr.insert(first);
             if (checksum(first) && checkWordTruePairs(first))
             {
-                unsigned int strFreq = getStringFreq(m_clearedData, first, pos);
+                unsigned int strFreq = getStringFreq(mod, first, pos);
                 if (strFreq >= m_minFreq)
                 {
-                    m_freq.insert(make_pair(first, strFreq));
+                    m_freq.insert(make_cpair(first, strFreq));
                     m_avgLen += first.size();
                     m_avgFreq += strFreq;
                 }
@@ -211,10 +224,10 @@ int CNewsFinder::getTagSubs(const string &src, int pos)
             m_subsArr.insert(second);
             if (checksum(second) && checkWordTruePairs(second))
             {
-                unsigned int strFreq = getStringFreq(m_clearedData, second, pos + 1);
+                unsigned int strFreq = getStringFreq(mod, second, pos + 1);
                 if (strFreq >= m_minFreq)
                 {
-                    m_freq.insert(make_pair(second, strFreq));
+                    m_freq.insert(make_cpair(second, strFreq));
                     m_avgLen += second.size();
                     m_avgFreq += strFreq;
                 }
@@ -235,10 +248,10 @@ int CNewsFinder::getTagSubs(const string &src, int pos)
         {
             if (checksum(src) && checkWordTruePairs(src))
             {
-                unsigned int strFreq = getStringFreq(m_clearedData, src, pos);
+                unsigned int strFreq = getStringFreq(mod, src, pos);
                 if (strFreq < m_minFreq)
                     return 0;
-                m_freq.insert(make_pair(src, strFreq));
+                m_freq.insert(make_cpair(src, strFreq));
                 m_avgLen += src.size();
                 m_avgFreq += strFreq;
             }
@@ -250,52 +263,23 @@ int CNewsFinder::getTagSubs(const string &src, int pos)
     return 1;
 }
 
-string CNewsFinder::getNews(char *srcBegin, const string &newsBegin, const string &newsEnd, unsigned int &offset)
+string CNewsFinder::getNews(const vector<CPair<CTag, CPair<int, int>>> &srcBegin,
+                            const vector<CPair<CTag, CPair<int, int>>> &newsBegin,
+                            const vector<CPair<CTag, CPair<int, int>>> &newsEnd,
+                            unsigned int &offset)
 {
     unsigned int i = 0;
     // Ищем позицию, с которой начинается новость
-    int begin = strstr(srcBegin + offset, newsBegin.c_str()) - srcBegin;
-    if (begin < 0)
-    {
-        string str;
-        return str;
-    }
+    int begin = newsBegin[0].second.first;
     // Позиция, на которой новость заканчивается
-    int end = strstr(srcBegin + begin, newsEnd.c_str()) - srcBegin;
-    if (end < 0)
-    {
-        string str;
-        return str;
-    }
+    int end = newsEnd[newsEnd.size() - 1].second.second;
     offset = end + 1;
     // номер тега, с которого новость начинается и заканчивается, в modifiedTagPosition
-    int rbegin;
-    int rend;
-
-    for(i = 0; i < m_modifiedTagPosition.size(); ++i)
-    {
-        if (m_clearedTagPosition[begin].first == m_modifiedTagPosition[i].first)
-            rbegin = i;
-        if (m_clearedTagPosition[end].second == m_modifiedTagPosition[i].second)
-            rend = i;
-    }
-    string ret(m_fileData, m_realTagPosition[rbegin].first, 
-        m_realTagPosition[rend].first - m_realTagPosition[rbegin].first);
+    string ret(m_fileData, begin, end);
     return ret;
 }
 
-CNewsFinder::CTag::CTag(short _Val1, char _Val2)
-{
-    tag = _Val1;
-    isClose = _Val2;
-}
-CNewsFinder::CTag::CTag()
-{
-    tag = 0;
-    isClose = 0;
-}
-
-CNewsFinder::CTriple<CNewsFinder::CTag, CNewsFinder::CPair<int, int>, string> CNewsFinder::getNextTag()
+CTriple<CTag, CPair<int, int>, string> CNewsFinder::getNextTag()
 {
     CTag tagCode(0,0);
     CTriple<CTag, CPair<int, int>, string> reti;
@@ -342,7 +326,7 @@ CNewsFinder::CTriple<CNewsFinder::CTag, CNewsFinder::CPair<int, int>, string> CN
         }
         ++currFileDataPos;
     }
-    return CTriple<CNewsFinder::CTag, CNewsFinder::CPair<int, int>, string>(CTag(-1, -1), CPair<int, int>(-1, -1), "");
+    return CTriple<CTag, CPair<int, int>, string>(CTag(-1, -1), CPair<int, int>(-1, -1), "");
 }
 
 void CNewsFinder::init(vector<pair<string, string>> &remDoubleTag, vector<string> &remTag)
@@ -387,6 +371,7 @@ void CNewsFinder::init(vector<pair<string, string>> &remDoubleTag, vector<string
                 m_pTable[i][j] = 0;
         }
     }
+    //printTable();
 }
 
 void CNewsFinder::getPossibleRanges()
@@ -396,25 +381,24 @@ void CNewsFinder::getPossibleRanges()
     // diag - Номер диагонали
     // diag = 0 - главная диагональ, заполнена 
     int diag = 1;
-    while(diag != m_tableSize)
+    while(diag < m_tableSize)
     {
         for (i = 0; i < m_tableSize - diag; ++i)
         {
             if (m_pTable[i][i + diag] != 0)
             {
-                // Считываем строчку
-                string str;
+                vector<CPair<CTag, CPair<int, int>>> range;
                 int beg = i;
                 while (i < m_tableSize - diag && m_pTable[i][i + diag] != 0)
                 {
-                    str += m_clearedData[i];
+                    range.push_back(mod[i]);
                     ++i;
                 }
                 // И проверяем возможность этой строчки(или её подстрок) быть началом или концом новости
-                if (str.size() >= m_minSz)
+                if (range.size() >= m_minSz)
                 {
-                    getTagSubs(str, beg + diag);
-                    diag += str.size() - 1;
+                    getTagSubs(range, beg + diag);
+                    i += range.size() - 1;
                 }
             }
         }
@@ -428,13 +412,13 @@ void CNewsFinder::getPossibleRanges()
 
 void CNewsFinder::getNewsRange()
 {
-    set <pair <string, unsigned int>, CNewsFinder::ltstr>::iterator setIter;
-    vector<pair<string, unsigned int>>::iterator vectorIter;
+    set <CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>, ltstr>::iterator setIter;
+    vector<CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>>::iterator vectorIter;
     
     for(setIter = m_freq.begin(); setIter != m_freq.end(); ++setIter)
     {
         if (setIter->second >= m_minFreq && 
-            setIter->first.size() <= m_avgLen * 1.3 + 1 &&
+            setIter->first.size() <= m_avgLen&&
             setIter->second <= m_avgFreq)
             possibleTags.push_back(*setIter);
     }
@@ -445,11 +429,11 @@ void CNewsFinder::getNewsRange()
     unsigned int cnt = 1;
     while (cnt < possibleTags.size())
     {
-        string temp = (possibleTags.end() - cnt)->first;
+        vector<CPair<CTag, CPair<int, int>>> temp = (possibleTags.end() - cnt)->first;
         vectorIter = possibleTags.end() - cnt - 1;
         for (unsigned int i = 0; i < possibleTags.size(); ++i)
         {
-            while(strstr(temp.c_str(), vectorIter->first.c_str()) || strstr(vectorIter->first.c_str(), temp.c_str()))
+            while(vStrStr(temp, vectorIter->first) || vStrStr(vectorIter->first, temp))
             {
                 possibleTags.erase(vectorIter);
                 if (cnt == possibleTags.size())
@@ -475,35 +459,39 @@ void CNewsFinder::getNewsRange()
          /*vectorIter->second > newAvgFreq && */vectorIter != possibleTags.begin();
          --vectorIter)
     {
-        string possibleBegin = vectorIter->first;
-        for (vector<pair<string, unsigned int>>::iterator it = vectorIter - 1;; --it
+        vector<CPair<CTag, CPair<int, int>>> possibleBegin = vectorIter->first;
+        for (vector<CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>>::iterator it = vectorIter - 1;; --it
              /*it->second > newAvgFreq && it != possibleTags.begin();
              --it*/)
         {
-            string possebleEnd = it->first;
-            unsigned int beg = strstr(m_clearedData.c_str(), possibleBegin.c_str()) - m_clearedData.c_str();
-            unsigned int end = strstr(m_clearedData.c_str(), possebleEnd.c_str()) - m_clearedData.c_str();
-            if (beg - end < m_clearedData.size() / m_minSz || end - beg < m_clearedData.size() / m_minSz)
+            vector<CPair<CTag, CPair<int, int>>> possibleEnd = it->first;
+            unsigned int beg = possibleBegin[0].second.first;
+            unsigned int end = possibleEnd[possibleEnd.size() - 1].second.first;
+            if (beg - end < m_fileData.size() / m_minSz || end - beg < m_fileData.size() / m_minSz)
             {
-                int nextBegin = strstr(m_clearedData.c_str(), possibleBegin.c_str()) - m_clearedData.c_str();
                 if (beg > end)
                 {
-                    m_newsBegin = possebleEnd;
+                    m_newsBegin = possibleEnd;
                     m_newsEnd = possibleBegin;
                     unsigned int a = 0;
-                    string news = getNews((char *)m_clearedData.c_str(), m_newsBegin, m_newsEnd, a);
+                    string news = getNews(mod, m_newsBegin, m_newsEnd, a);
                     if (news.size() > 0.01 * m_fileData.size() && news.size() < 0.2 * m_fileData.size())
+                    {
+                        m_fileOut << news;
                         return;
-                    
+                    }
                 }
                 else
                 {
                     m_newsBegin = possibleBegin;
-                    m_newsEnd = possebleEnd;
+                    m_newsEnd = possibleEnd;
                     unsigned int a = 0;
-                    string news = getNews((char *)m_clearedData.c_str(), m_newsBegin, m_newsEnd, a);
+                    string news = getNews(mod, m_newsBegin, m_newsEnd, a);
                     if (news.size() > 0.01 * m_fileData.size() && news.size() < 0.2 * m_fileData.size())
+                    {
+                        m_fileOut << news;
                         return;
+                    }
 
                 }
             }
@@ -515,15 +503,15 @@ void CNewsFinder::getNewsRange()
 
 void CNewsFinder::writeNews()
 {
-    char *strBegin = (char *)m_clearedData.c_str();
-    unsigned int offset = 0;
+    //char *strBegin = (char *)m_clearedData.c_str();
+   // unsigned int offset = 0;
     // Получаем строчку новости и выводим её
-    while (strlen(strBegin) > offset)
-    {
-        string res = getNews(strBegin, m_newsBegin, m_newsEnd, offset);
-        if (res.empty())
-            break;
-        m_fileOut << res;
-        m_fileOut << "\n#########################################################################################\n";
-    }
+    //while (strlen(strBegin) > offset)
+   // {
+        //string res = getNews(strBegin, m_newsBegin, m_newsEnd, offset);
+        //if (res.empty())
+          //  break;
+        //m_fileOut << res;
+     //   m_fileOut << "\n#########################################################################################\n";
+   // }
 }

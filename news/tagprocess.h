@@ -14,6 +14,7 @@
 #include <set>
 #include <fstream>
 #include <windows.h>
+#include "utils.h"
 
 using std::pair;
 using std::string;
@@ -127,49 +128,6 @@ public:
 
 private:
 
-    struct CTag
-    {
-        CTag(short _Val1, char _Val2);
-        CTag();
-        short tag;
-        char isClose;
-    };
-
-    template <class _Ty1, class _Ty2> struct CPair
-    {
-        CPair()
-        {
-            first = _Ty1();
-            second = _Ty2();
-        }
-        CPair(_Ty1 _Val1, _Ty2 _Val2)
-        {
-            first = _Val1;
-            second = _Val2;
-        }
-        _Ty1 first;
-        _Ty2 second;
-    };
-
-    template <class _Ty1, class _Ty2, class _Ty3> struct CTriple
-    {
-        CTriple()
-        {
-            first = _Ty1();
-            second = _Ty2();
-            third = _Ty3();
-        }
-        CTriple(_Ty1 _Val1, _Ty2 _Val2, _Ty3 _Val3)
-        {
-            first = _Val1;
-            second = _Val2;
-            third = _Val3;
-        }
-        _Ty1 first;
-        _Ty2 second;
-        _Ty3 third;
-    };
-
     /**
      * \struct  pred
      *
@@ -181,12 +139,13 @@ private:
 
     struct pred
     {
-        bool operator()(pair<string, int> left, pair<string, int> right) const
+        bool operator()(CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int> left,
+                        CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int> right) const
         {
             if(left.second != right.second)
                 return left.second < right.second;
             else
-                return left.first.length() < right.first.length();
+                return left.first.size() < right.first.size();
         }
     };
 
@@ -201,17 +160,28 @@ private:
 
     struct ltstr
     {
-        bool operator()(pair<string, int> left, pair<string, int> right) const
+        int operator()(CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int> left,
+                       CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int> right) const
         {
-            return strcmp(left.first.c_str(), right.first.c_str()) < 0;
+            return vStrCmp(left.first, right.first) < 0;
         }
     };
 
+
     struct alphacpr
     {
-        bool operator()(CPair <CTag, string> left, CPair <CTag, string> right) const
+        int operator()(CPair <CTag, string> left, CPair <CTag, string> right) const
         {
             return strcmp(left.second.c_str(), right.second.c_str()) < 0;
+        }
+    };
+
+    struct tagcodecpr
+    {
+        int operator()(const vector<CPair<CTag, CPair<int, int>>> &left,
+                        const vector<CPair<CTag, CPair<int, int>>> &right) const
+        {
+                return vStrCmp(left, right) < 0;
         }
     };
 
@@ -260,7 +230,7 @@ private:
      * \return  1, если количество открывающих тегов больше количества закрывающих 0 иначе.
      */
 
-    int checksum(const string &src);
+    int checksum(const vector<CPair<CTag, CPair<int, int>>> &src);
 
     /**
      * \fn  int CNewsFinder::checkWordTruePairs(const string &src);
@@ -276,7 +246,7 @@ private:
      * \return  1, если для каждого закрывающего тега есть открывающий 0, иначе.
      */
 
-    int checkWordTruePairs(const string &src);
+    int checkWordTruePairs(const vector<CPair<CTag, CPair<int, int>>> &src);
 
     /**
      * \fn  int CNewsFinder::getWordCount(const string &src);
@@ -308,7 +278,9 @@ private:
      * \return  Честота встречи str в src.
      */
 
-    int getStringFreq(const string &src, const string &str, unsigned int pos);
+    int getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &src,
+                      const vector<CPair<CTag, CPair<int, int>>> &str,
+                      unsigned int pos);
 
     /**
      * \fn  int CNewsFinder::getTagSubs(const string &src, int pos);
@@ -325,7 +297,7 @@ private:
      * \return  1/0.
      */
 
-    int getTagSubs(const string &src, int pos);
+    int getTagSubs(const vector<CPair<CTag, CPair<int, int>>> &src, int pos);
 
     /**
      * \fn  string CNewsFinder::getNews(char *srcBegin, const string &newsBegin,
@@ -344,7 +316,12 @@ private:
      * \return  Текст новости.
      */
 
-    string getNews(char *srcBegin, const string &newsBegin, const string &newsEnd, unsigned int &offset);
+    string CNewsFinder::getNews(const vector<CPair<CTag, CPair<int, int>>> &srcBegin,
+                                const vector<CPair<CTag, CPair<int, int>>> &newsBegin,
+                                const vector<CPair<CTag, CPair<int, int>>> &newsEnd,
+                                unsigned int &offset);
+
+    void printTable();
 
     ///< Минимальный размер последовательности тегов.
     unsigned int m_minSz;
@@ -356,21 +333,11 @@ private:
     fstream m_fileOut;
     ///< Строчка, содержащая в себе входной файл.
     string m_fileData;
-    ///< Измененная строчка входного файла.
-    string m_modifiedData;
-    ///< Измененная modifiedData. В clearedData нет удаленных тегов.
-    string m_clearedData;
-    ///< Позиция тега в data
-    vector< pair<int, int> > m_realTagPosition;
-    ///< Позиция тега в modifiedData.
-    vector< pair<int, int> > m_modifiedTagPosition;
-    ///< Позиция тега в modifiedData.
-    vector< pair<int, int> > m_clearedTagPosition;
 
     ///< Set из пар <строка, частота встречи строки>.
     //   Повторяющиеся строки не добавляются.
     //   От частот никак не зависит.
-    set <pair <string, unsigned int>, CNewsFinder::ltstr> m_freq;
+    set <CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>, ltstr> m_freq;
     ///<  Таблица для поиска повторяющихся строк.
     // Например: abcabcac
     //   a b c a b c a c
@@ -390,11 +357,10 @@ private:
     ///< Средняя частота встречи строки.
     unsigned int m_avgFreq;
     ///< массив возможных начал/концов новостей.
-    vector<pair<string, unsigned int>> possibleTags;
-    pair <int, int> modTagPosition;
-    string m_newsBegin;
-    string m_newsEnd;
-    set <string> m_subsArr;
+    vector<CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>> possibleTags;
+    vector<CPair<CTag, CPair<int, int>>> m_newsBegin;
+    vector<CPair<CTag, CPair<int, int>>> m_newsEnd;
+    set <vector<CPair<CTag, CPair<int, int>>>, tagcodecpr> m_subsArr;
     vector<CPair<CTag, CPair<int, int>>> mod;
     set <CPair <CTag, string>, alphacpr> alphabet;
     unsigned int currFileDataPos;

@@ -73,16 +73,19 @@ int main()
     vector<pair<string, string>> remDoubleTag;
     vector<string> remTag;
     CNewsFinder finder("news", 8, 10);
+   // remDoubleTag.push_back(make_pair("<a>", "</a>"));
+    //remDoubleTag.push_back(make_pair("<b>", "</b>"));
+    //remTag.push_back("<c>");
     remDoubleTag.push_back(make_pair("<script>", "</script>"));
     remDoubleTag.push_back(make_pair("<noscript>", "</noscript>"));
     remDoubleTag.push_back(make_pair("<form>", "</form>"));
     remDoubleTag.push_back(make_pair("<iframe>", "</iframe>"));
-    remDoubleTag.push_back(make_pair("<ul>", "</ul>"));
-    remDoubleTag.push_back(make_pair("<span>", "</span>"));
-    remDoubleTag.push_back(make_pair("<p>", "</p>"));
+    //remDoubleTag.push_back(make_pair("<ul>", "</ul>"));
+    //remDoubleTag.push_back(make_pair("<span>", "</span>"));
+    //remDoubleTag.push_back(make_pair("<li>", "</li>"));
     remDoubleTag.push_back(make_pair("<style>", "</style>"));
 
-    remTag.push_back("<!doctype>");
+    
     remTag.push_back("<html>");
     remTag.push_back("</html>");
     remTag.push_back("<head>");
@@ -100,11 +103,15 @@ int main()
     remTag.push_back("</li>");
     remTag.push_back("<p>");
     remTag.push_back("</p>");
+    remTag.push_back("<ul>");
+    remTag.push_back("</ul>");
+    remTag.push_back("<span>");
+    remTag.push_back("</span>");
 
     finder.init(remDoubleTag, remTag);
     finder.getPossibleRanges();
     finder.getNewsRange();
-    finder.writeNews();
+    //finder.writeNews();
 
 	return 0;
 }
