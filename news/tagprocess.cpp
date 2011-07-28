@@ -6,6 +6,7 @@
 
 #include "tagprocess.h"
 #include <iostream>
+#include <algorithm>
 
 using std::ios;
 using std::make_pair;
@@ -172,14 +173,14 @@ int CNewsFinder::getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &src,
         if (m_pTable[i][pos] != 0)
         {
             unsigned int temp = i;
-            vector<CPair<CTag, CPair<int, int>>> data;
+            //vector<CPair<CTag, CPair<int, int>>> data;
             while (j < str.size() && temp < m_tableSize && m_pTable[temp][pos + j] != 0)
             {
-                data.push_back(src[temp]);
+                //data.push_back(src[temp]);
                 ++temp;
                 ++j; 
             }
-            if (!vStrCmp(str, data))
+            if (j == str.size())
                 ++freq;
             j = 0;
         }
@@ -263,19 +264,30 @@ int CNewsFinder::getTagSubs(const vector<CPair<CTag, CPair<int, int>>> &src, int
     return 1;
 }
 
-string CNewsFinder::getNews(const vector<CPair<CTag, CPair<int, int>>> &srcBegin,
-                            const vector<CPair<CTag, CPair<int, int>>> &newsBegin,
-                            const vector<CPair<CTag, CPair<int, int>>> &newsEnd,
+string CNewsFinder::getNews(vector<CPair<CTag, CPair<int, int>>> &srcBegin,
+                            vector<CPair<CTag, CPair<int, int>>> &newsBegin,
+                            vector<CPair<CTag, CPair<int, int>>> &newsEnd,
                             unsigned int &offset)
 {
     unsigned int i = 0;
     // Ищем позицию, с которой начинается новость
-    int begin = newsBegin[0].second.first;
+    //int begin = newsBegin[0].second.first;
+    vector<CPair<CTag, CPair<int, int>>>::iterator it = pStrStr(mod, newsBegin, offset);
+    if (it == mod.end())
+    {
+        return string("");
+    }
+    int begin = it->second.first;
+    offset = it - mod.begin() + 1;
     // Позиция, на которой новость заканчивается
-    int end = newsEnd[newsEnd.size() - 1].second.second;
-    offset = end + 1;
+    it = pStrStr(mod, newsEnd, offset);
+    if (it == mod.end())
+    {
+        return string("");
+    }
+    int end = it->second.second;
     // номер тега, с которого новость начинается и заканчивается, в modifiedTagPosition
-    string ret(m_fileData, begin, end);
+    string ret(m_fileData, begin, end - begin);
     return ret;
 }
 
@@ -334,7 +346,8 @@ void CNewsFinder::init(vector<pair<string, string>> &remDoubleTag, vector<string
     unsigned int i = 0;
     unsigned int j = 0;
     int flag = 0;
-    LowerCase(&m_fileData);
+    //LowerCase(&m_fileData);
+    transform(m_fileData.begin(), m_fileData.end(), m_fileData.begin(), tolower);
     CTriple<CTag, CPair<int, int>, string> tagCode;
     while (tagCode.third != "<body>")
         tagCode = getNextTag();
@@ -465,19 +478,20 @@ void CNewsFinder::getNewsRange()
              --it*/)
         {
             vector<CPair<CTag, CPair<int, int>>> possibleEnd = it->first;
-            unsigned int beg = possibleBegin[0].second.first;
-            unsigned int end = possibleEnd[possibleEnd.size() - 1].second.first;
+            vector<CPair<CTag, CPair<int, int>>>::iterator ite = pStrStr(mod, possibleBegin);
+            unsigned int beg = ite->second.first;
+            ite = pStrStr(mod, possibleEnd);
+            unsigned int end = ite->second.second;
             if (beg - end < m_fileData.size() / m_minSz || end - beg < m_fileData.size() / m_minSz)
             {
                 if (beg > end)
                 {
                     m_newsBegin = possibleEnd;
                     m_newsEnd = possibleBegin;
-                    unsigned int a = 0;
-                    string news = getNews(mod, m_newsBegin, m_newsEnd, a);
+                    string news(m_fileData, end, beg - end);
                     if (news.size() > 0.01 * m_fileData.size() && news.size() < 0.2 * m_fileData.size())
                     {
-                        m_fileOut << news;
+                        //m_fileOut << news;
                         return;
                     }
                 }
@@ -485,11 +499,10 @@ void CNewsFinder::getNewsRange()
                 {
                     m_newsBegin = possibleBegin;
                     m_newsEnd = possibleEnd;
-                    unsigned int a = 0;
-                    string news = getNews(mod, m_newsBegin, m_newsEnd, a);
+                    string news(m_fileData, beg, end - beg);
                     if (news.size() > 0.01 * m_fileData.size() && news.size() < 0.2 * m_fileData.size())
                     {
-                        m_fileOut << news;
+                        //m_fileOut << news;
                         return;
                     }
 
@@ -503,15 +516,14 @@ void CNewsFinder::getNewsRange()
 
 void CNewsFinder::writeNews()
 {
-    //char *strBegin = (char *)m_clearedData.c_str();
-   // unsigned int offset = 0;
+    unsigned int offset = 0;
     // Получаем строчку новости и выводим её
-    //while (strlen(strBegin) > offset)
-   // {
-        //string res = getNews(strBegin, m_newsBegin, m_newsEnd, offset);
-        //if (res.empty())
-          //  break;
-        //m_fileOut << res;
-     //   m_fileOut << "\n#########################################################################################\n";
-   // }
+    while (1)
+    {
+        string res = getNews(mod, m_newsBegin, m_newsEnd, offset);
+        if (res.empty())
+            break;
+        m_fileOut << res;
+        m_fileOut << "\n#########################################################################################\n";
+    }
 }

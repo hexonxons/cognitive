@@ -316,9 +316,9 @@ private:
      * \return  Текст новости.
      */
 
-    string CNewsFinder::getNews(const vector<CPair<CTag, CPair<int, int>>> &srcBegin,
-                                const vector<CPair<CTag, CPair<int, int>>> &newsBegin,
-                                const vector<CPair<CTag, CPair<int, int>>> &newsEnd,
+    string CNewsFinder::getNews(vector<CPair<CTag, CPair<int, int>>> &srcBegin,
+                                vector<CPair<CTag, CPair<int, int>>> &newsBegin,
+                                vector<CPair<CTag, CPair<int, int>>> &newsEnd,
                                 unsigned int &offset);
 
     void printTable();

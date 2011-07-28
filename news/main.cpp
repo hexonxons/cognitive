@@ -111,7 +111,7 @@ int main()
     finder.init(remDoubleTag, remTag);
     finder.getPossibleRanges();
     finder.getNewsRange();
-    //finder.writeNews();
+    finder.writeNews();
 
 	return 0;
 }

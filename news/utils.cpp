@@ -1,5 +1,7 @@
 #include "utils.h"
 
+using std::vector;
+
 CTag::CTag(short _Val1, char _Val2)
 {
     tag = _Val1;
@@ -91,4 +93,75 @@ int vStrStr(const vector<CPair<CTag, CPair<int, int>>> &vStr1,
         }
     }
     return 0;
+}
+
+vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(vector<CPair<CTag, CPair<int, int>>> &vStr1,
+                                                       vector<CPair<CTag, CPair<int, int>>> &vStr2,
+                                                       int offset)
+{
+    vector<CPair<CTag, CPair<int, int>>>::iterator it1 = vStr1.begin() + offset;
+    vector<CPair<CTag, CPair<int, int>>>::iterator it2 = vStr2.begin();
+    vector<CPair<CTag, CPair<int, int>>>::iterator reti;
+
+    while (1)
+    {
+        while (it1->first != it2->first)
+        {
+            ++it1;
+            if (it1 == vStr1.end())
+            {
+                return vStr1.end();
+            }
+        }
+        reti = it1;
+        while (it1->first == it2->first)
+        {
+            ++it1;
+            ++it2;
+            if (it2 == vStr2.end())
+            {
+                return reti;
+            }
+            if (it1 == vStr1.end())
+            {
+                return vStr1.end();
+            }
+        }
+        it2 = vStr2.begin();
+    }
+}
+
+vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(vector<CPair<CTag, CPair<int, int>>> &vStr1,
+                                                       vector<CPair<CTag, CPair<int, int>>> &vStr2)
+{
+    vector<CPair<CTag, CPair<int, int>>>::iterator it1 = vStr1.begin();
+    vector<CPair<CTag, CPair<int, int>>>::iterator it2 = vStr2.begin();
+    vector<CPair<CTag, CPair<int, int>>>::iterator reti;
+
+    while (1)
+    {
+        while (it1->first != it2->first)
+        {
+            ++it1;
+            if (it1 == vStr1.end())
+            {
+                return vStr1.end();
+            }
+        }
+        reti = it1;
+        while (it1->first == it2->first)
+        {
+            ++it1;
+            ++it2;
+            if (it2 == vStr2.end())
+            {
+                return reti;
+            }
+            if (it1 == vStr1.end())
+            {
+                return vStr1.end();
+            }
+        }
+        it2 = vStr2.begin();
+    }
 }
