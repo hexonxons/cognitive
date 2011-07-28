@@ -1,17 +1,26 @@
+/**
+ * \file    utils.cpp
+ *
+ * \brief   Вспомогательные функции и структуры данных. Определения.
+ */
+
 #include "utils.h"
 
 using std::vector;
 
-CTag::CTag(short _Val1, char _Val2)
+CTag::CTag(short _Tag, char _IsClose)
 {
-    tag = _Val1;
-    isClose = _Val2;
+    tag = _Tag;
+    isClose = _IsClose;
 }
+
 CTag::CTag()
 {
     tag = 0;
     isClose = 0;
 }
+
+//#########################################################################################
 
 int vStrCmp(const vector<CPair<CTag, CPair<int, int>>> &left,
             const vector<CPair<CTag, CPair<int, int>>> &right)
@@ -33,8 +42,7 @@ int vStrCmp(const vector<CPair<CTag, CPair<int, int>>> &left,
     return 0;
 }
 
-// str2 в str1
-int vStrStr(const vector<CPair<CTag, CPair<int, int>>> &vStr1,
+int vIsSubstr(const vector<CPair<CTag, CPair<int, int>>> &vStr1,
             const vector<CPair<CTag, CPair<int, int>>> &vStr2)
 {
     unsigned int j = 0;
