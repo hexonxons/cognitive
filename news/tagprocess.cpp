@@ -227,7 +227,7 @@ void CNewsFinder::writeNews()
 
 //#################################  PRIVATE SECTION  #####################################
 
-void CNewsFinder::removeTags(vector<string> &tagsToRemove)
+void CNewsFinder::removeTags(vector<std::string> &tagsToRemove)
 {
     unsigned int i = 0;
     unsigned int j = 0;
@@ -252,7 +252,7 @@ void CNewsFinder::removeTags(vector<string> &tagsToRemove)
 }
 
 
-void CNewsFinder::removeTags(vector< pair<string, string> > &tagsToRemove)
+void CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove)
 {
     unsigned int i = 0;
     unsigned int j = 0;

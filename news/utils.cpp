@@ -22,8 +22,8 @@ CTag::CTag()
 
 //#########################################################################################
 
-int vStrCmp(const vector<CPair<CTag, CPair<int, int>>> &left,
-            const vector<CPair<CTag, CPair<int, int>>> &right)
+int vStrCmp(const std::vector<CPair<CTag, CPair<int, int>>> &left,
+            const std::vector<CPair<CTag, CPair<int, int>>> &right)
 {
     unsigned int i = left.size();
     unsigned int j = right.size();
@@ -42,8 +42,8 @@ int vStrCmp(const vector<CPair<CTag, CPair<int, int>>> &left,
     return 0;
 }
 
-int vIsSubstr(const vector<CPair<CTag, CPair<int, int>>> &vStr1,
-            const vector<CPair<CTag, CPair<int, int>>> &vStr2)
+int vIsSubstr(const std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
+              const std::vector<CPair<CTag, CPair<int, int>>> &vStr2)
 {
     unsigned int j = 0;
     for (unsigned int i = 0; i < vStr1.size(); ++i)
@@ -75,8 +75,8 @@ int vIsSubstr(const vector<CPair<CTag, CPair<int, int>>> &vStr1,
     return 0;
 }
 
-int vStrStr(const vector<CPair<CTag, CPair<int, int>>> &vStr1,
-            const vector<CPair<CTag, CPair<int, int>>> &vStr2,
+int vStrStr(const std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
+            const std::vector<CPair<CTag, CPair<int, int>>> &vStr2,
             int offset)
 {
     unsigned int j = 0;
@@ -103,9 +103,9 @@ int vStrStr(const vector<CPair<CTag, CPair<int, int>>> &vStr1,
     return 0;
 }
 
-vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(vector<CPair<CTag, CPair<int, int>>> &vStr1,
-                                                       vector<CPair<CTag, CPair<int, int>>> &vStr2,
-                                                       int offset)
+std::vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
+                                                            std::vector<CPair<CTag, CPair<int, int>>> &vStr2,
+                                                            int offset)
 {
     vector<CPair<CTag, CPair<int, int>>>::iterator it1 = vStr1.begin() + offset;
     vector<CPair<CTag, CPair<int, int>>>::iterator it2 = vStr2.begin();
@@ -139,8 +139,8 @@ vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(vector<CPair<CTag, CPair<
     }
 }
 
-vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(vector<CPair<CTag, CPair<int, int>>> &vStr1,
-                                                       vector<CPair<CTag, CPair<int, int>>> &vStr2)
+std::vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
+                                                            std::vector<CPair<CTag, CPair<int, int>>> &vStr2)
 {
     vector<CPair<CTag, CPair<int, int>>>::iterator it1 = vStr1.begin();
     vector<CPair<CTag, CPair<int, int>>>::iterator it2 = vStr2.begin();

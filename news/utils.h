@@ -261,7 +261,7 @@ int vStrCmp(const std::vector<CPair<CTag, CPair<int, int>>> &left,
 
 /**
  * \fn  int vIsSubstr(const std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
- *      const std::vector<CPair<CTag, CPair<int, int>>> &vStr1);
+ *      const std::vector<CPair<CTag, CPair<int, int>>> &vStr2);
  *
  * \brief   Функция производит поиск vStr2 в vStr1.
  *
