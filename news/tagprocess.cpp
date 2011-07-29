@@ -6,10 +6,18 @@
 
 #include "tagprocess.h"
 #include <iostream>
+#include <algorithm>
+#include <stack>
+
 
 using std::ios;
 using std::make_pair;
+using std::string;
+using std::pair;
+using std::set;
+using std::stack;
 
+//##################################  PUBLIC SECTION  #####################################
 
 CNewsFinder::CNewsFinder(char *filename, unsigned int minSize, unsigned int minFreq):
     m_minSz(minSize),
@@ -23,64 +31,253 @@ CNewsFinder::CNewsFinder(char *filename, unsigned int minSize, unsigned int minF
 {
 }
 
-unsigned short CNewsFinder::getTagCode(const string &tag)
+CNewsFinder::~CNewsFinder()
 {
-    unsigned short code = 0;
-    for (int i = 0; i < tag.size(); ++i)
-    {
-        code += tag[i];
-    }
-    
-    return code;
+    if (m_tableSize == 0)
+        return;
+
+    for (unsigned int i = 0; i < m_tableSize; ++i)
+        delete m_pTable[i];
+    delete m_pTable;
 }
 
-void CNewsFinder::removeTags(vector<string> &tagsToRemove)
+void CNewsFinder::init(vector<pair<string, string>> &remDoubleTag, vector<string> &remTag)
+{
+    unsigned int i = 0;
+    unsigned int j = 0;
+    int flag = 0;
+    // Ломает кодировку
+    //LowerCase(&m_fileData);
+    transform(m_fileData.begin(), m_fileData.end(), m_fileData.begin(), tolower);
+    CTriple<CTag, CPair<int, int>, string> tagCode;
+    while (tagCode.third != "<body>")
+        tagCode = getNextTag();
+
+    tagCode = getNextTag();
+    while (tagCode.first.tag != -1)
+    {
+        if (tagCode.third == "</body>")
+            break;
+        m_alphabet.insert(CPair<CTag, string>(tagCode.first, tagCode.third));
+        m_VtagFileData.push_back(CPair<CTag, CPair<int, int>>(tagCode.first, tagCode.second));
+        tagCode = getNextTag();
+    }
+    
+
+    removeTags(remTag);
+    removeTags(remDoubleTag);
+
+    // Задаем размер таблицы
+    m_tableSize = m_VtagFileData.size();
+    // Выделяем память на таблицу
+    m_pTable = new short *[m_tableSize];
+    for (i = 0; i < m_tableSize; ++i)
+        m_pTable[i] = new short[m_tableSize];
+
+    // Заполняем таблицу
+    for (i = 0; i < m_tableSize; ++i)
+    {
+        for (j = 0; j < m_tableSize; ++j)
+        {
+            if (m_VtagFileData[i].first.tag == m_VtagFileData[j].first.tag)
+            {
+                m_pTable[i][j] = 1;
+            }
+            else
+                m_pTable[i][j] = 0;
+        }
+    }
+}
+
+void CNewsFinder::getPossibleRanges()
+{
+    unsigned int i = 0;
+    // Читаем в table по диагоналям
+    // diag - Номер диагонали
+    // diag = 0 - главная диагональ, заполнена 
+    unsigned int diag = 1;
+    while(diag < m_tableSize)
+    {
+        for (i = 0; i < m_tableSize - diag; ++i)
+        {
+            if (m_pTable[i][i + diag] != 0)
+            {
+                vector<CPair<CTag, CPair<int, int>>> range;
+                int beg = i;
+                while (i < m_tableSize - diag && m_pTable[i][i + diag] != 0)
+                {
+                    range.push_back(m_VtagFileData[i]);
+                    ++i;
+                }
+                // И проверяем возможность этой строчки(или её подстрок) быть началом или концом новости
+                if (range.size() >= m_minSz && range.size() < 30)
+                {
+                    getTagSubs(range, beg + diag);
+                    i += range.size() - 1;
+                }
+            }
+        }
+        // Читаем следующую диагональ
+        ++diag;
+    }
+    // Вычисляем средние длины/частоты строк
+    m_avgLen = m_avgLen / m_freq.size();
+    m_avgFreq = m_avgFreq / m_freq.size();
+}
+
+void CNewsFinder::getNewsRange()
+{
+    set <CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>, ltstr>::iterator setIter;
+    vector<CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>>::iterator vectorIter;
+    
+    for(setIter = m_freq.begin(); setIter != m_freq.end(); ++setIter)
+    {
+        if (setIter->second >= m_minFreq && 
+            setIter->first.size() <= m_avgLen&&
+            setIter->second <= m_avgFreq)
+            possibleTags.push_back(*setIter);
+    }
+    // сортируем пары
+    sort(possibleTags.begin(), possibleTags.end(), CNewsFinder::pred());
+
+
+    unsigned int cnt = 1;
+    while (cnt < possibleTags.size())
+    {
+        vector<CPair<CTag, CPair<int, int>>> temp = (possibleTags.end() - cnt)->first;
+        vectorIter = possibleTags.end() - cnt - 1;
+        for (unsigned int i = 0; i < possibleTags.size(); ++i)
+        {
+            while(vIsSubstr(temp, vectorIter->first) || vIsSubstr(vectorIter->first, temp))
+            {
+                possibleTags.erase(vectorIter);
+                if (cnt == possibleTags.size())
+                    break;            
+                vectorIter = possibleTags.end() - cnt - 1;
+            }
+            ++cnt;
+            if (cnt >= possibleTags.size())
+                break;
+            vectorIter = possibleTags.end() - cnt - 1;
+        }
+        ++cnt;
+    }
+
+    int newAvgFreq = 0;
+    for (unsigned int i = 0; i < possibleTags.size(); ++i)
+    {
+        newAvgFreq += possibleTags[i].second;
+    }
+    newAvgFreq = newAvgFreq / possibleTags.size() + 1;
+
+    for (vectorIter = possibleTags.end() - 1; vectorIter != possibleTags.begin();
+         --vectorIter)
+    {
+        vector<CPair<CTag, CPair<int, int>>> possibleBegin = vectorIter->first;
+        for (vector<CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>>::iterator it = vectorIter - 1;; --it)
+        {
+            vector<CPair<CTag, CPair<int, int>>> possibleEnd = it->first;
+            vector<CPair<CTag, CPair<int, int>>>::iterator ite = pStrStr(m_VtagFileData, possibleBegin);
+            unsigned int beg = ite->second.first;
+            ite = pStrStr(m_VtagFileData, possibleEnd);
+            unsigned int end = ite->second.second;
+            if (beg - end < m_fileData.size() / m_minSz || end - beg < m_fileData.size() / m_minSz)
+            {
+                if (beg > end)
+                {
+                    m_newsBegin = possibleEnd;
+                    m_newsEnd = possibleBegin;
+                    string news(m_fileData, end, beg - end);
+                    if (news.size() > 0.01 * m_fileData.size() && news.size() < 0.2 * m_fileData.size())
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    m_newsBegin = possibleBegin;
+                    m_newsEnd = possibleEnd;
+                    string news(m_fileData, beg, end - beg);
+                    if (news.size() > 0.01 * m_fileData.size() && news.size() < 0.2 * m_fileData.size())
+                    {
+                        return;
+                    }
+
+                }
+            }
+            if (it == possibleTags.begin())
+                break; 
+        }
+    }
+}
+
+void CNewsFinder::writeNews()
+{
+    unsigned int offset = 0;
+    m_fileOut << "<head>\n";
+    if (m_newsEnd.empty())
+        return;
+    // Получаем строчку новости и выводим её
+    while (1)
+    {
+        string res = getNews(m_newsBegin, m_newsEnd, offset);
+        if (res.empty())
+            break;
+        m_fileOut << res;
+        m_fileOut << "\n<div>####################################################################";
+        m_fileOut << "#######################################################################</div>\n";
+    }
+    m_fileOut << "</head>\n";
+}
+
+//#################################  PRIVATE SECTION  #####################################
+
+void CNewsFinder::removeTags(vector<std::string> &tagsToRemove)
 {
     unsigned int i = 0;
     unsigned int j = 0;
     if (tagsToRemove.size() == 0)
         return;
-    
+
 
     // проходим по всем тегам
-    for (i = 0; i < mod.size(); ++i)
+    for (i = 0; i < m_VtagFileData.size(); ++i)
     {
         // проходим по всему массиву тегов для удаления
         for (j = 0; j < tagsToRemove.size(); ++j)
         {
             // если тег совпал с тегом для удаления, то стираем его
-            if (getTagCode(tagsToRemove[j]) == mod[i].first.tag)
+            if (getTagCode(tagsToRemove[j]) == m_VtagFileData[i].first.tag)
             {
-                mod.erase(mod.begin() + i);
+                m_VtagFileData.erase(m_VtagFileData.begin() + i);
                 break;
             }
         }
     }
 }
 
-
-void CNewsFinder::removeTags(vector< pair<string, string> > &tagsToRemove)
+void CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove)
 {
     unsigned int i = 0;
     unsigned int j = 0;
 
     // проходим по всем тегам
-    for (i = 0; i < mod.size(); ++i)
+    for (i = 0; i < m_VtagFileData.size(); ++i)
     {
         // проходим по всему массиву тегов для удаления
         for (j = 0; j < tagsToRemove.size(); ++j)
         {
             // если тег совпал с тегом для удаления
-            if (getTagCode(tagsToRemove[j].first) == mod[i].first.tag)
+            if (getTagCode(tagsToRemove[j].first) == m_VtagFileData[i].first.tag)
             {
                 // стираем тег
-                mod.erase(mod.begin() + i);
+                m_VtagFileData.erase(m_VtagFileData.begin() + i);
                 // пока не получим закрывающий тег
-                while (getTagCode(tagsToRemove[j].second) != mod[i].first.tag)
+                while (getTagCode(tagsToRemove[j].second) != m_VtagFileData[i].first.tag)
                 {
-                    mod.erase(mod.begin() + i);
+                    m_VtagFileData.erase(m_VtagFileData.begin() + i);
                 }
-                mod.erase(mod.begin() + i);
+                m_VtagFileData.erase(m_VtagFileData.begin() + i);
                 --i;
                 // идем к следующему тегу
                 break;
@@ -89,194 +286,14 @@ void CNewsFinder::removeTags(vector< pair<string, string> > &tagsToRemove)
     }
 }
 
-void CNewsFinder::printTable()
+unsigned short CNewsFinder::getTagCode(const string &tag)
 {
-    for (int i = 0; i < m_tableSize; ++i)
+    unsigned short code = 0;
+    for (unsigned int i = 0; i < tag.size(); ++i)
     {
-        for (int j = 0; j < m_tableSize; ++j)
-        {
-            std::cout << m_pTable[i][j] << " ";
-        }
-        std::cout << "\n";
+        code += tag[i];
     }
-}
-
-int CNewsFinder::getWordCount(const string &src)
-{
-    unsigned int cnt = 0;
-    unsigned int i = 0;
-
-    for (i = 0; i < src.size(); ++i)
-    {
-        if (src[i] == '>')
-            ++cnt;
-    }
-    return cnt;
-}
-
-int CNewsFinder::checksum(const vector<CPair<CTag, CPair<int, int>>> &src)
-{
-    unsigned int i = 0;
-    int cnt = 0;
-
-    for (i = 0; i < src.size(); ++i)
-        // если встретили '/' - тег закрывающий. Увеличиваем счетчик.
-        if (src[i].first.isClose == 1)
-            ++cnt;
-    // если закрывающих тегов больше, чем открывающих - возвратим 0
-    if (cnt > src.size() / 2 + 1)
-        return 0;
-
-    return 1;
-}
-
-int CNewsFinder::checkWordTruePairs(const vector<CPair<CTag, CPair<int, int>>> &src)
-{
-    unsigned int i;
-    stack<CPair<CTag, CPair<int, int>>> st;
-
-    for(i = 0; i < src.size(); ++i)
-    {
-        // если он - открывающий - положим в стек
-        if (src[i].first.isClose == 0)
-            st.push(src[i]);
-        else
-        {
-            // если стек пуст - закрывающему тегу нет открывающего.
-            if (st.empty())
-                return 0;
-            // пока не получим открывающий для текущего тега, извлекаем
-            // теги из стека и проверяем их
-            while (st.top().first.tag + '/' != src[i].first.tag)
-            {
-                st.pop();
-                if (st.empty())
-                    return 0;
-            }
-            st.pop();
-        }
-    }
-    return 1;
-}
-
-int CNewsFinder::getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &src,
-                               const vector<CPair<CTag, CPair<int, int>>> &str,
-                               unsigned int pos)
-{
-    unsigned int freq = 0;
-    unsigned int i = 0;
-    unsigned int j = 0;
-
-    for (i = 0; i < m_tableSize; ++i)
-    {
-        if (m_pTable[i][pos] != 0)
-        {
-            unsigned int temp = i;
-            vector<CPair<CTag, CPair<int, int>>> data;
-            while (j < str.size() && temp < m_tableSize && m_pTable[temp][pos + j] != 0)
-            {
-                data.push_back(src[temp]);
-                ++temp;
-                ++j; 
-            }
-            if (!vStrCmp(str, data))
-                ++freq;
-            j = 0;
-        }
-    }
-    return freq;
-}
-
-
-int CNewsFinder::getTagSubs(const vector<CPair<CTag, CPair<int, int>>> &src, int pos)
-{
-    // выбираем две подстроки длины на 1 меньше
-    vector<CPair<CTag, CPair<int, int>>> first(src.begin(), src.end() - 1);
-    vector<CPair<CTag, CPair<int, int>>> second(src.begin() + 1 ,src.end());
-    set <vector<CPair<CTag, CPair<int, int>>>, tagcodecpr>::iterator setIter;
-    int flag = 0;
-
-    if (first.size() < m_minSz)
-        return 1;
-
-    if (first.size() == m_minSz)
-    {
-        setIter = m_subsArr.find(first);
-        if (setIter == m_subsArr.end())
-        {
-            m_subsArr.insert(first);
-            if (checksum(first) && checkWordTruePairs(first))
-            {
-                unsigned int strFreq = getStringFreq(mod, first, pos);
-                if (strFreq >= m_minFreq)
-                {
-                    m_freq.insert(make_cpair(first, strFreq));
-                    m_avgLen += first.size();
-                    m_avgFreq += strFreq;
-                }
-                else
-                    flag = 1;
-            }
-        }
-        setIter = m_subsArr.find(second);
-        if (setIter == m_subsArr.end())
-        {
-            m_subsArr.insert(second);
-            if (checksum(second) && checkWordTruePairs(second))
-            {
-                unsigned int strFreq = getStringFreq(mod, second, pos + 1);
-                if (strFreq >= m_minFreq)
-                {
-                    m_freq.insert(make_cpair(second, strFreq));
-                    m_avgLen += second.size();
-                    m_avgFreq += strFreq;
-                }
-                else
-                    flag = 1;
-            }
-        }
-        if (flag)
-            return 0;
-        return 1;
-    }
-
-    setIter = m_subsArr.find(src);
-    if (setIter == m_subsArr.end())
-    {
-        m_subsArr.insert(src);
-        if (getTagSubs(first, pos) != 0 && getTagSubs(second, pos + 1) != 0)
-        {
-            if (checksum(src) && checkWordTruePairs(src))
-            {
-                unsigned int strFreq = getStringFreq(mod, src, pos);
-                if (strFreq < m_minFreq)
-                    return 0;
-                m_freq.insert(make_cpair(src, strFreq));
-                m_avgLen += src.size();
-                m_avgFreq += strFreq;
-            }
-        }
-        else
-            return 0;
-    }
-    
-    return 1;
-}
-
-string CNewsFinder::getNews(const vector<CPair<CTag, CPair<int, int>>> &srcBegin,
-                            const vector<CPair<CTag, CPair<int, int>>> &newsBegin,
-                            const vector<CPair<CTag, CPair<int, int>>> &newsEnd,
-                            unsigned int &offset)
-{
-    unsigned int i = 0;
-    // Ищем позицию, с которой начинается новость
-    int begin = newsBegin[0].second.first;
-    // Позиция, на которой новость заканчивается
-    int end = newsEnd[newsEnd.size() - 1].second.second;
-    offset = end + 1;
-    // номер тега, с которого новость начинается и заканчивается, в modifiedTagPosition
-    string ret(m_fileData, begin, end);
-    return ret;
+    return code;
 }
 
 CTriple<CTag, CPair<int, int>, string> CNewsFinder::getNextTag()
@@ -329,189 +346,185 @@ CTriple<CTag, CPair<int, int>, string> CNewsFinder::getNextTag()
     return CTriple<CTag, CPair<int, int>, string>(CTag(-1, -1), CPair<int, int>(-1, -1), "");
 }
 
-void CNewsFinder::init(vector<pair<string, string>> &remDoubleTag, vector<string> &remTag)
+int CNewsFinder::checksum(const vector<CPair<CTag, CPair<int, int>>> &src)
 {
+    unsigned int cnt = 0;
+
+    for (unsigned int i = 0; i < src.size(); ++i)
+        // если тег закрывающий.
+        if (src[i].first.isClose == 1)
+            ++cnt;
+    // если закрывающих тегов больше, чем открывающих - возвратим 0
+    if (cnt > src.size() / 2 + 1)
+        return 0;
+
+    return 1;
+}
+
+int CNewsFinder::checkWordTruePairs(const vector<CPair<CTag, CPair<int, int>>> &src)
+{
+    unsigned int i;
+    stack<CPair<CTag, CPair<int, int>>> st;
+
+    for(i = 0; i < src.size(); ++i)
+    {
+        // если он - открывающий - положим в стек
+        if (src[i].first.isClose == 0)
+            st.push(src[i]);
+        else
+        {
+            // если стек пуст - закрывающему тегу нет открывающего.
+            if (st.empty())
+                return 0;
+            // пока не получим открывающий для текущего тега, извлекаем
+            // теги из стека и проверяем их
+            while (st.top().first.tag + '/' != src[i].first.tag)
+            {
+                st.pop();
+                if (st.empty())
+                    return 0;
+            }
+            st.pop();
+        }
+    }
+    return 1;
+}
+
+int CNewsFinder::getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &str,
+                               unsigned int pos)
+{
+    unsigned int freq = 0;
     unsigned int i = 0;
     unsigned int j = 0;
+
+    for (i = 0; i < m_tableSize; ++i)
+    {
+        if (m_pTable[i][pos] != 0)
+        {
+            unsigned int temp = i;
+            while (j < str.size() && temp < m_tableSize && m_pTable[temp][pos + j] != 0)
+            {
+                ++temp;
+                ++j; 
+            }
+            if (j == str.size())
+                ++freq;
+            j = 0;
+        }
+    }
+    return freq;
+}
+
+int CNewsFinder::getTagSubs(const vector<CPair<CTag, CPair<int, int>>> &src, int pos)
+{
+    // выбираем две подстроки длины на 1 меньше
+    vector<CPair<CTag, CPair<int, int>>> first(src.begin(), src.end() - 1);
+    vector<CPair<CTag, CPair<int, int>>> second(src.begin() + 1 ,src.end());
+    set <vector<CPair<CTag, CPair<int, int>>>, tagcodecpr>::iterator setIter;
     int flag = 0;
-    LowerCase(&m_fileData);
-    CTriple<CTag, CPair<int, int>, string> tagCode;
-    while (tagCode.third != "<body>")
-        tagCode = getNextTag();
 
-    tagCode = getNextTag();
-    while (tagCode.first.tag != -1)
+    if (first.size() < m_minSz)
+        return 1;
+
+    if (first.size() == m_minSz)
     {
-        alphabet.insert(CPair<CTag, string>(tagCode.first, tagCode.third));
-        mod.push_back(CPair<CTag, CPair<int, int>>(tagCode.first, tagCode.second));
-        tagCode = getNextTag();
-    }
-    
-
-    removeTags(remTag);
-    removeTags(remDoubleTag);
-
-    // Задаем размер таблицы
-    m_tableSize = mod.size();
-    // Выделяем память на таблицу
-    m_pTable = new short *[m_tableSize];
-    for (i = 0; i < m_tableSize; ++i)
-        m_pTable[i] = new short[m_tableSize];
-
-    // Заполняем таблицу
-    for (i = 0; i < m_tableSize; ++i)
-    {
-        for (j = 0; j < m_tableSize; ++j)
+        setIter = m_subsArr.find(first);
+        if (setIter == m_subsArr.end())
         {
-            if (mod[i].first.tag == mod[j].first.tag)
+            m_subsArr.insert(first);
+            if (checksum(first) && checkWordTruePairs(first))
             {
-                m_pTable[i][j] = 1;
-            }
-            else
-                m_pTable[i][j] = 0;
-        }
-    }
-    //printTable();
-}
-
-void CNewsFinder::getPossibleRanges()
-{
-    unsigned int i = 0;
-    // Читаем в table по диагоналям
-    // diag - Номер диагонали
-    // diag = 0 - главная диагональ, заполнена 
-    int diag = 1;
-    while(diag < m_tableSize)
-    {
-        for (i = 0; i < m_tableSize - diag; ++i)
-        {
-            if (m_pTable[i][i + diag] != 0)
-            {
-                vector<CPair<CTag, CPair<int, int>>> range;
-                int beg = i;
-                while (i < m_tableSize - diag && m_pTable[i][i + diag] != 0)
+                unsigned int strFreq = getStringFreq(first, pos);
+                if (strFreq >= m_minFreq)
                 {
-                    range.push_back(mod[i]);
-                    ++i;
-                }
-                // И проверяем возможность этой строчки(или её подстрок) быть началом или концом новости
-                if (range.size() >= m_minSz)
-                {
-                    getTagSubs(range, beg + diag);
-                    i += range.size() - 1;
-                }
-            }
-        }
-        // Читаем следующую диагональ
-        ++diag;
-    }
-    // Вычисляем средние длины/частоты строк
-    m_avgLen = m_avgLen / m_freq.size();
-    m_avgFreq = m_avgFreq / m_freq.size();
-}
-
-void CNewsFinder::getNewsRange()
-{
-    set <CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>, ltstr>::iterator setIter;
-    vector<CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>>::iterator vectorIter;
-    
-    for(setIter = m_freq.begin(); setIter != m_freq.end(); ++setIter)
-    {
-        if (setIter->second >= m_minFreq && 
-            setIter->first.size() <= m_avgLen&&
-            setIter->second <= m_avgFreq)
-            possibleTags.push_back(*setIter);
-    }
-    // сортируем пары
-    sort(possibleTags.begin(), possibleTags.end(), CNewsFinder::pred());
-
-
-    unsigned int cnt = 1;
-    while (cnt < possibleTags.size())
-    {
-        vector<CPair<CTag, CPair<int, int>>> temp = (possibleTags.end() - cnt)->first;
-        vectorIter = possibleTags.end() - cnt - 1;
-        for (unsigned int i = 0; i < possibleTags.size(); ++i)
-        {
-            while(vStrStr(temp, vectorIter->first) || vStrStr(vectorIter->first, temp))
-            {
-                possibleTags.erase(vectorIter);
-                if (cnt == possibleTags.size())
-                    break;            
-                vectorIter = possibleTags.end() - cnt - 1;
-            }
-            ++cnt;
-            if (cnt >= possibleTags.size())
-                break;
-            vectorIter = possibleTags.end() - cnt - 1;
-        }
-        ++cnt;
-    }
-
-    int newAvgFreq = 0;
-    for (unsigned int i = 0; i < possibleTags.size(); ++i)
-    {
-        newAvgFreq += possibleTags[i].second;
-    }
-    newAvgFreq = newAvgFreq / possibleTags.size() + 1;
-
-    for (vectorIter = possibleTags.end() - 1; 
-         /*vectorIter->second > newAvgFreq && */vectorIter != possibleTags.begin();
-         --vectorIter)
-    {
-        vector<CPair<CTag, CPair<int, int>>> possibleBegin = vectorIter->first;
-        for (vector<CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>>::iterator it = vectorIter - 1;; --it
-             /*it->second > newAvgFreq && it != possibleTags.begin();
-             --it*/)
-        {
-            vector<CPair<CTag, CPair<int, int>>> possibleEnd = it->first;
-            unsigned int beg = possibleBegin[0].second.first;
-            unsigned int end = possibleEnd[possibleEnd.size() - 1].second.first;
-            if (beg - end < m_fileData.size() / m_minSz || end - beg < m_fileData.size() / m_minSz)
-            {
-                if (beg > end)
-                {
-                    m_newsBegin = possibleEnd;
-                    m_newsEnd = possibleBegin;
-                    unsigned int a = 0;
-                    string news = getNews(mod, m_newsBegin, m_newsEnd, a);
-                    if (news.size() > 0.01 * m_fileData.size() && news.size() < 0.2 * m_fileData.size())
-                    {
-                        m_fileOut << news;
-                        return;
-                    }
+                    m_freq.insert(make_cpair(first, strFreq));
+                    m_avgLen += first.size();
+                    m_avgFreq += strFreq;
                 }
                 else
-                {
-                    m_newsBegin = possibleBegin;
-                    m_newsEnd = possibleEnd;
-                    unsigned int a = 0;
-                    string news = getNews(mod, m_newsBegin, m_newsEnd, a);
-                    if (news.size() > 0.01 * m_fileData.size() && news.size() < 0.2 * m_fileData.size())
-                    {
-                        m_fileOut << news;
-                        return;
-                    }
-
-                }
+                    flag = 1;
             }
-            if (it == possibleTags.begin())
-                break; 
         }
+        setIter = m_subsArr.find(second);
+        if (setIter == m_subsArr.end())
+        {
+            m_subsArr.insert(second);
+            if (checksum(second) && checkWordTruePairs(second))
+            {
+                unsigned int strFreq = getStringFreq(second, pos + 1);
+                if (strFreq >= m_minFreq)
+                {
+                    m_freq.insert(make_cpair(second, strFreq));
+                    m_avgLen += second.size();
+                    m_avgFreq += strFreq;
+                }
+                else
+                    flag = 1;
+            }
+        }
+        if (flag)
+            return 0;
+        return 1;
     }
+
+    setIter = m_subsArr.find(src);
+    if (setIter == m_subsArr.end())
+    {
+        m_subsArr.insert(src);
+        if (getTagSubs(first, pos) != 0 && getTagSubs(second, pos + 1) != 0)
+        {
+            if (checksum(src) && checkWordTruePairs(src))
+            {
+                unsigned int strFreq = getStringFreq(src, pos);
+                if (strFreq < m_minFreq)
+                    return 0;
+                m_freq.insert(make_cpair(src, strFreq));
+                m_avgLen += src.size();
+                m_avgFreq += strFreq;
+            }
+        }
+        else
+            return 0;
+    }
+
+    return 1;
 }
 
-void CNewsFinder::writeNews()
+string CNewsFinder::getNews(vector<CPair<CTag, CPair<int, int>>> &newsBegin,
+                            vector<CPair<CTag, CPair<int, int>>> &newsEnd,
+                            unsigned int &offset)
 {
-    //char *strBegin = (char *)m_clearedData.c_str();
-   // unsigned int offset = 0;
-    // Получаем строчку новости и выводим её
-    //while (strlen(strBegin) > offset)
-   // {
-        //string res = getNews(strBegin, m_newsBegin, m_newsEnd, offset);
-        //if (res.empty())
-          //  break;
-        //m_fileOut << res;
-     //   m_fileOut << "\n#########################################################################################\n";
-   // }
+    unsigned int i = 0;
+    // Ищем позицию, с которой начинается новость
+    //int begin = newsBegin[0].second.first;
+    vector<CPair<CTag, CPair<int, int>>>::iterator it = pStrStr(m_VtagFileData, newsBegin, offset);
+    if (it == m_VtagFileData.end())
+    {
+        return string("");
+    }
+    int begin = it->second.first;
+    offset = it - m_VtagFileData.begin() + 1;
+    // Позиция, на которой новость заканчивается
+    it = pStrStr(m_VtagFileData, newsEnd, offset);
+    if (it == m_VtagFileData.end())
+    {
+        return string("");
+    }
+    int end = it->second.second;
+    offset = it - m_VtagFileData.begin() + 1;
+    // номер тега, с которого новость начинается и заканчивается, в modifiedTagPosition
+    string ret(m_fileData, begin, end - begin);
+    return ret;
+}
+
+void CNewsFinder::printTable()
+{
+    for (unsigned int i = 0; i < m_tableSize; ++i)
+    {
+        for (unsigned int j = 0; j < m_tableSize; ++j)
+        {
+            std::cout << m_pTable[i][j] << " ";
+        }
+        std::cout << "\n";
+    }
 }
