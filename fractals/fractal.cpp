@@ -79,21 +79,21 @@ void fractal1(int x, int y, HDC hdc)
 	Ccomplex Z;
 	int n = 0;
 
-	Z.re = x * 0.002;
-	Z.im = y * 0.002;
-	C.re = x * 0.0015;
+	Z.re = x * 0.0019;
+	Z.im = y * 0.0028;
+	C.re = x * 0.0014;
 	C.im = y * 0.0015; 
 	n = 0;
 
 	while (Z.im * Z.im + Z.re * Z.re < M * M && n < iter)
 	{
-		Z = Umultiplication(Udevision(C, Ccos(Z)), Udevision(C, Ccos(Z)));
+		Z = (C / Ccos(Z)) * (C /Ccos(Z));
 		++n;
 	}
 	if (n < iter)
 		// color of outside region
-		SetPixel(hdc, 512 + x, 384 + y, RGB(n * 6, n * 20, 0));
+		SetPixel(hdc, 512 + x, 384 + y, RGB(n * 2, n * 10, 0));
 	else
 		// color of set
-		SetPixel(hdc, 512 + x, 384 + y, 0x444444);
+		SetPixel(hdc, 512 + x, 384 + y, 0x324244);
 }

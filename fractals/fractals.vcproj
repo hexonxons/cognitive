@@ -162,15 +162,15 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\ccomplex.c"
+				RelativePath=".\ccomplex.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\fractal.c"
+				RelativePath=".\fractal.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\main.c"
+				RelativePath=".\main.cpp"
 				>
 			</File>
 		</Filter>
