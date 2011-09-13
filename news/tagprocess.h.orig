@@ -8,7 +8,10 @@
 #define __TAGPROCESS_H__
 
 #include "utils.h"
+<<<<<<< HEAD
+=======
 #include "debug.h"
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
 #include <string>
 #include <vector>
@@ -17,7 +20,10 @@
 #include <windows.h>
 
 using std::vector;
+<<<<<<< HEAD
+=======
 using std::pair;
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
 /**
  * \class   CNewsFinder
@@ -46,6 +52,23 @@ public:
      * \param   minFreq             Минимальная частота встречи последовательности тегов.
      */
 
+<<<<<<< HEAD
+    CNewsFinder(char *filename, unsigned int minSize, unsigned int minFreq);
+
+    /**
+     * \fn  CNewsFinder::~CNewsFinder();
+     *
+     * \brief   Деструктор.
+     *
+     * \author  Alexander
+     * \date    7/28/2011
+     */
+
+    ~CNewsFinder();
+
+    /**
+     * \fn  void CNewsFinder::init(vector<std::pair<std::string, std::string>> &remDoubleTag,
+=======
     CNewsFinder(LPCSTR lpcszInFileName, UINT unMinSize, UINT unMinFreq);
 
     /**
@@ -61,6 +84,7 @@ public:
 
     /**
      * \fn  VOID CNewsFinder::init(vector<std::pair<std::string, std::string>> &remDoubleTag,
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
      *      vector<std::string> &remTag);
      *
      * \brief   Инициализация.
@@ -72,7 +96,11 @@ public:
      * \param [in,out]  remTag          Список одинарных тегов.
      */
 
+<<<<<<< HEAD
+    void init(vector<std::pair<std::string, std::string>> &remDoubleTag, vector<std::string> &remTag);
+=======
     VOID Init(vector<std::pair<std::string, std::string>> &remDoubleTag, vector<std::string> &remTag);
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
     /**
      * \fn  VOID CNewsFinder::getPossibleRanges();
@@ -160,6 +188,32 @@ private:
     };
 
     /**
+<<<<<<< HEAD
+     * \struct  alphacpr
+     *
+     * \brief   Предикат сравнения по строке, соответствующей CTag. 
+=======
+     * \struct  tagcodecpr
+     *
+     * \brief   Предикат сравнения Vстрок. 
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
+     *
+     * \author  Alexander
+     * \date    7/28/2011
+     */
+<<<<<<< HEAD
+
+    struct alphacpr
+    {
+        int operator()(CPair <CTag, std::string> left, CPair <CTag, std::string> right) const
+        {
+            return strcmp(left.second.c_str(), right.second.c_str()) < 0;
+        }
+    };
+=======
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
+
+    /**
      * \struct  tagcodecpr
      *
      * \brief   Предикат сравнения Vстрок. 
@@ -197,14 +251,22 @@ private:
      * \param [in,out]  pstr    - Изменяемая строка.
      */
 
+<<<<<<< HEAD
+    inline void LowerCase(std::string * pstr)
+=======
     inline VOID LowerCase(std::string *pStr)
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
     {
         if(pStr->size())
             CharLower(&(*pStr->begin()));
     }
 
     /**
+<<<<<<< HEAD
+     * \fn  void CNewsFinder::removeTags(vector<std::string> &tagsToRemove);
+=======
      * \fn  VOID CNewsFinder::removeTags(vector<std::string> &tagsToRemove);
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
      *
      * \brief   Удаляет теги из Vстроки mod.
      *
@@ -214,10 +276,17 @@ private:
      * \param [in,out]  tagsToRemove    Массив тегов для удаления.
      */
 
+<<<<<<< HEAD
+    void removeTags(vector<std::string> &tagsToRemove);
+
+    /**
+     * \fn  void CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
+=======
     VOID removeTags(vector<std::string> &tagsToRemove);
 
     /**
      * \fn  VOID CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
      *
      * \brief   Удаляет парные теги и содержимое между ними из Vстроки mod.
      *
@@ -227,7 +296,11 @@ private:
      * \param [in,out]  tagsToRemove    Массив пар тегов для удаления.
      */
 
+<<<<<<< HEAD
+    void removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
+=======
      VOID removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
     /**
      * \fn  unsigned short CNewsFinder::getTagCode(const std::string &tag);
@@ -255,7 +328,11 @@ private:
      * \return  CTriple из тега, пары <начало, конец> тега в тексте и сам тег.
      */
 
+<<<<<<< HEAD
+    CTriple<CTag, CPair<int, int>, std::string> getNextTag();
+=======
     CTagDescription getNextTag();
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
     /**
      * \fn  int CNewsFinder::checksum(const vector<CPair<CTag, CPair<int, int>>> &src);
@@ -270,7 +347,11 @@ private:
      * \return  1, если количество открывающих тегов больше количества закрывающих 0 иначе.
      */
 
+<<<<<<< HEAD
+    int checksum(const vector<CPair<CTag, CPair<int, int>>> &src);
+=======
     int checksum(const vector<CTagDescription> &src);
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
     /**
      * \fn  int CNewsFinder::checkWordTruePairs(const vector<CPair<CTag, CPair<int, int>>> &src);
@@ -287,11 +368,19 @@ private:
      * 			0, иначе.
      */
 
+<<<<<<< HEAD
+    int checkWordTruePairs(const vector<CPair<CTag, CPair<int, int>>> &src);
+
+    /**
+     * \fn  int CNewsFinder::getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &str,
+     *      unsigned int pos);
+=======
     int checkWordTruePairs(const vector<CTagDescription> &src);
 
     /**
      * \fn  int CNewsFinder::getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &str,
      *      UINT pos);
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
      *
      * \brief   Получает частоту встречи str в mod.
      *
@@ -304,8 +393,13 @@ private:
      * \return  Честота встречи str в mod.
      */
 
+<<<<<<< HEAD
+    int getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &str,
+                      unsigned int pos);
+=======
     int getStringFreq(const vector<CTagDescription> &str,
                       UINT unPos);
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
     /**
      * \fn  int CNewsFinder::getTagSubs(const vector<CPair<CTag, CPair<int, int>>> &src, int pos);
@@ -326,7 +420,11 @@ private:
 
     /**
      * \fn  std::string CNewsFinder::getNews(vector<CPair<CTag, CPair<int, int>>> &newsBegin,
+<<<<<<< HEAD
+     *      vector<CPair<CTag, CPair<int, int>>> &newsEnd, unsigned int &offset);
+=======
      *      vector<CPair<CTag, CPair<int, int>>> &newsEnd, UINT &offset);
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
      *
      * \brief   возвращает текст новости.
      *
@@ -340,32 +438,57 @@ private:
      * \return  Текст новости.
      */
 
+<<<<<<< HEAD
+    std::string CNewsFinder::getNews(vector<CPair<CTag, CPair<int, int>>> &newsBegin,
+                                     vector<CPair<CTag, CPair<int, int>>> &newsEnd,
+                                     unsigned int &offset);
+
+    /**
+     * \fn  void CNewsFinder::printTable();
+=======
     std::string CNewsFinder::getNews(vector<CTagDescription> &newsBegin,
                                      vector<CTagDescription> &newsEnd,
                                      UINT &unOffset);
 #ifdef _DEBUG
     /**
      * \fn  VOID CNewsFinder::printTable();
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
      *
      * \brief   Печать таблицы.
      *
      * \author  Alexander
      * \date    7/28/2011
      */
+<<<<<<< HEAD
+=======
 
     VOID printTable();
 
     VOID dbgPrintData(VOID);
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
     std::string getTagWord(vector<CTagDescription> &tagSeq);
 #endif
 
 private:
     ///< Минимальный размер последовательности тегов.
+<<<<<<< HEAD
+    unsigned int m_minSz;
+
+    ///< Минимальная часота встречи последовательности тегов.
+    unsigned int m_minFreq;
+
+    ///< Входной файл.
+    std::fstream m_fileIn;
+
+    ///< Выходной файл.
+    std::fstream m_fileOut;
+=======
     UINT m_unMinSz;
 
     ///< Минимальная часота встречи последовательности тегов.
     UINT m_unMinFreq;
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
     ///< Строчка, содержащая в себе входной файл.
     std::string m_fileData;
@@ -373,7 +496,11 @@ private:
     ///< Set из пар <Vстрока, частота встречи строки>.
     //   Повторяющиеся строки не добавляются.
     //   От частот никак не зависит.
+<<<<<<< HEAD
+    std::set <CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>, ltstr> m_freq;
+=======
     std::set <pair<vector<CTagDescription>, UINT>, ltstr> m_freq;
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 
     ///<  Таблица для поиска повторяющихся строк.
     // Например: abcabcac
@@ -386,6 +513,40 @@ private:
     // c 0 0 * 0 0 * 0 *
     // a * 0 0 * 0 0 * 0
     // c 0 0 * 0 0 * 0 *
+<<<<<<< HEAD
+    short **m_pTable;
+
+    ///< Размер таблицы - tableSize X tableSize.
+    unsigned int m_tableSize;
+
+    ///< Средняя длина строки в freq.
+    unsigned int m_avgLen;
+
+    ///< Средняя частота встречи строки.
+    unsigned int m_avgFreq;
+
+    ///< массив возможных начал/концов новостей.
+    vector<CPair<vector<CPair<CTag, CPair<int, int>>>, unsigned int>> possibleTags;
+
+    ///< Vстрока начала новости
+    vector<CPair<CTag, CPair<int, int>>> m_newsBegin;
+
+    ///< Vстрока конца новости
+    vector<CPair<CTag, CPair<int, int>>> m_newsEnd;
+
+    ///< Set из всех подстрок
+    std::set <vector<CPair<CTag, CPair<int, int>>>, tagcodecpr> m_subsArr;
+
+    ///< m_fileData, переведенная в Vстроку тегов
+    vector<CPair<CTag, CPair<int, int>>> m_VtagFileData;
+
+    ///< Алфавит
+    std::set <CPair <CTag, std::string>, alphacpr> m_alphabet;
+
+    ///< Текущая позиция в m_fileData
+    unsigned int currFileDataPos;
+
+=======
     bool **m_pTable;
 
     ///< Размер таблицы - tableSize X tableSize.
@@ -425,5 +586,6 @@ private:
 #ifdef _DEBUG
     LPTSTR *plpszTagTable;
 #endif
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 };
 #endif

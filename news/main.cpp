@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "tagprocess.h"
 
 #include <fstream>
@@ -12,28 +14,53 @@ using namespace std;
  * 			Описание алгоритма:
  * 			- Файл считывается в строчку m_fileData. N символов.\n\n
  * 			
- * 			- m_fileData переводится в нижний регистр.\n
+ * 			- Проходим по всей data, ищем '<' и '>', помечаем из позиции и 
+ * 			кладем номера позиций в tagPosition.\n
+ * 			В этот же проход записываем в modifiedData теги <*>, 
+ * 			т.е выкидываем всю информацию, кроме названия тега,\n
+ * 			и записываем в modTagPosition позиции тега в modifiedData.\n
  * 			<b>O(N)</b>\n\n
  * 			
- * 			- Пропускаем до тега < head >\n\n
+ * 			- Из modifiedTagPosition стираем все заданные теги, 
+ * 			т.е записываем на место позиций тегов (-1, -1). \n
+ * 			Проход по всем тегам        * сверяем со всеми тегами для удаления * tolower каждый тег  * сравнение тегов  * примерно такая же сложность для удаления remDoubleTag.\n
+ * 			<b>O(modifiedTagPosition.size) * O(remTag.size)                       * O(each tag size)    * O(each tag size) * Const</b>\n\n
  * 			
- * 			- Считываем до тега < /head >. Кладем каждый полученный тег в m_VtagFileData и в m_alphabet. Всего тегов - M.\n
- * 			<b>O(MlogM) + O(N)\n\n
- * 			 
- * 			- Удаляем ненужные теги и ненужные пары <открывающий тег, закрывающий тег> тегов, со всем, что между ними.\n\n
- * 			<b>O(M * NumOfTagsToDel)</b>\n\n
+ * 			- Проходим по modifiedTagPosition и записываем в clearedData все нестертые теги. 
+ * 			Открывающие теги будут иметь код > 0, закрывающие < 0.\n
+ * 			В clearedTagPosition записываем номера этих тегов в modifiedTagPosition.\n
+ * 			<b>O(modifiedTagPosition.size)</b>\n\n
  * 			
- * 			- Составляем таблицу.\n
- * 			<b>O(M ^ 2)</b>\n\n
+ * 			- Заполняем таблицу [clearedData.size x clearedData.size].\n
+ * 			<b>O(clearedData.size ^ 2)</b>\n\n
  * 			
- * 			- Проходим по таблице и составляем массив пар < Последовательность тегов, Частота встречи >.\n
- * 			<b>O[(M - m_minSz - 1) * (M - m_minSz) * (M + m_minSz - 1)]</b>\n\n
+ * 			- Считываем строчки по диагонали, начиная с самой ближней к главной диагонали.\n
+ * 		    <b>O(clearedData.size ^ 2 / 2)</b>\n\n
+ * 		    
+ * 		    - Для каждой подстроки длиной >= MINSZ выполняем 2 проверки,\n
+ * 		    <b>O(2 * substring.size)</b>\n
+ * 		    узнаем частоту встречи подстроки,\n
+ * 		    <b>O(clearedData.size * substring.size)</b>\n
+ * 		    кладем её в set, прибавляя длину строки и частоту встречи к avgLen и avgFreq.\n
+ * 		    <b>O(log(freq.size))</b>\n
+ * 		    Запускаем все это рекурсивно, для 2х подстрок длины length - 1.\n
+ * 		    Если частота встречи подстроки < MINSZ - возвращаем 0.\n
+ * 		    Если результат запуска для 2х подстрок == 0 - возвращаем 0.\n
+ * 		    Иначе выполняем все для входящей строки.\n
+ * 		    При возвращении из всей рекурсии сдвигаем диагональ на длину строчки, для которой вызвалась эта функция.\n
+ * 		    
+ * 		    - Рассчитываем avgLen и avgFreq, перегоняем из set`а в vector все,\n
+ * 		    у чего частота встречи < avgFreq * 1.6 и длина < avgLen * 1.5.\n
+ * 		    Сортируем этот вектор.\n
+ * 		    <b>O(possibleTags.size * log(possibleTags.size))</b>\n\n
+ * 		    
+ * 		    - Идем с конца вектора, ищем 2 значения с одинаковым количеством встреч - конец и начало новости.\n
+ * 		    Получаем набор тегов из clearedData.  Отдаем его getNews.\n
+ * 		    <b>[O(2 * clearedData.size) + O(clearedTagPosition.size)] * possibleTags.size </b>\n\n
+ * 		    
+ * 		    
+ * 		    
  * 			
- * 			- Добавляем все последовательности тегов, которые прошли проверку в массив.\n\n
- * 			
- * 			- Сортируем по частоте встречи. Выкидываем последовательности, которые сильно отклоняются от средних значений частот/длин.\n\n
- * 			
- * 			- Выбираем последовательности начала/конча новости.\n\n
  *
  * \author  Alexander
  * \date    7/20/2011
@@ -48,6 +75,9 @@ int main()
     vector<pair<string, string>> remDoubleTag;
     vector<string> remTag;
     CNewsFinder finder("news", 8, 10);
+   // remDoubleTag.push_back(make_pair("<a>", "</a>"));
+    //remDoubleTag.push_back(make_pair("<b>", "</b>"));
+    //remTag.push_back("<c>");
     remDoubleTag.push_back(make_pair("<script>", "</script>"));
     remDoubleTag.push_back(make_pair("<noscript>", "</noscript>"));
     remDoubleTag.push_back(make_pair("<form>", "</form>"));
@@ -56,7 +86,6 @@ int main()
     //remDoubleTag.push_back(make_pair("<span>", "</span>"));
     remDoubleTag.push_back(make_pair("<noindex> ", "</noindex> "));
     remDoubleTag.push_back(make_pair("<style>", "</style>"));
-
     
     remTag.push_back("<html>");
     remTag.push_back("</html>");
@@ -73,17 +102,22 @@ int main()
     remTag.push_back("<!-->");
     remTag.push_back("<li>");
     remTag.push_back("</li>");
-    //remTag.push_back("<p>");
-    //remTag.push_back("</p>");
-    //remTag.push_back("<ul>");
-    //remTag.push_back("</ul>");
-    //remTag.push_back("<span>");
-    remTag.push_back("<!-->");
+    remTag.push_back("<p>");
+    remTag.push_back("</p>");
+    remTag.push_back("<ul>");
+    remTag.push_back("</ul>");
+    remTag.push_back("<span>");
+    remTag.push_back("</span>");
 
-    finder.init(remDoubleTag, remTag);
-    finder.getPossibleRanges();
-    finder.getNewsRange();
-    finder.writeNews();
+    finder.Init(remDoubleTag, remTag);
+    if (finder.GetlastError() == -1)
+    {
+        return -1;
+    }
+    
+    finder.GetPossibleRanges();
+    finder.GetNewsRange();
+    finder.WriteNews("out.html");
 
 	return 0;
 }

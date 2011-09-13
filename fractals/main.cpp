@@ -59,7 +59,7 @@ LRESULT CALLBACK WindowProcedure(HWND Handle, UINT message, WPARAM wParam, LPARA
 			{
 				for(y = -YWindowSz / 2; y < YWindowSz / 2; ++y)
 				{
-					julia(x, y, hdc);
+					fractal1(x, y, hdc);
 				}
 			}
 			ReleaseDC(Handle, hdc);

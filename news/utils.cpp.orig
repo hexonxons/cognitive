@@ -7,11 +7,31 @@
 #include "utils.h"
 
 using std::vector;
+<<<<<<< HEAD
+
+CTag::CTag(short _Tag, char _IsClose)
+{
+    tag = _Tag;
+    isClose = _IsClose;
+}
+
+CTag::CTag()
+{
+    tag = 0;
+    isClose = 0;
+}
+
+//#########################################################################################
+
+int vStrCmp(const std::vector<CPair<CTag, CPair<int, int>>> &left,
+            const std::vector<CPair<CTag, CPair<int, int>>> &right)
+=======
 
 //#########################################################################################
 
 int vStrCmp(const std::vector<CTagDescription> &left,
             const std::vector<CTagDescription> &right)
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 {
     UINT i = left.size();
     UINT j = right.size();
@@ -30,8 +50,13 @@ int vStrCmp(const std::vector<CTagDescription> &left,
     return 0;
 }
 
+<<<<<<< HEAD
+int vIsSubstr(const std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
+              const std::vector<CPair<CTag, CPair<int, int>>> &vStr2)
+=======
 int vIsSubstr(const std::vector<CTagDescription> &vStr1,
               const std::vector<CTagDescription> &vStr2)
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
 {
     UINT j = 0;
     for (UINT i = 0; i < vStr1.size(); ++i)
@@ -63,8 +88,13 @@ int vIsSubstr(const std::vector<CTagDescription> &vStr1,
     return 0;
 }
 
+<<<<<<< HEAD
+int vStrStr(const std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
+            const std::vector<CPair<CTag, CPair<int, int>>> &vStr2,
+=======
 int vStrStr(const std::vector<CTagDescription> &vStr1,
             const std::vector<CTagDescription> &vStr2,
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
             int offset)
 {
     UINT j = 0;
@@ -91,6 +121,19 @@ int vStrStr(const std::vector<CTagDescription> &vStr1,
     return 0;
 }
 
+<<<<<<< HEAD
+std::vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
+                                                            std::vector<CPair<CTag, CPair<int, int>>> &vStr2,
+                                                            int offset)
+{
+    vector<CPair<CTag, CPair<int, int>>>::iterator it1 = vStr1.begin() + offset;
+    vector<CPair<CTag, CPair<int, int>>>::iterator it2 = vStr2.begin();
+    vector<CPair<CTag, CPair<int, int>>>::iterator reti;
+
+    while (1)
+    {
+        while (it1->first != it2->first)
+=======
 std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vStr1,
                                               std::vector<CTagDescription> &vStr2,
                                               int offset)
@@ -102,6 +145,7 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
     while (1)
     {
         while (it1->nTagCode != it2->nTagCode)
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
         {
             ++it1;
             if (it1 == vStr1.end())
@@ -110,7 +154,11 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
             }
         }
         reti = it1;
+<<<<<<< HEAD
+        while (it1->first == it2->first)
+=======
         while (it1->nTagCode == it2->nTagCode)
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
         {
             ++it1;
             ++it2;
@@ -127,6 +175,18 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
     }
 }
 
+<<<<<<< HEAD
+std::vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
+                                                            std::vector<CPair<CTag, CPair<int, int>>> &vStr2)
+{
+    vector<CPair<CTag, CPair<int, int>>>::iterator it1 = vStr1.begin();
+    vector<CPair<CTag, CPair<int, int>>>::iterator it2 = vStr2.begin();
+    vector<CPair<CTag, CPair<int, int>>>::iterator reti;
+
+    while (1)
+    {
+        while (it1->first != it2->first)
+=======
 std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vStr1,
                                               std::vector<CTagDescription> &vStr2)
 {
@@ -137,6 +197,7 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
     while (1)
     {
         while (it1->nTagCode != it2->nTagCode)
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
         {
             ++it1;
             if (it1 == vStr1.end())
@@ -145,7 +206,11 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
             }
         }
         reti = it1;
+<<<<<<< HEAD
+        while (it1->first == it2->first)
+=======
         while (it1->nTagCode == it2->nTagCode)
+>>>>>>> c3932ccb754fbf66223917f47d690a8492335d51
         {
             ++it1;
             ++it2;
