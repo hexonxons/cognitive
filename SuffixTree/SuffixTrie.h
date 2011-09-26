@@ -1,6 +1,7 @@
 #pragma once
-#include<vector>
-#include <limits>
+#include <vector>
+#include <windows.h>
+#include <functional>
 
 class CSuffixTrie
 {
@@ -9,29 +10,32 @@ public:
     ~CSuffixTrie(void);
     void Init(std::string data);
     void BuildTrie();
+    bool Present(std::string word);
 private:
 
     struct link
     {
-      int start;
-      int end;
-      int to;
-      unsigned char let;
-      link();
-      link(int _start, int _end, int _to, unsigned char _let);
+        int nWordStart;
+        int nWordEnd;
+        int nLinkTo;
+        UCHAR letter;
+
+        link(void);
+        link(int _start, int _end, int _to, UCHAR _let);
     };
 
     struct node
     {
-      std::vector<link> links;
-      int suffix;
+        std::vector<link> links;
+        int suffix;
 
-      node();
-    };
+        std::vector<link>::iterator findByLetter(UCHAR);
+        struct cmp :public std::binary_function <link, UCHAR, bool>
+        {
+            bool operator () (first_argument_type, second_argument_type) const;
+        };
 
-    struct pred
-    {
-      bool operator()(link left, link right) const;
+        node(void);
     };
 
     int createNewNode();
@@ -44,6 +48,5 @@ private:
     std::vector<node> tree;
     int root;
     int dummy;
-    const int inf;
     std::string text;
 };

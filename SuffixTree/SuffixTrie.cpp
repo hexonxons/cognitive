@@ -1,32 +1,43 @@
 #include "SuffixTrie.h"
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
 CSuffixTrie::link::link()
 {
-    to = -1;
-    start = -1;
-    end = -1;
-    let = 0;
+    nLinkTo = -1;
+    nWordStart = -1;
+    nWordEnd = -1;
+    letter = 255;
 }
 
 CSuffixTrie::link::link(int _start, int _end, int _to, unsigned char _let)
 {
-    start = _start;
-    end = _end;
-    to = _to;
-    let = _let;
+    nWordStart = _start;
+    nWordEnd = _end;
+    nLinkTo = _to;
+    letter = _let;
 }
 
 CSuffixTrie::node::node()
 {
-    //links.assign(256, link());
     suffix = -1;
 }
 
+bool CSuffixTrie::node::cmp::operator () (first_argument_type CLink, second_argument_type letter) const
+{
+    return (CLink.letter == letter);
+}
+
+std::vector<CSuffixTrie::link>::iterator CSuffixTrie::node::findByLetter(UCHAR letter)
+{
+    if (links.size() == 0)
+        return links.end();
+    return find_if(links.begin(), links.end(), bind2nd(cmp(), letter));
+}
+
 CSuffixTrie::CSuffixTrie(void)
-:   inf(std::numeric_limits<int>::max())
 {
 }
 
@@ -47,12 +58,27 @@ unsigned char CSuffixTrie::iToUc(int i)
 
 void CSuffixTrie::createLink(int from, int start, int end, int to)
 {
-    tree[from].links[iToUc(start)] = link(start, end, to, iToUc(start));
+    if (start == end)
+    {
+        int a =0;
+    }
+    std::vector<link>::iterator cur = tree[from].findByLetter(iToUc(start));
+    if (cur == tree[from].links.end())
+    {
+        tree[from].links.push_back(link(start, end, to, iToUc(start)));
+    }
+    else
+    {
+        cur->letter = iToUc(start);
+        cur->nWordStart = start;
+        cur->nWordEnd = end;
+        cur->nLinkTo =  to;
+    }
 }
 
-int &CSuffixTrie::getSuffix(int v)
+int &CSuffixTrie::getSuffix(int vertex)
 {
-    return tree[v].suffix;
+    return tree[vertex].suffix;
 }
 
 void CSuffixTrie::Init(string data)
@@ -63,14 +89,14 @@ void CSuffixTrie::Init(string data)
     root = createNewNode();
 
     getSuffix(root) = dummy;
-    //for(int i = 0; i < 256; ++i)
-       // createLink(dummy, -i - 1, -i, root);
+    for(int i = 0; i < 256; ++i)
+        createLink(dummy, -i - 1, -i, root);
 }
 
 void CSuffixTrie::BuildTrie()
 {
     pair<int, int> activePoint = make_pair(root, 0);
-    for(int i = 0; i < text.length(); ++i)
+    for(UINT i = 0; i < text.length(); ++i)
     {
         activePoint = update(activePoint.first, activePoint.second, i);
         activePoint = canonize(activePoint.first, activePoint.second, i + 1);
@@ -85,13 +111,19 @@ pair<int, int> CSuffixTrie::canonize(int vertex, int start, int end)
     } 
     else 
     {
-        link cur = tree[vertex].links[iToUc(start)];
-        while(end - start >= cur.end - cur.start)
+        std::vector<link>::iterator cur = tree[vertex].findByLetter(iToUc(start));
+        while(end - start >= cur->nWordEnd - cur->nWordStart)
         {   
-            start += cur.end - cur.start;
-            vertex = cur.to;
+            start += cur->nWordEnd - cur->nWordStart;
+            vertex = cur->nLinkTo;
             if(end > start)
-                cur = tree[vertex].links[iToUc(start)];
+            {
+                cur = tree[vertex].findByLetter(iToUc(start));
+            }
+            if(end == start)
+            {
+                return make_pair(vertex, start);  
+            }
         }
         return make_pair(vertex, start);
     }
@@ -99,22 +131,19 @@ pair<int, int> CSuffixTrie::canonize(int vertex, int start, int end)
 
 pair<int, int> CSuffixTrie::update(int vertex, int start, int end)
 {
-    link cur = tree[vertex].links[iToUc(start)];
+    std::vector<link>::iterator cur = tree[vertex].findByLetter(iToUc(start));
     pair<bool, int> splitRes;
     int oldR = root;
 
     splitRes = testAndSplit(vertex, start, end, iToUc(end));
     while(!splitRes.first)
     {
-        // Add a new branch
         createLink(splitRes.second, end, text.length(), createNewNode());
-
-        // Create a suffix link from the prev. branching vertex
+        
         if(oldR != root)
             getSuffix(oldR) = splitRes.second;
         oldR = splitRes.second;
 
-        // Go to the next vertex (in the final set of STrie(T_end))
         pair<int, int> newPoint = canonize(getSuffix(vertex), start, end);
         vertex = newPoint.first;
         start = newPoint.second;
@@ -129,17 +158,59 @@ pair<bool, int> CSuffixTrie::testAndSplit(int vertex, int start, int end, unsign
 {
     if(end <= start)
     {
-        return make_pair(tree[vertex].links[c].to != -1, vertex);
+        pair <bool, int> reti;
+        std::vector<link>::iterator cur = tree[vertex].findByLetter(c);
+        if (cur == tree[vertex].links.end())
+            reti.first = 0;
+        else
+            reti.first = cur->nLinkTo != -1;
+        reti.second = vertex;
+        return reti;
     }
     else
     {
-        link cur = tree[vertex].links[iToUc(start)];
-        if(c == iToUc(cur.start + end - start))
+        std::vector<link>::iterator cur = tree[vertex].findByLetter(iToUc(start));
+        if(c == iToUc(cur->nWordStart + end - start))
             return make_pair(true, vertex);
 
         int middle = createNewNode();
-        createLink(vertex, cur.start, cur.start + end - start, middle);
-        createLink(middle, cur.start + end - start, cur.end, cur.to);
+        cur = tree[vertex].findByLetter(iToUc(start));
+        createLink(vertex, cur->nWordStart, cur->nWordStart + end - start, middle);
+        createLink(middle, cur->nWordStart + end - start, cur->nWordEnd, cur->nLinkTo);
         return make_pair(false, middle);
     }
+}
+
+bool CSuffixTrie::Present(string word)
+{
+    int vertex = root;
+    int start = 0;
+    int end = 0;
+    for(UINT i = 0; i < word.length(); ++i) 
+    {
+        if(end == start)
+        {
+            std::vector<link>::iterator cur = tree[vertex].findByLetter((UCHAR)word[i]);
+            if(cur == tree[vertex].links.end() ||  cur->nLinkTo == -1)
+                return false;
+            start = cur->nWordStart;
+            end = start + 1;
+        }
+        else
+        {
+            if(word[i] != iToUc(end))
+                return false;
+            ++end;
+        }
+
+        std::vector<link>::iterator cur = tree[vertex].findByLetter(iToUc(start));
+        if(end == cur->nWordEnd)
+        {
+            std::vector<link>::iterator rcur = tree[vertex].findByLetter(iToUc(start));
+            vertex = rcur->nLinkTo;
+            start= 0;
+            end = 0;
+        }
+    }
+    return true;
 }
