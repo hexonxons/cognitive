@@ -19,9 +19,11 @@ private:
         int nWordEnd;
         int nLinkTo;
         UCHAR letter;
+        std::string word;
+        UINT count;
 
         link(void);
-        link(int _start, int _end, int _to, UCHAR _let);
+        link(int _start, int _end, int _to, UCHAR _let, UINT _count, std::string _text);
     };
 
     struct node

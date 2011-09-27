@@ -10,14 +10,18 @@ CSuffixTrie::link::link()
     nWordStart = -1;
     nWordEnd = -1;
     letter = 255;
+    count = 0;
 }
 
-CSuffixTrie::link::link(int _start, int _end, int _to, unsigned char _let)
+CSuffixTrie::link::link(int _start, int _end, int _to, UCHAR _let, UINT _count, string _text)
 {
     nWordStart = _start;
     nWordEnd = _end;
     nLinkTo = _to;
     letter = _let;
+    count = _count;
+    if (_start < _end && _start > 0 && _end > 0)
+        word = _text.substr(_start, _end - _start);
 }
 
 CSuffixTrie::node::node()
@@ -58,21 +62,21 @@ unsigned char CSuffixTrie::iToUc(int i)
 
 void CSuffixTrie::createLink(int from, int start, int end, int to)
 {
-    if (start == end)
-    {
-        int a =0;
-    }
     std::vector<link>::iterator cur = tree[from].findByLetter(iToUc(start));
     if (cur == tree[from].links.end())
     {
-        tree[from].links.push_back(link(start, end, to, iToUc(start)));
+        tree[from].links.push_back(link(start, end, to, iToUc(start), 1, text));
+        getSuffix(to) = from;
     }
     else
     {
+        getSuffix(to) = from;
         cur->letter = iToUc(start);
         cur->nWordStart = start;
         cur->nWordEnd = end;
+        cur->word = text.substr(start, end - start);
         cur->nLinkTo =  to;
+        cur->count++;
     }
 }
 
@@ -120,10 +124,6 @@ pair<int, int> CSuffixTrie::canonize(int vertex, int start, int end)
             {
                 cur = tree[vertex].findByLetter(iToUc(start));
             }
-            if(end == start)
-            {
-                return make_pair(vertex, start);  
-            }
         }
         return make_pair(vertex, start);
     }
@@ -139,18 +139,12 @@ pair<int, int> CSuffixTrie::update(int vertex, int start, int end)
     while(!splitRes.first)
     {
         createLink(splitRes.second, end, text.length(), createNewNode());
-        
-        if(oldR != root)
-            getSuffix(oldR) = splitRes.second;
-        oldR = splitRes.second;
 
         pair<int, int> newPoint = canonize(getSuffix(vertex), start, end);
         vertex = newPoint.first;
         start = newPoint.second;
         splitRes = testAndSplit(vertex, start, end, iToUc(end));
     }
-    if(oldR != root)
-        getSuffix(oldR) = splitRes.second;
     return make_pair(vertex, start);
 }
 
@@ -173,10 +167,15 @@ pair<bool, int> CSuffixTrie::testAndSplit(int vertex, int start, int end, unsign
         if(c == iToUc(cur->nWordStart + end - start))
             return make_pair(true, vertex);
 
+        int curEnd = cur->nWordEnd;
+        int curStart = cur->nWordStart;
+        int curLinkTo = cur->nLinkTo;
+
         int middle = createNewNode();
-        cur = tree[vertex].findByLetter(iToUc(start));
-        createLink(vertex, cur->nWordStart, cur->nWordStart + end - start, middle);
-        createLink(middle, cur->nWordStart + end - start, cur->nWordEnd, cur->nLinkTo);
+        getSuffix(middle) = vertex;
+        createLink(vertex, curStart, curStart + end - start, middle);
+        getSuffix(curLinkTo) = middle;
+        createLink(middle, curStart + end - start, curEnd, curLinkTo);
         return make_pair(false, middle);
     }
 }
