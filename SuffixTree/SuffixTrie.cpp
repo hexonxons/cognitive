@@ -20,7 +20,7 @@ CSuffixTrie::link::link(int _start, int _end, int _to, UCHAR _let, UINT _count, 
     nLinkTo = _to;
     letter = _let;
     count = _count;
-    if (_start < _end && _start > 0 && _end > 0)
+    if (_start < _end && _start >= 0 && _end >= 0)
         word = _text.substr(_start, _end - _start);
 }
 
@@ -102,6 +102,7 @@ void CSuffixTrie::BuildTrie()
     pair<int, int> activePoint = make_pair(root, 0);
     for(UINT i = 0; i < text.length(); ++i)
     {
+        char a = text[i];
         activePoint = update(activePoint.first, activePoint.second, i);
         activePoint = canonize(activePoint.first, activePoint.second, i + 1);
     }
@@ -133,7 +134,6 @@ pair<int, int> CSuffixTrie::update(int vertex, int start, int end)
 {
     std::vector<link>::iterator cur = tree[vertex].findByLetter(iToUc(start));
     pair<bool, int> splitRes;
-    int oldR = root;
 
     splitRes = testAndSplit(vertex, start, end, iToUc(end));
     while(!splitRes.first)
@@ -157,7 +157,10 @@ pair<bool, int> CSuffixTrie::testAndSplit(int vertex, int start, int end, unsign
         if (cur == tree[vertex].links.end())
             reti.first = 0;
         else
+        {
             reti.first = cur->nLinkTo != -1;
+            cur->count++;
+        }
         reti.second = vertex;
         return reti;
     }
@@ -165,7 +168,10 @@ pair<bool, int> CSuffixTrie::testAndSplit(int vertex, int start, int end, unsign
     {
         std::vector<link>::iterator cur = tree[vertex].findByLetter(iToUc(start));
         if(c == iToUc(cur->nWordStart + end - start))
+        {
+            cur->count++;
             return make_pair(true, vertex);
+        }
 
         int curEnd = cur->nWordEnd;
         int curStart = cur->nWordStart;
