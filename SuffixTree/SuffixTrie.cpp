@@ -36,9 +36,7 @@ bool CSuffixTrie::node::cmp::operator () (first_argument_type CLink, second_argu
 
 std::vector<CSuffixTrie::link>::iterator CSuffixTrie::node::findByLetter(UCHAR letter)
 {
-    if (links.size() == 0)
-        return links.end();
-    return find_if(links.begin(), links.end(), bind2nd(cmp(), letter));
+    return (links.size() == 0) ? (links.end()) : (find_if(links.begin(), links.end(), bind2nd(cmp(), letter)));
 }
 
 CSuffixTrie::CSuffixTrie(void)
@@ -76,7 +74,7 @@ void CSuffixTrie::createLink(int from, int start, int end, int to)
         cur->nWordEnd = end;
         cur->word = text.substr(start, end - start);
         cur->nLinkTo =  to;
-        cur->count++;
+        //cur->count++;
     }
 }
 
@@ -178,9 +176,7 @@ pair<bool, int> CSuffixTrie::testAndSplit(int vertex, int start, int end, unsign
         int curLinkTo = cur->nLinkTo;
 
         int middle = createNewNode();
-        getSuffix(middle) = vertex;
         createLink(vertex, curStart, curStart + end - start, middle);
-        getSuffix(curLinkTo) = middle;
         createLink(middle, curStart + end - start, curEnd, curLinkTo);
         return make_pair(false, middle);
     }
