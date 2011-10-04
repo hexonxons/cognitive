@@ -7,7 +7,7 @@ public:
     CSuffixTrie(std::string _text);
     ~CSuffixTrie();
     void buildSuffixTree();
-    bool find(std::string);
+    int find(std::string);
 
     struct CSuffixNode
     {
@@ -46,5 +46,5 @@ private:
     void slowscan(CState *state, CSuffixNode *currNode, int j);
     //fast scan until w is found
     void fastscan(CState *state,CSuffixNode *currNode,int uvLen,int j);
-    bool findStr(std::string data, CSuffixNode *node, int &curPos);
+    int findStr(std::string data, CSuffixNode *node, int &curPos);
 };

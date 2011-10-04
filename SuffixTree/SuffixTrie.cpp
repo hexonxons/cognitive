@@ -33,7 +33,11 @@ int CSuffixTrie::CSuffixNode::getLength()
 string CSuffixTrie::CSuffixNode::getString(string &text)
 {
     if(start != -1)
-        return text.substr(start, end);
+    {
+        //if (start == end)
+           // return string(text, start, 1);
+        return text.substr(start, end - start + 1);
+    }
     else
         return "";
 }
@@ -65,7 +69,7 @@ CSuffixTrie::~CSuffixTrie()
     delete root;
 }
 
-bool CSuffixTrie::findStr(std::string data, CSuffixNode *node, int &curPos)
+int CSuffixTrie::findStr(std::string data, CSuffixNode *node, int &curPos)
 {
     bool flag = false;
     for (int i = 0; i < node->children.size(); ++i)
@@ -77,7 +81,9 @@ bool CSuffixTrie::findStr(std::string data, CSuffixNode *node, int &curPos)
             ++ind;
             flag = true;
             if (curPos == data.length())
-                return true;
+            {
+                return node->children[i]->cnt;
+            }
         }
         if (flag)
             return findStr(data, node->children[i], curPos);
@@ -85,7 +91,7 @@ bool CSuffixTrie::findStr(std::string data, CSuffixNode *node, int &curPos)
     return false;
 }
 
-bool CSuffixTrie::find(std::string data)
+int CSuffixTrie::find(std::string data)
 {
     int count = 0;
     return findStr(data, root, count);
@@ -179,7 +185,6 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                 int pathlen = text.length() - j + currNode->pathlen;
                 CSuffixNode *node = new CSuffixNode(text,j,text.length()-1,pathlen);
                 currNode->children.insert(currNode->children.begin() + i,node);
-                //state->u = currNode; //currNode is already registered as state->u, so commented out
                 state->prefix = currNode;
                 state->finished = true;
                 done = true;
@@ -187,8 +192,6 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
             }
             else
             { 
-                //key.charAt(0)>child->key.charAt(0)
-                //don't forget to add the largest new key after iterating all children
                 continue;
             }
         }
@@ -208,12 +211,13 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                     state->parent = child;
                     j += childKeyLen;
                     state->j = j;
-                    slowscan(state,child,j);
+                    child->cnt++;
+                    slowscan(state, child, j);
                 }
             }
             else
             {
-                //0<delta<len
+                //0 < delta < len
                 //e.g. child="abc"
                 //	   abc                     ab
                 //    /  \     ==========>     / \
@@ -223,8 +227,8 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                 //insert the new node: ab
                 int nodepathlen = child->pathlen - (child->getLength() - delta);
                 CSuffixNode *node = new CSuffixNode(text, child->start, child->start + delta - 1, nodepathlen);
-                //node->children = new LinkedList<CSuffixNode>();
-                node->cnt = child->cnt + 1;
+                if(!(j <= node->end && j >= node->start))
+                    node->cnt = child->cnt + 1;
 
                 int tailpathlen = (text.length() - (j + delta)) + nodepathlen;
                 CSuffixNode *tail = new CSuffixNode(text, j + delta, text.length() - 1, tailpathlen);
@@ -245,7 +249,6 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                 //update parent
                 currNode->children[i] = node;
 
-                //state->u = currNode; //currNode is already registered as state->u, so commented out
                 state->prefix = node;
                 state->finished = true;
             }
@@ -258,14 +261,13 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
         int pathlen = text.length() - j + currNode->pathlen;
         CSuffixNode *node = new CSuffixNode(text, j, text.length() - 1, pathlen);
         currNode->children.push_back(node);
-        //state->u = currNode; //currNode is already registered as state->u, so commented out
         state->prefix = currNode;
         state->finished = true;
     }
 }
 
 
-void CSuffixTrie::fastscan(CState *state,CSuffixNode *currNode,int uvLen,int j)
+void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int j)
 {		  
     for(int i = 0; i < currNode->children.size(); ++i)
     {
@@ -281,7 +283,7 @@ void CSuffixTrie::fastscan(CState *state,CSuffixNode *currNode,int uvLen,int j)
                 //need slow scan after this child
                 state->parent = child;
                 state->link = child;
-                state->j = j+len;
+                state->j = j + len;
             }
             else 
             {
@@ -301,7 +303,8 @@ void CSuffixTrie::fastscan(CState *state,CSuffixNode *currNode,int uvLen,int j)
 
                     int tailpathlen = (text.length() - (j + uvLen)) + nodepathlen;
                     CSuffixNode *tail = new CSuffixNode(text, j + uvLen, text.length() - 1, tailpathlen);
-                    node->cnt = child->cnt + 1;
+                    if(!(j <= node->end && j >= node->start))
+                        node->cnt = child->cnt + 1;
                     //update child node: c
                     child->start += uvLen;
                     child->curtext = child->getString(text);
@@ -340,7 +343,8 @@ void CSuffixTrie::fastscan(CState *state,CSuffixNode *currNode,int uvLen,int j)
                     state->parent = child;
                     j += len;
                     state->j = j;
-                    fastscan(state,child,uvLen,j);
+                    child->cnt++;
+                    fastscan(state, child, uvLen, j);
                 }
             }
             break;
