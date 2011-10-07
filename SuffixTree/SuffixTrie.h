@@ -31,11 +31,11 @@ public:
     {
         CState();
 
-        CSuffixNode *parent;     //parent(head)
-        CSuffixNode *link;       //s(head[i - 1])
-        CSuffixNode *prefix;     //head[i - 1]
-        int j;                   //the global index of text starting from 0 to text.length()
-        bool finished;           //is this suffix insertion finished?
+        CSuffixNode *parent;     // parent(head)
+        CSuffixNode *link;       // s(head[i - 1])
+        CSuffixNode *prefix;     // head[i - 1]
+        int j;                   // the global index of text starting from 0 to text.length()
+        bool finished;           // is this suffix insertion finished?
     };
 
 private:

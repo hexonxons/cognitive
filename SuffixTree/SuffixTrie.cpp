@@ -113,9 +113,12 @@ void CSuffixTrie::buildSuffixTree()
     // Обрабатываем каждый суффикс
     for(int i = 0; i < text.length(); ++i)
     {
+        std::string insertVal = text.substr(i, text.size() - i);
+
         CSuffixNode *s = u->link;
 
         int uvLen = v->pathlen - u->pathlen;
+        bool isFastScanned = false;
 
         if(u->isRoot() && !v->isRoot())
         {
@@ -134,6 +137,7 @@ void CSuffixTrie::buildSuffixTree()
         if(uvLen > 0) 
         {
             fastscan(state, s, uvLen, j);
+            isFastScanned = true;
         }
 
         //establish the suffix link with v
@@ -145,6 +149,8 @@ void CSuffixTrie::buildSuffixTree()
         {
             j = state->j;
             state->parent = w; //w must be an internal node when state->finished=false, then it must have a suffix link, so u can be updated.
+            if (isFastScanned)
+                w->cnt++;
             slowscan(state, w, j);
         }		
 
@@ -156,14 +162,18 @@ void CSuffixTrie::buildSuffixTree()
 void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
 {
     bool done = false;
+    std::string insertVal = text.substr(j, text.size() - j);
+
     int keyLen = text.length() - j;
+
     for(int i = 0; i < currNode->children.size(); ++i)
     {
         CSuffixNode *child = currNode->children[i];
 
-        //use min(child->key.length, key.length)
         int childKeyLen = child->getLength();
-        int len = childKeyLen < keyLen ? childKeyLen:keyLen;
+        int len = childKeyLen < keyLen ? childKeyLen : keyLen;
+
+        // Количество совпавших букв
         int delta = 0;
         for( ;delta < len; ++delta)
         {
@@ -183,8 +193,8 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                 //    /  \    =========>      / | \
                 //   e    f   insert "c^"    c^ e  f
                 int pathlen = text.length() - j + currNode->pathlen;
-                CSuffixNode *node = new CSuffixNode(text,j,text.length()-1,pathlen);
-                currNode->children.insert(currNode->children.begin() + i,node);
+                CSuffixNode *node = new CSuffixNode(text, j, text.length() - 1, pathlen);
+                currNode->children.insert(currNode->children.begin() + i, node);
                 state->prefix = currNode;
                 state->finished = true;
                 done = true;
@@ -225,32 +235,108 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                 //                           /  \
                 //                          e    f
                 //insert the new node: ab
-                int nodepathlen = child->pathlen - (child->getLength() - delta);
-                CSuffixNode *node = new CSuffixNode(text, child->start, child->start + delta - 1, nodepathlen);
-                if(!(j <= node->end && j >= node->start))
+                int nodepathlen = -1;
+                CSuffixNode *node = NULL;
+                int tailpathlen = -1;
+                CSuffixNode *tail = NULL;
+                // Обработка пересечений текста.
+                // Например:
+                // В строчке "aabaabaab*" последовательтность "abaab" встречается 1 раз, а не два.
+                // 
+                // (x) - количество повторов подстроки
+                // [x] - pathlen
+                // 
+                //          После вставки "aabaab*" дерево будет выглядеть не так:
+                // 
+                //              a(2)                                    a(3)[1]                               currNode
+                //            /     \            ==========>          /        \           =========          /      \
+                //    baabaab*(1)  abaabaab*(1)   вставляем          baabaab*(1)[9]   abaab(1)[6]                  ....    node
+                //                                aabaab*                       /     \                            /    \
+                //                                                         *(1)[7]   aab*(1)[10]                tail    child
+                //                                        
+                //          А так:
+                //                                                    
+                //              a(2)                                    a(3)[1]                               currNode
+                //            /     \            ==========>          /        \           =========          /      \
+                //    baabaab*(1)  abaabaab*(1)   вставляем          baabaab*(1)[9]   aba(2)[4]                    ....    node
+                //                                aabaab*                         |                                  |
+                //                                                             ab(1)[6]                           transNode
+                //                                                              /     \                            /    \
+                //                                                         *(1)[7]   aab*(1)[10]                tail    child
+                //                               
+                // TXT :Не жаль реального, жаль иллюзорного...
+                // 
+                if( j >= child->start && j <= child->start + delta - 1)
+                {
+
+                    int transNodePathLen = -1;
+                    CSuffixNode *transNode = NULL;
+
+                    nodepathlen = child->pathlen - (child->getLength() - j + 1);
+                    node = new CSuffixNode(text, child->start, j - 1, nodepathlen);
                     node->cnt = child->cnt + 1;
 
-                int tailpathlen = (text.length() - (j + delta)) + nodepathlen;
-                CSuffixNode *tail = new CSuffixNode(text, j + delta, text.length() - 1, tailpathlen);
+                    transNodePathLen = nodepathlen + delta - j + 1;
+                    transNode = new CSuffixNode(text, j, delta, transNodePathLen);
+                    
+                    tailpathlen = transNodePathLen + delta - j;
+                    tail = new CSuffixNode(text, j + delta, text.length() - 1, tailpathlen);
 
-                //update child node: c
-                child->start += delta;
-                child->curtext = child->getString(text);
-                if(text[j + delta] < text[child->start])
-                {
-                    node->children.push_back(tail);
-                    node->children.push_back(child);
+                    node->children.push_back(transNode);
+
+                    //update child node: c
+                    child->start += delta;
+                    child->curtext = child->getString(text);
+                    //child->pathlen -= child->start - j; 
+
+                    if(text[j + delta] < text[child->start])
+                    {
+                        transNode->children.push_back(tail);
+                        transNode->children.push_back(child);
+                    }
+                    else
+                    {
+                        transNode->children.push_back(child);
+                        transNode->children.push_back(tail);
+                    }
+
+                    //update parent
+                    currNode->children[i] = node;
+
+                    state->prefix = transNode;
+                    state->finished = true;
+
                 }
                 else
                 {
-                    node->children.push_back(child);
-                    node->children.push_back(tail);
-                }
-                //update parent
-                currNode->children[i] = node;
+                    nodepathlen = child->pathlen - (child->getLength() - delta);
+                    node = new CSuffixNode(text, child->start, child->start + delta - 1, nodepathlen);
+                    node->cnt = child->cnt + 1;
 
-                state->prefix = node;
-                state->finished = true;
+                    tailpathlen = (text.length() - (j + delta)) + nodepathlen;
+                    tail = new CSuffixNode(text, j + delta, text.length() - 1, tailpathlen);    
+
+                    //update child node: c
+                    child->start += delta;
+                    child->curtext = child->getString(text);
+
+                    if(text[j + delta] < text[child->start])
+                    {
+                        node->children.push_back(tail);
+                        node->children.push_back(child);
+                    }
+                    else
+                    {
+                        node->children.push_back(child);
+                        node->children.push_back(tail);
+                    }
+
+                    //update parent
+                    currNode->children[i] = node;
+
+                    state->prefix = node;
+                    state->finished = true;
+                }
             }
             done = true;
             break;
@@ -269,6 +355,7 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
 
 void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int j)
 {		  
+    std::string insertVal = text.substr(j, text.size() - j);
     for(int i = 0; i < currNode->children.size(); ++i)
     {
         CSuffixNode *child = currNode->children[i];
@@ -298,35 +385,85 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
                     //                               e    f				
 
                     //insert the new node: ab; child is now c
-                    int nodepathlen = child->pathlen - (child->getLength()-uvLen);
-                    CSuffixNode *node = new CSuffixNode(text, child->start, child->start + uvLen - 1, nodepathlen);
+                    int nodepathlen = -1;
+                    CSuffixNode *node = NULL;
+                    int tailpathlen = -1;
+                    CSuffixNode *tail = NULL;
 
-                    int tailpathlen = (text.length() - (j + uvLen)) + nodepathlen;
-                    CSuffixNode *tail = new CSuffixNode(text, j + uvLen, text.length() - 1, tailpathlen);
-                    if(!(j <= node->end && j >= node->start))
-                        node->cnt = child->cnt + 1;
-                    //update child node: c
-                    child->start += uvLen;
-                    child->curtext = child->getString(text);
-                    if(text[j + uvLen] < text[child->start])
+                    if( j >= child->start && j <= child->start + uvLen - 1)
                     {
-                        node->children.push_back(tail);
-                        node->children.push_back(child);
+
+                        int transNodePathLen = -1;
+                        CSuffixNode *transNode = NULL;
+
+                        nodepathlen = child->pathlen - (child->end - j + 1);
+                        node = new CSuffixNode(text, child->start, j - 1, nodepathlen);
+                        node->cnt = child->cnt + 1;
+
+                        transNodePathLen = nodepathlen + j - uvLen + 1;
+                        transNode = new CSuffixNode(text, j, uvLen + 1, transNodePathLen);
+
+                        tailpathlen = transNodePathLen + uvLen - j;
+                        tail = new CSuffixNode(text, j + uvLen, text.length() - 1, tailpathlen);
+
+                        node->children.push_back(transNode);
+
+                        //update child node: c
+                        child->start += uvLen;
+                        child->curtext = child->getString(text);
+                        //child->pathlen -= child->start - j; 
+
+                        if(text[j + uvLen] < text[child->start])
+                        {
+                            transNode->children.push_back(tail);
+                            transNode->children.push_back(child);
+                        }
+                        else
+                        {
+                            transNode->children.push_back(child);
+                            transNode->children.push_back(tail);
+                        }
+
+                        //update parent
+                        currNode->children[i] = node;
+
+                        state->link = transNode;
+                        state->finished = true;
+                        state->prefix = transNode;		
                     }
                     else
                     {
-                        node->children.push_back(child);
-                        node->children.push_back(tail);
+                        nodepathlen = child->pathlen - (child->getLength() - uvLen);
+                        node = new CSuffixNode(text, child->start, child->start + uvLen - 1, nodepathlen);
+                        node->cnt = child->cnt + 1;
+
+                        tailpathlen = (text.length() - (j + uvLen)) + nodepathlen;
+                        tail = new CSuffixNode(text, j + uvLen, text.length() - 1, tailpathlen);    
+
+                        //update child node: c
+                        child->start += uvLen;
+                        child->curtext = child->getString(text);
+
+                        if(text[j + uvLen] < text[child->start])
+                        {
+                            node->children.push_back(tail);
+                            node->children.push_back(child);
+                        }
+                        else
+                        {
+                            node->children.push_back(child);
+                            node->children.push_back(tail);
+                        }
+
+
+                        //update parent
+                        currNode->children[i] = node;
+
+                        state->link = node;
+                        state->finished = true;
+                        state->prefix = node;		
                     }
-
-                    //update parent
-                    currNode->children[i] = node;
-
-                    //uvLen = 0;
-                    //state->u = currNode; //currNode is already registered as state->u, so commented out
-                    state->link = node;
-                    state->finished = true;
-                    state->prefix = node;					
+			
 
                 }
                 else
