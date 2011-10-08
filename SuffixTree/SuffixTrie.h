@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <windows.h>
+#include "debug.h"
 
 class CSuffixTrie
 {
@@ -26,6 +28,8 @@ public:
         int cnt;
     };
 
+    void walkTree(CSuffixNode *node, int len);
+    void OutWalkTree(void);
 
     struct CState
     {

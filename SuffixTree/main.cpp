@@ -11,7 +11,9 @@ int main()
     //std::string str = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
     //str.push_back((char)(16));
     //CSuffixTrie tree(str);
-    string str = "aabaabaab*";
+    // aabababadvc* - crash
+    // aaadvc* - crash
+    string str = "aabababadvc*";
     CSuffixTrie tree(str);
     tree.buildSuffixTree();
     
@@ -20,12 +22,17 @@ int main()
         for (int j = i + 1; j <= str.length(); ++j)
         {
             string fnd = str.substr(i, j - i);
+            if (fnd == "babadvc*")
+            {
+                int a = 0;
+            }
             cout << fnd << " -- " << tree.find(fnd) << "\n";
         }
     }
 
+    tree.OutWalkTree();
 
-    cout << tree.find("baab*");
+    cout << tree.find("baab");
     /*cout << tree.find("baab");
     cout << tree.find("<META NAME=\"Description\" CONTENT=\"Все о Linux на русском языке\">");
     cout << tree.find("<div");

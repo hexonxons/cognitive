@@ -1,5 +1,6 @@
 #include "SuffixTrie.h"
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -34,8 +35,6 @@ string CSuffixTrie::CSuffixNode::getString(string &text)
 {
     if(start != -1)
     {
-        //if (start == end)
-           // return string(text, start, 1);
         return text.substr(start, end - start + 1);
     }
     else
@@ -89,6 +88,26 @@ int CSuffixTrie::findStr(std::string data, CSuffixNode *node, int &curPos)
             return findStr(data, node->children[i], curPos);
     }
     return false;
+}
+
+void CSuffixTrie::walkTree(CSuffixTrie::CSuffixNode *node, int len)
+{
+    for (int i = 0; i < node->children.size(); ++i)
+    {
+        int curLen = len;
+        CSuffixNode *curNode = node->children[i];
+        curLen += curNode->curtext.length();
+        if (curLen != curNode->pathlen)
+        {
+            std::cout << "Wrong pathlen on string " << (LPCTSTR)curNode->curtext.c_str() << "\n";
+        }
+        walkTree(curNode, curLen);
+    }
+}
+
+void CSuffixTrie::OutWalkTree()
+{
+    walkTree(root, 0);
 }
 
 int CSuffixTrie::find(std::string data)
@@ -271,15 +290,17 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
 
                     int transNodePathLen = -1;
                     CSuffixNode *transNode = NULL;
-
-                    nodepathlen = child->pathlen - (child->getLength() - j + 1);
+                    //            была глубина      -  длина куска слова сейчас   + конец куска получившегося слова  
+                    nodepathlen = child->pathlen - child->getLength() + (j - child->start);
                     node = new CSuffixNode(text, child->start, j - 1, nodepathlen);
                     node->cnt = child->cnt + 1;
-
-                    transNodePathLen = nodepathlen + delta - j + 1;
-                    transNode = new CSuffixNode(text, j, delta, transNodePathLen);
+                    //                 глубина куска верхнего уровня + длина нового куска
+                    transNodePathLen = nodepathlen + (delta - child->start);
+                    transNode = new CSuffixNode(text, j, j + delta - child->start - 1, transNodePathLen);
+                    // ???
+                    transNode->link = node;
                     
-                    tailpathlen = transNodePathLen + delta - j;
+                    tailpathlen = transNodePathLen + (text.length() - delta - j);
                     tail = new CSuffixNode(text, j + delta, text.length() - 1, tailpathlen);
 
                     node->children.push_back(transNode);
@@ -303,7 +324,7 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                     //update parent
                     currNode->children[i] = node;
 
-                    state->prefix = transNode;
+                    state->prefix = node;
                     state->finished = true;
 
                 }
@@ -400,10 +421,10 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
                         node = new CSuffixNode(text, child->start, j - 1, nodepathlen);
                         node->cnt = child->cnt + 1;
 
-                        transNodePathLen = nodepathlen + j - uvLen + 1;
+                        transNodePathLen = nodepathlen + j - uvLen;
                         transNode = new CSuffixNode(text, j, uvLen + 1, transNodePathLen);
 
-                        tailpathlen = transNodePathLen + uvLen - j;
+                        tailpathlen = transNodePathLen + j - uvLen;
                         tail = new CSuffixNode(text, j + uvLen, text.length() - 1, tailpathlen);
 
                         node->children.push_back(transNode);
@@ -427,9 +448,9 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
                         //update parent
                         currNode->children[i] = node;
 
-                        state->link = transNode;
+                        state->link = node;
                         state->finished = true;
-                        state->prefix = transNode;		
+                        state->prefix = node;		
                     }
                     else
                     {
