@@ -53,6 +53,7 @@ CSuffixTrie::CState::CState()
     parent = NULL;
     link = NULL;
     prefix = NULL;
+    transLink = NULL;
 }
 
 //################################### CSuffixTrie #########################################
@@ -134,9 +135,17 @@ void CSuffixTrie::buildSuffixTree()
     {
         std::string insertVal = text.substr(i, text.size() - i);
 
+        // суффиксная ссылка на предыдущий суффикс
         CSuffixNode *s = u->link;
 
-        int uvLen = v->pathlen - u->pathlen;
+        int uvLen;
+        if (state->transLink != NULL)
+        {
+            uvLen = state->transLink->pathlen - u->pathlen;
+        }
+        else
+            uvLen = v->pathlen - u->pathlen;
+        // >>>
         bool isFastScanned = false;
 
         if(u->isRoot() && !v->isRoot())
@@ -155,11 +164,16 @@ void CSuffixTrie::buildSuffixTree()
         //execute fast scan
         if(uvLen > 0) 
         {
+            if (s->pathlen != 0)
+            {
+                s->cnt++;
+            }
             fastscan(state, s, uvLen, j);
             isFastScanned = true;
         }
 
         //establish the suffix link with v
+        // v - последняя вершина не нод
         CSuffixNode *w = state->link;
         v->link = w;
 
@@ -168,7 +182,8 @@ void CSuffixTrie::buildSuffixTree()
         {
             j = state->j;
             state->parent = w; //w must be an internal node when state->finished=false, then it must have a suffix link, so u can be updated.
-            if (isFastScanned)
+            // сдвиг индекса j на глубину w
+            if (w->pathlen != 0)
                 w->cnt++;
             slowscan(state, w, j);
         }		
@@ -186,7 +201,7 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
     int keyLen = text.length() - j;
 
     for(int i = 0; i < currNode->children.size(); ++i)
-    {
+    { 
         CSuffixNode *child = currNode->children[i];
 
         int childKeyLen = child->getLength();
@@ -237,10 +252,26 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                     //    /  \    ==========>     / | \
                     //   e    f   insert "abc^"  c^ e  f
                     //recursion
+                    
+                    // проверяем у детей, нет ли пересечения
+                    // например aabaaab*
+                    // при вставке aab*  a -> a -> ab*
+                    //                    / \->baaab*
+                    // проверим в этом ноде   / наличие подстроки ab*
+                    bool flag = false;
+                    for (int i = 0; i < child->children.size(); ++i)
+                    {
+                        if (text.substr(child->children[i]->start, child->children[i]->end - child->children[i]->start + 1) == text.substr(j, text.size() - j))
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
                     state->parent = child;
                     j += childKeyLen;
                     state->j = j;
-                    child->cnt++;
+                    if (!flag)
+                        child->cnt++;
                     slowscan(state, child, j);
                 }
             }
@@ -298,7 +329,7 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                     transNodePathLen = nodepathlen + (delta - child->start);
                     transNode = new CSuffixNode(text, j, j + delta - child->start - 1, transNodePathLen);
                     // ???
-                    transNode->link = node;
+                    //transNode->link = node;
                     
                     tailpathlen = transNodePathLen + (text.length() - delta - j);
                     tail = new CSuffixNode(text, j + delta, text.length() - 1, tailpathlen);
@@ -326,7 +357,7 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
 
                     state->prefix = node;
                     state->finished = true;
-
+                    state->transLink = transNode;
                 }
                 else
                 {
@@ -416,15 +447,17 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
 
                         int transNodePathLen = -1;
                         CSuffixNode *transNode = NULL;
-
-                        nodepathlen = child->pathlen - (child->end - j + 1);
+                        //            была глубина      -  длина куска слова сейчас   + конец куска получившегося слова  
+                        nodepathlen = child->pathlen - child->getLength() + (j - child->start);
                         node = new CSuffixNode(text, child->start, j - 1, nodepathlen);
                         node->cnt = child->cnt + 1;
+                        //                 глубина куска верхнего уровня + длина нового куска
+                        transNodePathLen = nodepathlen + (uvLen - child->start);
+                        transNode = new CSuffixNode(text, j, j + uvLen - child->start - 1, transNodePathLen);
+                        // ???
+                        //transNode->link = node;
 
-                        transNodePathLen = nodepathlen + j - uvLen;
-                        transNode = new CSuffixNode(text, j, uvLen + 1, transNodePathLen);
-
-                        tailpathlen = transNodePathLen + j - uvLen;
+                        tailpathlen = transNodePathLen + (text.length() - uvLen - j);
                         tail = new CSuffixNode(text, j + uvLen, text.length() - 1, tailpathlen);
 
                         node->children.push_back(transNode);
@@ -450,7 +483,9 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
 
                         state->link = node;
                         state->finished = true;
-                        state->prefix = node;		
+                        state->prefix = node;
+                        state->transLink->link = transNode;
+                        state->transLink = NULL;
                     }
                     else
                     {
@@ -497,11 +532,28 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
                     //
                     //
                     //jump to next node
+                    
+                    // проверяем у детей, нет ли пересечения
+                    // например aabaaab*
+                    // при вставке aab*  a -> a -> ab*
+                    //                    / \->baaab*
+                    // проверим в этом ноде   / наличие подстроки ab*
+                    bool flag = false;
+                    for (int i = 0; i < child->children.size(); ++i)
+                    {
+                        if (text.substr(child->children[i]->start, child->children[i]->end - child->children[i]->start + 1) == text.substr(j, text.size() - j))
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
                     uvLen -= len;
                     state->parent = child;
                     j += len;
                     state->j = j;
-                    child->cnt++;
+                    if (!flag)
+                        child->cnt++;
+
                     fastscan(state, child, uvLen, j);
                 }
             }

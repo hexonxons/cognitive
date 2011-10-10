@@ -13,7 +13,10 @@ int main()
     //CSuffixTrie tree(str);
     // aabababadvc* - crash
     // aaadvc* - crash
-    string str = "aabababadvc*";
+    // aaba <-
+    //string str = "aababaaabadvc*";
+    string str = "aabaaabaaba*";
+
     CSuffixTrie tree(str);
     tree.buildSuffixTree();
     
