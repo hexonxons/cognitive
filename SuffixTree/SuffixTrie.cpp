@@ -167,8 +167,11 @@ void CSuffixTrie::buildSuffixTree()
             if (s->pathlen != 0)
             {
                 s->cnt++;
+                s->start = i;
+                s->end = i;
+                s->curtext = s->getString(text);
             }
-            fastscan(state, s, uvLen, j);
+            fastscan(state, s, uvLen, j, i);
             isFastScanned = true;
         }
 
@@ -185,7 +188,7 @@ void CSuffixTrie::buildSuffixTree()
             // сдвиг индекса j на глубину w
             if (w->pathlen != 0)
                 w->cnt++;
-            slowscan(state, w, j);
+            slowscan(state, w, j, i);
         }		
 
         u = state->parent;
@@ -193,7 +196,7 @@ void CSuffixTrie::buildSuffixTree()
     }
 }
 
-void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
+void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j, int insSubStrStart)
 {
     bool done = false;
     std::string insertVal = text.substr(j, text.size() - j);
@@ -258,7 +261,7 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                     // при вставке aab*  a -> a -> ab*
                     //                    / \->baaab*
                     // проверим в этом ноде   / наличие подстроки ab*
-                    bool flag = false;
+                    /*bool flag = false;
                     for (int i = 0; i < child->children.size(); ++i)
                     {
                         if (text.substr(child->children[i]->start, child->children[i]->end - child->children[i]->start + 1) == text.substr(j, text.size() - j))
@@ -266,13 +269,17 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                             flag = true;
                             break;
                         }
-                    }
+                    }*/
                     state->parent = child;
+                    if (child->start < insSubStrStart)
+                        child->cnt++;
+                    child->start = j;
+                    child->end = j + delta - 1;
+                    child->curtext = child->getString(text);
                     j += childKeyLen;
                     state->j = j;
-                    if (!flag)
-                        child->cnt++;
-                    slowscan(state, child, j);
+                    
+                    slowscan(state, child, j, insSubStrStart);
                 }
             }
             else
@@ -328,6 +335,10 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                     //                 глубина куска верхнего уровня + длина нового куска
                     transNodePathLen = nodepathlen + (delta - child->start);
                     transNode = new CSuffixNode(text, j, j + delta - child->start - 1, transNodePathLen);
+                    if (transNodePathLen < 0)
+                    {
+                        int c = 0;
+                    }
                     // ???
                     //transNode->link = node;
                     
@@ -362,7 +373,8 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                 else
                 {
                     nodepathlen = child->pathlen - (child->getLength() - delta);
-                    node = new CSuffixNode(text, child->start, child->start + delta - 1, nodepathlen);
+                    //node = new CSuffixNode(text, child->start, child->start + delta - 1, nodepathlen);
+                    node = new CSuffixNode(text, j, j + delta - 1, nodepathlen);
                     node->cnt = child->cnt + 1;
 
                     tailpathlen = (text.length() - (j + delta)) + nodepathlen;
@@ -405,7 +417,7 @@ void CSuffixTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
 }
 
 
-void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int j)
+void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int j, int insSubStrStart)
 {		  
     std::string insertVal = text.substr(j, text.size() - j);
     for(int i = 0; i < currNode->children.size(); ++i)
@@ -420,6 +432,9 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
                 //then we find w
                 //uvLen = 0;
                 //need slow scan after this child
+                child->start = j;
+                child->end = j + len - 1;
+                child->curtext = child->getString(text);
                 state->parent = child;
                 state->link = child;
                 state->j = j + len;
@@ -456,7 +471,10 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
                         transNode = new CSuffixNode(text, j, j + uvLen - child->start - 1, transNodePathLen);
                         // ???
                         //transNode->link = node;
-
+                        if (transNodePathLen < 0)
+                        {
+                            int c = 0;
+                        }
                         tailpathlen = transNodePathLen + (text.length() - uvLen - j);
                         tail = new CSuffixNode(text, j + uvLen, text.length() - 1, tailpathlen);
 
@@ -538,7 +556,7 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
                     // при вставке aab*  a -> a -> ab*
                     //                    / \->baaab*
                     // проверим в этом ноде   / наличие подстроки ab*
-                    bool flag = false;
+      /*              bool flag = false;
                     for (int i = 0; i < child->children.size(); ++i)
                     {
                         if (text.substr(child->children[i]->start, child->children[i]->end - child->children[i]->start + 1) == text.substr(j, text.size() - j))
@@ -546,15 +564,16 @@ void CSuffixTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int 
                             flag = true;
                             break;
                         }
-                    }
+                    }*/
+                    if (child->start < insSubStrStart)
+                        child->cnt++;
                     uvLen -= len;
                     state->parent = child;
                     j += len;
                     state->j = j;
-                    if (!flag)
-                        child->cnt++;
+                  
 
-                    fastscan(state, child, uvLen, j);
+                    fastscan(state, child, uvLen, j, insSubStrStart);
                 }
             }
             break;

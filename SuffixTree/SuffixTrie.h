@@ -48,8 +48,8 @@ private:
     std::string text;
 
     //slow scan until head( = state->v) is found
-    void slowscan(CState *state, CSuffixNode *currNode, int j);
+    void slowscan(CState *state, CSuffixNode *currNode, int j, int insSubStrStart);
     //fast scan until w is found
-    void fastscan(CState *state,CSuffixNode *currNode,int uvLen,int j);
+    void fastscan(CState *state,CSuffixNode *currNode,int uvLen,int j, int insSubStrStart);
     int findStr(std::string data, CSuffixNode *node, int &curPos);
 };

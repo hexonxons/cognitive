@@ -15,7 +15,7 @@ int main()
     // aaadvc* - crash
     // aaba <-
     //string str = "aababaaabadvc*";
-    string str = "aabaaabaaba*";
+    string str = "abababab*";
 
     CSuffixTrie tree(str);
     tree.buildSuffixTree();
