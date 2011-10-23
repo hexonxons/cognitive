@@ -1,25 +1,28 @@
-#include "SuffixTrie.h"
+#include "debug.h"
+#include "suffixtrie.h"
+
+#include <iostream>
+#include <string>
 #include <algorithm>
 
-using namespace std;
+using std::string;
+using std::vector;
 
-CSuffixNode::CSuffixNode(string text, int start, int end, int pathlen)
+CTrie::CSuffixNode::CSuffixNode(int start, int end, int pathlen)
 {
-    this->text = text.substr(start, end - start + 1);
     this->start = start;
     this->end = end;
     this->pathlen = pathlen;
 }
 
-CSuffixNode::CSuffixNode(string text)
+CTrie::CSuffixNode::CSuffixNode()
 {
-    this->text = "";
     this->start = -1;
     this->end = -1;
     this->pathlen = 0;
 }
 
-int CSuffixNode::getLength()
+int CTrie::CSuffixNode::GetLength()
 {
     if(start == -1)
         return 0;
@@ -27,19 +30,7 @@ int CSuffixNode::getLength()
         return end - start + 1;
 }
 
-string CSuffixNode::getString(string text)
-{
-    if(start != -1)
-    {
-        return text.substr(start, end - start + 1);
-    }
-    else
-    {
-        return "";
-    }
-}
-
-bool CSuffixNode::isRoot()
+bool CTrie::CSuffixNode::IsRoot()
 {
     return start == -1;
 }
@@ -47,11 +38,11 @@ bool CSuffixNode::isRoot()
 CTrie::CTrie(string str)
 {
     text = str;
-    root = new CSuffixNode(str);
-    root->link = root;
+    root = new CSuffixNode();
+    root->slink = root;
 }
 
-void CTrie::buildSuffixTree()
+void CTrie::BuildSuffixTree()
 {
     CSuffixNode *u = root;
     CSuffixNode *v = root;
@@ -59,16 +50,15 @@ void CTrie::buildSuffixTree()
 
     for(int i = 0; i < text.length(); i++)
     {
-        std::string insertVal = text.substr(i, text.size() - i);
+        CSuffixNode *s = u->slink;
 
-        CSuffixNode *s = u->link;
+        int uvlen = v->pathlen - u->pathlen;
 
-        int uvLen = v->pathlen - u->pathlen;
-
-        if(u->isRoot() && !v->isRoot())
+        if(u->IsRoot() && !v->IsRoot())
         {
-            --uvLen;
+            --uvlen;
         }
+
         int j = s->pathlen + i;		
 
         state->u = s;
@@ -77,13 +67,13 @@ void CTrie::buildSuffixTree()
         state->j = j;
         state->finished = false;
 
-        if(uvLen > 0)
+        if(uvlen > 0)
         {
-            fastscan(state, s, uvLen, j);
+            fastscan(state, s, uvlen, j);
         }
 
         CSuffixNode *w = state->w;
-        v->link = w;
+        v->slink = w;
 
         if(!state->finished)
         {
@@ -97,19 +87,19 @@ void CTrie::buildSuffixTree()
     }
 }
 
-void CTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
+void CTrie::slowscan(CState *state, CSuffixNode *currnode, int j)
 {
-    std::string insertVal = text.substr(j, text.size() - j);
-
     bool done = false;
-    int keyLen = text.length() - j;
-    for(int i = 0; i < currNode->children.size(); ++i)
-    {
-        CSuffixNode *child = currNode->children[i];
+    int keylen = text.length() - j;
 
-        int childKeyLen = child->getLength();
-        int len = childKeyLen < keyLen ? childKeyLen : keyLen;
+    for(int i = 0; i < currnode->children.size(); ++i)
+    {
+        CSuffixNode *child = currnode->children[i];
+
+        int childkeylen = child->GetLength();
+        int len = childkeylen < keylen ? childkeylen : keylen;
         int delta = 0;
+
         for(; delta < len; delta++)
         {
             if(text[j + delta] != text[child->start + delta])
@@ -120,10 +110,11 @@ void CTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
         {
             if(text[j] < text[child->start])
             {
-                int pathlen = text.length() - j + currNode->pathlen;
-                CSuffixNode *node = new CSuffixNode(text, j, text.length() - 1, pathlen);
-                currNode->children.insert(currNode->children.begin() + i, node);
-                state->v = currNode;
+                int pathlen = text.length() - j + currnode->pathlen;
+                CSuffixNode *node = new CSuffixNode(j, text.length() - 1, pathlen);
+
+                currnode->children.insert(currnode->children.begin() + i, node);
+                state->v = currnode;
                 state->finished = true;
                 done = true;
                 break;
@@ -135,24 +126,23 @@ void CTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
         {
             if(delta == len)
             {
-                if(keyLen > childKeyLen)
+                if(keylen > childkeylen)
                 { 
                     state->u = child;
-                    j += childKeyLen;
+                    j += childkeylen;
                     state->j = j;
                     slowscan(state, child, j);
                 }
             }
             else
             {
-                int nodepathlen = child->pathlen - (child->getLength() - delta);
-                CSuffixNode *node = new CSuffixNode(text, child->start, child->start + delta - 1, nodepathlen);
+                int nodepathlen = child->pathlen - (child->GetLength() - delta);
+                CSuffixNode *node = new CSuffixNode(child->start, child->start + delta - 1, nodepathlen);
 
                 int tailpathlen = (text.length() - (j + delta)) + nodepathlen;
-                CSuffixNode *tail = new CSuffixNode(text, j + delta, text.length() - 1, tailpathlen);
+                CSuffixNode *tail = new CSuffixNode(j + delta, text.length() - 1, tailpathlen);
 
                 child->start += delta;
-                child->text = child->getString(text);
 
                 if(text[j + delta] < text[child->start])
                 {
@@ -164,7 +154,7 @@ void CTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
                     node->children.push_back(child);
                     node->children.push_back(tail);
                 }
-                currNode->children[i] = node;
+                currnode->children[i] = node;
 
                 state->v = node;
                 state->finished = true;
@@ -173,28 +163,29 @@ void CTrie::slowscan(CState *state, CSuffixNode *currNode, int j)
             break;
         }
     }
+
     if(!done)
     {
-        int pathlen = text.length() - j + currNode->pathlen;
-        CSuffixNode *node = new CSuffixNode(text, j, text.length() - 1, pathlen);
-        currNode->children.push_back(node);
-        state->v = currNode;
+        int pathlen = text.length() - j + currnode->pathlen;
+        CSuffixNode *node = new CSuffixNode(j, text.length() - 1, pathlen);
+
+        currnode->children.push_back(node);
+        state->v = currnode;
         state->finished = true;
     }
 }
 
-void CTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int j)
+void CTrie::fastscan(CState *state, CSuffixNode *currNode, int uvlen, int j)
 {		  
-    std::string insertVal = text.substr(j, text.size() - j);
-
     for(int i = 0; i < currNode->children.size(); ++i)
     {
         CSuffixNode *child = currNode->children[i];
 
         if(text[child->start] == text[j])
         {
-            int len = child->getLength();
-            if(uvLen == len)
+            int len = child->GetLength();
+
+            if(uvlen == len)
             {
                 state->u = child;
                 state->w = child;
@@ -203,17 +194,16 @@ void CTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int j)
             }
             else 
             {
-                if(uvLen < len)
+                if(uvlen < len)
                 {
-                    int nodepathlen = child->pathlen - (child->getLength() - uvLen);
-                    CSuffixNode *node = new CSuffixNode(text, child->start, child->start + uvLen - 1, nodepathlen);
+                    int nodepathlen = child->pathlen - (child->GetLength() - uvlen);
+                    CSuffixNode *node = new CSuffixNode(child->start, child->start + uvlen - 1, nodepathlen);
 
-                    int tailpathlen = (text.length() - (j + uvLen)) + nodepathlen;
-                    CSuffixNode *tail = new CSuffixNode(text, j + uvLen, text.length() - 1, tailpathlen);
+                    int tailpathlen = (text.length() - (j + uvlen)) + nodepathlen;
+                    CSuffixNode *tail = new CSuffixNode(j + uvlen, text.length() - 1, tailpathlen);
 
-                    child->start += uvLen;
-                    child->text = child->getString(text);
-                    if(text[j + uvLen] < text[child->start])
+                    child->start += uvlen;
+                    if(text[j + uvlen] < text[child->start])
                     {
                         node->children.push_back(tail);
                         node->children.push_back(child);
@@ -233,12 +223,12 @@ void CTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int j)
                 }
                 else
                 {
-                    uvLen -= len;
+                    uvlen -= len;
                     state->u = child;
                     j += len;
                     state->j = j;
 
-                    fastscan(state, child, uvLen, j);
+                    fastscan(state, child, uvlen, j);
                 }
                 break;
             }
@@ -246,29 +236,29 @@ void CTrie::fastscan(CState *state, CSuffixNode *currNode, int uvLen, int j)
     }
 }
 
-int CTrie::findStr(std::string data, CSuffixNode *node, int &curPos)
+int CTrie::findStr(const string &data, CSuffixNode *node, int &curpos)
 {
     bool flag = false;
     for (int i = 0; i < node->children.size(); ++i)
     {
         int ind = 0;
-        while(node->children[i]->text[ind] == data[curPos])
+        while(text[node->children[i]->start + ind] == data[curpos])
         {
-            ++curPos;
+            ++curpos;
             ++ind;
             flag = true;
-            if (curPos == data.length())
+            if (curpos == data.length())
             {
                 return 1;
             }
         }
         if (flag)
-            return findStr(data, node->children[i], curPos);
+            return findStr(data, node->children[i], curpos);
     }
     return 0;
 }
 
-int CTrie::find(std::string data)
+int CTrie::Find(const string &data)
 {
     int count = 0;
     return findStr(data, root, count);
@@ -278,15 +268,18 @@ int CTrie::walkTreeCounter(CSuffixNode *node, string curText)
 {
     int counter = 0;
 
-    string data(node->text);
-    //reverse(data.begin(), data.end());
-    curText += data;
+    if (node->start != -1)
+    {
+        curText += string(text, node->start, node->end - node->start + 1);
+    }
+
     // если детей нет - встретилось 1 раз
     if (node->children.size() == 0)
     {
         freq.push_back(make_pair(curText, 1));
         return 1;
     }
+
     // иначе складываем степень всех детей
     for (int i = 0; i < node->children.size(); ++i)
     {
@@ -300,8 +293,12 @@ int CTrie::walkTreeCounter(CSuffixNode *node, string curText)
 void CTrie::OutWalkTreeCounter()
 {
     walkTreeCounter(root, "");
+
+#ifdef _DEBUG
     for (std::vector<std::pair<std::string, int>>::iterator it = freq.begin(); it != freq.end(); ++it)
     {
-        cout << it->first << " -- " << it->second << "\n";
+        DebugPrint("%s -- %d\n", it->first.c_str(), it->second);
     }
+#endif  //_DEBUG
+
 }

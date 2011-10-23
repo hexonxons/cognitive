@@ -162,11 +162,15 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\debug.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\main.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\SuffixTrie.cpp"
+				RelativePath=".\suffixtrie.cpp"
 				>
 			</File>
 		</Filter>
@@ -176,7 +180,11 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\SuffixTrie.h"
+				RelativePath=".\debug.h"
+				>
+			</File>
+			<File
+				RelativePath=".\suffixtrie.h"
 				>
 			</File>
 		</Filter>

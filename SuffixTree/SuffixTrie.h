@@ -1,48 +1,59 @@
-#include <iostream>
-#include <string>
+#ifndef __SUFFIXTRIE_H__
+#define __SUFFIXTRIE_H__
+
 #include <vector>
-
-using namespace std;
-
-struct CSuffixNode
-{
-    string text;
-    vector<CSuffixNode *> children;
-    CSuffixNode *link;
-    int start;
-    int end;
-    int pathlen;
-
-    CSuffixNode(string str, int start, int end, int pathlen);
-    CSuffixNode(string str);
-    int getLength();
-    string getString(string text);
-    bool isRoot();
-};
-
-struct CState
-{
-    CSuffixNode *u;
-    CSuffixNode *w;
-    CSuffixNode *v; 
-    int j;
-    bool finished;
-};
-
 
 class CTrie
 {
 public:
-    void buildSuffixTree();
-    CTrie(string str);
-    void slowscan(CState *state, CSuffixNode *currNode, int j);
-    void fastscan(CState *state,CSuffixNode *currNode,int uvLen,int j);
+
+    struct CSuffixNode
+    {
+        CSuffixNode(int start, int end, int pathlen);
+        CSuffixNode();
+
+        int GetLength();
+        bool IsRoot();
+
+        // дети текущего нода
+        std::vector<CSuffixNode *> children;
+        // суффиксная ссылка
+        CSuffixNode *slink;
+        // начало суффикса
+        int start;
+        // конец суффикса
+        int end;
+        // глубина всего суффикса
+        int pathlen;
+    };
+
+    struct CState
+    {
+        CSuffixNode *u;
+        CSuffixNode *w;
+        CSuffixNode *v; 
+        int j;
+        bool finished;
+    };
+
+    
+    CTrie(std::string str);
+    void BuildSuffixTree();
     void OutWalkTreeCounter();
-    int find(std::string);
+    int Find(const std::string &);
+
 private:
+
+    CTrie();
+    void slowscan(CState *state, CSuffixNode *currNode, int j);
+    void fastscan(CState *state, CSuffixNode *currNode, int uvLen, int j);
+
     int walkTreeCounter(CSuffixNode *node, std::string curText);
-    int findStr(std::string data, CSuffixNode *node, int &curPos);
+    int findStr(const std::string &data, CSuffixNode *node, int &curPos);
+
     CSuffixNode *root;
-    string text;
+    std::string text;
     std::vector<std::pair<std::string, int>> freq;
 };
+
+#endif  //__SUFFIXTRIE_H__

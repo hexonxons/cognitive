@@ -3,9 +3,13 @@
  * blacklist (c) 2010
  */
 
-#ifndef DEBUG_H
-#define DEBUG_H
+#ifndef __DEBUG_H__
+#define __DEBUG_H__
+
+#include <stdio.h>
+#include <stdarg.h>
+#include <windows.h>
 
 VOID WINAPI DebugPrint(LPTSTR lpszFormat, ...);
 
-#endif
+#endif  //__DEBUG_H__
