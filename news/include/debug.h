@@ -1,7 +1,7 @@
-/*
- * прототипы debug.cpp
- * blacklist (c) 2010
- */
+//
+// прототипы debug.cpp
+// blacklist (c) 2010
+//
 
 #ifndef __DEBUG_H__
 #define __DEBUG_H__

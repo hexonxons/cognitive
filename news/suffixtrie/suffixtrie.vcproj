@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="SuffixTree"
-	ProjectGUID="{A6BC6C38-1639-4BCB-9B79-D68CB3254573}"
-	RootNamespace="SuffixTree"
+	Name="suffixtrie"
+	ProjectGUID="{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}"
+	RootNamespace="suffixtrie"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
@@ -162,7 +162,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\debug.cpp"
+				RelativePath="..\include\debug.cpp"
 				>
 			</File>
 			<File
@@ -180,7 +180,7 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\debug.h"
+				RelativePath="..\include\debug.h"
 				>
 			</File>
 			<File

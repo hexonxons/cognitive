@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="timus_1309"
-	ProjectGUID="{7406C036-942D-490F-AA5B-3A696558DB57}"
-	RootNamespace="timus_1309"
+	Name="newsfinder"
+	ProjectGUID="{2B266918-A57C-4922-8DCF-257F42601233}"
+	RootNamespace="newsfinder"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
@@ -162,7 +162,19 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\main.c"
+				RelativePath="..\include\debug.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\main.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\tagprocess.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\utils.cpp"
 				>
 			</File>
 		</Filter>
@@ -171,6 +183,18 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath="..\include\debug.h"
+				>
+			</File>
+			<File
+				RelativePath=".\tagprocess.h"
+				>
+			</File>
+			<File
+				RelativePath=".\utils.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"

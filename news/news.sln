@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "news", "news.vcproj", "{EA1DA6EE-7D6D-4BEA-80E4-88053872F643}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "newsfinder", "newsfinder\newsfinder.vcproj", "{2B266918-A57C-4922-8DCF-257F42601233}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "suffixtrie", "suffixtrie\suffixtrie.vcproj", "{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,14 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA1DA6EE-7D6D-4BEA-80E4-88053872F643}.Debug|Win32.ActiveCfg = Debug|Win32
-		{EA1DA6EE-7D6D-4BEA-80E4-88053872F643}.Debug|Win32.Build.0 = Debug|Win32
-		{EA1DA6EE-7D6D-4BEA-80E4-88053872F643}.Release|Win32.ActiveCfg = Release|Win32
-		{EA1DA6EE-7D6D-4BEA-80E4-88053872F643}.Release|Win32.Build.0 = Release|Win32
+		{2B266918-A57C-4922-8DCF-257F42601233}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2B266918-A57C-4922-8DCF-257F42601233}.Debug|Win32.Build.0 = Debug|Win32
+		{2B266918-A57C-4922-8DCF-257F42601233}.Release|Win32.ActiveCfg = Release|Win32
+		{2B266918-A57C-4922-8DCF-257F42601233}.Release|Win32.Build.0 = Release|Win32
+		{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}.Debug|Win32.Build.0 = Debug|Win32
+		{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}.Release|Win32.ActiveCfg = Release|Win32
+		{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

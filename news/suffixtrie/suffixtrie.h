@@ -1,7 +1,16 @@
+/*
+ *  suffixtrie.h
+ *  suffixtrie.cpp prototypes.
+ *  24 October 2011
+ *  Hexonxonx
+ */
+
 #ifndef __SUFFIXTRIE_H__
 #define __SUFFIXTRIE_H__
 
 #include <vector>
+
+#include "../include/memalloc.h"
 
 class CTrie
 {
@@ -16,15 +25,15 @@ public:
         bool IsRoot();
 
         // дети текущего нода
-        std::vector<CSuffixNode *> children;
+        std::vector<CSuffixNode *> m_children;
         // суффиксная ссылка
-        CSuffixNode *slink;
+        CSuffixNode *m_pLink;
         // начало суффикса
-        int start;
+        int m_start;
         // конец суффикса
-        int end;
+        int m_end;
         // глубина всего суффикса
-        int pathlen;
+        int m_pathlen;
     };
 
     struct CState
@@ -38,9 +47,10 @@ public:
 
     
     CTrie(std::string str);
+    ~CTrie();
     void BuildSuffixTree();
     void OutWalkTreeCounter();
-    int Find(const std::string &);
+    int Find(const std::string &str);
 
 private:
 
@@ -51,9 +61,12 @@ private:
     int walkTreeCounter(CSuffixNode *node, std::string curText);
     int findStr(const std::string &data, CSuffixNode *node, int &curPos);
 
-    CSuffixNode *root;
-    std::string text;
-    std::vector<std::pair<std::string, int>> freq;
+    CSuffixNode *m_pRoot;
+    CBasicDataBase<CSuffixNode> m_nodeStorage;
+    CBasicDataBase<CState> m_stateStorage;
+
+    std::string m_text;
+    std::vector<std::pair<std::string, int>> m_freq;
 };
 
 #endif  //__SUFFIXTRIE_H__

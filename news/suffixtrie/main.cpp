@@ -1,8 +1,16 @@
-#include "suffixtrie.h"
+/*
+ *  main.cpp
+ *  main function for testing suffix tree class.
+ *  24 October 2011
+ *  Hexonxonx
+ */
 
 #include <iostream>
 #include <fstream>
 #include <string>
+
+#include "suffixtrie.h"
+
 
 using namespace std;
 
