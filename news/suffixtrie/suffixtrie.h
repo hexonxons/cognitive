@@ -23,6 +23,7 @@ public:
 #endif
         int count;
         std::vector<std::pair<int, int>> m_wordset;
+        std::vector<std::pair<int, int>> m_realwordset;
     };
 
     struct CSuffixNode
@@ -78,6 +79,7 @@ private:
 
     std::string m_text;
     std::vector<std::pair<std::string, int>> m_freq;
+    std::vector<std::pair<std::string, int>> m_realfreq;
 };
 
 #endif  //__SUFFIXTRIE_H__

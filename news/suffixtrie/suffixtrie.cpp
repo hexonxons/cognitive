@@ -304,9 +304,12 @@ int CTrie::walkTreeCounter(CSuffixNode *node, string curText)
     if (node->m_children.size() == 0)
     {
         m_freq.push_back(make_pair(curText, 1));
+#ifdef _DEBUG
         node->m_description.m_suffix = curText;
+#endif
         node->m_description.count = 1;
         node->m_description.m_wordset.push_back(make_pair(node->m_start - offset, node->m_end));
+        m_realfreq.push_back(make_pair(curText, 1));
         return 1;
     }
 
@@ -314,16 +317,34 @@ int CTrie::walkTreeCounter(CSuffixNode *node, string curText)
     for (int i = 0; i < node->m_children.size(); ++i)
     {
         counter += walkTreeCounter(node->m_children[i], curText);
-        for (std::vector<std::pair<int, int>>::iterator it = node->m_children[i]->m_description.m_wordset.begin(); it != node->m_children[i]->m_description.m_wordset.end(); ++it)
+        for (std::vector<std::pair<int, int>>::iterator it = node->m_children[i]->m_description.m_wordset.begin();
+                                                        it != node->m_children[i]->m_description.m_wordset.end(); 
+                                                        ++it)
         {
                node->m_description.m_wordset.push_back(make_pair(it->first, it->second + node->m_children[i]->m_start - node->m_children[i]->m_end - 1));
         }
     }
+
     m_freq.push_back(make_pair(curText, counter));
     node->m_description.count = counter;
+
+#ifdef _DEBUG
     node->m_description.m_suffix = curText;
-    sort(node->m_description.m_wordset.begin(), node->m_description.m_wordset.end(), pred();
-    
+#endif
+
+    sort(node->m_description.m_wordset.begin(), node->m_description.m_wordset.end(), pred());
+
+    std::vector<std::pair<int, int>>::iterator it = node->m_description.m_wordset.begin();
+    node->m_description.m_realwordset.push_back(*it);
+    ++it;
+    while(it != node->m_description.m_wordset.end())
+    {
+        if (!(it->first >= node->m_description.m_realwordset.back().first && it->first <= node->m_description.m_realwordset.back().second))
+            node->m_description.m_realwordset.push_back(*it);
+        ++it;
+    }
+    m_realfreq.push_back(make_pair(curText, node->m_description.m_realwordset.size()));
+
     return counter;
 }
 
@@ -334,7 +355,12 @@ void CTrie::OutWalkTreeCounter()
 #ifdef _DEBUG
     for (std::vector<std::pair<std::string, int>>::iterator it = m_freq.begin(); it != m_freq.end(); ++it)
     {
-        DebugPrint("%s -- %d\n", it->first.c_str(), it->second);
+        DebugPrint("m_freq : %s -- %d\n", it->first.c_str(), it->second);
+    }
+
+    for (std::vector<std::pair<std::string, int>>::iterator it = m_realfreq.begin(); it != m_realfreq.end(); ++it)
+    {
+        DebugPrint("m_realfreq : %s -- %d\n", it->first.c_str(), it->second);
     }
 #endif  //_DEBUG
 
