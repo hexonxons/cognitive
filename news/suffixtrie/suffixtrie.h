@@ -16,6 +16,15 @@ class CTrie
 {
 public:
 
+    struct CSuffixDescription
+    {
+#ifdef _DEBUG
+        std::string m_suffix;
+#endif
+        int count;
+        std::vector<std::pair<int, int>> m_wordset;
+    };
+
     struct CSuffixNode
     {
         CSuffixNode(int start, int end, int pathlen);
@@ -34,6 +43,8 @@ public:
         int m_end;
         // глубина всего суффикса
         int m_pathlen;
+
+        CSuffixDescription m_description;
     };
 
     struct CState

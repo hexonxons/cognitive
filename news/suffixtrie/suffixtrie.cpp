@@ -14,6 +14,19 @@
 
 using std::string;
 using std::vector;
+using std::make_pair;
+
+struct pred
+{
+    bool operator () (const std::pair<int, int> &left, const std::pair<int, int> &right) const
+    {
+        if (left.first == right.first)
+        {
+            return left.second < right.second;
+        }
+        return left.first < right.first;
+    }
+};
 
 CTrie::CSuffixNode::CSuffixNode(int start, int end, int pathlen)
 {
@@ -280,6 +293,7 @@ int CTrie::Find(const string &data)
 int CTrie::walkTreeCounter(CSuffixNode *node, string curText)
 {
     int counter = 0;
+    int offset = curText.size();
 
     if (node->m_start != -1)
     {
@@ -290,6 +304,9 @@ int CTrie::walkTreeCounter(CSuffixNode *node, string curText)
     if (node->m_children.size() == 0)
     {
         m_freq.push_back(make_pair(curText, 1));
+        node->m_description.m_suffix = curText;
+        node->m_description.count = 1;
+        node->m_description.m_wordset.push_back(make_pair(node->m_start - offset, node->m_end));
         return 1;
     }
 
@@ -297,9 +314,16 @@ int CTrie::walkTreeCounter(CSuffixNode *node, string curText)
     for (int i = 0; i < node->m_children.size(); ++i)
     {
         counter += walkTreeCounter(node->m_children[i], curText);
+        for (std::vector<std::pair<int, int>>::iterator it = node->m_children[i]->m_description.m_wordset.begin(); it != node->m_children[i]->m_description.m_wordset.end(); ++it)
+        {
+               node->m_description.m_wordset.push_back(make_pair(it->first, it->second + node->m_children[i]->m_start - node->m_children[i]->m_end - 1));
+        }
     }
     m_freq.push_back(make_pair(curText, counter));
-
+    node->m_description.count = counter;
+    node->m_description.m_suffix = curText;
+    sort(node->m_description.m_wordset.begin(), node->m_description.m_wordset.end(), pred();
+    
     return counter;
 }
 
