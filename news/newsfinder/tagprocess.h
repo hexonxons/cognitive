@@ -33,7 +33,7 @@ class CNewsFinder
 public:
 
     /**
-     * \fn  CNewsFinder::CNewsFinder(char *filename, UINT minSize, UINT minFreq);
+     * \fn  CNewsFinder::CNewsFinder(char *filename, unsigned int minSize, unsigned int minFreq);
      *
      * \brief   Конструктор.
      *
@@ -46,7 +46,7 @@ public:
      * \param   minFreq             Минимальная частота встречи последовательности тегов.
      */
 
-    CNewsFinder(LPCSTR lpcszInFileName, UINT unMinSize, UINT unMinFreq);
+    CNewsFinder(LPCSTR lpcszInFileName, unsigned int unMinSize, unsigned int unMinFreq);
 
     /**
      * \fn  CNewsFinder::~CNewsFinder();
@@ -60,7 +60,7 @@ public:
     ~CNewsFinder();
 
     /**
-     * \fn  VOID CNewsFinder::init(vector<std::pair<std::string, std::string>> &remDoubleTag,
+     * \fn  void CNewsFinder::init(vector<std::pair<std::string, std::string>> &remDoubleTag,
      *      vector<std::string> &remTag);
      *
      * \brief   Инициализация.
@@ -72,10 +72,10 @@ public:
      * \param [in,out]  remTag          Список одинарных тегов.
      */
 
-    VOID Init(vector<std::pair<std::string, std::string>> &remDoubleTag, vector<std::string> &remTag);
+    void Init(vector<std::pair<std::string, std::string>> &remDoubleTag, vector<std::string> &remTag);
 
     /**
-     * \fn  VOID CNewsFinder::getPossibleRanges();
+     * \fn  void CNewsFinder::getPossibleRanges();
      *
      * \brief   Получение всех возможных последовательностей тегов начала/конца новостей.
      *
@@ -83,10 +83,12 @@ public:
      * \date    7/20/2011
      */
 
-    VOID GetPossibleRanges();
+    void GetPossibleRangesUsingTable();
+
+    void GetPossibleRangesUsingTrie();
 
     /**
-     * \fn  VOID CNewsFinder::getNewsRange();
+     * \fn  void CNewsFinder::getNewsRange();
      *
      * \brief   Получение тегов начала/конца новости.
      *
@@ -94,10 +96,10 @@ public:
      * \date    7/20/2011
      */
 
-    VOID GetNewsRange();
+    void GetNewsRange();
 
     /**
-     * \fn  VOID CNewsFinder::writeNews(LPCSTR lpcszOutFileName);
+     * \fn  void CNewsFinder::writeNews(LPCSTR lpcszOutFileName);
      *
      * \brief   Запись новостей в файл.
      *
@@ -105,7 +107,7 @@ public:
      * \date    7/20/2011
      */
 
-    VOID WriteNews(LPCSTR lpcszOutFileName);
+    void WriteNews(LPCSTR lpcszOutFileName);
 
     /**
      * \fn  ULONG CNewsFinder::dwGetlastError();
@@ -131,8 +133,8 @@ private:
 
     struct pred
     {
-        bool operator()(pair<vector<CTagDescription>, UINT> left,
-                        pair<vector<CTagDescription>, UINT> right) const
+        bool operator()(pair<vector<CTagDescription>, unsigned int> left,
+                        pair<vector<CTagDescription>, unsigned int> right) const
         {
             if(left.second != right.second)
                 return left.second < right.second;
@@ -152,8 +154,8 @@ private:
 
     struct ltstr
     {
-        bool operator()(pair<vector<CTagDescription>, UINT> left,
-                        pair<vector<CTagDescription>, UINT> right) const
+        bool operator()(pair<vector<CTagDescription>, unsigned int> left,
+                        pair<vector<CTagDescription>, unsigned int> right) const
         {
             return vStrCmp(left.first, right.first) < 0;
         }
@@ -190,21 +192,21 @@ private:
     CNewsFinder();
 
     /**
-     * \fn  inline VOID CNewsFinder::LowerCase(string *pStr)
+     * \fn  inline void CNewsFinder::LowerCase(string *pStr)
      *
      * \brief   Приведение строки к строчным буквам.
      *
      * \param [in,out]  pstr    - Изменяемая строка.
      */
 
-    inline VOID LowerCase(std::string *pStr)
+    inline void LowerCase(std::string *pStr)
     {
         if(pStr->size())
             CharLower(&(*pStr->begin()));
     }
 
     /**
-     * \fn  VOID CNewsFinder::removeTags(vector<std::string> &tagsToRemove);
+     * \fn  void CNewsFinder::removeTags(vector<std::string> &tagsToRemove);
      *
      * \brief   Удаляет теги из Vстроки mod.
      *
@@ -214,10 +216,10 @@ private:
      * \param [in,out]  tagsToRemove    Массив тегов для удаления.
      */
 
-    VOID removeTags(vector<std::string> &tagsToRemove);
+    void removeTags(vector<std::string> &tagsToRemove);
 
     /**
-     * \fn  VOID CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
+     * \fn  void CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
      *
      * \brief   Удаляет парные теги и содержимое между ними из Vстроки mod.
      *
@@ -227,7 +229,7 @@ private:
      * \param [in,out]  tagsToRemove    Массив пар тегов для удаления.
      */
 
-     VOID removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
+     void removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
 
     /**
      * \fn  unsigned short CNewsFinder::getTagCode(const std::string &tag);
@@ -291,7 +293,7 @@ private:
 
     /**
      * \fn  int CNewsFinder::getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &str,
-     *      UINT pos);
+     *      unsigned int pos);
      *
      * \brief   Получает частоту встречи str в mod.
      *
@@ -305,7 +307,7 @@ private:
      */
 
     int getStringFreq(const vector<CTagDescription> &str,
-                      UINT unPos);
+                      unsigned int unPos);
 
     /**
      * \fn  int CNewsFinder::getTagSubs(const vector<CPair<CTag, CPair<int, int>>> &src, int pos);
@@ -326,7 +328,7 @@ private:
 
     /**
      * \fn  std::string CNewsFinder::getNews(vector<CPair<CTag, CPair<int, int>>> &newsBegin,
-     *      vector<CPair<CTag, CPair<int, int>>> &newsEnd, UINT &offset);
+     *      vector<CPair<CTag, CPair<int, int>>> &newsEnd, unsigned int &offset);
      *
      * \brief   возвращает текст новости.
      *
@@ -342,10 +344,10 @@ private:
 
     std::string CNewsFinder::getNews(vector<CTagDescription> &newsBegin,
                                      vector<CTagDescription> &newsEnd,
-                                     UINT &unOffset);
+                                     unsigned int &unOffset);
 #ifdef _DEBUG
     /**
-     * \fn  VOID CNewsFinder::printTable();
+     * \fn  void CNewsFinder::printTable();
      *
      * \brief   Печать таблицы.
      *
@@ -353,19 +355,19 @@ private:
      * \date    7/28/2011
      */
 
-    VOID printTable();
+    void printTable();
 
-    VOID dbgPrintData(VOID);
+    void dbgPrintData(void);
 
     std::string getTagWord(vector<CTagDescription> &tagSeq);
 #endif
 
 private:
     ///< Минимальный размер последовательности тегов.
-    UINT m_unMinSz;
+    unsigned int m_unMinSz;
 
     ///< Минимальная часота встречи последовательности тегов.
-    UINT m_unMinFreq;
+    unsigned int m_unMinFreq;
 
     ///< Строчка, содержащая в себе входной файл.
     std::string m_fileData;
@@ -373,7 +375,7 @@ private:
     ///< Set из пар <Vстрока, частота встречи строки>.
     //   Повторяющиеся строки не добавляются.
     //   От частот никак не зависит.
-    std::set <pair<vector<CTagDescription>, UINT>, ltstr> m_freq;
+    std::set <pair<vector<CTagDescription>, unsigned int>, ltstr> m_freq;
 
     ///<  Таблица для поиска повторяющихся строк.
     // Например: abcabcac
@@ -389,16 +391,16 @@ private:
     bool **m_pTable;
 
     ///< Размер таблицы - tableSize X tableSize.
-    UINT m_unTableSize;
+    unsigned int m_unTableSize;
 
     ///< Средняя длина строки в freq.
-    UINT m_unAvgLen;
+    unsigned int m_unAvgLen;
 
     ///< Средняя частота встречи строки.
-    UINT m_unAvgFreq;
+    unsigned int m_unAvgFreq;
 
     ///< массив возможных начал/концов новостей.
-    vector<pair<vector<CTagDescription>, UINT>> possibleTags;
+    vector<pair<vector<CTagDescription>, unsigned int>> possibleTags;
 
     ///< Vстрока начала новости
     vector<CTagDescription> m_newsBegin;
@@ -414,7 +416,7 @@ private:
     vector<CTagDescription> m_mod;
 
     ///< Текущая позиция в m_fileData
-    UINT m_unCurrFileDataPos;
+    unsigned int m_unCurrFileDataPos;
 
     ///< Код последней ошибки
     // 1  : Инициализация пройдена.

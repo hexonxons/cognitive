@@ -12,10 +12,10 @@
 
 typedef struct 
 {
-    INT nTagCode;
-    BOOL bIsClose;
-    INT nTagBegin;
-    INT nTagEnd;
+    int nTagCode;
+    bool bIsClose;
+    int nTagBegin;
+    int nTagEnd;
 } CTagDescription;
 
 //#########################################################################################

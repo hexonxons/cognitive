@@ -13,8 +13,8 @@ using std::vector;
 int vStrCmp(const std::vector<CTagDescription> &left,
             const std::vector<CTagDescription> &right)
 {
-    UINT i = left.size();
-    UINT j = right.size();
+    unsigned int i = left.size();
+    unsigned int j = right.size();
     if (i == j)
     {
         for (i = 0; i < left.size(); ++i)
@@ -33,8 +33,8 @@ int vStrCmp(const std::vector<CTagDescription> &left,
 int vIsSubstr(const std::vector<CTagDescription> &vStr1,
               const std::vector<CTagDescription> &vStr2)
 {
-    UINT j = 0;
-    for (UINT i = 0; i < vStr1.size(); ++i)
+    unsigned int j = 0;
+    for (unsigned int i = 0; i < vStr1.size(); ++i)
     {
         if (vStr2[j].nTagCode == vStr1[i].nTagCode)
         {
@@ -67,8 +67,8 @@ int vStrStr(const std::vector<CTagDescription> &vStr1,
             const std::vector<CTagDescription> &vStr2,
             int offset)
 {
-    UINT j = 0;
-    for (UINT i = offset; i < vStr1.size(); ++i)
+    unsigned int j = 0;
+    for (unsigned int i = offset; i < vStr1.size(); ++i)
     {
         if (vStr2[j].nTagCode == vStr1[i].nTagCode)
         {

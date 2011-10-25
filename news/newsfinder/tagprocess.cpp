@@ -6,10 +6,12 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-#include "tagprocess.h"
 #include <iostream>
 #include <algorithm>
 #include <stack>
+
+#include "../suffixtrie/suffixtrie.h"
+#include "tagprocess.h"
 
 
 using std::ios;
@@ -21,7 +23,7 @@ using std::stack;
 
 //##################################  PUBLIC SECTION  ###################################
 
-CNewsFinder::CNewsFinder(LPCSTR lpcszInFileName, UINT unMinSize, UINT unMinFreq):
+CNewsFinder::CNewsFinder(LPCSTR lpcszInFileName, unsigned int unMinSize, unsigned int unMinFreq):
     m_unMinSz(unMinSize),
     m_unAvgLen(0),
     m_unAvgFreq(0),
@@ -42,7 +44,7 @@ CNewsFinder::~CNewsFinder()
     if (m_unTableSize == 0)
         return;
 
-    for (UINT i = 0; i < m_unTableSize; ++i)
+    for (unsigned int i = 0; i < m_unTableSize; ++i)
         delete m_pTable[i];
     delete m_pTable;
 
@@ -51,19 +53,22 @@ CNewsFinder::~CNewsFinder()
 #endif
 }
 
-VOID CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string> &remTag)
+void CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string> &remTag)
 {
     if (m_lLastError == 1)
         return;
 
     m_lLastError = 1;
 
-    UINT i = 0;
-    UINT j = 0;
+    unsigned int i = 0;
+    unsigned int j = 0;
     int flag = 0;
+
     //LowerCase(&m_fileData);
     // M.A.P. плохая реализация преобразования в нижний регистр.  
+    // 
     transform(m_fileData.begin(), m_fileData.end(), m_fileData.begin(), tolower);
+
     CTagDescription tag;
     tag = getNextTag();
     // 551 == <body>
@@ -85,7 +90,12 @@ VOID CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string
 #ifdef _DEBUG
     dbgPrintData();
 #endif
+}
 
+void CNewsFinder::GetPossibleRangesUsingTable()
+{
+    unsigned int i = 0;
+    unsigned int j = 0;
     // M.A.P. Не лучше ли выделять память одним куском?
 
     // Задаем размер таблицы
@@ -122,15 +132,11 @@ VOID CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string
                 m_pTable[i][j] = 0;
         }
     }
-}
 
-VOID CNewsFinder::GetPossibleRanges()
-{
-    UINT i = 0;
     // Читаем в table по диагоналям
     // diag - Номер диагонали
     // diag = 0 - главная диагональ, заполнена 
-    UINT diag = 1;
+    unsigned int diag = 1;
     while(diag < m_unTableSize)
     {
         for (i = 0; i < m_unTableSize - diag; ++i)
@@ -160,10 +166,39 @@ VOID CNewsFinder::GetPossibleRanges()
     m_unAvgFreq = m_unAvgFreq / m_freq.size();
 }
 
-VOID CNewsFinder::GetNewsRange()
+int compare(const CTagDescription &left, const CTagDescription &right)
 {
-    set <pair<vector<CTagDescription>, UINT>, ltstr>::iterator setIter;
-    vector<pair<vector<CTagDescription>, UINT>>::iterator vectorIter;
+    if (left.nTagCode == right.nTagCode)
+        return 0;
+    if (left.nTagCode > right.nTagCode)
+        return 1;
+    else
+        return -1;
+}
+
+int comparestring(const char &left, const char &right)
+{
+    if (left == right)
+        return 0;
+    if (left > right)
+        return 1;
+    else
+        return -1;
+}
+
+void CNewsFinder::GetPossibleRangesUsingTrie()
+{
+    CTrie<vector<CTagDescription>, CTagDescription> tree(m_mod, m_mod.size(), compare);
+    //string str = "ababababab*";
+    //CTrie<string, char> tree(str, str.size(), comparestring);
+    tree.BuildSuffixTree();
+    tree.OutWalkTreeCounter();
+}
+
+void CNewsFinder::GetNewsRange()
+{
+    set <pair<vector<CTagDescription>, unsigned int>, ltstr>::iterator setIter;
+    vector<pair<vector<CTagDescription>, unsigned int>>::iterator vectorIter;
     
     for(setIter = m_freq.begin(); setIter != m_freq.end(); ++setIter)
     {
@@ -176,12 +211,12 @@ VOID CNewsFinder::GetNewsRange()
     sort(possibleTags.begin(), possibleTags.end(), CNewsFinder::pred());
 
 
-    UINT cnt = 1;
+    unsigned int cnt = 1;
     while (cnt < possibleTags.size())
     {
         vector<CTagDescription> temp = (possibleTags.end() - cnt)->first;
         vectorIter = possibleTags.end() - cnt - 1;
-        for (UINT i = 0; i < possibleTags.size(); ++i)
+        for (unsigned int i = 0; i < possibleTags.size(); ++i)
         {
             while(vIsSubstr(temp, vectorIter->first) || vIsSubstr(vectorIter->first, temp))
             {
@@ -199,7 +234,7 @@ VOID CNewsFinder::GetNewsRange()
     }
 
     int newAvgFreq = 0;
-    for (UINT i = 0; i < possibleTags.size(); ++i)
+    for (unsigned int i = 0; i < possibleTags.size(); ++i)
     {
         newAvgFreq += possibleTags[i].second;
     }
@@ -209,13 +244,13 @@ VOID CNewsFinder::GetNewsRange()
          --vectorIter)
     {
         vector<CTagDescription> possibleBegin = vectorIter->first;
-        for (vector<pair<vector<CTagDescription>, UINT>>::iterator it = vectorIter - 1;; --it)
+        for (vector<pair<vector<CTagDescription>, unsigned int>>::iterator it = vectorIter - 1;; --it)
         {
             vector<CTagDescription> possibleEnd = it->first;
             vector<CTagDescription>::iterator ite = pStrStr(m_mod, possibleBegin);
-            UINT beg = ite->nTagBegin;
+            unsigned int beg = ite->nTagBegin;
             ite = pStrStr(m_mod, possibleEnd);
-            UINT end = ite->nTagEnd;
+            unsigned int end = ite->nTagEnd;
             if (beg - end < m_fileData.size() / m_unMinSz || end - beg < m_fileData.size() / m_unMinSz)
             {
                 if (beg > end)
@@ -246,7 +281,7 @@ VOID CNewsFinder::GetNewsRange()
     }
 }
 
-VOID CNewsFinder::WriteNews(LPCSTR lpcszOutFileName)
+void CNewsFinder::WriteNews(LPCSTR lpcszOutFileName)
 {
     ///< Выходной файл.
     std::fstream fileOut(lpcszOutFileName, ios::out);
@@ -254,7 +289,7 @@ VOID CNewsFinder::WriteNews(LPCSTR lpcszOutFileName)
     fileOut << "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head>\n"
     "<body>\n";
 
-    UINT offset = 0;
+    unsigned int offset = 0;
     // Получаем строчку новости и выводим её
     for(;;)
     {
@@ -269,10 +304,10 @@ VOID CNewsFinder::WriteNews(LPCSTR lpcszOutFileName)
 
 //#################################  PRIVATE SECTION  #####################################
 
-VOID CNewsFinder::removeTags(vector<std::string> &tagsToRemove)
+void CNewsFinder::removeTags(vector<std::string> &tagsToRemove)
 {
-    UINT i = 0;
-    UINT j = 0;
+    unsigned int i = 0;
+    unsigned int j = 0;
     if (tagsToRemove.size() == 0)
         return;
 
@@ -295,10 +330,10 @@ VOID CNewsFinder::removeTags(vector<std::string> &tagsToRemove)
     }
 }
 
-VOID CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove)
+void CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove)
 {
-    UINT i = 0;
-    UINT j = 0;
+    unsigned int i = 0;
+    unsigned int j = 0;
 
     // M.A.P. очень грубо реализован механизм вычистки тегов 
     // 1. поиск перебором 2. многократный персчет кода
@@ -331,7 +366,7 @@ VOID CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tags
 unsigned short CNewsFinder::getTagCode(const string &tag)
 {
     unsigned short code = 0;
-    for (UINT i = 0; i < tag.size(); ++i)
+    for (unsigned int i = 0; i < tag.size(); ++i)
     {
         code += tag[i];
     }
@@ -393,9 +428,9 @@ CTagDescription CNewsFinder::getNextTag()
 
 int CNewsFinder::checksum(const vector<CTagDescription> &src)
 {
-    UINT cnt = 0;
+    unsigned int cnt = 0;
 
-    for (UINT i = 0; i < src.size(); ++i)
+    for (unsigned int i = 0; i < src.size(); ++i)
     {
         // если тег закрывающий.
         if (src[i].bIsClose == 1)
@@ -411,7 +446,7 @@ int CNewsFinder::checksum(const vector<CTagDescription> &src)
 // M.A.P. ничего не говорящее название фукнции
 int CNewsFinder::checkWordTruePairs(const vector<CTagDescription> &src)
 {
-    UINT i;
+    unsigned int i;
     stack<CTagDescription> st;
 
     for(i = 0; i < src.size(); ++i)
@@ -439,17 +474,17 @@ int CNewsFinder::checkWordTruePairs(const vector<CTagDescription> &src)
 }
 
 int CNewsFinder::getStringFreq(const vector<CTagDescription> &str,
-                               UINT unPos)
+                               unsigned int unPos)
 {
-    UINT freq = 0;
-    UINT i = 0;
-    UINT j = 0;
+    unsigned int freq = 0;
+    unsigned int i = 0;
+    unsigned int j = 0;
 
     for (i = 0; i < m_unTableSize; ++i)
     {
         if (m_pTable[i][unPos] != 0)
         {
-            UINT temp = i;
+            unsigned int temp = i;
             while (j < str.size() && temp < m_unTableSize && m_pTable[temp][unPos + j] != 0)
             {
                 ++temp;
@@ -482,7 +517,7 @@ int CNewsFinder::getTagSubs(const vector<CTagDescription> &src, int nPos)
             m_subsArr.insert(first);
             if (checksum(first) && checkWordTruePairs(first))
             {
-                UINT strFreq = getStringFreq(first, nPos);
+                unsigned int strFreq = getStringFreq(first, nPos);
                 if (strFreq >= m_unMinFreq)
                 {
                     m_freq.insert(make_pair(first, strFreq));
@@ -499,7 +534,7 @@ int CNewsFinder::getTagSubs(const vector<CTagDescription> &src, int nPos)
             m_subsArr.insert(second);
             if (checksum(second) && checkWordTruePairs(second))
             {
-                UINT strFreq = getStringFreq(second, nPos + 1);
+                unsigned int strFreq = getStringFreq(second, nPos + 1);
                 if (strFreq >= m_unMinFreq)
                 {
                     m_freq.insert(make_pair(second, strFreq));
@@ -523,7 +558,7 @@ int CNewsFinder::getTagSubs(const vector<CTagDescription> &src, int nPos)
         {
             if (checksum(src) && checkWordTruePairs(src))
             {
-                UINT strFreq = getStringFreq(src, nPos);
+                unsigned int strFreq = getStringFreq(src, nPos);
                 if (strFreq < m_unMinFreq)
                     return 0;
                 m_freq.insert(make_pair(src, strFreq));
@@ -539,9 +574,9 @@ int CNewsFinder::getTagSubs(const vector<CTagDescription> &src, int nPos)
 
 string CNewsFinder::getNews(vector<CTagDescription> &newsBegin,
                             vector<CTagDescription> &newsEnd,
-                            UINT &unOffset)
+                            unsigned int &unOffset)
 {
-    UINT i = 0;
+    unsigned int i = 0;
     // Ищем позицию, с которой начинается новость
     vector<CTagDescription>::iterator it = pStrStr(m_mod, newsBegin, unOffset);
     if (it == m_mod.end())
@@ -571,7 +606,7 @@ long CNewsFinder::GetlastError()
 
 #ifdef _DEBUG
 
-    VOID CNewsFinder::dbgPrintData(VOID)
+    void CNewsFinder::dbgPrintData(void)
     {
          vector<CTagDescription>::iterator it = m_mod.begin();
          for(; it != m_mod.end(); ++it)
@@ -581,11 +616,11 @@ long CNewsFinder::GetlastError()
          }
     }
 
-    VOID CNewsFinder::printTable()
+    void CNewsFinder::printTable()
     {
-        for (UINT i = 0; i < m_unTableSize; ++i)
+        for (unsigned int i = 0; i < m_unTableSize; ++i)
         {
-            for (UINT j = 0; j < m_unTableSize; ++j)
+            for (unsigned int j = 0; j < m_unTableSize; ++j)
             {
                 std::cout << m_pTable[i][j] << " ";
             }
@@ -596,7 +631,7 @@ long CNewsFinder::GetlastError()
     string CNewsFinder::getTagWord(vector<CTagDescription> &tagSeq)
     {
         string reti;
-        for(UINT i = 0; i < tagSeq.size(); ++i)
+        for(unsigned int i = 0; i < tagSeq.size(); ++i)
             reti += plpszTagTable[tagSeq[i].nTagCode];
         return reti;
     }
