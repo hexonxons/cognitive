@@ -26,23 +26,25 @@ int compare(const char &left, const char &right)
 
 int main()
 {
-    std::fstream fileIn("news", std::ios::in);
-    std::string str = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
+   // std::fstream fileIn("news", std::ios::in);
+   // std::string str = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
+    std::string str = "ababababab";
     str.push_back('*');
     CTrie<std::string, char> tree(str, str.length(), compare);
     tree.BuildSuffixTree();
 
-    for (int i = 0; i < str.length(); ++i)
-    {
-        for (int j = i + 1; j <= str.length(); ++j)
-        {
-            string fnd = str.substr(i, j - i);
-            cout << fnd << " -- " << tree.Find(fnd) << "\n";
-        }
-    }
+    //for (int i = 0; i < str.length(); ++i)
+    //{
+    //    for (int j = i + 1; j <= str.length(); ++j)
+    //    {
+    //        string fnd = str.substr(i, j - i);
+    //        cout << fnd << " -- " << tree.Find(fnd) << "\n";
+    //    }
+    //}
 
-    cout << "\n\nFreq section\n\n";
+    //cout << "\n\nFreq section\n\n";
 
-    tree.OutWalkTreeCounter();
+    tree.GetRanges(2, 2);
+    tree.PrintSubstrings();
     return 0;
 }

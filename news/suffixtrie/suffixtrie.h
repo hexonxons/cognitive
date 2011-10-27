@@ -24,16 +24,22 @@ using std::pair;
 // у класса T должен существовать оператор [] и метод size()
 template<class T, class Y> class CTrie
 {
+
+private:
+    struct ltstr
+    {
+        bool operator()(const vector<pair<int, int>> &left, const vector<pair<int, int>> &right) const
+        {
+            return left.size()< right.size();
+        }
+    };
+
 public:
 
     typedef int (*Compare)(const Y &pElem1, const Y &pElem2);
 
     struct CSuffixDescription
     {
-#ifdef _DEBUG
-        T m_suffix;
-#endif
-        int count;
         vector<pair<int, int>> m_wordset;
         vector<pair<int, int>> m_realwordset;
     };
@@ -66,7 +72,6 @@ public:
         {
             return m_start == -1;
         }
-
 
         // дети текущего нода
         vector<CSuffixNode *> m_children;
@@ -104,6 +109,18 @@ public:
     {
         m_nodeStorage.~CBasicDataBase();
         m_stateStorage.~CBasicDataBase();
+    }
+
+    void PrintSubstrings()
+    {
+        for (vector< vector<pair<int, int>>>::iterator it = neededSubstrings.begin(); it != neededSubstrings.end(); ++it)
+        {
+            for (int i = it->front().first; i < it->front().second + 1; ++i)
+            {
+                cout << m_text[i];
+            }
+            cout << " - " << it->size() << "\n";
+        }
     }
 
     void BuildSuffixTree()
@@ -151,22 +168,11 @@ public:
         }
     }
 
-    void OutWalkTreeCounter()
+    void GetRanges(int minLength, int minFreq)
     {
-        walkTreeCounter(m_pRoot, 0);
-
-//#ifdef _DEBUG
-//        for (vector<pair<T, int>>::iterator it = m_freq.begin(); it != m_freq.end(); ++it)
-//        {
-//            DebugPrint("m_freq : %s -- %d\n", it->first.c_str(), it->second);
-//        }
-//
-//        for (vector<pair<T, int>>::iterator it = m_realfreq.begin(); it != m_realfreq.end(); ++it)
-//        {
-//            DebugPrint("m_realfreq : %s -- %d\n", it->first.c_str(), it->second);
-//        }
-//#endif  //_DEBUG
-
+        buidFreqArrays(m_pRoot, 0);
+        getPossibleRanges(m_pRoot, minLength, minFreq);
+        sort(neededSubstrings.begin(), neededSubstrings.end(), ltstr());
     }
 
     int Find(const T &str)
@@ -190,6 +196,8 @@ private:
             return left.first < right.first;
         }
     };
+
+   
 
     void slowscan(CState *state, CSuffixNode *currnode, int j)
     {
@@ -346,52 +354,39 @@ private:
         }
     }
 
-    int walkTreeCounter(CSuffixNode *node, int size)
+    void buidFreqArrays(CSuffixNode *node, int size)
     {
-        int counter = 0;
         int offset = size;
 
-        /*if (node->m_start != -1)
-        {
-            curText += string(m_text, node->m_start, node->m_end - node->m_start + 1);
-        }*/
+        // если не root
         if (node->m_start != -1)
             size +=  node->m_end + 1 - node->m_start;
 
-        // если детей нет - встретилось 1 раз
+        // если детей нет
         if (node->m_children.size() == 0)
         {
-            //m_freq.push_back(make_pair(curText, 1));
-#ifdef _DEBUG
-            //node->m_description.m_suffix = curText;
-#endif
-            node->m_description.count = 1;
+            // начало - конец подстроки
             node->m_description.m_wordset.push_back(make_pair(node->m_start - offset, node->m_end));
-           // m_realfreq.push_back(make_pair(curText, 1));
-            return 1;
+            node->m_description.m_realwordset.push_back(make_pair(node->m_start - offset, node->m_end));
+            return;
         }
 
-        // иначе складываем степень всех детей
+        // иначе проходим по всем детям
         for (int i = 0; i < node->m_children.size(); ++i)
         {
-            counter += walkTreeCounter(node->m_children[i], size);
+            buidFreqArrays(node->m_children[i], size);
+            // записываем начала - концы подстрок в реальной строке
             for (std::vector<std::pair<int, int>>::iterator it = node->m_children[i]->m_description.m_wordset.begin();
-                it != node->m_children[i]->m_description.m_wordset.end(); 
-                ++it)
+                                                            it != node->m_children[i]->m_description.m_wordset.end(); 
+                                                            ++it)
             {
                 node->m_description.m_wordset.push_back(make_pair(it->first, it->second + node->m_children[i]->m_start - node->m_children[i]->m_end - 1));
             }
         }
-
-       // m_freq.push_back(make_pair(curText, counter));
-        node->m_description.count = counter;
-
-#ifdef _DEBUG
-        //node->m_description.m_suffix = curText;
-#endif
-
+        // сортируем пары начал - концов
         sort(node->m_description.m_wordset.begin(), node->m_description.m_wordset.end(), pred());
 
+        // выкидываем пересечения
         std::vector<std::pair<int, int>>::iterator it = node->m_description.m_wordset.begin();
         node->m_description.m_realwordset.push_back(*it);
         ++it;
@@ -401,9 +396,25 @@ private:
                 node->m_description.m_realwordset.push_back(*it);
             ++it;
         }
-        //m_realfreq.push_back(make_pair(curText, node->m_description.m_realwordset.size()));
+    }
 
-        return counter;
+    void getPossibleRanges(CSuffixNode *node, int minWordLength, int minWordFreq)
+    {
+        // если частота встречи текущего нода меньше минимальной, то просматривать детей нет смысла
+        if (node->m_description.m_realwordset.size() < minWordFreq)
+            return;
+        
+        // если длина подстроки больше необходимой, то сохраняем подстроку
+        if (node->m_description.m_realwordset[0].second - node->m_description.m_realwordset[0].first + 1 >= minWordLength)
+        {
+            neededSubstrings.push_back(node->m_description.m_realwordset);
+        }
+
+        // запускаем по детям
+        for (int i = 0; i < node->m_children.size(); ++i)
+        {
+            getPossibleRanges(node->m_children[i], minWordLength, minWordFreq);
+        }
     }
 
     int findStr(const T &data, CSuffixNode *node, int &curpos)
@@ -437,11 +448,9 @@ private:
 
     // текст, для которого строится суффиксное дерево
     T m_text;
-    // массив частот встреч подстрок и частот встреч подстрок с учетом пересечения
-    //vector<pair<T, int>> m_freq;
-   // vector<pair<T, int>> m_realfreq;
     int m_textLength;
     Compare m_compareFunction;
+    vector< vector<pair<int, int>>> neededSubstrings;
 };
 
 #endif  //__SUFFIXTRIE_H__
