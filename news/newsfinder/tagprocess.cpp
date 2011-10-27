@@ -176,23 +176,15 @@ int compare(const CTagDescription &left, const CTagDescription &right)
         return -1;
 }
 
-int comparestring(const char &left, const char &right)
-{
-    if (left == right)
-        return 0;
-    if (left > right)
-        return 1;
-    else
-        return -1;
-}
-
 void CNewsFinder::GetPossibleRangesUsingTrie()
 {
     CTrie<vector<CTagDescription>, CTagDescription> tree(m_mod, m_mod.size(), compare);
     //string str = "ababababab*";
     //CTrie<string, char> tree(str, str.size(), comparestring);
     tree.BuildSuffixTree();
-    tree.OutWalkTreeCounter();
+    tree.GetRanges(m_unMinSz, m_unMinFreq);
+
+
 }
 
 void CNewsFinder::GetNewsRange()
