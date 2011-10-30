@@ -114,8 +114,7 @@ int main()
     {
         return -1;
     }
-    finder.GetPossibleRangesUsingTrie();
-    finder.GetPossibleRangesUsingTable();
+    finder.GetPossibleRanges();
     finder.GetNewsRange();
     finder.WriteNews("out.html");
 

@@ -74,18 +74,7 @@ public:
 
     void Init(vector<std::pair<std::string, std::string>> &remDoubleTag, vector<std::string> &remTag);
 
-    /**
-     * \fn  void CNewsFinder::getPossibleRanges();
-     *
-     * \brief   ѕолучение всех возможных последовательностей тегов начала/конца новостей.
-     *
-     * \author  Alexander
-     * \date    7/20/2011
-     */
-
-    void GetPossibleRangesUsingTable();
-
-    void GetPossibleRangesUsingTrie();
+    void GetPossibleRanges();
 
     /**
      * \fn  void CNewsFinder::getNewsRange();
@@ -272,59 +261,7 @@ private:
      * \return  1, если количество открывающих тегов больше количества закрывающих 0 иначе.
      */
 
-    int checksum(const vector<CTagDescription> &src);
-
-    /**
-     * \fn  int CNewsFinder::checkWordTruePairs(const vector<CPair<CTag, CPair<int, int>>> &src);
-     *
-     * \brief   ¬ыполн€ет проверку на наличие открывающего тега каждому закрывающему тегу,
-     *          присутствующему в этой Vстроке.
-     *
-     * \author  Alexander
-     * \date    7/13/2011
-     *
-     * \param   src Vстрока тегов.
-     *
-     * \return  1, если дл€ каждого закрывающего тега есть открывающий
-     * 			0, иначе.
-     */
-
-    int checkWordTruePairs(const vector<CTagDescription> &src);
-
-    /**
-     * \fn  int CNewsFinder::getStringFreq(const vector<CPair<CTag, CPair<int, int>>> &str,
-     *      unsigned int pos);
-     *
-     * \brief   ѕолучает частоту встречи str в mod.
-     *
-     * \author  Alexander
-     * \date    7/19/2011
-     *
-     * \param   str Vстрока, частоту встречи которой мы ищем.
-     * \param   pos ѕозици€ в таблице по вертикали, с которой начались совпадени€ str c src.
-     *
-     * \return  „естота встречи str в mod.
-     */
-
-    int getStringFreq(const vector<CTagDescription> &str,
-                      unsigned int unPos);
-
-    /**
-     * \fn  int CNewsFinder::getTagSubs(const vector<CPair<CTag, CPair<int, int>>> &src, int pos);
-     *
-     * \brief   ѕолучает все последовательности тегов, подход€щие под услови€.
-     *
-     * \author  Alexander
-     * \date    7/19/2011
-     *
-     * \param   src Vстрока тегов, дл€ которой (и всех еЄ подстрок) мы хотим найти частоту встречи и
-     *              котора€ €вл€етс€ возможным началом/концом новости.
-     * \param   pos ѕозици€ в таблице по вертикали, с которой начались совпадени€ str c src.
-     *
-     * \return  1/0.
-     */
-
-    int getTagSubs(const vector<CTagDescription> &src, int nPos);
+    int checkTag(const vector<CTagDescription> &src);
 
     /**
      * \fn  std::string CNewsFinder::getNews(vector<CPair<CTag, CPair<int, int>>> &newsBegin,
@@ -346,16 +283,6 @@ private:
                                      vector<CTagDescription> &newsEnd,
                                      unsigned int &unOffset);
 #ifdef _DEBUG
-    /**
-     * \fn  void CNewsFinder::printTable();
-     *
-     * \brief   ѕечать таблицы.
-     *
-     * \author  Alexander
-     * \date    7/28/2011
-     */
-
-    void printTable();
 
     void dbgPrintData(void);
 
@@ -364,10 +291,10 @@ private:
 
 private:
     ///< ћинимальный размер последовательности тегов.
-    unsigned int m_unMinSz;
+    unsigned int m_minLen;
 
     ///< ћинимальна€ часота встречи последовательности тегов.
-    unsigned int m_unMinFreq;
+    unsigned int m_minFreq;
 
     ///< —трочка, содержаща€ в себе входной файл.
     std::string m_fileData;
@@ -377,27 +304,11 @@ private:
     //   ќт частот никак не зависит.
     std::set <pair<vector<CTagDescription>, unsigned int>, ltstr> m_freq;
 
-    ///<  “аблица дл€ поиска повтор€ющихс€ строк.
-    // Ќапример: abcabcac
-    //   a b c a b c a c
-    // a * 0 0 * 0 0 * 0
-    // b 0 * 0 0 * 0 0 0
-    // c 0 0 * 0 0 * 0 *
-    // a * 0 0 * 0 0 * 0
-    // b 0 * 0 0 * 0 0 0
-    // c 0 0 * 0 0 * 0 *
-    // a * 0 0 * 0 0 * 0
-    // c 0 0 * 0 0 * 0 *
-    bool **m_pTable;
-
-    ///< –азмер таблицы - tableSize X tableSize.
-    unsigned int m_unTableSize;
-
     ///< —редн€€ длина строки в freq.
-    unsigned int m_unAvgLen;
+    unsigned int m_avgLen;
 
     ///< —редн€€ частота встречи строки.
-    unsigned int m_unAvgFreq;
+    unsigned int m_avgFreq;
 
     ///< массив возможных начал/концов новостей.
     vector<pair<vector<CTagDescription>, unsigned int>> possibleTags;

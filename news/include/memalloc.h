@@ -8,8 +8,6 @@
 #ifndef __MEMALLOC_H__
 #define __MEMALLOC_H__
 
-#include "banned.h"
-
 // размер блока
 const int BLOCK_SIZE = 10;
 
