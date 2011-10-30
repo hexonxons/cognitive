@@ -8,6 +8,8 @@
 #ifndef __SUFFIXTRIE_H__
 #define __SUFFIXTRIE_H__
 
+#pragma warning( disable : 4018)
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -30,7 +32,7 @@ private:
     {
         bool operator()(const vector<pair<int, int>> &left, const vector<pair<int, int>> &right) const
         {
-            return left.size()< right.size();
+            return left.size() > right.size();
         }
     };
 
@@ -109,18 +111,6 @@ public:
     {
         m_nodeStorage.~CBasicDataBase();
         m_stateStorage.~CBasicDataBase();
-    }
-
-    void PrintSubstrings()
-    {
-        for (vector< vector<pair<int, int>>>::iterator it = neededSubstrings.begin(); it != neededSubstrings.end(); ++it)
-        {
-            for (int i = it->front().first; i < it->front().second + 1; ++i)
-            {
-                cout << m_text[i];
-            }
-            cout << " - " << it->size() << "\n";
-        }
     }
 
     void BuildSuffixTree()
@@ -450,6 +440,8 @@ private:
     T m_text;
     int m_textLength;
     Compare m_compareFunction;
+
+public:
     vector< vector<pair<int, int>>> neededSubstrings;
 };
 

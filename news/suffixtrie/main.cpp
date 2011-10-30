@@ -45,6 +45,6 @@ int main()
     //cout << "\n\nFreq section\n\n";
 
     tree.GetRanges(2, 2);
-    tree.PrintSubstrings();
+    //tree.PrintSubstrings();
     return 0;
 }
