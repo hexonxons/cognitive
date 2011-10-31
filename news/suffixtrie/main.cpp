@@ -31,7 +31,6 @@ int main()
     std::string str = "ababababab";
     str.push_back('*');
     CTrie<std::string, char> tree(str, str.length(), compare);
-    tree.BuildSuffixTree();
 
     //for (int i = 0; i < str.length(); ++i)
     //{

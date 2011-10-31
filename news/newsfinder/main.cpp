@@ -74,7 +74,7 @@ int main()
     // массивы ненужных тегов
     vector<pair<string, string>> remDoubleTag;
     vector<string> remTag;
-    CNewsFinder finder("news", 8, 10);
+    CNewsFinder finder("news", 8, 10, 14);
    // remDoubleTag.push_back(make_pair("<a>", "</a>"));
     //remDoubleTag.push_back(make_pair("<b>", "</b>"));
     //remTag.push_back("<c>");
@@ -115,8 +115,8 @@ int main()
         return -1;
     }
     finder.GetPossibleRanges();
-    finder.GetNewsRange();
-    finder.WriteNews("out.html");
+    //finder.GetNewsRange();
+    //finder.WriteNews("out.html");
 
 	return 0;
 }

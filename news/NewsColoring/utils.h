@@ -6,6 +6,7 @@
 
 #ifndef __UTILS_H__
 #define __UTILS_H__
+#include "stdafx.h"
 
 #include <vector>
 #include <windows.h>

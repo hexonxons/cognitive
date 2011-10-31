@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "newsfinder", "newsfinder\ne
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "suffixtrie", "suffixtrie\suffixtrie.vcproj", "{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NewsColoring", "NewsColoring\NewsColoring.vcproj", "{650169D0-7CD0-44AB-9B1B-218D826B9677}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}.Debug|Win32.Build.0 = Debug|Win32
 		{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}.Release|Win32.ActiveCfg = Release|Win32
 		{651F2BD6-E83C-4839-B3D4-2CD3F2793E3F}.Release|Win32.Build.0 = Release|Win32
+		{650169D0-7CD0-44AB-9B1B-218D826B9677}.Debug|Win32.ActiveCfg = Debug|Win32
+		{650169D0-7CD0-44AB-9B1B-218D826B9677}.Debug|Win32.Build.0 = Debug|Win32
+		{650169D0-7CD0-44AB-9B1B-218D826B9677}.Release|Win32.ActiveCfg = Release|Win32
+		{650169D0-7CD0-44AB-9B1B-218D826B9677}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

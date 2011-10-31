@@ -5,6 +5,7 @@
  */
 
 #define _CRT_SECURE_NO_WARNINGS
+#include "stdafx.h"
 
 #include <iostream>
 #include <algorithm>
@@ -20,6 +21,14 @@ using std::string;
 using std::pair;
 using std::set;
 using std::stack;
+
+struct pred
+{
+    bool operator () (const vector<pair<int, int>> &left, const vector<pair<int, int>> &right)
+    {
+        return left.size() > right.size();
+    }
+};
 
 //##################################  PUBLIC SECTION  ###################################
 
@@ -152,8 +161,27 @@ void CNewsFinder::GetPossibleRanges()
         ++cnt;
     }
 
+    vector<vector<pair<int, int>>> tagRanges;
+
+    for (vector<CTagSequence>::iterator it = tags.begin(); it != tags.end(); ++it)
+    {
+        tagRanges.push_back(it->tagRange);
+    }
+    std::sort(tagRanges.begin(), tagRanges.end(),pred());
+
+    for (vector<vector<pair<int, int>>>::iterator it = tagRanges.begin(); it != tagRanges.end(); ++it)
+    {
+        int sz = it[0].size();
+        if (sz != 17)
+            continue;
+
+        for (vector<pair<int, int>>::iterator jt = it[0].begin(); jt != it[0].end(); ++jt)
+        {
+            string str(m_fileData, jt->first, jt->second - jt->first);
+        }
+    } 
     // Вычисляем средние длины/частоты строк
-   m_avgLen = m_avgLen / tags.size();
+   //m_avgLen = m_avgLen / tags.size();
     //m_unAvgFreq = m_unAvgFreq / m_freq.size();
 
 }
@@ -459,16 +487,6 @@ long CNewsFinder::GetlastError()
 //#################################  DEBUG SECTION  #####################################
 
 #ifdef _DEBUG
-
-    void CNewsFinder::dbgPrintData(void)
-    {
-         vector<CTagDescription>::iterator it = m_mod.begin();
-         for(; it != m_mod.end(); ++it)
-         {
-             string word(m_fileData, it->nTagBegin, it->nTagEnd - it->nTagBegin + 1);
-             DebugPrint("%s", (LPTSTR)word.c_str());
-         }
-    }
 
     string CNewsFinder::getTagWord(vector<CTagDescription> &tagSeq)
     {

@@ -105,6 +105,7 @@ public:
         m_pRoot->m_pLink = m_pRoot;
         m_textLength = textLength;
         m_compareFunction = compareFunction;
+        buildSuffixTree();
     }
 
     virtual ~CTrie()
@@ -113,7 +114,37 @@ public:
         m_stateStorage.~CBasicDataBase();
     }
 
-    void BuildSuffixTree()
+    vector< vector<pair<int, int>>> GetRanges(int minLength, int minFreq)
+    {
+        buidFreqArrays(m_pRoot, 0);
+        getPossibleRanges(m_pRoot, minLength, minFreq);
+        sort(neededSubstrings.begin(), neededSubstrings.end(), ltstr());
+        return neededSubstrings;
+    }
+
+    int Find(const T &str)
+    {
+        int count = 0;
+        return findStr(str, m_pRoot, count);
+    }
+
+private:
+
+    CTrie();
+
+    struct pred
+    {
+        bool operator () (const pair<int, int> &left, const pair<int, int> &right) const
+        {
+            if (left.first == right.first)
+            {
+                return left.second < right.second;
+            }
+            return left.first < right.first;
+        }
+    };
+
+    void buildSuffixTree()
     {
         CSuffixNode *u = m_pRoot;
         CSuffixNode *v = m_pRoot;
@@ -157,37 +188,6 @@ public:
             v = state->v;
         }
     }
-
-    void GetRanges(int minLength, int minFreq)
-    {
-        buidFreqArrays(m_pRoot, 0);
-        getPossibleRanges(m_pRoot, minLength, minFreq);
-        sort(neededSubstrings.begin(), neededSubstrings.end(), ltstr());
-    }
-
-    int Find(const T &str)
-    {
-        int count = 0;
-        return findStr(str, m_pRoot, count);
-    }
-
-private:
-
-    CTrie();
-
-    struct pred
-    {
-        bool operator () (const pair<int, int> &left, const pair<int, int> &right) const
-        {
-            if (left.first == right.first)
-            {
-                return left.second < right.second;
-            }
-            return left.first < right.first;
-        }
-    };
-
-   
 
     void slowscan(CState *state, CSuffixNode *currnode, int j)
     {
@@ -440,8 +440,6 @@ private:
     T m_text;
     int m_textLength;
     Compare m_compareFunction;
-
-public:
     vector< vector<pair<int, int>>> neededSubstrings;
 };
 

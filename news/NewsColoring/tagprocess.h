@@ -6,6 +6,7 @@
 
 #ifndef __TAGPROCESS_H__
 #define __TAGPROCESS_H__
+#include "stdafx.h"
 
 #include "utils.h"
 #include "../include/debug.h"
