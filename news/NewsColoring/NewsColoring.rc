@@ -54,8 +54,8 @@ BEGIN
     "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)\r\n"
     "LANGUAGE 25, 1\r\n"
     "#pragma code_page(1251)\r\n"
-    "#include ""res\\NewsColoring.rc2""  // ресурсы, не редактируемые в Microsoft Visual C++\r\n"
-    "#include ""l.RUS\\afxres.rc""      // Стандартные компоненты\r\n"
+    "#include ""res\\NewsColoring.rc2""  // ?ano?nu, ia ?aaaeoe?oaiua a Microsoft Visual C++\r\n"
+    "#include ""l.RUS\\afxres.rc""      // Noaiaa?oiua eiiiiiaiou\r\n"
     "#endif\r\n"
     "\0"
 END
@@ -77,14 +77,14 @@ IDR_MAINFRAME           ICON                    "res\\NewsColoring.ico"
 // Dialog
 //
 
-IDD_NEWSCOLORING_DIALOG DIALOGEX 0, 0, 802, 361
+IDD_NEWSCOLORING_DIALOG DIALOGEX 0, 0, 760, 425
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "NewsColoring"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "Exit",IDOK,745,340,50,14,NOT WS_TABSTOP
-    CONTROL         "",IDC_RICHEDIT,"RichEdit20A",ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_BORDER | WS_VSCROLL | WS_HSCROLL,7,7,788,261,WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "Exit",IDOK,708,402,50,12,NOT WS_TABSTOP
+    CONTROL         "",IDC_RICHEDIT,"RichEdit20A",ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_BORDER | WS_VSCROLL | WS_HSCROLL,7,7,743,261,WS_EX_STATICEDGE
     PUSHBUTTON      "Run",IDC_BTNRUN,107,335,78,12
     EDITTEXT        IDC_EDITFILENAME,15,283,78,12,ES_AUTOHSCROLL
     LTEXT           "File name",IDC_STATIC,15,273,47,8
@@ -94,6 +94,12 @@ BEGIN
     LTEXT           "Min freq",IDC_STATIC,107,272,47,8
     LTEXT           "Min wordlen",IDC_STATIC,15,306,47,8
     LTEXT           "News number",IDC_STATIC,107,306,47,8
+    LISTBOX         IDC_LIST,192,276,450,144,LBS_MULTIPLESEL | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Select ranges",IDC_BTNSELECTVALUES,648,378,80,12
+    LTEXT           "Color",IDC_STATIC,648,282,47,8
+    CONTROL         "Red",IDC_RADIORED,"Button",BS_AUTORADIOBUTTON,648,300,29,10
+    CONTROL         "Green",IDC_RADIOGREEN,"Button",BS_AUTORADIOBUTTON,648,312,35,10
+    CONTROL         "Blue",IDC_RADIOBLUE,"Button",BS_AUTORADIOBUTTON,648,324,29,10
 END
 
 
@@ -147,9 +153,9 @@ BEGIN
     IDD_NEWSCOLORING_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 795
+        RIGHTMARGIN, 753
         TOPMARGIN, 7
-        BOTTOMMARGIN, 354
+        BOTTOMMARGIN, 418
     END
 END
 #endif    // APSTUDIO_INVOKED

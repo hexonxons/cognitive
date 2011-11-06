@@ -16,7 +16,7 @@
 #include "targetver.h"
 
 #define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS      // некоторые конструкторы CString будут явными
-
+#define _CRT_SECURE_NO_WARNINGS
 // отключает функцию скрытия некоторых общих и часто пропускаемых предупреждений MFC
 #define _AFX_ALL_WARNINGS
 
@@ -38,7 +38,7 @@
 
 
 
-
+#include "utils.h"
 
 
 

@@ -133,6 +133,15 @@ private:
         }
     };
 
+    struct pred1
+    {
+        bool operator()(vector<pair<int, int>> left,
+            vector<pair<int, int>> right) const
+        {
+            return left.size() < right.size();
+        }
+    };
+
     /**
      * \struct  ltstr
      *

@@ -4,7 +4,7 @@
  * \brief   Вспомогательные функции и структуры данных. Определения.
  */
 
-#include "utils.h"
+#include "stdafx.h"
 
 using std::vector;
 

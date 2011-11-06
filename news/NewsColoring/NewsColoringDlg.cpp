@@ -28,13 +28,27 @@ using std::make_pair;
 
 CNewsColoringDlg::CNewsColoringDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CNewsColoringDlg::IDD, pParent)
-    , m_FileName(_T(""))
-    , m_minFreq(0)
-    , m_minWordlen(0)
+    , m_fileName(_T("news"))
+    , m_minFreq(8)
+    , m_minWordlen(8)
     , m_newsNum(0)
+    , m_radioBlue(1)
+    , m_radioGreen(0)
+    , m_radioRed(0)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
     AfxInitRichEdit2();
+
+    cfDefault.dwMask = CFM_CHARSET | CFM_FACE | CFM_SIZE | CFM_OFFSET | CFM_COLOR;
+    cfDefault.dwMask ^= CFM_ITALIC ^ CFM_BOLD ^ CFM_STRIKEOUT ^ CFM_UNDERLINE;;
+    cfDefault.dwEffects = 0;
+    cfDefault.yHeight = 180; //10pts * 20 twips/point = 200 twips
+    cfDefault.bCharSet = RUSSIAN_CHARSET;
+    cfDefault.bPitchAndFamily = FIXED_PITCH | FF_MODERN;
+    cfDefault.yOffset = 0;
+    cfDefault.crTextColor = RGB(0,0,0);
+    strcpy(cfDefault.szFaceName, "Courier New");
+    cfDefault.cbSize = sizeof(cfDefault);
 }
 
 void CNewsColoringDlg::DoDataExchange(CDataExchange* pDX)
@@ -42,8 +56,8 @@ void CNewsColoringDlg::DoDataExchange(CDataExchange* pDX)
     CDialog::DoDataExchange(pDX);
     DDX_Control(pDX, IDC_RICHEDIT, m_RichCtrl);
 
-    DDX_Text(pDX, IDC_EDITFILENAME, m_FileName);
-    DDV_MaxChars(pDX, m_FileName, 20);
+    DDX_Text(pDX, IDC_EDITFILENAME, m_fileName);
+    DDV_MaxChars(pDX, m_fileName, 20);
 
     DDX_Text(pDX, IDC_EDITFREQ, m_minFreq);
     DDV_MinMaxInt(pDX, m_minFreq, 1, 100);
@@ -52,7 +66,8 @@ void CNewsColoringDlg::DoDataExchange(CDataExchange* pDX)
     DDV_MinMaxInt(pDX, m_minWordlen, 1, 100);
 
     DDX_Text(pDX, IDC_EDITNUM, m_newsNum);
-	DDV_MinMaxInt(pDX, m_newsNum, 0, 100);
+    DDV_MinMaxInt(pDX, m_newsNum, 0, 100);
+    DDX_Control(pDX, IDC_LIST, m_ListBox);
 }
 
 BEGIN_MESSAGE_MAP(CNewsColoringDlg, CDialog)
@@ -60,6 +75,10 @@ BEGIN_MESSAGE_MAP(CNewsColoringDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	//}}AFX_MSG_MAP
     ON_BN_CLICKED(IDC_BTNRUN, &CNewsColoringDlg::OnBnClickedBtnrun)
+    ON_BN_CLICKED(IDC_BTNSELECTVALUES, &CNewsColoringDlg::OnBnClickedBtnselectvalues)
+    ON_BN_CLICKED(IDC_RADIORED, &CNewsColoringDlg::OnBnClickedRadiored)
+    ON_BN_CLICKED(IDC_RADIOGREEN, &CNewsColoringDlg::OnBnClickedRadiogreen)
+    ON_BN_CLICKED(IDC_RADIOBLUE, &CNewsColoringDlg::OnBnClickedRadioblue)
 END_MESSAGE_MAP()
 
 
@@ -123,27 +142,18 @@ struct pred
     }
 };
 
-void ColorRichText(CRichEditCtrl &ctrlText, int start, int end, COLORREF color)
+void CNewsColoringDlg::ColorRichText(int start, int end, COLORREF color)
 {
-    ctrlText.SetRedraw(FALSE);
-    CHARFORMAT2 cfDefault;
-    cfDefault.dwMask = CFM_CHARSET | CFM_FACE | CFM_SIZE | CFM_OFFSET | CFM_COLOR;
-    cfDefault.dwMask ^= CFM_ITALIC ^ CFM_BOLD ^ CFM_STRIKEOUT ^ CFM_UNDERLINE;;
-    cfDefault.dwEffects = 0;
-    cfDefault.yHeight = 180; //10pts * 20 twips/point = 200 twips
-    cfDefault.bCharSet = OEM_CHARSET;
-    cfDefault.bPitchAndFamily = FIXED_PITCH | FF_MODERN;
-    cfDefault.yOffset = 0;
-    cfDefault.crTextColor = color;
-    strcpy(cfDefault.szFaceName, "Courier New");
-    cfDefault.cbSize = sizeof(cfDefault);
+    m_RichCtrl.SetRedraw(FALSE);
+    CHARFORMAT2 cfNew = cfDefault;
+    cfNew.crTextColor = color;
     
-    ctrlText.SetSel(start, end);
-    ctrlText.SetSelectionCharFormat(cfDefault);
-    ctrlText.SetSel(0,0);
+    m_RichCtrl.SetSel(start, end);
+    m_RichCtrl.SetSelectionCharFormat(cfNew);
+    m_RichCtrl.SetSel(0,0);
 
-    ctrlText.SetRedraw(TRUE);
-    ctrlText.RedrawWindow();
+    m_RichCtrl.SetRedraw(TRUE);
+    m_RichCtrl.RedrawWindow();
 }
 
 void CNewsColoringDlg::OnBnClickedBtnrun()
@@ -151,10 +161,10 @@ void CNewsColoringDlg::OnBnClickedBtnrun()
     if(!UpdateData(TRUE))
         return;
 
-    CNewsFinder news(m_FileName.GetString(), m_minWordlen, m_minFreq, m_newsNum);
+    CNewsFinder news(m_fileName.GetString(), m_minWordlen, m_minFreq, m_newsNum);
 
-    std::fstream fileIn(m_FileName.GetString(), std::ios::in);
-    string m_fileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
+    std::fstream fileIn(m_fileName.GetString(), std::ios::in);
+    m_fileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
     fileIn.close();
 
     vector<pair<string, string>> remDoubleTag;
@@ -191,7 +201,6 @@ void CNewsColoringDlg::OnBnClickedBtnrun()
     news.Init(remDoubleTag, remTag);
     news.GetPossibleRanges();
     vector<CTagSequence> seq = news.GetRanges();
-    vector<vector<pair<int, int>>> tagRanges;
 
     for (vector<CTagSequence>::iterator it = seq.begin(); it != seq.end(); ++it)
     {
@@ -199,43 +208,90 @@ void CNewsColoringDlg::OnBnClickedBtnrun()
     }
     std::sort(tagRanges.begin(), tagRanges.end(),pred());
 
-    CHARFORMAT2 cfDefault;
-    cfDefault.dwMask = CFM_CHARSET | CFM_FACE | CFM_SIZE | CFM_OFFSET | CFM_COLOR;
-    cfDefault.dwMask ^= CFM_ITALIC ^ CFM_BOLD ^ CFM_STRIKEOUT ^ CFM_UNDERLINE;;
-    cfDefault.dwEffects = 0;
-    cfDefault.yHeight = 180; //10pts * 20 twips/point = 200 twips
-    cfDefault.bCharSet = OEM_CHARSET;
-    cfDefault.bPitchAndFamily = FIXED_PITCH | FF_MODERN;
-    cfDefault.yOffset = 0;
-    cfDefault.crTextColor = RGB(0,0,0);
-    strcpy(cfDefault.szFaceName, "Courier New");
-    cfDefault.cbSize = sizeof(cfDefault);
     m_RichCtrl.SetDefaultCharFormat(cfDefault);
-
     m_RichCtrl.SetWindowText(m_fileData.c_str());
-
-
+    
     for (vector<vector<pair<int, int>>>::iterator it = tagRanges.begin(); it != tagRanges.end(); ++it)
     {
-        int sz = it[0].size();
-        COLORREF color;
-        if (sz == m_newsNum)
+        CString str;
+        str.AppendFormat(_T("%d - "), it->size());
+        for (vector<pair<int, int>>::iterator jt = it->begin(); jt != it->end(); ++jt)
         {
-            color = RGB(255, 0, 0);
+            str.AppendFormat(_T("(%d,%d) "), jt->first, jt->second);
         }
-        else
-            if (sz > m_newsNum)
+        m_ListBox.AddString(str.GetString());
+    }
+    UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::OnBnClickedBtnselectvalues()
+{
+    if(!UpdateData(TRUE))
+        return;
+
+    // Get the indexes of all the selected items.
+    int nCount = m_ListBox.GetSelCount();
+    CArray<int,int> aryListBoxSel;
+
+    aryListBoxSel.SetSize(nCount);
+    m_ListBox.GetSelItems(nCount, aryListBoxSel.GetData()); 
+    COLORREF color = RGB(0, 0, 255);
+    if (nCount == 0)
+    {
+        m_RichCtrl.SetRedraw(FALSE);
+
+        m_RichCtrl.SetDefaultCharFormat(cfDefault);
+        m_RichCtrl.SetWindowText(m_fileData.c_str());
+
+        m_RichCtrl.SetRedraw(TRUE);
+        m_RichCtrl.RedrawWindow();
+    }
+    else
+        for (int i = 0; i < nCount; ++i )
+        {
+            int cursel = aryListBoxSel.ElementAt(i);
+            int sz = (tagRanges.begin() + cursel)->size();
+
+            if (m_radioRed)
+            {
+                color = RGB(255, 0, 0);
+            }
+
+            if (m_radioGreen)
             {
                 color = RGB(0, 255, 0);
             }
-            else
-                continue;
 
-        for (vector<pair<int, int>>::iterator jt = it[0].begin(); jt != it[0].end(); ++jt)
-        {
-            ColorRichText(m_RichCtrl, jt->first, jt->second, color);
+            if (m_radioBlue)
+            {
+                color = RGB(0, 0, 255);
+            }
+
+            for (vector<pair<int, int>>::iterator jt = (tagRanges.begin() + cursel)->begin(); jt != (tagRanges.begin() + cursel)->end(); ++jt)
+            {
+                ColorRichText(jt->first, jt->second, color);
+            }
         }
-    }
-
     UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::OnBnClickedRadiored()
+{
+    m_radioBlue = false;
+    m_radioGreen = false;
+    m_radioRed = true;
+}
+
+void CNewsColoringDlg::OnBnClickedRadiogreen()
+{
+    m_radioBlue = false;
+    m_radioRed = false;
+    m_radioGreen = true;
+}
+
+void CNewsColoringDlg::OnBnClickedRadioblue()
+{
+     m_radioBlue = true;
+     m_radioRed = false;
+     m_radioGreen = false;
 }

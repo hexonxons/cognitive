@@ -4,6 +4,7 @@
 
 #pragma once
 #include "afxcmn.h"
+#include "afxwin.h"
 
 
 // диалоговое окно CNewsColoringDlg
@@ -30,12 +31,24 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 private:
+    CHARFORMAT2 cfDefault;
     CRichEditCtrl m_RichCtrl;
-public:
-    afx_msg void OnBnClickedBtnrun();
-private:
-    CString m_FileName;
+    CString m_fileName;
+    std::string m_fileData;
     int m_minFreq;
     int m_minWordlen;
     int m_newsNum;
+    CListBox m_ListBox;
+    std::vector<std::vector<std::pair<int, int>>> tagRanges;
+    bool m_radioBlue;
+    bool m_radioGreen;
+    bool m_radioRed;
+
+    void ColorRichText(int start, int end, COLORREF color);
+public:
+    afx_msg void OnBnClickedBtnselectvalues();
+    afx_msg void OnBnClickedBtnrun();
+    afx_msg void OnBnClickedRadiored();
+    afx_msg void OnBnClickedRadiogreen();
+    afx_msg void OnBnClickedRadioblue();
 };

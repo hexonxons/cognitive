@@ -4,7 +4,6 @@
  * \brief   Определение функций, оперирующих со строками.
  */
 
-#define _CRT_SECURE_NO_WARNINGS
 #include "stdafx.h"
 
 #include <iostream>
@@ -167,7 +166,7 @@ void CNewsFinder::GetPossibleRanges()
     {
         tagRanges.push_back(it->tagRange);
     }
-    std::sort(tagRanges.begin(), tagRanges.end(),pred());
+    std::sort(tagRanges.begin(), tagRanges.end(),pred1());
 
     for (vector<vector<pair<int, int>>>::iterator it = tagRanges.begin(); it != tagRanges.end(); ++it)
     {
@@ -409,11 +408,23 @@ CTagDescription CNewsFinder::getNextTag()
             {
                 plpszTagTable[tagCode.nTagCode] = (LPTSTR)tag.c_str();
             }
+
+            if (tagCode.nTagBegin != -1)
+            {
+                string tagString(m_fileData, tagCode.nTagBegin, tagCode.nTagEnd - tagCode.nTagBegin + 1);
+                assert(tagString[tagString.size() - 1] == '>');
+            }
 #endif
             return tagCode;
         }
     }
-
+#ifdef _DEBUG
+    if (tagCode.nTagBegin != -1)
+    {
+        string tagString(m_fileData, tagCode.nTagBegin, tagCode.nTagEnd - tagCode.nTagBegin + 1);
+        assert(tagString[tagString.size() - 1] == '>');
+    }
+#endif
     return tagCode;
 }
 
