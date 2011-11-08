@@ -34,9 +34,9 @@
 <script src="/js/head.js" type="text/javascript"></script>
 
 
-<title>LINUX.ORG.RU - Р СѓСЃСЃРєР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РѕР± РћРЎ Linux</title>
-<META NAME="Keywords" CONTENT="linux Р»РёРЅСѓРєСЃ РѕРїРµСЂР°С†РёРѕРЅРЅР°СЏ СЃРёСЃС‚РµРјР° РґРѕРєСѓРјРµРЅС‚Р°С†РёСЏ gnu Р±РµСЃРїР»Р°С‚РЅРѕРµ СЃРІРѕР±РѕРґРЅРѕРµ РїСЂРѕРіСЂР°РјРЅРѕРµ РѕР±РµСЃРїРµС‡РµРЅРёРµ СЃРѕС„С‚ unix СЋРЅРёРєСЃ software free documentation operating system РЅРѕРІРѕСЃС‚Рё news">
-<META NAME="Description" CONTENT="Р’СЃРµ Рѕ Linux РЅР° СЂСѓСЃСЃРєРѕРј СЏР·С‹РєРµ">
+<title>LINUX.ORG.RU - Русская информация об ОС Linux</title>
+<META NAME="Keywords" CONTENT="linux линукс операционная система документация gnu бесплатное свободное програмное обеспечение софт unix юникс software free documentation operating system новости news">
+<META NAME="Description" CONTENT="Все о Linux на русском языке">
 <LINK REL="alternate" TITLE="L.O.R RSS" HREF="section-rss.jsp?section=1" TYPE="application/rss+xml">
 
 
@@ -87,42 +87,42 @@
 
         
           <div id="regmenu" class="head">
-            <a href="/register.jsp">Р РµРіРёСЃС‚СЂР°С†РёСЏ</a> -
-            <a id="loginbutton" href="/login.jsp">Р’С…РѕРґ</a>
+            <a href="/register.jsp">Регистрация</a> -
+            <a id="loginbutton" href="/login.jsp">Вход</a>
           </div>
 
           <form method=POST action="login.jsp" style="display: none" id="regform">
-            <label>РРјСЏ: <input type=text name=nick size=15></label><br>
-            <label>РџР°СЂРѕР»СЊ: <input type=password name=passwd size=15></label><br>
-            <input type=submit value="Р’С…РѕРґ">
-            <input id="hide_loginbutton" type="button" value="РћС‚РјРµРЅР°">
+            <label>Имя: <input type=text name=nick size=15></label><br>
+            <label>Пароль: <input type=password name=passwd size=15></label><br>
+            <input type=submit value="Вход">
+            <input id="hide_loginbutton" type="button" value="Отмена">
           </form>
         
         </div>
 
-        <h1><a id="sitetitle" href="/">LINUX.ORG.RU&nbsp;&#8212; Р СѓСЃСЃРєР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РѕР±&nbsp;РћРЎ&nbsp;Linux</a></h1>
+        <h1><a id="sitetitle" href="/">LINUX.ORG.RU&nbsp;&#8212; Русская информация об&nbsp;ОС&nbsp;Linux</a></h1>
 
         <div class="menu">
             <ul class="primary">
-                <li class="first"><a href="/news/">РќРѕРІРѕСЃС‚Рё</a></li>
-                <li><a href="/gallery/">Р“Р°Р»РµСЂРµСЏ</a></li>
+                <li class="first"><a href="/news/">Новости</a></li>
+                <li><a href="/gallery/">Галерея</a></li>
 
-                <li><a href="/forum/">Р¤РѕСЂСѓРј</a></li>
-                <li><a href="/tracker.jsp">РўСЂРµРєРµСЂ</a></li>
+                <li><a href="/forum/">Форум</a></li>
+                <li><a href="/tracker.jsp">Трекер</a></li>
                 <li><a href="/wiki/">Wiki</a></li>
-                <li class="last"><a href="/search.jsp">РџРѕРёСЃРє</a></li>
+                <li class="last"><a href="/search.jsp">Поиск</a></li>
             </ul>
             <ul class="secondary">
                 <li class="first"><a href="/wiki/en/Linux">O linux</a></li>
-                <li><a href="/wiki/en/%D0%94%D0%B8%D1%81%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D0%B8%D0%B2%D1%8B">Р”РёСЃС‚СЂРёР±СѓС‚РёРІС‹</a></li>
+                <li><a href="/wiki/en/%D0%94%D0%B8%D1%81%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D0%B8%D0%B2%D1%8B">Дистрибутивы</a></li>
 
                 
 
-                <li class="last"><a href="/server.jsp">Рћ СЃРµСЂРІРµСЂРµ</a></li>
+                <li class="last"><a href="/server.jsp">О сервере</a></li>
             </ul>
         </div>
     </div>
-
+\
 
 
 <div style="clear: both"></div>
@@ -143,18 +143,18 @@
 <div class="newsblog">
   <div class="newsblog-in">
 
-<h1><a href="/news/">РќРѕРІРѕСЃС‚Рё</a></h1>
+<h1><a href="/news/">Новости</a></h1>
 
 
   <div class="infoblock" style="border: 1px solid #777; text-align: justify;">
     <a href="http://job.samsung.ru/"><img width="130" height="43" src="/adv/Samsung_Logo.png" alt="" style="float: left; border: 0"></a>
     <div style="margin-left: 135px">
 
-    SAMSUNG Electronics&nbsp;&mdash; РјРёСЂРѕРІРѕР№ Р»РёРґРµСЂ РІ&nbsp;РїСЂРѕРёР·РІРѕРґСЃС‚РІРµ РїРѕР»СѓРїСЂРѕРІРѕРґРЅРёРєРѕРІ,
-С‚РµР»РµРєРѕРјРјСѓРЅРёРєР°С†РёРѕРЅРЅРѕРіРѕ РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ Рё&nbsp;С†РёС„СЂРѕРІРѕР№ РєРѕРЅРІРµСЂРіРµРЅС†РёРё&nbsp;&mdash; РѕР±СЉСЏРІР»СЏРµС‚ Рѕ&nbsp;РїСЂРёРµРјРµ
-РЅР°&nbsp;СЂР°Р±РѕС‚Сѓ РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ, РёРЅР¶РµРЅРµСЂРѕРІ-СЂР°Р·СЂР°Р±РѕС‚С‡РёРє, С„РёР·РёРєРѕРІ Рё&nbsp;С…РёРјРёРєРѕРІ: LINUX,
+    SAMSUNG Electronics&nbsp;&mdash; мировой лидер в&nbsp;производстве полупроводников,
+телекоммуникационного оборудования и&nbsp;цифровой конвергенции&nbsp;&mdash; объявляет о&nbsp;приеме
+на&nbsp;работу программистов, инженеров-разработчиков, физиков и&nbsp;химиков: LINUX,
 Android, C/C++, Smart Phones, Smart TV, 3D&nbsp;Imaging, 3D&nbsp;Graphics, ASIC, FPGA,
-SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ:
+SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная информация:
     <a href="http://job.samsung.ru/" style="color: white">http://job.samsung.ru</a>
     </div>
   </div>
@@ -187,10 +187,247 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 
 
 
-<div class=news id="topic-6939886">
+<div class=news id="topic-6976051">
 
 <h2>
-  <a href="/news/opensource/6939886">Ruby 1.9.3</a>
+  <a href="/news/redhat/6976051">Встреча с Жюлем Верном, часть 2: дистрибутив RFRemix 16</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/redhat/">
+  <img src="/tango/img/redhat-logo.png" width=65 height=75 border=0 alt="Группа Red Hat">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>В то время, как проект Fedora празднует выпуск очередной версии дистрибутива, русских пользователей ждет еще одно приятное событие: сегодня, 8 ноября 2011 года, вышел дистрибутив RFRemix 16 «Verne», основанный на Fedora 16 и дополнительных репозиториях RPM Fusion и Russian Fedora. Мультимедийные кодеки, Adobe Flash Player, проприетарные драйверы видеокарт Nvidia — далеко не полный перечень того, что вы найдете «в коробке» с установщиком. Стоит отметить, что русское сообщество сделало свой рабочий процесс полностью прозрачным и большую часть наработок возвращает в апстрим.
+</p><p>( <a href="http://www.linux.org.ru//news/redhat/6976051#cut0">читать дальше...</a> )</p><p>
+Одним из достоинств местного сообщества является обширная <a href="http://wiki.russianfedora.ru">wiki</a> на русском языке. Также круглосуточно действуют конференция fedora@conference.jabber.ru, <a href="http://forum.russianfedora.ru/">форум</a> и <a href="http://www.russianfedora.ru/mailman/listinfo">списки рассылки</a>, в которых можно задать вопрос, пообщаться или получить помощь по настройке Fedora, RFRemix, CentOS, Scientific Linux и RHEL.</p><p>Помимо установочных образов DVD и образов Live, для загрузки также доступны файлы разницы Delta ISO. Загрузка возможна через зеркала, торренты и jigdo:</p><p>Установочные диски: <a href="http://mirror.yandex.ru/fedora/russianfedora/releases/16/RFRemix/i386/iso/">i686</a>, <a href="http://mirror.yandex.ru/fedora/russianfedora/releases/16/RFRemix/x86_64/iso/">x86_64</a><br>
+Live-образы: <a href="http://mirror.yandex.ru/fedora/russianfedora/releases/16/Live/i686/">i686</a>, <a href="http://mirror.yandex.ru/fedora/russianfedora/releases/16/Live/x86_64/">x86_64</a><br>
+<a href="http://torrent.russianfedora.ru/index.php?page_number=12">Торренты</a></p>
+<p>&gt;&gt;&gt; <a href="http://russianfedora.ru/">Сайт сообщества</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=fedora">fedora</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=redhat">redhat</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/Jayrome/profile">Jayrome</a>
+
+
+
+(08.11.2011 13:05:12)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=6976051">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/redhat/6976051">3&nbsp;комментария</a>]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6975111">
+Мини-новость:
+  <a href="/news/security/6975111">Liberte Linux 2012.1: Live-дистрибутив для настоящих анонимусов</a>
+
+
+
+  [<a href="/news/security/6975111">24&nbsp;комментария</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6971063">
+
+<h2>
+  <a href="/news/redhat/6971063">Выпущена Fedora 16 «Verne»</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/redhat/">
+  <img src="/tango/img/redhat-logo.png" width=65 height=75 border=0 alt="Группа Red Hat">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Сегодня, 8 ноября 2011 года, проект Fedora с большим удовольствием объявляет о выпуске Fedora 16 «Verne», названного в честь писателя-новатора Жюля Верна.
+</p><p>( <a href="http://www.linux.org.ru//news/redhat/6971063#cut0">читать дальше...</a> )</p><p>
+Это только поверхностный обзор того, что представлено в новом выпуске Fedora. <a href="http://docs.fedoraproject.org/ru-RU/Fedora/16/html/Release_Notes/">Полные примечания к выпуску</a> и руководства по Fedora 16 на русском языке опубликованы на сайте проекта.</p><p>В отличие от произведений Верна, предсказавшего множество научных открытий и изобретений, в числе которых акваланг, телевидение и космические полеты, Fedora 16 — не научная фантастика. Она здесь и сейчас (по ссылкам ниже):<br><br>
+<a href="http://get.fedoraproject.org">http://get.fedoraproject.org</a><br><br>
+<a href="http://torrent.fedoraproject.org">http://torrent.fedoraproject.org</a></p>
+<p>&gt;&gt;&gt; <a href="https://fedoraproject.org/wiki/F16_release_announcement/ru">Анонс на сайте проекта</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=fedora">fedora</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=redhat">redhat</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/Jayrome/profile">Jayrome</a>
+
+
+
+(07.11.2011 23:26:51)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=6971063">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/redhat/6971063">267&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/redhat/6971063/page1">2</a> <a href="/news/redhat/6971063/page2">3</a> <a href="/news/redhat/6971063/page3">4</a> <a href="/news/redhat/6971063/page4">5</a> <a href="/news/redhat/6971063/page5">6</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6973983">
+
+<h2>
+  <a href="/news/opensource/6973983">Valgrind 3.7.0</a>
 </h2>
 
 
@@ -198,7 +435,7 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 
 <div class="entry-userpic">
   <a href="/news/opensource/">
-  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° OpenSource">
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
     </a>
 </div>
 
@@ -207,20 +444,22 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 <div class=msg>
   
   
-  <p>РЎРїСѓСЃС‚СЏ РіРѕРґ СЃ РІС‹РїСѓСЃРєР° РїСЂРµРґС‹РґСѓС‰РµР№ РІРµСЂСЃРёРё, Р°РЅРѕРЅСЃРёСЂРѕРІР°РЅ РЅРѕРІС‹Р№ СЂРµР»РёР· В«РѕС„РёС†РёР°Р»СЊРЅРѕРіРѕВ» РёРЅС‚РµСЂРїСЂРµС‚Р°С‚РѕСЂР° СЏР·С‹РєР° РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ Ruby.</p><p>Р’ С†РµР»РѕРј, РІРµСЂСЃРёСЏ 1.9.3 СЏРІР»СЏРµС‚СЃСЏ Р»РѕРіРёС‡РЅС‹Рј СЌРІРѕР»СЋС†РёРѕРЅРЅС‹Рј СЂР°Р·РІРёС‚РёРµРј РёРЅС‚РµСЂРїСЂРµС‚Р°С‚РѕСЂР° Рё РЅРµ РЅРµСЃС‘С‚ РІ СЃРµР±Рµ РєР°СЂРґРёРЅР°Р»СЊРЅС‹С… РёР·РјРµРЅРµРЅРёР№, СЃРїРѕСЃРѕР±РЅС‹С… СЃР»РѕРјР°С‚СЊ СЃРѕРІРјРµСЃС‚РёРјРѕСЃС‚СЊ СЃ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРј РєРѕРґРѕРј.</p><p>РЎСЂРµРґРё Р·РЅР°С‡РёРјС‹С… РёР·РјРµРЅРµРЅРёР№ СЃС‚РѕРёС‚ РѕС‚РјРµС‚РёС‚СЊ:
-
-</p><ul><li> РІРјРµСЃС‚Рѕ GPLv2 + Ruby License РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ 2-clause BSD License + Ruby License;
-
-</li><li> РІ РїРѕСЃС‚Р°РІРєСѓ РІРєР»СЋС‡РµРЅ RubyGems РІРµСЂСЃРёРё 1.8.10;
-
-</li><li> СѓР»СѓС‡С€РµРЅ <a href="http://www.rubyinside.com/ruby-1-9-3-faster-loading-times-require-4927.html">РјРµС…Р°РЅРёР·Рј Р·Р°РіСЂСѓР·РєРё РєРѕРґР°</a>, С‡С‚Рѕ РїРѕР·РІРѕР»СЏРµС‚ Р·РЅР°С‡РёС‚РµР»СЊРЅРѕ СЃРѕРєСЂР°С‚РёС‚СЊ РІСЂРµРјСЏ Р·Р°РіСЂСѓР·РєРё РїСЂРёР»РѕР¶РµРЅРёР№;
-
-</li><li> Р±РёР±Р»РёРѕС‚РµРєР° СЂР°Р±РѕС‚С‹ СЃ РґР°С‚Р°РјРё РїРµСЂРµРїРёСЃР°РЅР° РЅР° СЏР·С‹РєРµ РЎРё, С‡С‚Рѕ С‚Р°РєР¶Рµ <a href="https://gist.github.com/1117138">РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕ</a> СЃРєР°Р·С‹РІР°РµС‚СЃСЏ РЅР° РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚Рё;
-
-</li><li> РІРєР»СЋС‡РµРЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РїР°СЂР°Р»Р»РµР»СЊРЅРѕРіРѕ РІС‹РїРѕР»РЅРµРЅРёСЏ test/unit.
-
-</li></ul><p>Р‘РѕР»РµРµ РїРѕРґСЂРѕР±РЅС‹Р№ РїРµСЂРµС‡РµРЅСЊ РЅРѕРІРѕРІРІРµРґРµРЅРёР№ С‚СЂР°РґРёС†РёРѕРЅРЅРѕ РїСЂРёРІРµРґС‘РЅ РІ С„Р°Р№Р»Рµ <a href="http://svn.ruby-lang.org/repos/ruby/tags/v1_9_3_0/NEWS">NEWS</a>.</p><p>РљСЃС‚Р°С‚Рё, РїРѕР»СЊР·РѕРІР°С‚РµР»Рё <a href="https://rvm.beginrescueend.com/">rvm</a> СѓР¶Рµ РёРјРµСЋС‚ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РѕР±РЅРѕРІРёС‚СЊСЃСЏ Рё СЂР°РґРѕРІР°С‚СЊСЃСЏ РІСЃРµРјРё РЅРѕРІРѕРІРІРµРґРµРЅРёСЏРјРё Ruby 1.9.3.</p>
-<p>&gt;&gt;&gt; <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/40527">РђРЅРѕРЅСЃ РІ ruby-core</a>
+  <p>Valgrind — это инструмент, позволяющий находить в программах недостатки, такие как ошибки при работе с памятью, неправильное разделение потоков, неинициализированные переменные и прочее. В новой версии:
+</p><ul><li> Поддержка Linux на архитектуре IBM z/Architecture (s390x). 
+</li><li> Начальная поддержка MacOSX 10.7 и XCode 4.
+</li><li> Начальная поддержка ARM/Android.
+</li><li> Поддержка IBM Power ISA 2.06 (Power7).
+</li><li> Общее улучшение поддержки ARM/Linux и соответственно ARM/Android.
+</li><li> Дальнейшее улучшение поддержки инструкций SSE4.2 в 64-битном режиме.
+</li><li> Удалена поддержка AIX5.
+</li><li> В Helgrind улучшена производительность и в общем снижено потребление памяти.
+</li><li> В DRD появилась возможность вывода в XML, улучшена поддержка Darwin.
+</li><li> Область работы exp-ptrcheck уменьшена ради сокращения потребления ресурсов (удалённый функционал уже присутствует в лучшем качестве в Memcheck)
+</li><li> В Valgrind встроен GDB-сервер. То есть теперь можно контролировать работу Valgrind'а из GDB.
+</li><li> Проверена возможность сборки Valgrind с помощью Clang-2.9.
+</li><li> Множество других улучшений и исправлений ошибок.
+</li></ul><p><a href="http://valgrind.org/">Официальный сайт</a></p>
+<p>&gt;&gt;&gt; <a href="http://valgrind.org/docs/manual/dist.news.html">Подробности</a>
   </div>
 
   
@@ -231,7 +470,7 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 
 <p class="tags">
 
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=ruby">ruby</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ</a></span>
+  Метки: <span class=tag><a href="view-news.jsp?tag=android">android</a>, <a href="view-news.jsp?tag=arm">arm</a>, <a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=s390x">s390x</a>, <a href="view-news.jsp?tag=valgrind">valgrind</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a></span>
 </p>
 
 
@@ -247,11 +486,11 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 
 
 
-<a href="/people/eveel/profile">eveel</a>
+<a href="/people/GArik/profile">GArik</a>
 
 
 
-(30.10.2011 21:42:39)
+(07.11.2011 20:43:51)
     
     
   
@@ -259,10 +498,10 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 <div class="nav">
 
 
-  [<a href="comment-message.jsp?topic=6939886">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+  [<a href="comment-message.jsp?topic=6973983">Добавить&nbsp;комментарий</a>]
 
   
-  [<a href="/news/opensource/6939886">133&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёСЏ</a>&nbsp;(СЃС‚СЂ. <a href="/news/opensource/6939886/page1">2</a> <a href="/news/opensource/6939886/page2">3</a>)]
+  [<a href="/news/opensource/6973983">51&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/opensource/6973983/page1">2</a>)]
   </div>
   </div>
 </div>
@@ -295,241 +534,47 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 
 
 
-<div class=news id="topic-6940162">
+
+
+<div class=infoblock id="topic-6971263">
+Мини-новость:
+  <a href="/news/conference/6971263">Бесплатный семинар «Комплексный переход на СПО: проблемы и решения» в Санкт-Петербурге 10 ноября</a>
+
+
+
+  [<a href="/news/conference/6971263">9&nbsp;комментариев</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6969545">
 
 <h2>
-  <a href="/news/mozilla/6940162">pdf.js: РїСЂРѕСЃРјРѕС‚СЂ PDF СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј HTML5 Рё JavaScript</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/mozilla/">
-  <img src="/tango/img/moz-logo2.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° Mozilla">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>РќРµРґР°РІРЅРѕ РїСЂРѕРіСЂР°РјРјРёСЃС‚С‹ Mozilla Р°РЅРѕРЅСЃРёСЂРѕРІР°Р»Рё РЅР°С‡Р°Р»Рѕ СЂР°Р·СЂР°Р±РѕС‚РєРё PDF.js: РїСЂРѕРµРєС‚Р°, РїРѕР·РІРѕР»СЏСЋС‰РµРіРѕ РїСЂРѕСЃРјР°С‚СЂРёРІР°С‚СЊ PDF-РґРѕРєСѓРјРµРЅС‚С‹ РїСЂСЏРјРѕ РІ РёРЅС‚РµСЂРЅРµС‚-Р±СЂР°СѓР·РµСЂРµ. РЎ РµРіРѕ РїРѕСЏРІР»РµРЅРёРµРј РїСЂРѕРїР°Р»Р° РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚СЊ РІ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРё РґР»СЏ СЌС‚РѕР№ С†РµР»Рё РІРЅРµС€РЅРёС… РїР»Р°РіРёРЅРѕРІ. РџРѕСЃР»Рµ РїСЂРёРјРµСЂРЅРѕ РјРµСЃСЏС†Р° СЂР°Р·РІРёС‚РёСЏ СѓР¶Рµ СЂРµР°Р»РёР·РѕРІР°РЅР° Р±Р°Р·РѕРІР°СЏ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕСЃС‚СЊ (РїРѕРґРґРµСЂР¶РєР° С€СЂРёС„С‚РѕРІ Type1, РіСЂР°РґРёРµРЅС‚С‹ Рё С‚. Рґ.).</p><p>PDF.js СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅСЏРµС‚СЃСЏ РїРѕ С‚СЂС‘С…РїСѓРЅРєС‚РѕРІРѕР№ Р»РёС†РµРЅР·РёРё BSD. Р Р°Р·СЂР°Р±РѕС‚С‡РёРєРё РЅР°РґРµСЋС‚СЃСЏ, С‡С‚Рѕ РёРј СѓРґР°СЃС‚СЃСЏ РїСЂРёРІР»РµС‡СЊ СЃРѕРѕР±С‰РµСЃС‚РІРѕ Рє СЂР°Р·РІРёС‚РёСЋ РїСЂРѕРµРєС‚Р°. РќРµСЃРјРѕС‚СЂСЏ РЅР° С‚Рѕ, С‡С‚Рѕ РїСЂРѕРµРєС‚ вЂ” РёРЅРёС†РёР°С‚РёРІР° РєРѕРјР°РЅРґС‹ Mozilla, РѕРЅ РЅРёРєР°Рє РЅРµ РїСЂРёРІСЏР·Р°РЅ Рє Firefox, Рё, Р±СѓРґСѓС‡Рё РІС‹РїРѕР»РЅРµРЅ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃС‚Р°РЅРґР°СЂС‚Р°Рј, РґРѕР»Р¶РµРЅ СЂР°Р±РѕС‚Р°С‚СЊ СЃ Р»СЋР±С‹РјРё Р±СЂР°СѓР·РµСЂР°РјРё, СЃРѕРІРјРµСЃС‚РёРјС‹РјРё СЃ РЅРёРјРё.</p><p>&gt;&gt;&gt; <a href="http://blog.mozilla.com/cjones/2011/06/15/overview-of-pdf-js-guts/">РћР±Р·РѕСЂ РїСЂРѕРµРєС‚Р°</a></p><p>&gt;&gt;&gt; <a href="https://github.com/andreasgal/pdf.js">Git-СЂРµРїРѕР·РёС‚РѕСЂРёР№ СЃ РёСЃС…РѕРґРЅС‹Рј РєРѕРґРѕРј</a></p><p>&gt;&gt;&gt; <a href="https://wiki.mozilla.org/PDF.js#Current_work_items.2C_2011-08-22">Wiki РїСЂРѕРµРєС‚Р°</a>, РІ РєРѕС‚РѕСЂРѕР№ РјРѕР¶РЅРѕ РїРѕСЃРјРѕС‚СЂРµС‚СЊ С‚РµРєСѓС‰РёР№ СЃС‚Р°С‚СѓСЃ СЂР°Р±РѕС‚</p>
-<p>&gt;&gt;&gt; <a href="http://andreasgal.com/2011/06/15/pdf-js/">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=firefox">firefox</a>, <a href="view-news.jsp?tag=html5">html5</a>, <a href="view-news.jsp?tag=javascript">javascript</a>, <a href="view-news.jsp?tag=mozilla">mozilla</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=pdf">pdf</a>, <a href="view-news.jsp?tag=web">web</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/prozium/profile">prozium</a>
-
-
-
-(30.10.2011 21:41:16)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6940162">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/mozilla/6940162">99&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/mozilla/6940162/page1">2</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6935462">
-
-<h2>
-  <a href="/news/linux-general/6935462">Linux From Scratch 7.0</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/linux-general/">
-  <img src="/tango/img/general-logo.png" width=55 height=65 border=0 alt="Р“СЂСѓРїРїР° Linux General">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Р’С‹С€Р»Р° РЅРѕРІР°СЏ РІРµСЂСЃРёСЏ РґРёСЃС‚СЂРёР±СѓС‚РёРІР° Linux From Scratch РїРѕРґ РЅРѕРјРµСЂРѕРј 7.0. РљР°Рє РёР·РІРµСЃС‚РЅРѕ, РґРёСЃС‚СЂРёР±СѓС‚РёРІ РІ РїРµСЂРІСѓСЋ РѕС‡РµСЂРµРґСЊ СЂР°СЃСЃС‡РёС‚Р°РЅ РЅР° СЌРЅС‚СѓР·РёР°СЃС‚РѕРІ, Р¶РµР»Р°СЋС‰РёС… РґРѕСЃРєРѕРЅР°Р»СЊРЅРѕ РёР·СѓС‡РёС‚СЊ РІРЅСѓС‚СЂРµРЅРЅРµРµ СѓСЃС‚СЂРѕР№СЃС‚РІРѕ Рё РїСЂРѕС†РµСЃСЃ РЅР°СЃС‚СЂРѕР№РєРё Linux, С…РѕС‚СЏ РјРЅРѕРіРёРµ РїРѕР»СЊР·СѓСЋС‚СЃСЏ РёРј РєР°Рє РѕСЃРЅРѕРІРЅРѕР№ СЂР°Р±РѕС‡РµР№ СЃРёСЃС‚РµРјРѕР№.</p><p>РќРѕРІР°СЏ РІРµСЂСЃРёСЏ РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ СЏРґСЂРѕ 3.1, GCC 4.6.1 Рё Glibc 2.14.1, Р° С‚Р°РєР¶Рµ РѕР±РЅРѕРІР»РµРЅРёСЏ РѕСЃС‚Р°Р»СЊРЅС‹С… РїР°РєРµС‚РѕРІ РґРѕ Р°РєС‚СѓР°Р»СЊРЅС‹С… РІРµСЂСЃРёР№. РљСЂРѕРјРµ С‚РѕРіРѕ, РёР·РјРµРЅРёР»Р°СЃСЊ Рё РІРЅСѓС‚СЂРµРЅРЅСЏСЏ СЃС‚СЂСѓРєС‚СѓСЂР° РћРЎ - РІ РєРѕСЂРЅРµРІСѓСЋ РґРёСЂРµРєС‚РѕСЂРёСЋ РґРѕР±Р°РІР»РµРЅ /run, РєСѓРґР° СЃРјРѕРЅС‚РёСЂРѕРІР°РЅР° РІРёСЂС‚СѓР°Р»СЊРЅР°СЏ Р¤РЎ tmpfs, РїРѕР·РІРѕР»СЏСЋС‰Р°СЏ РїСЂРёР»РѕР¶РµРЅРёСЏРј СЃРѕС…СЂР°РЅСЏС‚СЊ РЅР° РЅРµР№ РЅРµРѕР±С…РѕРґРёРјСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ РІ РїСЂРѕС†РµСЃСЃРµ СЂР°Р±РѕС‚С‹. Рљ С‚РѕРјСѓ Р¶Рµ, /var/run Рё /var/lock С‚РµРїРµСЂСЊ С‚Р°РєР¶Рµ СЏРІР»СЏСЋС‚СЃСЏ СЃСЃС‹Р»РєР°РјРё РЅР° /run, РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ С‡РµРј РёР·РјРµРЅРµРЅРёСЋ РїРѕРґРІРµСЂРіР»РёСЃСЊ СЃРєСЂРёРїС‚С‹ Р·Р°РіСЂСѓР·РєРё.</p><p>Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рј РїР»СЋСЃРѕРј СЃС‚Р°Р»Р° РЅРѕРІР°СЏ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РїСЂРѕРІРµСЂРєРё С†РµР»РѕСЃС‚РЅРѕСЃС‚Рё СЃРєР°С‡Р°РЅРЅС‹С… СѓСЃС‚Р°РЅРѕРІРѕС‡РЅС‹С… РїР°РєРµС‚РѕРІ СЃ РїРѕРјРѕС‰СЊСЋ md5sum.</p><p>РќРµРєРѕС‚РѕСЂС‹Рµ РёР·РјРµРЅРµРЅРёСЏ РїСЂРѕРёР·РѕС€Р»Рё Рё РІ <a href="http://www.linuxfromscratch.org/lfs/view/7.0/">С‚РµРєСЃС‚Рµ СЂСѓРєРѕРІРѕРґСЃС‚РІР°</a>, РєРѕС‚РѕСЂРѕРµ С‚РµРїРµСЂСЊ СЃС‚Р°Р»Рѕ Р±РѕР»РµРµ СЂР°Р·РІРµСЂРЅСѓС‚С‹Рј, РїРѕРЅСЏС‚РЅС‹Рј Рё РїСЂРѕСЃС‚С‹Рј.
-
-</p>
-<p>&gt;&gt;&gt; <a href="http://www.linuxfromscratch.org/news.html">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=lfs">lfs</a>, <a href="view-news.jsp?tag=linux">linux</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/ins3y3d/profile">ins3y3d</a>
-
-
-
-(29.10.2011 16:26:27)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6935462">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/linux-general/6935462">231&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>&nbsp;(СЃС‚СЂ. <a href="/news/linux-general/6935462/page1">2</a> <a href="/news/linux-general/6935462/page2">3</a> <a href="/news/linux-general/6935462/page3">4</a> <a href="/news/linux-general/6935462/page4">5</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=infoblock id="topic-6917946">
-РњРёРЅРё-РЅРѕРІРѕСЃС‚СЊ:
-  <a href="/news/commercial/6917946">РќРѕРІР°СЏ РІРµСЂСЃРёСЏ Р±РёР»Р»РёРЅРіРѕРІРѕР№ СЃРёСЃС‚РµРјС‹ TraffPro 1.4.2.</a>
-
-
-
-  [<a href="/news/commercial/6917946">17&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>]
-</div>
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6934275">
-
-<h2>
-  <a href="/news/gnome/6934275">Р РµР»РёР·С‹ Tomboy 1.8 Рё Gnote 0.8</a>
+  <a href="/news/gnome/6969545">Linux Mint 12 будет использовать GNOME Shell по умолчанию</a>
 </h2>
 
 
@@ -537,7 +582,7 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 
 <div class="entry-userpic">
   <a href="/news/gnome/">
-  <img src="/tango/img/gnome-new.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° GNOME">
+  <img src="/tango/img/gnome-new.png" width=65 height=75 border=0 alt="Группа GNOME">
     </a>
 </div>
 
@@ -546,10 +591,8 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 <div class=msg>
   
   
-  <p>РЎРѕСЃС‚РѕСЏР»РёСЃСЊ СЂРµР»РёР·С‹ Tomboy 1.8.0 Рё Gnote 0.8.1.</p><p>Tomboy вЂ” РїСЂРѕРіСЂР°РјРјР° РґР»СЏ СЃРѕР·РґР°РЅРёСЏ Р·Р°РјРµС‚РѕРє СЃ GTK-РёРЅС‚РµСЂС„РµР№СЃРѕРј, С‚СЂРµР±СѓСЋС‰Р°СЏ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё Mono. РЎСЂРµРґРё РµС‘ РІРѕР·РјРѕР¶РЅРѕСЃС‚РµР№: РІС‹РґРµР»РµРЅРёРµ С‚РµРєСЃС‚Р°, РІСЃС‚СЂРѕРµРЅРЅР°СЏ РїСЂРѕРІРµСЂРєР° РїСЂР°РІРѕРїРёСЃР°РЅРёСЏ, Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ РѕРїСЂРµРґРµР»РµРЅРёРµ Р°РґСЂРµСЃРѕРІ web Рё e-mail, С„СѓРЅРєС†РёСЏ РѕС‚РјРµРЅРёС‚СЊ/РїРѕРІС‚РѕСЂРёС‚СЊ, СЃРјРµРЅР° РЅР°С‡РµСЂС‚Р°РЅРёСЏ Рё СЂР°Р·РјРµСЂР° С€СЂРёС„С‚Р°, РјР°СЂРєРёСЂРѕРІР°РЅРЅС‹Рµ СЃРїРёСЃРєРё.</p><p>Gnote СЏРІР»СЏРµС‚СЃСЏ РїРѕР»РЅРѕС†РµРЅРЅС‹Рј Р°РЅР°Р»РѕРіРѕРј Tomboy, Р±Р°Р·РёСЂСѓСЋС‰РёРјСЃСЏ РЅР° Р±РёР±Р»РёРѕС‚РµРєР°С… C++, Р° РЅРµ РЅР° Mono.
-
-</p><p>( <a href="http://www.linux.org.ru//news/gnome/6934275#cut0">С‡РёС‚Р°С‚СЊ РґР°Р»СЊС€Рµ...</a> )</p><p>&gt;&gt;&gt; <a href="http://projects.gnome.org/tomboy/">РЎС‚СЂР°РЅРёС†Р° РїСЂРѕРµРєС‚Р° Tomboy</a></p>
-<p>&gt;&gt;&gt; <a href="http://live.gnome.org/Gnote">РЎС‚СЂР°РЅРёС†Р° РїСЂРѕРµРєС‚Р° Gnote</a>
+  <p>Согласно блогу LinuxMint, Linux Mint 12 будет использовать по умолчанию GNOME 3 с оболочкой GNOME Shell. Для пользователей, предпочитающих классический GNOME 2.3x, будет доступен его форк MATE.</p><p>Linux Mint 12 будет использовать не просто GNOME Shell, а свою наработку MGSE (Mint Gnome Shell Extensions), которая приближена к классической второй ветке GNOME: панель с меню и списком окон в низу экрана, переключение между окнами, а не приложениями, иконка системных уведомлений наверху, классический ALT + TAB переключатель и многое другое.</p><p>Среди расширений включенных в Linux Mint 12 стоит отметить: нижнюю панель, классический ALT+TAB, MediaPlayer, noa11y, пользовательские темы, альтернативное меню выключения, список окон, умный обзор и новое расширение для меню.</p><p>Все новые расширения можно будет отключить.</p>
+<p>&gt;&gt;&gt; <a href="http://blog.linuxmint.com/?p=1851">Подробности</a>
   </div>
 
   
@@ -560,7 +603,7 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 
 <p class="tags">
 
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=gnome">gnome</a>, <a href="view-news.jsp?tag=gnote">gnote</a>, <a href="view-news.jsp?tag=mono">mono</a>, <a href="view-news.jsp?tag=tomboy">tomboy</a>, <a href="view-news.jsp?tag=%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8">Р·Р°РјРµС‚РєРё</a></span>
+  Метки: <span class=tag><a href="view-news.jsp?tag=gnome">gnome</a>, <a href="view-news.jsp?tag=mint">mint</a></span>
 </p>
 
 
@@ -576,11 +619,11 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 
 
 
-<a href="/people/ZenitharChampion/profile">ZenitharChampion</a>
+<a href="/people/terminator/profile">terminator</a>
 
 
 
-(29.10.2011 10:37:57)
+(07.11.2011 9:54:23)
     
     
   
@@ -588,10 +631,10 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 <div class="nav">
 
 
-  [<a href="comment-message.jsp?topic=6934275">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+  [<a href="comment-message.jsp?topic=6969545">Добавить&nbsp;комментарий</a>]
 
   
-  [<a href="/news/gnome/6934275">93&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёСЏ</a>&nbsp;(СЃС‚СЂ. <a href="/news/gnome/6934275/page1">2</a>)]
+  [<a href="/news/gnome/6969545">175&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/gnome/6969545/page1">2</a> <a href="/news/gnome/6969545/page2">3</a> <a href="/news/gnome/6969545/page3">4</a>)]
   </div>
   </div>
 </div>
@@ -624,1069 +667,10 @@ SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„
 
 
 
-<div class=news id="topic-6931385">
+<div class=news id="topic-6969610">
 
 <h2>
-  <a href="/news/commercial/6931385">XenServer 6.0 вЂ” РїР»Р°С‚С„РѕСЂРјР° РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂРѕР№ СЃРµСЂРІРµСЂРѕРІ РІРёСЂС‚СѓР°Р»РёР·Р°С†РёРё РЅР° РіРёРїРµСЂРІРёР·РѕСЂРµ Xen</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/commercial/">
-  <img src="/tango/img/money-logo.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° РљРѕРјРјРµСЂС‡РµСЃРєРѕРµ РџРћ">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p><b>Citrix XenServer</b> РїСЂРµРґРѕСЃС‚Р°РІР»СЏРµС‚ Р±РµСЃРїР»Р°С‚РЅРѕ РїСЂР°РєС‚РёС‡РµСЃРєРё РІСЃРµ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅС‹Рµ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РєРѕСЂРїРѕСЂР°С‚РёРІРЅРѕРіРѕ СѓСЂРѕРІРЅСЏ, РЅРµРѕР±С…РѕРґРёРјС‹Рµ РґР»СЏ РёРЅС‚РµРіСЂР°С†РёРё, СѓРїСЂР°РІР»РµРЅРёСЏ Рё Р°РІС‚РѕРјР°С‚РёР·Р°С†РёРё РІРёСЂС‚СѓР°Р»СЊРЅС‹С… С†РµРЅС‚СЂРѕРІ РѕР±СЂР°Р±РѕС‚РєРё РґР°РЅРЅС‹С….</p><p>Р•СЃС‚СЊ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёС… С„РёР·РёС‡РµСЃРєРёС… СЃРµСЂРІРµСЂРѕРІ РІ РІРёСЂС‚СѓР°Р»СЊРЅС‹Рµ РјР°С€РёРЅС‹ РёСЃРїРѕР»СЊР·СѓСЏ <b>XenConvert</b> Рё СЃРѕР·РґР°РЅРёСЏ РЅРѕРІС‹С… РІРёСЂС‚СѓР°Р»СЊРЅС‹С… РјР°С€РёРЅ РёР· РєРѕРЅСЃРѕР»Рё СѓРїСЂР°РІР»РµРЅРёСЏ <b>XenCenter</b>. РњРѕР¶РЅРѕ СЃРѕР·РґР°РІР°С‚СЊ СЃРѕР±СЃС‚РІРµРЅРЅС‹Рµ С€Р°Р±Р»РѕРЅС‹ РІРёСЂС‚СѓР°Р»РёР·Р°С†РёРё РґР»СЏ РґР°Р»СЊРЅРµР№С€РµРіРѕ РѕР±Р»РµРіС‡РµРЅРёСЏ Рё СѓСЃРєРѕСЂРµРЅРёСЏ СЃРѕР·РґР°РЅРёСЏ РЅРѕРІС‹С… РІРёСЂС‚СѓР°Р»СЊРЅС‹С… РјР°С€РёРЅ.</p><p><b>РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё РІРµСЂСЃРёРё 6.0</b>:</p><ul><li>Р”Рѕ 1 РўР± РѕРїРµСЂР°С‚РёРІРЅРѕР№ РїР°РјСЏС‚Рё РЅР° С…РѕСЃС‚.
-
-</li><li>РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ РіРёРїРµСЂРІРёР·РѕСЂР° Xen 4,1, СЂРµРЅРµРµ Р±С‹Р» Xen 3.4.
-
-</li><li>Р‘РѕР»РµРµ РѕР±С€РёСЂРЅР°СЏ РїРѕРґРґРµСЂР¶РєР° РіРѕСЃС‚РµРІС‹С… РћРЎ: Ubuntu 10.04, Debian Squeeze, Oracle -Enterprise Linux 6.0, SLES 10 SP4 Рё СЌРєСЃРїРµСЂРёРјРµРЅС‚Р°Р»СЊРЅР°СЏ РїРѕРґРґРµСЂР¶РєР° Solaris 10 Рё Ubuntu 10.10.
-
-</li><li>РћРїС‚РёРјРёР·РёСЂРѕРІР°РЅ РґР»СЏ XenDesktop СЃ РїРѕРІС‹С€РµРЅРЅРѕР№ РјР°СЃС€С‚Р°Р±РёСЂСѓРµРјРѕСЃС‚СЊСЋ Рё РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚СЊСЋ.
-
-</li><li>Р’РёСЂС‚СѓР°Р»СЊРЅС‹Р№ СЃРµС‚РµРІРѕР№ РёРЅС‚РµСЂС„РµР№СЃ СЃ РїСЂРѕРїСѓСЃРєРЅРѕР№ СЃРїРѕСЃРѕР±РЅРѕСЃС‚СЊСЋ РІ 10 Р“Р±РёС‚/СЃ, СЂР°РЅРµРµ 2 Р“Р±РёС‚/СЃ.
-
-</li></ul>
-<p>&gt;&gt;&gt; <a href="http://www.citrix.com/English/ps2/products/product.asp?contentID=683148&amp;ntref=prod_top">РћС„РёС†РёР°Р»СЊРЅС‹Р№ СЃР°Р№С‚</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=citrix">citrix</a>, <a href="view-news.jsp?tag=xenserver">xenserver</a>, <a href="view-news.jsp?tag=%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F">РІРёСЂС‚СѓР°Р»РёР·Р°С†РёСЏ</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/gray/profile">gray</a>
-
-
-
-(28.10.2011 17:25:20)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6931385">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/commercial/6931385">58&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/commercial/6931385/page1">2</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6931150">
-
-<h2>
-  <a href="/news/ubuntu/6931150">Canonical Рё Dell РѕС‚РєСЂС‹РІР°СЋС‚ 220 СЂРѕР·РЅРёС‡РЅС‹С… РјР°РіР°Р·РёРЅРѕРІ РІ РљРёС‚Р°Рµ</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/ubuntu/">
-  <img src="/tango/img/ubuntu-logo.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° Ubuntu Linux">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Р’ СЃСЂРµРґСѓ РІ РџРµРєРёРЅРµ Canonical Рё Dell РѕР±СЉСЏРІРёР»Рё Рѕ РЅР°С‡Р°Р»Рµ РѕС‚РєСЂС‹С‚РёСЏ 220 РјР°РіР°Р·РёРЅРѕРІ РІ РљРёС‚Р°Рµ. Р­С‚Рё РјР°РіР°Р·РёРЅС‹ Р±СѓРґСѓС‚ РїСЂРѕРґР°РІР°С‚СЊ С‚РµС…РЅРёРєСѓ Dell СЃ РїСЂРµРґСѓСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹Рј
-
-РїСЂРѕРіСЂР°РјРјРЅС‹Рј РѕР±РµСЃРїРµС‡РµРЅРёРµРј РѕС‚ Canonical - Р°РЅР°Р»РѕРіРёС‡РЅРѕ РјР°РіР°Р·РёРЅР°Рј РєРѕРјРїР°РЅРёРё Apple. РЎРїРµС†РёР°Р»СЊРЅРѕ РѕР±СѓС‡РµРЅРЅС‹Р№ РїРµСЂСЃРѕРЅР°Р» Р±СѓРґРµС‚ РѕР±СЉСЏСЃРЅСЏС‚СЊ РєР»РёРµРЅС‚Р°Рј РІС‹РіРѕРґС‹ Рё РїСЂРµРёРјСѓС‰РµСЃС‚РІР° Ubuntu Рё Linux. РћСЃРЅРѕРІРЅС‹Рµ РЅР°РїСЂР°РІР»РµРЅРёСЏ СЂР°Р±РѕС‚С‹ РґР»СЏ Canonical Рё Dell - РџРµРєРёРЅ Рё РЁР°РЅС…Р°Р№. 220 РјР°РіР°Р·РёРЅРѕРІ - СЌС‚Рѕ С‚РѕР»СЊРєРѕ РЅР°С‡Р°Р»Рѕ, РїР»Р°РЅРёСЂСѓРµС‚СЃСЏ СЂР°СЃС€РёСЂРµРЅРёРµ СЃРµС‚Рё РјР°РіР°Р·РёРЅРѕРІ Рё Р·Р° РїСЂРµРґРµР»С‹ РљРёС‚Р°СЏ. Р”Р»СЏ Canonical РѕС‚РєСЂС‹С‚РёРµ СЃРѕРІРјРµСЃС‚РЅС‹С… РјР°РіР°Р·РёРЅРѕРІ РѕР·РЅР°С‡Р°РµС‚ РїСЂРёР·РЅР°РЅРёРµ СЃРѕ СЃС‚РѕСЂРѕРЅС‹ РѕРґРЅРѕРіРѕ РёР· РєСЂСѓРїРЅРµР№С€РёС… РјРёСЂРѕРІС‹С… РїСЂРѕРёР·РІРѕРґРёС‚РµР»РµР№ РџРљ.</p><p>РќР° РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚ РјР°РіР°Р·РёРЅС‹ РѕС‚РєСЂС‹С‚С‹ РІ РіРѕСЂРѕРґР°С… Xu Zhou, Lian Yun Gang, Su Qian, Yancheng Рё Lianyungang.
-
-</p>
-<p>&gt;&gt;&gt; <a href="http://blog.canonical.com/2011/10/27/retail-stores-in-china/">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=ubuntu">ubuntu</a>, <a href="view-news.jsp?tag=%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F+%D1%83%D1%81%D0%BF%D0%B5%D1%85%D0%B0">РёСЃС‚РѕСЂРёСЏ СѓСЃРїРµС…Р°</a>, <a href="view-news.jsp?tag=%D0%BA%D0%B8%D1%82%D0%B0%D0%B9">РєРёС‚Р°Р№</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/USSR/profile">USSR</a>
-
-
-
-(28.10.2011 14:37:54)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6931150">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/ubuntu/6931150">407&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/ubuntu/6931150/page1">2</a> <a href="/news/ubuntu/6931150/page2">3</a> <a href="/news/ubuntu/6931150/page3">4</a> <a href="/news/ubuntu/6931150/page4">5</a> <a href="/news/ubuntu/6931150/page5">6</a> <a href="/news/ubuntu/6931150/page6">7</a> <a href="/news/ubuntu/6931150/page7">8</a> <a href="/news/ubuntu/6931150/page8">9</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6929904">
-
-<h2>
-  <a href="/news/apple/6929904">Apple РѕС‚РєСЂС‹РІР°РµС‚ РёСЃС…РѕРґРЅС‹Р№ РєРѕРґ Apple's Lossless Audio Codec (ALAC) </a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/apple/">
-  <img src="/tango/img/apple-logo.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° Apple">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>РљРѕРјРїР°РЅРёСЏ Apple  РѕРїСѓР±Р»РёРєРѕРІР°Р»Р° РїРѕРґ Р»РёС†РµРЅР·РёРµР№ Apache РёСЃС…РѕРґРЅС‹Р№ РєРѕРґ СЃРІРѕРµРіРѕ Р°СѓРґРёРѕРєРѕРґРµРєР° РґР»СЏ СЃР¶Р°С‚РёСЏ Р±РµР· РїРѕС‚РµСЂСЊ. Apple Lossless Audio Codec (ALAC) Р±С‹Р» СЂР°Р·СЂР°Р±РѕС‚Р°РЅ Apple Р±РѕР»РµРµ РґРµСЃСЏС‚Рё Р»РµС‚ РЅР°Р·Р°Рґ Рё СЃ С‚РµС… РїРѕСЂ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ Р±РѕР»СЊС€РёРЅСЃС‚РІРѕРј РІС‹РїСѓСЃРєР°РµРјС‹С… РєРѕРјРїР°РЅРёРµР№ РїСЂРѕРґСѓРєС‚РѕРІ.</p>
-<p>&gt;&gt;&gt; <a href="http://alac.macosforge.org/">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=alac">alac</a>, <a href="view-news.jsp?tag=apple">apple</a>, <a href="view-news.jsp?tag=audio">audio</a>, <a href="view-news.jsp?tag=codec">codec</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/prozium/profile">prozium</a>
-
-
-
-(28.10.2011 11:08:43)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6929904">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/apple/6929904">285&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/apple/6929904/page1">2</a> <a href="/news/apple/6929904/page2">3</a> <a href="/news/apple/6929904/page3">4</a> <a href="/news/apple/6929904/page4">5</a> <a href="/news/apple/6929904/page5">6</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6927278">
-
-<h2>
-  <a href="/news/russia/6927278">РљРѕРјР°РЅРґР° Mandriva РїСЂРёРЅРёРјР°РµС‚ СѓС‡Р°СЃС‚РёРµ РІ РµРІСЂРѕРїРµР№СЃРєРѕР№ РєРѕРЅС„РµСЂРµРЅС†РёРё LinuxCon</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/russia/">
-  <img src="/tango/img/russia-logo.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° Linux РІ Р РѕСЃСЃРёРё">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>РљРѕРјР°РЅРґР° Mandriva РїСЂРёРЅРёРјР°РµС‚ СѓС‡Р°СЃС‚РёРµ РІ РµРІСЂРѕРїРµР№СЃРєРѕР№ РєРѕРЅС„РµСЂРµРЅС†РёРё LinuxCon. Р­С‚Рѕ РїРµСЂРІРѕРµ РѕС„РёС†РёР°Р»СЊРЅРѕРµ РјРµСЂРѕРїСЂРёСЏС‚РёРµ, РЅР° РєРѕС‚РѕСЂРѕРј Р±СѓРґРµС‚ РїСЂРµРґСЃС‚Р°РІР»РµРЅР° РЅРѕРІР°СЏ РѕРїРµСЂР°С†РёРѕРЅРЅР°СЏ СЃРёСЃС‚РµРјР° Mandriva Desktop 2011.</p><p>LinuxCon вЂ” СЃР°РјРѕРµ Р·РЅР°С‡РёРјРѕРµ СЃРѕР±С‹С‚РёРµ РІ Р¶РёР·РЅРё РЎРџРћ-СЃРѕРѕР±С‰РµСЃС‚РІР°. РљРѕРЅС„РµСЂРµРЅС†РёРё РїСЂРѕРІРѕРґСЏС‚СЃСЏ 4 СЂР°Р·Р° РІ РіРѕРґ РЅР° СЂР°Р·Р»РёС‡РЅС‹С… РєРѕРЅС‚РёРЅРµРЅС‚Р°С…. РџСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ, С‡С‚Рѕ РїРѕ РёС‚РѕРіР°Рј 2011 РіРѕРґР° РІ СЂР°Р±РѕС‚Рµ LinuxCon РїСЂРёРјСѓС‚ СѓС‡Р°СЃС‚РёРµ Р±РѕР»РµРµ 2500 С‡РµР»РѕРІРµРє РёР· 30 СЃС‚СЂР°РЅ РјРёСЂР°.
-
-РњРµСЂРѕРїСЂРёСЏС‚РёРµ Р±С‹Р»Рѕ Р·Р°РґСѓРјР°РЅРѕ РІ 2009 РіРѕРґСѓ РєР°Рє РїР»РѕС‰Р°РґРєР°, РіРґРµ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРё, РїРѕР»СЊР·РѕРІР°С‚РµР»Рё Рё СЌРєСЃРїРµСЂС‚С‹ РјРѕРіСѓС‚ РѕР±РјРµРЅСЏС‚СЊСЃСЏ РёРґРµСЏРјРё Рѕ СЂР°Р·РІРёС‚РёРё РїСЂРѕРґСѓРєС‚РѕРІ Рё С‚РµС…РЅРѕР»РѕРіРёР№, РґРѕРіРѕРІРѕСЂРёС‚СЊСЃСЏ Рѕ СЃРѕС‚СЂСѓРґРЅРёС‡РµСЃС‚РІРµ Рё РЅР°Р№С‚Рё РЅРѕРІС‹С… СЃС‚РѕСЂРѕРЅРЅРёРєРѕРІ.</p><p>РќР° РµРІСЂРѕРїРµР№СЃРєРѕР№ РєРѕРЅС„РµСЂРµРЅС†РёРё LinuxCon, РєРѕС‚РѕСЂР°СЏ РїСЂРѕС…РѕРґРёС‚ РІ СЌС‚Рё РґРЅРё РІ РџСЂР°РіРµ, РєРѕРјР°РЅРґР° Mandriva РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ РЅРѕРІСѓСЋ РІРµСЂСЃРёСЋ РѕРїРµСЂР°С†РёРѕРЅРЅРѕР№ СЃРёСЃС‚РµРјС‹ Mandriva Desktop 2011. Р’ СЌС‚РѕРј РёРЅРЅРѕРІР°С†РёРѕРЅРЅРѕРј РїСЂРѕРґСѓРєС‚Рµ РІРїРµСЂРІС‹Рµ РѕР±СЉРµРґРёРЅРµРЅС‹ СѓСЃРёР»РёСЏ РёРЅР¶РµРЅРµСЂРѕРІ, РґРёР·Р°Р№РЅРµСЂРѕРІ Рё РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ РёР· С‚СЂРµС… С†РµРЅС‚СЂРѕРІ СЂР°Р·СЂР°Р±РѕС‚РєРё Mandriva, РєРѕС‚РѕСЂС‹Рµ СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ РІРѕ Р¤СЂР°РЅС†РёРё, Р‘СЂР°Р·РёР»РёРё Рё Р РѕСЃСЃРёРё.</p><p>Р’ СЂР°РјРєР°С… LinuxCon Europe РєРѕРјР°РЅРґР° Mandriva С‚Р°РєР¶Рµ РѕР·РІСѓС‡РёР»Р° РЅРѕРІСѓСЋ РёРЅРёС†РёР°С‚РёРІСѓ РїРѕ РЅР°Р±РѕСЂСѓ РїРµСЂСЃРѕРЅР°Р»Р°. РљРѕРјРїР°РЅРёСЏ Р·Р°РёРЅС‚РµСЂРµСЃРѕРІР°РЅР° РІ СЃРѕС‚СЂСѓРґРЅРёС‡РµСЃС‚РІРµ СЃ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєР°РјРё, РїСЂРѕРіСЂР°РјРјРёСЃС‚Р°РјРё, РґРёР·Р°Р№РЅРµСЂР°РјРё Рё РїСЂРѕРґР°РІС†Р°РјРё.</p>
-<p>&gt;&gt;&gt; <a href="http://www.linux.org.ru/news/russia/6927278">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=linuxcon">linuxcon</a>, <a href="view-news.jsp?tag=mandriva">mandriva</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/RosaLab/profile">RosaLab</a>
-
-
-
-(27.10.2011 18:04:57)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6927278">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/russia/6927278">199&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/russia/6927278/page1">2</a> <a href="/news/russia/6927278/page2">3</a> <a href="/news/russia/6927278/page3">4</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6922603">
-
-<h2>
-  <a href="/news/internet/6922603">Р РµР»РёР· web-Р±СЂР°СѓР·РµСЂР° Chrome 15</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/internet/">
-  <img src="/tango/img/applications-internet.png" width=64 height=64 border=0 alt="Р“СЂСѓРїРїР° РРЅС‚РµСЂРЅРµС‚">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>РљР»СЋС‡РµРІС‹Рµ РёР·РјРµРЅРµРЅРёСЏ:</p><ul><li>РїРѕР»РЅРѕСЃС‚СЊСЋ РїРµСЂРµСЂР°Р±РѕС‚Р°РЅРЅР°СЏ СЃС‚СЂР°РЅРёС†Р° Р±С‹СЃС‚СЂРѕРіРѕ РґРѕСЃС‚СѓРїР° (<a href="http://www.opennet.ru/opennews/pics_base/32129_1319562117.png">СЃРєСЂРёРЅС€РѕС‚</a>);
-
-</li><li>Р°РєС‚РёРІР°С†РёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ Javascript Fullscreen API РґР»СЏ РёРЅРёС†РёРёСЂРѕРІР°РЅРёСЏ web-РїСЂРёР»РѕР¶РµРЅРёСЏРјРё РїРµСЂРµС…РѕРґР° РІ РїРѕР»РЅРѕСЌРєСЂР°РЅРЅС‹Р№ СЂРµР¶РёРј Рё РїРµСЂРµС…РІР°С‚Р° СЃРѕР±С‹С‚РёР№ РїРѕ РѕС‚РєСЂС‹С‚РёСЋ СЃС‚СЂР°РЅРёС† РІ РїРѕР»РЅРѕСЌРєСЂР°РЅРЅРѕРј СЂРµР¶РёРјРµ;
-
-</li><li>РІРєР»СЋС‡С‘РЅ РЅРѕРІС‹Р№ РјРµС…Р°РЅРёР·Рј РІС‹СЏРІР»РµРЅРёСЏ С„РёС€РёРЅРіР° РЅР° СЃС‚РѕСЂРѕРЅРµ РєР»РёРµРЅС‚Р°: РїСЂРё СЃСЂР°Р±Р°С‚С‹РІР°РЅРёРё Р»РѕРєР°Р»СЊРЅРѕРіРѕ СЌРІСЂРёСЃС‚РёС‡РµСЃРєРѕРіРѕ Р°РЅР°Р»РёР·Р°С‚РѕСЂР°, РґР»СЏ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕР№ РїСЂРѕРІРµСЂРєРё РѕС‚РїСЂР°РІР»СЏРµС‚СЃСЏ С‚РѕР»СЊРєРѕ РѕРіСЂР°РЅРёС‡РµРЅРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ, СЃР°РјР° РїРѕ СЃРµР±Рµ РЅРµ РёРґРµРЅС‚РёС„РёС†РёСЂСѓСЋС‰Р°СЏ СЃС‚СЂР°РЅРёС†Сѓ (РїРµСЂРµРґР°С‘С‚СЃСЏ РїСЂРµС„РёРєСЃ РёР»Рё С…СЌС€ РѕС‚ URL);
-
-</li><li>СѓСЃС‚СЂР°РЅРµРЅС‹ РїСЂРѕР±Р»РµРјС‹ СЃ СЂР°Р±РѕС‚РѕР№ Native Client РЅР° 32-СЂР°Р·СЂСЏРґРЅС‹С… РґРёСЃС‚СЂРёР±СѓС‚РёРІР°С… Linux;
-
-</li><li>РѕР±РЅРѕРІР»РµРЅС‹ Р±РёР±Р»РёРѕС‚РµРєРё GTK+ 2.20.1 Рё ATK 1.29.2;
-
-</li><li>СѓСЃС‚СЂР°РЅС‘РЅ СЂСЏРґ РїСЂРѕР±Р»РµРј РІ РєРѕРґРµ РІС‹РІРѕРґР° РЅР° РїРµС‡Р°С‚СЊ (РєСЂР°С… РїСЂРё РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕРј РїСЂРѕСЃРјРѕС‚СЂРµ Рё РёР·Р»РёС€РЅРёРµ РѕС‚СЃС‚СѓРїС‹ РїСЂРё РїРµС‡Р°С‚Рё);
-
-</li><li>РјРЅРѕР¶РµСЃС‚РІРѕ РґСЂСѓРіРёС… РјРµР»РєРёС… РёР·РјРµРЅРµРЅРёР№.
-
-</li></ul><p>РљСЂРѕРјРµ РЅРѕРІРѕРІРІРµРґРµРЅРёР№ Рё РёСЃРїСЂР°РІР»РµРЅРёСЏ РѕС€РёР±РѕРє, РІ РЅРѕРІРѕР№ РІРµСЂСЃРёРё СѓСЃС‚СЂР°РЅРµРЅРѕ 18 СѓСЏР·РІРёРјРѕСЃС‚РµР№, РёР· РєРѕС‚РѕСЂС‹С… 11 РїРѕРјРµС‡РµРЅС‹ РєР°Рє РѕРїР°СЃРЅС‹Рµ, 3 - СѓРјРµСЂРµРЅРЅС‹Рµ Рё 4 - РЅРµР·РЅР°С‡РёС‚РµР»СЊРЅС‹Рµ. Р’ СЂР°РјРєР°С… РїСЂРѕРіСЂР°РјРјС‹ РїРѕ РІС‹РїР»Р°С‚Рµ РґРµРЅРµР¶РЅРѕРіРѕ РІРѕР·РЅР°РіСЂР°Р¶РґРµРЅРёСЏ Р·Р° РѕР±РЅР°СЂСѓР¶РµРЅРёРµ СѓСЏР·РІРёРјРѕСЃС‚РµР№ РґР»СЏ С‚РµРєСѓС‰РµРіРѕ СЂРµР»РёР·Р° РєРѕРјРїР°РЅРёСЏ Google РІС‹РїР»Р°С‚РёР»Р° РёСЃСЃР»РµРґРѕРІР°С‚РµР»СЏРј Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё 26511 РґРѕР»Р»Р°СЂРѕРІ РЎРЁРђ. Р”РІРµ РїСЂРµРјРёРё, СЂР°Р·РјРµСЂРѕРј $12174 Рё $6337, СЏРІР»СЏСЋС‚СЃСЏ СЃР°РјС‹РјРё Р±РѕР»СЊС€РёРјРё РїСЂРµРјРёСЏРјРё, РІС‹РїР»Р°С‡РµРЅРЅС‹РјРё Р·Р° РІСЃСЋ РёСЃС‚РѕСЂРёСЋ РїСЂРѕРіСЂР°РјРјС‹.</p><p>РџСЂРµРјРёСЋ $12174 Р·Р° РѕР±РЅР°СЂСѓР¶РµРЅРёРµ СЃРµСЂРёРё РїСЂРѕР±Р»РµРј, СЃРІСЏР·Р°РЅРЅС‹С… СЃ СЂР°Р·РіСЂР°РЅРёС‡РµРЅРёРµРј РґРѕСЃС‚СѓРїР° Рє РїР°СЂР°РјРµС‚СЂР°Рј РґСЂСѓРіРѕРіРѕ РѕРєРЅР° (cross-origin), РїРѕР»СѓС‡РёР» РЎРµСЂРіРµР№ Р“Р»Р°Р·СѓРЅРѕРІ, <a href="http://www.chromium.org/Home/chromium-security/hall-of-fame">СЂРµРєРѕСЂРґСЃРјРµРЅ</a> РїРѕ РЅР°С…РѕР¶РґРµРЅРёСЋ СѓСЏР·РІРёРјРѕСЃС‚РµР№ РІ Chrome. </p><p>&gt;&gt;&gt; <a href="http://www.opennet.ru/opennews/art.shtml?num=32129"> Р‘РѕР»РµРµ РїРѕРґСЂРѕР±РЅР°СЏ СЃС‚Р°С‚СЊСЏ РЅР° РћРїРµРЅРЅРµС‚Рµ</a></p>
-<p>&gt;&gt;&gt; <a href="http://googlechromereleases.blogspot.com/2011/10/chrome-stable-release.html">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=chrome">chrome</a>, <a href="view-news.jsp?tag=chromium">chromium</a>, <a href="view-news.jsp?tag=google">google</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/sphericalhorse/profile">sphericalhorse</a>
-
-
-
-(27.10.2011 8:30:45)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6922603">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/internet/6922603">172&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёСЏ</a>&nbsp;(СЃС‚СЂ. <a href="/news/internet/6922603/page1">2</a> <a href="/news/internet/6922603/page2">3</a> <a href="/news/internet/6922603/page3">4</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6920105">
-
-<h2>
-  <a href="/news/doc/6920105">Yet Another Perl Podcast - РІС‹РїСѓСЃРє 11</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/doc/">
-  <img src="/tango/img/info-logo.png" width=64 height=64 border=0 alt="Р“СЂСѓРїРїР° Р”РѕРєСѓРјРµРЅС‚Р°С†РёСЏ">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>РЎС‚Р°Р» РґРѕСЃС‚СѓРїРµРЅ 11-С‹Р№ РІС‹РїСѓСЃРє Yet Another Perl Podcast, РїРѕРґРєР°СЃС‚Р° Рѕ Perl РЅР° СЂСѓСЃСЃРєРѕРј СЏР·С‹РєРµ. РўРµРјС‹ РІС‹РїСѓСЃРєР°:</p><ul><li> Р”РµРЅСЊ СЂРѕР¶РґРµРЅРёСЏ Р›Р°СЂСЂРё РЈРѕР»Р»Р° :)
-
-</li><li> РџРѕС‡РµРјСѓ Perl?
-
-</li><li> РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚СЊ РїР°РєРµС‚РѕРІ РћРћРџ РІ Perl
-
-</li><li> РћС‚С‡РµС‚ Рѕ РєРѕРЅС„РµСЂРµРЅС†РёРё BlackPerl 2011
-
-li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
-
-</li><li> РќРѕРІР°СЏ СЂСѓР±СЂРёРєР° &quot;РћС„С‚РѕРїРёРє&quot;
-
-</li></ul><p>РџР°СЂР° СЃР»РѕРІ Рѕ РїРѕРґРєР°СЃС‚Рµ. РџРµСЂРІС‹Р№ (РїРёР»РѕС‚РЅС‹Р№) РІС‹РїСѓСЃРє YAPP Р±С‹Р» Р·Р°Р»РёС‚ РЅР° rpod 7 РјР°СЂС‚Р° 2011. РЎ С‚РµС… РїРѕСЂ РїРѕРґРєР°СЃС‚ РІС‹С…РѕРґРёС‚ РїСЂРёРјРµСЂРЅРѕ СЂР°Р· РІ РјРµСЃСЏС†. Р§РµС‚РєРѕРіРѕ РіСЂР°С„РёРєР° РІС‹РїСѓСЃРєРѕРІ РЅРµС‚ - РІСЃРµ СЃРёР»СЊРЅРѕ Р·Р°РІРёСЃРёС‚ РѕС‚ РЅР°Р»РёС‡РёСЏ С‚РµРј РґР»СЏ РѕР±СЃСѓР¶РґРµРЅРёСЏ, РЅР°СЃС‚СЂРѕРµРЅРёСЏ РІРµРґСѓС‰РёС… Рё РґСЂСѓРіРёС… С„Р°РєС‚РѕСЂРѕРІ.</p><p>РќРµСЃРјРѕС‚СЂСЏ РЅР° С‚Рѕ, С‡С‚Рѕ РїРѕРґРєР°СЃС‚ РїРѕСЃРІСЏС‰РµРЅ СЏР·С‹РєСѓ Perl Рё РІРµРґСѓС‚ РµРіРѕ perl-РїСЂРѕРіСЂР°РјРјРёСЃС‚С‹, РѕРЅ РјРѕР¶РµС‚ Р±С‹С‚СЊ РёРЅС‚РµСЂРµСЃРµРЅ С€РёСЂРѕРєРѕР№ Р°СѓРґРёС‚РѕСЂРёРё - РѕС‚ СЃРёСЃС‚РµРјРЅС‹С… Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРІ, Р»РёРЅСѓРєСЃРѕРёРґРѕРІ Рё СЃРѕС‡СѓРІСЃС‚РІСѓСЋС‰РёС… РґРѕ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹С… РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ, РёСЃРїРѕР»СЊР·СѓСЋС‰РёС… РІ СЃРІРѕРµР№ СЂР°Р±РѕС‚Рµ СЏР·С‹Рє, РѕС‚Р»РёС‡РЅС‹Р№ РѕС‚ Perl.</p>
-<p>&gt;&gt;&gt; <a href="http://yapp.rpod.ru/252120.html">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=cpan">cpan</a>, <a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=perl">perl</a>, <a href="view-news.jsp?tag=podcast">podcast</a>, <a href="view-news.jsp?tag=unix">unix</a>, <a href="view-news.jsp?tag=%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D0%B8">РІР°РєР°РЅСЃРёРё</a>, <a href="view-news.jsp?tag=%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%81%D1%82">РїРѕРґРєР°СЃС‚</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/afiskon/profile">afiskon</a>
-
-
-
-(25.10.2011 23:51:40)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6920105">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/doc/6920105">89&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/doc/6920105/page1">2</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6918904">
-
-<h2>
-  <a href="/news/conference/6918904">Ubuntu Install Fest РІ РљР°Р·Р°РЅРё</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/conference/">
-  <img src="/tango/img/x-office-presentation.png" width=64 height=64 border=0 alt="Р“СЂСѓРїРїР° РљРѕРЅС„РµСЂРµРЅС†РёРё Рё РІСЃС‚СЂРµС‡Рё">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>29.10.2011 Рі. Kazan Ubuntu LoCo Team СЃРѕРІРјРµСЃС‚РЅРѕ СЃ FOSS Labs Рё РРўРРЎ РљР°Р·Р°РЅСЃРєРѕРіРѕ С„РµРґРµСЂР°Р»СЊРЅРѕРіРѕ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р° РїСЂРѕРІРµРґРµС‚ Install Fest, РїРѕСЃРІСЏС‰РµРЅРЅС‹Р№ РІС‹С…РѕРґСѓ РЅРѕРІРѕРіРѕ СЂРµР»РёР·Р° Ubuntu.</p><p>Р’ РїСЂРѕРіСЂР°РјРјРµ:
-
-</p><ul><li>Р”РѕРєР»Р°РґС‹ Рё РґРёСЃРєСѓСЃСЃРёРё Рѕ Ubuntu Рё Рѕ Linux РІ С†РµР»РѕРј;
-
-</li><li>РџРѕРјРѕС‰СЊ РІ СѓСЃС‚Р°РЅРѕРІРєРµ Ubuntu РІСЃРµРј Р¶РµР»Р°СЋС‰РёРёРј;
-
-</li></ul><p><a href="http://fosslabs.timepad.ru/event/14054">Р РµРіРёСЃС‚СЂР°С†РёСЏ</a> (Р±РµСЃРїР»Р°С‚РЅР°СЏ) РѕР±СЏР·Р°С‚РµР»СЊРЅР° (СЃРїРёСЃРѕРє СѓС‡Р°СЃС‚РЅРёРєРѕРІ РїРµСЂРµРґР°РґСѓС‚ РѕС…СЂР°РЅРµ Р·РґР°РЅРёСЏ, С‡С‚РѕР±С‹ РІСЃРµС… РїСѓСЃС‚РёР»Рё).</p>
-<p>&gt;&gt;&gt; <a href="http://fosslabs.ru/event/install-fest-ubuntu-1110">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=installfest">installfest</a>, <a href="view-news.jsp?tag=ubuntu">ubuntu</a>, <a href="view-news.jsp?tag=%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C">РєР°Р·Р°РЅСЊ</a>, <a href="view-news.jsp?tag=%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F">РєРѕРЅС„РµСЂРµРЅС†РёСЏ</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/uju/profile">uju</a>
-
-
-
-(25.10.2011 17:42:04)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6918904">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/conference/6918904">91&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>&nbsp;(СЃС‚СЂ. <a href="/news/conference/6918904/page1">2</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6918997">
-
-<h2>
-  <a href="/news/linux-org-ru/6918997">РЎРѕР·РґР°РЅ СЂСѓСЃСЃРєРѕСЏР·С‹С‡РЅС‹Р№ С„РѕСЂСѓРј РїРѕРґРґРµСЂР¶РєРё Midnight Commander</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/linux-org-ru/">
-  <img src="/tango/img/angry-logo.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° Linux.org.ru">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Р”Р»СЏ РїРѕРґРґРµСЂР¶РєРё РѕРґРЅРѕРіРѕ РёР· СЃР°РјС‹С… РјРЅРѕРіРѕС‡РёСЃР»РµРЅРЅС‹С… СЃРѕРѕР±С‰РµСЃС‚РІ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ Midnight Commander СЃРѕР·РґР°РЅ СЂСѓСЃСЃРєРѕСЏР·С‹С‡РЅС‹Р№ С„РѕСЂСѓРј РЅР° Р±Р°Р·Рµ СЃР°Р№С‚Р° Linux.org.ru.</p><p>РќР° РґР°РЅРЅРѕРј С„РѕСЂСѓРјРµ Р±СѓРґСѓС‚ РѕР±СЃСѓР¶РґР°С‚СЊСЃСЏ РїСѓС‚Рё СЂР°Р·РІРёС‚РёСЏ Midnight Commander, РїРѕ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё Р±СѓРґРµС‚ РѕСЃСѓС‰РµСЃС‚РІР»СЏС‚СЊСЃСЏ РїРѕРґРґРµСЂР¶РєР° РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ СЃРёР»Р°РјРё СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ РёР»Рё РѕРїС‹С‚РЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№.</p><p>Р¤РѕСЂСѓРј РїРѕРґС‡РёРЅСЏРµС‚СЃСЏ РѕСЃРЅРѕРІРЅС‹Рј <a href="https://www.linux.org.ru/rules.jsp">РїСЂР°РІРёР»Р°Рј</a> СЂРµСЃСѓСЂСЃР° Linux.org.ru.</p>
-<p>&gt;&gt;&gt; <a href="https://www.linux.org.ru/forum/midnight/">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=lor">lor</a>, <a href="view-news.jsp?tag=mc">mc</a>, <a href="view-news.jsp?tag=opensource">opensource</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/Slavaz/profile">Slavaz</a>
-
-
-
-(25.10.2011 15:57:06)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6918997">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/linux-org-ru/6918997">202&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёСЏ</a>&nbsp;(СЃС‚СЂ. <a href="/news/linux-org-ru/6918997/page1">2</a> <a href="/news/linux-org-ru/6918997/page2">3</a> <a href="/news/linux-org-ru/6918997/page3">4</a> <a href="/news/linux-org-ru/6918997/page4">5</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6917842">
-
-<h2>
-  <a href="/news/opensource/6917842">X Neural Switcher 0.14.0</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/opensource/">
-  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° OpenSource">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p><b>X Neural Switcher (xneur)</b> вЂ” РїСЂРѕРіСЂР°РјРјР° РґР»СЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РјРµР¶РґСѓ СЂР°СЃРєР»Р°РґРєР°РјРё РєР»Р°РІРёР°С‚СѓСЂС‹ РґР»СЏ X Window System.</p><p>Р”Р°РЅРЅР°СЏ РїСЂРѕРіСЂР°РјРјР° СЏРІР»СЏРµС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёРј РїРµСЂРµРєР»СЋС‡Р°С‚РµР»РµРј РєР»Р°РІРёР°С‚СѓСЂС‹. Рў.Рµ. РїСЂРё РЅР°Р±РѕСЂРµ С‚РµРєСЃС‚Р°, РµСЃР»Рё РѕРЅ РЅР°Р±РёСЂР°РµС‚СЃСЏ РЅР° РЅРµРІРµСЂРЅРѕРј СЏР·С‹РєРµ, xneur Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё (РёР»Рё РїРѕ Р·Р°РїСЂРѕСЃСѓ) РїРµСЂРµРєР»СЋС‡РёС‚ СЏР·С‹Рє РЅР° РЅСѓР¶РЅС‹Р№. РџСЂРёРЅС†РёРї СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹ Р°РЅР°Р»РѕРіРёС‡РµРЅ Punto Switcher.</p><p>Р’ РѕР±С‰РµР№ СЃР»РѕР¶РЅРѕСЃС‚Рё, РїСЂРѕРіСЂР°РјРјР° РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РґРµРІСЏС‚РЅР°РґС†Р°С‚СЊ СЏР·С‹РєРѕРІ, РІ С‚РѕРј С‡РёСЃР»Рµ СЂСѓСЃСЃРєРёР№, Р°РЅРіР»РёР№СЃРєРёР№, СѓРєСЂР°РёРЅСЃРєРёР№ Рё Р±РµР»РѕСЂСѓСЃСЃРєРёР№. РџСЂРѕРіСЂР°РјРјР° РІ С„РѕРЅРѕРІРѕРј СЂРµР¶РёРјРµ Р°РЅР°Р»РёР·РёСЂСѓРµС‚ РІРІРѕРґРёРјС‹Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј СЃРёРјРІРѕР»С‹ Рё, РµСЃР»Рё РёС… РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РЅРµ С…Р°СЂР°РєС‚РµСЂРЅР° РґР»СЏ С‚РµРєСѓС‰РµРіРѕ СЏР·С‹РєР°, РїРµСЂРµРєР»СЋС‡Р°РµС‚ СЂР°СЃРєР»Р°РґРєСѓ Рё РїРµСЂРµРїРёСЃС‹РІР°РµС‚ РїРѕСЃР»РµРґРЅРµРµ СЃР»РѕРІРѕ.</p><p>РЎРїРёСЃРѕРє РёР·РјРµРЅРµРЅРёР№: 
-
-</p><ul><li>РСЃРїСЂР°РІР»РµРЅРёРµ СЂР°Р±РѕС‚С‹ СЃ РїСЂРёР»РѕР¶РµРЅРёСЏРјРё, СЃРѕР·РґР°РЅРЅС‹РјРё СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј GTK3.
-
-</li><li>РќРѕРІР°СЏ РѕРїС†РёСЏ СѓСЃС‚СЂР°РЅРµРЅРёСЏ РїСЂРѕР±Р»РµРј - РѕС‚РєР»СЋС‡РµРЅРёРµ Р°РІС‚РѕРїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РґР»СЏ РїРѕР»РЅРѕСЌРєСЂР°РЅРЅС‹С… РїСЂРёР»РѕР¶РµРЅРёР№.
-
-</li><li>РќРѕРІР°СЏ РѕРїС†РёСЏ СѓСЃС‚СЂР°РЅРµРЅРёСЏ РїСЂРѕР±Р»РµРј - СЃР»РµР¶РµРЅРёРµ Р·Р° РјС‹С€СЊСЋ. РћС‚РєР»СЋС‡РµРЅРёРµ РѕРїС†РёРё РѕС‚РєР»СЋС‡РёС‚ РїРµСЂРµС…РІР°С‚ СЃРѕР±С‹С‚РёР№ РјС‹С€РєРё.
-
-</li><li>Р”РѕР±Р°РІР»РµРЅР° РЅРѕРІР°СЏ РѕРїС†РёСЏ РІ СЂР°Р·РґРµР» &quot;РўРёРїРѕРіСЂР°С„РёРєР°&quot; - Р·Р°РјРµРЅР° РґРІРѕР№РЅРѕРіРѕ РїСЂРѕР±РµР»Р° РЅР° Р·Р°РїСЏС‚СѓСЋ Рё РїСЂРѕР±РµР».
-
-</li><li>Р’ gxneur РґРѕР±Р°РІР»РµРЅС‹ РѕРїС†РёРё РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё РґР»СЏ РІС‹Р±РѕСЂР° СЂР°Р·Р»РёС‡РЅС‹С… СЂРµР¶РёРјРѕРІ СЂР°Р±РѕС‚С‹.
-
-</li><li>Р’ gxneur РґРѕР±Р°РІР»РµРЅР° РѕРїС†РёСЏ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё СЂР°СЃС€РёСЂРµРЅРёСЏ Gnome 3 Shell, РїРµСЂРµРЅРѕСЃСЏС‰РµРіРѕ Р·РЅР°С‡РѕРє gxneur РІ РѕР±Р»Р°СЃС‚СЊ РѕР±РѕР»РѕС‡РєРё (РЅР° РІРµСЂС…РЅСЋСЋ РїР°РЅРµР»СЊ).
-
-</li></ul><p>Р•СЃР»Рё РїСЂРё Р·Р°РїСѓСЃРєРµ gxneur Сѓ РІР°СЃ РЅРµ РїРѕСЏРІРёР»СЃСЏ Р·РЅР°С‡РѕРє РІ С‚СЂРµРµ (С…Р°СЂР°РєС‚РµСЂРЅРѕ РґР»СЏ Unity), РІС‹РїРѕР»РЅРёС‚Рµ РєРѕРјР°РЅРґСѓ<br>
-
-<b>gconftool-2 -s -t string /apps/gxneur/rendering_engine AppIndicator</b></p>
-<p>&gt;&gt;&gt; <a href="http://xneur.ru">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=gxneur">gxneur</a>, <a href="view-news.jsp?tag=xneur">xneur</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/Crew/profile">Crew</a>
-
-
-
-(25.10.2011 13:03:51)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6917842">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-
-  
-  [<a href="/news/opensource/6917842">124&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёСЏ</a>&nbsp;(СЃС‚СЂ. <a href="/news/opensource/6917842/page1">2</a> <a href="/news/opensource/6917842/page2">3</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6917213">
-
-<h2>
-  <a href="/news/linux-general/6917213">РЈРјРµСЂ Р”Р¶РѕРЅ РњР°РєРєР°СЂС‚Рё</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/linux-general/">
-  <img src="/tango/img/general-logo.png" width=55 height=65 border=0 alt="Р“СЂСѓРїРїР° Linux General">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>23 РѕРєС‚СЏР±СЂСЏ 2011 РіРѕРґР° СЃРєРѕРЅС‡Р°Р»СЃСЏ Р”Р¶РѕРЅ РњР°РєРєР°СЂС‚Рё, С‡РµР»РѕРІРµРє, РїСЂРёРґСѓРјР°РІС€РёР№ С‚РµСЂРјРёРЅ &quot;РёСЃРєСѓСЃСЃС‚РІРµРЅРЅС‹Р№ РёРЅС‚РµР»Р»РµРєС‚&quot;, Р°РІС‚РѕСЂ СЏР·С‹РєР° РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ Lisp, РѕСЃРЅРѕРІРѕРїРѕР»РѕР¶РЅРёРє С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕРіРѕ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ, РѕР±Р»Р°РґР°С‚РµР»СЊ РїСЂРµРјРёРё РўСЊСЋСЂРёРЅРіР° Р·Р° РІРєР»Р°Рґ РІ РѕР±Р»Р°СЃС‚СЊ РёСЃСЃР»РµРґРѕРІР°РЅРёР№ РёСЃРєСѓСЃСЃС‚РІРµРЅРЅРѕРіРѕ РёРЅС‚РµР»Р»РµРєС‚Р°.</p>
-<p>&gt;&gt;&gt; <a href="https://twitter.com/#!/wendyg/status/128554733714669568">РСЃС‚РѕС‡РЅРёРє</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=%D0%B2%D0%B5%D0%BB%D0%B8%D0%BA%D0%B8%D0%B5+%D0%BB%D1%8E%D0%B4%D0%B8">РІРµР»РёРєРёРµ Р»СЋРґРё</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/Zhbert/profile">Zhbert</a>
-
-
-
-(25.10.2011 9:53:43)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  
-  
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=infoblock id="topic-6912403">
-РњРёРЅРё-РЅРѕРІРѕСЃС‚СЊ:
-  <a href="/news/hardware/6912403">Jumentum вЂ” РѕРєСЂСѓР¶РµРЅРёРµ РґР»СЏ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ РѕРґРЅРѕРєСЂРёСЃС‚Р°Р»СЊРЅС‹С… Р­Р’Рњ</a>
-
-
-
-  [<a href="/news/hardware/6912403">31&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
-</div>
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6856809">
-
-<h2>
-  <a href="/news/kernel/6856809">Р’С‹С€Р»Рѕ СЏРґСЂРѕ Linux 3.1</a>
+  <a href="/news/kernel/6969610">Книга &quot;Модули ядра Linux&quot;</a>
 </h2>
 
 
@@ -1694,7 +678,7 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 <div class="entry-userpic">
   <a href="/news/kernel/">
-  <img src="/tango/img/linux-logo.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° РЇРґСЂРѕ Linux">
+  <img src="/tango/img/linux-logo.png" width=65 height=75 border=0 alt="Группа Ядро Linux">
     </a>
 </div>
 
@@ -1703,8 +687,12 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 <div class=msg>
   
   
-  <p>РџРѕСЃР»Рµ РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕР№ СЂР°Р·СЂР°Р±РѕС‚РєРё (<i>РїСЂРёР±Р»РёР·РёС‚РµР»СЊРЅРѕ 3 РјРµСЃСЏС†Р° вЂ” СЃР°РјС‹Р№ РґРѕР»РіРёР№ РїРµСЂРёРѕРґ Р·Р° РїРѕСЃР»РµРґРЅРµРµ РІСЂРµРјСЏ вЂ” РІ РѕСЃРЅРѕРІРЅРѕРј, В«Р±Р»Р°РіРѕРґР°СЂСЏВ» РІР·Р»РѕРјСѓ <a href="http://kernel.org/">kernel.org</a></i>) РІС‹С€Р»Р° РЅРѕРІР°СЏ РІРµСЂСЃРёСЏ СЏРґСЂР° Linux 3.1.</p><p>РР· РЅРѕРІРѕРІРІРµРґРµРЅРёР№ СЃР»РµРґСѓРµС‚ РѕС‚РјРµС‚РёС‚СЊ:</p><p>( <a href="http://www.linux.org.ru//news/kernel/6856809#cut0">С‡РёС‚Р°С‚СЊ РґР°Р»СЊС€Рµ...</a> )</p><p>РќРѕРІРѕСЃС‚СЊ РїРѕРґРіРѕС‚РѕРІР»РµРЅР° РїРѕ РјРѕС‚РёРІР°Рј <a href="http://www.h-online.com/">H Online</a>, Р° РёРјРµРЅРЅРѕ: <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-1-Part-1-Networking-1323463.html">СЂР°Р·</a>, <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-1-Part-2-Storage-and-filesystems-1338160.html">РґРІР°</a>, <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-1-Part-3-Architecture-infrastructure-virtualisation-1345178.html">С‚СЂРё</a> Рё <a href="http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-1-Part-4-Drivers-1346605.html">С‡РµС‚С‹СЂРµ</a>.</p><p>&gt;&gt;&gt; <a href="http://kernelnewbies.org/Linux_3.1">Р”РµС‚Р°Р»СЊРЅРµРµ Рѕ РЅРѕРІС€РµСЃС‚РІР°С…</a> Рё РѕС‚РґРµР»СЊРЅРѕ <a href="http://kernelnewbies.org/Linux_3.1_DriverArch">Рѕ РґСЂР°Р№РІРµСЂР°С…</a></p><p>&gt;&gt;&gt; <a href="http://www.h-online.com/open/features/What-s-new-in-Linux-3-1-1347364.html">Рћ РЅРѕРІС€РµСЃС‚РІР°С… РЅР° Р°РЅРіР»РёР№СЃРєРѕРј</a></p><p>&gt;&gt;&gt; <a href="ftp://ftp.kernel.org/pub/linux/kernel/v3.x/linux-3.1.tar.bz2">РЎРєР°С‡Р°С‚СЊ С‚Р°СЂР±РѕР»Р» РёСЃС…РѕРґРЅРёРєРѕРІ</a></p><p>&gt;&gt;&gt; <a href="ftp://ftp.kernel.org/pub/linux/kernel/v3.x/patch-3.1.bz2">РЎРєР°С‡Р°С‚СЊ РїР°С‚С‡ РґР»СЏ СЏРґСЂР° 3.0</a></p><p>&gt;&gt;&gt; <a href="http://lwn.net/Articles/464226/">РђРЅРѕРЅСЃ РЅР° LWN</a></p>
-<p>&gt;&gt;&gt; <a href="http://article.gmane.org/gmane.linux.kernel/1206934">РћС„РёС†РёР°Р»СЊРЅС‹Р№ Р°РЅРѕРЅСЃ</a>
+  <p>На сайте rus-linux.net опубликован проект книги О.И.Цилюрика &quot;Модули ядра Linux&quot;.
+Книга посвящена программированию модулей ядра Linux и рассчитана на опытных разработчиков системного программного обеспечения. Предполагается, что читатель может и не иметь богатого опыта в программировании именно для ядра Linux, или даже вообще в программировании для этой системы, но имеет какой-то опыт в системном программировании для других операционных систем, что послужит базой для построения аналогий.
+Даже если чтение книги и не подвигнет читателя к написанию собственных компонент ядра (что совершенно не обязательно), то, по крайней мере, поможет более точному пониманию тех процессов, которые происходят в ядре.
+На примерах дан обстоятельный обзор возможностей в программировании модулей ядра, этого набора примеров достаточно, чтобы начать писать свой собственный драйвер-модуль Linux, дальше наращивая его функциональность.
+Предназначено для программистов-разработчиков, ведущих реальные проекты. Конструктивные замечания по тексту можно направлять автору на адрес olej at front dot ru.</p>
+<p>&gt;&gt;&gt; <a href="http://rus-linux.net/MyLDP/BOOKS/Moduli-yadra-Linux/kern-mod-index.html">Подробности</a>
   </div>
 
   
@@ -1715,7 +703,7 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 <p class="tags">
 
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=kernel">kernel</a>, <a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=release">release</a></span>
+  Метки: <span class=tag><a href="view-news.jsp?tag=%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D1%8B">драйверы</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a>, <a href="view-news.jsp?tag=%D1%8F%D0%B4%D1%80%D0%BE">ядро</a></span>
 </p>
 
 
@@ -1731,11 +719,11 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
 
-<a href="/people/post-factum/profile">post-factum</a>
+<a href="/people/vikos/profile">vikos</a>
 
 
 
-(24.10.2011 13:11:55)
+(07.11.2011 9:53:40)
     
     
   
@@ -1743,10 +731,10 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 <div class="nav">
 
 
-  [<a href="comment-message.jsp?topic=6856809">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+  [<a href="comment-message.jsp?topic=6969610">Добавить&nbsp;комментарий</a>]
 
   
-  [<a href="/news/kernel/6856809">326&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/kernel/6856809/page1">2</a> <a href="/news/kernel/6856809/page2">3</a> <a href="/news/kernel/6856809/page3">4</a> <a href="/news/kernel/6856809/page4">5</a> <a href="/news/kernel/6856809/page5">6</a> <a href="/news/kernel/6856809/page6">7</a>)]
+  [<a href="/news/kernel/6969610">87&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/kernel/6969610/page1">2</a>)]
   </div>
   </div>
 </div>
@@ -1779,55 +767,18 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
 
-
-
-<div class=infoblock id="topic-6907057">
-РњРёРЅРё-РЅРѕРІРѕСЃС‚СЊ:
-  <a href="/news/multimedia/6907057">Р’С‹С€РµР» OpenELEC 1.0</a>
-
-
-
-  [<a href="/news/multimedia/6907057">28&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>]
-</div>
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6905210">
+<div class=news id="topic-6969880">
 
 <h2>
-  <a href="/news/ubuntu/6905210">Canonical СѓРІРµР»РёС‡РёРІР°РµС‚ СЃСЂРѕРє РїРѕРґРґРµСЂР¶РєРё Ubuntu Desktop LTS РґРѕ 5 Р»РµС‚</a>
+  <a href="/news/gnome/6969880">Gnome Shell больше не требуется ускорение GPU</a>
 </h2>
 
 
 
 
 <div class="entry-userpic">
-  <a href="/news/ubuntu/">
-  <img src="/tango/img/ubuntu-logo.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° Ubuntu Linux">
+  <a href="/news/gnome/">
+  <img src="/tango/img/gnome-new.png" width=65 height=75 border=0 alt="Группа GNOME">
     </a>
 </div>
 
@@ -1836,8 +787,8 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 <div class=msg>
   
   
-  <p>РљРѕРјРїР°РЅРёСЏ Canonical Р·Р°СЏРІРёР»Р° Рѕ С‚РѕРј, С‡С‚Рѕ СЃСЂРѕРє РїРѕРґРґРµСЂР¶РєРё РѕР¶РёРґР°РµРјРѕРіРѕ РІРµСЃРЅРѕР№ РґРёСЃС‚СЂРёР±СѓС‚РёРІР° Ubuntu 12.04 LTS, Р° С‚Р°РєР¶Рµ, РІ РїРµСЂСЃРїРµРєС‚РёРІРµ, Ubuntu 14.04 LTS РґР»СЏ РЅР°СЃС‚РѕР»СЊРЅС‹С… РєРѕРјРїСЊСЋС‚РµСЂРѕРІ Р±СѓРґРµС‚ СѓРІРµР»РёС‡РµРЅ СЃ 3 РґРѕ 5 Р»РµС‚. Р­С‚РѕС‚ С€Р°Рі РІ РїРµСЂРІСѓСЋ РѕС‡РµСЂРµРґСЊ РІС‹Р·РІР°РЅ Р±РѕР»СЊС€РёРј СЂРѕСЃС‚РѕРј СѓСЃС‚Р°РЅРѕРІРѕРє Ubuntu Desktop РЅР° СЂР°Р±РѕС‡РёРµ РјР°С€РёРЅС‹ РІ РєРѕСЂРїРѕСЂР°С†РёСЏС…, РіРґРµ РґР»РёС‚РµР»СЊРЅС‹Рµ СЃСЂРѕРєРё РїРѕРґРґРµСЂР¶РєРё СЃС‡РёС‚Р°СЋС‚СЃСЏ РЅРѕСЂРјРѕР№. Рљ С‚РѕРјСѓ Р¶Рµ РґР°РЅРЅРѕРµ СЂРµС€РµРЅРёРµ СЃС‚Р°РІРёС‚ РґРµСЃРєС‚РѕРїРЅСѓСЋ РІРµСЂСЃРёСЋ Ubuntu РІ РѕРґРёРЅ СЂСЏРґ СЃ СЃРµСЂРІРµСЂРЅРѕР№, РіРґРµ РїСЏС‚РёР»РµС‚РЅСЏСЏ РїРѕРґРґРµСЂР¶РєР° Р±С‹Р»Р° СЃ СЃР°РјРѕРіРѕ РЅР°С‡Р°Р»Р°.</p><p>РћР¶РёРґР°РЅРёСЏ Canonical РЅРµ Р±РµСЃРїРѕС‡РІРµРЅРЅС‹. РџРѕ РґР°РЅРЅС‹Рј РєРѕРјРїР°РЅРёРё, РёР· РІСЃРµС… СѓСЃС‚Р°РЅРѕРІРѕРє СЃРµСЂРІРµСЂРЅС‹С… РІРµСЂСЃРёР№ Ubuntu 70% РїСЂРёС…РѕРґРёС‚СЃСЏ РЅР° LTS-РІРµСЂСЃРёРё. Рђ С‚РµРїРµСЂСЊ РїСЂРё РїСЂРѕРґР»РµРЅРёРё СЃСЂРѕРєР° РїРѕРґРґРµСЂР¶РєРё РґРµСЃРєС‚РѕРїРЅРѕР№ LTS РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚СЊ Ubuntu РІ Р±РёР·РЅРµСЃ-СЃРµРєС‚РѕСЂРµ РёРјРµРµС‚ РІСЃРµ С€Р°РЅСЃС‹ РЅР° Р±СѓСЂРЅС‹Р№ СЂРѕСЃС‚.</p><p>Р§С‚Рѕ РєР°СЃР°РµС‚СЃСЏ СЃР°РјРѕР№ РїРѕРґРґРµСЂР¶РєРё, С‚Рѕ С‚РµРїРµСЂСЊ РїРµСЂРІС‹Рµ РґРІР° РіРѕРґР° РїСЏС‚РёР»РµС‚РЅРµРіРѕ РїРµСЂРёРѕРґР° РѕР±РЅРѕРІР»РµРЅРёСЏ Р±СѓРґСѓС‚ С‚Р°РєР¶Рµ Р·Р°С‚СЂР°РіРёРІР°С‚СЊ РґСЂР°Р№РІРµСЂР° РґР»СЏ &quot;Р¶РµР»РµР·РЅРѕР№&quot; С‡Р°СЃС‚Рё, С‡С‚Рѕ РїРѕР·РІРѕР»РёС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ СѓСЃС‚Р°РЅР°РІР»РёРІР°С‚СЊ РЅРѕРІРѕРµ РѕР±РѕСЂСѓРґРѕРІР°РЅРёРµ РёР»Рё РєРѕРјРїР»РµРєС‚СѓСЋС‰РёРµ Р±РµР· СЂРёСЃРєР° РґР»СЏ СЂР°Р±РѕС‚С‹ РґРёСЃС‚СЂРёР±СѓС‚РёРІР°. РљСЂРѕРјРµ С‚РѕРіРѕ, РєР°Рє Рё СЂР°РЅРµРµ, РІ С‚РµС‡РµРЅРёРµ РІСЃРµС… РїСЏС‚Рё Р»РµС‚ Ubuntu LTS Р±СѓРґРµС‚ РїРѕР»СѓС‡Р°С‚СЊ РІСЃРµ РІС‹РїСѓСЃРєР°РµРјС‹Рµ РѕР±РЅРѕРІР»РµРЅРёСЏ РїРѕРґРґРµСЂР¶РєРё.</p><p>Рљ РЅРѕРІРѕРІРІРµРґРµРЅРёСЋ Canonical СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РїРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рё РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏРј Р±РёР·РЅРµСЃ-Р»РёРЅРµРµРє РєРѕРјРїСЊСЋС‚РµСЂРѕРІ, С‡С‚РѕР±С‹ СЃРѕРІРјРµСЃС‚РЅРѕ РїСЂРµРґР»РѕР¶РёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРј РґРѕСЃС‚РѕР№РЅС‹Рµ Рё РЅР°РґРµР¶РЅС‹Рµ СЂРµС€РµРЅРёСЏ СЃ РґРѕР»РіРѕСЃСЂРѕС‡РЅРѕР№ РїРѕРґРґРµСЂР¶РєРѕР№.</p>
-<p>&gt;&gt;&gt; <a href="http://www.canonical.com/content/ubuntu-1204-feature-extended-support-period-desktop-users">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  <p>3 ноября Адам Джексон сообщил о возможности запускать Gnome Shell без поддержки аппаратного ускорения видеокартой.</p><p>Программный режим работает при помощи бэкенда Gallium3D LLVMpipe. LLVMpipe - программный драйвер, который предоставляет LLVM возможность использовать ускорение OpenGL на современных процессорах.</p><p>Благодаря этому, появилась возможность запускать Gnome Shell/Unity/Compiz, используя лишь ресурсы центрального процессора.</p>
+<p>&gt;&gt;&gt; <a href="http://www.phoronix.com/scan.php?page=news_item&amp;px=MTAxMTI">Подробности</a>
   </div>
 
   
@@ -1848,7 +799,459 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 <p class="tags">
 
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=canonical">canonical</a>, <a href="view-news.jsp?tag=ubuntu">ubuntu</a>, <a href="view-news.jsp?tag=ubuntu+lts">ubuntu lts</a></span>
+  Метки: <span class=tag><a href="view-news.jsp?tag=gnome">gnome</a>, <a href="view-news.jsp?tag=gnome-shell">gnome-shell</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/Shtsh/profile">Shtsh</a>
+
+
+
+(07.11.2011 0:30:07)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=6969880">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/gnome/6969880">159&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/gnome/6969880/page1">2</a> <a href="/news/gnome/6969880/page2">3</a> <a href="/news/gnome/6969880/page3">4</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6969513">
+
+<h2>
+  <a href="/news/russia/6969513">Linux InstallFest 11.11 в Нижнем Новгороде</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/russia/">
+  <img src="/tango/img/russia-logo.png" width=65 height=75 border=0 alt="Группа Linux в России">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Нижегородская Группа Пользователей Linux уже в 6 раз проводит Linux InstallFest для всех интересующихся операционной системой Linux и Свободным Программным Обеспечением. В этом году вас ждет:</p><ul><li>Зона установки. Где все желающие установить ОС Linux получат дистрибутив, розетку питания, wi-fi или ethernet доступ к интернету и локальным репозиториям.
+</li><li>Зона презентаций, где все интересующиеся смогут узнать новости из мира Свободного ПО и поучаствовать в мастер-классах по <a href="http://nnlug.ru/node/96">различным прикладным вопросам</a>
+</li><li>Демонстрационная зона, где будут доступны компьютеры с уже установленной ОС и Свободным ПО, на которых можно &quot;в живую&quot; опробовать новую версию Ubuntu 11.10.
+</li><li>3D-зона с рассказами и демонстрациями работ студии <a href="http://slonstudio.org">&quot;SlonStudio&quot;</a> и <b>презентация <a href="http://b3d.mezon.ru/index.php/Blender_Basics_4-rd_edition">книги &quot;Основы Blender 2.6&quot;</a> от переводчика!</b>
+</li></ul><p>Linux InstallFest 11.11 пройдет:
+13 ноября 2011
+c 10:00 до 16:00
+в помещении Нижегородского Радиотехнического Колледжа (ул. Студенческая д.6, ост. АвтоВокзал) </p>
+<p>&gt;&gt;&gt; <a href="http://nnlug.ru/node/96">Подробности, рассписание и прямая трансляция семинаров</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=3d">3d</a>, <a href="view-news.jsp?tag=embedded+linux">embedded linux</a>, <a href="view-news.jsp?tag=gnome">gnome</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=ubuntu">ubuntu</a>, <a href="view-news.jsp?tag=%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0">графика</a>, <a href="view-news.jsp?tag=%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F">документация</a>, <a href="view-news.jsp?tag=%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F">конференция</a>, <a href="view-news.jsp?tag=%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">образование</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/gumanoed/profile">gumanoed</a>
+
+
+
+(06.11.2011 23:13:54)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=6969513">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/russia/6969513">80&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/russia/6969513/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6967909">
+
+<h2>
+  <a href="/news/debian/6967909">C 8 по 14 июля пройдет DebConf12 </a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/debian/">
+  <img src="/tango/img/debian-logo.png" width=65 height=75 border=0 alt="Группа Debian">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Проект Debian извещает, что в 2012 году ежегодная конференция разработчиков DebConf12 пройдет с 8 по 14 июля в Манагуа, в Коференц-центре Crowne Plaza Convention Center. Это будет двенадцатое ежегодное мероприятие DebConf, и первая конференция DebConf, проводимая в Центральной Америке.<br>
+<br>
+Ежегодно на DebConf собираются действующие и новые участники Проекта Debian со всего мира, чтобы делиться знаниями, делать совместные вклады в Debian, устанавливать более тесные связи между участниками сообщества. Конференция в значительной степени финансируется корпоративными спонсорами, заинтересованными в дальнейшем успешном развитии Проекта Debian.<br>
+<br>
+Открытию DebConf12 будет предшествовать традиционный Debian Day, в ходе которого демонстрируются выгоды от использования Debian и открытого и свободного ПО для корпоративных, государственных, академических и индивидуальных пользователей.<br>
+<br>
+«Call for papers» и регистрация участников откроются в начале 2012 года. </p>
+<p>&gt;&gt;&gt; <a href="http://www.debian.org/News/2011/20111102">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=debian">debian</a>, <a href="view-news.jsp?tag=%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F">конференция</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/MSA/profile">MSA</a>
+
+
+
+(06.11.2011 17:40:25)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=6967909">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/debian/6967909">16&nbsp;комментариев</a>]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6967891">
+Мини-новость:
+  <a href="/news/redhat/6967891">Red Hat подтвердил назначение Сергея Бугрина главой представительства в России</a>
+
+
+
+  [<a href="/news/redhat/6967891">21&nbsp;комментарий</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6965043">
+
+<h2>
+  <a href="/news/ubuntu/6965043">Ubuntu Linux потерял место лидера DistroWatch. Linux Mint — новый лидер</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/ubuntu/">
+  <img src="/tango/img/ubuntu-logo.png" width=65 height=75 border=0 alt="Группа Ubuntu Linux">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>В рейтинге <a href="http://distrowatch.com/">DistroWatch</a>, который на протяжении последних лет безоговорочно возглавлял дистрибутив Ubuntu, сменился лидер. В шестимесячной статистике, которая является основной и показывается при посещении главной страницы DistroWatch, с этого дня самым популярным дистрибутивом является Linux Mint.</p><p>Если учесть, что в рейтинге за 2010-й год Linux Mint является лишь третьим, уступая Ubuntu и Fedora, можно понять, насколько более популярным стал этот дистрибутив за последний год не в последнюю очередь благодаря консервативности (он до сих пор использует GNOME 2, в то время, как Ubuntu использует Unity, а Fedora — GNOME 3).</p>
+<p>&gt;&gt;&gt; <a href="http://distrowatch.com/">DistroWatch</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=distrowatch">distrowatch</a>, <a href="view-news.jsp?tag=mint">mint</a>, <a href="view-news.jsp?tag=ubuntu">ubuntu</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/DoctorSinus/profile">DoctorSinus</a>
+
+
+
+(05.11.2011 21:19:27)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=6965043">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/ubuntu/6965043">861&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/ubuntu/6965043/page1">2</a> <a href="/news/ubuntu/6965043/page2">3</a> <a href="/news/ubuntu/6965043/page3">4</a> ... <a href="/news/ubuntu/6965043/page15">16</a> <a href="/news/ubuntu/6965043/page16">17</a> <a href="/news/ubuntu/6965043/page17">18</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6963330">
+
+<h2>
+  <a href="/news/java/6963330">Eclipse Foundation создал вспомогательный язык для программистов на Javaa>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/java/">
+  <img src="/tango/img/java-logo.png" width=41 height=75 border=0 alt="Группа Java">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Eclipse Foundation выпустил новый язык программрования Xtend, созданный специально для разработчиков на Java, работающий поверх JVM.</p><p>Как заявляют разработчики, новый язык не имеет цель полностью заменить Java во всех областях её применения, а лишь будет очень удобной альтернативой для использования там, где Java слишком многословна и не очень удобна в написании.</p><p>Главные особенности Xtend:
+</p><ul><li> генерация понятного листинга на Java;
+</li><li> работа с использованием инструментов Eclipse IDE с полной поддержкой её функциональности;
+</li><li> Java-подобный синтаксис;
+</li><li> статическая типизация;
+</li><li> использование библиотек JDK;
+</li><li> работа только с классами (интерфейсы, аннотации и перечисления описываются так же, как в Java).
+</li></ul><p>Зачем использовать Xtend, если он не реализует альтернативы для всего? Во-первых, <a href="http://vimeo.com/31248257">он и не пытается</a>. Это не самостоятельный язык, а вспомогательный. Во-вторых, он избавляет программиста от многословности Java, позволяя создавать те же языковые конструкции, но с помощью более лаконичного синтаксиса, код на Xtend более удобен для чтения и понимания:
+</p><ul><li> код избавляется от избыточных указаний типов объектов (хотя если вам удобнее везде писать типы — это ваше право);
+</li><li> новый продуманный синтаксис акцессоров;
+</li><li> опциональность скобок для вызова методов и точек с запятой в конце строк.
+</li></ul><p>Описанная «чистка» кода может быть воспринята двояко, но есть ещё третий пункт в списке достоинств — дополнительные языковые конструкции и функциональность, однажды воспользовавшись которыми вы уже не сможете жить без них в дальнейшем:
+</p><ul><li> замыкания, которые всегда были так необходимы в Java;
+</li><li> переработанная и элегантная реализация switch, от которой не болит голова при перехвате исключений и кастинге типов;
+</li><li> поддержка шаблонов и многострочности для строк;
+</li><li> возможность добавления новых расширенных методов к уже существующим объектам без вмешательства в их структуру (поэтому язык и называется Xtend — «расширять»);
+</li><li> перезагрузка операторов;
+</li><li> множественный вызов виртуальных функций для семейств классов с помощью ключевого слова <i>dispatch</i>.
+</li></ul><p>Для того, чтобы начать использовать Xtend прямо сейчас, нужно просто установить свежую версию IDE Eclipse и добавить Xtend SDK через менеджер дополнений (<a href="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/">ссылка на релиз</a>).</p><p>Документация: <a href="http://www.eclipse.org/Xtext/documentation/2_1_0/01-Xtend_Introduction.php">онлайн</a>, <a href="http://www.eclipse.org/Xtext/xtend/Xtend%20Reference%20Documentation.pdf">PDF</a>.</p>
+<p>&gt;&gt;&gt; <a href="http://www.eclipse.org/Xtext/xtend/">Страница проекта</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=eclipse">eclipse</a>, <a href="view-news.jsp?tag=java">java</a>, <a href="view-news.jsp?tag=jvm">jvm</a>, <a href="view-news.jsp?tag=xtend">xtend</a></span>
 </p>
 
 
@@ -1868,7 +1271,7 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
 
-(23.10.2011 1:23:22)
+(05.11.2011 12:06:33)
     
     
   
@@ -1876,10 +1279,10 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 <div class="nav">
 
 
-  [<a href="comment-message.jsp?topic=6905210">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+  [<a href="comment-message.jsp?topic=6963330">Добавить&nbsp;комментарий</a>]
 
   
-  [<a href="/news/ubuntu/6905210">646&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/ubuntu/6905210/page1">2</a> <a href="/news/ubuntu/6905210/page2">3</a> <a href="/news/ubuntu/6905210/page3">4</a> ... <a href="/news/ubuntu/6905210/page10">11</a> <a href="/news/ubuntu/6905210/page11">12</a> <a href="/news/ubuntu/6905210/page12">13</a>)]
+  [<a href="/news/java/6963330">202&nbsp;комментария</a>&nbsp;(стр. <a href="/news/java/6963330/page1">2</a> <a href="/news/java/6963330/page2">3</a> <a href="/news/java/6963330/page3">4</a> <a href="/news/java/6963330/page4">5</a>)]
   </div>
   </div>
 </div>
@@ -1912,18 +1315,18 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
 
-<div class=news id="topic-6902444">
+<div class=news id="topic-6956566">
 
 <h2>
-  <a href="/news/multimedia/6902444">РђРІС‚РѕСЂРѕРІ ffmpeg-mt СЃСѓРґСЏС‚ Р·Р° РЅР°СЂСѓС€РµРЅРёРµ РїР°С‚РµРЅС‚Р°</a>
+  <a href="/news/doc/6956566">Книга «Основы Blender 2.60»</a>
 </h2>
 
 
 
 
 <div class="entry-userpic">
-  <a href="/news/multimedia/">
-  <img src="/tango/img/multimedia.png" width=65 height=75 border=0 alt="Р“СЂСѓРїРїР° РњСѓР»СЊС‚РёРјРµРґРёР°">
+  <a href="/news/doc/">
+  <img src="/tango/img/info-logo.png" width=64 height=64 border=0 alt="Группа Документация">
     </a>
 </div>
 
@@ -1932,8 +1335,8 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 <div class=msg>
   
   
-  <p>РљРѕРјРїР°РЅРёСЏ Dideonet (<a href="http://www.dideonet.com">http://www.dideonet.com</a>) СѓС‚РІРµСЂР¶РґР°РµС‚ РІ СЋР¶РЅРѕРєРѕСЂРµР№СЃРєРѕРј СЃСѓРґРµ, С‡С‚Рѕ (РЅРµРЅР°Р·РІР°РЅРЅС‹Р№) СЂР°Р·СЂР°Р±РѕС‚С‡РёРє ffmpeg-mt Рё x264 РЅРµР·Р°РєРѕРЅРЅРѕ РёСЃРїРѕР»СЊР·СѓРµС‚ РїСЂРёРЅР°РґР»РµР¶Р°С‰РёР№ РµР№ РїР°С‚РµРЅС‚ Рё РЅРµР·Р°РєРѕРЅРЅРѕ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅСЏРµС‚ РёСЃС…РѕРґРЅС‹Рµ С‚РµРєСЃС‚С‹ (РїРѕРґСЂР°Р·СѓРјРµРІР°СЋС‚СЃСЏ x264 Рё ffmpeg-mt), Р·Р°С‚СЂР°РіРёРІР°РµРјС‹Рµ РґР°РЅРЅС‹Рј РїР°С‚РµРЅС‚РѕРј. РЈС‚РІРµСЂР¶РґР°РµС‚СЃСЏ, С‡С‚Рѕ РІСЃРµ РїСЂРёР»РѕР¶РµРЅРёСЏ, РёСЃРїРѕР»СЊР·СѓСЋС‰РёРµ РЅР°Р·РІР°РЅРЅС‹Рµ Р±РёР±Р»РёРѕС‚РµРєРё, РЅР°СЂСѓС€Р°СЋС‚ РїР°С‚РµРЅС‚. Р’ СЃР»СѓС‡Р°Рµ РїСЂРёРЅСЏС‚РёСЏ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРіРѕ СЂРµС€РµРЅРёСЏ РїРѕ СЃСѓРґРµР±РЅРѕРјСѓ РёСЃРєСѓ, СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРё ffmpeg-mt РґРѕР»Р¶РЅС‹ Р±СѓРґСѓС‚ РєРѕРјРїРµРЅСЃРёСЂРѕРІР°С‚СЊ Dideonet 10% РІС‹СЂСѓС‡РєРё РѕС‚ РїСЂРѕРґР°Р¶Рё РµРµ РїСЂРѕРіСЂР°РјРјРЅС‹С… РїСЂРѕРґСѓРєС‚РѕРІ.</p>
-<p>&gt;&gt;&gt; <a href="http://ffmpeg.org/pipermail/ffmpeg-devel/2011-October/115983.html">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  <p>Завершён перевод 4-го издания учебного пособия «Основы Blender», посвящённого Blender 2.60. Джеймс Кронистер уже в 4-й раз публикует это замечательное учебное пособие по 3D-моделированию и анимации в Blender. И нам в очередной раз приятно было переводить его на русский язык.</p><p>Книга описывает все основные методики и инструменты по моделированию, анимации, текстурированию и созданию игр в Blender. Составленная как учебный курс с делением материала на теорию и практику по каждой теме, книга отлично подойдёт для проведения занятий и курсов по компьютерной и 3D-Графике в любом учебном заведении (начиная со школы).</p><p>На данный момент <b>«Основы Blender 4-е издание» — это первая и единственная книга по Blender 2.6 на русском языке</b>.</p><p>Выход PDF-версии для печати планируется к новому году.</p>
+<p>&gt;&gt;&gt; <a href="http://b3d.mezon.ru/index.php/Blender_Basics_4-rd_edition">Читать «Основы Blender 4-е издание» On-Line</a>
   </div>
 
   
@@ -1944,7 +1347,7 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 <p class="tags">
 
-  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=dideonet">dideonet</a>, <a href="view-news.jsp?tag=ffmpeg">ffmpeg</a>, <a href="view-news.jsp?tag=ffmpeg-mt">ffmpeg-mt</a>, <a href="view-news.jsp?tag=x264">x264</a>, <a href="view-news.jsp?tag=%D0%BF%D0%B0%D1%82%D0%B5%D0%BD%D1%82%D1%8B">РїР°С‚РµРЅС‚С‹</a>, <a href="view-news.jsp?tag=%D1%81%D1%83%D0%B4">СЃСѓРґ</a></span>
+  Метки: <span class=tag><a href="view-news.jsp?tag=3d">3d</a>, <a href="view-news.jsp?tag=%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0">графика</a>, <a href="view-news.jsp?tag=%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F">документация</a>, <a href="view-news.jsp?tag=%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">образование</a></span>
 </p>
 
 
@@ -1960,11 +1363,11 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
 
-<a href="/people/AEP/profile">AEP</a>
+<a href="/people/gumanoed/profile">gumanoed</a>
 
 
 
-(22.10.2011 8:17:56)
+(03.11.2011 16:15:51)
     
     
   
@@ -1972,10 +1375,10 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 <div class="nav">
 
 
-  [<a href="comment-message.jsp?topic=6902444">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+  [<a href="comment-message.jsp?topic=6956566">Добавить&nbsp;комментарий</a>]
 
   
-  [<a href="/news/multimedia/6902444">97&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/multimedia/6902444/page1">2</a>)]
+  [<a href="/news/doc/6956566">138&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/doc/6956566/page1">2</a> <a href="/news/doc/6956566/page2">3</a>)]
   </div>
   </div>
 </div>
@@ -1984,10 +1387,354 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
     
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6956157">
+
+<h2>
+  <a href="/news/opensource/6956157">40 лет UNIX</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Ровно 40 лет назад, третьего ноября 1971 года вышла первая версия Unix Programmer's Manual, описывающая UNIX v1, первую версию операционной системы, которая оказала громадное влияние на все последующие ОС и на вычислительную технику в целом.<br>
+Языка C ещё не было, а UNIX уже была.<br></p><p>Многое изменилось с тех пор: сменились поколения вычислительной техники, от телетайпов перешли к терминалам с экранами, от мейнфреймов к персональным компьютерам, а UNIX продолжает жить в наших сердцах, да и системы, которые мы используем сегодня, имеют много общего с UNIX той поры.<br>
+Текстовый редактор ed популярен и по сей день, большая часть иерархии каталогов осталась прежней, такие конфигурационные файлы как /etc/passwd были и тогда. И восьмеричные права доступа, пусть они тогда и были только в двух цифрах (suid, executable, read for owner, write for owner, read for others, write for others).</p>
+<p>&gt;&gt;&gt; <a href="http://cm.bell-labs.com/cm/cs/who/dmr/1stEdman.html">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=unix">unix</a>, <a href="view-news.jsp?tag=%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F+%D1%83%D1%81%D0%BF%D0%B5%D1%85%D0%B0">история успеха</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/Xenius/profile">Xenius</a>
+
+
+
+(03.11.2011 15:43:50)
+    
+    
+  
+</div>
 <div class="nav">
-  [<a href="/news/?offset=20">в†ђ РїСЂРµРґС‹РґСѓС‰РёРµ</a>]
-  [<a href="add-section.jsp?section=1">РґРѕР±Р°РІРёС‚СЊ РЅРѕРІРѕСЃС‚СЊ</a>]
-  [<a href="view-all.jsp?section=1">РЅРµРїСЂРѕРІРµСЂРµРЅРЅС‹Рµ РЅРѕРІРѕСЃС‚Рё</a>]
+
+
+  [<a href="comment-message.jsp?topic=6956157">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/opensource/6956157">257&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6956157/page1">2</a> <a href="/news/opensource/6956157/page2">3</a> <a href="/news/opensource/6956157/page3">4</a> <a href="/news/opensource/6956157/page4">5</a> <a href="/news/opensource/6956157/page5">6</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6955978">
+Мини-новость:
+  <a href="/news/java/6955978">Вышла Apache Commons Compress 1.3</a>
+
+
+
+  [<a href="/news/java/6955978">30&nbsp;комментариев</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6954056">
+Мини-новость:
+  <a href="/news/opensource/6954056">DRAKON Editor 1.4 </a>
+
+
+
+  [<a href="/news/opensource/6954056">59&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6954056/page1">2</a>)]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6953975">
+Мини-новость:
+  <a href="/news/hardware/6953975">Gears on Gallium 2011.10.31</a>
+
+
+
+  [<a href="/news/hardware/6953975">65&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/hardware/6953975/page1">2</a>)]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-6953499">
+
+<h2>
+  <a href="/news/opensource/6953499">Текстовому редактору Vim исполнилось 20 лет</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <div class="quote"><h3>opennet.ru</h3><p>
+Ровно 20 лет назад <a href="http://arstechnica.com/open-source/news/2011/11/two-decades-of-productivity-vims-20th-anniversary.ars">увидел свет</a> первый публичный релиз текстового редактора Vim, по прежнему пользующегося большой популярностью среди разработчиков. Vim вобрал в себя лучшие черты классического Vi, разработанного Билом Джоем в 1976 году, и дополнил его богатыми возможностями по редактированию кода, настройке, написанию дополнений и созданию скриптов для автоматизации действий.</p><p>Vim изначально развивался для платформы Amiga как редактор для работы с исходными текстами. Порт для Unix появился спустя год после первого релиза, в это же время была изменена расшифровка имени проекта с Vi IMitation на Vi IMproved. Вначале редактор Vim был очень близок к Vi, обладая лишь единичными усовершенствованиями, такими как многоуровневый откат изменений. Позднее к работе над Vim подключились другие энтузиасты и в редактор были добавлены такие средства, как многооконный режим редактирования, визуальный режим выделения блоков, работа с макросами, гибкие механизмы поиска и замены, подсветка синтаксиса, автоформатировние кода и прочие атрибуты интегрированных сред разработки.</p><p>Код Vim распространяется под собственной копилефт <a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html#license">лицензией</a>, совместимой с GPL, и позволяющей без ограничений использовать, распространять и перерабатывать код. Основная особенность лицензии Vim связана с возвратом изменений - реализованные в сторонних продуктах улучшения должны быть переданы в исходный проект, если мэйнтейнер Vim посчитает эти улучшения заслуживающими внимания и отправит соответствующий запрос. По типу распространения, Vim относится к Сharityware, т.е. вместо продажи программы или сбора пожертвований на нужды проекта, авторы Vim просят перечислить любую сумму на благотворительность, если программа понравится пользователю.
+</p></div><p>От себя: насколько я знаю - многие навороты Vim позаимствовал у <b>elvis</b> (навороченный клон Vi)</p>
+<p>&gt;&gt;&gt; <a href="http://www.opennet.ru/opennews/art.shtml?num=32204">Оригинал новости на opennet.ru</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a href="view-news.jsp?tag=vim">vim</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/q11q11/profile">q11q11</a>
+
+
+
+(02.11.2011 23:08:13)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=6953499">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/opensource/6953499">191&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/opensource/6953499/page1">2</a> <a href="/news/opensource/6953499/page2">3</a> <a href="/news/opensource/6953499/page3">4</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-6953053">
+Мини-новость:
+  <a href="/news/opensource/6953053">Gparted 0.10.0</a>
+
+
+
+  [<a href="/news/opensource/6953053">28&nbsp;комментариев</a>]
+</div>
+
+
+    
+<div class="nav">
+  [<a href="/news/?offset=20">< предыдущие</a>]
+  [<a href="add-section.jsp?section=1">добавить новость</a>]
+  [<a href="view-all.jsp?section=1">непроверенные новости</a>]
   [<a href="section-rss.jsp?section=1">RSS</a>]
 </div>
 </div>
@@ -2002,13 +1749,13 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
             
 
 
-<h2>РќРѕРІС‹Рµ РјР°С‚РµСЂРёР°Р»С‹ РЅР° IBM developerWorks</h2>
+<h2>Новые материалы на IBM developerWorks</h2>
 <div class="boxlet_content">
   <iframe src="dw.jsp?height=400&amp;width=219&amp;main=1" width="222" height="400" scrolling="no"
           frameborder="0"></iframe>
   <h3>My developerWorks!</h3>
-  <a style="text-decoration: underline" href="http://www.ibm.com/developerworks/mydeveloperworks/?lang=ru" title="">Р’СЃС‚СѓРїР°Р№</a> РІ СЃРѕРѕР±С‰РµСЃС‚РІРѕ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»РѕРІ&nbsp;IBM!<br>
-РќР°СЃ СѓР¶Рµ Р±РѕР»РµРµ 3000 С‚РѕР»СЊРєРѕ РІ Р РѕСЃСЃРёРё.
+  <a style="text-decoration: underline" href="http://www.ibm.com/developerworks/mydeveloperworks/?lang=ru" title="">Вступай</a> в сообщество профессионалов&nbsp;IBM!<br>
+Нас уже более 3000 только в России.
 </div>
         </div>
       
@@ -2022,53 +1769,101 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
   
-  <h2><a href="/polls/">РћРїСЂРѕСЃ</a></h2>
+  <h2><a href="/polls/">Опрос</a></h2>
 
   <div class="boxlet_content">
-    <h3>РљР°РєРѕР№ СЂР°Р·СЂСЏРґРЅРѕСЃС‚Рё Сѓ РІР°СЃ РґРѕРјР°С€РЅСЏСЏ СЃРёСЃС‚РµРјР°?</h3>
+    <h3>Самый бесполезный модератор</h3>
 
     <form action="/vote.jsp" method="POST">
-      <input type="hidden" name="voteid" value="1440"/>
+      <input type="hidden" name="voteid" value="1487"/>
       
         
+          <input type="checkbox" name="vote" id="poll-11227" value="11227"><label for="poll-11227">Dmitry A. Koptev (Dimez)</label> <br/>
         
-          <input type="radio" name="vote" id="poll-10919" value="10919"><label for="poll-10919">64</label> <br/>
-        
-      
-        
-        
-          <input type="radio" name="vote" id="poll-10920" value="10920"><label for="poll-10920">32 (СЃР»Р°Р±РѕРµ РёР»Рё СЃС‚Р°СЂРѕРµ Р¶РµР»РµР·Рѕ)</label> <br/>
         
       
         
+          <input type="checkbox" name="vote" id="poll-11228" value="11228"><label for="poll-11228">Sergey V. Udaltsov (svu)</label> <br/>
         
-          <input type="radio" name="vote" id="poll-10921" value="10921"><label for="poll-10921">32 (РїСЂРѕР±Р»РµРјС‹ СЃ СЃРѕС„С‚РѕРј)</label> <br/>
         
       
         
+          <input type="checkbox" name="vote" id="poll-11229" value="11229"><label for="poll-11229">Андрей (Shaman007) </label> <br/>
         
-          <input type="radio" name="vote" id="poll-10922" value="10922"><label for="poll-10922">32 (СЏ РЅРµРєСЂРѕС„РёР»)</label> <br/>
         
       
         
+          <input type="checkbox" name="vote" id="poll-11230" value="11230"><label for="poll-11230">Тимур Давлетшин (timur_dav) </label> <br/>
         
-          <input type="radio" name="vote" id="poll-10923" value="10923"><label for="poll-10923">32 (СЌС‚Рѕ СЂР°С†РёРѕРЅР°Р»СЊРЅРѕ РЅР° РЅРѕРІС‹С… СЃРёСЃС‚РµРјР°С…)</label> <br/>
         
       
         
+          <input type="checkbox" name="vote" id="poll-11231" value="11231"><label for="poll-11231">Тёма (JB) </label> <br/>
         
-          <input type="radio" name="vote" id="poll-11126" value="11126"><label for="poll-11126">РґСЂСѓРіРѕРµ (СѓРєР°Р·Р°С‚СЊ РІ РєРѕРјРјРµРЅС‚Р°СЂРёСЏС…)</label> <br/>
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11232" value="11232"><label for="poll-11232">Михаил (anonymous_incognito) </label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11233" value="11233"><label for="poll-11233">Слава Поздняков (Pi) </label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11234" value="11234"><label for="poll-11234">annoynimous (annoynimous) </label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11235" value="11235"><label for="poll-11235">Kirill A Korinskiy (catap)</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11236" value="11236"><label for="poll-11236">Ben Aceler (Aceler)</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11237" value="11237"><label for="poll-11237">Александр Наталенко (post-factum)</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11238" value="11238"><label for="poll-11238">Тим (hibou) </label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11239" value="11239"><label for="poll-11239">Василий (mono)</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11240" value="11240"><label for="poll-11240">Другой вариант ответа (указать в комментариях)</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11241" value="11241"><label for="poll-11241">Кто здесь?</label> <br/>
+        
         
       
       <input type="submit" value="vote"/>
     </form>
     <br/>
     
-    <a href="/view-vote.jsp?vote=1440">СЂРµР·СѓР»СЊС‚Р°С‚С‹</a> (727 РіРѕР»РѕСЃРѕРІ)
+    
+        <a href="/view-vote.jsp?vote=1487">результаты</a> (1442/767 голосов)
+    
+    
     <br/>
-    <a href="/polls/">РёС‚РѕРіРё РїСЂРѕС€РµРґС€РёС… РѕРїСЂРѕСЃРѕРІ...</a>
+    <a href="/polls/">итоги прошедших опросов...</a>
     <br/>
-    [<a href="/add.jsp?group=19387">РґРѕР±Р°РІРёС‚СЊ РѕРїСЂРѕСЃ</a>]
+    [<a href="/add.jsp?group=19387">добавить опрос</a>]
   </div>
         </div>
       
@@ -2081,107 +1876,107 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 <h2>Top 10</h2>
 
 <div class="boxlet_content">
-  <h3>РќР°РёР±РѕР»РµРµ РѕР±СЃСѓР¶РґР°РµРјС‹Рµ С‚РµРјС‹ СЌС‚РѕРіРѕ РјРµСЃСЏС†Р°</h3>
+  <h3>Наиболее обсуждаемые темы этого месяца</h3>
   <ul>
     
       <li>
       
-      <a href="/news/ubuntu/6864903">Р’С‹С€Р»Р° РЅРѕРІР°СЏ РІРµСЂСЃРёСЏ РґРёСЃС‚СЂРёР±СѓС‚РёРІР° Ubuntu вЂ” 11.10</a>
+      <a href="/news/ubuntu/6864903">Вышла новая версия дистрибутива Ubuntu — 11.10</a>
       
         
-        (СЃС‚СЂ. <a href="/news/ubuntu/6864903/page22?lastmod=1319251011490">23</a>)
+        (стр. <a href="/news/ubuntu/6864903/page22?lastmod=1319251011490">23</a>)
       
       (1148)
       </li>
     
       <li>
       
-      <a href="/news/ubuntu/6905210">Canonical СѓРІРµР»РёС‡РёРІР°РµС‚ СЃСЂРѕРє РїРѕРґРґРµСЂР¶РєРё Ubuntu Desktop LTS РґРѕ 5 Р»РµС‚</a>
+      <a href="/news/ubuntu/6965043">Ubuntu Linux потерял место лидера DistroWatch. Linux Mint — новый лидер</a>
       
         
-        (СЃС‚СЂ. <a href="/news/ubuntu/6905210/page12?lastmod=1319961667664">13</a>)
+        (стр. <a href="/news/ubuntu/6965043/page17?lastmod=1320691823194">18</a>)
       
-      (646)
+      (861)
       </li>
     
       <li>
       
-      <a href="/news/doc/6859021">РћРїСѓР±Р»РёРєРѕРІР°РЅ СЃС‚Р°РЅРґР°СЂС‚ C++11 (Р±С‹РІС€РёР№ C++0x)</a>
+      <a href="/news/redhat/6950484">Разработчики Fedora обсуждают объединение каталогов для исполняемых файлов</a>
       
         
-        (СЃС‚СЂ. <a href="/news/doc/6859021/page11?lastmod=1319390106361">12</a>)
+        (стр. <a href="/news/redhat/6950484/page15?lastmod=1320704652980">16</a>)
+      
+      (784)
+      </li>
+    
+      <li>
+      
+      <a href="/news/ubuntu/6905210">Canonical увеличивает срок поддержки Ubuntu Desktop LTS до 5 лет</a>
+      
+        
+        (стр. <a href="/news/ubuntu/6905210/page12?lastmod=1320349622101">13</a>)
+      
+      (649)
+      </li>
+    
+      <li>
+      
+      <a href="/news/doc/6859021">Опубликован стандарт C++11 (бывший C++0x)</a>
+      
+        
+        (стр. <a href="/news/doc/6859021/page11?lastmod=1319390106361">12</a>)
       
       (551)
       </li>
     
       <li>
       
-      <a href="/news/multimedia/6862017">РџРµСЂРµР·Р°РіСЂСѓР·РєР° РїСЂРѕРµРєС‚Р° sK1</a>
+      <a href="/news/multimedia/6862017">Перезагрузка проекта sK1</a>
       
         
-        (СЃС‚СЂ. <a href="/news/multimedia/6862017/page10?lastmod=1319210846544">11</a>)
+        (стр. <a href="/news/multimedia/6862017/page10?lastmod=1319210846544">11</a>)
       
       (536)
       </li>
     
       <li>
       
-      <a href="/news/linux-org-ru/6901923">13 Р»РµС‚ Linux.org.ru</a>
+      <a href="/news/linux-org-ru/6901923">13 лет Linux.org.ru</a>
       
         
-        (СЃС‚СЂ. <a href="/news/linux-org-ru/6901923/page10?lastmod=1319732711864">11</a>)
+        (стр. <a href="/news/linux-org-ru/6901923/page10?lastmod=1320505858935">11</a>)
       
-      (533)
+      (536)
       </li>
     
       <li>
       
-      <a href="/news/gnu/6874920">FSF РЅР°С‡Р°Р»Р° РєР°РјРїР°РЅРёСЋ РїСЂРѕС‚РёРІ В«Р±РµР·РѕРїР°СЃРЅРѕР№ Р·Р°РіСЂСѓР·РєРёВ» UEFI </a>
+      <a href="/news/gnu/6874920">FSF начала кампанию против «безопасной загрузки» UEFI </a>
       
         
-        (СЃС‚СЂ. <a href="/news/gnu/6874920/page9?lastmod=1319999728286">10</a>)
+        (стр. <a href="/news/gnu/6874920/page9?lastmod=1319999728286">10</a>)
       
       (455)
       </li>
     
       <li>
       
-      <a href="/news/opensource/6901561">Qt Project Р¶РёРІ!</a>
+      <a href="/news/opensource/6901561">Qt Project жив!</a>
       
         
-        (СЃС‚СЂ. <a href="/news/opensource/6901561/page8?lastmod=1319720717756">9</a>)
+        (стр. <a href="/news/opensource/6901561/page8?lastmod=1319720717756">9</a>)
       
       (429)
       </li>
     
       <li>
       
-      <a href="/news/russia/6874332">РЎРѕР·РґР°РЅРёРµ РїСЂРѕС‚РѕС‚РёРїРѕРІ РќРџРџ: РїРѕРґРїРёСЃР°РЅРёРµ РєРѕРЅС‚СЂР°РєС‚Р° Рё РїСЂРµСЃСЃ-РєРѕРЅС„РµСЂРµРЅС†РёСЏ СѓС‡Р°СЃС‚РЅРёРєРѕРІ</a>
+      <a href="/news/russia/6874332">Создание прототипов НПП: подписание контракта и пресс-конференция участников</a>
       
         
-        (СЃС‚СЂ. <a href="/news/russia/6874332/page8?lastmod=1319385487026">9</a>)
+        (стр. <a href="/news/russia/6874332/page8?lastmod=1319385487026">9</a>)
       
       (416)
-      </li>
-    
-      <li>
-      
-      <a href="/polls/polls/6839382">РљР°РєРѕР№ СЂР°Р·СЂСЏРґРЅРѕСЃС‚Рё Сѓ РІР°СЃ РґРѕРјР°С€РЅСЏСЏ СЃРёСЃС‚РµРјР°?</a>
-      
-        
-        (СЃС‚СЂ. <a href="/polls/polls/6839382/page8?lastmod=1320042950034">9</a>)
-      
-      (407)
-      </li>
-    
-      <li>
-      
-      <a href="/news/ubuntu/6931150">Canonical Рё Dell РѕС‚РєСЂС‹РІР°СЋС‚ 220 СЂРѕР·РЅРёС‡РЅС‹С… РјР°РіР°Р·РёРЅРѕРІ РІ РљРёС‚Р°Рµ</a>
-      
-        
-        (СЃС‚СЂ. <a href="/news/ubuntu/6931150/page8?lastmod=1320014429371">9</a>)
-      
-      (407)
       </li>
     
   </ul>
@@ -2196,18 +1991,18 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
 
-  <h2><a href="/gallery/">Р“Р°Р»РµСЂРµСЏ</a></h2>
+  <h2><a href="/gallery/">Галерея</a></h2>
 
   <div class="boxlet_content">
-    <h3>РџРѕСЃР»РµРґРЅРёРµ СЃРєСЂРёРЅС€РѕС‚С‹</h3>
+    <h3>Последние скриншоты</h3>
     
       <div style="margin-bottom: 1em">
       <div align="center">
         
-        <a href="/gallery/screenshots/6934152">
+        <a href="/gallery/screenshots/6945456">
           
             
-              <img src="gallery/6934152-icon.jpg" alt="РЎРєСЂРёРЅС€РѕС‚: Awesome + conky + Р°СѓРґРёРѕС„РёР»РёСЏ" width=200 height=160/>
+              <img src="gallery/6945456-icon.jpg" alt="Скриншот: темнокеды" width=200 height=113/>
             
             
           
@@ -2216,21 +2011,21 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
       <i>
         
           
-            2560x2048
+            1920x1080
           
           
         
         
-      </i> Awesome + conky + Р°СѓРґРёРѕС„РёР»РёСЏ РѕС‚ <a href="/people/stacker/profile">stacker</a> (16)
+      </i> темнокеды от <a href="/people/teod0r/profile">teod0r</a> (53)
       </div>
     
       <div style="margin-bottom: 1em">
       <div align="center">
         
-        <a href="/gallery/screenshots/6936466">
+        <a href="/gallery/screenshots/6971954">
           
             
-              <img src="gallery/6936466-icon.jpg" alt="РЎРєСЂРёРЅС€РѕС‚: Р°СЂС‡, Р±РѕРєСЃ" width=200 height=125/>
+              <img src="gallery/6971954-icon.jpg" alt="Скриншот: Кедолюбители: зачем нам Compiz?" width=200 height=150/>
             
             
           
@@ -2239,21 +2034,21 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
       <i>
         
           
-            1680x1050
+            1024x768
           
           
         
         
-      </i> Р°СЂС‡, Р±РѕРєСЃ РѕС‚ <a href="/people/z00ke/profile">z00ke</a> (28)
+      </i> Кедолюбители: зачем нам Compiz? от <a href="/people/brotheroftux/profile">brotheroftux</a> (36)
       </div>
     
       <div style="margin-bottom: 1em">
       <div align="center">
         
-        <a href="/gallery/screenshots/6933194">
+        <a href="/gallery/screenshots/6975773">
           
             
-              <img src="gallery/6933194-icon.jpg" alt="РЎРєСЂРёРЅС€РѕС‚: Flux + РєРѕРЅСЊРєРё + РїРёРЅРіРІРёРЅС‹ + notify-send" width=200 height=160/>
+              <img src="gallery/6975773-icon.jpg" alt="Скриншот: ArchLinuxARM @ Toshiba AC100" width=200 height=234/>
             
             
           
@@ -2262,15 +2057,15 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
       <i>
         
           
-            1280x1024
+            1024x1200
           
           
         
         
-      </i> Flux + РєРѕРЅСЊРєРё + РїРёРЅРіРІРёРЅС‹ + notify-send РѕС‚ <a href="/people/Irremann/profile">Irremann</a> (8)
+      </i> ArchLinuxARM @ Toshiba AC100 от <a href="/people/JaGoTerr/profile">JaGoTerr</a> (27)
       </div>
     
-    <a href="/gallery/">РґСЂСѓРіРёРµ СЃРєСЂРёРЅС€РѕС‚С‹...</a>
+    <a href="/gallery/">другие скриншоты...</a>
   </div>
         </div>
       
@@ -2282,7 +2077,7 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
 
-  <h2>РћР±Р»Р°РєРѕ РњРµС‚РѕРє</h2>
+  <h2>Облако Меток</h2>
 
   <div class="boxlet_content">
     <div align="center">
@@ -2306,7 +2101,7 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
         <a class="cloud1" href="/view-news.jsp?tag=bsd">bsd</a>
       
         
-        <a class="cloud1" href="/view-news.jsp?tag=conky">conky</a>
+        <a class="cloud2" href="/view-news.jsp?tag=conky">conky</a>
       
         
         <a class="cloud6" href="/view-news.jsp?tag=debian">debian</a>
@@ -2396,46 +2191,46 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
         <a class="cloud1" href="/view-news.jsp?tag=xfce">xfce</a>
       
         
-        <a class="cloud5" href="/view-news.jsp?tag=%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d1%8c">Р±РµР·РѕРїР°СЃРЅРѕСЃС‚СЊ</a>
+        <a class="cloud5" href="/view-news.jsp?tag=%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d1%8c">безопасность</a>
       
         
-        <a class="cloud1" href="/view-news.jsp?tag=%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b0%d0%bb%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%8f">РІРёСЂС‚СѓР°Р»РёР·Р°С†РёСЏ</a>
+        <a class="cloud1" href="/view-news.jsp?tag=%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b0%d0%bb%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%8f">виртуализация</a>
       
         
-        <a class="cloud4" href="/view-news.jsp?tag=%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d0%ba%d0%b0">РіСЂР°С„РёРєР°</a>
+        <a class="cloud4" href="/view-news.jsp?tag=%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d0%ba%d0%b0">графика</a>
       
         
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d0%b0%d1%86%d0%b8%d1%8f">РґРѕРєСѓРјРµРЅС‚Р°С†РёСЏ</a>
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d0%b0%d1%86%d0%b8%d1%8f">документация</a>
       
         
-        <a class="cloud4" href="/view-news.jsp?tag=%d0%b4%d1%80%d0%b0%d0%b9%d0%b2%d0%b5%d1%80%d1%8b">РґСЂР°Р№РІРµСЂС‹</a>
+        <a class="cloud4" href="/view-news.jsp?tag=%d0%b4%d1%80%d0%b0%d0%b9%d0%b2%d0%b5%d1%80%d1%8b">драйверы</a>
       
         
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%b7%d0%b2%d1%83%d0%ba">Р·РІСѓРє</a>
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%b7%d0%b2%d1%83%d0%ba">звук</a>
       
         
-        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d0%b3%d1%80%d1%8b">РёРіСЂС‹</a>
+        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d0%b3%d1%80%d1%8b">игры</a>
       
         
-        <a class="cloud0" href="/view-news.jsp?tag=%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b2%d1%8c%d1%8e">РёРЅС‚РµСЂРІСЊСЋ</a>
+        <a class="cloud0" href="/view-news.jsp?tag=%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b2%d1%8c%d1%8e">интервью</a>
       
         
-        <a class="cloud5" href="/view-news.jsp?tag=%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d1%8f+%d1%83%d1%81%d0%bf%d0%b5%d1%85%d0%b0">РёСЃС‚РѕСЂРёСЏ СѓСЃРїРµС…Р°</a>
+        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d1%8f+%d1%83%d1%81%d0%bf%d0%b5%d1%85%d0%b0">история успеха</a>
       
         
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%ba%d0%be%d0%bd%d1%84%d0%b5%d1%80%d0%b5%d0%bd%d1%86%d0%b8%d1%8f">РєРѕРЅС„РµСЂРµРЅС†РёСЏ</a>
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%ba%d0%be%d0%bd%d1%84%d0%b5%d1%80%d0%b5%d0%bd%d1%86%d0%b8%d1%8f">конференция</a>
       
         
-        <a class="cloud3" href="/view-news.jsp?tag=%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">РѕР±СЂР°Р·РѕРІР°РЅРёРµ</a>
+        <a class="cloud3" href="/view-news.jsp?tag=%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">образование</a>
       
         
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%bf%d0%b0%d1%82%d0%b5%d0%bd%d1%82%d1%8b">РїР°С‚РµРЅС‚С‹</a>
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%bf%d0%b0%d1%82%d0%b5%d0%bd%d1%82%d1%8b">патенты</a>
       
         
-        <a class="cloud7" href="/view-news.jsp?tag=%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ</a>
+        <a class="cloud7" href="/view-news.jsp?tag=%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">программирование</a>
       
         
-        <a class="cloud3" href="/view-news.jsp?tag=%d1%8f%d0%b4%d1%80%d0%be">СЏРґСЂРѕ</a>
+        <a class="cloud3" href="/view-news.jsp?tag=%d1%8f%d0%b4%d1%80%d0%be">ядро</a>
       
     </div>
   </div>
@@ -2451,76 +2246,76 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 
 
 
-<h2><a href="/news/">РђСЂС…РёРІ РќРѕРІРѕСЃС‚РµР№</a></h2>
+<h2><a href="/news/">Архив Новостей</a></h2>
 
 <div class="boxlet_content">
   
     
     
-    <a href="/news/archive/2011/10">2011 РћРєС‚СЏР±СЂСЊ
-      (89)</a> <br/>
+    <a href="/news/archive/2011/11">2011 Ноябрь
+      (28)</a> <br/>
   
     
     
-    <a href="/news/archive/2011/9">2011 РЎРµРЅС‚СЏР±СЂСЊ
+    <a href="/news/archive/2011/10">2011 Октябрь
+      (91)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/9">2011 Сентябрь
       (109)</a> <br/>
   
     
     
-    <a href="/news/archive/2011/8">2011 РђРІРіСѓСЃС‚
+    <a href="/news/archive/2011/8">2011 Август
       (99)</a> <br/>
   
     
     
-    <a href="/news/archive/2011/7">2011 РСЋР»СЊ
+    <a href="/news/archive/2011/7">2011 Июль
       (118)</a> <br/>
   
     
     
-    <a href="/news/archive/2011/6">2011 РСЋРЅСЊ
+    <a href="/news/archive/2011/6">2011 Июнь
       (128)</a> <br/>
   
     
     
-    <a href="/news/archive/2011/5">2011 РњР°Р№
+    <a href="/news/archive/2011/5">2011 Май
       (123)</a> <br/>
   
     
     
-    <a href="/news/archive/2011/4">2011 РђРїСЂРµР»СЊ
+    <a href="/news/archive/2011/4">2011 Апрель
       (111)</a> <br/>
   
     
     
-    <a href="/news/archive/2011/3">2011 РњР°СЂС‚
+    <a href="/news/archive/2011/3">2011 Март
       (111)</a> <br/>
   
     
     
-    <a href="/news/archive/2011/2">2011 Р¤РµРІСЂР°Р»СЊ
+    <a href="/news/archive/2011/2">2011 Февраль
       (80)</a> <br/>
   
     
     
-    <a href="/news/archive/2011/1">2011 РЇРЅРІР°СЂСЊ
+    <a href="/news/archive/2011/1">2011 Январь
       (88)</a> <br/>
   
     
     
-    <a href="/news/archive/2010/12">2010 Р”РµРєР°Р±СЂСЊ
+    <a href="/news/archive/2010/12">2010 Декабрь
       (119)</a> <br/>
   
     
     
-    <a href="/news/archive/2010/11">2010 РќРѕСЏР±СЂСЊ
+    <a href="/news/archive/2010/11">2010 Ноябрь
       (141)</a> <br/>
   
-    
-    
-    <a href="/news/archive/2010/10">2010 РћРєС‚СЏР±СЂСЊ
-      (137)</a> <br/>
-  
-  <br>&gt;&gt;&gt; <a href="/news/archive/"> РџСЂРµРґС‹РґСѓС‰РёРµ РјРµСЃСЏС†С‹</a> (СЃ РѕРєС‚СЏР±СЂСЏ 1998)
+  <br>&gt;&gt;&gt; <a href="/news/archive/"> Предыдущие месяцы</a> (с октября 1998)
 </div>
         </div>
       
@@ -2528,10 +2323,10 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
             
 
 
-<h2>Р¤СѓС‚Р±РѕР»РєРё linux.org.ru</h2>
+<h2>Футболки linux.org.ru</h2>
 <div class="boxlet_content">
   <a href="/view-message.jsp?msgid=3989453"><img src="/adv/tshirt.jpg" width="150" height="150"> </a><br>
-  <a href="/view-message.jsp?msgid=3989453">Р—Р°РєР°Р· С„СѓС‚Р±РѕР»РєРё Linux.org.ru</a>
+  <a href="/view-message.jsp?msgid=3989453">Заказ футболки Linux.org.ru</a>
 </div>
         </div>
       
@@ -2549,12 +2344,12 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
 </div>
 <div id="ft">
   <p id="ft-info">
-    <a href="server.jsp">Рћ РЎРµСЂРІРµСЂРµ</a> -
-    <a href="rules.jsp">РџСЂР°РІРёР»Р° С„РѕСЂСѓРјР°</a><br>
+    <a href="server.jsp">О Сервере</a> -
+    <a href="rules.jsp">Правила форума</a><br>
 
-  Р Р°Р·СЂР°Р±РѕС‚РєР° Рё&nbsp;РїРѕРґРґРµСЂР¶РєР°&nbsp;&#8212; <a href="/people/maxcom/profile">РњР°РєСЃРёРј Р’Р°Р»СЏРЅСЃРєРёР№</a> 1998&ndash;2011<br>
-  Р Р°Р·РјРµС‰РµРЅРёРµ СЃРµСЂРІРµСЂР° Рё&nbsp;РїРѕРґРєР»СЋС‡РµРЅРёРµ РµРіРѕ Рє&nbsp;СЃРµС‚Рё РРЅС‚РµСЂРЅРµС‚ РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ РєРѕРјРїР°РЅРёРµР№
-  РћРћРћ &laquo;<a href="http://www.ratel.ru">РќРРР -Р Р°РґРёРѕРќРµС‚</a>&raquo;
+  Разработка и&nbsp;поддержка&nbsp;&#8212; <a href="/people/maxcom/profile">Максим Валянский</a> 1998&ndash;2011<br>
+  Размещение сервера и&nbsp;подключение его к&nbsp;сети Интернет осуществляется компанией
+  ООО &laquo;<a href="http://www.ratel.ru">НИИР-РадиоНет</a>&raquo;
   </p>
 
 <div id="ft-buttons">
@@ -2566,11 +2361,11 @@ li><li> РћР±Р·РѕСЂ РІР°РєР°РЅСЃРёР№ Рё РёРЅС‚РµСЂРµСЃРЅС‹С… CPAN РјРѕРґСѓР»РµР№
     <!-- Rating@Mail.ru logo -->
     <a target="_top" href="http://top.mail.ru/jump?from=71642">
     <img src="http://d7.c1.b1.a0.top.mail.ru/counter?id=71642;t=11;l=1"
-    border="0" height="31" width="88" alt="Р РµР№С‚РёРЅРі@Mail.ru"></a>
+    border="0" height="31" width="88" alt="Рейтинг@Mail.ru"></a>
     <!-- //Rating@Mail.ru logo -->
 
   <br>
-           РЎС‚РёР»СЊ: <a href="#" rel="dark" class="styleswitch">Dark</a></li> -
+           Стиль: <a href="#" rel="dark" class="styleswitch">Dark</a></li> -
             <a href="#" rel="swamp" class="styleswitch">Swamp</a></li>
   
 </div>

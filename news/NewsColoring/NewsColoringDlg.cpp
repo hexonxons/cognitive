@@ -269,7 +269,7 @@ void CNewsColoringDlg::OnBnClickedBtnselectvalues()
 
             for (vector<pair<int, int>>::iterator jt = (tagRanges.begin() + cursel)->begin(); jt != (tagRanges.begin() + cursel)->end(); ++jt)
             {
-                ColorRichText(jt->first, jt->second, color);
+                ColorRichText(jt->first, jt->second + 1, color);
             }
         }
     UpdateData(FALSE);
