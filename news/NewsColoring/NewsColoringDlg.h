@@ -33,11 +33,7 @@ protected:
 private:
     CHARFORMAT2 cfDefault;
     CRichEditCtrl m_RichCtrl;
-    CString m_fileName;
     std::string m_fileData;
-    int m_minFreq;
-    int m_minWordlen;
-    int m_newsNum;
     CListBox m_ListBox;
     std::vector<std::vector<std::pair<int, int>>> tagRanges;
     bool m_radioBlue;
@@ -46,7 +42,6 @@ private:
 
     void ColorRichText(int start, int end, COLORREF color);
 public:
-    afx_msg void OnBnClickedBtnrun();
     afx_msg void OnBnClickedRadiored();
     afx_msg void OnBnClickedRadiogreen();
     afx_msg void OnBnClickedRadioblue();
@@ -56,4 +51,8 @@ private:
 public:
     afx_msg void OnLbnSelchangeListranges();
     afx_msg void OnBnClickedBtnresetsel();
+private:
+    CListBox m_DecodedList;
+public:
+    afx_msg void OnBnClickedGetdecoded();
 };
