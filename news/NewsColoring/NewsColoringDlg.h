@@ -46,9 +46,14 @@ private:
 
     void ColorRichText(int start, int end, COLORREF color);
 public:
-    afx_msg void OnBnClickedBtnselectvalues();
     afx_msg void OnBnClickedBtnrun();
     afx_msg void OnBnClickedRadiored();
     afx_msg void OnBnClickedRadiogreen();
     afx_msg void OnBnClickedRadioblue();
+    afx_msg void OnLbnSelchangeList();
+private:
+    CListBox m_ListRanges;
+public:
+    afx_msg void OnLbnSelchangeListranges();
+    afx_msg void OnBnClickedBtnresetsel();
 };

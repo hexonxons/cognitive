@@ -68,6 +68,7 @@ void CNewsColoringDlg::DoDataExchange(CDataExchange* pDX)
     DDX_Text(pDX, IDC_EDITNUM, m_newsNum);
     DDV_MinMaxInt(pDX, m_newsNum, 0, 100);
     DDX_Control(pDX, IDC_LIST, m_ListBox);
+    DDX_Control(pDX, IDC_LISTRANGES, m_ListRanges);
 }
 
 BEGIN_MESSAGE_MAP(CNewsColoringDlg, CDialog)
@@ -75,10 +76,12 @@ BEGIN_MESSAGE_MAP(CNewsColoringDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	//}}AFX_MSG_MAP
     ON_BN_CLICKED(IDC_BTNRUN, &CNewsColoringDlg::OnBnClickedBtnrun)
-    ON_BN_CLICKED(IDC_BTNSELECTVALUES, &CNewsColoringDlg::OnBnClickedBtnselectvalues)
     ON_BN_CLICKED(IDC_RADIORED, &CNewsColoringDlg::OnBnClickedRadiored)
     ON_BN_CLICKED(IDC_RADIOGREEN, &CNewsColoringDlg::OnBnClickedRadiogreen)
     ON_BN_CLICKED(IDC_RADIOBLUE, &CNewsColoringDlg::OnBnClickedRadioblue)
+    ON_LBN_SELCHANGE(IDC_LIST, &CNewsColoringDlg::OnLbnSelchangeList)
+    ON_LBN_SELCHANGE(IDC_LISTRANGES, &CNewsColoringDlg::OnLbnSelchangeListranges)
+    ON_BN_CLICKED(IDC_BTNRESETSEL, &CNewsColoringDlg::OnBnClickedBtnresetsel)
 END_MESSAGE_MAP()
 
 
@@ -224,57 +227,6 @@ void CNewsColoringDlg::OnBnClickedBtnrun()
     UpdateData(FALSE);
 }
 
-void CNewsColoringDlg::OnBnClickedBtnselectvalues()
-{
-    if(!UpdateData(TRUE))
-        return;
-
-    // Get the indexes of all the selected items.
-    int nCount = m_ListBox.GetSelCount();
-    CArray<int,int> aryListBoxSel;
-
-    aryListBoxSel.SetSize(nCount);
-    m_ListBox.GetSelItems(nCount, aryListBoxSel.GetData()); 
-    COLORREF color = RGB(0, 0, 255);
-    if (nCount == 0)
-    {
-        m_RichCtrl.SetRedraw(FALSE);
-
-        m_RichCtrl.SetDefaultCharFormat(cfDefault);
-        m_RichCtrl.SetWindowText(m_fileData.c_str());
-
-        m_RichCtrl.SetRedraw(TRUE);
-        m_RichCtrl.RedrawWindow();
-    }
-    else
-        for (int i = 0; i < nCount; ++i )
-        {
-            int cursel = aryListBoxSel.ElementAt(i);
-            int sz = (tagRanges.begin() + cursel)->size();
-
-            if (m_radioRed)
-            {
-                color = RGB(255, 0, 0);
-            }
-
-            if (m_radioGreen)
-            {
-                color = RGB(0, 255, 0);
-            }
-
-            if (m_radioBlue)
-            {
-                color = RGB(0, 0, 255);
-            }
-
-            for (vector<pair<int, int>>::iterator jt = (tagRanges.begin() + cursel)->begin(); jt != (tagRanges.begin() + cursel)->end(); ++jt)
-            {
-                ColorRichText(jt->first, jt->second + 1, color);
-            }
-        }
-    UpdateData(FALSE);
-}
-
 void CNewsColoringDlg::OnBnClickedRadiored()
 {
     m_radioBlue = false;
@@ -294,4 +246,63 @@ void CNewsColoringDlg::OnBnClickedRadioblue()
      m_radioBlue = true;
      m_radioRed = false;
      m_radioGreen = false;
+}
+
+void CNewsColoringDlg::OnLbnSelchangeList()
+{
+    if(!UpdateData(TRUE))
+        return;
+
+    m_ListRanges.ResetContent();
+    // Get the indexes of all the selected items.
+    int selElem = m_ListBox.GetCurSel();
+    int sz = (tagRanges.begin() + selElem)->size();
+
+    for (vector<pair<int, int>>::iterator it = (tagRanges.begin() + selElem)->begin(); it != (tagRanges.begin() + selElem)->end(); ++it)
+    {
+        CString str;
+        str.AppendFormat(_T("(%d,%d) "), it->first, it->second);
+        m_ListRanges.AddString(str.GetString());
+    }
+    
+    UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::OnLbnSelchangeListranges()
+{
+    if(!UpdateData(TRUE))
+        return;
+
+    int selElem = m_ListBox.GetCurSel();
+    int selRange = m_ListRanges.GetCurSel();
+    COLORREF color = RGB(0, 0, 255);
+
+    if (m_radioRed)
+    {
+        color = RGB(255, 0, 0);
+    }
+
+    if (m_radioGreen)
+    {
+        color = RGB(0, 255, 0);
+    }
+
+    if (m_radioBlue)
+    {
+        color = RGB(0, 0, 255);
+    }
+
+    ColorRichText(((tagRanges.begin() + selElem)->begin() + selRange)->first, ((tagRanges.begin() + selElem)->begin() + selRange)->second + 1, color);
+
+    UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::OnBnClickedBtnresetsel()
+{    
+    if(!UpdateData(TRUE))
+        return;
+    cfDefault.crTextColor = RGB(0,0,0);
+    m_RichCtrl.SetDefaultCharFormat(cfDefault);
+    m_RichCtrl.SetWindowText(m_fileData.c_str());
+    UpdateData(FALSE);
 }
