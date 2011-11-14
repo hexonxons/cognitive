@@ -218,12 +218,44 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\tagprocess.cpp"
+				RelativePath="..\newsfinder\tagprocess.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\utils.cpp"
+				RelativePath="..\newsfinder\utils.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
 			</File>
 		</Filter>
 		<Filter
@@ -252,11 +284,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\tagprocess.h"
+				RelativePath="..\newsfinder\tagprocess.h"
 				>
 			</File>
 			<File
-				RelativePath=".\utils.h"
+				RelativePath="..\newsfinder\utils.h"
 				>
 			</File>
 		</Filter>

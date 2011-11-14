@@ -1,2340 +1,2019 @@
 
+<!DOCTYPE html>
 
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<html lang=ru>
 <head>
-<LINK REL=STYLESHEET TYPE="text/css" HREF="/common.css">
-  
-    <LINK REL=STYLESHEET TYPE="text/css" HREF="/tango/hover.css">
-  
-
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
 
 
 
-
-<script src="/js/head.js" type="text/javascript"></script>
-
-
-<title>LINUX.ORG.RU - Русская информация об ОС Linux</title>
-<META NAME="Keywords" CONTENT="linux линукс операционная система документация gnu бесплатное свободное програмное обеспечение софт unix юникс software free documentation operating system новости news">
-<META NAME="Description" CONTENT="Все о Linux на русском языке">
-<LINK REL="alternate" TITLE="L.O.R RSS" HREF="section-rss.jsp?section=1" TYPE="application/rss+xml">
-
-
-
-
-
-
-
-
-<link rel="search" title="Search L.O.R." href="/search.jsp">
-<link rel="top" title="Linux.org.ru" href="/">
-<script src="/js/lor.js" type="text/javascript">;</script>
-
-
-
-
-  <base href="http://www.linux.org.ru/">
-
-
-
-
-
-
-
-
-<!-- head-main -->
-<LINK REL="stylesheet" TYPE="text/css" HREF="/tango/combined.css">
-<LINK REL="stylesheet" TYPE="text/css" HREF="/tango/tango-dark.css" TITLE="dark">
-<LINK REL="alternate stylesheet" TYPE="text/css" HREF="/tango/tango-swamp.css" TITLE="swamp">
-<LINK REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
-<script src="/js/jquery.corner.js" type="text/javascript"></script>
 <script type="text/javascript">
-  $.stylesheetInit();
-  $(document).ready(function() {
-    if ($.browser.msie || ($.browser.opera && $.browser.version < 10.50)) {
-      $('.msg').corner();
-      $('.column .boxlet').corner();
-    }
-  });
+
+if(window.navigator.userAgent.indexOf('iPhone') > -1 ) {
+
+ document.write('<meta content="width=device-width; initial-scale=0.5; maximum-scale=1.0; user-scalable=1;" name="viewport" />');                           
+
+}
+
 </script>
 
+
+
+  
+
+
+
+
+
+<title>Вести.Ru: новости, видео и фото дня</title>
+
+<meta name="Description" content="Новости дня от Вести.Ru, интервью, репортажи, фото и видео, новости Москвы и регионов России,  новости экономики, погода" />
+
+<meta name="Keywords" content="новости россия москва видео фото телевидение политика криминал происшествия погода репортаж интервью сервис sms мобильный репортер" />
+
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+
+
+<meta property="fb:app_id" content="124849927543891"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="http://www.vgtrk.cdnvideo.ru/fancybox.css?p=5" type="text/css">
+
+<link rel="stylesheet" href="/main.css?v=2.0" type="text/css">
+
+<link rel="stylesheet" href="http://www.vgtrk.cdnvideo.ru/print_all.css?v=3" type="text/css" media="print">
+
+
+
+
+
+
+
+<!--[if lte IE 7]>
+
+<link rel="stylesheet" href="/ie.css?v=12" type="text/css">
+
+<![endif]-->
+
+
+
+
+
+
+
+
+
+<link href="http://stg.odnoklassniki.ru/share/odkl_share.css" rel="stylesheet">
+
+<script src="http://stg.odnoklassniki.ru/share/odkl_share.js" type="text/javascript" ></script>
+
+
+
+
+
+
+
+<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/swfobject.js?v=1" ></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
+
+
+
+ 
+
+<script type="text/javascript" src="/new_js.js?v=80" ></script>
+
+<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/misprint.js?v=2" ></script>
+
+<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/fancybox.js?v=1" ></script>
+
+<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/jquery.cookie.js?v=1"></script>
+
+<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/jcarousellite.js?v=1"></script>
+
+<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/jquery.json-2.2.min.js?v=1" language="javascript"></script>
+
+<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/playlist1.js?p=36" ></script>
+
+<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/ui.core.min.js?v=1"></script>
+
+        <script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/ui.datepicker.min.js?v=1"></script> 
+
+        <script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/ui.datepicker-ru.js?v=1"></script> 
+
+ <script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/fullajax.js?v=1" ></script>
+
+      
+
+
+
+<link href="/vesti.rss" rel="alternate" type="application/rss+xml" title="Вести.Ru: новости, видео и фото дня" />
+
+<!? eng_parse("design.if_css_cid720"); ?>
+
+
+
+<script src="http://www.vgtrk.cdnvideo.ru/i/flash/AC_RunActiveContent.js?v=1" type="text/javascript"></script>
+
+<script type="text/javascript" src="http://vkontakte.ru/js/api/share.js?5" charset="windows-1251"></script>
+
+
+
+<!? banner.banner_gemius; ?>
+
+<!-- link rel="stylesheet" href="http://www.vgtrk.cdnvideo.ru/pda_css.css?style_n=16" media="handheld" type="text/css" -->
+
+<link rel="stylesheet" href="/pda_css.css?style_n=29" media="only screen and (max-width: 480px), only screen and (max-device-width: 480px)" type="text/css">
+
+<!-- test -->
+
+
+
 </head>
+
+
+
 <body>
-<div id="doc3" class="yui-t5">
-  	<div id="hd">
-        <div id="loginGreating" class="head">
-        
 
-        
-          <div id="regmenu" class="head">
-            <a href="/register.jsp">Регистрация</a> -
-            <a id="loginbutton" href="/login.jsp">Вход</a>
-          </div>
+<!--AdFox START-->
 
-          <form method=POST action="login.jsp" style="display: none" id="regform">
-            <label>Имя: <input type=text name=nick size=15></label><br>
-            <label>Пароль: <input type=password name=passwd size=15></label><br>
-            <input type=submit value="Вход">
-            <input id="hide_loginbutton" type="button" value="Отмена">
-          </form>
-        
-        </div>
+<!--Prad'da-->
 
-        <h1><a id="sitetitle" href="/">LINUX.ORG.RU&nbsp;&#8212; Русская информация об&nbsp;ОС&nbsp;Linux</a></h1>
+<!--Сайт: vesti.ru-->
 
-        <div class="menu">
-            <ul class="primary">
-                <li class="first"><a href="/news/">Новости</a></li>
-                <li><a href="/gallery/">Галерея</a></li>
+<!--Тип баннера: Fullscreen-->
 
-                <li><a href="/forum/">Форум</a></li>
-                <li><a href="/tracker.jsp">Трекер</a></li>
-                <li><a href="/wiki/">Wiki</a></li>
-                <li class="last"><a href="/search.jsp">Поиск</a></li>
-            </ul>
-            <ul class="secondary">
-                <li class="first"><a href="/wiki/en/Linux">O linux</a></li>
-                <li><a href="/wiki/en/%D0%94%D0%B8%D1%81%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D0%B8%D0%B2%D1%8B">Дистрибутивы</a></li>
+<script type="text/javascript">
+
+<!--
+
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+
+if (typeof(document.referrer) != 'undefined') {
+
+  if (typeof(afReferrer) == 'undefined') {
+
+    afReferrer = escape(document.referrer);
+
+  }
+
+} else {
+
+  afReferrer = '';
+
+}
+
+var addate = new Date(); 
+
+document.write('<scr' + 'ipt type="text/javascript" src="http://ads.adfox.ru/167410/prepareCode?p1=bdpdo&amp;p2=ekks&amp;pct=a&amp;pfc=a&amp;pfb=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '"><\/scr' + 'ipt>');
+
+// -->
+
+</script>
+
+<!--AdFox END-->
+
+
+
+
+
+<div class="all_wrap" id="all_wrap">
+
+<div class="bottom_bg" align="center">
+
+
+
+<script type="text/javascript" src="http://sticker.yadro.ru/ad/fullscreen.js?place=219"></script>
+
+
+
+<script> 
+
+var vgtrkRekl_random = Math.round(Math.random() * 100000); 
+
+document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_fs?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
+
+</script> 
+
+<div class="banner_order_reclama"><!--  AdRiver code START. Type:extension Site: vesti PZ: 0 BN: 0 -->
+
+<script type="text/javascript">
+
+(function(L){if(typeof(ar_cn)=="undefined")ar_cn=1;
+
+var S='setTimeout(function(e){if(!self.CgiHref){document.close();e=parent.document.getElementById("ar_container_"+ar_bnum);e.parentNode.removeChild(e);}},3000);',
+
+    j=' type="text/javascript"',t=0,D=document,n=ar_cn;L+=escape(D.referrer||'unknown')+'&rnd='+Math.round(Math.random()*999999999);
+
+function _(){if(t++<100){var F=D.getElementById('ar_container_'+n);
+
+    if(F){try{var d=F.contentDocument||(window.ActiveXObject&&window.frames['ar_container_'+n].document);
+
+    if(d){d.write('<sc'+'ript'+j+'>var ar_bnum='+n+';'+S+'<\/sc'+'ript><sc'+'ript'+j+' src="'+L+'"><\/sc'+'ript>');t=0}
+
+    else setTimeout(_,100);}catch(e){try{F.src="javascript:{document.write('<sc'+'ript"+j+">var ar_bnum="+n+"; document.domain=\""
+
+    +D.domain+"\";"+S+"<\/sc'+'ript>');document.write('<sc'+'ript"+j+" src=\""+L+"\"><\/sc'+'ript>');}";return}catch(E){}}}else setTimeout(_,100);}}
+
+D.write('<div style="visibility:hidden;height:0px;left:-1000px;position:absolute;"><iframe id="ar_container_'+ar_cn
+
+    +'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div><div id="ad_ph_'+ar_cn
+
+    +'" style="display:none;"><\/div>');_();ar_cn++;
+
+})('http://ad.adriver.ru/cgi-bin/erle.cgi?sid=171117&target=top&bt=43&pz=0&tail256=');
+
+</script><!--  AdRiver code END  --></div>
+
+<div class="banner_top display_none"> <div id="banner_vesti1"></div>
+
+<script> 
+
+var vgtrkRekl_random = Math.round(Math.random() * 100000); 
+
+document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_1000x90?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
+
+</script> 
+
+</div>
+
+<div class="content"> 
+
+
+
+<div class="header">
+
+
+
+	<div class="widget_vesti">
+
+		<div id="widget">
+
+		<div class="wi_news_titles">
+
+		<div class="titles_wrap"></div><a class="wi_code_link" title="Код виджета" href="#">&lt;/&gt;</a>
+
+	        </div>
+
+	        <div class="wi_news_list">
+
+		<div id="wi_news_inner">
+
+		
+
+		</div>	
+
+			<div class="wi_mask"></div>
+
+	       </div>
+
+	       <div class="wi_code_block">
+
+			<img src="i/wi_screen.jpg">
+
+			<textarea class="wi_code_source"><iframe src="http://www.vesti.ru/utf/vesti_widget.html" scrolling="no" frameborder="0" style="width: 240px; height: 400px; border: none;" allowTransparency="true"></iframe></textarea>
+
+			<a href="#" class="wi_code_block_close"></a>
+
+	      </div>
+
+	
+
+              </div>
+
+	</div>
+
+	<div class="header_right">
+
+		<div class="logo_main">
+
+		<a href="/"><img src="/i/new_logo.jpg" width="146" height="145" alt="Вести.Ru: новости, видео и фото дня" title="Вести.Ru: новости, видео и фото дня" border="0" class="img_logo_vesti"></a>
+
+				<div class="head_date">14 ноября 2011 </div>
+
+		</div>
+
+		<div class="r_head_wrapper">
+
+		<div class="head_links">
+
+			<a class="mobile_top" href="http://www.mobile.vesti.ru/" title="Mobile">Mobile</a>
+
+			<a class="fb_top" href="http://www.facebook.com/vesti.ru" title="Facebook">Facebook</a> 
+
+			<a class="twt_top" href="http://twitter.com/vesti_news" title="Twitter">Twitter</a> 
+
+			<a class="wap_top" href="/doc.html?id=148914" title="WAP">WAP</a>
+
+			<a class="rss_top" href="/vesti.rss" title="RSS">RSS</a>
+
+			<!-- div class="top_weather_wrapper"><!? pogoda_data; ?></div -->
+
+			<a id="probki_top" class="traff_yellow" href="http://probki.vesti.ru/" title="Пробки">Пробки</a>
+
+			<div class="onair_logos"> 
+
+                    <a id="air_link_m" href="/videos?vid=onair"><img src="/i/russ24_new.png"  alt="" ></a>
+
+                   </div> 
+
+			<script type="text/javascript">
+
+                        $(function(){
+
+                           if (window.navigator.userAgent.indexOf('iPhone') > -1 || window.navigator.userAgent.indexOf('iPad') > -1 ) {
+
+                            $('#air_link_m').attr('href', 'http://vgtrk-iph.cdnvideo.ru/r/smil:iph2.smil/playlist.m3u8');
+
+                           }
+
+                          });
+
+                        </script>
+
+		</div>
+
+		</div>
+
+		<!-- div class="header_data">
+
+  
+
+
+
+		
+
+		</div -->
+
+
+
+		
+
+               <div class="theme_day" >
+
+<span class="h2">Темы:</span>
+
+ 
+
+<a href="/theme.html?tid=93034" >Выборы 2011</a><a href="/theme.html?tid=87353" >Ближний Восток</a><a href="/theme.html?tid=89695" >Долговой кризис в еврозоне</a><a href="/theme.html?tid=94454" >Саммит АТЭС в Гонолулу</a><a href="/theme.html?tid=94494" >Москва: пожар на теплоходе</a><a href="/theme.html?tid=94314" >Суд над летчиками в Таджикистане</a><a href="/theme.html?tid=94354" class="last_th">Полет на Марс: миссия провалена</a>
+
+
+
+</div>
+
+
+
+              
+
+
+
+              <div class="menu_top_bg">
+
+             	<div class="menu_top">
+
+			<ul>
+
+			<li><a class="activ1" href="/news">Новости</a></li><li><a  href="/videos">Видео</a></li><li><a  href="/section.html?cid=1200">Фотолента</a></li><li><a  href="/broadcasts.html">Трансляции</a></li><li><a  href="/program.html">Программы</a></li><li><a  href="http://services.vesti.ru/">Сервисы</a></li>
+
+			
+
+			</ul>
+
+		</div>
+
+	     </div>
+
+</div>
+
+<div class="clear"></div>
+
+
+
+
+
+</div>
+
+
+
+<div class="content_page" style="overflow: visible;">
+
+
+
+
+
+<!-- Right block -->
+
+
+
+<div class="td_right">
+
+
+
+
+
+<div class="banner_vesti_reclama "><div id="default_slot_rich"></div>
+
+<script>
+
+var vgtrkRekl_random = Math.round(Math.random() * 100000);
+
+document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti.default_slot_rich?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>");
+
+</script>
+
+</div>
+
+
+
+
+
+<div class="banner_vesti_reclama "><div id="textgrafblock"></div>
+
+<script> 
+
+$(window).load(function(){
+
+function ban2(){
+
+         
+
+            id('textgrafblock').innerHTML = '';
+
+            SRAX.addScript({url: 'http://reklama.mb.vesti.ru/cgi-bin/iframe/textgrafblok?61207&options=FT', callback: function(){
+
+                id('textgrafblock').innerHTML = '';
+
+            }, noax: true})
+
+        }    
+
+
+
+ ban2();
+
+
+
+});
+
+</script> 
+
+</div>
+
+
+
+
+
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+
+<div class="banner_order_reclama"><div id="DIV_NNN_3113">Загружается, подождите...</div></div>
+
+
+
+<div class="banner_order_reclama"><script> 
+
+var vgtrkRekl_random = Math.round(Math.random() * 100000); 
+
+document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_tgb?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
+
+</script></div>
+
+
+
+
+
+<div class="banner_order_reclama"><div style="margin-bottom: 15px">
+
+<script> 
+
+var vgtrkRekl_random = Math.round(Math.random() * 100000); 
+
+document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/finances?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
+
+</script> 
+
+</div>
+
+
+
+<div class="banner_vesti_reclama ">
+
+<script> var vgtrkRekl_random = Math.round(Math.random() * 100000); document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_240x400?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>");
+
+
+
+</script>
+
+
+
+</div></div>
+
+
+
+
+
+<div class="banner_vesti_reclama "><!-- MarketNews Start -->
+
+
+
+<div id="MarketGid7211"><center>
+
+
+
+<a href="http://marketgid.com/" target="_blank">????????...</a>
+
+
+
+</center></div>
+
+
+
+<!-- MarketNews End -->
+
+
+
+<!-- pered </body> -->
+
+
+
+<script type="text/javascript">
+
+
+
+    var MarketGidDate = new Date();
+
+
+
+    document.write('<scr'+'ipt type="text/javascript" '
+
+
+
+    +'src="http://jsn.dt00.net/v/e/vesti.ru.7211.js?t='+MarketGidDate.getYear()+MarketGidDate.getMonth()
+
+
+
+    + '" charset="windows-1251" ></scr'+'ipt>');
+
+
+
+    </script></div>
+
+
+
+<div class="banner_vesti_reclama "><script> 
+
+var vgtrkRekl_random = Math.round(Math.random() * 100000); 
+
+document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/infosponsor?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
+
+</script> 
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="banner_vesti_reclama "></div>
+
+
+
+<div class="banner_vesti_reclama "></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="banner_vesti_reclama "><div id="nedvizhimost">
+
+<noscript>
+
+<iframe src="http://reklama.mb.vesti.ru/cgi-bin/iframe/nedvizhimost?options=A&n=4&c=1&style=http://468x60.mb.vesti.ru/css/nedvizhimost.css" width="238" height="570" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border: 1px solid #ffcc66; border-top: none;"><a href="http://reklama.mb.vesti.ru/cgi-bin/href/nedvizhimost" target="_top"><img src="http://reklama.mb.vesti.ru/cgi-bin/banner/nedvizhimost?options=A" alt="VGTRK" width="238" height="570" border="0" ismap="ismap"></a></iframe>
+
+</noscript>
+
+</div>
+
+</div>
+
+
+
+<div id="fb_recommend_v" style="padding-bottom: 15px;"></div>
+
+<div class="banner_vesti_reclama "></div>
+
+
+
+
+
+
+
+<!? banner.if_banner_time(3,"banner_space_18835434432560418"); ?>
+
+
+
+<div class="banner_vesti_reclama "></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="banner_order_reclama"><script>
+
+// <!--
+
+var vgtrkT70x50_login = "vesti2";
+
+var vgtrkT70x50_options = "options=N";
+
+var vgtrkT70x50_random = Math.round(Math.random() * 100000);
+
+document.write('<iframe src="http://t70x50.mb.vesti.ru/cgi-bin/iframe/'+vgtrkT70x50_login+'?'+vgtrkT70x50_random+'&'+vgtrkT70x50_options+'&n=5&c=1&style=http://468x60.mb.vesti.ru/css/vesti_70x50.css" width="100%" height="340" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://t70x50.mb.vesti.ru/cgi-bin/href/'+vgtrkT70x50_login+'?'+vgtrkT70x50_random +'" target="_blank"><img src="http://t70x50.mb.vesti.ru/cgi-bin/banner/'+vgtrkT70x50_login+'?'+vgtrkT70x50_random +'&'+vgtrkT70x50_options+'" alt="VGTRK" width="100%" height="340" border="0" ismap="ismap"></a></iframe>');
+
+// -->
+
+</script>
+
+<noscript>
+
+<iframe src="http://t70x50.mb.vesti.ru/cgi-bin/iframe/vesti2?options=N&n=5&c=1&style=http://468x60.mb.vesti.ru/css/vesti_70x50.css" width="100%" height="340" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://t70x50.mb.vesti.ru/cgi-bin/href/vesti2" target="_blank"><img src="http://t70x50.mb.vesti.ru/cgi-bin/banner/vesti2?options=N" alt="VGTRK" width="100%" height="340" border="0" ismap="ismap"></a></iframe>
+
+</noscript></div>
+
+
+
+
+
+</div>
+
+<!-- End right block -->
+
+<!-- Left block -->
+
+
+
+
+
+<div class="left_block_all no_bsckground">
+
+<div class="top_line_text">
+
+	<div class="top_line_text_bg1">
+
+		<h1>Новости </h1><a class="sec_link" href="/news?without_ph=1&p=1">Только заголовки</a>
+
+	</div>
+
+</div>
+
+<div class="list_content_all">
+
+<div class="td_left_list">
+
+<div class="serch_block_left_adv  shadow_search">
+
+<div class="shadow_search_abs"></div>
+
+<script>
+
+$(function(){
+
+
+
+  
+
+        $('#sdate_end_i').datepicker({
+
+             changeMonth: true, 
+
+             changeYear: true,
+
+             showOn: "both",
+
+	     buttonImage: "http://www.vgtrk.cdnvideo.ru/i/s_calend.png",
+
+  
+
+            onSelect: function(dateText) {
+
+                 $('#sdate_end_i').val(dateText);  
+
+            }
+
+         }); 
+
+
+
+         $('#sdate_start_i, #sdate_start').datepicker({
+
+             changeMonth: true, 
+
+             changeYear: true,
+
+             showOn: "both",
+
+	     buttonImage: "http://www.vgtrk.cdnvideo.ru/i/s_calend.png",
+
+             onSelect: function(dateText) {
+
+                 $('#sdate_start_i').val(dateText);  
+
+            }
+
+         }); 
+
+         
+
+         $('.fast_date').click(function(){
+
+              
+
+         	var x = $('.fast_date option:selected').attr('id');
+
+         	if (x == 2){
+
+         	var d = new Date();
+
+         	var endDate = ((d.getDate() > 9) ? d.getDate() : '0'+d.getDate())+'.'+(((parseInt(d.getMonth())+1) > 9) ? (parseInt(d.getMonth())+1) : '0'+(parseInt(d.getMonth())+1))+'.'+d.getFullYear();
+
+              	var zx =  Date.parse(d) - 86400000*14; 
+
+                var z = new Date(zx);  
+
+         	var startDate = ((z.getDate() > 9) ? z.getDate() : '0'+z.getDate())+'.'+(((parseInt(z.getMonth())+1) > 9) ? (parseInt(z.getMonth())+1) : '0'+(parseInt(z.getMonth())+1))+'.'+z.getFullYear();
+
+         	
+
+         	} else if ( x == 3) {
+
+         	var d = new Date();
+
+         	var endDate = ((d.getDate() > 9) ? d.getDate() : '0'+d.getDate())+'.'+(((parseInt(d.getMonth())+1) > 9) ? (parseInt(d.getMonth())+1) : '0'+(parseInt(d.getMonth())+1))+'.'+d.getFullYear();
+
+              	var zx =  Date.parse(d) - 86400000*30; 
+
+                var z = new Date(zx);  
+
+         	var startDate = ((z.getDate() > 9) ? z.getDate() : '0'+z.getDate())+'.'+(((parseInt(z.getMonth())+1) > 9) ? (parseInt(z.getMonth())+1) : '0'+(parseInt(z.getMonth())+1))+'.'+z.getFullYear();
+
+               	} else {
+
+               	var endDate = '';
+
+               	var startDate = '';
+
+               	}
+
+         	$('#sdate_start_i').val(startDate);
+
+         	$('#sdate_end_i').val(endDate);
+
+         	
+
+         });
+
+	$('.s_toggle').click(function(){
+
+         if($(this).hasClass('s_small')){
+
+         	$('.search_top_adv').removeClass('search_top_adv').addClass('search_top_adv_big');
+
+         	$('.search_top_adv_big').animate({
+
+         		width: '+=166px',
+
+         		height: '+=197px'
+
+         	});
+
+                $('#submit').fadeOut();
+
+                $('.serch_block_left_adv .search_area').animate({width: '+=143px'}); 
+
+                $('.search').animate({width: '+=198px'}); 
+
+         	$(this).hide().removeClass('s_small').addClass('s_big').text('Свернуть').parent('p').animate({bottom: '+=24px'})
+
+                $(this).show('slow');
 
                 
 
-                <li class="last"><a href="/server.jsp">О сервере</a></li>
-            </ul>
-        </div>
+         	
+
+         	
+
+         	
+
+         } else {
+
+               
+
+               $('.search_top_adv_big').animate({
+
+         		width: '-=166px',
+
+         		height: '-=197px'
+
+         	}); 
+
+                $('#submit').fadeIn();
+
+                $('.serch_block_left_adv .search_area').animate({width: '-=143px'}); 
+
+                $('.search').animate({width: '-=198px'}); 
+
+         	$(this).hide().removeClass('s_big').addClass('s_small').text('Расширенный поиск').parent('p').animate({bottom: '-=24px'});
+
+                $('.search_top_adv_big').removeClass('search_top_adv_big').addClass('search_top_adv');
+
+                $(this).show('fast');
+
+          }	
+
+	
+
+	});
+
+});
+
+
+
+</script>
+
+<div class="search_top_adv">
+
+	<form action="/search_adv.html" method="get" name="Srch2">
+
+		<div class="search_area">
+
+		 <input class="search" type="text" value="Поиск:" name="q" onClick="if(document.Srch2.q.value=='Поиск:') document.Srch2.q.value = '';   " >
+
+		
+
+		<input type="submit" id="submit" value="" onClick="if(document.Srch2.q.value=='Поиск:') return false; else return true;">
+
+		</div>
+
+           <div id="search_type" class="s_adv_par">
+
+                <p class="label">Тип материала:</p>
+
+                <div class="form_big">
+
+                     <input id="stype" type="checkbox"  name="stype_n" checked="checked" value="rnews"><span class="s_legend">новости и статьи</span>
+
+                     <input type="checkbox" name="stype_v" checked="checked" value="rvideo"><span class="s_legend">видео</span>
+
+               </div>
+
+           </div>
+
+           <div id="search_date" class="s_adv_par">
+
+                <p class="label">Диапазон дат:</p>
+
+                <select class="fast_date">
+
+                     <option id='1' selected="selected">за весь период</option> 
+
+                     <option id='2'>последние две недели</option>
+
+                     <option id='3'>последний месяц</option>
+
+                </select>
+
+                <div id="s_dstart" class="s_date">
+
+                <input id="sdate_start_i" type="text" maxlength="10" name="sdate_start" value=""> 
+
+                <span>&nbsp;&mdash;&nbsp;</span>
+
+                 <div class="s_date_leg">начальная дата</div>
+
+                </div>
+
+                <div id="s_dend" class="s_date"> 
+
+                  <input id="sdate_end_i" type="text" maxlength="10" name="sdate_end" value=""> 
+
+                  <div class="s_date_leg">конечная дата</div> 
+
+                </div>
+
+
+
+           </div>
+
+           <div id="search_type" class="s_adv_par">
+
+               <p class="label">Сортировать:</p>
+
+               <div class="form_big">
+
+                   <input id="sorder" type="radio" name="sorder" value="date" checked="checked"><span class="s_legend">по дате</span>
+
+                   <input type="radio" name="sorder" value="rel"><span class="s_legend">по релевантности</span>
+
+               </div>
+
+           </div> 
+
+          <input type="submit" value="" id="submit_big" >
+
+	</form>
+
+	<p id="s_toggle_wrap"><a href="javascript: void(0);" class="s_toggle s_small">Расширенный поиск</a></p>
+
+</div>
+
+</div>
+
+   <div class="menu_sections_wrapper">
+
+		<ul class="menu_sections">
+
+		  
+
+			<li class="  "><a href="/section.html?cid=5">Политика</a></li><li class="  "><a href="/section.html?cid=6">Экономика</a></li><li class="  "><a href="/section.html?cid=8">Происшествия</a></li><li class="  "><a href="http://auto.vesti.ru/">Авто</a></li><li class="  "><a href="/section.html?cid=7">Общество</a></li><li class="  "><a href="/section.html?cid=460">Культура</a></li><li class="  "><a href="/section.html?cid=9">В мире</a></li><li class="  "><a href="/section.html?cid=680">Спорт</a></li><li class="  "><a href="/section.html?cid=780">Hi-Tech. Интернет</a></li><li class="  "><a href="/section.html?cid=960">Модернизация</a></li><li class="  "><a href="/section.html?cid=17">Регионы</a></li><li class="  "><a href="/section.html?cid=1200">Фотолента</a></li><li class="last  "><a href="/section.html?cid=380">Досье</a>
+
+		  </li>
+
+		</ul>
+
+	</div>
+
+<div class="banner_vesti_reclama "></div><div class="l_section"><h3 id="auto_l"><a href="http://auto.vesti.ru/">Авто.Вести.Ru</a></h3><ul><li class="with_img">
+
+<a href="http://auto.vesti.ru/doc.html?id=424233&cid=20" ><img src="http://auto.vesti.ru/p/s_427231.jpg" alt="" title=""></a>
+
+<a href="http://auto.vesti.ru/doc.html?id=424233&cid=20" >Названы российские цены на Mazda CX-5</a>
+
+
+
+</li><li>
+
+<a href="http://auto.vesti.ru/doc.html?id=424174&cid=24" >Стать оператором ТО можно будет за 30 тысяч</a>
+
+
+
+</li><li>
+
+<a href="http://auto.vesti.ru/doc.html?id=423733" >Чиновники не подготовили новый техосмотр</a>
+
+
+
+</li><li>
+
+<a href="http://auto.vesti.ru/doc.html?id=423853" >Hyundai показала облик Genesis Coupe</a>
+
+
+
+</li><li>
+
+<a href="http://auto.vesti.ru/doc.html?id=423573&cid=20" >Рассекречен новый Chevrolet Trailblazer</a>
+
+
+
+</li></ul></div><div class="banner_left_block_td" style="padding: 20px 0; text-align: center;">
+
+<a href="http://www.vesti.ru/doc.html?id=444033"><img src="/i/226x100knopka.jpg" alt=""></a>
+
+</div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/section.html?cid=520">Эксклюзив</a></h3><ul><li class="with_img">
+
+<a href="http://www.vesti.ru/doc.html?id=630367&cid=520" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566552.jpg" alt="" title=""></a>
+
+<a href="http://www.vesti.ru/doc.html?id=630367&cid=520" >Лесбийская пара готовит приемного сына к смене пола</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/doc.html?id=628019&cid=520" >"Народная" водка будет стоить 400 рублей</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/doc.html?id=628052&cid=520" >Рейтинг худших аэропортов мира</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/doc.html?id=629591&cid=5" >Консультации будут ПРОдолжены</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/doc.html?id=627858&cid=520" >У Мадонны украли сингл</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/doc.html?id=628071&cid=520" >Собака тоже человек</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/videos?cid=58">Вести 20:00</a></h3><ul><li class="with_img">
+
+<a href="http://www.vesti.ru/videos?vid=375751&cid=58" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565965.jpg" alt="" title=""></a>
+
+<a href="http://www.vesti.ru/videos?vid=375751&cid=58" >Электричество из космоса</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=375749&cid=58" >Эпидемия за колючей проволокой</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=375744&cid=58" >Грабители бабушек</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/videos?cid=700">Вести.Ru на "России 2"</a></h3><ul><li class="with_img">
+
+<a href="http://www.vesti.ru/videos?vid=375564&cid=700" ><img src="http://auto.vesti.ru/p/s_413963.jpg" alt="" title=""></a>
+
+<a href="http://www.vesti.ru/videos?vid=375564&cid=700" >Как избежать ужасов "переобувки"</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=375570&cid=700" >Интимные фото Рианны попали в Сеть</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=375391&cid=700" >Клубничка с доставкой на борт</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/section.html?cid=780">Hi-Tech</a></h3><ul><li class="with_img">
+
+<a href="http://www.vesti.ru/doc.html?id=630298&cid=780" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_515120.jpg" alt="" title=""></a>
+
+<a href="http://www.vesti.ru/doc.html?id=630298&cid=780" >От microSIM к nanoSIM</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/doc.html?id=630373&cid=780" >Обновление не вылечило iPhone</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/doc.html?id=627918&cid=780" >Почему мужчины беспечны в соцсетях</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://england.vesti.ru/">Англия. Премьер-лига</a></h3><ul><li class="with_img">
+
+<a href="http://www.england.vesti.ru/doc.html?id=392320&cid=121" ><img src="http://england.vesti.ru/p/s_177298.jpg" alt="" title=""></a>
+
+<a href="http://www.england.vesti.ru/doc.html?id=392320&cid=121" >Лидеры дружно выиграли. Аутсайдеры - проиграли</a>
+
+
+
+</li><li>
+
+<a href="http://www.england.vesti.ru/doc.html?id=392641&cid=121" >Билялетдинов и "Эвертон": конец альянса?</a>
+
+
+
+</li><li>
+
+<a href="http://www.england.vesti.ru/doc.html?id=392160&cid=121" >Дмитрий Сычев может переехать в Англию</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/videos?cid=1100">Наука 2.0</a></h3><ul><li class="with_img">
+
+<a href="http://www.vesti.ru/videos?vid=375668&cid=1100" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_409603.jpg" alt="" title=""></a>
+
+<a href="http://www.vesti.ru/videos?vid=375668&cid=1100" >Звуки музыки</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=373879&cid=1100" >Лекарство от старости</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=374520&cid=1100" >Гиганты астрономической науки</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=374517&cid=1100" >Эволюция была ветвистой</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=375104&cid=1100" >Невесомость на Земле</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://kino.vesti.ru/">Кино</a></h3><ul><li class="with_img">
+
+<a href="http://filmpro.ru/journal/15530925" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565746.jpg" alt="" title=""></a>
+
+<a href="http://filmpro.ru/journal/15530925" >Белоснежка в Стране чудес</a>
+
+
+
+</li><li>
+
+<a href="http://filmpro.ru/journal/15520096" >Антон Шагин — новая надежда российского кино</a>
+
+
+
+</li><li>
+
+<a href="http://filmpro.ru/journal/15558872" >Саша Барон Коэн сыграет у Тарантино</a>
+
+
+
+</li><li>
+
+<a href="http://filmpro.ru/journal/15542912" >Конструктор Lego — основа для мультфильма</a>
+
+
+
+</li><li>
+
+<a href="http://filmpro.ru/business/15557708" >В США прокатом правят "Бессмертные"</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.rutv.ru/">Телеканал "Россия"</a></h3><ul><li class="with_img">
+
+<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148860&mid=14&d=0&p=1" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_562718.jpg" alt="" title=""></a>
+
+<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148860&mid=14&d=0&p=1" >Голый таксист летел на крыльях любви</a>
+
+
+
+</li><li>
+
+<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148580&mid=14&d=0&p=1" >Умереть молодым: страну захлестнула волна суицидов</a>
+
+
+
+</li><li>
+
+<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148420&mid=14&d=0&p=1" >Охотники за смертью: тайны звездных могил</a>
+
+
+
+</li><li>
+
+<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148240&mid=14&d=0&p=1" >Драка на АЗС: версия Юрия Антонова</a>
+
+
+
+</li><li>
+
+<a href="http://www.rutv.ru/rnews.html?d=0&id=250773" >Язык сломать можно: настоящие имена звезд</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.rutv.ru/russia2/">Телеканал "Россия 2"</a></h3><ul><li class="with_img">
+
+<a href="http://www.rutv.ru/russia2/" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_562914.jpg" alt="" title=""></a>
+
+<a href="http://www.rutv.ru/russia2/" >Денис Лебедев в программе "90х60х90"</a>
+
+
+
+</li><li>
+
+<a href="http://www.rutv.ru/russia2/" >Человеческий FAQтор: антропология онлайн</a>
+
+
+
+</li><li>
+
+<a href="http://www.rutv.ru/russia2/" >Гляди в оба: премьера Top Gear</a>
+
+
+
+</li><li>
+
+<a href="http://www.rutv.ru/video.html?tvpreg_id=153860&vid=140400&mid=14&d=0&p=1" >"День с Бадюком": такими вы звезд еще не видели!</a>
+
+
+
+</li><li>
+
+<a href="http://www.rutv.ru/russia2/" >Удар головой. Футбол без купюр</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 id="vestifm_h"><a href="http://radio.vesti.ru/fm/">Вести FM</a></h3><ul><li class="with_img">
+
+<a href="http://radiovesti.ru/spec/marshru/475" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_219741.jpg" alt="" title=""></a>
+
+<a href="http://radiovesti.ru/spec/marshru/475" >Слушатели ''Вестей ФМ'' строят свою дорогу</a>
+
+
+
+</li><li>
+
+<a href="http://radiovesti.ru/articles/2011-11-14/fm/19103" >Мы разучились получать гроши</a>
+
+
+
+</li><li>
+
+<a href="http://radiovesti.ru/articles/2011-11-13/fm/19035" >Виновница ДТП чудом избежала самосуда</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3>
+
+<a href="http://radiovesti.ru/programs//direc/22" target="_blank">
+
+<div class="sk_pr_fm">Скажите прямо</div>
+
+</a>
+
+</h3><ul><li class="with_img">
+
+<a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank"><img src="http://www.vgtrk.cdnvideo.ru/p/s_527243.jpg" alt="" title=""></a>
+
+<a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank">Лётчики стали пешками в грязной игре</a>
+
+<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
+
+</li><li>
+
+<a href="http://radiovesti.ru/articles/2011-11-11/fm/18434" target="_blank">Ответственность побеждает инстинкты</a>
+
+<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
+
+</li><li>
+
+<a href="http://radiovesti.ru/articles/2011-11-11/fm/18437" target="_blank">Таджика руки кормят</a>
+
+<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
+
+</li></ul><div class="sk_pr_fm_bot"><a href="http://www.radiovesti.ru" id="vfm_link">www.radiovesti.ru</a></div></div><div class="l_section" ><h3 class="common_l"><a href="http://strana.ru/">Страна.Ru</a></h3><ul><li class="with_img">
+
+<a href="http://strana.ru/journal/19153923" ><img src="http://strana.ru/media/images/uploaded/medium19155347.jpg" alt="" title=""></a>
+
+<a href="http://strana.ru/journal/19153923" >Как Башкирия стала Швейцарией</a>
+
+
+
+</li><li>
+
+<a href="http://strana.ru/journal/19138263" >Открытие Океанариума в Москве. Эксклюзив</a>
+
+
+
+</li><li>
+
+<a href="http://strana.ru/journal/19134395" >Идеальное место для Нового года: Великий Новгород</a>
+
+
+
+</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://services.vesti.ru/">Вести.Ru. Сервисы</a></h3><ul><li class="with_img">
+
+<a href="http://ipad.vesti.ru/" ><img src="http://static.vesti.ru/p/s_463168.jpg" alt="" title=""></a>
+
+<a href="http://ipad.vesti.ru/" >Вести для iPad</a>
+
+
+
+</li><li>
+
+<a href="http://mreporter.ru/" >Мобильный репортер</a>
+
+
+
+</li><li>
+
+<a href="http://probki.vesti.ru/" >Пробки. Информация о ситуации на дорогах</a>
+
+
+
+</li></ul></div><div class="l_section">
+
+            <h3 id="common_l"><a class="onair" href="/videos?vid=onair"> Прямой эфир </a></h3>
+
+            <div style="background-color: #e8e8ee;">
+
+                         <a href="/videos?vid=onair"><img src="http://www.vgtrk.cdnvideo.ru/i/logo_ros_2.png" alt="" ></a>
+
+                         <a href="/radio.html"><img src="http://www.vgtrk.cdnvideo.ru/i/logo_fm_2.png" alt="" ></a>
+
+                         
+
+                     </div> 
+
     </div>
-\
 
 
-<div style="clear: both"></div>
 
-
-
-    <!-- Rating@Mail.ru counter -->
-    <img src="http://d7.c1.b1.a0.top.mail.ru/counter?id=71642"
-    border="0" height="1" width="1" alt="">
-    <!-- //Rating@Mail.ru counter -->
-
-
-<div id="bd">
-
-
-
-<div style="clear: both"></div>
-<div class="newsblog">
-  <div class="newsblog-in">
-
-<h1><a href="/news/">Новости</a></h1>
-
-
-  <div class="infoblock" style="border: 1px solid #777; text-align: justify;">
-    <a href="http://job.samsung.ru/"><img width="130" height="43" src="/adv/Samsung_Logo.png" alt="" style="float: left; border: 0"></a>
-    <div style="margin-left: 135px">
-
-    SAMSUNG Electronics&nbsp;&mdash; мировой лидер в&nbsp;производстве полупроводников,
-телекоммуникационного оборудования и&nbsp;цифровой конвергенции&nbsp;&mdash; объявляет о&nbsp;приеме
-на&nbsp;работу программистов, инженеров-разработчиков, физиков и&nbsp;химиков: LINUX,
-Android, C/C++, Smart Phones, Smart TV, 3D&nbsp;Imaging, 3D&nbsp;Graphics, ASIC, FPGA,
-SoC, Graphene, MEMS, Biomedical Engineering. Дополнительная информация:
-    <a href="http://job.samsung.ru/" style="color: white">http://job.samsung.ru</a>
-    </div>
-  </div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6976051">
-
-<h2>
-  <a href="/news/redhat/6976051">Встреча с Жюлем Верном, часть 2: дистрибутив RFRemix 16</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/redhat/">
-  <img src="/tango/img/redhat-logo.png" width=65 height=75 border=0 alt="Группа Red Hat">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>В то время, как проект Fedora празднует выпуск очередной версии дистрибутива, русских пользователей ждет еще одно приятное событие: сегодня, 8 ноября 2011 года, вышел дистрибутив RFRemix 16 «Verne», основанный на Fedora 16 и дополнительных репозиториях RPM Fusion и Russian Fedora. Мультимедийные кодеки, Adobe Flash Player, проприетарные драйверы видеокарт Nvidia — далеко не полный перечень того, что вы найдете «в коробке» с установщиком. Стоит отметить, что русское сообщество сделало свой рабочий процесс полностью прозрачным и большую часть наработок возвращает в апстрим.
-</p><p>( <a href="http://www.linux.org.ru//news/redhat/6976051#cut0">читать дальше...</a> )</p><p>
-Одним из достоинств местного сообщества является обширная <a href="http://wiki.russianfedora.ru">wiki</a> на русском языке. Также круглосуточно действуют конференция fedora@conference.jabber.ru, <a href="http://forum.russianfedora.ru/">форум</a> и <a href="http://www.russianfedora.ru/mailman/listinfo">списки рассылки</a>, в которых можно задать вопрос, пообщаться или получить помощь по настройке Fedora, RFRemix, CentOS, Scientific Linux и RHEL.</p><p>Помимо установочных образов DVD и образов Live, для загрузки также доступны файлы разницы Delta ISO. Загрузка возможна через зеркала, торренты и jigdo:</p><p>Установочные диски: <a href="http://mirror.yandex.ru/fedora/russianfedora/releases/16/RFRemix/i386/iso/">i686</a>, <a href="http://mirror.yandex.ru/fedora/russianfedora/releases/16/RFRemix/x86_64/iso/">x86_64</a><br>
-Live-образы: <a href="http://mirror.yandex.ru/fedora/russianfedora/releases/16/Live/i686/">i686</a>, <a href="http://mirror.yandex.ru/fedora/russianfedora/releases/16/Live/x86_64/">x86_64</a><br>
-<a href="http://torrent.russianfedora.ru/index.php?page_number=12">Торренты</a></p>
-<p>&gt;&gt;&gt; <a href="http://russianfedora.ru/">Сайт сообщества</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=fedora">fedora</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=redhat">redhat</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/Jayrome/profile">Jayrome</a>
-
-
-
-(08.11.2011 13:05:12)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6976051">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/redhat/6976051">3&nbsp;комментария</a>]
-  </div>
-  </div>
 </div>
 
 
 
 
-    
-      
 
 
 
+<div class="td_center_list">
+
+<div class="red_line_list"></div>
 
 
 
+<div class="list_date">
 
+	<span>14 ноября 2011 г. </span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=infoblock id="topic-6975111">
-Мини-новость:
-  <a href="/news/security/6975111">Liberte Linux 2012.1: Live-дистрибутив для настоящих анонимусов</a>
-
-
-
-  [<a href="/news/security/6975111">24&nbsp;комментария</a>]
 </div>
 
+<!--div class="float_left" style="width: 80px; padding-left: 10px;">
 
-    
-      
+<a id="arclink" href="#" class="arhiv_ico" onclick="show_datepicker('http://www.vesti.ru/news?ldate=', this);">aрхив</a>
 
+</div-->
 
+<!? eng_parse("if(\"paging_exists\",\"design.paging_html\"\)"); ?><div class="list_item">
 
+	<div class="list_item_img">
 
+		<p class="list_item_time">15:34</p>
 
+		
 
-
-
-
-
-
-
-
-
+	</div>
 
 
 
+	 <h3> <a href="/doc.html?id=630430&cid=680">Игрок &quot;Анжи&quot; Самюэль Это'О – лучший футболист Африки</a></h3>
+
+	<p><a href="/doc.html?id=630430&cid=680">Камерунский форвард "Анжи" Самюэль Это'О выиграл звание лучшего футболиста Африки по итогам прошлого года. Это уже третья подобная награда в активе нападающего сборной Камеруна. Это'О получил "Золотого льва" – приз, учрежденный газетой Al-Mountakhab, в Марракеше на специальной церемонии. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">15:25</p>
+
+		<a href="/doc.html?id=630427" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_518664.jpg" width="92" height="69" border="0">
 
 
 
+</a>
+
+	</div>
 
 
 
-<div class=news id="topic-6971063">
+	 <h3> <a href="/doc.html?id=630427&cid=6">Италия разместила пятилетние облигации на сумму в 3 млрд евро</a></h3>
 
-<h2>
-  <a href="/news/redhat/6971063">Выпущена Fedora 16 «Verne»</a>
-</h2>
+	<p><a href="/doc.html?id=630427&cid=6">Италия разместила сегодня очередной выпуск пятилетних облигаций на сумму в 3 млрд евро. Доходность по ним составила 6,29 проц по сравнению с 5,32 проц по предыдущему аналогичному выпуску, который состоялся 13 октября.
+
+ </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">15:14</p>
+
+		<a href="/doc.html?id=630422" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_259440.jpg" width="92" height="69" border="0">
 
 
 
+</a>
 
-<div class="entry-userpic">
-  <a href="/news/redhat/">
-  <img src="/tango/img/redhat-logo.png" width=65 height=75 border=0 alt="Группа Red Hat">
-    </a>
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630422&cid=9">МИД РФ: Запад подстрекает радикальную сирийскую оппозицию к смене режима</a></h3>
+
+	<p><a href="/doc.html?id=630422&cid=9">Страны Запада подстрекают радикальную сирийскую оппозицию взять курс на смену режима в Сирии, полагают в российском МИД. "Называя вещи своими именами, имеет место подстрекательство радикально настроенных оппозиционеров к тому, чтобы они взяли курс на смену режима", - заявил Сергей Лавров. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">15:06</p>
+
+		<a href="/doc.html?id=630382" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_364749.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424213">Hyundai представит купе Elantra в Чикаго</a></h3>
+
+	<p><a href="http://auto.vesti.ru/doc.html?id=424213">Корейский автопроизводитель Hyundai подтвердил свои намерения относительно выпуска двухдверной версии модели Elantra. Но в отличие от слухов, которые пророчили дебют новинка на автосалоне в Лос-Анджелесе, компания подождет до следующего февраля и представит купе Elantra на автосалоне в Чикаго. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">15:06</p>
+
+		<a href="/doc.html?id=630426" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_212765.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630426&cid=520">Чтение по зубам: заболевания головы и сердца</a></h3>
+
+	<p><a href="/doc.html?id=630426&cid=520">Направляясь к зубному врачу, вы ожидаете, что он поставит вам пломбу или снимет налет, но вряд ли вы попросите его проверить ваше сердце. Впрочем, как утверждают американские стоматологи, состояние зубов человека может многое сказать о здоровье всего организма. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">15:06</p>
+
+		<a href="/doc.html?id=630423" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_475784.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630423&cid=680">Сергей Кущенко: календарь российского биатлона будет насыщенным</a></h3>
+
+	<p><a href="/doc.html?id=630423&cid=680">Соревнований по биатлону на территории России в ближайшие два года пройдет больше, чем обычно. Об этом заявил вице-президент IBU, исполнительный директор СБР Сергей Кущенко. Он подтвердил, что в будущем сезоне обязательно пройдут ставшая традиционной "Гонка чемпионов" и Мемориал Фатьянова. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">15:05</p>
+
+		<a href="/doc.html?id=630384" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_480311.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630384&cid=7">В Интернете можно будет проследить историю квартиры</a></h3>
+
+	<p><a href="/doc.html?id=630384&cid=7">Все сделки, совершаемые с недвижимостью в России, появятся в Интернете. Публиковать информацию будет Росреестр. Сервис запустят до конца этого года. На портале появится информация о миллионах сделок, которые Росреестр и его предшественница - Росрегистрация - зарегистрировали с 1999 года. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">15:04</p>
+
+		<a href="/doc.html?id=630411" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_558768.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630411&cid=8">Спецоперация в Дагестане: уничтожен лидер &quot;каспийской бандгруппы&quot;</a></h3>
+
+	<p><a href="/doc.html?id=630411&cid=8">Двое боевиков уничтожены дагестанском городе Каспийске в ходе спецоперации. Они были блокированы в одном из жилых домов частного сектора. Один из боевиков оказался главарем "каспийской бандгруппы". Это 33-летний уроженец Каспийска Магомед Джамаев по кличке Мухамад. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:58</p>
+
+		<a href="/doc.html?id=630396" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_538715.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630396&cid=780">Google назначила на среду загадочную презентацию</a></h3>
+
+	<p><a href="/doc.html?id=630396&cid=780">Корпорация Google разослала журналистам письма с приглашением на таинственную пресс-конференцию, которая пройдет 16 ноября в Лос-Анджелесе. Тема события держится в секрете. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:50</p>
+
+		<a href="/doc.html?id=630417" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_523362.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630417&cid=680">Зинэтула Билялетдинов: вместе ребята выдают классный хоккей</a></h3>
+
+	<p><a href="/doc.html?id=630417&cid=680">После победы на первом этапе Евротура главный тренер сборной России Зинэтула Билялетдинов похвалил первое звено, которое забросило больше половины всех шайб.
+
+
+
+ </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:44</p>
+
+		<a href="/doc.html?id=630414" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_494355.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630414&cid=8">Нападение на пункт полиции в Нальчике: один полицейский погиб и один тяжело ранен</a></h3>
+
+	<p><a href="/doc.html?id=630414&cid=8">В Нальчике в микрорайоне Вольный Аул на улице Калмыкова, 61 сегодня совершено нападение на опорный пункт полиции. В результате один участковый погиб, другой тяжело ранен, сообщили в Следственном управлении СК РФ по Кабардино- Балкарии. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:39</p>
+
+		
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630415&cid=6">Падение промпроизводства в еврозоне в сентябре стало максимальным за 2,5 года </a></h3>
+
+	<p><a href="/doc.html?id=630415&cid=6">Объем промышленного производства в еврозоне в сентябре 2011 года сократился на 2% по сравнению с августом, падение показателя стало максимальным за два с половиной года, свидетельствуют данные Статистического управления Европейского союза. 
+
+ </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:34</p>
+
+		<a href="/doc.html?id=630398" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_557414.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630398&cid=9">Защита Тимошенко обжаловала новые уголовные дела против экс-премьера Украины</a></h3>
+
+	<p><a href="/doc.html?id=630398&cid=9">Адвокаты Юлии Тимошенко обжаловали возбуждение новых уголовных дел против бывшего премьер-министра Украины. Защитник Тимошенко Сергей Власенко отметил, что эти дела связаны с деятельностью корпорации "Единые энергетические системы Украины" (ЕЭСУ). </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:34</p>
+
+		<a href="/doc.html?id=630409" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_279590.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630409&cid=6">Добыча газа в РФ в 2012 году вырастет до 680-690 млрд кубометров</a></h3>
+
+	<p><a href="/doc.html?id=630409&cid=6">В 2012 году добыча газа в России увеличится до 680-690 млрд куб м, а экспорт планируется довести до 200 млрд куб м. Такой прогноз озвучил сегодня вице-спикер Госдумы, президент Российского газового общества (РГО) Валерий Язев.
+
+ </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:33</p>
+
+		<a href="/doc.html?id=630394" ><img src="http://auto.vesti.ru/p/s_427226.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424233">Новый кроссовер Mazda CX-5 будет стоить от 911 000 рублей</a></h3>
+
+	<p><a href="http://auto.vesti.ru/doc.html?id=424233">Базовая версия абсолютно нового кроссовера от компании Mazda обойдется россиянам в 911 тысяч рублей. За эти деньги в моноприводный автомобиль установят 2-литровый бензиновый мотор мощностью 150 л.с. и МКПП. Самая же дорогая, полноприводная версия с "автоматом" обойдется в 1 274 000 рублей. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:27</p>
+
+		<a href="/doc.html?id=630407" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_539691.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630407&cid=680">В Бельгии футболист умер от остановки сердца</a></h3>
+
+	<p><a href="/doc.html?id=630407&cid=680">Бельгийский футболист нигерийского происхождения Бобсам Элейжико из команды "Мерксем" скончался от остановки сердца во время матча регионального чемпионата с командой "Карт". Все попытки медиков вернуть 30-летнего спортсмена к жизни оказались безуспешными. После инцидента матч был прерван. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:21</p>
+
+		<a href="/doc.html?id=630406" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_485277.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630406&cid=6">Потребность России в иностранных работниках на 2012 год составляет 1,7 млн человек</a></h3>
+
+	<p><a href="/doc.html?id=630406&cid=6">Потребность России в иностранных работниках на 2012 год составляет 1,7 млн человек,  заявили в Минздравсоцразвития РФ. Трудовые мигранты составят 2,54% от численности занятых в экономике и 2,38% от численности экономически активного населения страны.  </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:16</p>
+
+		<a href="/doc.html?id=630402" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_484811.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="http://www.england.vesti.ru/doc.html?id=392700&cid=121">Питер Одемвингие: контракт с топ-клубом надо заслужить</a></h3>
+
+	<p><a href="http://www.england.vesti.ru/doc.html?id=392700&cid=121">Нигерийский нападающий клуба "Вест Бромвич Альбион" с российским паспортом Питер Одемвингие считает, что новый сезон в премьер-лиге пока складывается для него не слишком успешно. Но менять клуб по собственной инициативе он не собирается. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:10</p>
+
+		<a href="/doc.html?id=630358" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566464.jpg" width="92" height="69" border="0">
+
+<div class="video_ico_s"></div>
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630358&cid=9">Старту &quot;Союза ТМА-22&quot; не помешал даже сплошной снегопад </a></h3>
+
+	<p><a href="/doc.html?id=630358&cid=9">Космический корабль "Союз" успешно стартовал 14 ноября с Байконура. Он уже вышел на штатную орбиту. На его борту новый экипаж МКС. Стыковка со станцией запланирована на утро 16 ноября. Этот полет готовился два с лишним месяца после того, как в августе был потерян беспилотный "Прогресс". </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:05</p>
+
+		<a href="/doc.html?id=630403" ><img src="http://player.rutv.ru/p/s_80585.jpg" width="92" height="69" border="0">
+
+<div class="video_ico_s"></div>
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630403&cid=7">Мэр Самары: мы просто обязаны слышать людей</a></h3>
+
+	<p><a href="/doc.html?id=630403&cid=7">Идея "Большого правительства" вызвала интерес в российских регионах. Здесь людям труднее всего пробиться со своими проблемами на уровень федеральной власти. Какие возможности им предоставит "Большое правительство"? Об этом в интервью "России 24" рассказал глава Самары Дмитрий Азаров. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:04</p>
+
+		
+
+	</div>
+
+
+
+	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424174">Стать оператором ТО можно будет за 30 тысяч рублей</a></h3>
+
+	<p><a href="http://auto.vesti.ru/doc.html?id=424174">Российское правительство определило цену, которую придется заплатить за получение права проводить технический осмотр автомобилей по новым правилам. Согласно постановлению, опубликованному в понедельник, 14 ноября, первоначальная плата за аккредитацию составит, как минимум, 30 тысяч рублей. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:03</p>
+
+		<a href="/doc.html?id=630395" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_537800.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630395&cid=9">ЕС заблокирует кредитование Сирии</a></h3>
+
+	<p><a href="/doc.html?id=630395&cid=9">ЕС намерен запретить кредитование Сирии по линии Европейского инвестиционного банка. Об этом говорится в проекте итогового заявления Совета ЕС на уровне глав МИД, заседание которого состоится сегодня в Брюсселе. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">14:03</p>
+
+		<a href="/doc.html?id=630399" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_339561.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630399&cid=520">ВЦИОМ посчитал российский индекс счастья</a></h3>
+
+	<p><a href="/doc.html?id=630399&cid=520">За последние два года так называемый индекс счастья в России снизился с 51 до 41 пункта. Но все же в общем и целом большинство россиян (66%) по-прежнему считают себя счастливыми. Такой вывод по итогам опроса сделал ВЦИОМ. Он же выяснил, сторонники каких партий считают себя счастливее других. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">13:58</p>
+
+		<a href="/doc.html?id=630330" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_524130.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630330&cid=680">Футбол. &quot;Спартак&quot; и &quot;Анжи&quot; сыграют на турнире в Испании</a></h3>
+
+	<p><a href="/doc.html?id=630330&cid=680">Две российские футбольные команды - "Спартак" и "Анжи" - примут участие в ежегодном товарищеском турнире "Копа дель Соль-2012" ("Copa del Sol"-2012), который состоится с 27 января по 8 февраля 2011 года в Испании.
+
+
+
+ </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">13:56</p>
+
+		<a href="/doc.html?id=630376" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565497.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630376&cid=5">Лавров: Иран нужно зазывать в переговоры, а не грозить ему ударами с воздуха</a></h3>
+
+	<p><a href="/doc.html?id=630376&cid=5">Россия считает, что санкционный трек в отношении Ирана исчерпан. Об этом заявил глава МИД РФ Сергей Лавров. "По линии СБ ООН сделано все, что только можно отнести к иранской ядерной программе прямым и косвенным образом, - подчеркнул он. "Какие-то наказания никуда нас не приведут, - убежден министр. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">13:44</p>
+
+		<a href="/doc.html?id=630372" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566550.jpg" width="92" height="69" border="0">
+
+<div class="video_ico_s"></div>
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630372&cid=5">Саммит АТЭС: Россия приняла эстафету</a></h3>
+
+	<p><a href="/doc.html?id=630372&cid=5">Продолжать борьбу с протекционизмом - такое решение приняли лидеры стран АТЭС на саммите в Гонолулу. Участники встречи обсудили также меры, которые помогут стимулировать развитие мировой экономики во время финансовой нестабильности. И Россия приняла эстафету председательства в АТЭС от США. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">13:42</p>
+
+		<a href="/doc.html?id=630379" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_510131.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630379&cid=680">Тренер Яны Романовой: Пихлер &quot;закрутил гайки&quot;</a></h3>
+
+	<p><a href="/doc.html?id=630379&cid=680">Личный наставник российской биатлонистки Яны Романовой Владимир Анисимов поделился мнением о первых результатах подготовки своей подопечной в сборной под руководством нового главного тренера немца Вольфганга Пихлера. Анисимов считает, что Пихлер "закрутил гайки". </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">13:39</p>
+
+		<a href="/doc.html?id=630347" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_476136.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630347&cid=680">Футбол. Лидер сборной Турции критикует Хиддинка</a></h3>
+
+	<p><a href="/doc.html?id=630347&cid=680">Накануне ответного стыкового матча отборочного турнира Euro-2012 с Хорватией полузащитник сборной Турции Арда Туран подверг резкой критике главного тренера своей команды Гуса Хиддинка. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">13:37</p>
+
+		<a href="/doc.html?id=630362" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_403189.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630362&cid=680">Барулин, Радулов, Никулин - лучшие игроки Кубка Карьяла</a></h3>
+
+	<p><a href="/doc.html?id=630362&cid=680">Нападающий сборной России Александр Радулов стал лучшим бомбардиром первого этапа Евротура Кубка Карьяла, набрав пять очков в трех матчах. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">13:36</p>
+
+		<a href="/doc.html?id=630374" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566444.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630374&cid=9">НАТО не признало результаты выборов в Южной Осетии </a></h3>
+
+	<p><a href="/doc.html?id=630374&cid=9">Североатлантический альянс не признал результаты президентских выборов в Южной Осетии. Об этом заявил генеральный секретарь НАТО Андерс Фог Расмуссен. Он подчеркнул, что позиция военно-политической организации заключается в том, что НАТо не признает независимости Южной Осетии и Абхазии. </a></p>
+
 </div>
 
+<!-- title head -->
 
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Сегодня, 8 ноября 2011 года, проект Fedora с большим удовольствием объявляет о выпуске Fedora 16 «Verne», названного в честь писателя-новатора Жюля Верна.
-</p><p>( <a href="http://www.linux.org.ru//news/redhat/6971063#cut0">читать дальше...</a> )</p><p>
-Это только поверхностный обзор того, что представлено в новом выпуске Fedora. <a href="http://docs.fedoraproject.org/ru-RU/Fedora/16/html/Release_Notes/">Полные примечания к выпуску</a> и руководства по Fedora 16 на русском языке опубликованы на сайте проекта.</p><p>В отличие от произведений Верна, предсказавшего множество научных открытий и изобретений, в числе которых акваланг, телевидение и космические полеты, Fedora 16 — не научная фантастика. Она здесь и сейчас (по ссылкам ниже):<br><br>
-<a href="http://get.fedoraproject.org">http://get.fedoraproject.org</a><br><br>
-<a href="http://torrent.fedoraproject.org">http://torrent.fedoraproject.org</a></p>
-<p>&gt;&gt;&gt; <a href="https://fedoraproject.org/wiki/F16_release_announcement/ru">Анонс на сайте проекта</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=fedora">fedora</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=redhat">redhat</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/Jayrome/profile">Jayrome</a>
-
-
-
-(07.11.2011 23:26:51)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6971063">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/redhat/6971063">267&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/redhat/6971063/page1">2</a> <a href="/news/redhat/6971063/page2">3</a> <a href="/news/redhat/6971063/page3">4</a> <a href="/news/redhat/6971063/page4">5</a> <a href="/news/redhat/6971063/page5">6</a>)]
-  </div>
-  </div>
+<div class="paging">Страницы:&nbsp;&nbsp; <a class=activ>&nbsp;1&nbsp;</a> <a href="?&p=2"> 2 </a> <a href="?&p=3"> 3 </a> <a href="?&p=4"> 4 </a> <a href="?&p=5"> 5 </a> <a href="?&p=6"> 6 </a> <a href="?&p=7"> 7 </a> <a href="?&p=8"> 8 </a> <a href="?&p=9"> 9 </a> <a href="?&p=10"> 10 </a><a href="?&p=11">&raquo;</a>
 </div>
 
+<!-- End title Head -->
 
 
 
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6973983">
-
-<h2>
-  <a href="/news/opensource/6973983">Valgrind 3.7.0</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/opensource/">
-  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
-    </a>
 </div>
 
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Valgrind — это инструмент, позволяющий находить в программах недостатки, такие как ошибки при работе с памятью, неправильное разделение потоков, неинициализированные переменные и прочее. В новой версии:
-</p><ul><li> Поддержка Linux на архитектуре IBM z/Architecture (s390x). 
-</li><li> Начальная поддержка MacOSX 10.7 и XCode 4.
-</li><li> Начальная поддержка ARM/Android.
-</li><li> Поддержка IBM Power ISA 2.06 (Power7).
-</li><li> Общее улучшение поддержки ARM/Linux и соответственно ARM/Android.
-</li><li> Дальнейшее улучшение поддержки инструкций SSE4.2 в 64-битном режиме.
-</li><li> Удалена поддержка AIX5.
-</li><li> В Helgrind улучшена производительность и в общем снижено потребление памяти.
-</li><li> В DRD появилась возможность вывода в XML, улучшена поддержка Darwin.
-</li><li> Область работы exp-ptrcheck уменьшена ради сокращения потребления ресурсов (удалённый функционал уже присутствует в лучшем качестве в Memcheck)
-</li><li> В Valgrind встроен GDB-сервер. То есть теперь можно контролировать работу Valgrind'а из GDB.
-</li><li> Проверена возможность сборки Valgrind с помощью Clang-2.9.
-</li><li> Множество других улучшений и исправлений ошибок.
-</li></ul><p><a href="http://valgrind.org/">Официальный сайт</a></p>
-<p>&gt;&gt;&gt; <a href="http://valgrind.org/docs/manual/dist.news.html">Подробности</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=android">android</a>, <a href="view-news.jsp?tag=arm">arm</a>, <a href="view-news.jsp?tag=linux">linux</a>, <a href="view-news.jsp?tag=s390x">s390x</a>, <a href="view-news.jsp?tag=valgrind">valgrind</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/GArik/profile">GArik</a>
-
-
-
-(07.11.2011 20:43:51)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6973983">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/opensource/6973983">51&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/opensource/6973983/page1">2</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=infoblock id="topic-6971263">
-Мини-новость:
-  <a href="/news/conference/6971263">Бесплатный семинар «Комплексный переход на СПО: проблемы и решения» в Санкт-Петербурге 10 ноября</a>
-
-
-
-  [<a href="/news/conference/6971263">9&nbsp;комментариев</a>]
-</div>
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6969545">
-
-<h2>
-  <a href="/news/gnome/6969545">Linux Mint 12 будет использовать GNOME Shell по умолчанию</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/gnome/">
-  <img src="/tango/img/gnome-new.png" width=65 height=75 border=0 alt="Группа GNOME">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Согласно блогу LinuxMint, Linux Mint 12 будет использовать по умолчанию GNOME 3 с оболочкой GNOME Shell. Для пользователей, предпочитающих классический GNOME 2.3x, будет доступен его форк MATE.</p><p>Linux Mint 12 будет использовать не просто GNOME Shell, а свою наработку MGSE (Mint Gnome Shell Extensions), которая приближена к классической второй ветке GNOME: панель с меню и списком окон в низу экрана, переключение между окнами, а не приложениями, иконка системных уведомлений наверху, классический ALT + TAB переключатель и многое другое.</p><p>Среди расширений включенных в Linux Mint 12 стоит отметить: нижнюю панель, классический ALT+TAB, MediaPlayer, noa11y, пользовательские темы, альтернативное меню выключения, список окон, умный обзор и новое расширение для меню.</p><p>Все новые расширения можно будет отключить.</p>
-<p>&gt;&gt;&gt; <a href="http://blog.linuxmint.com/?p=1851">Подробности</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=gnome">gnome</a>, <a href="view-news.jsp?tag=mint">mint</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/terminator/profile">terminator</a>
-
-
-
-(07.11.2011 9:54:23)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6969545">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/gnome/6969545">175&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/gnome/6969545/page1">2</a> <a href="/news/gnome/6969545/page2">3</a> <a href="/news/gnome/6969545/page3">4</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6969610">
-
-<h2>
-  <a href="/news/kernel/6969610">Книга &quot;Модули ядра Linux&quot;</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/kernel/">
-  <img src="/tango/img/linux-logo.png" width=65 height=75 border=0 alt="Группа Ядро Linux">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>На сайте rus-linux.net опубликован проект книги О.И.Цилюрика &quot;Модули ядра Linux&quot;.
-Книга посвящена программированию модулей ядра Linux и рассчитана на опытных разработчиков системного программного обеспечения. Предполагается, что читатель может и не иметь богатого опыта в программировании именно для ядра Linux, или даже вообще в программировании для этой системы, но имеет какой-то опыт в системном программировании для других операционных систем, что послужит базой для построения аналогий.
-Даже если чтение книги и не подвигнет читателя к написанию собственных компонент ядра (что совершенно не обязательно), то, по крайней мере, поможет более точному пониманию тех процессов, которые происходят в ядре.
-На примерах дан обстоятельный обзор возможностей в программировании модулей ядра, этого набора примеров достаточно, чтобы начать писать свой собственный драйвер-модуль Linux, дальше наращивая его функциональность.
-Предназначено для программистов-разработчиков, ведущих реальные проекты. Конструктивные замечания по тексту можно направлять автору на адрес olej at front dot ru.</p>
-<p>&gt;&gt;&gt; <a href="http://rus-linux.net/MyLDP/BOOKS/Moduli-yadra-Linux/kern-mod-index.html">Подробности</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D1%8B">драйверы</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a>, <a href="view-news.jsp?tag=%D1%8F%D0%B4%D1%80%D0%BE">ядро</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/vikos/profile">vikos</a>
-
-
-
-(07.11.2011 9:53:40)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6969610">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/kernel/6969610">87&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/kernel/6969610/page1">2</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6969880">
-
-<h2>
-  <a href="/news/gnome/6969880">Gnome Shell больше не требуется ускорение GPU</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/gnome/">
-  <img src="/tango/img/gnome-new.png" width=65 height=75 border=0 alt="Группа GNOME">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>3 ноября Адам Джексон сообщил о возможности запускать Gnome Shell без поддержки аппаратного ускорения видеокартой.</p><p>Программный режим работает при помощи бэкенда Gallium3D LLVMpipe. LLVMpipe - программный драйвер, который предоставляет LLVM возможность использовать ускорение OpenGL на современных процессорах.</p><p>Благодаря этому, появилась возможность запускать Gnome Shell/Unity/Compiz, используя лишь ресурсы центрального процессора.</p>
-<p>&gt;&gt;&gt; <a href="http://www.phoronix.com/scan.php?page=news_item&amp;px=MTAxMTI">Подробности</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=gnome">gnome</a>, <a href="view-news.jsp?tag=gnome-shell">gnome-shell</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/Shtsh/profile">Shtsh</a>
-
-
-
-(07.11.2011 0:30:07)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6969880">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/gnome/6969880">159&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/gnome/6969880/page1">2</a> <a href="/news/gnome/6969880/page2">3</a> <a href="/news/gnome/6969880/page3">4</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6969513">
-
-<h2>
-  <a href="/news/russia/6969513">Linux InstallFest 11.11 в Нижнем Новгороде</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/russia/">
-  <img src="/tango/img/russia-logo.png" width=65 height=75 border=0 alt="Группа Linux в России">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Нижегородская Группа Пользователей Linux уже в 6 раз проводит Linux InstallFest для всех интересующихся операционной системой Linux и Свободным Программным Обеспечением. В этом году вас ждет:</p><ul><li>Зона установки. Где все желающие установить ОС Linux получат дистрибутив, розетку питания, wi-fi или ethernet доступ к интернету и локальным репозиториям.
-</li><li>Зона презентаций, где все интересующиеся смогут узнать новости из мира Свободного ПО и поучаствовать в мастер-классах по <a href="http://nnlug.ru/node/96">различным прикладным вопросам</a>
-</li><li>Демонстрационная зона, где будут доступны компьютеры с уже установленной ОС и Свободным ПО, на которых можно &quot;в живую&quot; опробовать новую версию Ubuntu 11.10.
-</li><li>3D-зона с рассказами и демонстрациями работ студии <a href="http://slonstudio.org">&quot;SlonStudio&quot;</a> и <b>презентация <a href="http://b3d.mezon.ru/index.php/Blender_Basics_4-rd_edition">книги &quot;Основы Blender 2.6&quot;</a> от переводчика!</b>
-</li></ul><p>Linux InstallFest 11.11 пройдет:
-13 ноября 2011
-c 10:00 до 16:00
-в помещении Нижегородского Радиотехнического Колледжа (ул. Студенческая д.6, ост. АвтоВокзал) </p>
-<p>&gt;&gt;&gt; <a href="http://nnlug.ru/node/96">Подробности, рассписание и прямая трансляция семинаров</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=3d">3d</a>, <a href="view-news.jsp?tag=embedded+linux">embedded linux</a>, <a href="view-news.jsp?tag=gnome">gnome</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=ubuntu">ubuntu</a>, <a href="view-news.jsp?tag=%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0">графика</a>, <a href="view-news.jsp?tag=%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F">документация</a>, <a href="view-news.jsp?tag=%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F">конференция</a>, <a href="view-news.jsp?tag=%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">образование</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/gumanoed/profile">gumanoed</a>
-
-
-
-(06.11.2011 23:13:54)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6969513">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/russia/6969513">80&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/russia/6969513/page1">2</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6967909">
-
-<h2>
-  <a href="/news/debian/6967909">C 8 по 14 июля пройдет DebConf12 </a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/debian/">
-  <img src="/tango/img/debian-logo.png" width=65 height=75 border=0 alt="Группа Debian">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Проект Debian извещает, что в 2012 году ежегодная конференция разработчиков DebConf12 пройдет с 8 по 14 июля в Манагуа, в Коференц-центре Crowne Plaza Convention Center. Это будет двенадцатое ежегодное мероприятие DebConf, и первая конференция DebConf, проводимая в Центральной Америке.<br>
-<br>
-Ежегодно на DebConf собираются действующие и новые участники Проекта Debian со всего мира, чтобы делиться знаниями, делать совместные вклады в Debian, устанавливать более тесные связи между участниками сообщества. Конференция в значительной степени финансируется корпоративными спонсорами, заинтересованными в дальнейшем успешном развитии Проекта Debian.<br>
-<br>
-Открытию DebConf12 будет предшествовать традиционный Debian Day, в ходе которого демонстрируются выгоды от использования Debian и открытого и свободного ПО для корпоративных, государственных, академических и индивидуальных пользователей.<br>
-<br>
-«Call for papers» и регистрация участников откроются в начале 2012 года. </p>
-<p>&gt;&gt;&gt; <a href="http://www.debian.org/News/2011/20111102">Подробности</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=debian">debian</a>, <a href="view-news.jsp?tag=%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F">конференция</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/MSA/profile">MSA</a>
-
-
-
-(06.11.2011 17:40:25)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6967909">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/debian/6967909">16&nbsp;комментариев</a>]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=infoblock id="topic-6967891">
-Мини-новость:
-  <a href="/news/redhat/6967891">Red Hat подтвердил назначение Сергея Бугрина главой представительства в России</a>
-
-
-
-  [<a href="/news/redhat/6967891">21&nbsp;комментарий</a>]
-</div>
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6965043">
-
-<h2>
-  <a href="/news/ubuntu/6965043">Ubuntu Linux потерял место лидера DistroWatch. Linux Mint — новый лидер</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/ubuntu/">
-  <img src="/tango/img/ubuntu-logo.png" width=65 height=75 border=0 alt="Группа Ubuntu Linux">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>В рейтинге <a href="http://distrowatch.com/">DistroWatch</a>, который на протяжении последних лет безоговорочно возглавлял дистрибутив Ubuntu, сменился лидер. В шестимесячной статистике, которая является основной и показывается при посещении главной страницы DistroWatch, с этого дня самым популярным дистрибутивом является Linux Mint.</p><p>Если учесть, что в рейтинге за 2010-й год Linux Mint является лишь третьим, уступая Ubuntu и Fedora, можно понять, насколько более популярным стал этот дистрибутив за последний год не в последнюю очередь благодаря консервативности (он до сих пор использует GNOME 2, в то время, как Ubuntu использует Unity, а Fedora — GNOME 3).</p>
-<p>&gt;&gt;&gt; <a href="http://distrowatch.com/">DistroWatch</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=distrowatch">distrowatch</a>, <a href="view-news.jsp?tag=mint">mint</a>, <a href="view-news.jsp?tag=ubuntu">ubuntu</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/DoctorSinus/profile">DoctorSinus</a>
-
-
-
-(05.11.2011 21:19:27)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6965043">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/ubuntu/6965043">861&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/ubuntu/6965043/page1">2</a> <a href="/news/ubuntu/6965043/page2">3</a> <a href="/news/ubuntu/6965043/page3">4</a> ... <a href="/news/ubuntu/6965043/page15">16</a> <a href="/news/ubuntu/6965043/page16">17</a> <a href="/news/ubuntu/6965043/page17">18</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6963330">
-
-<h2>
-  <a href="/news/java/6963330">Eclipse Foundation создал вспомогательный язык для программистов на Javaa>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/java/">
-  <img src="/tango/img/java-logo.png" width=41 height=75 border=0 alt="Группа Java">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Eclipse Foundation выпустил новый язык программрования Xtend, созданный специально для разработчиков на Java, работающий поверх JVM.</p><p>Как заявляют разработчики, новый язык не имеет цель полностью заменить Java во всех областях её применения, а лишь будет очень удобной альтернативой для использования там, где Java слишком многословна и не очень удобна в написании.</p><p>Главные особенности Xtend:
-</p><ul><li> генерация понятного листинга на Java;
-</li><li> работа с использованием инструментов Eclipse IDE с полной поддержкой её функциональности;
-</li><li> Java-подобный синтаксис;
-</li><li> статическая типизация;
-</li><li> использование библиотек JDK;
-</li><li> работа только с классами (интерфейсы, аннотации и перечисления описываются так же, как в Java).
-</li></ul><p>Зачем использовать Xtend, если он не реализует альтернативы для всего? Во-первых, <a href="http://vimeo.com/31248257">он и не пытается</a>. Это не самостоятельный язык, а вспомогательный. Во-вторых, он избавляет программиста от многословности Java, позволяя создавать те же языковые конструкции, но с помощью более лаконичного синтаксиса, код на Xtend более удобен для чтения и понимания:
-</p><ul><li> код избавляется от избыточных указаний типов объектов (хотя если вам удобнее везде писать типы — это ваше право);
-</li><li> новый продуманный синтаксис акцессоров;
-</li><li> опциональность скобок для вызова методов и точек с запятой в конце строк.
-</li></ul><p>Описанная «чистка» кода может быть воспринята двояко, но есть ещё третий пункт в списке достоинств — дополнительные языковые конструкции и функциональность, однажды воспользовавшись которыми вы уже не сможете жить без них в дальнейшем:
-</p><ul><li> замыкания, которые всегда были так необходимы в Java;
-</li><li> переработанная и элегантная реализация switch, от которой не болит голова при перехвате исключений и кастинге типов;
-</li><li> поддержка шаблонов и многострочности для строк;
-</li><li> возможность добавления новых расширенных методов к уже существующим объектам без вмешательства в их структуру (поэтому язык и называется Xtend — «расширять»);
-</li><li> перезагрузка операторов;
-</li><li> множественный вызов виртуальных функций для семейств классов с помощью ключевого слова <i>dispatch</i>.
-</li></ul><p>Для того, чтобы начать использовать Xtend прямо сейчас, нужно просто установить свежую версию IDE Eclipse и добавить Xtend SDK через менеджер дополнений (<a href="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/">ссылка на релиз</a>).</p><p>Документация: <a href="http://www.eclipse.org/Xtext/documentation/2_1_0/01-Xtend_Introduction.php">онлайн</a>, <a href="http://www.eclipse.org/Xtext/xtend/Xtend%20Reference%20Documentation.pdf">PDF</a>.</p>
-<p>&gt;&gt;&gt; <a href="http://www.eclipse.org/Xtext/xtend/">Страница проекта</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=eclipse">eclipse</a>, <a href="view-news.jsp?tag=java">java</a>, <a href="view-news.jsp?tag=jvm">jvm</a>, <a href="view-news.jsp?tag=xtend">xtend</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/ins3y3d/profile">ins3y3d</a>
-
-
-
-(05.11.2011 12:06:33)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6963330">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/java/6963330">202&nbsp;комментария</a>&nbsp;(стр. <a href="/news/java/6963330/page1">2</a> <a href="/news/java/6963330/page2">3</a> <a href="/news/java/6963330/page3">4</a> <a href="/news/java/6963330/page4">5</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6956566">
-
-<h2>
-  <a href="/news/doc/6956566">Книга «Основы Blender 2.60»</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/doc/">
-  <img src="/tango/img/info-logo.png" width=64 height=64 border=0 alt="Группа Документация">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Завершён перевод 4-го издания учебного пособия «Основы Blender», посвящённого Blender 2.60. Джеймс Кронистер уже в 4-й раз публикует это замечательное учебное пособие по 3D-моделированию и анимации в Blender. И нам в очередной раз приятно было переводить его на русский язык.</p><p>Книга описывает все основные методики и инструменты по моделированию, анимации, текстурированию и созданию игр в Blender. Составленная как учебный курс с делением материала на теорию и практику по каждой теме, книга отлично подойдёт для проведения занятий и курсов по компьютерной и 3D-Графике в любом учебном заведении (начиная со школы).</p><p>На данный момент <b>«Основы Blender 4-е издание» — это первая и единственная книга по Blender 2.6 на русском языке</b>.</p><p>Выход PDF-версии для печати планируется к новому году.</p>
-<p>&gt;&gt;&gt; <a href="http://b3d.mezon.ru/index.php/Blender_Basics_4-rd_edition">Читать «Основы Blender 4-е издание» On-Line</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=3d">3d</a>, <a href="view-news.jsp?tag=%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0">графика</a>, <a href="view-news.jsp?tag=%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F">документация</a>, <a href="view-news.jsp?tag=%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">образование</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/gumanoed/profile">gumanoed</a>
-
-
-
-(03.11.2011 16:15:51)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6956566">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/doc/6956566">138&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/doc/6956566/page1">2</a> <a href="/news/doc/6956566/page2">3</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6956157">
-
-<h2>
-  <a href="/news/opensource/6956157">40 лет UNIX</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/opensource/">
-  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <p>Ровно 40 лет назад, третьего ноября 1971 года вышла первая версия Unix Programmer's Manual, описывающая UNIX v1, первую версию операционной системы, которая оказала громадное влияние на все последующие ОС и на вычислительную технику в целом.<br>
-Языка C ещё не было, а UNIX уже была.<br></p><p>Многое изменилось с тех пор: сменились поколения вычислительной техники, от телетайпов перешли к терминалам с экранами, от мейнфреймов к персональным компьютерам, а UNIX продолжает жить в наших сердцах, да и системы, которые мы используем сегодня, имеют много общего с UNIX той поры.<br>
-Текстовый редактор ed популярен и по сей день, большая часть иерархии каталогов осталась прежней, такие конфигурационные файлы как /etc/passwd были и тогда. И восьмеричные права доступа, пусть они тогда и были только в двух цифрах (suid, executable, read for owner, write for owner, read for others, write for others).</p>
-<p>&gt;&gt;&gt; <a href="http://cm.bell-labs.com/cm/cs/who/dmr/1stEdman.html">Подробности</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=unix">unix</a>, <a href="view-news.jsp?tag=%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F+%D1%83%D1%81%D0%BF%D0%B5%D1%85%D0%B0">история успеха</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/Xenius/profile">Xenius</a>
-
-
-
-(03.11.2011 15:43:50)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6956157">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/opensource/6956157">257&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6956157/page1">2</a> <a href="/news/opensource/6956157/page2">3</a> <a href="/news/opensource/6956157/page3">4</a> <a href="/news/opensource/6956157/page4">5</a> <a href="/news/opensource/6956157/page5">6</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=infoblock id="topic-6955978">
-Мини-новость:
-  <a href="/news/java/6955978">Вышла Apache Commons Compress 1.3</a>
-
-
-
-  [<a href="/news/java/6955978">30&nbsp;комментариев</a>]
-</div>
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=infoblock id="topic-6954056">
-Мини-новость:
-  <a href="/news/opensource/6954056">DRAKON Editor 1.4 </a>
-
-
-
-  [<a href="/news/opensource/6954056">59&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/6954056/page1">2</a>)]
-</div>
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=infoblock id="topic-6953975">
-Мини-новость:
-  <a href="/news/hardware/6953975">Gears on Gallium 2011.10.31</a>
-
-
-
-  [<a href="/news/hardware/6953975">65&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/hardware/6953975/page1">2</a>)]
-</div>
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=news id="topic-6953499">
-
-<h2>
-  <a href="/news/opensource/6953499">Текстовому редактору Vim исполнилось 20 лет</a>
-</h2>
-
-
-
-
-<div class="entry-userpic">
-  <a href="/news/opensource/">
-  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
-    </a>
-</div>
-
-
-<div class="entry-body">
-<div class=msg>
-  
-  
-  <div class="quote"><h3>opennet.ru</h3><p>
-Ровно 20 лет назад <a href="http://arstechnica.com/open-source/news/2011/11/two-decades-of-productivity-vims-20th-anniversary.ars">увидел свет</a> первый публичный релиз текстового редактора Vim, по прежнему пользующегося большой популярностью среди разработчиков. Vim вобрал в себя лучшие черты классического Vi, разработанного Билом Джоем в 1976 году, и дополнил его богатыми возможностями по редактированию кода, настройке, написанию дополнений и созданию скриптов для автоматизации действий.</p><p>Vim изначально развивался для платформы Amiga как редактор для работы с исходными текстами. Порт для Unix появился спустя год после первого релиза, в это же время была изменена расшифровка имени проекта с Vi IMitation на Vi IMproved. Вначале редактор Vim был очень близок к Vi, обладая лишь единичными усовершенствованиями, такими как многоуровневый откат изменений. Позднее к работе над Vim подключились другие энтузиасты и в редактор были добавлены такие средства, как многооконный режим редактирования, визуальный режим выделения блоков, работа с макросами, гибкие механизмы поиска и замены, подсветка синтаксиса, автоформатировние кода и прочие атрибуты интегрированных сред разработки.</p><p>Код Vim распространяется под собственной копилефт <a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html#license">лицензией</a>, совместимой с GPL, и позволяющей без ограничений использовать, распространять и перерабатывать код. Основная особенность лицензии Vim связана с возвратом изменений - реализованные в сторонних продуктах улучшения должны быть переданы в исходный проект, если мэйнтейнер Vim посчитает эти улучшения заслуживающими внимания и отправит соответствующий запрос. По типу распространения, Vim относится к Сharityware, т.е. вместо продажи программы или сбора пожертвований на нужды проекта, авторы Vim просят перечислить любую сумму на благотворительность, если программа понравится пользователю.
-</p></div><p>От себя: насколько я знаю - многие навороты Vim позаимствовал у <b>elvis</b> (навороченный клон Vi)</p>
-<p>&gt;&gt;&gt; <a href="http://www.opennet.ru/opennews/art.shtml?num=32204">Оригинал новости на opennet.ru</a>
-  </div>
-
-  
-
-
-
-
-
-<p class="tags">
-
-  Метки: <span class=tag><a href="view-news.jsp?tag=vim">vim</a></span>
-</p>
-
-
-
-
-
-  <div class=sign>
-  
-    
-      
-
-
-
-
-
-<a href="/people/q11q11/profile">q11q11</a>
-
-
-
-(02.11.2011 23:08:13)
-    
-    
-  
-</div>
-<div class="nav">
-
-
-  [<a href="comment-message.jsp?topic=6953499">Добавить&nbsp;комментарий</a>]
-
-  
-  [<a href="/news/opensource/6953499">191&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/opensource/6953499/page1">2</a> <a href="/news/opensource/6953499/page2">3</a> <a href="/news/opensource/6953499/page3">4</a>)]
-  </div>
-  </div>
-</div>
-
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class=infoblock id="topic-6953053">
-Мини-новость:
-  <a href="/news/opensource/6953053">Gparted 0.10.0</a>
-
-
-
-  [<a href="/news/opensource/6953053">28&nbsp;комментариев</a>]
-</div>
-
-
-    
-<div class="nav">
-  [<a href="/news/?offset=20">< предыдущие</a>]
-  [<a href="add-section.jsp?section=1">добавить новость</a>]
-  [<a href="view-all.jsp?section=1">непроверенные новости</a>]
-  [<a href="section-rss.jsp?section=1">RSS</a>]
-</div>
-</div>
-</div>
-<div class=column>
-
-  
-
-  
-      
-        <div class="boxlet">
-            
-
-
-<h2>Новые материалы на IBM developerWorks</h2>
-<div class="boxlet_content">
-  <iframe src="dw.jsp?height=400&amp;width=219&amp;main=1" width="222" height="400" scrolling="no"
-          frameborder="0"></iframe>
-  <h3>My developerWorks!</h3>
-  <a style="text-decoration: underline" href="http://www.ibm.com/developerworks/mydeveloperworks/?lang=ru" title="">Вступай</a> в сообщество профессионалов&nbsp;IBM!<br>
-Нас уже более 3000 только в России.
-</div>
-        </div>
-      
-        <div class="boxlet">
-            
-
-
-
-
-
-
-
-  
-  <h2><a href="/polls/">Опрос</a></h2>
-
-  <div class="boxlet_content">
-    <h3>Самый бесполезный модератор</h3>
-
-    <form action="/vote.jsp" method="POST">
-      <input type="hidden" name="voteid" value="1487"/>
-      
-        
-          <input type="checkbox" name="vote" id="poll-11227" value="11227"><label for="poll-11227">Dmitry A. Koptev (Dimez)</label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11228" value="11228"><label for="poll-11228">Sergey V. Udaltsov (svu)</label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11229" value="11229"><label for="poll-11229">Андрей (Shaman007) </label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11230" value="11230"><label for="poll-11230">Тимур Давлетшин (timur_dav) </label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11231" value="11231"><label for="poll-11231">Тёма (JB) </label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11232" value="11232"><label for="poll-11232">Михаил (anonymous_incognito) </label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11233" value="11233"><label for="poll-11233">Слава Поздняков (Pi) </label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11234" value="11234"><label for="poll-11234">annoynimous (annoynimous) </label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11235" value="11235"><label for="poll-11235">Kirill A Korinskiy (catap)</label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11236" value="11236"><label for="poll-11236">Ben Aceler (Aceler)</label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11237" value="11237"><label for="poll-11237">Александр Наталенко (post-factum)</label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11238" value="11238"><label for="poll-11238">Тим (hibou) </label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11239" value="11239"><label for="poll-11239">Василий (mono)</label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11240" value="11240"><label for="poll-11240">Другой вариант ответа (указать в комментариях)</label> <br/>
-        
-        
-      
-        
-          <input type="checkbox" name="vote" id="poll-11241" value="11241"><label for="poll-11241">Кто здесь?</label> <br/>
-        
-        
-      
-      <input type="submit" value="vote"/>
-    </form>
-    <br/>
-    
-    
-        <a href="/view-vote.jsp?vote=1487">результаты</a> (1442/767 голосов)
-    
-    
-    <br/>
-    <a href="/polls/">итоги прошедших опросов...</a>
-    <br/>
-    [<a href="/add.jsp?group=19387">добавить опрос</a>]
-  </div>
-        </div>
-      
-        <div class="boxlet">
-            
-
-
-
-
-<h2>Top 10</h2>
-
-<div class="boxlet_content">
-  <h3>Наиболее обсуждаемые темы этого месяца</h3>
-  <ul>
-    
-      <li>
-      
-      <a href="/news/ubuntu/6864903">Вышла новая версия дистрибутива Ubuntu — 11.10</a>
-      
-        
-        (стр. <a href="/news/ubuntu/6864903/page22?lastmod=1319251011490">23</a>)
-      
-      (1148)
-      </li>
-    
-      <li>
-      
-      <a href="/news/ubuntu/6965043">Ubuntu Linux потерял место лидера DistroWatch. Linux Mint — новый лидер</a>
-      
-        
-        (стр. <a href="/news/ubuntu/6965043/page17?lastmod=1320691823194">18</a>)
-      
-      (861)
-      </li>
-    
-      <li>
-      
-      <a href="/news/redhat/6950484">Разработчики Fedora обсуждают объединение каталогов для исполняемых файлов</a>
-      
-        
-        (стр. <a href="/news/redhat/6950484/page15?lastmod=1320704652980">16</a>)
-      
-      (784)
-      </li>
-    
-      <li>
-      
-      <a href="/news/ubuntu/6905210">Canonical увеличивает срок поддержки Ubuntu Desktop LTS до 5 лет</a>
-      
-        
-        (стр. <a href="/news/ubuntu/6905210/page12?lastmod=1320349622101">13</a>)
-      
-      (649)
-      </li>
-    
-      <li>
-      
-      <a href="/news/doc/6859021">Опубликован стандарт C++11 (бывший C++0x)</a>
-      
-        
-        (стр. <a href="/news/doc/6859021/page11?lastmod=1319390106361">12</a>)
-      
-      (551)
-      </li>
-    
-      <li>
-      
-      <a href="/news/multimedia/6862017">Перезагрузка проекта sK1</a>
-      
-        
-        (стр. <a href="/news/multimedia/6862017/page10?lastmod=1319210846544">11</a>)
-      
-      (536)
-      </li>
-    
-      <li>
-      
-      <a href="/news/linux-org-ru/6901923">13 лет Linux.org.ru</a>
-      
-        
-        (стр. <a href="/news/linux-org-ru/6901923/page10?lastmod=1320505858935">11</a>)
-      
-      (536)
-      </li>
-    
-      <li>
-      
-      <a href="/news/gnu/6874920">FSF начала кампанию против «безопасной загрузки» UEFI </a>
-      
-        
-        (стр. <a href="/news/gnu/6874920/page9?lastmod=1319999728286">10</a>)
-      
-      (455)
-      </li>
-    
-      <li>
-      
-      <a href="/news/opensource/6901561">Qt Project жив!</a>
-      
-        
-        (стр. <a href="/news/opensource/6901561/page8?lastmod=1319720717756">9</a>)
-      
-      (429)
-      </li>
-    
-      <li>
-      
-      <a href="/news/russia/6874332">Создание прототипов НПП: подписание контракта и пресс-конференция участников</a>
-      
-        
-        (стр. <a href="/news/russia/6874332/page8?lastmod=1319385487026">9</a>)
-      
-      (416)
-      </li>
-    
-  </ul>
-</div>
-        </div>
-      
-        <div class="boxlet">
-            
-
-
-
-
-
-
-  <h2><a href="/gallery/">Галерея</a></h2>
-
-  <div class="boxlet_content">
-    <h3>Последние скриншоты</h3>
-    
-      <div style="margin-bottom: 1em">
-      <div align="center">
-        
-        <a href="/gallery/screenshots/6945456">
-          
-            
-              <img src="gallery/6945456-icon.jpg" alt="Скриншот: темнокеды" width=200 height=113/>
-            
-            
-          
-        </a>
-      </div>
-      <i>
-        
-          
-            1920x1080
-          
-          
-        
-        
-      </i> темнокеды от <a href="/people/teod0r/profile">teod0r</a> (53)
-      </div>
-    
-      <div style="margin-bottom: 1em">
-      <div align="center">
-        
-        <a href="/gallery/screenshots/6971954">
-          
-            
-              <img src="gallery/6971954-icon.jpg" alt="Скриншот: Кедолюбители: зачем нам Compiz?" width=200 height=150/>
-            
-            
-          
-        </a>
-      </div>
-      <i>
-        
-          
-            1024x768
-          
-          
-        
-        
-      </i> Кедолюбители: зачем нам Compiz? от <a href="/people/brotheroftux/profile">brotheroftux</a> (36)
-      </div>
-    
-      <div style="margin-bottom: 1em">
-      <div align="center">
-        
-        <a href="/gallery/screenshots/6975773">
-          
-            
-              <img src="gallery/6975773-icon.jpg" alt="Скриншот: ArchLinuxARM @ Toshiba AC100" width=200 height=234/>
-            
-            
-          
-        </a>
-      </div>
-      <i>
-        
-          
-            1024x1200
-          
-          
-        
-        
-      </i> ArchLinuxARM @ Toshiba AC100 от <a href="/people/JaGoTerr/profile">JaGoTerr</a> (27)
-      </div>
-    
-    <a href="/gallery/">другие скриншоты...</a>
-  </div>
-        </div>
-      
-        <div class="boxlet">
-            
-
-
-
-
-
-
-  <h2>Облако Меток</h2>
-
-  <div class="boxlet_content">
-    <div align="center">
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=3d">3d</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=amd">amd</a>
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=android">android</a>
-      
-        
-        <a class="cloud5" href="/view-news.jsp?tag=arch">arch</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=ati">ati</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=bsd">bsd</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=conky">conky</a>
-      
-        
-        <a class="cloud6" href="/view-news.jsp?tag=debian">debian</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=embedded+linux">embedded linux</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=fedora">fedora</a>
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=firefox">firefox</a>
-      
-        
-        <a class="cloud3" href="/view-news.jsp?tag=gentoo">gentoo</a>
-      
-        
-        <a class="cloud7" href="/view-news.jsp?tag=gnome">gnome</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=gnu">gnu</a>
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=google">google</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=gpl">gpl</a>
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=java">java</a>
-      
-        
-        <a class="cloud6" href="/view-news.jsp?tag=kde">kde</a>
-      
-        
-        <a class="cloud5" href="/view-news.jsp?tag=kde4">kde4</a>
-      
-        
-        <a class="cloud10" href="/view-news.jsp?tag=linux">linux</a>
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=microsoft">microsoft</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=mozilla">mozilla</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=nvidia">nvidia</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=openbox">openbox</a>
-      
-        
-        <a class="cloud0" href="/view-news.jsp?tag=openoffice">openoffice</a>
-      
-        
-        <a class="cloud8" href="/view-news.jsp?tag=opensource">opensource</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=oracle">oracle</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=python">python</a>
-      
-        
-        <a class="cloud3" href="/view-news.jsp?tag=qt">qt</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=redhat">redhat</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=sun">sun</a>
-      
-        
-        <a class="cloud9" href="/view-news.jsp?tag=ubuntu">ubuntu</a>
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=web">web</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=windows">windows</a>
-      
-        
-        <a class="cloud0" href="/view-news.jsp?tag=wine">wine</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=xfce">xfce</a>
-      
-        
-        <a class="cloud5" href="/view-news.jsp?tag=%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d1%8c">безопасность</a>
-      
-        
-        <a class="cloud1" href="/view-news.jsp?tag=%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b0%d0%bb%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%8f">виртуализация</a>
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d0%ba%d0%b0">графика</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d0%b0%d1%86%d0%b8%d1%8f">документация</a>
-      
-        
-        <a class="cloud4" href="/view-news.jsp?tag=%d0%b4%d1%80%d0%b0%d0%b9%d0%b2%d0%b5%d1%80%d1%8b">драйверы</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%b7%d0%b2%d1%83%d0%ba">звук</a>
-      
-        
-        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d0%b3%d1%80%d1%8b">игры</a>
-      
-        
-        <a class="cloud0" href="/view-news.jsp?tag=%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b2%d1%8c%d1%8e">интервью</a>
-      
-        
-        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d1%8f+%d1%83%d1%81%d0%bf%d0%b5%d1%85%d0%b0">история успеха</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%ba%d0%be%d0%bd%d1%84%d0%b5%d1%80%d0%b5%d0%bd%d1%86%d0%b8%d1%8f">конференция</a>
-      
-        
-        <a class="cloud3" href="/view-news.jsp?tag=%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">образование</a>
-      
-        
-        <a class="cloud2" href="/view-news.jsp?tag=%d0%bf%d0%b0%d1%82%d0%b5%d0%bd%d1%82%d1%8b">патенты</a>
-      
-        
-        <a class="cloud7" href="/view-news.jsp?tag=%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">программирование</a>
-      
-        
-        <a class="cloud3" href="/view-news.jsp?tag=%d1%8f%d0%b4%d1%80%d0%be">ядро</a>
-      
-    </div>
-  </div>
-        </div>
-      
-        <div class="boxlet">
-            
-
-
-
-
-
-
-
-
-<h2><a href="/news/">Архив Новостей</a></h2>
-
-<div class="boxlet_content">
-  
-    
-    
-    <a href="/news/archive/2011/11">2011 Ноябрь
-      (28)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/10">2011 Октябрь
-      (91)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/9">2011 Сентябрь
-      (109)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/8">2011 Август
-      (99)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/7">2011 Июль
-      (118)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/6">2011 Июнь
-      (128)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/5">2011 Май
-      (123)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/4">2011 Апрель
-      (111)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/3">2011 Март
-      (111)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/2">2011 Февраль
-      (80)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2011/1">2011 Январь
-      (88)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2010/12">2010 Декабрь
-      (119)</a> <br/>
-  
-    
-    
-    <a href="/news/archive/2010/11">2010 Ноябрь
-      (141)</a> <br/>
-  
-  <br>&gt;&gt;&gt; <a href="/news/archive/"> Предыдущие месяцы</a> (с октября 1998)
-</div>
-        </div>
-      
-        <div class="boxlet">
-            
-
-
-<h2>Футболки linux.org.ru</h2>
-<div class="boxlet_content">
-  <a href="/view-message.jsp?msgid=3989453"><img src="/adv/tshirt.jpg" width="150" height="150"> </a><br>
-  <a href="/view-message.jsp?msgid=3989453">Заказ футболки Linux.org.ru</a>
-</div>
-        </div>
-      
-  
-</div>
-
-
-<div style="clear: both"></div>
 
 
 
@@ -2342,61 +2021,639 @@ c 10:00 до 16:00
 
 
 </div>
-<div id="ft">
-  <p id="ft-info">
-    <a href="server.jsp">О Сервере</a> -
-    <a href="rules.jsp">Правила форума</a><br>
 
-  Разработка и&nbsp;поддержка&nbsp;&#8212; <a href="/people/maxcom/profile">Максим Валянский</a> 1998&ndash;2011<br>
-  Размещение сервера и&nbsp;подключение его к&nbsp;сети Интернет осуществляется компанией
-  ООО &laquo;<a href="http://www.ratel.ru">НИИР-РадиоНет</a>&raquo;
-  </p>
+</div>
 
-<div id="ft-buttons">
+
+
+
+
+<!-- End Left block -->
+
+
+
+
+
+
+
+<div class="clear"></div>
+
+
+
+<div class="search_bottom">
+
+	<form action="/search.html" method="get" name="Srch1">
+
+			<div class="search_area">
+
+			 <input class="search" type="text" value="Поиск:" name="q" onClick="if(document.Srch1.q.value=='Поиск:') document.Srch1.q.value = '';   ">
+
+			
+
+			<input type="submit" id="submit" value="" onClick="if(document.Srch1.q.value=='Поиск:') return false; else return true;">
+
+			</div>
+
+		</form>
+
+	</div>
+
+<div class="bg_bottom_block" style="margin-left: 232px;">&nbsp;</div>
+
+</div>
+
+
+
+
+
+
+
+<div id="footer">
+
+		
+
+	<a href="/"><img src="http://www.vgtrk.cdnvideo.ru/i/logo_small.png" style="float: left;" alt=""></a>
+
+	<div class="footer_nav">
+
+		<h4><a href="/news">Новости </a></h4>
+
+		<ul>
+
+<li><a href="/section.html?cid=5">Политика</a></li>
+
+<li><a href="/section.html?cid=6">Экономика</a></li>
+
+<li><a href="/section.html?cid=8">Происшествия</a></li>
+
+<li><a href="http://auto.vesti.ru/">Авто</a></li>
+
+<li><a href="/section.html?cid=7">Общество</a></li>
+
+<li><a href="/section.html?cid=460">Культура</a></li>
+
+<li><a href="/section.html?cid=9">В мире</a></li>
+
+<li><a href="/section.html?cid=680">Спорт</a></li>
+
+<li><a href="/section.html?cid=780">Hi-Tech. Интернет</a></li>
+
+<li><a href="/section.html?cid=960">Модернизация</a></li>
+
+<li><a href="/section.html?cid=17">Регионы</a></li>
+
+<li><a href="/section.html?cid=1200">Фотолента</a></li>
+
+<li><a href="/section.html?cid=380">Досье</a></li>
+
+
+
+		</ul>
+
+	</div>
+
+	<div class="footer_nav">
+
+		<h4><a href="/videos">Видео  </a></h4>
+
+		<ul>
+
+<li><a href="/videos?cid=5">Политика</a></li>
+
+<li><a href="/videos?cid=6">Экономика</a></li>
+
+<li><a href="/videos?cid=8">Происшествия</a></li>
+
+<li><a href="http://auto.vesti.ru/">Авто</a></li>
+
+<li><a href="/videos?cid=7">Общество</a></li>
+
+<li><a href="/videos?cid=460">Культура</a></li>
+
+<li><a href="/videos?cid=9">В мире</a></li>
+
+<li><a href="/videos?cid=680">Спорт</a></li>
+
+<li><a href="/videos?cid=1201">Программы</a></li>
+
+<li><a href="/videos?cid=780">Hi-Tech. Интернет</a></li>
+
+<li><a href="/videos?cid=960">Модернизация</a></li>
+
+<li><a href="/videos?cid=1202">Документальные фильмы</a></li>
+
+<li><a href="/videos?cid=15">Без комментариев</a></li>
+
+<li><a href="/videos?cid=360">Инфографика</a></li>
+
+
+
+		</ul>
+
+	</div>
+
+	<div class="footer_nav">
+
+		<h4><a href="/program.html">Программы  </a></h4>
+
+		<ul>
+
+
+
+<li><a href="/videos?cid=1701">АвтоВести</a></li>
+
+<li><a href="/videos?cid=1203">Агробизнес</a></li>
+
+<li><a href="/videos?cid=1721">Без галстука</a></li>
+
+<li><a href="/videos?cid=1861">Биржевые вести</a></li>
+
+<!-- li><a href="/videos?cid=1500">Биатлон с Дмитрием Губерниевым</a></li -->
+
+<li><a href="/videos?cid=58">Вести 20:00</a></li>
+
+<li><a href="/videos?cid=1620">Вести в субботу с Сергеем Брилёвым</a></li>
+
+<li><a href="http://www.vesti-moscow.ru/" target="_blank">Вести.Москва</a></li>
+
+<li><a href="http://vesti7.ru/">Вести недели</a></li>
+
+<li><a href="/videos?cid=1204">Вести Содружества</a></li>
+
+<li><a href="/videos?cid=1741">Вести.Дежурная часть</a></li>
+
+<li><a href="/videos?cid=1205">Вести.Телеком</a></li>
+
+<li><a href="/videos?cid=160 ">Вести.net</a></li>
+
+<li><a href="/videos?cid=700">Вести.Ru на "России 2"</a></li>
+
+<li><a href="/videos?cid=2081">Горизонты атома</a></li>
+
+<li><a href="/videos?cid=1901">Городские технологии</a></li>
+
+<li><a href="/videos?cid=2121">Дороги России</a></li>
+
+<li><a href="http://kino.vesti.ru/">Индустрия кино</a></li>
+
+<li><a href="/videos?cid=2001">Инноград</a></li>
+
+<li><a href="/videos?cid=1661">Корпорации монстров</a></li>
+
+<li><a href="/videos?cid=10">Космонавтика</a></li>
+
+<li><a href="/videos?cid=1580">Магия приключений</a></li>
+
+<li><a href="/videos?cid=1206">Машиностроение</a></li>
+
+<!-- li><a href="/videos?cid=1540">Медиаиндустрия</a></li -->
+
+<li><a href="/videos?cid=1600">Мнение</a></li>
+
+<li><a href="/videos?cid=1207 ">Моя планета</a></li>
+
+<li><a href="/videos?cid=1100">Наука 2.0</a></li>
+
+<li><a href="/videos?cid=2101">Облюбование Москвы</a></li>
+
+<li><a href="/videos?cid=1208">Общий рынок</a></li>
+
+<li><a href="/videos?cid=1941">Олимпийские вести</a></li>
+
+<li><a href="/videos?cid=1360">Проекты развития</a></li>
+
+<li><a href="/videos?cid=1209">Пульс </a></li>
+
+<li><a href="/videos?cid=1320">Пятница</a></li>
+
+<li><a href="/videos?cid=1501">Рейтинг Тимофея Баженова</a></li>
+
+<li><a href="/section.html?cid=1210">Реплика </a></li>
+
+<li><a href="/section.html?cid=1211">Российские технологии</a></li>
+
+<li><a href="/videos?cid=1761">Сенат</a></li>
+
+<li><a href="/videos?cid=1213 ">События недели</a></li>
+
+<li><a href="/videos?cid=1214">Страховое время</a></li>
+
+<li><a href="/videos?cid=1502">Там, где нас нет</a></li>
+
+<li><a href="/videos?cid=1215">Телекоммуникации</a></li>
+
+<li><a href="/videos?cid=1341">Технологии жилья</a></li>
+
+<li><a href="/videos?cid=1216 ">Технопарк</a></li>
+
+<li><a href="/videos?cid=1217 ">Транспорт</a></li>
+
+<li><a href="/videos?cid=280 ">Утро России</a></li>
+
+<li><a href="/videos?cid=1240">Фармацевтика</a></li>
+
+<li><a href="/videos?cid=1300">Формула бизнеса</a></li>
+
+<li><a href="/videos?cid=1340">Хоккей-24</a></li>
+
+<li><a href="http://vera.vesti.ru/">Церковь и мир</a></li>
+
+<li><a href="/videos?cid=1219">Энергетика</a> </li>
+
+<li><a href="/videos?cid=1000">ACADEMIA</a></li>
+
+<li><a href="/videos?cid=2061">Proнефть</a></li>
+
+	</ul>
+
+	</div>
+
+	<div class="footer_nav">
+
+		<h4><a href="http://services.vesti.ru/">Сервисы</a></h4>
+
+		<ul>
+
+<li><a href="http://light.vesti.ru/index.html">Вести.Лайт</a> </li>
+
+<li><a href="http://iphone.vesti.ru/">iPhone</a> </li> 
+
+<li><a href="http://ipad.vesti.ru/">iPad</a>     </li>          
+
+<li><a href="http://probki.vesti.ru/">Вести Пробки</a> </li>
+
+<li><a href="http://www.mobile.vesti.ru/">Мобильный информер</a></li>
+
+<li><a href="http://mreporter.ru/">Мобильный репортер</a></li>
+
+<li><a href="http://toolbar.vesti.ru/">Тулбар</a></li>
+
+		</ul>
+
+	</div>
+
+	<div class="footer_nav footer_nav_h">
+
+		<h4></h4>
+
+
+
+		<ul><li><a href="/broadcasts.html">Трансляции </a></li>
+
+
+
+		<li><a href="/vesti.html">О "Вестях"</a></li>
+
+		<li><a href="/vesti.html?cid=600">Пресс-центр</a></li>
+
+	    <li><a href="/section.html?cid=1200">Фотолента  </a></li>
+
+               <li><input id="archive" type="hidden"/>
+
+               <a style="cursor: pointer;" onclick="show_datepicker('http://www.vesti.ru/?date=', this);">Архив</a></li>	
+
+</ul>
+
+	</div>
+
+<!--  AdRiver code START. Type:poster Site: vesti PZ: 0 BN: 0 -->
+
+<script language="javascript" type="text/javascript"><!--
+
+function adriverPoster(L){
+
+    if(typeof(ar_cn)=="undefined")ar_cn=1;
+
+    var W=window,D=document,E=D.documentElement,T=0,N=ar_cn,P=0,C=D.compatMode=="CSS1Compat",
+
+        X='<scr'+'ipt type="text/javascript">var ar_bnum='+N+';setTimeout(function(e){if(!self.CgiHref){document.close();e=parent.document.getElementById("ar_container_"+ar_bnum);e.parentNode.removeChild(e)}},3000);',
+
+        Y='<\/sc'+'ript><sc'+'ript type="text/javascript" src="'+L+'&tail256='+escape(D.referrer||'unknown')+'&rnd='+Math.round(Math.random()*999999999)+'"><\/sc'+'ript>';
+
+    function G(){if(T++<100){var o=D.getElementById('ar_container_'+N);if(o){try{var d=o.contentDocument||(W.ActiveXObject&&W.frames['ar_container_'+N].document);if(d){d.write(X+Y)}else setTimeout(arguments.callee,100)}catch(e){try{o.src = "javascript:{document.write('"+X+'document.domain="'+D.domain+'";'+Y+"')}";return}catch(E){}}}else setTimeout(arguments.callee,100)}}
+
+    function A(e,t,f){if(e.addEventListener)e.addEventListener(t,f,false);else if(e.attachEvent)e.attachEvent('on'+t,f)}
+
+    function R(e,t,f){if(e.removeEventListener)e.removeEventListener(t,f,false);else if(e.detachEvent)e.detachEvent('on'+t,f)}
+
+    function S(){var ch=self.innerHeight||C&&E.clientHeight||D.body.clientHeight,st=self.pageYOffset||C&&E.scrollTop||D.body.scrollTop;if(P>=st&&st+ch>=P){R(W,'scroll',S);G()}}
+
+    A(W,'load',function(){var o=D.getElementById('ad_ph_'+N);if(o){while(o.offsetParent){P+=o.offsetTop;o=o.offsetParent}A(W,'scroll',S);S()}});
+
+    D.write('<div style="position:absolute;visibility:hidden;height:0px;"><iframe id="ar_container_'+N+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div><div id="ad_ph_'+N+'"><\/div>');
+
+    ar_cn++;
+
+}
+
+adriverPoster("http://ad.adriver.ru/cgi-bin/erle.cgi?sid=166256&target=top&bt=49&pz=0");
+
+//--></script><!--  AdRiver code END  -->
+
+
+
+	<p id="mistake"> На сайте функционирует система коррекции ошибок. Обнаружив неточность в тексте, выделите ее и нажмите Ctrl+Enter.</p>
+
+	<p id="footer_info">© Государственный интернет-канал "Россия" 2001 - 2011. Cвидетельство о регистрации СМИ Эл - ФС 77-26539 от 22 декабря 2006 года. Все права на 
+
+любые материалы, опубликованные на сайте, защищены в соответствии с российским и международным законодательством об авторском праве и смежных правах. Использование любых аудио-, фото- и видеоматериалов, размещенных на сайте, допускается только с разрешения правообладателя и со ссылкой на сайт "Вести.Ru" (для интернет-проектов - с гиперссылкой). Email редакции <a href="mailto:info@vesti.ru">info@vesti.ru</a>. Реклама на сайте: отдел по работе с клиентами IMHO VI, е-mail: <a href="mailto:ClientWORK@imho.ru">ClientWORK@imho.ru</a>, <a href="mailto:ad@vesti.ru">ad@vesti.ru</a>. Реклама на сайте: тел. +7 (495) 954-04-61 отдел интернет-рекламы РА "Сигма-Медиа", e-mail: <a href="reklama@sigmamedia.tv">reklama@sigmamedia.tv</a>. Справочный телефон ВГТРК +7 (495) 232-63-33.</p>
+
+
+
+</div>
+
+
+
+<!-- counter -->
+
+<div class="print_displ_none" style="width: 1000px; position : relative; margin: 0 auto; height: 50px;">
+
+<div style="width: 150px; position : absolute; bottom: 0px; left: 0px;">
+
+<!-- begin of Top100 code --> 
+
+ 
+
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?358744"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?358744" alt="" width="1" height="1" border="0"></noscript> 
+
+ 
+
+<!-- end of Top100 code --> 
+
+ 
 
 <!-- begin of Top100 logo -->
-<a href="http://top100.rambler.ru/home?id=29833" target="_blank"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-black2.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
+
+<a href="http://top100.rambler.ru/home?id=358744"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-gray2.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
+
 <!-- end of Top100 logo -->
 
-    <!-- Rating@Mail.ru logo -->
-    <a target="_top" href="http://top.mail.ru/jump?from=71642">
-    <img src="http://d7.c1.b1.a0.top.mail.ru/counter?id=71642;t=11;l=1"
-    border="0" height="31" width="88" alt="Рейтинг@Mail.ru"></a>
-    <!-- //Rating@Mail.ru logo -->
-
-  <br>
-           Стиль: <a href="#" rel="dark" class="styleswitch">Dark</a></li> -
-            <a href="#" rel="swamp" class="styleswitch">Swamp</a></li>
-  
 </div>
 
+<div style="width: 150px; position : absolute; bottom: 0px; left: 50%;"><script language="JavaScript"> 
+
+var img = new Image(); 
+
+img.src = 'http://www.tns-counter.ru/V13a***R>' + document.referrer.replace(/\*/g,'%2a') + '*vgtrk_ru/ru/CP1251/tmsec=vesti_total/'; 
+
+</script> 
+
+<noscript> 
+
+<img src="http://www.tns-counter.ru/V13a****vgtrk_ru/ru/CP1251/tmsec=vesti_total/" width="1" height="1" alt="" /> 
+
+</noscript> </div>
+
+<div style="width: 150px; position : absolute; bottom: 0px; right: 0px;"><!--LiveInternet counter-->
 
 <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+<!--
+
+document.write("<a href='http://www.liveinternet.ru/click' "+"target=_blank><img src='http://counter.yadro.ru/hit?t16.2;r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random()+"' alt='' title='LiveInternet:показано число просмотров за 24 часа,посетителей за 24 часа и за сегодн\я' "+"border=0 width=88 height=31><\/a>")
+
+//-->
+
 </script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-2184304-1");
-pageTracker._setCustomVar(1, "Authorized", "false");
-pageTracker._setCustomVar(2, "Style", "tango");
 
-pageTracker._trackPageview();
-pageTracker._trackPageLoadTime();
-} catch(err) {}</script>
+<!--/LiveInternet--></div>
+
+</div>
+
+<!-- end counter -->
+
+
+
+<!-- Footer -->
+
+
+
+<!? banner.if_banner_time(3,"banner_vesti_240x400_if"); ?>
+
+<div class="banner_vesti_reclama "></div>
+
+
+
+</div> <!-- content -->
+
+
+
+</div> <!-- bottom_bg -->
+
+</div> <!-- head -->
+
+
+
+
+
+<!-- счетчик Google -->
+
+<script type="text/javascript">
+
+
+
+  var _gaq = _gaq || [];
+
+  _gaq.push(['_setAccount', 'UA-4795608-3']);
+
+  _gaq.push(['_trackPageview']);
+
+
+
+  (function() {
+
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+  })();
+
+
+
+</script>
+
+<!-- счетчик Google -->
+
+
+
+
+
+
+
+<div class="banner_order_reclama"><script type="text/javascript" src="http://b2bvideo.ru/js/video.js.php?a=483" charset="UTF-8"></script> </div>
+
+
+
+
+
+<!-- facebook -->
+
+<script>
+
+$(window).load(function(){
+
+
+
+$("#finfo").load("http://www.vesti.ru/fininfo.html?nojquery=1&v=2", null );
+
+
+
+var vgtrkRekl_login = "nedvizhimost";
+
+var vgtrkRekl_options = "options=A";
+
+$('#nedvizhimost').html('<iframe src="http://reklama.mb.vesti.ru/cgi-bin/iframe/'+vgtrkRekl_login+'?61207&'+vgtrkRekl_options+'&n=4&c=1&style=http://468x60.mb.vesti.ru/css/nedvizhimost.css" width="238" height="620" marginwidth="0" marginheight="0" style="border: 1px solid #ffcc66; border-top: none;" scrolling="no" frameborder="0"><a href="http://reklama.mb.vesti.ru/cgi-bin/href/'+vgtrkRekl_login+'?61207" target="_top"><img src="http://reklama.mb.vesti.ru/cgi-bin/banner/'+vgtrkRekl_login+'?61207&'+vgtrkRekl_options+'" alt="VGTRK" width="238" height="620" border="0" ismap="ismap"></a></iframe>')
+
+
+
+  twttr.anywhere(function (T) {
+
+   T('#follow-twitterapi').followButton("vesti_news");
+
+  }); 
+
+
+
+/* JS for FB индекс слева вверху */
+
+
+
+ $('#likebox_fb').html('<iframe src="http://www.facebook.com/plugins/likebox.php?id=127803987254114&amp;width=186&amp;connections=1&amp;show_faces=false&amp;stream=false&amp;header=false&amp;height=136" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:186px; height:136px;" allowTransparency="true"></iframe>');
+
+
+
+/* End JS for FB индекс слева вверху */
+
+});
+
+
+
+$(document).ready(function(){
+
+$('#fb_wrap_video').html('');
+
+$('#fb_wrap').html('<fb:like href="http://www.vesti.ru/doc.html?id=0" action="recommend" width="400"></fb:like>');
+
+$('body').append('<script src="http://connect.facebook.net/ru_RU/all.js"></scr'+'ipt><div id="fb-root"></div>');
+
+
+
+/* Блок Рекомендую справа */
+
+ $('#fb_recommend_v').html('<fb:recommendations site="http://www.vesti.ru" width="240" height="350" font="tahoma"></fb:recommendations>');
+
+
+
+/* End Блок Рекомендую справа */
+
+
+
+ window.fbAsyncInit = function() {
+
+   FB.init({appId: '124849927543891', status: true, cookie: true,
+
+           xfbml: true});
+
+  };
+
+ (function() {
+
+    var e = document.createElement('script'); e.async = true;
+
+    e.src = document.location.protocol + '//connect.facebook.net/ru_RU/all.js';
+
+    document.getElementById('fb-root').appendChild(e);
+
+  }());
+
+});
+
+
+
+</script>
+
+<script src="http://connect.facebook.net/ru_RU/all.js"></script><div id="fb-root"></div>
+
+<script src="http://platform.twitter.com/anywhere.js?id=7q7ObYUL9uORlSQi3xKtNA&v=1" type="text/javascript"></script>
+
+<!-- End facebook -->
+
+
+
+
+
+<div class="banner_order_reclama"><script charset="windows-1251" type="text/javascript" src="http://nnn.novoteka.ru/show.cgi?adp=3113&div=DIV_NNN_3113"></script></div>
+
+
+
+
+
+<div class="banner_order_reclama"><!--BEGIN Videoclick Vesti.ru (Videoclick)-->
+
+<script language="JavaScript">
+
+<!--
+
+var _rbn={};
+
+_rbn.v={};
+
+_rbn.v.inline_color = "#009900";
+
+_rbn.v.inline_count_max=5;
+
+_rbn.v.is_use_marked=0;
+
+_rbn.v.autostart_video = 1;
+
+_rbn.v.ad=[];
+
+document.write('<scr' + 'ipt language="JavaScript" src="http://drive.videoclik.ru/code?pid=1105&rid=' + (Math.floor(Math.random() * 1000000000)) +'" charset="utf-8" type="text/JavaScript"></scr' + 'ipt>');
+
+// -->
+
+</script>
+
+<script language="JavaScript" src="http://content.videoclik.ru/rbn.js" charset="utf-8" type="text/JavaScript"></script>
+
+<!--END Videoclick -->
 
 </div>
 
 
-  </div>
 
 
 
-<!-- begin of Top100 code -->
-<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?29833"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?29833" alt="" width="1" height="1" border="0"/></noscript>
-<!-- end of Top100 code -->
+<div class="banner_vesti_reclama "><!--BEGIN VideoInteractive Vesti.ru (VideoInteractive)-->
+
+<script language="JavaScript">
+
+<!--
+
+var _vi_position="down";
+
+document.write('<scr' + 'ipt language="JavaScript" src="http://drive.videoclik.ru/code?pid=1114&rid=' + (Math.floor(Math.random() * 1000000000)) +'" charset="utf-8" type="text/JavaScript"></scr' + 'ipt>');
+
+// -->
+
+</script>
+
+<script language="JavaScript" src="http://content.videoclik.ru/vi.js" charset="utf-8" type="text/JavaScript"></script>
+
+<!--END VideoInteractive -->
+
+</div>
+
+<div class="banner_vesti_reclama "></div>
+
+
+
+
+
 
 
 </body>
-</html>
 
+</html>

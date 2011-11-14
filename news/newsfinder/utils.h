@@ -10,19 +10,23 @@
 #include <vector>
 #include <windows.h>
 
-typedef struct 
+struct CTagDescription
 {
     int nTagCode;
     bool bIsClose;
     int nTagBegin;
     int nTagEnd;
-} CTagDescription;
+    std::string tag;
 
-typedef struct 
+    CTagDescription();
+    void Clear();
+} ;
+
+struct CTagSequence 
 {
     std::vector<CTagDescription> tag;
     std::vector<std::pair<int, int>> tagRange;
-} CTagSequence;
+};
 //#########################################################################################
 
 int vStrCmp(const std::vector<CTagDescription> &left,

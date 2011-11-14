@@ -6,16 +6,15 @@
 
 #include <algorithm>
 #include <fstream>
-//#include "tagprocess.h"
+#include <string>
 
 #include "NewsColoring.h"
 #include "NewsColoringDlg.h"
 #include "InitDialog.h"
 
-//using std::string;
+using std::string;
 using std::vector;
 using std::pair;
-//using std::make_pair;
 
 
 #ifdef _DEBUG
@@ -29,12 +28,15 @@ using std::pair;
 
 
 CNewsColoringDlg::CNewsColoringDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CNewsColoringDlg::IDD, pParent)
-    , m_radioBlue(1)
-    , m_radioGreen(0)
-    , m_radioRed(0)
+: CDialog(CNewsColoringDlg::IDD, pParent)
+, m_radioBlue(1)
+, m_radioGreen(0)
+, m_radioRed(0)
+, newsBeginNum(-1)
+, newsEndNum(-1)
+, isSingleTagSeq(false)
 {
-	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+    m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
     AfxInitRichEdit2();
 
     cfDefault.dwMask = CFM_CHARSET | CFM_FACE | CFM_SIZE | CFM_OFFSET | CFM_COLOR;
@@ -56,20 +58,26 @@ void CNewsColoringDlg::DoDataExchange(CDataExchange* pDX)
 
     DDX_Control(pDX, IDC_LIST, m_ListBox);
     DDX_Control(pDX, IDC_LISTRANGES, m_ListRanges);
-    DDX_Control(pDX, IDC_DECODEDLIST, m_DecodedList);
+    DDX_Control(pDX, IDC_DECODEDLIST, m_EncodedListLeft);
+    DDX_Control(pDX, IDC_ENCODEDLISTRIGHT, m_EncodedListRight);
 }
 
 BEGIN_MESSAGE_MAP(CNewsColoringDlg, CDialog)
-	ON_WM_PAINT()
-	ON_WM_QUERYDRAGICON()
-	//}}AFX_MSG_MAP
+    ON_WM_PAINT()
+    ON_WM_QUERYDRAGICON()
+    //}}AFX_MSG_MAP
     ON_BN_CLICKED(IDC_RADIORED, &CNewsColoringDlg::OnBnClickedRadiored)
     ON_BN_CLICKED(IDC_RADIOGREEN, &CNewsColoringDlg::OnBnClickedRadiogreen)
     ON_BN_CLICKED(IDC_RADIOBLUE, &CNewsColoringDlg::OnBnClickedRadioblue)
     ON_LBN_SELCHANGE(IDC_LIST, &CNewsColoringDlg::OnLbnSelchangeList)
     ON_LBN_SELCHANGE(IDC_LISTRANGES, &CNewsColoringDlg::OnLbnSelchangeListranges)
     ON_BN_CLICKED(IDC_BTNRESETSEL, &CNewsColoringDlg::OnBnClickedBtnresetsel)
-    ON_BN_CLICKED(IDC_GETDECODED, &CNewsColoringDlg::OnBnClickedGetdecoded)
+    ON_BN_CLICKED(IDC_GETDECODEDLEFT, &CNewsColoringDlg::OnBnClickedGetdecodedLeft)
+    ON_BN_CLICKED(IDC_GETDECODEDRIGHT, &CNewsColoringDlg::OnBnClickedGetdecodedright)
+    ON_BN_CLICKED(IDC_BTNSETBEGIN, &CNewsColoringDlg::OnBnClickedBtnsetbegin)
+    ON_BN_CLICKED(IDC_BTNSETEND, &CNewsColoringDlg::OnBnClickedBtnsetend)
+    ON_BN_CLICKED(IDC_BTNPRINTNEWS, &CNewsColoringDlg::OnBnClickedBtnprintnews)
+    ON_BN_CLICKED(IDC_BNTSINGLE, &CNewsColoringDlg::OnBnClickedBntsingle)
 END_MESSAGE_MAP()
 
 
@@ -77,16 +85,13 @@ END_MESSAGE_MAP()
 
 BOOL CNewsColoringDlg::OnInitDialog()
 {
-	CDialog::OnInitDialog();
+    CDialog::OnInitDialog();
 
-	// Задает значок для этого диалогового окна. Среда делает это автоматически,
-	//  если главное окно приложения не является диалоговым
-	SetIcon(m_hIcon, TRUE);			// Крупный значок
-	SetIcon(m_hIcon, FALSE);		// Мелкий значок
+    // Задает значок для этого диалогового окна. Среда делает это автоматически,
+    //  если главное окно приложения не является диалоговым
+    SetIcon(m_hIcon, TRUE);			// Крупный значок
+    SetIcon(m_hIcon, FALSE);		// Мелкий значок
 
-	// TODO: добавьте дополнительную инициализацию
-    //CInitDialog *InitDlg = new CInitDialog;
-    //InitDlg->Create(IDD_INITDIALOG, this);
     CInitDialog InitDlg;
     if(InitDlg.DoModal())
     {
@@ -110,8 +115,7 @@ BOOL CNewsColoringDlg::OnInitDialog()
         m_ListBox.AddString(str.GetString());
     }
 
-    //InitDlg->ShowWindow(SW_SHOW);
-	return TRUE;  // возврат значения TRUE, если фокус не передан элементу управления
+    return TRUE;  // возврат значения TRUE, если фокус не передан элементу управления
 }
 
 // При добавлении кнопки свертывания в диалоговое окно нужно воспользоваться приведенным ниже кодом,
@@ -120,34 +124,34 @@ BOOL CNewsColoringDlg::OnInitDialog()
 
 void CNewsColoringDlg::OnPaint()
 {
-	if (IsIconic())
-	{
-		CPaintDC dc(this); // контекст устройства для рисования
+    if (IsIconic())
+    {
+        CPaintDC dc(this); // контекст устройства для рисования
 
-		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
+        SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Выравнивание значка по центру клиентского прямоугольника
-		int cxIcon = GetSystemMetrics(SM_CXICON);
-		int cyIcon = GetSystemMetrics(SM_CYICON);
-		CRect rect;
-		GetClientRect(&rect);
-		int x = (rect.Width() - cxIcon + 1) / 2;
-		int y = (rect.Height() - cyIcon + 1) / 2;
+        // Выравнивание значка по центру клиентского прямоугольника
+        int cxIcon = GetSystemMetrics(SM_CXICON);
+        int cyIcon = GetSystemMetrics(SM_CYICON);
+        CRect rect;
+        GetClientRect(&rect);
+        int x = (rect.Width() - cxIcon + 1) / 2;
+        int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// Нарисуйте значок
-		dc.DrawIcon(x, y, m_hIcon);
-	}
-	else
-	{
-		CDialog::OnPaint();
-	}
+        // Нарисуйте значок
+        dc.DrawIcon(x, y, m_hIcon);
+    }
+    else
+    {
+        CDialog::OnPaint();
+    }
 }
 
 // Система вызывает эту функцию для получения отображения курсора при перемещении
 //  свернутого окна.
 HCURSOR CNewsColoringDlg::OnQueryDragIcon()
 {
-	return static_cast<HCURSOR>(m_hIcon);
+    return static_cast<HCURSOR>(m_hIcon);
 }
 
 void CNewsColoringDlg::ColorRichText(int start, int end, COLORREF color)
@@ -155,7 +159,7 @@ void CNewsColoringDlg::ColorRichText(int start, int end, COLORREF color)
     m_RichCtrl.SetRedraw(FALSE);
     CHARFORMAT2 cfNew = cfDefault;
     cfNew.crTextColor = color;
-    
+
     m_RichCtrl.SetSel(start, end);
     m_RichCtrl.SetSelectionCharFormat(cfNew);
     m_RichCtrl.SetSel(0,0);
@@ -180,9 +184,9 @@ void CNewsColoringDlg::OnBnClickedRadiogreen()
 
 void CNewsColoringDlg::OnBnClickedRadioblue()
 {
-     m_radioBlue = true;
-     m_radioRed = false;
-     m_radioGreen = false;
+    m_radioBlue = true;
+    m_radioRed = false;
+    m_radioGreen = false;
 }
 
 void CNewsColoringDlg::OnLbnSelchangeList()
@@ -198,10 +202,10 @@ void CNewsColoringDlg::OnLbnSelchangeList()
     for (vector<pair<int, int>>::iterator it = (tagRanges.begin() + selElem)->begin(); it != (tagRanges.begin() + selElem)->end(); ++it)
     {
         CString str;
-        str.AppendFormat(_T("(%d,%d) "), it->first, it->second);
+        str.AppendFormat(_T("(%d,%d) , len = %d"), it->first, it->second, it->second - it->first);
         m_ListRanges.AddString(str.GetString());
     }
-    
+
     UpdateData(FALSE);
 }
 
@@ -244,7 +248,152 @@ void CNewsColoringDlg::OnBnClickedBtnresetsel()
     UpdateData(FALSE);
 }
 
-void CNewsColoringDlg::OnBnClickedGetdecoded()
+void CNewsColoringDlg::EncodeString()
 {
-    // TODO: Add your control notification handler code here
+    if(!UpdateData(TRUE))
+        return;
+
+    string selection = (m_RichCtrl.GetSelText()).GetString();
+    string tag;
+    CTagDescription tagCode;
+    encodedString.clear();
+
+    for (int i = 0; i < selection.size(); ++i)
+    {
+        // если (возможно) открывающий тег
+        if (selection[i] == '<')
+        {
+            // к примеру, знак < в js
+            if (tagCode.nTagBegin != -1)
+                ++i;
+            else
+                tagCode.nTagBegin = i;
+
+            // пока не дойдем до пробела/закрывающей скобки - записываем
+            while (selection[i] != ' ' &&selection[i] != '>')
+            {
+                tag += selection[i];
+                tagCode.nTagCode += selection[i];
+                ++i;				
+            }
+        }
+
+        // если закрывающая скобка - записываем
+        if (selection[i] == '>' && tagCode.nTagBegin != -1)
+        {
+            tag += selection[i];
+            tagCode.nTagCode +=selection[i];
+            tagCode.nTagEnd = i;
+
+            if(tag[1] == '/')
+                tagCode.bIsClose = 1;
+            else
+                tagCode.bIsClose = 0;
+
+            tagCode.tag = tag;
+
+           
+
+            encodedString.push_back(tagCode);
+            tagCode.Clear();
+            tag = "";
+        }
+    }
+}
+void CNewsColoringDlg::OnBnClickedGetdecodedLeft()
+{
+    if(!UpdateData(TRUE))
+        return;
+
+    m_EncodedListLeft.ResetContent();
+    EncodeString();
+    for (int i = 0; i < encodedString.size(); ++i )
+    {
+        CString outString;
+        CTagDescription tagCode = encodedString[i];
+        outString.AppendFormat(_T("(| %s | %d | %d | %d | %d |)"), tagCode.tag.c_str(), tagCode.bIsClose, tagCode.nTagCode, tagCode.nTagBegin, tagCode.nTagEnd);
+        m_EncodedListLeft.AddString(outString.GetString());
+    }
+   
+    UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::OnBnClickedGetdecodedright()
+{
+    if(!UpdateData(TRUE))
+        return;
+
+    m_EncodedListRight.ResetContent();
+    EncodeString();
+    for (int i = 0; i < encodedString.size(); ++i )
+    {
+        CString outString;
+        CTagDescription tagCode = encodedString[i];
+        outString.AppendFormat(_T("(| %s | %d | %d | %d | %d |)"), tagCode.tag.c_str(), tagCode.bIsClose, tagCode.nTagCode, tagCode.nTagBegin, tagCode.nTagEnd);
+        m_EncodedListRight.AddString(outString.GetString());
+    }
+
+    UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::OnBnClickedBtnsetbegin()
+{
+    if(!UpdateData(TRUE))
+        return;
+
+    newsBeginNum = m_ListBox.GetCurSel();
+
+    UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::OnBnClickedBtnsetend()
+{
+    if(!UpdateData(TRUE))
+        return;
+
+    newsEndNum = m_ListBox.GetCurSel();
+
+    UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::OnBnClickedBtnprintnews()
+{
+    ///< Выходной файл.
+    std::fstream fileOut("out.html", std::ios::out);
+
+    fileOut << "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head>\n"
+        "<body>\n";
+
+    unsigned int offset = 0;
+    // Получаем строчку новости и выводим её
+    for(int i = 0; i < (tagRanges.begin() + newsBeginNum)->size(); ++i)
+    {
+
+        string res = "";
+        if (!isSingleTagSeq)
+        {
+            res = string(m_fileData, ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first,
+                                     ((tagRanges.begin() + newsEndNum)->begin() +  i)->second - ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first + 1);
+        }
+        else
+        {
+            res = string(m_fileData, ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first,
+                                     ((tagRanges.begin() + newsBeginNum)->begin() +  i)->second - ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first + 1);
+        }
+//        fileOut << "<xmp>" << res << "</xmp>";
+        fileOut << res;
+        fileOut << "\n<br>#########################################################################################\n";
+    }
+    fileOut << "\n</body></html>";
+}
+
+void CNewsColoringDlg::OnBnClickedBntsingle()
+{
+    if(!UpdateData(TRUE))
+        return;
+
+    isSingleTagSeq = true;
+    newsBeginNum = m_ListBox.GetCurSel();
+
+    UpdateData(FALSE);
 }

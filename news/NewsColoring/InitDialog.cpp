@@ -5,7 +5,7 @@
 
 #include <algorithm>
 #include <fstream>
-#include "tagprocess.h"
+#include "../newsfinder/tagprocess.h"
 
 #include "NewsColoring.h"
 #include "InitDialog.h"

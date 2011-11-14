@@ -3,33 +3,32 @@
 //
 
 #pragma once
-#include "afxcmn.h"
+#include "../newsfinder/utils.h"
 #include "afxwin.h"
-
 
 // диалоговое окно CNewsColoringDlg
 class CNewsColoringDlg : public CDialog
 {
-// Создание
+    // Создание
 public:
-	CNewsColoringDlg(CWnd* pParent = NULL);	// стандартный конструктор
+    CNewsColoringDlg(CWnd* pParent = NULL);	// стандартный конструктор
 
-// Данные диалогового окна
-	enum { IDD = IDD_NEWSCOLORING_DIALOG };
+    // Данные диалогового окна
+    enum { IDD = IDD_NEWSCOLORING_DIALOG };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// поддержка DDX/DDV
+    virtual void DoDataExchange(CDataExchange* pDX);	// поддержка DDX/DDV
 
 
-// Реализация
+    // Реализация
 protected:
-	HICON m_hIcon;
+    HICON m_hIcon;
 
-	// Созданные функции схемы сообщений
-	virtual BOOL OnInitDialog();
-	afx_msg void OnPaint();
-	afx_msg HCURSOR OnQueryDragIcon();
-	DECLARE_MESSAGE_MAP()
+    // Созданные функции схемы сообщений
+    virtual BOOL OnInitDialog();
+    afx_msg void OnPaint();
+    afx_msg HCURSOR OnQueryDragIcon();
+    DECLARE_MESSAGE_MAP()
 private:
     CHARFORMAT2 cfDefault;
     CRichEditCtrl m_RichCtrl;
@@ -39,20 +38,29 @@ private:
     bool m_radioBlue;
     bool m_radioGreen;
     bool m_radioRed;
-
+    CListBox m_ListRanges;
+    CListBox m_EncodedListLeft;
+    std::vector<CTagDescription> encodedString;
     void ColorRichText(int start, int end, COLORREF color);
+    void EncodeString();
+
+    bool isSingleTagSeq;
+    int newsBeginNum;
+    int newsEndNum;
 public:
     afx_msg void OnBnClickedRadiored();
     afx_msg void OnBnClickedRadiogreen();
     afx_msg void OnBnClickedRadioblue();
     afx_msg void OnLbnSelchangeList();
-private:
-    CListBox m_ListRanges;
-public:
     afx_msg void OnLbnSelchangeListranges();
     afx_msg void OnBnClickedBtnresetsel();
+    afx_msg void OnBnClickedGetdecodedLeft();
 private:
-    CListBox m_DecodedList;
+    CListBox m_EncodedListRight;
 public:
-    afx_msg void OnBnClickedGetdecoded();
+    afx_msg void OnBnClickedGetdecodedright();
+    afx_msg void OnBnClickedBtnsetbegin();
+    afx_msg void OnBnClickedBtnsetend();
+    afx_msg void OnBnClickedBtnprintnews();
+    afx_msg void OnBnClickedBntsingle();
 };

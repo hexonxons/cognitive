@@ -161,3 +161,16 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
         it2 = vStr2.begin();
     }
 }
+
+CTagDescription::CTagDescription()
+{
+    Clear();
+}
+
+void CTagDescription::Clear()
+{
+    this->bIsClose = 0;
+    this->nTagCode = -1;
+    this->nTagBegin = -1;
+    this->nTagEnd = -1;
+}
