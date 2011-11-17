@@ -55,7 +55,6 @@ void CNewsColoringDlg::DoDataExchange(CDataExchange* pDX)
 {
     CDialog::DoDataExchange(pDX);
     DDX_Control(pDX, IDC_RICHEDIT, m_RichCtrl);
-
     DDX_Control(pDX, IDC_LIST, m_ListBox);
     DDX_Control(pDX, IDC_LISTRANGES, m_ListRanges);
     DDX_Control(pDX, IDC_DECODEDLIST, m_EncodedListLeft);
@@ -361,8 +360,7 @@ void CNewsColoringDlg::OnBnClickedBtnprintnews()
     ///< Выходной файл.
     std::fstream fileOut("out.html", std::ios::out);
 
-    fileOut << "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head>\n"
-        "<body>\n";
+    fileOut << "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head>\n<body>\n";
 
     unsigned int offset = 0;
     // Получаем строчку новости и выводим её
@@ -380,7 +378,6 @@ void CNewsColoringDlg::OnBnClickedBtnprintnews()
             res = string(m_fileData, ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first,
                                      ((tagRanges.begin() + newsBeginNum)->begin() +  i)->second - ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first + 1);
         }
-//        fileOut << "<xmp>" << res << "</xmp>";
         fileOut << res;
         fileOut << "\n<br>#########################################################################################\n";
     }

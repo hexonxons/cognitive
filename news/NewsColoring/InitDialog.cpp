@@ -55,7 +55,7 @@ BEGIN_MESSAGE_MAP(CInitDialog, CDialog)
     ON_BN_CLICKED(IDC_BTNRUN, &CInitDialog::OnBnClickedBtnrun)
 END_MESSAGE_MAP()
 
-struct pred
+struct sortPredicate
 {
     bool operator () (const vector<pair<int, int>> &left, const vector<pair<int, int>> &right)
     {
@@ -71,7 +71,6 @@ void CInitDialog::OnBnClickedBtnrun()
         return;
 
     CNewsFinder news(m_fileName.GetString(), m_minWordlen, m_minFreq, m_newsNum);
-
     std::fstream fileIn(m_fileName.GetString(), std::ios::in);
     m_fileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
     fileIn.close();
@@ -115,27 +114,10 @@ void CInitDialog::OnBnClickedBtnrun()
     {
         tagRanges.push_back(it->tagRange);
     }
-    std::sort(tagRanges.begin(), tagRanges.end(),pred());
-    
-
-
-    //m_RichCtrl.SetDefaultCharFormat(cfDefault);
-    //m_RichCtrl.SetWindowText(m_fileData.c_str());
-
-    //for (vector<vector<pair<int, int>>>::iterator it = tagRanges.begin(); it != tagRanges.end(); ++it)
-    /*{
-        CString str;
-        str.AppendFormat(_T("%d - "), it->size());
-        for (vector<pair<int, int>>::iterator jt = it->begin(); jt != it->end(); ++jt)
-        {
-            str.AppendFormat(_T("(%d,%d) "), jt->first, jt->second);
-        }
-        m_ListBox.AddString(str.GetString());
-    }*/
+    std::sort(tagRanges.begin(), tagRanges.end(), sortPredicate());
 
     UpdateData(FALSE);
     OnCancel();
-
 }
 
 std::vector<std::vector<std::pair<int, int>>> CInitDialog::GetTagRanges()

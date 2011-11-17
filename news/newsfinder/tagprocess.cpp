@@ -7,7 +7,6 @@
 #include <iostream>
 #include <algorithm>
 #include <stack>
-#include <assert.h>
 
 #include "../suffixtrie/suffixtrie.h"
 #include "tagprocess.h"
@@ -42,18 +41,10 @@ CNewsFinder:: CNewsFinder(__in LPCSTR fileName, __in int minSize, __in int minFr
     std::fstream fileIn(fileName, ios::in);
     m_fileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
     fileIn.close();
-
-#ifdef _DEBUG
-    plpszTagTable = new LPTSTR[1000];
-    memset(plpszTagTable, 0, 1000 * sizeof(LPTSTR));
-#endif
 }
 
 CNewsFinder::~CNewsFinder()
 {
-#ifdef _DEBUG
-    delete(plpszTagTable);
-#endif
 }
 
 void CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string> &remTag)
@@ -110,19 +101,24 @@ vector<CTagSequence> CNewsFinder::GetRanges()
 
 void CNewsFinder::GetPossibleRanges()
 {
+    // строим суффиксное дерево на основе вектора тегов
     CTrie<vector<CTagDescription>, CTagDescription> tree(m_mod, m_mod.size(), compare);
+    // получаем все координаты начала-конца построк более заданной длины и встречающиеся более чем заданное число раз
     vector< vector<pair<int, int>>> substrings = tree.GetRanges(m_minLen, m_minFreq);
 
     for (vector< vector<pair<int, int>>>::iterator it = substrings.begin(); it != substrings.end(); ++it)
     {
         vector<CTagDescription> word;
+        // формируем саму подстроку структур тегов
         for (int i = it->front().first; i <= it->front().second; ++i)
         {
             word.push_back(m_mod[i]);
         }
 
+        // если она нам подходит по проверке
         if (checkTag(word))
         {
+            // создаем структуру расположения послудовательности тегов в исходной строке
             CTagSequence currTagSeq;
             currTagSeq.tag = word;
             for (vector<pair<int, int>>::iterator j = it->begin(); j != it->end(); ++j)
@@ -136,7 +132,7 @@ void CNewsFinder::GetPossibleRanges()
     }
 
     // стираем элементы, являющиеся подстрокамы более длинных элементов
-    vector<CTagSequence>::iterator vectorIter;
+    /*vector<CTagSequence>::iterator vectorIter;
     unsigned int cnt = 1;
     while (cnt < tags.size())
     {
@@ -158,7 +154,7 @@ void CNewsFinder::GetPossibleRanges()
         }
         ++cnt;
     }
-
+    */
     vector<vector<pair<int, int>>> tagRanges;
 
     for (vector<CTagSequence>::iterator it = tags.begin(); it != tags.end(); ++it)
@@ -166,18 +162,10 @@ void CNewsFinder::GetPossibleRanges()
         tagRanges.push_back(it->tagRange);
     }
     std::sort(tagRanges.begin(), tagRanges.end(),pred1());
-
-    for (vector<vector<pair<int, int>>>::iterator it = tagRanges.begin(); it != tagRanges.end(); ++it)
-    {
-        for (vector<pair<int, int>>::iterator jt = it[0].begin(); jt != it[0].end(); ++jt)
-        {
-            string str(m_fileData, jt->first, jt->second - jt->first);
-        }
-    } 
+    
     // Вычисляем средние длины/частоты строк
-   //m_avgLen = m_avgLen / tags.size();
+    //m_avgLen = m_avgLen / tags.size();
     //m_unAvgFreq = m_unAvgFreq / m_freq.size();
-
 }
 
 void CNewsFinder::GetNewsRange()
@@ -398,28 +386,9 @@ CTagDescription CNewsFinder::getNextTag()
                 tagCode.bIsClose = 1;
             else
                 tagCode.bIsClose = 0;
-#ifdef _DEBUG
-            if (plpszTagTable[tagCode.nTagCode] == NULL)
-            {
-                plpszTagTable[tagCode.nTagCode] = (LPTSTR)tag.c_str();
-            }
-
-            if (tagCode.nTagBegin != -1)
-            {
-                string tagString(m_fileData, tagCode.nTagBegin, tagCode.nTagEnd - tagCode.nTagBegin + 1);
-                assert(tagString[tagString.size() - 1] == '>');
-            }
-#endif
             return tagCode;
         }
     }
-#ifdef _DEBUG
-    if (tagCode.nTagBegin != -1)
-    {
-        string tagString(m_fileData, tagCode.nTagBegin, tagCode.nTagEnd - tagCode.nTagBegin + 1);
-        assert(tagString[tagString.size() - 1] == '>');
-    }
-#endif
     return tagCode;
 }
 
@@ -491,15 +460,3 @@ long CNewsFinder::GetlastError()
 }
 
 //#################################  DEBUG SECTION  #####################################
-
-#ifdef _DEBUG
-
-    string CNewsFinder::getTagWord(vector<CTagDescription> &tagSeq)
-    {
-        string reti;
-        for(unsigned int i = 0; i < tagSeq.size(); ++i)
-            reti += plpszTagTable[tagSeq[i].nTagCode];
-        return reti;
-    }
-
-#endif

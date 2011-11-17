@@ -291,13 +291,6 @@ private:
     std::string CNewsFinder::getNews(vector<CTagDescription> &newsBegin,
                                      vector<CTagDescription> &newsEnd,
                                      unsigned int &unOffset);
-#ifdef _DEBUG
-
-    void dbgPrintData(void);
-
-    std::string getTagWord(vector<CTagDescription> &tagSeq);
-#endif
-
 private:
     ///< Минимальный размер последовательности тегов.
     unsigned int m_minLen;
@@ -345,9 +338,5 @@ private:
     // 0  : Все нормально
     // -1 : Ошибка выделения памяти.
     long m_lLastError;
-
-#ifdef _DEBUG
-    LPTSTR *plpszTagTable;
-#endif
 };
 #endif

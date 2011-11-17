@@ -10,17 +10,30 @@
 #include <vector>
 #include <windows.h>
 
+/**
+ * \struct  CTagDescription
+ *
+ * \brief   —труктура закодированного тега
+ *
+ * \author  Alexander
+ * \date    11/17/2011
+ */
 struct CTagDescription
 {
+    // хеш тега
     int nTagCode;
+    // закрывающий тег или нет
     bool bIsClose;
+    // начала тега в строке
     int nTagBegin;
+    // конец тега в строке
     int nTagEnd;
+    // сам тег
     std::string tag;
 
     CTagDescription();
     void Clear();
-} ;
+};
 
 struct CTagSequence 
 {
@@ -50,28 +63,6 @@ int vStrCmp(const std::vector<CTagDescription> &left,
 
 int vIsSubstr(const std::vector<CTagDescription> &vStr1,
               const std::vector<CTagDescription> &vStr2);
-
-/**
- * \fn  int vStrStr(const std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
- *      const std::vector<CPair<CTag, CPair<int, int>>> &vStr2, int offset);
- *
- * \brief   ‘ункци€ производит поиск позиции, с которой vStr2 совпадает с vStr1,
- * 			начина€ с позиции offset в vStr1.
- *
- * \author  Alexander
- * \date    7/28/2011
- *
- * \param   vStr1   —трока, в которой ищем.
- * \param   vStr2   —трока, которую ищем.
- * \param   offset  —двиг.
- *
- * \return  ѕозицию, с которой начинаетс€ совпадение.
- * 			0, если совпадений нет.
- */
-
-int vStrStr(const std::vector<CTagDescription> &vStr1,
-            const std::vector<CTagDescription> &vStr2,
-            int offset);
 
 /**
  * \fn  std::vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
@@ -113,9 +104,5 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
 
 std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vStr1,
                                                std::vector<CTagDescription> &vStr2);
-
-
-
-
 
 #endif // __UTILS_H__

@@ -305,7 +305,7 @@ document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_100
 
 		<a href="/"><img src="/i/new_logo.jpg" width="146" height="145" alt="Вести.Ru: новости, видео и фото дня" title="Вести.Ru: новости, видео и фото дня" border="0" class="img_logo_vesti"></a>
 
-				<div class="head_date">14 ноября 2011 </div>
+				<div class="head_date">17 ноября 2011 </div>
 
 		</div>
 
@@ -371,7 +371,7 @@ document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_100
 
  
 
-<a href="/theme.html?tid=93034" >Выборы 2011</a><a href="/theme.html?tid=87353" >Ближний Восток</a><a href="/theme.html?tid=89695" >Долговой кризис в еврозоне</a><a href="/theme.html?tid=94454" >Саммит АТЭС в Гонолулу</a><a href="/theme.html?tid=94494" >Москва: пожар на теплоходе</a><a href="/theme.html?tid=94314" >Суд над летчиками в Таджикистане</a><a href="/theme.html?tid=94354" class="last_th">Полет на Марс: миссия провалена</a>
+<a href="/theme.html?tid=93034" >Выборы 2011</a><a href="/theme.html?tid=94534" >"Капитан Кузнецов"</a><a href="/theme.html?tid=89695" >Долговой кризис в еврозоне</a><a href="/theme.html?tid=87353" >Ближний Восток</a><a href="/theme.html?tid=94554" >Убийство чеченского поэта</a><a href="/theme.html?tid=94514" >Отставка Берлускони</a><a href="/theme.html?tid=94314" >Суд над летчиками в Таджикистане</a><a href="/theme.html?tid=94454" >Саммит АТЭС в Гонолулу</a><a href="/theme.html?tid=94354" class="last_th">Полет на Марс: миссия провалена</a>
 
 
 
@@ -455,7 +455,7 @@ function ban2(){
 
             id('textgrafblock').innerHTML = '';
 
-            SRAX.addScript({url: 'http://reklama.mb.vesti.ru/cgi-bin/iframe/textgrafblok?61207&options=FT', callback: function(){
+            SRAX.addScript({url: 'http://reklama.mb.vesti.ru/cgi-bin/iframe/textgrafblok?56375&options=FT', callback: function(){
 
                 id('textgrafblock').innerHTML = '';
 
@@ -977,7 +977,7 @@ $(function(){
 
 		  
 
-			<li class="  "><a href="/section.html?cid=5">Политика</a></li><li class="  "><a href="/section.html?cid=6">Экономика</a></li><li class="  "><a href="/section.html?cid=8">Происшествия</a></li><li class="  "><a href="http://auto.vesti.ru/">Авто</a></li><li class="  "><a href="/section.html?cid=7">Общество</a></li><li class="  "><a href="/section.html?cid=460">Культура</a></li><li class="  "><a href="/section.html?cid=9">В мире</a></li><li class="  "><a href="/section.html?cid=680">Спорт</a></li><li class="  "><a href="/section.html?cid=780">Hi-Tech. Интернет</a></li><li class="  "><a href="/section.html?cid=960">Модернизация</a></li><li class="  "><a href="/section.html?cid=17">Регионы</a></li><li class="  "><a href="/section.html?cid=1200">Фотолента</a></li><li class="last  "><a href="/section.html?cid=380">Досье</a>
+			<li class="  "><a href="/section.html?cid=5">Политика</a></li><li class="  "><a href="/section.html?cid=6">Экономика</a></li><li class="  "><a href="/section.html?cid=8">Происшествия</a></li><li class="  "><a href="http://auto.vesti.ru/">Авто</a></li><li class="  "><a href="/section.html?cid=7">Общество</a></li><li class="  "><a href="/section.html?cid=9">В мире</a></li><li class="  "><a href="/section.html?cid=680">Спорт</a></li><li class="  "><a href="/section.html?cid=780">Hi-Tech. Интернет</a></li><li class="  "><a href="/section.html?cid=460">Культура</a></li><li class="  "><a href="/section.html?cid=960">Модернизация</a></li><li class="  "><a href="/section.html?cid=17">Регионы</a></li><li class="  "><a href="/section.html?cid=1200">Фотолента</a></li><li class="last  "><a href="/section.html?cid=380">Досье</a>
 
 		  </li>
 
@@ -985,35 +985,35 @@ $(function(){
 
 	</div>
 
-<div class="banner_vesti_reclama "></div><div class="l_section"><h3 id="auto_l"><a href="http://auto.vesti.ru/">Авто.Вести.Ru</a></h3><ul><li class="with_img">
+<div class="l_section"><h3 id="auto_l"><a href="http://auto.vesti.ru/">Авто.Вести.Ru</a></h3><ul><li class="with_img">
 
-<a href="http://auto.vesti.ru/doc.html?id=424233&cid=20" ><img src="http://auto.vesti.ru/p/s_427231.jpg" alt="" title=""></a>
+<a href="http://auto.vesti.ru/doc.html?id=424853" ><img src="http://auto.vesti.ru/p/s_435223.jpg" alt="" title=""></a>
 
-<a href="http://auto.vesti.ru/doc.html?id=424233&cid=20" >Названы российские цены на Mazda CX-5</a>
-
-
-
-</li><li>
-
-<a href="http://auto.vesti.ru/doc.html?id=424174&cid=24" >Стать оператором ТО можно будет за 30 тысяч</a>
+<a href="http://auto.vesti.ru/doc.html?id=424853" >Продажи нового Honda CR-V стартуют 15 декабря</a>
 
 
 
 </li><li>
 
-<a href="http://auto.vesti.ru/doc.html?id=423733" >Чиновники не подготовили новый техосмотр</a>
+<a href="http://auto.vesti.ru/doc.html?id=424873&cid=20" >Cadillac показал новый флагман – седан XTS</a>
 
 
 
 </li><li>
 
-<a href="http://auto.vesti.ru/doc.html?id=423853" >Hyundai показала облик Genesis Coupe</a>
+<a href="http://auto.vesti.ru/doc.html?id=424833&cid=20" >Состоялась премьера Subaru BRZ Concept STI</a>
 
 
 
 </li><li>
 
-<a href="http://auto.vesti.ru/doc.html?id=423573&cid=20" >Рассекречен новый Chevrolet Trailblazer</a>
+<a href="http://auto.vesti.ru/doc.html?id=424395&cid=22" >Пошлины на иномарки снизят через 7 лет</a>
+
+
+
+</li><li>
+
+<a href="http://auto.vesti.ru/doc.html?id=424753&cid=22" >Самой популярной машиной в Москве стала Lada</a>
 
 
 
@@ -1023,99 +1023,99 @@ $(function(){
 
 </div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/section.html?cid=520">Эксклюзив</a></h3><ul><li class="with_img">
 
-<a href="http://www.vesti.ru/doc.html?id=630367&cid=520" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566552.jpg" alt="" title=""></a>
+<a href="http://www.vesti.ru/doc.html?id=632376&cid=520" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567389.jpg" alt="" title=""></a>
 
-<a href="http://www.vesti.ru/doc.html?id=630367&cid=520" >Лесбийская пара готовит приемного сына к смене пола</a>
-
-
-
-</li><li>
-
-<a href="http://www.vesti.ru/doc.html?id=628019&cid=520" >"Народная" водка будет стоить 400 рублей</a>
+<a href="http://www.vesti.ru/doc.html?id=632376&cid=520" >Белый дом незаметно обстреляли</a>
 
 
 
 </li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=628052&cid=520" >Рейтинг худших аэропортов мира</a>
+<a href="http://www.vesti.ru/doc.html?id=632297&cid=520" >Преемником Джобса стал профессор биохимии</a>
 
 
 
 </li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=629591&cid=5" >Консультации будут ПРОдолжены</a>
+<a href="http://www.vesti.ru/doc.html?id=630464&cid=5" >Военные корабли США в Черном море</a>
 
 
 
 </li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=627858&cid=520" >У Мадонны украли сингл</a>
+<a href="http://www.vesti.ru/doc.html?id=632317&cid=520" >Вкладчики обратили внимание на юань</a>
 
 
 
 </li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=628071&cid=520" >Собака тоже человек</a>
+<a href="http://www.vesti.ru/doc.html?id=632410&cid=520" >Из-за ошибок фармацевтов погибли тысячи человек</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/doc.html?id=632364&cid=520" >ТО без очередей: надежда на Интернет</a>
 
 
 
 </li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/videos?cid=58">Вести 20:00</a></h3><ul><li class="with_img">
 
-<a href="http://www.vesti.ru/videos?vid=375751&cid=58" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565965.jpg" alt="" title=""></a>
+<a href="http://www.vesti.ru/videos?vid=376652" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567346.jpg" alt="" title=""></a>
 
-<a href="http://www.vesti.ru/videos?vid=375751&cid=58" >Электричество из космоса</a>
-
-
-
-</li><li>
-
-<a href="http://www.vesti.ru/videos?vid=375749&cid=58" >Эпидемия за колючей проволокой</a>
+<a href="http://www.vesti.ru/videos?vid=376652" >Киллер для литератора</a>
 
 
 
 </li><li>
 
-<a href="http://www.vesti.ru/videos?vid=375744&cid=58" >Грабители бабушек</a>
+<a href="http://www.vesti.ru/doc.html?id=632449" >Подарить человеку воздух</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=376654" >Бессмертие по сходной цене</a>
 
 
 
 </li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/videos?cid=700">Вести.Ru на "России 2"</a></h3><ul><li class="with_img">
 
-<a href="http://www.vesti.ru/videos?vid=375564&cid=700" ><img src="http://auto.vesti.ru/p/s_413963.jpg" alt="" title=""></a>
+<a href="http://www.vesti.ru/videos?vid=376504&cid=700" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565173.jpg" alt="" title=""></a>
 
-<a href="http://www.vesti.ru/videos?vid=375564&cid=700" >Как избежать ужасов "переобувки"</a>
-
-
-
-</li><li>
-
-<a href="http://www.vesti.ru/videos?vid=375570&cid=700" >Интимные фото Рианны попали в Сеть</a>
+<a href="http://www.vesti.ru/videos?vid=376504&cid=700" >Наводнение смыло жесткие диски</a>
 
 
 
 </li><li>
 
-<a href="http://www.vesti.ru/videos?vid=375391&cid=700" >Клубничка с доставкой на борт</a>
+<a href="http://www.vesti.ru/videos?vid=376506&cid=700" >Водители в ужасе от "совершенного радара"</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/videos?vid=376663&cid=700" >Электроника меняет представление об армии</a>
 
 
 
 </li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/section.html?cid=780">Hi-Tech</a></h3><ul><li class="with_img">
 
-<a href="http://www.vesti.ru/doc.html?id=630298&cid=780" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_515120.jpg" alt="" title=""></a>
+<a href="http://www.vesti.ru/doc.html?id=632389&cid=780" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567214.jpg" alt="" title=""></a>
 
-<a href="http://www.vesti.ru/doc.html?id=630298&cid=780" >От microSIM к nanoSIM</a>
-
-
-
-</li><li>
-
-<a href="http://www.vesti.ru/doc.html?id=630373&cid=780" >Обновление не вылечило iPhone</a>
+<a href="http://www.vesti.ru/doc.html?id=632389&cid=780" >Полукровка. Обзор планшета-букридера PocketBook A10</a>
 
 
 
 </li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=627918&cid=780" >Почему мужчины беспечны в соцсетях</a>
+<a href="http://www.vesti.ru/doc.html?id=631395&cid=780" >Исследование: "удаленка" выгодна работодателям</a>
+
+
+
+</li><li>
+
+<a href="http://www.vesti.ru/doc.html?id=632305&cid=780" >Microsoft готовит аналог Google+</a>
 
 
 
@@ -1173,39 +1173,45 @@ $(function(){
 
 </li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://kino.vesti.ru/">Кино</a></h3><ul><li class="with_img">
 
-<a href="http://filmpro.ru/journal/15530925" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565746.jpg" alt="" title=""></a>
+<a href="http://filmpro.ru/journal/15581998" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567508.jpg" alt="" title=""></a>
 
-<a href="http://filmpro.ru/journal/15530925" >Белоснежка в Стране чудес</a>
-
-
-
-</li><li>
-
-<a href="http://filmpro.ru/journal/15520096" >Антон Шагин — новая надежда российского кино</a>
+<a href="http://filmpro.ru/journal/15581998" >Дятел Вуди впервые появится в полнометражном мультфильме</a>
 
 
 
 </li><li>
 
-<a href="http://filmpro.ru/journal/15558872" >Саша Барон Коэн сыграет у Тарантино</a>
+<a href="http://filmpro.ru/journal/15580257" >"Голоса" дублированной "Резни" можно увидеть</a>
 
 
 
 </li><li>
 
-<a href="http://filmpro.ru/journal/15542912" >Конструктор Lego — основа для мультфильма</a>
+<a href="http://filmpro.ru/journal/15561171" >Колин Ферт приглашен в ремейк "Олдбоя"</a>
 
 
 
 </li><li>
 
-<a href="http://filmpro.ru/business/15557708" >В США прокатом правят "Бессмертные"</a>
+<a href="http://filmpro.ru/journal/15579239" >"Бессмертные" Генри Кавилл и Люк Эванс</a>
+
+
+
+</li><li>
+
+<a href="http://filmpro.ru/journal/15568533" >Анджелина Джоли хочет играть в "независимом" кино</a>
 
 
 
 </li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.rutv.ru/">Телеканал "Россия"</a></h3><ul><li class="with_img">
 
-<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148860&mid=14&d=0&p=1" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_562718.jpg" alt="" title=""></a>
+<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=149600&mid=14&d=0&p=1" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567468.jpg" alt="" title=""></a>
+
+<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=149600&mid=14&d=0&p=1" >Сын задушил мать из жалости</a>
+
+
+
+</li><li>
 
 <a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148860&mid=14&d=0&p=1" >Голый таксист летел на крыльях любви</a>
 
@@ -1213,19 +1219,13 @@ $(function(){
 
 </li><li>
 
-<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148580&mid=14&d=0&p=1" >Умереть молодым: страну захлестнула волна суицидов</a>
+<a href="http://www.rutv.ru/rnews.html?d=0&id=251133" >Брэду Питту осталось три года</a>
 
 
 
 </li><li>
 
-<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148420&mid=14&d=0&p=1" >Охотники за смертью: тайны звездных могил</a>
-
-
-
-</li><li>
-
-<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148240&mid=14&d=0&p=1" >Драка на АЗС: версия Юрия Антонова</a>
+<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=149360&mid=14&d=0&p=1" >Бонни и Клайд по-русски</a>
 
 
 
@@ -1277,13 +1277,13 @@ $(function(){
 
 </li><li>
 
-<a href="http://radiovesti.ru/articles/2011-11-14/fm/19103" >Мы разучились получать гроши</a>
+<a href="http://radiovesti.ru/articles/2011-11-17/fm/19577" >Не кормите театральных барыг</a>
 
 
 
 </li><li>
 
-<a href="http://radiovesti.ru/articles/2011-11-13/fm/19035" >Виновница ДТП чудом избежала самосуда</a>
+<a href="http://radiovesti.ru/articles/2011-11-17/fm/19513" >Искусственные гамбургеры появились в реальности</a>
 
 
 
@@ -1297,27 +1297,33 @@ $(function(){
 
 </h3><ul><li class="with_img">
 
-<a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank"><img src="http://www.vgtrk.cdnvideo.ru/p/s_527243.jpg" alt="" title=""></a>
+<a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank"><img src="http://www.vgtrk.cdnvideo.ru/p/s_516711.jpg" alt="" title=""></a>
 
-<a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank">Лётчики стали пешками в грязной игре</a>
+<a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank">Россия стала английской колонией</a>
 
-<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
-
-</li><li>
-
-<a href="http://radiovesti.ru/articles/2011-11-11/fm/18434" target="_blank">Ответственность побеждает инстинкты</a>
-
-<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
+<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
 
 </li><li>
 
-<a href="http://radiovesti.ru/articles/2011-11-11/fm/18437" target="_blank">Таджика руки кормят</a>
+<a href="http://radiovesti.ru/articles/2011-11-16/fm/19293" target="_blank">Казнокрад – самая востребованная профессия</a>
 
-<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-11/fm/18435" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
+<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
+
+</li><li>
+
+<a href="http://radiovesti.ru/articles/2011-11-14/fm/18658" target="_blank">Правосудие затерялось в толпе</a>
+
+<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
 
 </li></ul><div class="sk_pr_fm_bot"><a href="http://www.radiovesti.ru" id="vfm_link">www.radiovesti.ru</a></div></div><div class="l_section" ><h3 class="common_l"><a href="http://strana.ru/">Страна.Ru</a></h3><ul><li class="with_img">
 
-<a href="http://strana.ru/journal/19153923" ><img src="http://strana.ru/media/images/uploaded/medium19155347.jpg" alt="" title=""></a>
+<a href="http://strana.ru/journal/19159185" ><img src="http://strana.ru/media/images/uploaded/medium19162971.jpg" alt="" title=""></a>
+
+<a href="http://strana.ru/journal/19159185" >Почему Ломоносов - супермен</a>
+
+
+
+</li><li>
 
 <a href="http://strana.ru/journal/19153923" >Как Башкирия стала Швейцарией</a>
 
@@ -1326,12 +1332,6 @@ $(function(){
 </li><li>
 
 <a href="http://strana.ru/journal/19138263" >Открытие Океанариума в Москве. Эксклюзив</a>
-
-
-
-</li><li>
-
-<a href="http://strana.ru/journal/19134395" >Идеальное место для Нового года: Великий Новгород</a>
 
 
 
@@ -1389,7 +1389,7 @@ $(function(){
 
 <div class="list_date">
 
-	<span>14 ноября 2011 г. </span>
+	<span>17 ноября 2011 г. </span>
 
 </div>
 
@@ -1403,7 +1403,47 @@ $(function(){
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">15:34</p>
+		<p class="list_item_time">12:40</p>
+
+		<a href="/doc.html?id=633250" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_509600.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633250&cid=7">Глава МНТК &quot;Микрохирургия глаза&quot; брал деньги за бесплатную помощь</a></h3>
+
+	<p><a href="/doc.html?id=633250&cid=7">Минздравсоцразвития РФ решило не продлять трудовые отношения с исполняющим обязанности директора МНТК "Микрохирургия глаза" Христо Тахчиди. Основанием для такого решения послужили массовые жалобы пациентов и сотрудников, а также результаты проверки деятельности центра.  </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">12:34</p>
+
+		<a href="/doc.html?id=633266" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567523.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633266&cid=460">Премьера в Царском селе</a></h3>
+
+	<p><a href="/doc.html?id=633266&cid=460">В Екатерининский дворец Царского села после реставрации вернули люстру работы Манегетти. Бронзовая люстра заняла историческое место в Лионском зале - гостиной императрицы Марии Александровны.  Реставрация длилась полгода, восстанавливали люстру 10 мастеров - литейщики, позолотчики, ювелиры. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">12:29</p>
 
 		
 
@@ -1411,363 +1451,17 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630430&cid=680">Игрок &quot;Анжи&quot; Самюэль Это'О – лучший футболист Африки</a></h3>
+	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424893">Porsche Panamera GTS прибыл в Лос-Анджелес</a></h3>
 
-	<p><a href="/doc.html?id=630430&cid=680">Камерунский форвард "Анжи" Самюэль Это'О выиграл звание лучшего футболиста Африки по итогам прошлого года. Это уже третья подобная награда в активе нападающего сборной Камеруна. Это'О получил "Золотого льва" – приз, учрежденный газетой Al-Mountakhab, в Марракеше на специальной церемонии. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">15:25</p>
-
-		<a href="/doc.html?id=630427" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_518664.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630427&cid=6">Италия разместила пятилетние облигации на сумму в 3 млрд евро</a></h3>
-
-	<p><a href="/doc.html?id=630427&cid=6">Италия разместила сегодня очередной выпуск пятилетних облигаций на сумму в 3 млрд евро. Доходность по ним составила 6,29 проц по сравнению с 5,32 проц по предыдущему аналогичному выпуску, который состоялся 13 октября.
-
- </a></p>
+	<p><a href="http://auto.vesti.ru/doc.html?id=424893">В Лос-Анджелесе состоялась премьера еще одной модификации большого хэтчбека Porsche Panamera. Версия GTS по энерговооруженности располагается между моделями Panamera S и Panamera Turbo, но конструктивно напоминает их обеих, вместе взятых. </a></p>
 
 </div><div class="list_item">
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">15:14</p>
+		<p class="list_item_time">12:29</p>
 
-		<a href="/doc.html?id=630422" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_259440.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630422&cid=9">МИД РФ: Запад подстрекает радикальную сирийскую оппозицию к смене режима</a></h3>
-
-	<p><a href="/doc.html?id=630422&cid=9">Страны Запада подстрекают радикальную сирийскую оппозицию взять курс на смену режима в Сирии, полагают в российском МИД. "Называя вещи своими именами, имеет место подстрекательство радикально настроенных оппозиционеров к тому, чтобы они взяли курс на смену режима", - заявил Сергей Лавров. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">15:06</p>
-
-		<a href="/doc.html?id=630382" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_364749.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424213">Hyundai представит купе Elantra в Чикаго</a></h3>
-
-	<p><a href="http://auto.vesti.ru/doc.html?id=424213">Корейский автопроизводитель Hyundai подтвердил свои намерения относительно выпуска двухдверной версии модели Elantra. Но в отличие от слухов, которые пророчили дебют новинка на автосалоне в Лос-Анджелесе, компания подождет до следующего февраля и представит купе Elantra на автосалоне в Чикаго. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">15:06</p>
-
-		<a href="/doc.html?id=630426" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_212765.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630426&cid=520">Чтение по зубам: заболевания головы и сердца</a></h3>
-
-	<p><a href="/doc.html?id=630426&cid=520">Направляясь к зубному врачу, вы ожидаете, что он поставит вам пломбу или снимет налет, но вряд ли вы попросите его проверить ваше сердце. Впрочем, как утверждают американские стоматологи, состояние зубов человека может многое сказать о здоровье всего организма. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">15:06</p>
-
-		<a href="/doc.html?id=630423" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_475784.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630423&cid=680">Сергей Кущенко: календарь российского биатлона будет насыщенным</a></h3>
-
-	<p><a href="/doc.html?id=630423&cid=680">Соревнований по биатлону на территории России в ближайшие два года пройдет больше, чем обычно. Об этом заявил вице-президент IBU, исполнительный директор СБР Сергей Кущенко. Он подтвердил, что в будущем сезоне обязательно пройдут ставшая традиционной "Гонка чемпионов" и Мемориал Фатьянова. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">15:05</p>
-
-		<a href="/doc.html?id=630384" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_480311.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630384&cid=7">В Интернете можно будет проследить историю квартиры</a></h3>
-
-	<p><a href="/doc.html?id=630384&cid=7">Все сделки, совершаемые с недвижимостью в России, появятся в Интернете. Публиковать информацию будет Росреестр. Сервис запустят до конца этого года. На портале появится информация о миллионах сделок, которые Росреестр и его предшественница - Росрегистрация - зарегистрировали с 1999 года. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">15:04</p>
-
-		<a href="/doc.html?id=630411" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_558768.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630411&cid=8">Спецоперация в Дагестане: уничтожен лидер &quot;каспийской бандгруппы&quot;</a></h3>
-
-	<p><a href="/doc.html?id=630411&cid=8">Двое боевиков уничтожены дагестанском городе Каспийске в ходе спецоперации. Они были блокированы в одном из жилых домов частного сектора. Один из боевиков оказался главарем "каспийской бандгруппы". Это 33-летний уроженец Каспийска Магомед Джамаев по кличке Мухамад. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:58</p>
-
-		<a href="/doc.html?id=630396" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_538715.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630396&cid=780">Google назначила на среду загадочную презентацию</a></h3>
-
-	<p><a href="/doc.html?id=630396&cid=780">Корпорация Google разослала журналистам письма с приглашением на таинственную пресс-конференцию, которая пройдет 16 ноября в Лос-Анджелесе. Тема события держится в секрете. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:50</p>
-
-		<a href="/doc.html?id=630417" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_523362.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630417&cid=680">Зинэтула Билялетдинов: вместе ребята выдают классный хоккей</a></h3>
-
-	<p><a href="/doc.html?id=630417&cid=680">После победы на первом этапе Евротура главный тренер сборной России Зинэтула Билялетдинов похвалил первое звено, которое забросило больше половины всех шайб.
-
-
-
- </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:44</p>
-
-		<a href="/doc.html?id=630414" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_494355.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630414&cid=8">Нападение на пункт полиции в Нальчике: один полицейский погиб и один тяжело ранен</a></h3>
-
-	<p><a href="/doc.html?id=630414&cid=8">В Нальчике в микрорайоне Вольный Аул на улице Калмыкова, 61 сегодня совершено нападение на опорный пункт полиции. В результате один участковый погиб, другой тяжело ранен, сообщили в Следственном управлении СК РФ по Кабардино- Балкарии. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:39</p>
-
-		
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630415&cid=6">Падение промпроизводства в еврозоне в сентябре стало максимальным за 2,5 года </a></h3>
-
-	<p><a href="/doc.html?id=630415&cid=6">Объем промышленного производства в еврозоне в сентябре 2011 года сократился на 2% по сравнению с августом, падение показателя стало максимальным за два с половиной года, свидетельствуют данные Статистического управления Европейского союза. 
-
- </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:34</p>
-
-		<a href="/doc.html?id=630398" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_557414.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630398&cid=9">Защита Тимошенко обжаловала новые уголовные дела против экс-премьера Украины</a></h3>
-
-	<p><a href="/doc.html?id=630398&cid=9">Адвокаты Юлии Тимошенко обжаловали возбуждение новых уголовных дел против бывшего премьер-министра Украины. Защитник Тимошенко Сергей Власенко отметил, что эти дела связаны с деятельностью корпорации "Единые энергетические системы Украины" (ЕЭСУ). </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:34</p>
-
-		<a href="/doc.html?id=630409" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_279590.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630409&cid=6">Добыча газа в РФ в 2012 году вырастет до 680-690 млрд кубометров</a></h3>
-
-	<p><a href="/doc.html?id=630409&cid=6">В 2012 году добыча газа в России увеличится до 680-690 млрд куб м, а экспорт планируется довести до 200 млрд куб м. Такой прогноз озвучил сегодня вице-спикер Госдумы, президент Российского газового общества (РГО) Валерий Язев.
-
- </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:33</p>
-
-		<a href="/doc.html?id=630394" ><img src="http://auto.vesti.ru/p/s_427226.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424233">Новый кроссовер Mazda CX-5 будет стоить от 911 000 рублей</a></h3>
-
-	<p><a href="http://auto.vesti.ru/doc.html?id=424233">Базовая версия абсолютно нового кроссовера от компании Mazda обойдется россиянам в 911 тысяч рублей. За эти деньги в моноприводный автомобиль установят 2-литровый бензиновый мотор мощностью 150 л.с. и МКПП. Самая же дорогая, полноприводная версия с "автоматом" обойдется в 1 274 000 рублей. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:27</p>
-
-		<a href="/doc.html?id=630407" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_539691.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630407&cid=680">В Бельгии футболист умер от остановки сердца</a></h3>
-
-	<p><a href="/doc.html?id=630407&cid=680">Бельгийский футболист нигерийского происхождения Бобсам Элейжико из команды "Мерксем" скончался от остановки сердца во время матча регионального чемпионата с командой "Карт". Все попытки медиков вернуть 30-летнего спортсмена к жизни оказались безуспешными. После инцидента матч был прерван. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:21</p>
-
-		<a href="/doc.html?id=630406" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_485277.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630406&cid=6">Потребность России в иностранных работниках на 2012 год составляет 1,7 млн человек</a></h3>
-
-	<p><a href="/doc.html?id=630406&cid=6">Потребность России в иностранных работниках на 2012 год составляет 1,7 млн человек,  заявили в Минздравсоцразвития РФ. Трудовые мигранты составят 2,54% от численности занятых в экономике и 2,38% от численности экономически активного населения страны.  </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:16</p>
-
-		<a href="/doc.html?id=630402" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_484811.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="http://www.england.vesti.ru/doc.html?id=392700&cid=121">Питер Одемвингие: контракт с топ-клубом надо заслужить</a></h3>
-
-	<p><a href="http://www.england.vesti.ru/doc.html?id=392700&cid=121">Нигерийский нападающий клуба "Вест Бромвич Альбион" с российским паспортом Питер Одемвингие считает, что новый сезон в премьер-лиге пока складывается для него не слишком успешно. Но менять клуб по собственной инициативе он не собирается. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:10</p>
-
-		<a href="/doc.html?id=630358" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566464.jpg" width="92" height="69" border="0">
+		<a href="/doc.html?id=633258" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566979.jpg" width="92" height="69" border="0">
 
 <div class="video_ico_s"></div>
 
@@ -1777,17 +1471,57 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630358&cid=9">Старту &quot;Союза ТМА-22&quot; не помешал даже сплошной снегопад </a></h3>
+	 <h3> <a href="/doc.html?id=633258&cid=520">Тайна неопознанных объектов в пустыне Гоби почти раскрыта</a></h3>
 
-	<p><a href="/doc.html?id=630358&cid=9">Космический корабль "Союз" успешно стартовал 14 ноября с Байконура. Он уже вышел на штатную орбиту. На его борту новый экипаж МКС. Стыковка со станцией запланирована на утро 16 ноября. Этот полет готовился два с лишним месяца после того, как в августе был потерян беспилотный "Прогресс". </a></p>
+	<p><a href="/doc.html?id=633258&cid=520">Общими усилиями интернет-пользователям удалось идентифицировать некоторые неопознанные объекты, обнаруженные на этой неделе спутником Google в китайской пустыне Гоби. Впрочем, тема "пустынных объектов" по-прежнему актуальна – там нашли новые странные постройки. </a></p>
 
 </div><div class="list_item">
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">14:05</p>
+		<p class="list_item_time">12:25</p>
 
-		<a href="/doc.html?id=630403" ><img src="http://player.rutv.ru/p/s_80585.jpg" width="92" height="69" border="0">
+		<a href="/doc.html?id=633255" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567525.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633255&cid=460">Искусство на продажу</a></h3>
+
+	<p><a href="/doc.html?id=633255&cid=460">Российский аукционный дом представляет лоты ноябрьских торгов. На предаукционной выставке - более 200 произведений искусства русских мастеров конца XIX - XX веков. Впервые за 100 лет выставлена уникальная картина Николая Рериха "У рубежа". </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">12:20</p>
+
+		<a href="/doc.html?id=633249" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567512.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633249&cid=780">Исследователи придумали, как увеличить емкость литий-ионных батарей в 10 раз</a></h3>
+
+	<p><a href="/doc.html?id=633249&cid=780">Ученые из Северо-западного университета в США нашли способ решения двух серьезных недостатков современных литий-ионных аккумуляторов - емкости и времени зарядки. Благодаря новой технологии одного заряда батареи хватит на неделю, а на ее перезарядку будет уходить всего 15 минут. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">12:19</p>
+
+		<a href="/doc.html?id=633238" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565506.jpg" width="92" height="69" border="0">
 
 <div class="video_ico_s"></div>
 
@@ -1797,33 +1531,17 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630403&cid=7">Мэр Самары: мы просто обязаны слышать людей</a></h3>
+	 <h3> <a href="/doc.html?id=633238&cid=9">Генпрокурор Таджикистана считает, что осужденным летчикам заметно смягчат приговор</a></h3>
 
-	<p><a href="/doc.html?id=630403&cid=7">Идея "Большого правительства" вызвала интерес в российских регионах. Здесь людям труднее всего пробиться со своими проблемами на уровень федеральной власти. Какие возможности им предоставит "Большое правительство"? Об этом в интервью "России 24" рассказал глава Самары Дмитрий Азаров. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:04</p>
-
-		
-
-	</div>
-
-
-
-	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424174">Стать оператором ТО можно будет за 30 тысяч рублей</a></h3>
-
-	<p><a href="http://auto.vesti.ru/doc.html?id=424174">Российское правительство определило цену, которую придется заплатить за получение права проводить технический осмотр автомобилей по новым правилам. Согласно постановлению, опубликованному в понедельник, 14 ноября, первоначальная плата за аккредитацию составит, как минимум, 30 тысяч рублей. </a></p>
+	<p><a href="/doc.html?id=633238&cid=9">Генеральный прокурор Таджикистана Шерхон Салимзода считает, что приговор летчикам авиакомпании "Ролкан" "излишне суров". Он надеется, что с учетом протеста прокурора Хатлонской области вышестоящая судебная инстанция вынесет приговор ниже минимального срока, предусмотренного статьями УК республики. </a></p>
 
 </div><div class="list_item">
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">14:03</p>
+		<p class="list_item_time">12:10</p>
 
-		<a href="/doc.html?id=630395" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_537800.jpg" width="92" height="69" border="0">
+		<a href="/doc.html?id=633244" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565541.jpg" width="92" height="69" border="0">
 
 
 
@@ -1833,51 +1551,9 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630395&cid=9">ЕС заблокирует кредитование Сирии</a></h3>
+	 <h3> <a href="/doc.html?id=633244&cid=6">В основе кризиса в Греции лежит неразумная финансовая политика и мошенничество</a></h3>
 
-	<p><a href="/doc.html?id=630395&cid=9">ЕС намерен запретить кредитование Сирии по линии Европейского инвестиционного банка. Об этом говорится в проекте итогового заявления Совета ЕС на уровне глав МИД, заседание которого состоится сегодня в Брюсселе. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">14:03</p>
-
-		<a href="/doc.html?id=630399" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_339561.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630399&cid=520">ВЦИОМ посчитал российский индекс счастья</a></h3>
-
-	<p><a href="/doc.html?id=630399&cid=520">За последние два года так называемый индекс счастья в России снизился с 51 до 41 пункта. Но все же в общем и целом большинство россиян (66%) по-прежнему считают себя счастливыми. Такой вывод по итогам опроса сделал ВЦИОМ. Он же выяснил, сторонники каких партий считают себя счастливее других. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">13:58</p>
-
-		<a href="/doc.html?id=630330" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_524130.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630330&cid=680">Футбол. &quot;Спартак&quot; и &quot;Анжи&quot; сыграют на турнире в Испании</a></h3>
-
-	<p><a href="/doc.html?id=630330&cid=680">Две российские футбольные команды - "Спартак" и "Анжи" - примут участие в ежегодном товарищеском турнире "Копа дель Соль-2012" ("Copa del Sol"-2012), который состоится с 27 января по 8 февраля 2011 года в Испании.
-
-
+	<p><a href="/doc.html?id=633244&cid=6">В основе возникновения кризиса в Греции лежит смесь неразумной финансовой политики и нарушения обязательств по раскрытию информации, заявил сегодня на федеральном инвестиционном форуме зампредседателя Банка России Сергей Швецов.
 
  </a></p>
 
@@ -1885,9 +1561,9 @@ $(function(){
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">13:56</p>
+		<p class="list_item_time">12:01</p>
 
-		<a href="/doc.html?id=630376" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565497.jpg" width="92" height="69" border="0">
+		<a href="/doc.html?id=633231" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_557067.jpg" width="92" height="69" border="0">
 
 
 
@@ -1897,17 +1573,111 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630376&cid=5">Лавров: Иран нужно зазывать в переговоры, а не грозить ему ударами с воздуха</a></h3>
+	 <h3> <a href="/doc.html?id=633231&cid=7">Начальник генштаба РФ: локальные конфликты могут перерасти в ядерную войну</a></h3>
 
-	<p><a href="/doc.html?id=630376&cid=5">Россия считает, что санкционный трек в отношении Ирана исчерпан. Об этом заявил глава МИД РФ Сергей Лавров. "По линии СБ ООН сделано все, что только можно отнести к иранской ядерной программе прямым и косвенным образом, - подчеркнул он. "Какие-то наказания никуда нас не приведут, - убежден министр. </a></p>
+	<p><a href="/doc.html?id=633231&cid=7">Вероятность возникновения локальных вооруженных конфликтов по периметру России возросла после распада СССР. С таким заявлением выступил начальник российского Генштаба генерал армии Николай Макаров. По его мнению, при определенных обстоятельствах эти конфликты могут перерасти в ядерную войну. </a></p>
 
 </div><div class="list_item">
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">13:44</p>
+		<p class="list_item_time">12:01</p>
 
-		<a href="/doc.html?id=630372" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566550.jpg" width="92" height="69" border="0">
+		
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633240&cid=6">Директор европейского департамента МВФ уходит в отставку</a></h3>
+
+	<p><a href="/doc.html?id=633240&cid=6">Международный валютный фонд принял отставку директора по Европе Антонио Боргеша и поставил на его место влиятельного чиновника с хорошими связями, подтвердив курс на жесткую борьбу с долговым кризисом.
+
+ </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">11:58</p>
+
+		<a href="/doc.html?id=633233" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567510.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633233&cid=8">Телефонный террорист парализовал работу калининградского аэропорта</a></h3>
+
+	<p><a href="/doc.html?id=633233&cid=8">В калининградский аэропорт сегодня утром позвонил неизвестный, сообщивший о том, что здание аэровокзала заминировано. Задержали два авиарейса на Москву, их пассажиры и служащие аэропорта были эвакуированы. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">11:55</p>
+
+		
+
+	</div>
+
+
+
+	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424873">Cadillac показал новый флагман – седан XTS</a></h3>
+
+	<p><a href="http://auto.vesti.ru/doc.html?id=424873">Как и было обещано неделей ранее, марка Cadillac показала на автошоу в Лос-Анджелесе свой новый флагман. Седан XTS заменит собой сразу две модели в линейке марки, получит 300-сильный двигатель и полноприводную версию. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">11:52</p>
+
+		<a href="/doc.html?id=633234" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_535744.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633234&cid=6">Цена на нефть продолжает снижаться </a></h3>
+
+	<p><a href="/doc.html?id=633234&cid=6">С падения цен на нефть начали сегодня работу ведущие мировые товарные рынки. На Лондонской бирже стоимость барреля смеси Brent снизилась на 54 цента и достигла уровня в $111,34. Цена барреля техасской светлой нефти упала на 39 центов и заняла отметку в $102,2.  </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">11:42</p>
+
+		<a href="/doc.html?id=633226" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567509.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633226&cid=680">Вячеслав Екимов станет советником президента федерации велоспорта России</a></h3>
+
+	<p><a href="/doc.html?id=633226&cid=680">Двукратный олимпийский чемпион, знаменитый в прошлом российский профессиональный велогонщик Вячеслав Екимов, до недавнего времени работавший спортивным директором профессиональной команды, в сезоне 2012 года займет должность советника президента Федерации велосипедного спорта Игоря Макарова. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">11:35</p>
+
+		<a href="/doc.html?id=633223" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567293.jpg" width="92" height="69" border="0">
 
 <div class="video_ico_s"></div>
 
@@ -1917,17 +1687,17 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630372&cid=5">Саммит АТЭС: Россия приняла эстафету</a></h3>
+	 <h3> <a href="/doc.html?id=633223&cid=8">С &quot;Капитана Кузнецова&quot; эвакуируют травмированного старпома</a></h3>
 
-	<p><a href="/doc.html?id=630372&cid=5">Продолжать борьбу с протекционизмом - такое решение приняли лидеры стран АТЭС на саммите в Гонолулу. Участники встречи обсудили также меры, которые помогут стимулировать развитие мировой экономики во время финансовой нестабильности. И Россия приняла эстафету председательства в АТЭС от США. </a></p>
+	<p><a href="/doc.html?id=633223&cid=8">Вертолет Ми-8 вылетел сегодня из Архангельска к аварийному сухогрузу "Капитан Кузнецов" в Белом море, чтобы эвакуировать старпома, получившего травму головы. Об этом сообщает пресс-центр ГУ МЧС РФ по Архангельской области. </a></p>
 
 </div><div class="list_item">
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">13:42</p>
+		<p class="list_item_time">11:26</p>
 
-		<a href="/doc.html?id=630379" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_510131.jpg" width="92" height="69" border="0">
+		<a href="/doc.html?id=633220" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_478116.jpg" width="92" height="69" border="0">
 
 
 
@@ -1937,17 +1707,37 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630379&cid=680">Тренер Яны Романовой: Пихлер &quot;закрутил гайки&quot;</a></h3>
+	 <h3> <a href="/doc.html?id=633220&cid=8">Часть пассажиров &quot;Аэрофлота&quot;, застрявших на Камчатке, вылетает в Москву</a></h3>
 
-	<p><a href="/doc.html?id=630379&cid=680">Личный наставник российской биатлонистки Яны Романовой Владимир Анисимов поделился мнением о первых результатах подготовки своей подопечной в сборной под руководством нового главного тренера немца Вольфганга Пихлера. Анисимов считает, что Пихлер "закрутил гайки". </a></p>
+	<p><a href="/doc.html?id=633220&cid=8">Пассажиры "Аэрофлота", которым пришлось задержаться на Камчатке из-за неисправности летной техники, сегодня вылетают в Москву. Об этом сообщили в дирекции аэропорта Петропавловск-Камчатский. Правда, пока что улететь может только часть пассажиров. </a></p>
 
 </div><div class="list_item">
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">13:39</p>
+		<p class="list_item_time">11:21</p>
 
-		<a href="/doc.html?id=630347" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_476136.jpg" width="92" height="69" border="0">
+		<a href="/doc.html?id=633219" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567490.jpg" width="92" height="69" border="0">
+
+<div class="video_ico_s"></div>
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633219&cid=9">Участники акции &quot;Оккупируй Уолл-стрит&quot; готовятся парализовать жизнь Нью-Йорка</a></h3>
+
+	<p><a href="/doc.html?id=633219&cid=9">Для Нью-Йорка сегодняшний день станет настоящим испытанием. Участники акции "Оккупируй Уолл-стрит" планируют отметить двухмесячный юбилей движения, парализовав жизнь города. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">11:20</p>
+
+		<a href="/doc.html?id=633213" ><img src="http://auto.vesti.ru/p/s_435223.jpg" width="92" height="69" border="0">
 
 
 
@@ -1957,17 +1747,33 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630347&cid=680">Футбол. Лидер сборной Турции критикует Хиддинка</a></h3>
+	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424853">Продажи нового Honda CR-V стартуют 15 декабря</a></h3>
 
-	<p><a href="/doc.html?id=630347&cid=680">Накануне ответного стыкового матча отборочного турнира Euro-2012 с Хорватией полузащитник сборной Турции Арда Туран подверг резкой критике главного тренера своей команды Гуса Хиддинка. </a></p>
+	<p><a href="http://auto.vesti.ru/doc.html?id=424853">Новое поколение кроссовера Honda CR-V, премьера которого состоялась сегодня в Лос-Анджелесе, поступит к североамериканским дилерам уже через месяц. Кроссовер получил усовершенствованный двигатель, пять посадочных мест и интеллектуальную систему полного привода. </a></p>
 
 </div><div class="list_item">
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">13:37</p>
+		<p class="list_item_time">11:16</p>
 
-		<a href="/doc.html?id=630362" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_403189.jpg" width="92" height="69" border="0">
+		
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633216&cid=7">Мошенники пытались продать должность главы правительства Калининградской области</a></h3>
+
+	<p><a href="/doc.html?id=633216&cid=7">Сотрудники управления экономической безопасности столичной полиции задержали двух мошенников, которые за 3 миллиона рублей обещали организовать назначение на должность главы правительства Калининградской области. Об этом сообщили в пресс-службе ГУ МВД по Москве. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">11:15</p>
+
+		<a href="/doc.html?id=633221" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_396958.jpg" width="92" height="69" border="0">
 
 
 
@@ -1977,17 +1783,39 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630362&cid=680">Барулин, Радулов, Никулин - лучшие игроки Кубка Карьяла</a></h3>
+	 <h3> <a href="/doc.html?id=633221&cid=6">Белоруссия против включения пива в технический регламент ТС</a></h3>
 
-	<p><a href="/doc.html?id=630362&cid=680">Нападающий сборной России Александр Радулов стал лучшим бомбардиром первого этапа Евротура Кубка Карьяла, набрав пять очков в трех матчах. </a></p>
+	<p><a href="/doc.html?id=633221&cid=6">Белоруссия выступает против включения пива в технический регламент Таможенного союза по безопасности алкогольной продукции. Такое мнение высказал председатель совета Гильдии пивоваров республики Михаил Чеченев. По его словам, для пива должен быть разработан отдельный техрегламент. 
+
+ </a></p>
 
 </div><div class="list_item">
 
 	<div class="list_item_img">
 
-		<p class="list_item_time">13:36</p>
+		<p class="list_item_time">11:11</p>
 
-		<a href="/doc.html?id=630374" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566444.jpg" width="92" height="69" border="0">
+		<a href="/doc.html?id=633215" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_552318.jpg" width="92" height="69" border="0">
+
+<div class="video_ico_s"></div>
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633215&cid=8">СК России провел обыски по местам жительства сына главы Приднестровья</a></h3>
+
+	<p><a href="/doc.html?id=633215&cid=8">Следственный комитет РФ провел обыски по местам жительства в России сына главы Приднестровья Олега Смирнова по делу о хищении 160 миллионов рублей, выделенных Россией в качестве гуманитарной помощи. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">11:02</p>
+
+		<a href="/doc.html?id=633212" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_539206.jpg" width="92" height="69" border="0">
 
 
 
@@ -1997,9 +1825,169 @@ $(function(){
 
 
 
-	 <h3> <a href="/doc.html?id=630374&cid=9">НАТО не признало результаты выборов в Южной Осетии </a></h3>
+	 <h3> <a href="/doc.html?id=633212&cid=680">Парусный спорт. Российская яхта удачно стартовала на чемпионате мира</a></h3>
 
-	<p><a href="/doc.html?id=630374&cid=9">Североатлантический альянс не признал результаты президентских выборов в Южной Осетии. Об этом заявил генеральный секретарь НАТО Андерс Фог Расмуссен. Он подчеркнул, что позиция военно-политической организации заключается в том, что НАТо не признает независимости Южной Осетии и Абхазии. </a></p>
+	<p><a href="/doc.html?id=633212&cid=680">Российская парусная команда "Синергия" (капитан Валентин Завадников, рулевой - Евгений Неугодников) выиграла четыре гонки в матч-рейсе на чемпионате мира в классе яхт RC44, который проходит в испанском Пуэрто-Калеро. Тренер "Синергии" француз Тьерри Пепонне выразил удовлетворение результатом. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">10:50</p>
+
+		<a href="/doc.html?id=633211" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_531353.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633211&cid=6">Госдолг США превысил $15 триллионов </a></h3>
+
+	<p><a href="/doc.html?id=633211&cid=6">Госдолг США превысил $15 трлн или новой рекордной отметки. Американские эксперты подчеркивают, что уже сейчас, когда до конца календарного года остается почти полтора месяца, госдолг достиг отметки в 99% от того уровня, который запланировало правительство США.
+
+  </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">10:46</p>
+
+		<a href="/doc.html?id=633206" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_549278.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633206&cid=680">Футбольная &quot;Томь&quot; все ближе к банкротству</a></h3>
+
+	<p><a href="/doc.html?id=633206&cid=680">Существование футбольного клуба российской премьер-лиги "Томь" зависит от итогов разбирательств, связанных с финансово-хозяйственной деятельностью команды. Это выяснилось после встречи футболистов и тренеров "Томи" с президентом клуба Сергеем Ильиных. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">10:45</p>
+
+		<a href="/doc.html?id=633207" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_311707.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633207&cid=6">Fitch может снизить рейтинг банков США </a></h3>
+
+	<p><a href="/doc.html?id=633207&cid=6">Международное рейтинговое агентство Fitch может пересмотреть в сторону понижения нынешний "стабильный" прогноз по кредитному рейтингу ведущих банков США в случае усугубления долгового кризиса в Европе.
+
+ </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">10:44</p>
+
+		
+
+	</div>
+
+
+
+	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424833">Состоялась премьера Subaru BRZ Concept STI</a></h3>
+
+	<p><a href="http://auto.vesti.ru/doc.html?id=424833">Компания Subaru наконец-то показала "живой" прототип своего заднеприводного купе BRZ. Премьера состоялась на Лос-Анджелесском автосалоне, причем над концептом потрудились еще и инженеры спортивного подразделения STI. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">10:43</p>
+
+		<a href="/doc.html?id=633200" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567469.jpg" width="92" height="69" border="0">
+
+<div class="video_ico_s"></div>
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633200&cid=9">Совет управляющих МАГАТЭ обсудит доклад по Ирану</a></h3>
+
+	<p><a href="/doc.html?id=633200&cid=9">Совет управляющих МАГАТЭ сегодня обсудит ядерный доклад по Ирану. Еще на прошлой неделе отдельные положения конфиденциального документа просочились в прессу. В частности, гендиректор агентства указал на то, что Иран ведет деятельность, имеющую отношение к разработке ядерного оружия. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">10:39</p>
+
+		<a href="/doc.html?id=633203" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_554298.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633203&cid=680">Футбол. Европарламент принял резолюцию по договорным матчам</a></h3>
+
+	<p><a href="/doc.html?id=633203&cid=680">Европейский парламент в ходе голосования на пленарном заседании в Страсбурге поддержал позицию Союза европейских футбольных ассоциаций (УЕФА) по вопросам, касающимся игры на тотализаторе и договорных матчей. По словам главы УЕФА Мишеля Платини, он очень доволен принятым решением. </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">10:29</p>
+
+		<a href="/doc.html?id=633201" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_531985.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=633201&cid=6">Доллар немного укрепился </a></h3>
+
+	<p><a href="/doc.html?id=633201&cid=6">Доллар незначительно вырос на ММВБ на старте торгов четверга, рубль чуть снизился к бивалютной корзине на фоне смешанных настроений на глобальных рынках. Первые сделки прошли в пределах 30,75-30,77 руб., что на 1-3 копейки выше уровня предыдущего дня.  </a></p>
+
+</div><div class="list_item">
+
+	<div class="list_item_img">
+
+		<p class="list_item_time">10:25</p>
+
+		<a href="/doc.html?id=630334" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_435365.jpg" width="92" height="69" border="0">
+
+
+
+</a>
+
+	</div>
+
+
+
+	 <h3> <a href="/doc.html?id=630334&cid=460">Нина Шацкая и Ольга Кабо. Посвящение Анне Ахматовой</a></h3>
+
+	<p><a href="/doc.html?id=630334&cid=460">Светлой памяти великой поэтессы посвящается литературно-музыкальный спектакль, в котором на одной сцене предстанут в необычном амплуа две неповторимые женщины – актриса, заслуженная артистка России Ольга Кабо и певица, исполнительница романсов, заслуженная артистка России Нина Шацкая. </a></p>
 
 </div>
 
@@ -2090,13 +2078,13 @@ $(function(){
 
 <li><a href="/section.html?cid=7">Общество</a></li>
 
-<li><a href="/section.html?cid=460">Культура</a></li>
-
 <li><a href="/section.html?cid=9">В мире</a></li>
 
 <li><a href="/section.html?cid=680">Спорт</a></li>
 
 <li><a href="/section.html?cid=780">Hi-Tech. Интернет</a></li>
+
+<li><a href="/section.html?cid=460">Культура</a></li>
 
 <li><a href="/section.html?cid=960">Модернизация</a></li>
 
@@ -2128,8 +2116,6 @@ $(function(){
 
 <li><a href="/videos?cid=7">Общество</a></li>
 
-<li><a href="/videos?cid=460">Культура</a></li>
-
 <li><a href="/videos?cid=9">В мире</a></li>
 
 <li><a href="/videos?cid=680">Спорт</a></li>
@@ -2137,6 +2123,8 @@ $(function(){
 <li><a href="/videos?cid=1201">Программы</a></li>
 
 <li><a href="/videos?cid=780">Hi-Tech. Интернет</a></li>
+
+<li><a href="/videos?cid=460">Культура</a></li>
 
 <li><a href="/videos?cid=960">Модернизация</a></li>
 
@@ -2504,7 +2492,7 @@ var vgtrkRekl_login = "nedvizhimost";
 
 var vgtrkRekl_options = "options=A";
 
-$('#nedvizhimost').html('<iframe src="http://reklama.mb.vesti.ru/cgi-bin/iframe/'+vgtrkRekl_login+'?61207&'+vgtrkRekl_options+'&n=4&c=1&style=http://468x60.mb.vesti.ru/css/nedvizhimost.css" width="238" height="620" marginwidth="0" marginheight="0" style="border: 1px solid #ffcc66; border-top: none;" scrolling="no" frameborder="0"><a href="http://reklama.mb.vesti.ru/cgi-bin/href/'+vgtrkRekl_login+'?61207" target="_top"><img src="http://reklama.mb.vesti.ru/cgi-bin/banner/'+vgtrkRekl_login+'?61207&'+vgtrkRekl_options+'" alt="VGTRK" width="238" height="620" border="0" ismap="ismap"></a></iframe>')
+$('#nedvizhimost').html('<iframe src="http://reklama.mb.vesti.ru/cgi-bin/iframe/'+vgtrkRekl_login+'?56375&'+vgtrkRekl_options+'&n=4&c=1&style=http://468x60.mb.vesti.ru/css/nedvizhimost.css" width="238" height="620" marginwidth="0" marginheight="0" style="border: 1px solid #ffcc66; border-top: none;" scrolling="no" frameborder="0"><a href="http://reklama.mb.vesti.ru/cgi-bin/href/'+vgtrkRekl_login+'?56375" target="_top"><img src="http://reklama.mb.vesti.ru/cgi-bin/banner/'+vgtrkRekl_login+'?56375&'+vgtrkRekl_options+'" alt="VGTRK" width="238" height="620" border="0" ismap="ismap"></a></iframe>')
 
 
 

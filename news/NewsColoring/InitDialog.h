@@ -26,6 +26,7 @@ private:
     int m_newsNum;
     std::vector<std::vector<std::pair<int, int>>> tagRanges;
     CWnd *m_pParentDialog;
+
 public:
     afx_msg void OnBnClickedBtnrun();
     std::vector<std::vector<std::pair<int, int>>> GetTagRanges();

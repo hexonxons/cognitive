@@ -63,34 +63,6 @@ int vIsSubstr(const std::vector<CTagDescription> &vStr1,
     return 0;
 }
 
-int vStrStr(const std::vector<CTagDescription> &vStr1,
-            const std::vector<CTagDescription> &vStr2,
-            int offset)
-{
-    unsigned int j = 0;
-    for (unsigned int i = offset; i < vStr1.size(); ++i)
-    {
-        if (vStr2[j].nTagCode == vStr1[i].nTagCode)
-        {
-            ++j;
-            ++i;
-            while (i < vStr1.size())
-            {
-                if (j == vStr2.size())
-                {
-                    return i - j;
-                }
-                if (vStr2[j].nTagCode != vStr1[i].nTagCode)
-                {
-                    j = 0;
-                    break;
-                }
-            }
-        }
-    }
-    return 0;
-}
-
 std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vStr1,
                                               std::vector<CTagDescription> &vStr2,
                                               int offset)
