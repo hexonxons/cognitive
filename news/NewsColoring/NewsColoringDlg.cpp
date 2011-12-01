@@ -77,6 +77,7 @@ BEGIN_MESSAGE_MAP(CNewsColoringDlg, CDialog)
     ON_BN_CLICKED(IDC_BTNSETEND, &CNewsColoringDlg::OnBnClickedBtnsetend)
     ON_BN_CLICKED(IDC_BTNPRINTNEWS, &CNewsColoringDlg::OnBnClickedBtnprintnews)
     ON_BN_CLICKED(IDC_BNTSINGLE, &CNewsColoringDlg::OnBnClickedBntsingle)
+    ON_BN_CLICKED(IDC_BTNCOLORALL, &CNewsColoringDlg::OnBnClickedBtncolorall)
 END_MESSAGE_MAP()
 
 
@@ -100,6 +101,7 @@ BOOL CNewsColoringDlg::OnInitDialog()
         UpdateData(TRUE);
     }
 
+    m_RichCtrl.HideSelection(FALSE, FALSE);
     m_RichCtrl.SetDefaultCharFormat(cfDefault);
     m_RichCtrl.SetWindowText(m_fileData.c_str());
 
@@ -161,7 +163,7 @@ void CNewsColoringDlg::ColorRichText(int start, int end, COLORREF color)
 
     m_RichCtrl.SetSel(start, end);
     m_RichCtrl.SetSelectionCharFormat(cfNew);
-    m_RichCtrl.SetSel(0,0);
+    //m_RichCtrl.SetSel(0,0);
 
     m_RichCtrl.SetRedraw(TRUE);
     m_RichCtrl.RedrawWindow();
@@ -391,6 +393,40 @@ void CNewsColoringDlg::OnBnClickedBntsingle()
 
     isSingleTagSeq = true;
     newsBeginNum = m_ListBox.GetCurSel();
+
+    UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::OnBnClickedBtncolorall()
+{
+    if(!UpdateData(TRUE))
+        return;
+
+    int selElem = m_ListBox.GetCurSel();
+    int sz = (tagRanges.begin() + selElem)->size();
+    COLORREF color = RGB(0, 0, 255);
+
+    if (m_radioRed)
+    {
+        color = RGB(255, 0, 0);
+    }
+
+    if (m_radioGreen)
+    {
+        color = RGB(0, 255, 0);
+    }
+
+    if (m_radioBlue)
+    {
+        color = RGB(0, 0, 255);
+    }
+
+    for (vector<pair<int, int>>::iterator it = (tagRanges.begin() + selElem)->begin(); it != (tagRanges.begin() + selElem)->end(); ++it)
+    {
+        ColorRichText(it->first, it->second + 1, color);
+    }
+
+    //ColorRichText(((tagRanges.begin() + selElem)->begin() + selRange)->first, ((tagRanges.begin() + selElem)->begin() + selRange)->second + 1, color);
 
     UpdateData(FALSE);
 }

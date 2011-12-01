@@ -40,6 +40,7 @@ private:
     bool m_radioRed;
     CListBox m_ListRanges;
     CListBox m_EncodedListLeft;
+    CListBox m_EncodedListRight;
     std::vector<CTagDescription> encodedString;
     void ColorRichText(int start, int end, COLORREF color);
     void EncodeString();
@@ -55,12 +56,10 @@ public:
     afx_msg void OnLbnSelchangeListranges();
     afx_msg void OnBnClickedBtnresetsel();
     afx_msg void OnBnClickedGetdecodedLeft();
-private:
-    CListBox m_EncodedListRight;
-public:
     afx_msg void OnBnClickedGetdecodedright();
     afx_msg void OnBnClickedBtnsetbegin();
     afx_msg void OnBnClickedBtnsetend();
     afx_msg void OnBnClickedBtnprintnews();
     afx_msg void OnBnClickedBntsingle();
+    afx_msg void OnBnClickedBtncolorall();
 };

@@ -29,8 +29,9 @@
 #define IDC_BTNSETBEGIN                 1030
 #define IDC_BTNSETEND                   1031
 #define IDC_BTNPRINTNEWS                1032
-#define IDC_BUTTON4                     1033
 #define IDC_BNTSINGLE                   1033
+#define IDC_BUTTON1                     1034
+#define IDC_BTNCOLORALL                 1034
 
 // Next default values for new objects
 // 
@@ -38,7 +39,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        130
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1034
+#define _APS_NEXT_CONTROL_VALUE         1035
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
