@@ -105,13 +105,15 @@ BOOL CNewsColoringDlg::OnInitDialog()
     m_RichCtrl.SetDefaultCharFormat(cfDefault);
     m_RichCtrl.SetWindowText(m_fileData.c_str());
 
-    for (vector<vector<pair<int, int>>>::iterator it = tagRanges.begin(); it != tagRanges.end(); ++it)
+    OnBnClickedRadiored();
+
+    for (vector<CTagSequence>::iterator it = tagRanges.begin(); it != tagRanges.end(); ++it)
     {
         CString str;
-        str.AppendFormat(_T("%d - "), it->size());
-        for (vector<pair<int, int>>::iterator jt = it->begin(); jt != it->end(); ++jt)
+        str.AppendFormat(_T("%d - "), it->tagRange.size());
+        for (vector<CTagRange>::iterator jt = it->tagRange.begin(); jt != it->tagRange.end(); ++jt)
         {
-            str.AppendFormat(_T("(%d,%d) "), jt->first, jt->second);
+            str.AppendFormat(_T("(%d,%d) "), jt->begin, jt->end);
         }
         m_ListBox.AddString(str.GetString());
     }
@@ -163,8 +165,7 @@ void CNewsColoringDlg::ColorRichText(int start, int end, COLORREF color)
 
     m_RichCtrl.SetSel(start, end);
     m_RichCtrl.SetSelectionCharFormat(cfNew);
-    //m_RichCtrl.SetSel(0,0);
-
+    m_RichCtrl.SetSel(start, start);
     m_RichCtrl.SetRedraw(TRUE);
     m_RichCtrl.RedrawWindow();
 }
@@ -198,12 +199,12 @@ void CNewsColoringDlg::OnLbnSelchangeList()
     m_ListRanges.ResetContent();
     // Get the indexes of all the selected items.
     int selElem = m_ListBox.GetCurSel();
-    int sz = (tagRanges.begin() + selElem)->size();
+    int sz = (tagRanges.begin() + selElem)->tagRange.size();
 
-    for (vector<pair<int, int>>::iterator it = (tagRanges.begin() + selElem)->begin(); it != (tagRanges.begin() + selElem)->end(); ++it)
+    for (vector<CTagRange>::iterator it = (tagRanges.begin() + selElem)->tagRange.begin(); it != (tagRanges.begin() + selElem)->tagRange.end(); ++it)
     {
         CString str;
-        str.AppendFormat(_T("(%d,%d) , len = %d"), it->first, it->second, it->second - it->first);
+        str.AppendFormat(_T("(%d,%d) , len = %d"), it->begin, it->end, it->end - it->begin);
         m_ListRanges.AddString(str.GetString());
     }
 
@@ -234,7 +235,7 @@ void CNewsColoringDlg::OnLbnSelchangeListranges()
         color = RGB(0, 0, 255);
     }
 
-    ColorRichText(((tagRanges.begin() + selElem)->begin() + selRange)->first, ((tagRanges.begin() + selElem)->begin() + selRange)->second + 1, color);
+    ColorRichText(((tagRanges.begin() + selElem)->tagRange.begin() + selRange)->begin, ((tagRanges.begin() + selElem)->tagRange.begin() + selRange)->end + 1, color);
 
     UpdateData(FALSE);
 }
@@ -366,19 +367,19 @@ void CNewsColoringDlg::OnBnClickedBtnprintnews()
 
     unsigned int offset = 0;
     // Получаем строчку новости и выводим её
-    for(int i = 0; i < (tagRanges.begin() + newsBeginNum)->size(); ++i)
+    for(int i = 0; i < (tagRanges.begin() + newsBeginNum)->tagRange.size(); ++i)
     {
 
         string res = "";
         if (!isSingleTagSeq)
         {
-            res = string(m_fileData, ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first,
-                                     ((tagRanges.begin() + newsEndNum)->begin() +  i)->second - ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first + 1);
+            res = string(m_fileData, ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->begin,
+                                     ((tagRanges.begin() + newsEndNum)->tagRange.begin() +  i)->end - ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->begin + 1);
         }
         else
         {
-            res = string(m_fileData, ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first,
-                                     ((tagRanges.begin() + newsBeginNum)->begin() +  i)->second - ((tagRanges.begin() + newsBeginNum)->begin() +  i)->first + 1);
+            res = string(m_fileData, ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->begin,
+                                     ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->end - ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->begin + 1);
         }
         fileOut << res;
         fileOut << "\n<br>#########################################################################################\n";
@@ -403,7 +404,7 @@ void CNewsColoringDlg::OnBnClickedBtncolorall()
         return;
 
     int selElem = m_ListBox.GetCurSel();
-    int sz = (tagRanges.begin() + selElem)->size();
+    int sz = (tagRanges.begin() + selElem)->tagRange.size();
     COLORREF color = RGB(0, 0, 255);
 
     if (m_radioRed)
@@ -421,12 +422,10 @@ void CNewsColoringDlg::OnBnClickedBtncolorall()
         color = RGB(0, 0, 255);
     }
 
-    for (vector<pair<int, int>>::iterator it = (tagRanges.begin() + selElem)->begin(); it != (tagRanges.begin() + selElem)->end(); ++it)
+    for (vector<CTagRange>::iterator it = (tagRanges.begin() + selElem)->tagRange.begin(); it != (tagRanges.begin() + selElem)->tagRange.end(); ++it)
     {
-        ColorRichText(it->first, it->second + 1, color);
+        ColorRichText(it->begin, it->end + 1, color);
     }
-
-    //ColorRichText(((tagRanges.begin() + selElem)->begin() + selRange)->first, ((tagRanges.begin() + selElem)->begin() + selRange)->second + 1, color);
 
     UpdateData(FALSE);
 }

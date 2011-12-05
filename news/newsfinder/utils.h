@@ -30,16 +30,35 @@ struct CTagDescription
     int nTagEnd;
     // сам тег
     std::string tag;
-
+    
     CTagDescription();
     void Clear();
+};
+
+struct CTagRange
+{
+    // начало последовательности тегов в тексте
+    int begin;
+    // конец последовательности
+    int end;
+    // вся строка между begin и end
+    std::string tagString;
+    // отношение всей длины текущей последовательности ко всей длине html странички
+    double percToHtml;
+    // отношение видимой части последовательности к видимой части всей html странички
+    double percToVisibleHtml;
 };
 
 struct CTagSequence 
 {
     std::vector<CTagDescription> tag;
-    std::vector<std::pair<int, int>> tagRange;
+    std::vector<CTagRange> tagRange;
+    // сумма пересечений этой последовательности со всеми другими
+    int innerIntersect;
+    // отношение суммы всех длин последовательностей ко всей длине html странички
+    double percToHtml;
 };
+
 //#########################################################################################
 
 int vStrCmp(const std::vector<CTagDescription> &left,

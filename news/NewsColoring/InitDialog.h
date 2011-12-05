@@ -24,12 +24,11 @@ private:
     int m_minFreq;
     int m_minWordlen;
     int m_newsNum;
-    std::vector<std::vector<std::pair<int, int>>> tagRanges;
+    std::vector<CTagSequence> tagRanges;
     CWnd *m_pParentDialog;
 
 public:
     afx_msg void OnBnClickedBtnrun();
-    std::vector<std::vector<std::pair<int, int>>> GetTagRanges();
+    std::vector<CTagSequence> GetTagRanges();
     std::string GetFileData();
-
 };

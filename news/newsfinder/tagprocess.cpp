@@ -36,7 +36,8 @@ CNewsFinder:: CNewsFinder(__in LPCSTR fileName, __in int minSize, __in int minFr
     m_avgFreq(0),
     m_unCurrFileDataPos(0),
     m_lLastError(0),
-    m_numberOfNews(numberOfNews)
+    m_numberOfNews(numberOfNews),
+    m_lVisibleHtmlLen(0)
 {
     std::fstream fileIn(fileName, ios::in);
     m_fileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
@@ -54,10 +55,6 @@ void CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string
 
     m_lLastError = 1;
 
-    unsigned int i = 0;
-    unsigned int j = 0;
-    int flag = 0;
-
     //LowerCase(&m_fileData);
     // M.A.P. плохая реализация преобразования в нижний регистр.  
     // Я знаю((
@@ -66,8 +63,8 @@ void CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string
 
     CTagDescription tag;
     tag = getNextTag();
-    // 551 == <body>
-    while (tag.nTagCode != 551)
+    // 103 == <body>
+    while (tag.nTagCode != 103)
     {
         tag = getNextTag();
     }
@@ -81,7 +78,6 @@ void CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string
     
     removeTags(remTag);
     removeTags(remDoubleTag);
-
 }
 
 int compare(const CTagDescription &left, const CTagDescription &right)
@@ -108,64 +104,43 @@ void CNewsFinder::GetPossibleRanges()
 
     for (vector< vector<pair<int, int>>>::iterator it = substrings.begin(); it != substrings.end(); ++it)
     {
+        // создаем структуру расположения послудовательности тегов в исходной строке
+        CTagSequence currTagSeq;
         vector<CTagDescription> word;
+        int allSubsLen = 0;
+
         // формируем саму подстроку структур тегов
         for (int i = it->front().first; i <= it->front().second; ++i)
         {
             word.push_back(m_mod[i]);
         }
 
-        // если она нам подходит по проверке
-        if (checkTag(word))
+        currTagSeq.tag = word;
+
+        for (vector<pair<int, int>>::iterator j = it->begin(); j != it->end(); ++j)
         {
-            // создаем структуру расположения послудовательности тегов в исходной строке
-            CTagSequence currTagSeq;
-            currTagSeq.tag = word;
-            for (vector<pair<int, int>>::iterator j = it->begin(); j != it->end(); ++j)
-            {
-               int begin = m_mod[j->first].nTagBegin;
-               int end = m_mod[j->second].nTagEnd;
-               currTagSeq.tagRange.push_back(make_pair(begin, end));
-            }
-            tags.push_back(currTagSeq);
+            CTagRange newRange;
+            newRange.begin = m_mod[j->first].nTagBegin;
+            newRange.end = m_mod[j->second].nTagEnd;
+            newRange.tagString = string(m_fileData, newRange.begin, newRange.end - newRange.begin + 1);
+            newRange.percToHtml = (double)(newRange.end - newRange.begin) / m_fileData.size() * 100;
+            newRange.percToVisibleHtml = 0;
+
+            allSubsLen += newRange.end - newRange.begin;
+            currTagSeq.tagRange.push_back(newRange);
         }
+
+        currTagSeq.percToHtml = (double) allSubsLen / m_fileData.size() * 100;
+        tags.push_back(currTagSeq);
     }
 
-    // стираем элементы, являющиеся подстрокамы более длинных элементов
-    /*vector<CTagSequence>::iterator vectorIter;
-    unsigned int cnt = 1;
-    while (cnt < tags.size())
-    {
-        vector<CTagDescription> temp = (tags.end() - cnt)->tag;
-        vectorIter = tags.end() - cnt - 1;
-        for (unsigned int i = 0; i < tags.size(); ++i)
-        {
-            while(vIsSubstr(temp, vectorIter->tag) || vIsSubstr(vectorIter->tag, temp))
-            {
-                tags.erase(vectorIter);
-                if (cnt == tags.size())
-                    break;            
-                vectorIter = tags.end() - cnt - 1;
-            }
-            ++cnt;
-            if (cnt >= tags.size())
-                break;
-            vectorIter = tags.end() - cnt - 1;
-        }
-        ++cnt;
-    }
-    */
-    vector<vector<pair<int, int>>> tagRanges;
+    vector<vector<CTagRange>> tagRanges;
 
     for (vector<CTagSequence>::iterator it = tags.begin(); it != tags.end(); ++it)
     {
         tagRanges.push_back(it->tagRange);
     }
-    std::sort(tagRanges.begin(), tagRanges.end(),pred1());
-    
-    // Вычисляем средние длины/частоты строк
-    //m_avgLen = m_avgLen / tags.size();
-    //m_unAvgFreq = m_unAvgFreq / m_freq.size();
+    std::sort(tagRanges.begin(), tagRanges.end(), pred1());
 }
 
 void CNewsFinder::GetNewsRange()
@@ -294,7 +269,7 @@ void CNewsFinder::removeTags(vector<std::string> &tagsToRemove)
         for (j = 0; j < tagsToRemove.size(); ++j)
         {
             // если тег совпал с тегом для удаления, то стираем его
-            if (getTagCode(tagsToRemove[j]) == m_mod[i].nTagCode)
+            if (tagsToRemove[j] == m_mod[i].tag)
             {
                 m_mod.erase(m_mod.begin() + i);
                 break;
@@ -318,12 +293,12 @@ void CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tags
         for (j = 0; j < tagsToRemove.size(); ++j)
         {
             // если тег совпал с тегом для удаления
-            if (getTagCode(tagsToRemove[j].first) == m_mod[i].nTagCode)
+            if (tagsToRemove[j].first == m_mod[i].tag)
             {
                 // стираем тег
                 m_mod.erase(m_mod.begin() + i);
                 // пока не получим закрывающий тег
-                while (getTagCode(tagsToRemove[j].second) != m_mod[i].nTagCode)
+                while (tagsToRemove[j].second != m_mod[i].tag)
                 {
                     m_mod.erase(m_mod.begin() + i);
                 }
@@ -343,6 +318,8 @@ unsigned short CNewsFinder::getTagCode(const string &tag)
     {
         code += tag[i];
     }
+
+    code = code / tag[1] + tag[1];
     return code;
 }
 
@@ -381,11 +358,13 @@ CTagDescription CNewsFinder::getNextTag()
             tag += m_fileData[m_unCurrFileDataPos];
             tagCode.nTagCode += m_fileData[m_unCurrFileDataPos];
             tagCode.nTagEnd = m_unCurrFileDataPos;
-
+            tagCode.nTagCode = tagCode.nTagCode / tag[1] + tag[1];
             if(tag[1] == '/')
                 tagCode.bIsClose = 1;
             else
                 tagCode.bIsClose = 0;
+
+            tagCode.tag = tag;
             return tagCode;
         }
     }

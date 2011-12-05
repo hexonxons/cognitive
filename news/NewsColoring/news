@@ -1,51 +1,57 @@
 
-<!DOCTYPE html>
 
-<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang=ru itemscope itemtype="http://schema.org/Thing">
 <head>
-
-
-
-<script type="text/javascript">
-
-if(window.navigator.userAgent.indexOf('iPhone') > -1 ) {
-
- document.write('<meta content="width=device-width; initial-scale=0.5; maximum-scale=1.0; user-scalable=1;" name="viewport" />');                           
-
-}
-
-</script>
-
-
-
+<LINK REL=STYLESHEET TYPE="text/css" HREF="/common.css">
+  
+    <LINK REL=STYLESHEET TYPE="text/css" HREF="/white2/hover.css">
   
 
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
 
 
 
-<title>Вести.Ru: новости, видео и фото дня</title>
 
-<meta name="Description" content="Новости дня от Вести.Ru, интервью, репортажи, фото и видео, новости Москвы и регионов России,  новости экономики, погода" />
+<script src="/js/head.js" type="text/javascript"></script>
 
-<meta name="Keywords" content="новости россия москва видео фото телевидение политика криминал происшествия погода репортаж интервью сервис sms мобильный репортер" />
 
+<title>LINUX.ORG.RU - Р СѓСЃСЃРєР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РѕР± РћРЎ Linux</title>
+<META NAME="Keywords" CONTENT="linux Р»РёРЅСѓРєСЃ РѕРїРµСЂР°С†РёРѕРЅРЅР°СЏ СЃРёСЃС‚РµРјР° РґРѕРєСѓРјРµРЅС‚Р°С†РёСЏ gnu Р±РµСЃРїР»Р°С‚РЅРѕРµ СЃРІРѕР±РѕРґРЅРѕРµ РїСЂРѕРіСЂР°РјРЅРѕРµ РѕР±РµСЃРїРµС‡РµРЅРёРµ СЃРѕС„С‚ unix СЋРЅРёРєСЃ software free documentation operating system РЅРѕРІРѕСЃС‚Рё news">
+<META NAME="Description" CONTENT="Р’СЃРµ Рѕ Linux РЅР° СЂСѓСЃСЃРєРѕРј СЏР·С‹РєРµ">
+<LINK REL="alternate" TITLE="L.O.R RSS" HREF="section-rss.jsp?section=1" TYPE="application/rss+xml">
 
 
 
 
-<meta http-equiv="X-UA-Compatible" content="IE=8">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
 
 
 
-<meta property="fb:app_id" content="124849927543891"/>
+<link rel="search" title="Search L.O.R." href="/search.jsp">
+<link rel="top" title="Linux.org.ru" href="/">
+<script src="/js/lor.js" type="text/javascript">;</script>
 
 
 
 
+  <base href="http://www.linux.org.ru/">
 
 
 
@@ -53,1955 +59,2315 @@ if(window.navigator.userAgent.indexOf('iPhone') > -1 ) {
 
 
 
-<link rel="stylesheet" href="http://www.vgtrk.cdnvideo.ru/fancybox.css?p=5" type="text/css">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="/white2/combined.css" TITLE="Normal">
+<LINK REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" ALINK="#ff0000">
 
-<link rel="stylesheet" href="/main.css?v=2.0" type="text/css">
+<!-- #defefc #aea6f2 -->
 
-<link rel="stylesheet" href="http://www.vgtrk.cdnvideo.ru/print_all.css?v=3" type="text/css" media="print">
+<table width="100%" border=0 cellpadding=0 cellspacing=0>
+<tr><td class="bluehead"><img src="/white2/h1.png" alt="Р СѓСЃСЃРєР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РѕР± РћРЎ Linux" width=452 height=72></td><td class="bluehead" align=right valign=top><span class=head></span>
+</td>
+  <td align="right" valign="top" class="bluehead">
+    
+      
+  РґРѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ, <a style="text-decoration: none" href="/people/killgamesh666/profile">killgamesh666</a>
+  [<a href="logout.jsp?sessionId=B7954E9C1AF9B514688320794BA1DE19" title="Р’С‹Р№С‚Рё">x</a>]
+  <br>
 
 
 
+</td>
+</tr>
+<tr><td><img src="/white2/h2.png" alt="" width=452 height=49></td></tr>
+</table>
 
+<div align="center">
+<table width="80%">
+<tr>
+<td valign="top">
+  [<a href="/">РќРѕРІРѕСЃС‚Рё</a>]
+</td>
+<td valign="top">
+  [<a href="/gallery/">Р“Р°Р»РµСЂРµСЏ</a>]
+</td>
+<td valign="top">
+  [<a href="/forum/">Р¤РѕСЂСѓРј</a>]
+</td>
+<td valign="top">
+  [<a href="/tracker.jsp">РўСЂРµРєРµСЂ</a>]
+</td>
+<td valign="top">
+  [<a href="/wiki/">Wiki</a>]
+</td>
+<td valign="top">
+  [<a href="search.jsp">РџРѕРёСЃРє</a>]
+</td>
+</tr>
+</table>
+</div>
+<div style="margin-bottom: 1em"></div>
 
 
 
-<!--[if lte IE 7]>
+    <!-- Rating@Mail.ru counter -->
+    <img src="http://d7.c1.b1.a0.top.mail.ru/counter?id=71642"
+    border="0" height="1" width="1" alt="">
+    <!-- //Rating@Mail.ru counter -->
 
-<link rel="stylesheet" href="/ie.css?v=12" type="text/css">
 
-<![endif]-->
+<div id="bd">
 
 
 
+<div style="clear: both"></div>
+<div class="newsblog">
+  <div class="newsblog-in">
 
+<h1><a href="/news/">РќРѕРІРѕСЃС‚Рё</a></h1>
 
 
+  <div class="infoblock" style="border: 1px solid #777; text-align: justify;">
+    <a href="http://job.samsung.ru/"><img width="130" height="43" src="/adv/Samsung_Logo.png" alt="" style="float: left; border: 0"></a>
+    <div style="margin-left: 135px">
 
+    SAMSUNG Electronics&nbsp;&mdash; РјРёСЂРѕРІРѕР№ Р»РёРґРµСЂ РІ&nbsp;РїСЂРѕРёР·РІРѕРґСЃС‚РІРµ РїРѕР»СѓРїСЂРѕРІРѕРґРЅРёРєРѕРІ,
+С‚РµР»РµРєРѕРјРјСѓРЅРёРєР°С†РёРѕРЅРЅРѕРіРѕ РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ Рё&nbsp;С†РёС„СЂРѕРІРѕР№ РєРѕРЅРІРµСЂРіРµРЅС†РёРё&nbsp;&mdash; РѕР±СЉСЏРІР»СЏРµС‚ Рѕ&nbsp;РїСЂРёРµРјРµ
+РЅР°&nbsp;СЂР°Р±РѕС‚Сѓ РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ, РёРЅР¶РµРЅРµСЂРѕРІ-СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ, С„РёР·РёРєРѕРІ Рё&nbsp;С…РёРјРёРєРѕРІ: LINUX,
+Android, C/C++, Smart Phones, Smart TV, 3D&nbsp;Imaging, 3D&nbsp;Graphics, ASIC, FPGA,
+SoC, Graphene, MEMS, Biomedical Engineering. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ:
+    <a href="http://job.samsung.ru/" style="color: white">http://job.samsung.ru</a>
+    </div>
+  </div>
 
 
-<link href="http://stg.odnoklassniki.ru/share/odkl_share.css" rel="stylesheet">
 
-<script src="http://stg.odnoklassniki.ru/share/odkl_share.js" type="text/javascript" ></script>
 
-
-
-
-
-
-
-<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/swfobject.js?v=1" ></script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
-
-
-
- 
-
-<script type="text/javascript" src="/new_js.js?v=80" ></script>
-
-<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/misprint.js?v=2" ></script>
-
-<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/fancybox.js?v=1" ></script>
-
-<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/jquery.cookie.js?v=1"></script>
-
-<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/jcarousellite.js?v=1"></script>
-
-<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/jquery.json-2.2.min.js?v=1" language="javascript"></script>
-
-<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/playlist1.js?p=36" ></script>
-
-<script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/ui.core.min.js?v=1"></script>
-
-        <script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/ui.datepicker.min.js?v=1"></script> 
-
-        <script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/ui.datepicker-ru.js?v=1"></script> 
-
- <script type="text/javascript" src="http://www.vgtrk.cdnvideo.ru/js/fullajax.js?v=1" ></script>
-
+    
       
 
 
 
-<link href="/vesti.rss" rel="alternate" type="application/rss+xml" title="Вести.Ru: новости, видео и фото дня" />
 
-<!? eng_parse("design.if_css_cid720"); ?>
 
 
 
-<script src="http://www.vgtrk.cdnvideo.ru/i/flash/AC_RunActiveContent.js?v=1" type="text/javascript"></script>
 
-<script type="text/javascript" src="http://vkontakte.ru/js/api/share.js?5" charset="windows-1251"></script>
 
 
 
-<!? banner.banner_gemius; ?>
 
-<!-- link rel="stylesheet" href="http://www.vgtrk.cdnvideo.ru/pda_css.css?style_n=16" media="handheld" type="text/css" -->
 
-<link rel="stylesheet" href="/pda_css.css?style_n=29" media="only screen and (max-width: 480px), only screen and (max-device-width: 480px)" type="text/css">
 
-<!-- test -->
 
 
 
-</head>
 
 
 
-<body>
 
-<!--AdFox START-->
 
-<!--Prad'da-->
 
-<!--Сайт: vesti.ru-->
 
-<!--Тип баннера: Fullscreen-->
 
-<script type="text/javascript">
+<div class=infoblock id="topic-7090983">
+РњРёРЅРё-РЅРѕРІРѕСЃС‚СЊ:
+  <a href="/news/conference/7090983">РћС‚РєСЂС‹С‚Р° СЂРµРіРёСЃС‚СЂР°С†РёСЏ РЅР° РІС‚РѕСЂРѕР№ СЃРµРјРёРЅР°СЂ РїРѕ СЃРёСЃС‚РµРјРЅРѕРјСѓ Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЋ РІ GNU|Linux</a>
 
-<!--
 
-if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
 
-if (typeof(document.referrer) != 'undefined') {
-
-  if (typeof(afReferrer) == 'undefined') {
-
-    afReferrer = escape(document.referrer);
-
-  }
-
-} else {
-
-  afReferrer = '';
-
-}
-
-var addate = new Date(); 
-
-document.write('<scr' + 'ipt type="text/javascript" src="http://ads.adfox.ru/167410/prepareCode?p1=bdpdo&amp;p2=ekks&amp;pct=a&amp;pfc=a&amp;pfb=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '"><\/scr' + 'ipt>');
-
-// -->
-
-</script>
-
-<!--AdFox END-->
-
-
-
-
-
-<div class="all_wrap" id="all_wrap">
-
-<div class="bottom_bg" align="center">
-
-
-
-<script type="text/javascript" src="http://sticker.yadro.ru/ad/fullscreen.js?place=219"></script>
-
-
-
-<script> 
-
-var vgtrkRekl_random = Math.round(Math.random() * 100000); 
-
-document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_fs?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
-
-</script> 
-
-<div class="banner_order_reclama"><!--  AdRiver code START. Type:extension Site: vesti PZ: 0 BN: 0 -->
-
-<script type="text/javascript">
-
-(function(L){if(typeof(ar_cn)=="undefined")ar_cn=1;
-
-var S='setTimeout(function(e){if(!self.CgiHref){document.close();e=parent.document.getElementById("ar_container_"+ar_bnum);e.parentNode.removeChild(e);}},3000);',
-
-    j=' type="text/javascript"',t=0,D=document,n=ar_cn;L+=escape(D.referrer||'unknown')+'&rnd='+Math.round(Math.random()*999999999);
-
-function _(){if(t++<100){var F=D.getElementById('ar_container_'+n);
-
-    if(F){try{var d=F.contentDocument||(window.ActiveXObject&&window.frames['ar_container_'+n].document);
-
-    if(d){d.write('<sc'+'ript'+j+'>var ar_bnum='+n+';'+S+'<\/sc'+'ript><sc'+'ript'+j+' src="'+L+'"><\/sc'+'ript>');t=0}
-
-    else setTimeout(_,100);}catch(e){try{F.src="javascript:{document.write('<sc'+'ript"+j+">var ar_bnum="+n+"; document.domain=\""
-
-    +D.domain+"\";"+S+"<\/sc'+'ript>');document.write('<sc'+'ript"+j+" src=\""+L+"\"><\/sc'+'ript>');}";return}catch(E){}}}else setTimeout(_,100);}}
-
-D.write('<div style="visibility:hidden;height:0px;left:-1000px;position:absolute;"><iframe id="ar_container_'+ar_cn
-
-    +'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div><div id="ad_ph_'+ar_cn
-
-    +'" style="display:none;"><\/div>');_();ar_cn++;
-
-})('http://ad.adriver.ru/cgi-bin/erle.cgi?sid=171117&target=top&bt=43&pz=0&tail256=');
-
-</script><!--  AdRiver code END  --></div>
-
-<div class="banner_top display_none"> <div id="banner_vesti1"></div>
-
-<script> 
-
-var vgtrkRekl_random = Math.round(Math.random() * 100000); 
-
-document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_1000x90?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
-
-</script> 
-
+  [<a href="/news/conference/7090983">47&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>]
 </div>
 
-<div class="content"> 
+
+    
+      
 
 
 
-<div class="header">
 
 
 
-	<div class="widget_vesti">
 
-		<div id="widget">
 
-		<div class="wi_news_titles">
 
-		<div class="titles_wrap"></div><a class="wi_code_link" title="Код виджета" href="#">&lt;/&gt;</a>
 
-	        </div>
 
-	        <div class="wi_news_list">
 
-		<div id="wi_news_inner">
 
-		
 
-		</div>	
 
-			<div class="wi_mask"></div>
 
-	       </div>
 
-	       <div class="wi_code_block">
 
-			<img src="i/wi_screen.jpg">
 
-			<textarea class="wi_code_source"><iframe src="http://www.vesti.ru/utf/vesti_widget.html" scrolling="no" frameborder="0" style="width: 240px; height: 400px; border: none;" allowTransparency="true"></iframe></textarea>
 
-			<a href="#" class="wi_code_block_close"></a>
 
-	      </div>
 
-	
 
-              </div>
 
-	</div>
 
-	<div class="header_right">
+<div class=infoblock id="topic-7077985">
+РњРёРЅРё-РЅРѕРІРѕСЃС‚СЊ:
+  <a href="/news/commercial/7077985">Microsoft Р°РЅРѕРЅСЃРёСЂРѕРІР°Р»Р° РѕС„РёС†РёР°Р»СЊРЅС‹Р№ ODBC-РґСЂР°Р№РІРµСЂ РґР»СЏ Linux</a>
 
-		<div class="logo_main">
 
-		<a href="/"><img src="/i/new_logo.jpg" width="146" height="145" alt="Вести.Ru: новости, видео и фото дня" title="Вести.Ru: новости, видео и фото дня" border="0" class="img_logo_vesti"></a>
 
-				<div class="head_date">17 ноября 2011 </div>
+  [<a href="/news/commercial/7077985">77&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/commercial/7077985/page1">2</a>)]
+</div>
 
-		</div>
 
-		<div class="r_head_wrapper">
+    
+      
 
-		<div class="head_links">
 
-			<a class="mobile_top" href="http://www.mobile.vesti.ru/" title="Mobile">Mobile</a>
 
-			<a class="fb_top" href="http://www.facebook.com/vesti.ru" title="Facebook">Facebook</a> 
 
-			<a class="twt_top" href="http://twitter.com/vesti_news" title="Twitter">Twitter</a> 
 
-			<a class="wap_top" href="/doc.html?id=148914" title="WAP">WAP</a>
 
-			<a class="rss_top" href="/vesti.rss" title="RSS">RSS</a>
 
-			<!-- div class="top_weather_wrapper"><!? pogoda_data; ?></div -->
 
-			<a id="probki_top" class="traff_yellow" href="http://probki.vesti.ru/" title="Пробки">Пробки</a>
 
-			<div class="onair_logos"> 
 
-                    <a id="air_link_m" href="/videos?vid=onair"><img src="/i/russ24_new.png"  alt="" ></a>
 
-                   </div> 
 
-			<script type="text/javascript">
 
-                        $(function(){
 
-                           if (window.navigator.userAgent.indexOf('iPhone') > -1 || window.navigator.userAgent.indexOf('iPad') > -1 ) {
 
-                            $('#air_link_m').attr('href', 'http://vgtrk-iph.cdnvideo.ru/r/smil:iph2.smil/playlist.m3u8');
 
-                           }
 
-                          });
 
-                        </script>
 
-		</div>
 
-		</div>
 
-		<!-- div class="header_data">
+
+
+<div class=news id="topic-7085246">
+
+<h2>
+  <a href="/news/java/7085246">РћС‚РєСЂС‹С‚ РёСЃС…РѕРґРЅС‹Р№ РєРѕРґ UI РєРѕРјРїРѕРЅРµРЅС‚РѕРІ JavaFXв„ў</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/java/">
+  <img src="/white2/img/java-logo.png" width=41 height=75 border=0 alt="Р“СЂСѓРїРїР° Java">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>2.12.2011 РІ СЃРїРёСЃРєРµ СЂР°СЃСЃС‹Р»РєРё РїСЂРѕРµРєС‚Р° <a href="http://openjdk.java.net/projects/openjfx/">OpenJFX</a> - РѕС‚РєСЂС‹С‚РѕР№ СЂРµР°Р»РёР·Р°С†РёРё С„СЂРµР№РјС„РѕСЂРєР° JavaFXв„ў <a href="http://mail.openjdk.java.net/pipermail/openjfx-dev/2011-December.txt">Р±С‹Р»Рѕ РѕР±СЉСЏРІР»РµРЅРѕ</a> Рѕ РґРѕСЃС‚СѓРїРЅРѕСЃС‚Рё РёСЃС…РѕРґРЅС‹С… РєРѕРґРѕРІ РєРѕРјРїРѕРЅРµРЅС‚РѕРІ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ РёРЅС‚РµСЂС„РµР№СЃР° JavaFXв„ў РїРѕРґ Р»РёС†РµРЅР·РёРµР№ <b>GPLv2 + Classpath Exception</b> (С‚РѕР№ Р¶Рµ, С‡С‚Рѕ Рё Сѓ OpenJDK). РћС‚РєСЂС‹С‚ С‚РѕР»СЊРєРѕ РєРѕРґ РєРѕРјРїРѕРЅРµРЅС‚РѕРІ (РєРѕРЅС‚СЂРѕР»РѕРІ), СЂРµР°Р»РёР·Р°С†РёРё css, СЃС†РµРЅРµРіСЂР°С„Р° Рё РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹С… РєР»Р°СЃСЃРѕРІ. &quot;Р–РµР»РµР·РЅР°СЏ&quot; С‡Р°СЃС‚СЊ (QuantumToolkit - Р°Р»СЊС‚РµСЂРЅР°С‚РёРІР° Java2D, Р±СЂР°СѓР·РµСЂРЅС‹Р№ РїР»Р°РіРёРЅ Рё РІСЃРµ multimedia-Р±РёР±Р»РёРѕС‚РµРєРё) РїРѕ РїСЂРµР¶РЅРµРјСѓ РѕСЃС‚Р°С‘С‚СЃСЏ РїСЂРѕРїСЂРёРµС‚Р°СЂРЅРѕР№ Рё РґРѕСЃС‚СѓРїРЅР° РґР»СЏ Р·Р°РіСЂСѓР·РєРё СЃ СЃР°Р№С‚Р° Oracle РІ СЃРѕСЃС‚Р°РІРµ JavaFXв„ў SDK РґР»СЏ Windows Рё Mac OS X РЅР° СѓСЃР»РѕРІРёСЏС… Р»РёС†РµРЅР·РёР№ <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">Oracle BCL</a> Рё <a href="http://www.oracle.com/technetwork/licenses/ea-license-152003.html">OTN EA</a> СЃРѕРѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕ. РќР° СЃС‚СЂР°РЅРёС†Рµ РїСЂРѕРµРєС‚Р° СЃРѕРѕР±С‰Р°РµС‚СЃСЏ, С‡С‚Рѕ РєРѕРґ РѕСЃС‚Р°РІС€РµР№СЃСЏ С‡Р°СЃС‚Рё РїР»Р°С‚С„РѕСЂРјС‹ С‚Р°РєР¶Рµ Р±СѓРґРµС‚ РїРѕСЃС‚РµРїРµРЅРЅРѕ РѕС‚РєСЂС‹С‚ РІ Р±Р»РёР¶Р°Р№С€РёРµ РјРµСЃСЏС†С‹.</p><p>( <a href="http://www.linux.org.ru//news/java/7085246#cut0">С‡РёС‚Р°С‚СЊ РґР°Р»СЊС€Рµ...</a> )</p>
+<p>&gt;&gt;&gt; <a href="http://www.adam-bien.com/roller/abien/entry/getting_the_source_code_for">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
 
   
 
 
 
-		
-
-		</div -->
 
 
+<p class="tags">
 
-		
-
-               <div class="theme_day" >
-
-<span class="h2">Темы:</span>
-
- 
-
-<a href="/theme.html?tid=93034" >Выборы 2011</a><a href="/theme.html?tid=94534" >"Капитан Кузнецов"</a><a href="/theme.html?tid=89695" >Долговой кризис в еврозоне</a><a href="/theme.html?tid=87353" >Ближний Восток</a><a href="/theme.html?tid=94554" >Убийство чеченского поэта</a><a href="/theme.html?tid=94514" >Отставка Берлускони</a><a href="/theme.html?tid=94314" >Суд над летчиками в Таджикистане</a><a href="/theme.html?tid=94454" >Саммит АТЭС в Гонолулу</a><a href="/theme.html?tid=94354" class="last_th">Полет на Марс: миссия провалена</a>
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=gpl">gpl</a>, <a href="view-news.jsp?tag=java">java</a>, <a href="view-news.jsp?tag=javafx">javafx</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=oracle">oracle</a>, <a href="view-news.jsp?tag=ria">ria</a></span>
+</p>
 
 
 
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/Uniqa/profile">Uniqa</a>
+
+
+
+(03.12.2011 17:51:42)
+    
+    
+  
 </div>
+<div class="nav">
 
 
+  [<a href="comment-message.jsp?topic=7085246">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
 
-              
-
-
-
-              <div class="menu_top_bg">
-
-             	<div class="menu_top">
-
-			<ul>
-
-			<li><a class="activ1" href="/news">Новости</a></li><li><a  href="/videos">Видео</a></li><li><a  href="/section.html?cid=1200">Фотолента</a></li><li><a  href="/broadcasts.html">Трансляции</a></li><li><a  href="/program.html">Программы</a></li><li><a  href="http://services.vesti.ru/">Сервисы</a></li>
-
-			
-
-			</ul>
-
-		</div>
-
-	     </div>
-
-</div>
-
-<div class="clear"></div>
-
-
-
-
-
-</div>
-
-
-
-<div class="content_page" style="overflow: visible;">
-
-
-
-
-
-<!-- Right block -->
-
-
-
-<div class="td_right">
-
-
-
-
-
-<div class="banner_vesti_reclama "><div id="default_slot_rich"></div>
-
-<script>
-
-var vgtrkRekl_random = Math.round(Math.random() * 100000);
-
-document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti.default_slot_rich?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>");
-
-</script>
-
+  
+  [<a href="/news/java/7085246">155&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/java/7085246/page1">2</a> <a href="/news/java/7085246/page2">3</a> <a href="/news/java/7085246/page3">4</a>)]
+  </div>
+  </div>
 </div>
 
 
 
 
-
-<div class="banner_vesti_reclama "><div id="textgrafblock"></div>
-
-<script> 
-
-$(window).load(function(){
-
-function ban2(){
-
-         
-
-            id('textgrafblock').innerHTML = '';
-
-            SRAX.addScript({url: 'http://reklama.mb.vesti.ru/cgi-bin/iframe/textgrafblok?56375&options=FT', callback: function(){
-
-                id('textgrafblock').innerHTML = '';
-
-            }, noax: true})
-
-        }    
+    
+      
 
 
 
- ban2();
 
 
 
-});
 
-</script> 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-7083497">
+
+<h2>
+  <a href="/news/opensource/7083497">EFL 1.1</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/white2/img/opensource-logo.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° OpenSource">
+    </a>
 </div>
 
 
-
-
-
-<div class="clear"></div>
-
-
-
-
-
-
-
-
-
-<div class="banner_order_reclama"><div id="DIV_NNN_3113">Загружается, подождите...</div></div>
-
-
-
-<div class="banner_order_reclama"><script> 
-
-var vgtrkRekl_random = Math.round(Math.random() * 100000); 
-
-document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_tgb?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
-
-</script></div>
-
-
-
-
-
-<div class="banner_order_reclama"><div style="margin-bottom: 15px">
-
-<script> 
-
-var vgtrkRekl_random = Math.round(Math.random() * 100000); 
-
-document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/finances?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
-
-</script> 
-
-</div>
-
-
-
-<div class="banner_vesti_reclama ">
-
-<script> var vgtrkRekl_random = Math.round(Math.random() * 100000); document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/vesti_240x400?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>");
-
-
-
-</script>
-
-
-
-</div></div>
-
-
-
-
-
-<div class="banner_vesti_reclama "><!-- MarketNews Start -->
-
-
-
-<div id="MarketGid7211"><center>
-
-
-
-<a href="http://marketgid.com/" target="_blank">????????...</a>
-
-
-
-</center></div>
-
-
-
-<!-- MarketNews End -->
-
-
-
-<!-- pered </body> -->
-
-
-
-<script type="text/javascript">
-
-
-
-    var MarketGidDate = new Date();
-
-
-
-    document.write('<scr'+'ipt type="text/javascript" '
-
-
-
-    +'src="http://jsn.dt00.net/v/e/vesti.ru.7211.js?t='+MarketGidDate.getYear()+MarketGidDate.getMonth()
-
-
-
-    + '" charset="windows-1251" ></scr'+'ipt>');
-
-
-
-    </script></div>
-
-
-
-<div class="banner_vesti_reclama "><script> 
-
-var vgtrkRekl_random = Math.round(Math.random() * 100000); 
-
-document.write("<script src='http://reklama.mb.vesti.ru/cgi-bin/iframe/infosponsor?"+vgtrkRekl_random+"&options=FT'></scr"+"ipt>"); 
-
-</script> 
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="banner_vesti_reclama "></div>
-
-
-
-<div class="banner_vesti_reclama "></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="banner_vesti_reclama "><div id="nedvizhimost">
-
-<noscript>
-
-<iframe src="http://reklama.mb.vesti.ru/cgi-bin/iframe/nedvizhimost?options=A&n=4&c=1&style=http://468x60.mb.vesti.ru/css/nedvizhimost.css" width="238" height="570" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border: 1px solid #ffcc66; border-top: none;"><a href="http://reklama.mb.vesti.ru/cgi-bin/href/nedvizhimost" target="_top"><img src="http://reklama.mb.vesti.ru/cgi-bin/banner/nedvizhimost?options=A" alt="VGTRK" width="238" height="570" border="0" ismap="ismap"></a></iframe>
-
-</noscript>
-
-</div>
-
-</div>
-
-
-
-<div id="fb_recommend_v" style="padding-bottom: 15px;"></div>
-
-<div class="banner_vesti_reclama "></div>
-
-
-
-
-
-
-
-<!? banner.if_banner_time(3,"banner_space_18835434432560418"); ?>
-
-
-
-<div class="banner_vesti_reclama "></div>
-
-
-
-
-
-
-
-
-
-
-
-<div class="banner_order_reclama"><script>
-
-// <!--
-
-var vgtrkT70x50_login = "vesti2";
-
-var vgtrkT70x50_options = "options=N";
-
-var vgtrkT70x50_random = Math.round(Math.random() * 100000);
-
-document.write('<iframe src="http://t70x50.mb.vesti.ru/cgi-bin/iframe/'+vgtrkT70x50_login+'?'+vgtrkT70x50_random+'&'+vgtrkT70x50_options+'&n=5&c=1&style=http://468x60.mb.vesti.ru/css/vesti_70x50.css" width="100%" height="340" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://t70x50.mb.vesti.ru/cgi-bin/href/'+vgtrkT70x50_login+'?'+vgtrkT70x50_random +'" target="_blank"><img src="http://t70x50.mb.vesti.ru/cgi-bin/banner/'+vgtrkT70x50_login+'?'+vgtrkT70x50_random +'&'+vgtrkT70x50_options+'" alt="VGTRK" width="100%" height="340" border="0" ismap="ismap"></a></iframe>');
-
-// -->
-
-</script>
-
-<noscript>
-
-<iframe src="http://t70x50.mb.vesti.ru/cgi-bin/iframe/vesti2?options=N&n=5&c=1&style=http://468x60.mb.vesti.ru/css/vesti_70x50.css" width="100%" height="340" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://t70x50.mb.vesti.ru/cgi-bin/href/vesti2" target="_blank"><img src="http://t70x50.mb.vesti.ru/cgi-bin/banner/vesti2?options=N" alt="VGTRK" width="100%" height="340" border="0" ismap="ismap"></a></iframe>
-
-</noscript></div>
-
-
-
-
-
-</div>
-
-<!-- End right block -->
-
-<!-- Left block -->
-
-
-
-
-
-<div class="left_block_all no_bsckground">
-
-<div class="top_line_text">
-
-	<div class="top_line_text_bg1">
-
-		<h1>Новости </h1><a class="sec_link" href="/news?without_ph=1&p=1">Только заголовки</a>
-
-	</div>
-
-</div>
-
-<div class="list_content_all">
-
-<div class="td_left_list">
-
-<div class="serch_block_left_adv  shadow_search">
-
-<div class="shadow_search_abs"></div>
-
-<script>
-
-$(function(){
-
-
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>РџСЂРµРґСЃС‚Р°РІР»РµРЅ СЃС‚Р°Р±РёР»СЊРЅС‹Р№ СЂРµР»РёР· РЅР°Р±РѕСЂР° Р±РёР±Р»РёРѕС‚РµРє EFL (Enlightenment Foundation Library) 1.1, РєРѕРјРїРѕРЅРµРЅС‚С‹ РєРѕС‚РѕСЂРѕРіРѕ СЃРѕСЃС‚Р°РІР»СЏСЋС‚ РѕСЃРЅРѕРІСѓ РїСЂРѕРµРєС‚Р° Enlightenment 17. Р‘РёР±Р»РёРѕС‚РµРєРё EFL РїРѕР·РІРѕР»СЏСЋС‚ СЃРѕР·РґР°РІР°С‚СЊ РІРёР·СѓР°Р»СЊРЅРѕ РїСЂРёРІР»РµРєР°С‚РµР»СЊРЅС‹Рµ РіСЂР°С„РёС‡РµСЃРєРёРµ РёРЅС‚РµСЂС„РµР№СЃС‹, РѕС‚Р»РёС‡Р°СЋС‰РёРµСЃСЏ РєРѕРјРїР°РєС‚РЅРѕСЃС‚СЊСЋ, РЅРёР·РєРёРј РїРѕС‚СЂРµР±Р»РµРЅРёРµРј СЂРµСЃСѓСЂСЃРѕРІ Рё РІС‹СЃРѕРєРѕР№ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚СЊСЋ. Р”Р°РЅРЅС‹Рµ РєР°С‡РµСЃС‚РІР° РґРµР»Р°СЋС‚ EFL РїСЂРёРІР»РµРєР°С‚РµР»СЊРЅС‹Рј СЂРµС€РµРЅРёРµРј РґР»СЏ РїРѕСЃС‚СЂРѕРµРЅРёСЏ РёРЅС‚РµСЂС„РµР№СЃРѕРІ РїРѕС‚СЂРµР±РёС‚РµР»СЊСЃРєРѕР№ СЌР»РµРєС‚СЂРѕРЅРёРєРё Рё РјРѕР±РёР»СЊРЅС‹С… СѓСЃС‚СЂРѕР№СЃС‚РІ. РќР°РїСЂРёРјРµСЂ, СЃРёСЃС‚РµРјС‹ РЅР° Р±Р°Р·Рµ EFL СѓР¶Рµ РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ РІ Р±С‹С‚РѕРІРѕР№ С‚РµС…РЅРёРєРµ <a href="http://www.linux.org.ru/view-message.jsp?msgid=5601087">Electrolux</a>, С‚РµР»РµС„РѕРЅР°С… Samsung, Р° С‚Р°РєР¶Рµ РІ РїСЂРѕРґСѓРєС‚Р°С… РєРѕРјРїР°РЅРёР№ ProFUSION, Free.fr Рё Calaos. РќРµ РІ РїРѕСЃР»РµРґРЅСЋСЋ РѕС‡РµСЂРµРґСЊ СѓСЃРїРµС… EFL СЃСЂРµРґРё РєРѕРјРјРµСЂС‡РµСЃРєРёС… РєРѕРјРїР°РЅРёР№ РѕР±РµСЃРїРµС‡РµРЅ Р»РёС†РµРЅР·РёРµР№ BSD.</p><p>РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РѕСЃРЅРѕРІРЅС‹С… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ EFL:
+</p><p>( <a href="http://www.linux.org.ru//news/opensource/7083497#cut0">С‡РёС‚Р°С‚СЊ РґР°Р»СЊС€Рµ...</a> )</p><p>РљСЂРѕРјРµ РІС‹С…РѕРґР° Р±РёР±Р»РёРѕС‚РµРє РІС…РѕРґСЏС‰РёС… РІ СЃРѕСЃС‚Р°РІ EFL, РјРѕР¶РЅРѕ РѕС‚РјРµС‚РёС‚СЊ РІС‹С…РѕРґ:
+</p><ul><li><a href="http://trac.enlightenment.org/e/wiki/Expedite">Expedite-1.1</a> - РёРЅСЃС‚СЂСѓРјРµРЅС‚Р°СЂРёР№ РґР»СЏ РёР·РјРµСЂРµРЅРёСЏ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚Рё, РєРѕС‚РѕСЂС‹Р№ РјРѕР¶РµС‚ С‚РµСЃС‚РёСЂРѕРІР°С‚СЊ СЂР°Р·Р»РёС‡РЅС‹Рµ РґРІРёР¶РєРё Evas, С‚Р°РєРёРµ РєР°Рє X11, XRender, OpenGL, SDL Рё DirectFB. РњРµС‚РѕРґРёРєР° С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕ РїСЂРёР±Р»РёР¶РµРЅР° Рє СЂРµР°Р»СЊРЅС‹Рј СѓСЃР»РѕРІРёСЏРј.
+</li><li>Evil-1.0 - Р±РёР±Р»РёРѕС‚РµРєР°, СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РЅРµРєРѕС‚РѕСЂС‹Рµ С„СѓРЅРєС†РёРё Unix РїРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Рµ РїРѕРґ Windows. РЎР»СѓР¶РёС‚ РґР»СЏ СѓРїСЂРѕС‰РµРЅРёСЏ РїРѕСЂС‚РёСЂРѕРІР°РЅРёСЏ e17.
+</li><li>РўР°РєР¶Рµ <a href="http://download.enlightenment.org/snapshots/2011-11-28/">РґРѕСЃС‚СѓРїРЅС‹</a> СЃРЅР°РїС€РѕС‚С‹ СЃРІРµР¶РёС… РІРµСЂСЃРёР№ <a href="http://trac.enlightenment.org/e/wiki/Elementary">Elementary</a> Рё <a href="http://trac.enlightenment.org/e/wiki/Enlightenment">Enlightenment</a>.
+</li></ul><p><a href="http://www.enlightenment.org/">РЎР°Р№С‚ РїСЂРѕРµРєС‚Р°</a></p><p>РќРѕРІРѕСЃС‚СЊ С‡Р°СЃС‚РёС‡РЅРѕ РІР·СЏС‚Р° СЃ СЃР°Р№С‚Р° <a href="http://www.opennet.ru/opennews/art.shtml?num=32456">OpenNet.ru</a></p>
+<p>&gt;&gt;&gt; <a href="http://www.enlightenment.org/p.php?p=news/show&amp;l=&amp;news_id=37">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
 
   
 
-        $('#sdate_end_i').datepicker({
 
-             changeMonth: true, 
 
-             changeYear: true,
 
-             showOn: "both",
 
-	     buttonImage: "http://www.vgtrk.cdnvideo.ru/i/s_calend.png",
+<p class="tags">
+
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=efl">efl</a>, <a href="view-news.jsp?tag=enlightenment">enlightenment</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/GArik/profile">GArik</a>
+
+
+
+(03.12.2011 15:03:21)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=7083497">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+
+  
+  [<a href="/news/opensource/7083497">72&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёСЏ</a>&nbsp;(СЃС‚СЂ. <a href="/news/opensource/7083497/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-7083509">
+
+<h2>
+  <a href="/news/multimedia/7083509">libbluray Рё libaacs</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/multimedia/">
+  <img src="/white2/img/multimedia.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° РњСѓР»СЊС‚РёРјРµРґРёР°">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p><a href="http://www.videolan.org/">РћСЂРіР°РЅРёР·Р°С†РёСЏ VideoLAN</a> РѕР±СЉСЏРІРёР»Р° Рѕ РїРµСЂРІРѕРј РѕС„РёС†РёР°Р»СЊРЅРѕРј СЂРµР»РёР·Рµ Р±РёР±Р»РёРѕС‚РµРє libbluray Рё libaacs.</p><p><a href="http://ru.wikipedia.org/wiki/AACS">AACS</a> СЌС‚Рѕ СЃРїРѕСЃРѕР± С€РёС„СЂРѕРІР°РЅРёСЏ РєРѕРЅС‚РµРЅС‚Р° РІ Р±РѕР»СЊС€РёРЅСЃС‚РІРµ Р»РёС†РµРЅР·РёРѕРЅРЅС‹С… Blu Ray РґРёСЃРєРѕРІ, СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј Р·Р°РєСЂС‹С‚С‹С… РєР»СЋС‡РµР№. РџРѕ Р·Р°РјС‹СЃР»Сѓ СЃРѕР·РґР°С‚РµР»РµР№ С‚РµС…РЅРѕР»РѕРіРёРё, РѕРЅРё РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РґРѕСЃС‚СѓРїРЅС‹ С‚РѕР»СЊРєРѕ СЃРѕР·РґР°С‚РµР»СЏРј Р°РїРїР°СЂР°С‚РЅС‹С… Рё РїСЂРѕРіСЂР°РјРјРЅС‹С… РїСЂРѕРёРіСЂС‹РІР°С‚РµР»РµР№, Р° С‚Р°РєР¶Рµ СЃРѕР·РґР°С‚РµР»СЏРј С‚Р°РєРёС… РґРёСЃРєРѕРІ. РРјРµРЅРЅРѕ СЌС‚РёРј РѕР±СѓСЃР»РѕРІР»РµРЅР° С‚Р°РєР°СЏ Р±РѕР»СЊС€Р°СЏ Р·Р°РґРµСЂР¶РєР° РѕС„РёС†РёР°Р»СЊРЅРѕРіРѕ СЂРµР»РёР·Р° СЃРІРѕР±РѕРґРЅС‹С… Р±РёР±Р»РёРѕС‚РµРє, С‚РѕРіРґР° РєР°Рє СѓР¶Рµ РЅРµСЃРєРѕР»СЊРєРѕ Р»РµС‚ СЃСѓС‰РµСЃС‚РІСѓСЋС‚ РїСЂРѕРїСЂРёРµС‚Р°СЂРЅС‹Рµ РїСЂРѕРёРіСЂС‹РІР°С‚РµР»Рё РґРёСЃРєРѕРІ Blu Ray. РџРѕР»СЊР·РѕРІР°С‚РµР»Рё РЅРµРєРѕС‚РѕСЂС‹С… РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹С… РґРёСЃС‚СЂРёР±СѓС‚РёРІРѕРІ Linux СѓР¶Рµ РјРѕРіР»Рё РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ <a href="http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/media-libs/libbluray/libbluray-0.0.1_pre20110210-r1.ebuild">РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Рµ</a> РІРµСЂСЃРёРё СЌС‚РёС… Р±РёР±Р»РёРѕС‚РµРє, РІ СЃРєРѕСЂРѕРј РІСЂРµРјРµРЅРё СЌС‚Рё Р±РёР±Р»РёРѕС‚РµРєРё РјРѕРіСѓС‚ СЃС‚Р°С‚СЊ С‡Р°СЃС‚СЊСЋ Р±РѕР»СЊС€РёРЅСЃС‚РІР° РґРёСЃС‚СЂРёР±СѓС‚РёРІРѕРІ Linux. Р‘РёР±Р»РёРѕС‚РµРєР° libaacs Р±РµСЃРїРѕР»РµР·РЅР° Р±РµР· <a href="http://forum.doom9.org/showthread.php?p=1186415#post1186415">РєРѕРїРёРё AACS-РєР»СЋС‡РµР№</a>.</p>
+<p>&gt;&gt;&gt; <a href="http://www.videolan.org/news.html">РќРѕРІРѕСЃС‚СЊ РЅР° VideoLAN</a>
+  </div>
 
   
 
-            onSelect: function(dateText) {
 
-                 $('#sdate_end_i').val(dateText);  
 
-            }
 
-         }); 
 
+<p class="tags">
 
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=aacs">aacs</a>, <a href="view-news.jsp?tag=bluray">bluray</a>, <a href="view-news.jsp?tag=video">video</a>, <a href="view-news.jsp?tag=videolan">videolan</a></span>
+</p>
 
-         $('#sdate_start_i, #sdate_start').datepicker({
 
-             changeMonth: true, 
 
-             changeYear: true,
 
-             showOn: "both",
 
-	     buttonImage: "http://www.vgtrk.cdnvideo.ru/i/s_calend.png",
+  <div class=sign>
+  
+    
+      
 
-             onSelect: function(dateText) {
 
-                 $('#sdate_start_i').val(dateText);  
 
-            }
 
-         }); 
 
-         
+<a href="/people/ZenitharChampion/profile">ZenitharChampion</a>
 
-         $('.fast_date').click(function(){
 
-              
 
-         	var x = $('.fast_date option:selected').attr('id');
+(03.12.2011 12:06:30)
+    
+    
+  
+</div>
+<div class="nav">
 
-         	if (x == 2){
 
-         	var d = new Date();
+  [<a href="comment-message.jsp?topic=7083509">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
 
-         	var endDate = ((d.getDate() > 9) ? d.getDate() : '0'+d.getDate())+'.'+(((parseInt(d.getMonth())+1) > 9) ? (parseInt(d.getMonth())+1) : '0'+(parseInt(d.getMonth())+1))+'.'+d.getFullYear();
-
-              	var zx =  Date.parse(d) - 86400000*14; 
-
-                var z = new Date(zx);  
-
-         	var startDate = ((z.getDate() > 9) ? z.getDate() : '0'+z.getDate())+'.'+(((parseInt(z.getMonth())+1) > 9) ? (parseInt(z.getMonth())+1) : '0'+(parseInt(z.getMonth())+1))+'.'+z.getFullYear();
-
-         	
-
-         	} else if ( x == 3) {
-
-         	var d = new Date();
-
-         	var endDate = ((d.getDate() > 9) ? d.getDate() : '0'+d.getDate())+'.'+(((parseInt(d.getMonth())+1) > 9) ? (parseInt(d.getMonth())+1) : '0'+(parseInt(d.getMonth())+1))+'.'+d.getFullYear();
-
-              	var zx =  Date.parse(d) - 86400000*30; 
-
-                var z = new Date(zx);  
-
-         	var startDate = ((z.getDate() > 9) ? z.getDate() : '0'+z.getDate())+'.'+(((parseInt(z.getMonth())+1) > 9) ? (parseInt(z.getMonth())+1) : '0'+(parseInt(z.getMonth())+1))+'.'+z.getFullYear();
-
-               	} else {
-
-               	var endDate = '';
-
-               	var startDate = '';
-
-               	}
-
-         	$('#sdate_start_i').val(startDate);
-
-         	$('#sdate_end_i').val(endDate);
-
-         	
-
-         });
-
-	$('.s_toggle').click(function(){
-
-         if($(this).hasClass('s_small')){
-
-         	$('.search_top_adv').removeClass('search_top_adv').addClass('search_top_adv_big');
-
-         	$('.search_top_adv_big').animate({
-
-         		width: '+=166px',
-
-         		height: '+=197px'
-
-         	});
-
-                $('#submit').fadeOut();
-
-                $('.serch_block_left_adv .search_area').animate({width: '+=143px'}); 
-
-                $('.search').animate({width: '+=198px'}); 
-
-         	$(this).hide().removeClass('s_small').addClass('s_big').text('Свернуть').parent('p').animate({bottom: '+=24px'})
-
-                $(this).show('slow');
-
-                
-
-         	
-
-         	
-
-         	
-
-         } else {
-
-               
-
-               $('.search_top_adv_big').animate({
-
-         		width: '-=166px',
-
-         		height: '-=197px'
-
-         	}); 
-
-                $('#submit').fadeIn();
-
-                $('.serch_block_left_adv .search_area').animate({width: '-=143px'}); 
-
-                $('.search').animate({width: '-=198px'}); 
-
-         	$(this).hide().removeClass('s_big').addClass('s_small').text('Расширенный поиск').parent('p').animate({bottom: '-=24px'});
-
-                $('.search_top_adv_big').removeClass('search_top_adv_big').addClass('search_top_adv');
-
-                $(this).show('fast');
-
-          }	
-
-	
-
-	});
-
-});
-
-
-
-</script>
-
-<div class="search_top_adv">
-
-	<form action="/search_adv.html" method="get" name="Srch2">
-
-		<div class="search_area">
-
-		 <input class="search" type="text" value="Поиск:" name="q" onClick="if(document.Srch2.q.value=='Поиск:') document.Srch2.q.value = '';   " >
-
-		
-
-		<input type="submit" id="submit" value="" onClick="if(document.Srch2.q.value=='Поиск:') return false; else return true;">
-
-		</div>
-
-           <div id="search_type" class="s_adv_par">
-
-                <p class="label">Тип материала:</p>
-
-                <div class="form_big">
-
-                     <input id="stype" type="checkbox"  name="stype_n" checked="checked" value="rnews"><span class="s_legend">новости и статьи</span>
-
-                     <input type="checkbox" name="stype_v" checked="checked" value="rvideo"><span class="s_legend">видео</span>
-
-               </div>
-
-           </div>
-
-           <div id="search_date" class="s_adv_par">
-
-                <p class="label">Диапазон дат:</p>
-
-                <select class="fast_date">
-
-                     <option id='1' selected="selected">за весь период</option> 
-
-                     <option id='2'>последние две недели</option>
-
-                     <option id='3'>последний месяц</option>
-
-                </select>
-
-                <div id="s_dstart" class="s_date">
-
-                <input id="sdate_start_i" type="text" maxlength="10" name="sdate_start" value=""> 
-
-                <span>&nbsp;&mdash;&nbsp;</span>
-
-                 <div class="s_date_leg">начальная дата</div>
-
-                </div>
-
-                <div id="s_dend" class="s_date"> 
-
-                  <input id="sdate_end_i" type="text" maxlength="10" name="sdate_end" value=""> 
-
-                  <div class="s_date_leg">конечная дата</div> 
-
-                </div>
-
-
-
-           </div>
-
-           <div id="search_type" class="s_adv_par">
-
-               <p class="label">Сортировать:</p>
-
-               <div class="form_big">
-
-                   <input id="sorder" type="radio" name="sorder" value="date" checked="checked"><span class="s_legend">по дате</span>
-
-                   <input type="radio" name="sorder" value="rel"><span class="s_legend">по релевантности</span>
-
-               </div>
-
-           </div> 
-
-          <input type="submit" value="" id="submit_big" >
-
-	</form>
-
-	<p id="s_toggle_wrap"><a href="javascript: void(0);" class="s_toggle s_small">Расширенный поиск</a></p>
-
+  
+  [<a href="/news/multimedia/7083509">89&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/multimedia/7083509/page1">2</a>)]
+  </div>
+  </div>
 </div>
 
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-7080881">
+РњРёРЅРё-РЅРѕРІРѕСЃС‚СЊ:
+  <a href="/news/java/7080881">РўСЂРµС‚СЊСЏ РІСЃС‚СЂРµС‡Р° РћРґРµСЃСЃРєРѕР№ Java РіСЂСѓРїРїС‹</a>
+
+
+
+  [<a href="/news/java/7080881">11&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>]
 </div>
 
-   <div class="menu_sections_wrapper">
 
-		<ul class="menu_sections">
+    
+      
 
-		  
 
-			<li class="  "><a href="/section.html?cid=5">Политика</a></li><li class="  "><a href="/section.html?cid=6">Экономика</a></li><li class="  "><a href="/section.html?cid=8">Происшествия</a></li><li class="  "><a href="http://auto.vesti.ru/">Авто</a></li><li class="  "><a href="/section.html?cid=7">Общество</a></li><li class="  "><a href="/section.html?cid=9">В мире</a></li><li class="  "><a href="/section.html?cid=680">Спорт</a></li><li class="  "><a href="/section.html?cid=780">Hi-Tech. Интернет</a></li><li class="  "><a href="/section.html?cid=460">Культура</a></li><li class="  "><a href="/section.html?cid=960">Модернизация</a></li><li class="  "><a href="/section.html?cid=17">Регионы</a></li><li class="  "><a href="/section.html?cid=1200">Фотолента</a></li><li class="last  "><a href="/section.html?cid=380">Досье</a>
 
-		  </li>
 
-		</ul>
 
-	</div>
 
-<div class="l_section"><h3 id="auto_l"><a href="http://auto.vesti.ru/">Авто.Вести.Ru</a></h3><ul><li class="with_img">
 
-<a href="http://auto.vesti.ru/doc.html?id=424853" ><img src="http://auto.vesti.ru/p/s_435223.jpg" alt="" title=""></a>
 
-<a href="http://auto.vesti.ru/doc.html?id=424853" >Продажи нового Honda CR-V стартуют 15 декабря</a>
 
 
 
-</li><li>
 
-<a href="http://auto.vesti.ru/doc.html?id=424873&cid=20" >Cadillac показал новый флагман – седан XTS</a>
 
 
 
-</li><li>
 
-<a href="http://auto.vesti.ru/doc.html?id=424833&cid=20" >Состоялась премьера Subaru BRZ Concept STI</a>
 
 
 
-</li><li>
 
-<a href="http://auto.vesti.ru/doc.html?id=424395&cid=22" >Пошлины на иномарки снизят через 7 лет</a>
 
 
 
-</li><li>
+<div class=news id="topic-7080673">
 
-<a href="http://auto.vesti.ru/doc.html?id=424753&cid=22" >Самой популярной машиной в Москве стала Lada</a>
+<h2>
+  <a href="/news/hardware/7080673">Altera РЅР°СѓС‡РёС‚ FPGA &quot;РїРѕРЅРёРјР°С‚СЊ&quot; OpenCL</a>
+</h2>
 
 
 
-</li></ul></div><div class="banner_left_block_td" style="padding: 20px 0; text-align: center;">
 
-<a href="http://www.vesti.ru/doc.html?id=444033"><img src="/i/226x100knopka.jpg" alt=""></a>
+<div class="entry-userpic">
+  <a href="/news/hardware/">
+  <img src="/white2/img/hardware-logo.png" width=50 height=53 border=0 alt="Р“СЂСѓРїРїР° Hardware and Drivers">
+    </a>
+</div>
 
-</div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/section.html?cid=520">Эксклюзив</a></h3><ul><li class="with_img">
 
-<a href="http://www.vesti.ru/doc.html?id=632376&cid=520" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567389.jpg" alt="" title=""></a>
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>РР·РІРµСЃС‚РЅС‹Р№ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ РјРёРєСЂРѕСЃС…РµРј РїСЂРѕРіСЂР°РјРјРёСЂСѓРµРјРѕР№ Р»РѕРіРёРєРё, РєРѕРјРїР°РЅРёСЏ <a href="http://www.altera.com/">Altera</a>,  РїСЂРµРґСЃС‚Р°РІРёР»Р° РѕР±С‰РµСЃС‚РІРµРЅРЅРѕСЃС‚Рё РїСЂРѕРµРєС‚ РїРѕ СЃРѕР·РґР°РЅРёСЋ РёРЅСЃС‚СЂСѓРјРµРЅС‚Р°, РїРѕР·РІРѕР»СЏСЋС‰РµРіРѕ РёСЃРїРѕР»РЅСЏС‚СЊ РЅР° <a href="http://ru.wikipedia.org/wiki/FPGA">FPGA</a> РєРѕРґ, РЅР°РїРёСЃР°РЅРЅС‹Р№ РґР»СЏ OpenCL. OpenCL СЏРІР»СЏРµС‚СЃСЏ РѕСЃРЅРѕРІР°РЅРЅС‹Рј РЅР° C РѕС‚РєСЂС‹С‚С‹Рј СЃС‚Р°РЅРґР°СЂС‚РѕРј РґР»СЏ РїР°СЂР°Р»Р»РµР»СЊРЅРѕРіРѕ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ. Р’ РЅР°СЃС‚РѕСЏС‰РµРµ РІСЂРµРјСЏ РѕРЅ Р°РєС‚РёРІРЅРѕ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РїРµСЂРµРЅРѕСЃР° РЅР° РіСЂР°С„РёС‡РµСЃРєРёРµ РєР°СЂС‚С‹ РІС‹С‡РёСЃР»РµРЅРёР№, С‚СЂРµР±СѓСЋС‰РёС… РІС‹СЃРѕРєРѕР№ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚Рё. РРЅС‚РµСЂРµСЃ Рє РіСЂР°С„РёС‡РµСЃРєРёРј РєР°СЂС‚Р°Рј Р±С‹Р» РІС‹Р·РІР°РЅ РІ РїРµСЂРІСѓСЋ РѕС‡РµСЂРµРґСЊ С‚РµРј, С‡С‚Рѕ РїСЂРёРјРµРЅСЏРµРјС‹Рµ РІ РЅРёС… РїСЂРѕС†РµСЃСЃРѕСЂС‹ СЃРїРѕСЃРѕР±РЅС‹ РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ РІС‹РїРѕР»РЅСЏС‚СЊ Р±РѕР»СЊС€РѕРµ С‡РёСЃР»Рѕ РѕРїРµСЂР°С†РёР№, С‡С‚Рѕ РїРѕР·РІРѕР»СЏРµС‚ РґРѕСЃС‚РёС‡СЊ РєРѕР»РѕСЃСЃР°Р»СЊРЅРѕР№ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚Рё РЅР° С…РѕСЂРѕС€Рѕ СЂР°СЃРїР°СЂР°Р»Р»РµР»РёРІР°РµРјС‹С… Р·Р°РґР°С‡Р°С…. Р­С‚Рё Р¶Рµ СЃРѕРѕР±СЂР°Р¶РµРЅРёСЏ РїРѕРґС‚РѕР»РєРЅСѓР»Рё СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ РѕР±СЂР°С‚РёС‚СЊ РІРЅРёРјР°РЅРёРµ РЅР° FPGA. Altera СЃС‚Р°Р»Р° С‡Р»РµРЅРѕРј СЂР°Р±РѕС‡РµР№ РіСЂСѓРїРїС‹ РїРѕ OpenCL РІ СЏРЅРІР°СЂРµ РїСЂРѕС€Р»РѕРіРѕ РіРѕРґР°. </p><p>РђРЅРѕРЅСЃРёСЂРѕРІР°РЅРЅС‹Р№ РёРЅСЃС‚СЂСѓРјРµРЅС‚ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ СЃРёСЃС‚РµРјС‹, СЃРѕС‡РµС‚Р°СЋС‰РёРµ РїСЂРѕРіСЂР°РјРјРёСЂСѓРµРјСѓСЋ Р»РѕРіРёРєСѓ СЃ ARM РёР»Рё x86 РїСЂРѕС†РµСЃСЃРѕСЂР°РјРё. РџРµСЂРІС‹Рµ СЂРµР·СѓР»СЊС‚Р°С‚С‹ РїСЂРёРјРµРЅРµРЅРёСЏ СЌС‚РѕР№ С‚РµС…РЅРѕР»РѕРіРёРё РїРѕРєР°Р·Р°Р»Рё 35-РєСЂР°С‚РЅС‹Р№ РїСЂРёСЂРѕСЃС‚ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚Рё РІ СЃСЂР°РІРЅРµРЅРёРё СЃ РєР»Р°СЃСЃРёС‡РµСЃРєРёРјРё РјРЅРѕРіРѕСЏРґРµСЂРЅС‹РјРё СЂРµС€РµРЅРёСЏРјРё Рё РїСЏС‚РёРґРµСЃСЏС‚РёРїСЂРѕС†РµРЅС‚РЅРѕРµ СѓРјРµРЅСЊС€РµРЅРёРµ РІСЂРµРјРµРЅРё СЂР°Р·СЂР°Р±РѕС‚РєРё РІ СЃСЂР°РІРЅРµРЅРёРё СЃ СЂР°Р·СЂР°Р±РѕС‚РєРѕР№ РЅР° <a href="http://ru.wikipedia.org/wiki/%D0%AF%D0%B7%D1%8B%D0%BA_%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F_%D0%B0%D0%BF%D0%BF%D0%B0%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B">HDL</a>.</p><p>&gt;&gt;&gt; <a href="http://www.altera.com/b/opencl.html">РЎР°Р№С‚ РїСЂРѕРµРєС‚Р°</a><br>
+&gt;&gt;&gt; <a href="http://www.altera.com/corporate/news_room/releases/2011/products/nr-opencl.html">РђРЅРѕРЅСЃ</a></p>
+<p>&gt;&gt;&gt; <a href="http://opencores.org/newsletter,2011,11,#n3">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
 
-<a href="http://www.vesti.ru/doc.html?id=632376&cid=520" >Белый дом незаметно обстреляли</a>
+  
 
 
 
-</li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=632297&cid=520" >Преемником Джобса стал профессор биохимии</a>
 
+<p class="tags">
 
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=altera">altera</a>, <a href="view-news.jsp?tag=fpga">fpga</a>, <a href="view-news.jsp?tag=hardware">hardware</a>, <a href="view-news.jsp?tag=opencl">opencl</a></span>
+</p>
 
-</li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=630464&cid=5" >Военные корабли США в Черном море</a>
 
 
 
-</li><li>
+  <div class=sign>
+  
+    
+      
 
-<a href="http://www.vesti.ru/doc.html?id=632317&cid=520" >Вкладчики обратили внимание на юань</a>
 
 
 
-</li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=632410&cid=520" >Из-за ошибок фармацевтов погибли тысячи человек</a>
+<a href="/people/prozium/profile">prozium</a>
 
 
 
-</li><li>
+(02.12.2011 22:38:21)
+    
+    
+  
+</div>
+<div class="nav">
 
-<a href="http://www.vesti.ru/doc.html?id=632364&cid=520" >ТО без очередей: надежда на Интернет</a>
 
+  [<a href="comment-message.jsp?topic=7080673">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
 
+  
+  [<a href="/news/hardware/7080673">65&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/hardware/7080673/page1">2</a>)]
+  </div>
+  </div>
+</div>
 
-</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/videos?cid=58">Вести 20:00</a></h3><ul><li class="with_img">
 
-<a href="http://www.vesti.ru/videos?vid=376652" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567346.jpg" alt="" title=""></a>
 
-<a href="http://www.vesti.ru/videos?vid=376652" >Киллер для литератора</a>
 
+    
+      
 
 
-</li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=632449" >Подарить человеку воздух</a>
 
 
 
-</li><li>
 
-<a href="http://www.vesti.ru/videos?vid=376654" >Бессмертие по сходной цене</a>
 
 
 
-</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/videos?cid=700">Вести.Ru на "России 2"</a></h3><ul><li class="with_img">
 
-<a href="http://www.vesti.ru/videos?vid=376504&cid=700" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565173.jpg" alt="" title=""></a>
 
-<a href="http://www.vesti.ru/videos?vid=376504&cid=700" >Наводнение смыло жесткие диски</a>
 
 
 
-</li><li>
 
-<a href="http://www.vesti.ru/videos?vid=376506&cid=700" >Водители в ужасе от "совершенного радара"</a>
 
 
 
-</li><li>
 
-<a href="http://www.vesti.ru/videos?vid=376663&cid=700" >Электроника меняет представление об армии</a>
 
 
 
-</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/section.html?cid=780">Hi-Tech</a></h3><ul><li class="with_img">
+<div class=news id="topic-7080098">
 
-<a href="http://www.vesti.ru/doc.html?id=632389&cid=780" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567214.jpg" alt="" title=""></a>
+<h2>
+  <a href="/news/gnome/7080098">GNOME РІРІС‘Р» РІ СЃС‚СЂРѕР№ РєР°С‚Р°Р»РѕРі РґРѕРїРѕР»РЅРµРЅРёР№ РґР»СЏ GNOME Shell</a>
+</h2>
 
-<a href="http://www.vesti.ru/doc.html?id=632389&cid=780" >Полукровка. Обзор планшета-букридера PocketBook A10</a>
 
 
 
-</li><li>
+<div class="entry-userpic">
+  <a href="/news/gnome/">
+  <img src="/white2/img/gnome-new.png" width=48 height=74 border=0 alt="Р“СЂСѓРїРїР° GNOME">
+    </a>
+</div>
 
-<a href="http://www.vesti.ru/doc.html?id=631395&cid=780" >Исследование: "удаленка" выгодна работодателям</a>
 
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>РџСЂРѕРµРєС‚ GNOME Р°РЅРѕРЅСЃРёСЂРѕРІР°Р» РЅР°С‡Р°Р»Рѕ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ РЅРѕРІРѕРіРѕ СЂРµСЃСѓСЂСЃР° <a href="http://extensions.gnome.org">extensions.gnome.org</a>, РЅР° РєРѕС‚РѕСЂРѕРј РІРµРґС‘С‚СЃСЏ СЂР°Р±РѕС‚Р° РїРѕ С„РѕСЂРјРёСЂРѕРІР°РЅРёСЋ РєР°С‚Р°Р»РѕРіР° РґРѕРїРѕР»РЅРµРЅРёР№ Рє РѕР±РѕР»РѕС‡РєРµ GNOME Shell. РСЃРїРѕР»СЊР·СѓСЏ РїСЂРµРґСЃС‚Р°РІР»РµРЅРЅС‹Рµ РІ РєР°С‚Р°Р»РѕРіРµ РґРѕРїРѕР»РЅРµРЅРёСЏ, РїРѕР»СЊР·РѕРІР°С‚РµР»Рё РјРѕРіСѓС‚ РёР·РјРµРЅРёС‚СЊ Рё РґРѕРїРѕР»РЅРёС‚СЊ Р±Р°Р·РѕРІРѕРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРµ РѕРєСЂСѓР¶РµРЅРёРµ GNOME 3. </p><p>РЈСЃС‚Р°РЅРѕРІРєР° РґРѕРїРѕР»РЅРµРЅРёР№ РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ РЅРµРїРѕСЃСЂРµРґСЃС‚РІРµРЅРЅРѕ СЃ СЃР°Р№С‚Р° РІ РѕРґРёРЅ РєР»РёРє, РЅРѕ РґР»СЏ СЌС‚РѕРіРѕ С‚СЂРµР±СѓРµС‚СЃСЏ СѓСЃС‚Р°РЅРѕРІРєР° СЃРїРµС†РёР°Р»СЊРЅРѕРіРѕ РїР»Р°РіРёРЅР° РґР»СЏ web-Р±СЂР°СѓР·РµСЂР°. Р”РѕРїРѕР»РЅРµРЅРёСЏ СЂР°Р·СЂР°Р±Р°С‚С‹РІР°СЋС‚СЃСЏ РЅР° СЏР·С‹РєРµ JavaScript СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј CSS-СЃС‚РёР»РµР№, С‡С‚Рѕ СЂРµС€Р°РµС‚ РїСЂРѕР±Р»РµРјСѓ СЃ РїРµСЂРµРЅРѕСЃРёРјРѕСЃС‚СЊСЋ РјРµР¶РґСѓ СЂР°Р·РЅС‹РјРё РїР»Р°С‚С„РѕСЂРјР°РјРё.</p>
+<p>&gt;&gt;&gt; <a href="http://mail.gnome.org/archives/gnome-announce-list/2011-December/msg00000.html">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
 
+  
 
-</li><li>
 
-<a href="http://www.vesti.ru/doc.html?id=632305&cid=780" >Microsoft готовит аналог Google+</a>
 
 
 
-</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://england.vesti.ru/">Англия. Премьер-лига</a></h3><ul><li class="with_img">
+<p class="tags">
 
-<a href="http://www.england.vesti.ru/doc.html?id=392320&cid=121" ><img src="http://england.vesti.ru/p/s_177298.jpg" alt="" title=""></a>
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=gnome">gnome</a></span>
+</p>
 
-<a href="http://www.england.vesti.ru/doc.html?id=392320&cid=121" >Лидеры дружно выиграли. Аутсайдеры - проиграли</a>
 
 
 
-</li><li>
 
-<a href="http://www.england.vesti.ru/doc.html?id=392641&cid=121" >Билялетдинов и "Эвертон": конец альянса?</a>
+  <div class=sign>
+  
+    
+      
 
 
 
-</li><li>
 
-<a href="http://www.england.vesti.ru/doc.html?id=392160&cid=121" >Дмитрий Сычев может переехать в Англию</a>
 
+<a href="/people/papochka/profile">papochka</a>
 
 
-</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.vesti.ru/videos?cid=1100">Наука 2.0</a></h3><ul><li class="with_img">
 
-<a href="http://www.vesti.ru/videos?vid=375668&cid=1100" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_409603.jpg" alt="" title=""></a>
+(02.12.2011 17:58:46)
+    
+    
+  
+</div>
+<div class="nav">
 
-<a href="http://www.vesti.ru/videos?vid=375668&cid=1100" >Звуки музыки</a>
 
+  [<a href="comment-message.jsp?topic=7080098">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
 
+  
+  [<a href="/news/gnome/7080098">181&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>&nbsp;(СЃС‚СЂ. <a href="/news/gnome/7080098/page1">2</a> <a href="/news/gnome/7080098/page2">3</a> <a href="/news/gnome/7080098/page3">4</a>)]
+  </div>
+  </div>
+</div>
 
-</li><li>
 
-<a href="http://www.vesti.ru/videos?vid=373879&cid=1100" >Лекарство от старости</a>
 
 
+    
+      
 
-</li><li>
 
-<a href="http://www.vesti.ru/videos?vid=374520&cid=1100" >Гиганты астрономической науки</a>
 
 
 
-</li><li>
 
-<a href="http://www.vesti.ru/videos?vid=374517&cid=1100" >Эволюция была ветвистой</a>
 
 
 
-</li><li>
 
-<a href="http://www.vesti.ru/videos?vid=375104&cid=1100" >Невесомость на Земле</a>
 
 
 
-</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://kino.vesti.ru/">Кино</a></h3><ul><li class="with_img">
 
-<a href="http://filmpro.ru/journal/15581998" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567508.jpg" alt="" title=""></a>
 
-<a href="http://filmpro.ru/journal/15581998" >Дятел Вуди впервые появится в полнометражном мультфильме</a>
 
 
 
-</li><li>
 
-<a href="http://filmpro.ru/journal/15580257" >"Голоса" дублированной "Резни" можно увидеть</a>
 
 
 
-</li><li>
 
-<a href="http://filmpro.ru/journal/15561171" >Колин Ферт приглашен в ремейк "Олдбоя"</a>
+<div class=news id="topic-7079594">
 
+<h2>
+  <a href="/news/opensource/7079594">РђРЅРѕРЅСЃ Р±РёР±Р»РёРѕС‚РµРєРё Avout</a>
+</h2>
 
 
-</li><li>
 
-<a href="http://filmpro.ru/journal/15579239" >"Бессмертные" Генри Кавилл и Люк Эванс</a>
 
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/white2/img/opensource-logo.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° OpenSource">
+    </a>
+</div>
 
 
-</li><li>
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>РќРµСЃРєРѕР»СЊРєРѕ РґРЅРµР№ РЅР°Р·Р°Рґ РІС‹С€Р»Р° Р±РёР±Р»РёРѕС‚РµРєР° Avout РѕРЅ РЅРµР±РµР·С‹Р·РІРµСЃС‚РЅРѕР№ РєРѕРјР°РЅРґС‹ clojure/core. Р‘РёР±Р»РёРѕС‚РµРєР° РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ СЃРѕР±РѕР№ СЂРµР°Р»РёР·Р°С†РёСЋ Distributed Software Transactional Memory. РќР° <a href="http://avout.io/">СЃР°Р№С‚Рµ</a> РїСЂРѕРµРєС‚Р° РґРѕСЃС‚СѓРїРЅР° РґРѕРєСѓРјРµРЅС‚Р°С†РёСЏ Рё РїСЂРёРјРµСЂС‹ РєРѕРґР°, РёСЃС…РѕРґРЅС‹Р№ РєРѕРґ СЃР°РјРѕР№ Р±РёР±Р»РёРѕС‚РµРєРё РґРѕСЃС‚СѓРїРµРЅ РЅР° <a href="https://github.com/liebke/avout">РіРёС‚С…Р°Р±Рµ</a> Рё СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅСЏРµС‚СЃСЏ РЅР° СѓСЃР»РѕРІРёСЏС… Р»РёС†РµРЅР·РёРё Eclipse Public License.</p><p>РќР°РїРѕРјРёРЅР°СЋ, С‡С‚Рѕ clojure - СЌС‚Рѕ СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ РґРёР°Р»РµРєС‚ Р»РёСЃРїР°, РїРѕРѕС‰СЂСЏСЋС‰РёР№ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ Рё СѓРїСЂРѕС‰Р°СЋС‰РёР№ СЂР°Р·СЂР°Р±РѕС‚РєСѓ РјРЅРѕРіРѕРїРѕС‚РѕС‡РЅС‹С… РїСЂРѕРіСЂР°РјРј. Clojure СЂР°Р±РѕС‚Р°РµС‚ РЅР° РїР»Р°С‚С„РѕСЂРјР°С… JVM Рё CLR. Р СѓРєРѕРІРѕРґРёС‚ СЂР°Р·СЂР°Р±РѕС‚РєРѕР№ СЏР·С‹РєР° Р РёС‡ РҐРёРєРєРё (Rich Hickey), РєРѕС‚РѕСЂС‹Р№ СЂР°РЅРµРµ С‚СЂСѓРґРёР»СЃСЏ РЅР°Рґ javac. </p>
+<p>&gt;&gt;&gt; <a href="http://avout.io/">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
 
-<a href="http://filmpro.ru/journal/15568533" >Анджелина Джоли хочет играть в "независимом" кино</a>
+  
 
 
 
-</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.rutv.ru/">Телеканал "Россия"</a></h3><ul><li class="with_img">
 
-<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=149600&mid=14&d=0&p=1" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567468.jpg" alt="" title=""></a>
 
-<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=149600&mid=14&d=0&p=1" >Сын задушил мать из жалости</a>
+<p class="tags">
 
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=clojure">clojure</a></span>
+</p>
 
 
-</li><li>
 
-<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=148860&mid=14&d=0&p=1" >Голый таксист летел на крыльях любви</a>
 
 
+  <div class=sign>
+  
+    
+      
 
-</li><li>
 
-<a href="http://www.rutv.ru/rnews.html?d=0&id=251133" >Брэду Питту осталось три года</a>
 
 
 
-</li><li>
+<a href="/people/ymn/profile">ymn</a>
 
-<a href="http://www.rutv.ru/video.html?tvpreg_id=151120&vid=149360&mid=14&d=0&p=1" >Бонни и Клайд по-русски</a>
 
 
+(02.12.2011 9:12:55)
+    
+    
+  
+</div>
+<div class="nav">
 
-</li><li>
 
-<a href="http://www.rutv.ru/rnews.html?d=0&id=250773" >Язык сломать можно: настоящие имена звезд</a>
+  [<a href="comment-message.jsp?topic=7079594">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
 
+  
+  [<a href="/news/opensource/7079594">51&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>&nbsp;(СЃС‚СЂ. <a href="/news/opensource/7079594/page1">2</a>)]
+  </div>
+  </div>
+</div>
 
 
-</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://www.rutv.ru/russia2/">Телеканал "Россия 2"</a></h3><ul><li class="with_img">
 
-<a href="http://www.rutv.ru/russia2/" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_562914.jpg" alt="" title=""></a>
 
-<a href="http://www.rutv.ru/russia2/" >Денис Лебедев в программе "90х60х90"</a>
+    
+      
 
 
 
-</li><li>
 
-<a href="http://www.rutv.ru/russia2/" >Человеческий FAQтор: антропология онлайн</a>
 
 
 
-</li><li>
 
-<a href="http://www.rutv.ru/russia2/" >Гляди в оба: премьера Top Gear</a>
 
 
 
-</li><li>
 
-<a href="http://www.rutv.ru/video.html?tvpreg_id=153860&vid=140400&mid=14&d=0&p=1" >"День с Бадюком": такими вы звезд еще не видели!</a>
 
 
 
-</li><li>
 
-<a href="http://www.rutv.ru/russia2/" >Удар головой. Футбол без купюр</a>
 
 
 
-</li></ul></div><div class="l_section" ><h3 id="vestifm_h"><a href="http://radio.vesti.ru/fm/">Вести FM</a></h3><ul><li class="with_img">
 
-<a href="http://radiovesti.ru/spec/marshru/475" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_219741.jpg" alt="" title=""></a>
 
-<a href="http://radiovesti.ru/spec/marshru/475" >Слушатели ''Вестей ФМ'' строят свою дорогу</a>
 
 
+<div class=news id="topic-7079155">
 
-</li><li>
+<h2>
+  <a href="/news/opensource/7079155">QEMU 1.0</a>
+</h2>
 
-<a href="http://radiovesti.ru/articles/2011-11-17/fm/19577" >Не кормите театральных барыг</a>
 
 
 
-</li><li>
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/white2/img/opensource-logo.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° OpenSource">
+    </a>
+</div>
 
-<a href="http://radiovesti.ru/articles/2011-11-17/fm/19513" >Искусственные гамбургеры появились в реальности</a>
 
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Р’С‹РїСѓС‰РµРЅ Р·РЅР°РєРѕРІС‹Р№ СЂРµР»РёР· СЃРёСЃС‚РµРјС‹ РІРёСЂС‚СѓР°Р»РёР·Р°С†РёРё QEMU 1.0.</p><p>Р—Р°СЏРІР»РµРЅС‹ РїРѕРґРґРµСЂР¶РєР° РЅРѕРІС‹С… СЃРёСЃС‚РµРј-С…РѕСЃС‚РѕРІ Рё РЅРѕРІС‹С… СЌРјСѓР»РёСЂСѓРµРјС‹С… РїСЂРѕС†РµСЃСЃРѕСЂРѕРІ (РІ РѕСЃРЅРѕРІРЅРѕРј ARM). РћСЃРЅРѕРІРЅС‹Рµ РёР·РјРµРЅРµРЅРёСЏ РєР°СЃР°СЋС‚СЃСЏ СѓРїСЂР°РІР»РµРЅРёСЏ РїР°РјСЏС‚СЊСЋ Рё Р±Р»РѕС‡РЅС‹РјРё СѓСЃС‚СЂРѕР№СЃС‚РІР°РјРё. РўР°РєР¶Рµ QEMU С‚РµРїРµСЂСЊ Р·Р°РІРёСЃРёС‚ РѕС‚ Р±РёР±Р»РёРѕС‚РµРєРё GLib Рё Р°РєС‚РёРІРЅРѕ РµС‘ РёСЃРїРѕР»СЊР·СѓРµС‚.</p><p>РќР°С‡РёРЅР°СЏ СЃ РІРµСЂСЃРёРё 1.0 РІРѕР·РјРѕР¶РЅР° В«Р¶РёРІР°СЏ РјРёРіСЂР°С†РёСЏВ» РІРёСЂС‚СѓР°Р»СЊРЅС‹С… РјР°С€РёРЅ СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј QCOW2-РѕР±СЂР°Р·РѕРІ РЅР° СЂР°Р·РґРµР»СЏРµРјРѕРј С…СЂР°РЅРёР»РёС‰Рµ.</p><p><a href="http://qemu.org">РЎР°Р№С‚ QEMU</a></p>
+<p>&gt;&gt;&gt; <a href="http://wiki.qemu.org/ChangeLog/Next">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
 
+  
 
-</li></ul></div><div class="l_section" ><h3>
 
-<a href="http://radiovesti.ru/programs//direc/22" target="_blank">
 
-<div class="sk_pr_fm">Скажите прямо</div>
 
-</a>
 
-</h3><ul><li class="with_img">
+<p class="tags">
 
-<a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank"><img src="http://www.vgtrk.cdnvideo.ru/p/s_516711.jpg" alt="" title=""></a>
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=qemu">qemu</a>, <a href="view-news.jsp?tag=%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F">РІРёСЂС‚СѓР°Р»РёР·Р°С†РёСЏ</a></span>
+</p>
 
-<a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank">Россия стала английской колонией</a>
 
-<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
 
-</li><li>
 
-<a href="http://radiovesti.ru/articles/2011-11-16/fm/19293" target="_blank">Казнокрад – самая востребованная профессия</a>
 
-<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
+  <div class=sign>
+  
+    
+      
 
-</li><li>
 
-<a href="http://radiovesti.ru/articles/2011-11-14/fm/18658" target="_blank">Правосудие затерялось в толпе</a>
 
-<div class="obs_fm_in"><a href="http://radiovesti.ru/articles/2011-11-16/fm/19294" target="_blank" style="text-align: right; color: #fefefe; display: block; font-size: 9px; padding-right: 4px;">Обсудить</a></div>
 
-</li></ul><div class="sk_pr_fm_bot"><a href="http://www.radiovesti.ru" id="vfm_link">www.radiovesti.ru</a></div></div><div class="l_section" ><h3 class="common_l"><a href="http://strana.ru/">Страна.Ru</a></h3><ul><li class="with_img">
 
-<a href="http://strana.ru/journal/19159185" ><img src="http://strana.ru/media/images/uploaded/medium19162971.jpg" alt="" title=""></a>
+<a href="/people/BYHYRT/profile">BYHYRT</a>
 
-<a href="http://strana.ru/journal/19159185" >Почему Ломоносов - супермен</a>
 
 
+(02.12.2011 9:11:49)
+    
+    
+  
+</div>
+<div class="nav">
 
-</li><li>
 
-<a href="http://strana.ru/journal/19153923" >Как Башкирия стала Швейцарией</a>
+  [<a href="comment-message.jsp?topic=7079155">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
 
+  
+  [<a href="/news/opensource/7079155">45&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>]
+  </div>
+  </div>
+</div>
 
 
-</li><li>
 
-<a href="http://strana.ru/journal/19138263" >Открытие Океанариума в Москве. Эксклюзив</a>
 
+    
+      
 
 
-</li></ul></div><div class="l_section" ><h3 class="common_l"><a href="http://services.vesti.ru/">Вести.Ru. Сервисы</a></h3><ul><li class="with_img">
 
-<a href="http://ipad.vesti.ru/" ><img src="http://static.vesti.ru/p/s_463168.jpg" alt="" title=""></a>
 
-<a href="http://ipad.vesti.ru/" >Вести для iPad</a>
 
 
 
-</li><li>
 
-<a href="http://mreporter.ru/" >Мобильный репортер</a>
 
 
 
-</li><li>
 
-<a href="http://probki.vesti.ru/" >Пробки. Информация о ситуации на дорогах</a>
 
 
 
-</li></ul></div><div class="l_section">
 
-            <h3 id="common_l"><a class="onair" href="/videos?vid=onair"> Прямой эфир </a></h3>
 
-            <div style="background-color: #e8e8ee;">
 
-                         <a href="/videos?vid=onair"><img src="http://www.vgtrk.cdnvideo.ru/i/logo_ros_2.png" alt="" ></a>
 
-                         <a href="/radio.html"><img src="http://www.vgtrk.cdnvideo.ru/i/logo_fm_2.png" alt="" ></a>
 
-                         
 
-                     </div> 
 
+
+<div class=news id="topic-7077842">
+
+<h2>
+  <a href="/news/gnome/7077842">РћР±СЉСЏРІР»РµРЅР° РЅРѕРІР°СЏ РёРЅРёС†РёР°С‚РёРІР° GNOME: В«Р’Р°Р¶РЅР° РєР°Р¶РґР°СЏ РјРµР»РѕС‡СЊВ»</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/gnome/">
+  <img src="/white2/img/gnome-new.png" width=48 height=74 border=0 alt="Р“СЂСѓРїРїР° GNOME">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>РђР»Р»Р°РЅ Р”СЌР№ (Allan Day), СЃРїРµС†РёР°Р»РёСЃС‚ РїРѕ СЌСЂРіРѕРЅРѕРјРёРєРµ, РЅР°РЅСЏС‚С‹Р№ РЅРµРґР°РІРЅРѕ Red Hat РґР»СЏ СЂР°Р±РѕС‚С‹ РЅР°Рґ GNOME 3, РѕС„РёС†РёР°Р»СЊРЅРѕ РѕР±СЉСЏРІРёР» Рѕ РїСЂРѕРµРєС‚Рµ, РїРѕР»СѓС‡РёРІС€РµРј РЅР°Р·РІР°РЅРёРµ В«Р’Р°Р¶РЅР° РєР°Р¶РґР°СЏ РјРµР»РѕС‡СЊВ» (вЂњEvery Detail MattersвЂќ).</p><p>Р’ СЂР°РјРєР°С… СЌС‚РѕР№ РёРЅРёС†РёР°С‚РёРІС‹ РїР»Р°РЅРёСЂСѓРµС‚СЃСЏ СЂР°Р±РѕС‚Р° РЅР°Рґ СЂР°Р·Р»РёС‡РЅС‹РјРё РЅРµРґРѕС‡С‘С‚Р°РјРё GNOME 3, РєРѕС‚РѕСЂС‹Рµ С‚Р°Рє РёР»Рё РёРЅР°С‡Рµ РјРµС€Р°СЋС‚ РєРѕРјС„РѕСЂС‚РЅРѕР№ СЂР°Р±РѕС‚Рµ РІ СЌС‚РѕР№ СЂР°Р±РѕС‡РµР№ СЃСЂРµРґРµ. Рљ СѓС‡Р°СЃС‚РёСЋ РїСЂРёРіР»Р°С€Р°СЋС‚СЃСЏ РІСЃРµ, РєС‚Рѕ СЂР°Р·Р±РёСЂР°РµС‚СЃСЏ РІ CSS Рё JavaScript РёР»Рё СЃС‡РёС‚Р°РµС‚ СЌС‚РѕС‚ РїСЂРѕРµРєС‚ РѕС‚Р»РёС‡РЅС‹Рј РїРѕРІРѕРґРѕРј СЂР°Р·РѕР±СЂР°С‚СЊСЃСЏ РІ СЌС‚РёС… С‚РµС…РЅРѕР»РѕРіРёСЏС….</p><p>РџРµСЂРІС‹Р№ СЌС‚Р°Рї РёРЅРёС†РёР°С‚РёРІС‹ РїРѕСЃРІСЏС‰С‘РЅ РґРѕСЂР°Р±РѕС‚РєРµ СЂРµР¶РёРјР° РѕР±Р·РѕСЂР° (вЂњActivitiesвЂќ) Рё РЅР° С‚РµРєСѓС‰РёР№ РјРѕРјРµРЅС‚ РїСЂРµРґРїРѕР»Р°РіР°РµС‚ РёСЃРїСЂР°РІР»РµРЅРёРµ <a href="https://live.gnome.org/EveryDetailMatters">35 СЂР°Р·РЅРѕРѕР±СЂР°Р·РЅС‹С… РЅРµРґРѕС‡С‘С‚РѕРІ</a> РІ СЌСЂРіРѕРЅРѕРјРёРєРµ. Р’СЃРµ РІРЅРµСЃС‘РЅРЅС‹Рµ РёР·РјРµРЅРµРЅРёСЏ РІРѕР№РґСѓС‚ РІ СЃРѕСЃС‚Р°РІ GNOME 3.4.</p>
+<p>&gt;&gt;&gt; <a href="http://afaikblog.wordpress.com/2011/12/01/announcing-every-detail-matters/">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=gnome">gnome</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/AP/profile">AP</a>
+
+
+
+(01.12.2011 23:21:43)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=7077842">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+
+  
+  [<a href="/news/gnome/7077842">528&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/gnome/7077842/page1">2</a> <a href="/news/gnome/7077842/page2">3</a> <a href="/news/gnome/7077842/page3">4</a> ... <a href="/news/gnome/7077842/page8">9</a> <a href="/news/gnome/7077842/page9">10</a> <a href="/news/gnome/7077842/page10">11</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-7072002">
+РњРёРЅРё-РЅРѕРІРѕСЃС‚СЊ:
+  <a href="/news/games/7072002">РџСЂРёРѕС‚РєСЂС‹С‚ РёСЃС…РѕРґРЅС‹Р№ РєРѕРґ РёРіСЂ РёР· Humble Introversion Bundle</a>
+
+
+
+  [<a href="/news/games/7072002">121&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>&nbsp;(СЃС‚СЂ. <a href="/news/games/7072002/page1">2</a> <a href="/news/games/7072002/page2">3</a>)]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-7074996">
+РњРёРЅРё-РЅРѕРІРѕСЃС‚СЊ:
+  <a href="/news/hardware/7074996">Р РµР°Р»РёР·РѕРІР°РЅ РїРѕСЂС‚ LinuxTV РїРѕРґ Windows</a>
+
+
+
+  [<a href="/news/hardware/7074996">23&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёСЏ</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-7074064">
+
+<h2>
+  <a href="/news/opensource/7074064">LLVM 3.0</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/white2/img/opensource-logo.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° OpenSource">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>30.11.2011 РІ СЃРІРµС‚ РІС‹С€Р»Р° РѕС‡РµСЂРµРґРЅР°СЏ РІРµСЂСЃРёСЏ С„СЂРµР№РјРІРѕСЂРєР° РґР»СЏ РїРѕСЃС‚СЂРѕРµРЅРёСЏ РєРѕРјРїРёР»СЏС‚РѕСЂРѕРІ Рё РІРёСЂС‚СѓР°Р»СЊРЅС‹С… РјР°С€РёРЅ. </p><div class="none">&gt;&gt;-----Р¦РёС‚Р°С‚Р°----&gt;&gt;</div><div class="quote"><p><cite>Р’РёРєРёРїРµРґРёСЏ</cite></p><p>Low Level Virtual Machine (LLVM) вЂ” СѓРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ СЃРёСЃС‚РµРјР° Р°РЅР°Р»РёР·Р°, С‚СЂР°РЅСЃС„РѕСЂРјР°С†РёРё Рё РѕРїС‚РёРјРёР·Р°С†РёРё РїСЂРѕРіСЂР°РјРј, СЂРµР°Р»РёР·СѓСЋС‰Р°СЏ РІРёСЂС‚СѓР°Р»СЊРЅСѓСЋ РјР°С€РёРЅСѓ СЃ RISC-РїРѕРґРѕР±РЅС‹РјРё РёРЅСЃС‚СЂСѓРєС†РёСЏРјРё. РњРѕР¶РµС‚ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РєР°Рє РѕРїС‚РёРјРёР·РёСЂСѓСЋС‰РёР№ РєРѕРјРїРёР»СЏС‚РѕСЂ СЌС‚РѕРіРѕ Р±Р°Р№С‚РєРѕРґР° РІ РјР°С€РёРЅРЅС‹Р№ РєРѕРґ РґР»СЏ СЂР°Р·Р»РёС‡РЅС‹С… Р°СЂС…РёС‚РµРєС‚СѓСЂ Р»РёР±Рѕ РґР»СЏ РµРіРѕ РёРЅС‚РµСЂРїСЂРµС‚Р°С†РёРё Рё JIT-РєРѕРјРїРёР»СЏС†РёРё (РґР»СЏ РЅРµРєРѕС‚РѕСЂС‹С… РїР»Р°С‚С„РѕСЂРј).</p></div><div class="none">&lt;&lt;-----Р¦РёС‚Р°С‚Р°----&lt;&lt;</div><p>РџСЂРѕРµРєС‚ LLVM РѕС„РёС†РёР°Р»СЊРЅРѕ РІРєР»СЋС‡Р°РµС‚ РІ СЃРµР±СЏ СЃР»РµРґСѓСЋС‰РёРµ РѕСЃРЅРѕРІРЅС‹Рµ РїСЂРѕРµРєС‚С‹:
+</p><ul><li> LLVMCore - Р±РёР±Р»РёРѕС‚РµРєРё РґР»СЏ РѕР±РµСЃРїРµС‡РµРЅРёСЏ РїР»Р°С‚С„РѕСЂРјРѕРЅРµР·Р°РІРёСЃРёРјРѕР№ РѕРїС‚РёРјРёР·Р°С†РёРё Рё РєРѕРґРѕРіРµРЅРµСЂР°С†РёРё РїРѕРґ СЂР°Р·Р»РёС‡РЅС‹Рµ РІРёРґС‹ РїСЂРѕС†РµСЃСЃРѕСЂРѕРІ Рё РїР»Р°С‚С„РѕСЂРј;
+</li><li> CLang - РєРѕРјРїРёР»СЏС‚РѕСЂ СЏР·С‹РєРѕРІ C/C++/Objective-C РґР»СЏ LLVM;
+</li><li> dragonegg - РѕР±СЉРµРґРёРЅСЏРµС‚ РІ СЃРµР±Рµ РїР°СЂСЃРµСЂ GCC-4.5 Рё РѕРїС‚РёРјРёР·Р°С†РёСЋ Рё РєРѕРґРѕРіРµРЅРµСЂР°С†РёСЋ РЅР° РѕСЃРЅРѕРІРµ Р±РёР±Р»РёРѕС‚РµРє LLVM;
+</li><li> LLDB - РґРµР±Р°РіРіРµСЂ, РёСЃРїРѕР»СЊР·СѓРµС‚ Clang Рё LLVM;
+</li><li> libc++ - СЂРµР°Р»РёР·Р°С†РёСЏ СЃС‚Р°РЅРґР°СЂС‚РЅРѕР№ Р±РёР±Р»РёРѕС‚РµРєРё C++ (РІРєР»СЋС‡Р°РµС‚ <a href="http://clang.llvm.org/cxx_status.html">РЅРµРїРѕР»РЅСѓСЋ РїРѕРґРґРµСЂР¶РєСѓ</a> СЃС‚Р°РЅРґР°СЂС‚Р° C++11);
+</li><li> vmkit - СЂРµР°Р»РёР·Р°С†РёСЏ СЏР·С‹РєРѕРІ Java Рё .Net РґР»СЏ LLVM;
+</li><li> SAFECode - РїР°РјСЏС‚СЊ-Р±РµР·РѕРїР°СЃРЅС‹Р№ РєРѕРјРїРёР»СЏС‚РѕСЂ РЎ/РЎ++.
+</li></ul><p>РџРѕРјРёРјРѕ СѓРїРѕРјСЏРЅСѓС‚С‹С… РѕС„РёС†РёР°Р»СЊРЅС‹С… РїСЂРѕРµРєС‚РѕРІ СЃСѓС‰РµСЃС‚РІСѓРµС‚ Р±РѕР»СЊС€РѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕРµРєС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ РёСЃРїРѕР»СЊР·СѓСЋС‚ LLVM РґР»СЏ РєРѕРјРїРёР»СЏС†РёРё РїСЂРѕРіСЂР°РјРј РґР»СЏ С‚Р°РєРёС… СЏР·С‹РєРѕРІ РєР°Рє Ruby, Python, Haskell, Java, D, PHP, Lua Рё С‚.Рґ.</p><p>РћСЃРЅРѕРІРЅС‹Рµ РёР·РјРµРЅРµРЅРёСЏ:
+</p><ul><li>llvm-gcc Р±РѕР»СЊС€Рµ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ, СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ clang РёР»Рё dragonegg;
+</li><li>LLVM IR (intermediate representation - РїР»Р°С‚С„РѕСЂРјРѕРЅРµР·Р°РІРёСЃРёРјС‹Р№ Р°СЃСЃРµРјР±Р»РµСЂ РґР»СЏ LLVM) РІРєР»СЋС‡Р°РµС‚ РІ СЃРµР±СЏ РїРѕР»РЅСѓСЋ РїРѕРґРґРµСЂР¶РєСѓ Р°С‚РѕРјР°СЂРЅС‹С… РѕРїРµСЂР°С†РёР№ СЃ РїР°РјСЏС‚СЊСЋ (load, store, compare, exchange, read/modify/write, etc.);
+</li><li>РїРѕР»РЅРѕСЃС‚СЊСЋ РїРµСЂРµРґРµР»Р°РЅ РјРµС…Р°РЅРёР·Рј РѕР±СЂР°Р±РѕС‚РєРё РёСЃРєР»СЋС‡РµРЅРёР№ РІ LLVM IR;
+</li><li>РїРѕР»РЅРѕСЃС‚СЊСЋ РїРµСЂРµРґРµР»Р°РЅР° СЃРёСЃС‚РµРјР° С‚РёРїРѕРІ LLVM IR;
+</li><li>MIPS backend РґРѕРІРµРґС‘РЅ РґРѕ production quality;
+</li><li>...
+</li></ul><p>РџРѕР»РЅС‹Р№ Рё РїРѕРґСЂРѕР±РЅС‹Р№ РїРµСЂРµС‡РµРЅСЊ РёР·РјРµРЅРµРЅРёР№ РјРѕР¶РЅРѕ РїРѕСЃРјРѕС‚СЂРµС‚СЊ РІ РїРѕРґСЂРѕР±РЅРѕСЃС‚СЏС….</p><p>Р’ РЅР°СЃС‚РѕСЏС‰РµРµ РІСЂРµРјСЏ РґР»СЏ СЃРєР°С‡РёРІР°РЅРёСЏ РґРѕСЃС‚СѓРїРµРЅ С‚РѕР»СЊРєРѕ РёСЃС…РѕРґРЅС‹Р№ РєРѕРґ (С‡РµСЂРµР· svn). Р’ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ РЅР° СЃР°Р№С‚Рµ РІ СЃРїРёСЃРєРµ Р·Р°РєР°С‡РµРє РѕР¶РёРґР°РµС‚СЃСЏ РїРѕСЏРІР»РµРЅРёРµ Р±РёРЅР°СЂРЅС‹С… СЃР±РѕСЂРѕРє Рё С‚Р°СЂР±РѕР»Р»Р°.</p>
+<p>&gt;&gt;&gt; <a href="http://llvm.org/docs/ReleaseNotes.html#whatsnew">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё (Р°РЅРіР».)</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=llvm">llvm</a>, <a href="view-news.jsp?tag=opensource">opensource</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/shty/profile">shty</a>
+
+
+
+(01.12.2011 11:18:14)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=7074064">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+
+  
+  [<a href="/news/opensource/7074064">314&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/opensource/7074064/page1">2</a> <a href="/news/opensource/7074064/page2">3</a> <a href="/news/opensource/7074064/page3">4</a> <a href="/news/opensource/7074064/page4">5</a> <a href="/news/opensource/7074064/page5">6</a> <a href="/news/opensource/7074064/page6">7</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-7073768">
+
+<h2>
+  <a href="/news/gnu/7073768">GNUnet 0.9.0</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/gnu/">
+  <img src="/white2/img/gnu-logo.png" width=60 height=56 border=0 alt="Р“СЂСѓРїРїР° GNU's Not Unix">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>GNUnet вЂ” СЌС‚Рѕ С„СЂРµР№РјРІРѕСЂРє РґР»СЏ РѕСЂРіР°РЅРёР·Р°С†РёРё Р±РµР·РѕРїР°СЃРЅРѕР№ P2P-СЃРµС‚Рё. GNUnet РїСЂРёР·РІР°РЅ Р·Р°С‰РёС‚РёС‚СЊ С‡Р°СЃС‚РЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ Рё РѕРіСЂР°РґРёС‚СЊ РёС… РѕС‚ Р°С‚Р°Рє Рё РІРјРµС€Р°С‚РµР»СЊСЃС‚РІР°. Р’ РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚ GNUnet РїСЂРµРґРѕСЃС‚Р°РІР»СЏРµС‚ РґРІР° РѕСЃРЅРѕРІРЅС‹С… РїСЂРёР»РѕР¶РµРЅРёСЏ, РѕСЃРЅРѕРІР°РЅРЅС‹С… РЅР° СЌС‚РѕРј С„СЂРµР№РјРІРѕСЂРєРµ:
+</p><ul><li> РЎРµСЂРІРёСЃ РґР»СЏ Р°РЅРѕРЅРёРјРЅРѕРіРѕ, Р±РµСЃС†РµРЅР·СѓСЂРЅРѕРіРѕ С„Р°Р№Р»РѕРІРѕРіРѕ РѕР±РјРµРЅР°. Р¤Р°Р№Р»С‹, РїРѕРёСЃРєРѕРІС‹Рµ Р·Р°РїСЂРѕСЃС‹ Рё РёС… СЂРµР·СѓР»СЊС‚Р°С‚С‹ С€РёС„СЂСѓСЋС‚СЃСЏ РґР»СЏ РїСЂРµРґРѕС‚РІСЂР°С‰РµРЅРёСЏ РєРѕРЅС‚СЂРѕР»СЏ Р·Р° РґРµР№СЃС‚РІРёСЏРјРё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ. Рљ С‚РѕРјСѓ Р¶Рµ РїСЂРѕС‚РѕРєРѕР» GNUnet'Р° СЂР°Р·СЂР°Р±РѕС‚Р°РЅ С‚Р°Рє, С‡С‚РѕР±С‹ Р·Р°С‚СЂСѓРґРЅРёС‚СЊ РІС‹С‡РёСЃР»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅР° РѕСЃРЅРѕРІР°РЅРёРё РµРіРѕ Р°РєС‚РёРІРЅРѕСЃС‚Рё.
+</li><li> VPN-СЃРµСЂРІРёСЃ РїРѕР·РІРѕР»СЏРµС‚ РїСЂРµРґРѕСЃС‚Р°РІРёС‚СЊ СЃРєСЂС‹С‚С‹Рµ СЃРµСЂРІРёСЃС‹ РІРЅСѓС‚СЂРё СЃРµС‚Рё GNUnet (РІ РґРѕРјРµРЅРµ .gnunet) Рё РјРѕР¶РµС‚ Р±С‹С‚СЊ РёСЃРїРѕР»СЊР·РѕРІР°РЅ РґР»СЏ С‚СѓРЅРЅРµР»РёСЂРѕРІР°РЅРёСЏ IPv4- Рё IPv6-С‚СЂР°С„РёРєР° С‡РµСЂРµР· P2P-СЃРµС‚СЊ.
+</li></ul><p>
+Р•СЃС‚СЊ Рё РґСЂСѓРіРёРµ РїСЂРёР»РѕР¶РµРЅРёСЏ, РЅРѕ РѕРЅРё РїРѕРєР° РµС‰С‘ РЅР°С…РѕРґСЏС‚СЃСЏ РІ СЂР°Р·СЂР°Р±РѕС‚РєРµ.</p><p>РќРѕРІР°СЏ РІРµСЂСЃРёСЏ РёРјРµРµС‚ РјРЅРѕР¶РµСЃС‚РІРѕ СЃСѓС‰РµСЃС‚РІРµРЅРЅС‹С… РёР·РјРµРЅРµРЅРёР№ РІ Р°СЂС…РёС‚РµРєС‚СѓСЂРµ, РІРєР»СЋС‡Р°СЏ РїРµСЂРµРїРёСЃС‹РІР°РЅРёРµ Р±РѕР»СЊС€РµР№ С‡Р°СЃС‚Рё СЃРёСЃС‚РµРјС‹. РќР°РёР±РѕР»РµРµ РёРЅС‚РµСЂРµСЃРЅС‹Рµ СѓР»СѓС‡С€РµРЅРёСЏ:
+</p><ul><li> РќРѕРІР°СЏ Р°СЂС…РёС‚РµРєС‚СѓСЂР°: РјСѓР»СЊС‚РёРїСЂРѕС†РµСЃСЃРЅР°СЏ Р°СЂС…РёС‚РµРєС‚СѓСЂР° СЃ ARM-СЃСѓРїРµСЂРІРёР·РѕСЂРѕРј.
+</li><li> РќРѕРІРѕРµ РїСЂРёР»РѕР¶РµРЅРёРµ: VPN.
+</li><li> РќРѕРІР°СЏ СѓС‚РёР»РёС‚Р° РґР»СЏ РЅР°СЃС‚СЂРѕР№РєРё: gnunet-setup (СЏРІР»СЏРµС‚СЃСЏ С‡Р°СЃС‚СЊСЋ gnunet-gtk).
+</li><li> РќРѕРІС‹Р№ СЃРµСЂРІРёСЃ: mesh-РјР°СЂС€СЂСѓС‚РёР·Р°С†РёСЏ.
+</li><li> РќРѕРІС‹Рµ С‚СЂР°РЅСЃРїРѕСЂС‚С‹: HTTPS Рё WLAN.
+</li><li> РџРѕРёСЃРє РїРёСЂРѕРІ РІ СЃРµС‚Рё СЃ РїРѕРјРѕС‰СЊСЋ broadcast (IPv4) Рё multicast (IPv6).
+</li><li> РЎСѓС‰РµСЃС‚РІРµРЅРЅРѕРµ СѓР»СѓС‡С€РµРЅРёРµ РѕРїРµСЂР°С†РёР№ СЃ Р±Р°Р·РѕР№ РґР°РЅРЅС‹С… Р·Р° СЃС‡С‘С‚ РЅРѕРІРѕР№ СЃС‚СЂСѓРєС‚СѓСЂС‹ С‚Р°Р±Р»РёС†С‹ РґР°РЅРЅС‹С… Рё РёРЅРґРµРєСЃР°.
+</li><li> РЈР»СѓС‡С€РµРЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РїРѕРґРєР»СЋС‡РµРЅРёСЏ Р·Р° СЃС‡С‘С‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РѕСЃРЅРѕРІР°РЅРЅРѕРіРѕ РЅР° UPnP Рё ICMP РїСЂРѕС…РѕРґР° NAT.
+</li><li> РЎСѓС‰РµСЃС‚РІРµРЅРЅРѕРµ СѓРІРµР»РёС‡РµРЅРёРµ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚Рё Р·Р° СЃС‡С‘С‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ СЃРѕР±С‹С‚РёР№РЅРѕ-СѓРїСЂР°РІР»СЏРµРјРѕР№ РјРѕРґРµР»Рё СЂР°Р±РѕС‚С‹.
+</li></ul><p>РР·-Р·Р° СЃСѓС‰РµСЃС‚РІРµРЅРЅС‹С… РёР·РјРµРЅРµРЅРёР№ РІ СЂР°Р±РѕС‚Рµ РЅРѕРІР°СЏ СЃРµС‚СЊ GNUnet-0.9 Р°Р±СЃРѕР»СЋС‚РЅРѕ РЅРµСЃРѕРІРјРµСЃС‚РёРјР° СЃРѕ СЃС‚Р°СЂРѕР№ СЃРµС‚СЊСЋ РІРµСЂСЃРёРё 0.8.</p>
+<p>&gt;&gt;&gt; <a href="https://gnunet.org/ru/node/1563">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=anonymous">anonymous</a>, <a href="view-news.jsp?tag=gnunet">gnunet</a>, <a href="view-news.jsp?tag=p2p">p2p</a>, <a href="view-news.jsp?tag=%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Р±РµР·РѕРїР°СЃРЅРѕСЃС‚СЊ</a>, <a href="view-news.jsp?tag=%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82">РёРЅС‚РµСЂРЅРµС‚</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/GArik/profile">GArik</a>
+
+
+
+(01.12.2011 0:33:37)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=7073768">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+
+  
+  [<a href="/news/gnu/7073768">71&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>&nbsp;(СЃС‚СЂ. <a href="/news/gnu/7073768/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-7072725">
+
+<h2>
+  <a href="/news/multimedia/7072725">Cinepaint 1.0</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/multimedia/">
+  <img src="/white2/img/multimedia.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° РњСѓР»СЊС‚РёРјРµРґРёР°">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Р¤РѕСЂРјР°Р»СЊРЅРѕ РІС‹РїСѓС‰РµРЅ Р°РєС‚СѓР°Р»СЊРЅС‹Р№ РёСЃС…РѕРґРЅС‹Р№ РєРѕРґ РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ СЂРµРґР°РєС‚РѕСЂР° <a href="http://www.cinepaint.org">Cinepaint</a>, СЏРІР»СЏСЋС‰РµРіРѕСЃСЏ С„РѕСЂРєРѕРј GIMP 1.0.4 Рё РїРѕР·РІРѕР»СЏСЋС‰РµРіРѕ СЂР°Р±РѕС‚Р°С‚СЊ СЃ С‚РѕС‡РЅРѕСЃС‚СЊСЋ 32 СЂР°Р·СЂСЏРґР° СЃ РїР»Р°РІР°СЋС‰РµР№ С‚РѕС‡РєРѕР№ РЅР° С†РІРµС‚РѕРІРѕР№ РєР°РЅР°Р».</p><p>Р­С‚Рѕ РїРµСЂРІС‹Р№ РѕС„РёС†РёР°Р»СЊРЅС‹Р№ Р°СЂС…РёРІ СЃ РёСЃС…РѕРґРЅС‹Рј РєРѕРґРѕРј РїСЂРѕРіСЂР°РјРјС‹ СЃ РёСЋРЅСЏ 2007 РіРѕРґР°. РЎ С‚РѕРіРѕ РјРѕРјРµРЅС‚Р° Рё РґРѕ СЃРёС… РїРѕСЂ С‚Рµ РЅРµРјРЅРѕРіРёРµ СЃР±РѕСЂРєРё РїСЂРѕРіСЂР°РјРјС‹, С‡С‚Рѕ РјРѕР¶РЅРѕ Р±С‹Р»Рѕ РІСЃС‚СЂРµС‚РёС‚СЊ РІ СЂРµРїРѕР·РёС‚РѕСЂРёСЏС…, РїСЂРµРґСЃС‚Р°РІР»СЏР»Рё СЃРѕР±РѕР№ СЃСЂРµР·С‹ CVS. РћС‚СЃСѓС‚СЃС‚РІРёРµ РѕР±РЅРѕРІР»РµРЅРёР№ Р±С‹Р»Рѕ СЃРІСЏР·Р°РЅРѕ СЃ С‚РµРј, С‡С‚Рѕ РІРІРёРґСѓ РѕСЃРѕР±РѕРіРѕ СЃС‚РёР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ РїСЂРѕРµРєС‚ СЂР°СЃС‚РµСЂСЏР» РїСЂР°РєС‚РёС‡РµСЃРєРё РІСЃРµС… СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ.</p><p>РќРѕРІР°СЏ РІРµСЂСЃРёСЏ РЅРµ СЃРѕРґРµСЂР¶РёС‚ РЅРёРєР°РєРёС… РїСЂРёРЅС†РёРїРёР°Р»СЊРЅС‹С… РёР·РјРµРЅРµРЅРёР№ Рё РѕРіСЂР°РЅРёС‡РёРІР°РµС‚СЃСЏ РёСЃРїСЂР°РІР»РµРЅРёСЏРјРё РІ СЃСЂРµРґРµ СЃР±РѕСЂРєРё. Р’ РЅРµС‘ С‚Р°РєР¶Рµ РЅРµ РІРєР»СЋС‡РµРЅС‹ РёР·РјРµРЅРµРЅРёСЏ, РІРЅРµСЃС‘РЅРЅС‹Рµ Р·Р° РїРѕСЃР»РµРґРЅРёРµ РЅРµСЃРєРѕР»СЊРєРѕ Р»РµС‚ РІ <a href="http://www.oyranos.org/scm?p=cinepaint.git">С‡Р°СЃС‚РЅС‹Р№ С„РѕСЂРє</a> РїСЂРѕРµРєС‚Р°, РїРѕРґРґРµСЂР¶РёРІР°РµРјС‹Р№ РµРіРѕ Р±С‹РІС€РёРј СѓС‡Р°СЃС‚РЅРёРєРѕРј РљР°РµРј-РЈРІРµ Р‘РµСЂРјР°РЅРѕРј.</p><p>Р”Р»СЏ СЃР±РѕСЂРєРё СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ СЃРёСЃС‚РµРјСѓ СѓРїСЂР°РІР»РµРЅРёСЏ С†РІРµС‚РѕРј Oyranos, РѕС‚СЃСѓС‚СЃС‚РІСѓСЋС‰СѓСЋ РІ Р±РѕР»СЊС€РёРЅСЃС‚РІРµ РґРёСЃС‚СЂРёР±СѓС‚РёРІРѕРІ Linux.</p><p>Р’ РЅР°СЃС‚РѕСЏС‰РµРµ РІСЂРµРјСЏ СЂСѓРєРѕРІРѕРґРёС‚РµР»СЊ РїСЂРѕРµРєС‚Р° Р РѕР±РёРЅ Р РѕСѓ РЅР°С…РѕРґРёС‚СЃСЏ РІ РїРѕРёСЃРєРµ РЅРѕРІРѕР№ РєРѕРјР°РЅРґС‹ РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ.</p>
+<p>&gt;&gt;&gt; <a href="http://www.cinepaint.org/2011/11/29/cinepaint-1-0-linux-source-tarball-available/">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=cinepaint">cinepaint</a>, <a href="view-news.jsp?tag=gimp">gimp</a>, <a href="view-news.jsp?tag=oyranos">oyranos</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/AP/profile">AP</a>
+
+
+
+(30.11.2011 21:57:29)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=7072725">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+
+  
+  [<a href="/news/multimedia/7072725">64&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёСЏ</a>&nbsp;(СЃС‚СЂ. <a href="/news/multimedia/7072725/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=infoblock id="topic-7072565">
+РњРёРЅРё-РЅРѕРІРѕСЃС‚СЊ:
+  <a href="/news/opensource/7072565">Free Dean's Office 2.3.1</a>
+
+
+
+  [<a href="/news/opensource/7072565">8&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>]
+</div>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-7069120">
+
+<h2>
+  <a href="/news/opensource/7069120">Bochs 2.5</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/white2/img/opensource-logo.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° OpenSource">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Р’С‹С€Р»Р° РЅРѕРІР°СЏ РІРµСЂСЃРёСЏ СЌС‚РѕРіРѕ РЅРµР±С‹СЃС‚СЂРѕРіРѕ, РЅРѕ РєР°С‡РµСЃС‚РІРµРЅРЅРѕРіРѕ РєСЂРѕСЃСЃ-РїР»Р°С‚С„РѕСЂРјРµРЅРЅРѕРіРѕ СЌРјСѓР»СЏС‚РѕСЂР° x86 PC. Bochs РІРєР»СЋС‡Р°РµС‚ РІ СЃРµР±СЏ СЌРјСѓР»СЏС†РёСЋ РїСЂРѕС†РµСЃСЃРѕСЂРѕРІ x86, x86-64, СѓСЃС‚СЂРѕР№СЃС‚РІ РІРІРѕРґР°-РІС‹РІРѕРґР° Рё РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ СЂР°Р·Р»РёС‡РЅС‹Рµ BIOS. РџРѕРґРґРµСЂР¶РёРІР°РµС‚ РёРЅСЃС‚СЂСѓРєС†РёРё MMX, SSEx, AVX Рё 3DNow!.</p><p>РР·РјРµРЅРµРЅРёСЏ:
+</p><ul><li> Р­РјСѓР»РёСЂСѓРµРјС‹Р№ CPU РїРѕР»РЅРѕСЃС‚СЊСЋ РЅР°СЃС‚СЂР°РёРІР°РµС‚СЃСЏ РѕРґРЅРѕР№ РѕРїС†РёРµР№ РІ .bochsrc
+</li><li> РЈСЃРєРѕСЂРµРЅРёРµ СЌРјСѓР»СЏС†РёРё РѕС‚ 10% (ST) РґРѕ 50% (SMP)
+</li><li> Р РµР°Р»РёР·РѕРІР°РЅР° РїРѕРґРґРµСЂР¶РєР° РЅРѕРІС‹С… РёРЅСЃС‚СЂСѓРєС†РёР№ x86 ISA (СЃРј. Intel Architecture Manual (rev 040, AVX rev 011)), Р° РёРјРµРЅРЅРѕ: XSAVEOPT, AVX/AVX2/FMA/F16C, BMI1/BMI2, SMEP, INVPCID, TSC-Deadline, VMX: VMX Preemption Timer, Pause Loop Exiting Рё VM Functions
+</li><li> Р РµР°Р»РёР·РѕРІР°РЅР° РїРѕРґРґРµСЂР¶РєР° РёРЅСЃС‚СЂСѓРєС†РёР№ AMD SSE4A/XOP/FMA4/TBM
+</li><li> РЎРµС‚СЊ: РїРѕСЏРІРёР»СЃСЏ РЅРѕРІС‹Р№ СЃРµС‚РµРІРѕР№ РјРѕРґСѓР»СЊ 'slirp'
+</li><li> Р”РёСЃРє: РёСЃРїСЂР°РІР»РµРЅРѕ РїРµСЂРµРїРѕР»РЅРµРЅРёРµ Р±СѓС„РµСЂР°, РІС‹Р·С‹РІР°РІС€РµРµ РїР°РґРµРЅРёРµ Bochs РІ LBA48 mode
+</li><li> Р’РёРґРµРѕ: Рљ Р±РёРѕСЃР°Рј cirrus and pcivga РґРѕР±Р°РІР»РµРЅР° РїРѕРґРґРµСЂР¶РєР° PCI ROM
+</li><li> Р—РІСѓРє: РїРѕСЂС‚РёСЂРѕРІР°РЅР° СЌРјСѓР»СЏС†РёСЏ Р·РІСѓРєРѕРІРѕР№ РєР°СЂС‚С‹ ES1370 РёР· Qemu.
+</li></ul><p>Changelog: <a href="http://sourceforge.net/projects/bochs/files/bochs/2.5/">sourceforge.net</a>
+</p>
+<p>&gt;&gt;&gt; <a href="http://bochs.sourceforge.net/">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=bochs">bochs</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/JustGuest/profile">JustGuest</a>
+
+
+
+(30.11.2011 3:18:40)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=7069120">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+
+  
+  [<a href="/news/opensource/7069120">91&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>&nbsp;(СЃС‚СЂ. <a href="/news/opensource/7069120/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-7068702">
+
+<h2>
+  <a href="/news/multimedia/7068702">Bombono DVD 1.2</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/multimedia/">
+  <img src="/white2/img/multimedia.png" width=65 height=65 border=0 alt="Р“СЂСѓРїРїР° РњСѓР»СЊС‚РёРјРµРґРёР°">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Bombono DVD вЂ” РїСЂРѕРіСЂР°РјРјР° СЃРѕР·РґР°РЅРёСЏ РІРёРґРµРѕРґРёСЃРєРѕРІ (DVD-Р°РІС‚РѕСЂРёРЅРі). РўРµРїРµСЂСЊ Bombono DVD СѓРјРµРµС‚ РїРѕР»РЅРѕСЃС‚СЊСЋ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РјРЅРѕРіРѕСЏРґРµСЂРЅС‹Рµ РїСЂРѕС†РµСЃСЃРѕСЂС‹: Р·Р°РґР°РЅРёСЏ РїРѕ РїРµСЂРµРєРѕРґРёСЂРѕРІР°РЅРёСЋ РІРёРґРµРѕ СЃРѕР·РґР°СЋС‚СЃСЏ РїР°СЂР°Р»Р»РµР»СЊРЅРѕ Рё/РёР»Рё РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РѕРїС†РёСЏ -threads ffmpeg'Р°.</p><p><b>РЎРїРёСЃРѕРє РёР·РјРµРЅРµРЅРёР№:</b>
+</p><ul><li>РїРѕРґРґРµСЂР¶РєР° РјРЅРѕРіРѕСЏРґРµСЂРЅС‹С… CPU РґР»СЏ РїРµСЂРµРєРѕРґРёСЂРѕРІР°РЅРёСЏ РІРёРґРµРѕ
+</li><li>РґРѕР±Р°РІР»РµРЅС‹ РЅРѕРІС‹Рµ РїРµСЂРµРІРѕРґС‹ (РЅРµРјРµС†РєРёР№, РєРёС‚Р°Р№СЃРєРёР№ СѓРїСЂРѕС‰РµРЅРЅС‹Р№), СЃС‚Р°СЂС‹Рµ РѕР±РЅРѕРІР»РµРЅС‹; 
+</li><li>СЂР°СЃС‡РµС‚ РѕСЃС‚Р°РІС€РµРіРѕСЃСЏ РІСЂРµРјРµРЅРё СЂР°Р±РѕС‚С‹
+</li><li>РјРѕРіСѓС‚ Р±С‹С‚СЊ РёСЃРїРѕР»СЊР·РѕРІР°РЅС‹ СЃС‚СЂРµР»РєРё Рё РґСЂСѓРіРёРµ РёРєРѕРЅРєРё РґР»СЏ РјРµРЅСЋ, Р° РЅРµ С‚РѕР»СЊРєРѕ СЂР°РјРєРё; РјРѕР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ СЃРІРѕРё, РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕ РґРѕР±Р°РІРёРІ РёС… РІ ~/AppData/Roaming/bombono-dvd/icons (Win7) РёР»Рё ~/.config/bombono-dvd/icons (Linux)
+</li><li>РЅРѕРІС‹Рµ СЂР°РјРєРё РґР»СЏ РјРµРЅСЋ, РѕС‚ Dietrich Martin
+</li><li>РјРЅРѕР¶РµСЃС‚РІРѕ РёРєРѕРЅРѕРє РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ: РіР°Р»РєРё, СЃС‚СЂРµР»РєРё, РєСЂСѓРіРё Рё С‚.Рґ.
+</li><li>РёРЅС‚РµРіСЂР°С†РёСЏ СЃ РІРµР±-Р±СЂР°СѓР·РµСЂРѕРј РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ С„РѕРЅРѕРІ РјРµРЅСЋ
+</li><li>РєРѕРїРёСЂРѕРІР°РЅРёРµ/РІСЃС‚Р°РІРєР° СЌР»РµРјРµРЅС‚РѕРІ РјРµРЅСЋ; С„СѓРЅРєС†РёСЏ РЎРєРѕРїРёСЂРѕРІР°С‚СЊ РјРµРЅСЋ
+</li><li>СЃРѕС…СЂР°РЅРµРЅРёРµ РїСЂРѕРїРѕСЂС†РёР№ РїСЂРё РёР·РјРµРЅРµРЅРёРё СЂР°Р·РјРµСЂРѕРІ РІ СЂРµРґР°РєС‚РѕСЂРµ (СЃ Shift'РѕРј) 
+</li><li>РїСЂРёРІСЏР·РєР° Рє СЃРµС‚РєРµ РІ СЂРµРґР°РєС‚РѕСЂРµ
+</li><li>3 РІР°СЂРёР°РЅС‚Р° СѓСЃС‚Р°РЅРѕРІРёС‚СЊ С„РѕРЅ РґР»СЏ РјРµРЅСЋ: Р—Р°РїРѕР»РЅРµРЅРёРµ, РџРѕ СЂР°Р·РјРµСЂСѓ Рё Р Р°СЃС‚СЏРЅСѓС‚СЊ 
+</li><li>СѓР»СѓС‡С€РµРЅРёСЏ РґР»СЏ DVD СЃ СЃРѕРѕС‚РЅРѕС€РµРЅРёРµРј 16:9
+</li><li>РћС‚С‡РµС‚ РѕР± РѕС€РёР±РєР°С… РїРµСЂРµРґ Р°РІС‚РѕСЂРёРЅРіРѕРј, РµСЃР»Рё С‚СЂРµР±СѓРµС‚СЃСЏ
+</li><li>С„СѓРЅРєС†РёСЏ РџРµСЂРµРёРјРµРЅРѕРІР°С‚СЊ РІ Р±СЂР°СѓР·РµСЂР°С… Р±РѕР»СЊС€Рµ РЅРµ РєРѕРЅС„Р»РёРєС‚СѓРµС‚ СЃ Drag-n-Drop
+</li><li>SCons С‚РµРїРµСЂСЊ РЅРµ РѕР±СЏР·Р°С‚РµР»РµРЅ РґР»СЏ СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹
+</li><li>РїРѕРїСЂР°РІРєРё РґР»СЏ РЅРѕРІС‹С… РІРµСЂСЃРёР№ ffmpeg, gcc, gtk, boost; РёСЃРїСЂР°РІР»РµРЅРёРµ РѕС€РёР±РѕРє Рё РјРµР»РєРёРµ СѓР»СѓС‡С€РµРЅРёСЏ
+</li><li>РґР»СЏ РїСЂРѕРіСЂР°РјРјС‹ РїРѕРґ Windows РїРѕСЏРІРёР»Р°СЃСЊ РїР»Р°С‚РЅР°СЏ РїРѕРґРґРµСЂР¶РєР°, РІ РѕС‚Р»РёС‡РёРµ РѕС‚ Linux-РІРµСЂСЃРёРё
+</li></ul><p>&gt;&gt;&gt; <a href="http://www.bombono.org/cgi-bin/wiki/Download?set_lang=ru">РЎРєР°С‡Р°С‚СЊ</a>
+</p>
+<p>&gt;&gt;&gt; <a href="http://www.bombono.org/?set_lang=ru">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=dvd">dvd</a>, <a href="view-news.jsp?tag=ffmpeg">ffmpeg</a>, <a href="view-news.jsp?tag=gtk">gtk</a>, <a href="view-news.jsp?tag=%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE">РІРёРґРµРѕ</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/L_user/profile">L_user</a>
+
+
+
+(30.11.2011 3:18:00)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=7068702">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+
+  
+  [<a href="/news/multimedia/7068702">55&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/multimedia/7068702/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=news id="topic-7066624">
+
+<h2>
+  <a href="/news/internet/7066624">Р’С‹РїСѓС‰РµРЅ Bluefish 2.2.0</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/internet/">
+  <img src="/white2/img/applications-internet.png" width=64 height=64 border=0 alt="Р“СЂСѓРїРїР° РРЅС‚РµСЂРЅРµС‚">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>25 РЅРѕСЏР±СЂСЏ 2011 РіРѕРґР° РІС‹С€Р»Р° РЅРѕРІР°СЏ РІРµСЂСЃРёСЏ Bluefish вЂ” РјРѕС‰РЅРѕРіРѕ СЃРІРѕР±РѕРґРЅРѕРіРѕ СЂРµРґР°РєС‚РѕСЂР° РґР»СЏ РІРµР±-РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ, РєРѕС‚РѕСЂС‹Р№ СЃРѕРґРµСЂР¶РёС‚ РјРЅРѕР¶РµСЃС‚РІРѕ С„СѓРЅРєС†РёР№ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ СЃР°Р№С‚РѕРІ, СЃРєСЂРёРїС‚РѕРІ Рё РєРѕРґР° РїСЂРѕРіСЂР°РјРј. РџСЂРёР»РѕР¶РµРЅРёРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РјРЅРѕРіРѕ СЏР·С‹РєРѕРІ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ Рё СЂР°Р·РјРµС‚РєРё, РѕРґРЅР°РєРѕ СЃРѕР·РґР°РЅРѕ, РІ РїРµСЂРІСѓСЋ РѕС‡РµСЂРµРґСЊ, РґР»СЏ СѓРїСЂРѕС‰РµРЅРёСЏ СЂР°Р·СЂР°Р±РѕС‚РєРё РґРёРЅР°РјРёС‡РµСЃРєРёС… Рё РёРЅС‚РµСЂР°РєС‚РёРІРЅС‹С… СЃР°Р№С‚РѕРІ. РџРѕРґ РІС‹РІРµСЃРєРѕР№ Bluefish 2.2.0 СЃРєСЂС‹РІР°РµС‚СЃСЏ Р±РѕР»СЊС€РѕРµ С‡РёСЃР»Рѕ РёР·РјРµРЅРµРЅРёР№:</p><ul><li>Bluefish С‚РµРїРµСЂСЊ РёСЃРїРѕР»СЊР·СѓРµС‚ gtk-3 (gtk-2 С‚Р°РєР¶Рµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ).</li><li>Р—РЅР°С‡РёС‚РµР»СЊРЅРѕ РїРµСЂРµСЃРјРѕС‚СЂРµРЅР° РїРѕРґСЃРёСЃС‚РµРјР° РїРѕРґСЃРІРµС‚РєРё СЃРёРЅС‚Р°РєСЃРёСЃР° (syntax scanner), РєРѕС‚РѕСЂР°СЏ С‚РµРїРµСЂСЊ СЂР°Р±РѕС‚Р°РµС‚ Р±С‹СЃС‚СЂРµРµ, РѕСЃРѕР±РµРЅРЅРѕ РІРѕ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹ СЃ Р±РѕР»СЊС€РёРјРё С„Р°Р№Р»Р°РјРё.</li><li>РќРѕРІР°СЏ С„СѓРЅРєС†РёСЏ РїРѕРёСЃРєР° Рё Р·Р°РјРµРЅС‹. РћРЅР° Р±С‹Р»Р° РїРѕР»РЅРѕСЃС‚СЊСЋ РїРµСЂРµРґРµР»Р°РЅР°: РїСЂРѕСЃС‚Р°СЏ С„СѓРЅС†РёСЏ РїРѕРёСЃРєР° СЃРµР№С‡Р°СЃ РІСЃС‚СЂРѕРµРЅР° РІ РіР»Р°РІРЅРѕРµ РѕРєРЅРѕ, Р° РЅРѕРІР°СЏ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РїРѕРёСЃРєР° Рё Р·Р°РјРµРЅС‹ РІ С„Р°Р№Р»Р°С… РЅР° РґРёСЃРєРµ (СЂСЏРґРѕРј СЃ СѓР¶Рµ РѕС‚РєСЂС‹С‚С‹Рј РґРѕРєСѓРјРµРЅС‚РѕРј).</li><li>РљРѕРЅС‚РµРєСЃС‚РЅРѕ-Р·Р°РІРёСЃРёРјС‹Р№ РїРµСЂРµРєР»СЋС‡Р°С‚РµР»СЊ РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ (РґРѕР±Р°РІР»СЏРµС‚  &lt;!-- --&gt; РєРѕРјРјРµРЅС‚Р°СЂРёРё РІ РєРѕРґРµ HTML, РёСЃРїРѕР»СЊР·СѓРµС‚ // РєРѕРјРјРµРЅС‚Р°СЂРёРё РІ РєРѕРґРµ РЅР° JavaScript Рё С‚.Рґ.) Рё С„СѓРЅРєС†РёСЏ Р±Р»РѕРєРѕРІ РІС‹Р±РѕСЂР° РєРѕРЅС‚РµРєСЃС‚Р°, РєРѕС‚РѕСЂР°СЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РІС‹Р±РёСЂР°РµС‚ С‚РµРєСѓС‰РёР№ РєРѕРЅС‚РµРєСЃС‚ Р±Р»РѕРєСѓ РєРѕРґР°.</li><li>Р•С‰С‘ РѕРґРЅР° РЅРѕРІР°СЏ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ вЂ” Р°РІС‚РѕРґРѕРїРѕР»РЅРµРЅРёРµ С„СѓРЅРєС†РёР№, РѕРїСЂРµРґРµР»С‘РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј, Рё РїРѕРєР°Р· РѕРїСЂРµРґРµР»РµРЅРёСЏ С„СѓРЅРєС†РёРё, СЃ РєРѕС‚РѕСЂРѕР№ РІС‹ СЃРµР№С‡Р°СЃ СЂР°Р±РѕС‚Р°РµС‚Рµ.</li><li>Р”РѕР±Р°РІР»РµРЅР° РїРѕРґРґРµСЂР¶РєР° РЅРѕРІС‹С… СЏР·С‹РєРѕРІ, С‚Р°РєРёС… РєР°Рє Google Go, Vala Рё Ada.
+</li></ul><p><a href="http://bluefish.openoffice.nl/features.html">Р’РѕР·РјРѕР¶РЅРѕСЃС‚Рё СЂРµРґР°РєС‚РѕСЂР°</a></p><p><a href="http://bluefish.openoffice.nl/screenshots.html">РЎРЅРёРјРєРё СЌРєСЂР°РЅР° Рё РІРёРґРµРѕ</a></p><p><a href="http://bluefish.openoffice.nl/download.html">РЎРєР°С‡Р°С‚СЊ</a></p>
+<p>&gt;&gt;&gt; <a href="http://bluefish.openoffice.nl/index.html">РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  РњРµС‚РєРё: <span class=tag><a href="view-news.jsp?tag=gtk">gtk</a>, <a href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a href="/people/luke/profile">luke</a>
+
+
+
+(29.11.2011 15:36:37)
+    
+    
+  
+</div>
+<div class="nav">
+
+
+  [<a href="comment-message.jsp?topic=7066624">Р”РѕР±Р°РІРёС‚СЊ&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёР№</a>]
+
+  
+  [<a href="/news/internet/7066624">70&nbsp;РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ</a>&nbsp;(СЃС‚СЂ. <a href="/news/internet/7066624/page1">2</a>)]
+  </div>
+  </div>
+</div>
+
+
+
+
+    
+<div class="nav">
+  [<a href="/news/?offset=20">в†ђ РїСЂРµРґС‹РґСѓС‰РёРµ</a>]
+  [<a href="add-section.jsp?section=1">РґРѕР±Р°РІРёС‚СЊ РЅРѕРІРѕСЃС‚СЊ</a>]
+  [<a href="view-all.jsp?section=1">РЅРµРїСЂРѕРІРµСЂРµРЅРЅС‹Рµ РЅРѕРІРѕСЃС‚Рё</a>]
+  [<a href="section-rss.jsp?section=1">RSS</a>]
+</div>
+</div>
+</div>
+<div class=column>
+
+  
+    <div class=boxlet>
+      <h2>Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ!</h2>
+
+      <div class="boxlet_content">
+        Р’Р°С€ СЃС‚Р°С‚СѓСЃ: РЅРѕРІС‹Р№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ
+        <ul>
+          <li><a href="tracker.jsp?filter=mine">РњРѕРё С‚РµРјС‹</a></li>
+          <li><a href="/people/killgamesh666/favs">РР·Р±СЂР°РЅРЅС‹Рµ С‚РµРјС‹</a></li>
+          <li><a href="show-comments.jsp?nick=killgamesh666">РњРѕРё РєРѕРјРјРµРЅС‚Р°СЂРёРё</a></li>
+          
+          <li><a href="notifications">РЈРІРµРґРѕРјР»РµРЅРёСЏ</a></li>
+        </ul>
+        <ul>
+          <li><a href="edit-profile.jsp">РќР°СЃС‚СЂРѕР№РєРё</a></li>
+        </ul>
+      </div>
     </div>
+  
+
+  
+      
+        <div class="boxlet">
+            
+
+
+<h2>РќРѕРІС‹Рµ РјР°С‚РµСЂРёР°Р»С‹ РЅР° IBM developerWorks</h2>
+<div class="boxlet_content">
+  <iframe src="dw.jsp?height=400&amp;width=219&amp;main=1" width="222" height="400" scrolling="no"
+          frameborder="0"></iframe>
+  <h3>My developerWorks!</h3>
+  <a style="text-decoration: underline" href="http://www.ibm.com/developerworks/mydeveloperworks/?lang=ru" title="">Р’СЃС‚СѓРїР°Р№</a> РІ СЃРѕРѕР±С‰РµСЃС‚РІРѕ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»РѕРІ&nbsp;IBM!<br>
+РќР°СЃ СѓР¶Рµ Р±РѕР»РµРµ 3000 С‚РѕР»СЊРєРѕ РІ Р РѕСЃСЃРёРё.
+</div>
+        </div>
+      
+        <div class="boxlet">
+            
 
 
 
+
+
+
+
+  
+  <h2><a href="/polls/">РћРїСЂРѕСЃ</a></h2>
+
+  <div class="boxlet_content">
+    <h3>РљР°РєРѕР№ РёР· РґРёСЃС‚СЂРёР±СѓС‚РёРІРѕРІ, РїРѕ РІР°С€РµРјСѓ РјРЅРµРЅРёСЋ, РѕР±Р»Р°РґР°РµС‚ РЅР°РёР±РѕР»РµРµ РїРѕР»РЅРѕР№ Рё РІРЅСЏС‚РЅРѕР№ РґРѕРєСѓРјРµРЅС‚Р°С†РёРµР№?</h3>
+
+    <form action="/vote.jsp" method="POST">
+      <input type="hidden" name="voteid" value="1510"/>
+      
+        
+          <input type="checkbox" name="vote" id="poll-11387" value="11387"><label for="poll-11387">Debian</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11388" value="11388"><label for="poll-11388">Ubuntu</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11389" value="11389"><label for="poll-11389">RHEL</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11390" value="11390"><label for="poll-11390">Fedora</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11391" value="11391"><label for="poll-11391">SLES</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11392" value="11392"><label for="poll-11392">OpenSUSE</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11393" value="11393"><label for="poll-11393">Gentoo</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11394" value="11394"><label for="poll-11394">Arch Linux</label> <br/>
+        
+        
+      
+        
+          <input type="checkbox" name="vote" id="poll-11395" value="11395"><label for="poll-11395">ALTLinux</label> <br/>
+        
+        
+      
+      <input type="submit" value="vote"/>
+    </form>
+    <br/>
+    
+    
+        <a href="/view-vote.jsp?vote=1510">СЂРµР·СѓР»СЊС‚Р°С‚С‹</a> (1979/1218 РіРѕР»РѕСЃРѕРІ)
+    
+    
+    <br/>
+    <a href="/polls/">РёС‚РѕРіРё РїСЂРѕС€РµРґС€РёС… РѕРїСЂРѕСЃРѕРІ...</a>
+    <br/>
+    [<a href="/add.jsp?group=19387">РґРѕР±Р°РІРёС‚СЊ РѕРїСЂРѕСЃ</a>]
+  </div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+<h2>Top 10</h2>
+
+<div class="boxlet_content">
+  <h3>РќР°РёР±РѕР»РµРµ РѕР±СЃСѓР¶РґР°РµРјС‹Рµ С‚РµРјС‹ СЌС‚РѕРіРѕ РјРµСЃСЏС†Р°</h3>
+  <ul>
+    
+      <li>
+      
+      <a href="/news/opensource/7029354">The Journal: Р¶РёР·РЅСЊ РїРѕСЃР»Рµ syslog</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/opensource/7029354/page27?lastmod=1322822220003">28</a>)
+      
+      (1374)
+      </li>
+    
+      <li>
+      
+      <a href="/news/ubuntu/6965043">Ubuntu Linux РїРѕС‚РµСЂСЏР» РјРµСЃС‚Рѕ Р»РёРґРµСЂР° DistroWatch. Linux Mint вЂ” РЅРѕРІС‹Р№ Р»РёРґРµСЂ</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/ubuntu/6965043/page17?lastmod=1322337063634">18</a>)
+      
+      (883)
+      </li>
+    
+      <li>
+      
+      <a href="/news/android/7007755">Barnes and Noble СЂР°СЃСЃРµРєСЂРµС‡РёРІР°РµС‚ СЃРїРёСЃРѕРє РїР°С‚РµРЅС‚РѕРІ Microsoft, РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РґР»СЏ РґР°РІР»РµРЅРёСЏ РЅР° РїСЂРѕРёР·РІРѕРґРёС‚РµР»РµР№ СѓСЃС‚СЂРѕР№СЃС‚РІ РїРѕРґ СѓРїСЂР°РІР»РµРЅРёРµРј Android</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/android/7007755/page14?lastmod=1322650468020">15</a>)
+      
+      (723)
+      </li>
+    
+      <li>
+      
+      <a href="/news/novell/7007235">openSUSE 12.1</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/novell/7007235/page11?lastmod=1322463448983">12</a>)
+      
+      (571)
+      </li>
+    
+      <li>
+      
+      <a href="/news/gnome/7077842">РћР±СЉСЏРІР»РµРЅР° РЅРѕРІР°СЏ РёРЅРёС†РёР°С‚РёРІР° GNOME: В«Р’Р°Р¶РЅР° РєР°Р¶РґР°СЏ РјРµР»РѕС‡СЊВ»</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/gnome/7077842/page10?lastmod=1323065128805">11</a>)
+      
+      (528)
+      </li>
+    
+      <li>
+      
+      <a href="/news/games/7013980">Р’С‹С€РµР» РєР»РёРµРЅС‚ Desura РґР»СЏ Linux</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/games/7013980/page9?lastmod=1322987122716">10</a>)
+      
+      (496)
+      </li>
+    
+      <li>
+      
+      <a href="/news/redhat/6971063">Р’С‹РїСѓС‰РµРЅР° Fedora 16 В«VerneВ»</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/redhat/6971063/page9?lastmod=1322239293045">10</a>)
+      
+      (469)
+      </li>
+    
+      <li>
+      
+      <a href="/news/ubuntu/7053978">Linux Mint 12 &quot;Lisa&quot;</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/ubuntu/7053978/page8?lastmod=1322647774399">9</a>)
+      
+      (429)
+      </li>
+    
+      <li>
+      
+      <a href="/news/opensource/7030930">PyPy 1.7</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/opensource/7030930/page7?lastmod=1322413833945">8</a>)
+      
+      (364)
+      </li>
+    
+      <li>
+      
+      <a href="/news/multimedia/7041418">MyPaint 1.0</a>
+      
+        
+        (СЃС‚СЂ. <a href="/news/multimedia/7041418/page6?lastmod=1322667095071">7</a>)
+      
+      (319)
+      </li>
+    
+  </ul>
+</div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+  <h2><a href="/gallery/">Р“Р°Р»РµСЂРµСЏ</a></h2>
+
+  <div class="boxlet_content">
+    <h3>РџРѕСЃР»РµРґРЅРёРµ СЃРєСЂРёРЅС€РѕС‚С‹</h3>
+    
+      <div style="margin-bottom: 1em">
+      <div align="center">
+        
+        <a href="/gallery/screenshots/7091307">
+          
+            
+              <img src="gallery/7091307-icon.jpg" alt="РЎРєСЂРёРЅС€РѕС‚: fedora16+TDE+Clementine" width=200 height=112/>
+            
+            
+          
+        </a>
+      </div>
+      <i>
+        
+          
+            1366x768
+          
+          
+        
+        
+      </i> fedora16+TDE+Clementine РѕС‚ <a href="/people/firedimedrol/profile">firedimedrol</a> (17)
+      </div>
+    
+      <div style="margin-bottom: 1em">
+      <div align="center">
+        
+        <a href="/gallery/screenshots/7087257">
+          
+            
+              <img src="gallery/7087257-icon.jpg" alt="РЎРєСЂРёРЅС€РѕС‚: Mint 12 web-coding" width=200 height=113/>
+            
+            
+          
+        </a>
+      </div>
+      <i>
+        
+          
+            1920x1080
+          
+          
+        
+        
+      </i> Mint 12 web-coding РѕС‚ <a href="/people/Zetoke/profile">Zetoke</a> (47)
+      </div>
+    
+      <div style="margin-bottom: 1em">
+      <div align="center">
+        
+        <a href="/gallery/screenshots/7090258">
+          
+            
+              <img src="gallery/7090258-icon.jpg" alt="РЎРєСЂРёРЅС€РѕС‚: С‚РµР»РµС„РѕРЅРЅР°СЏ С‚СЂСѓР±РєР°" width=200 height=221/>
+            
+            
+          
+        </a>
+      </div>
+      <i>
+        
+          
+            1600x1765
+          
+          
+        
+        
+      </i> С‚РµР»РµС„РѕРЅРЅР°СЏ С‚СЂСѓР±РєР° РѕС‚ <a href="/people/backbone/profile">backbone</a> (37)
+      </div>
+    
+    <a href="/gallery/">РґСЂСѓРіРёРµ СЃРєСЂРёРЅС€РѕС‚С‹...</a>
+  </div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+  <h2>РћР±Р»Р°РєРѕ РњРµС‚РѕРє</h2>
+
+  <div class="boxlet_content">
+    <div align="center">
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=3d">3d</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=amd">amd</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=android">android</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=arch">arch</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=ati">ati</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=bsd">bsd</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=conky">conky</a>
+      
+        
+        <a class="cloud6" href="/view-news.jsp?tag=debian">debian</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=embedded+linux">embedded linux</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=fedora">fedora</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=firefox">firefox</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=gentoo">gentoo</a>
+      
+        
+        <a class="cloud7" href="/view-news.jsp?tag=gnome">gnome</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=gnu">gnu</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=google">google</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=gpl">gpl</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=java">java</a>
+      
+        
+        <a class="cloud6" href="/view-news.jsp?tag=kde">kde</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=kde4">kde4</a>
+      
+        
+        <a class="cloud10" href="/view-news.jsp?tag=linux">linux</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=microsoft">microsoft</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=mozilla">mozilla</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=nvidia">nvidia</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=openbox">openbox</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=openoffice">openoffice</a>
+      
+        
+        <a class="cloud8" href="/view-news.jsp?tag=opensource">opensource</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=oracle">oracle</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=python">python</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=qt">qt</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=redhat">redhat</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=sun">sun</a>
+      
+        
+        <a class="cloud9" href="/view-news.jsp?tag=ubuntu">ubuntu</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=web">web</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=windows">windows</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=wine">wine</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=xfce">xfce</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d1%8c">Р±РµР·РѕРїР°СЃРЅРѕСЃС‚СЊ</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b0%d0%bb%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%8f">РІРёСЂС‚СѓР°Р»РёР·Р°С†РёСЏ</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d0%ba%d0%b0">РіСЂР°С„РёРєР°</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d0%b0%d1%86%d0%b8%d1%8f">РґРѕРєСѓРјРµРЅС‚Р°С†РёСЏ</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=%d0%b4%d1%80%d0%b0%d0%b9%d0%b2%d0%b5%d1%80%d1%8b">РґСЂР°Р№РІРµСЂС‹</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%b7%d0%b2%d1%83%d0%ba">Р·РІСѓРє</a>
+      
+        
+        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d0%b3%d1%80%d1%8b">РёРіСЂС‹</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b2%d1%8c%d1%8e">РёРЅС‚РµСЂРІСЊСЋ</a>
+      
+        
+        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d1%8f+%d1%83%d1%81%d0%bf%d0%b5%d1%85%d0%b0">РёСЃС‚РѕСЂРёСЏ СѓСЃРїРµС…Р°</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=%d0%ba%d0%be%d0%bd%d1%84%d0%b5%d1%80%d0%b5%d0%bd%d1%86%d0%b8%d1%8f">РєРѕРЅС„РµСЂРµРЅС†РёСЏ</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">РѕР±СЂР°Р·РѕРІР°РЅРёРµ</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=%d0%bf%d0%b0%d1%82%d0%b5%d0%bd%d1%82%d1%8b">РїР°С‚РµРЅС‚С‹</a>
+      
+        
+        <a class="cloud7" href="/view-news.jsp?tag=%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=%d1%8f%d0%b4%d1%80%d0%be">СЏРґСЂРѕ</a>
+      
+    </div>
+  </div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+
+
+<h2><a href="/news/">РђСЂС…РёРІ РќРѕРІРѕСЃС‚РµР№</a></h2>
+
+<div class="boxlet_content">
+  
+    
+    
+    <a href="/news/archive/2011/12">2011 Р”РµРєР°Р±СЂСЊ
+      (14)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/11">2011 РќРѕСЏР±СЂСЊ
+      (101)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/10">2011 РћРєС‚СЏР±СЂСЊ
+      (91)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/9">2011 РЎРµРЅС‚СЏР±СЂСЊ
+      (109)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/8">2011 РђРІРіСѓСЃС‚
+      (99)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/7">2011 РСЋР»СЊ
+      (118)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/6">2011 РСЋРЅСЊ
+      (128)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/5">2011 РњР°Р№
+      (123)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/4">2011 РђРїСЂРµР»СЊ
+      (111)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/3">2011 РњР°СЂС‚
+      (111)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/2">2011 Р¤РµРІСЂР°Р»СЊ
+      (80)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2011/1">2011 РЇРЅРІР°СЂСЊ
+      (88)</a> <br/>
+  
+    
+    
+    <a href="/news/archive/2010/12">2010 Р”РµРєР°Р±СЂСЊ
+      (119)</a> <br/>
+  
+  <br>&gt;&gt;&gt; <a href="/news/archive/"> РџСЂРµРґС‹РґСѓС‰РёРµ РјРµСЃСЏС†С‹</a> (СЃ РѕРєС‚СЏР±СЂСЏ 1998)
+</div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+<h2>Р¤СѓС‚Р±РѕР»РєРё linux.org.ru</h2>
+<div class="boxlet_content">
+  <a href="/view-message.jsp?msgid=3989453"><img src="/adv/tshirt.jpg" width="150" height="150"> </a><br>
+  <a href="/view-message.jsp?msgid=3989453">Р—Р°РєР°Р· С„СѓС‚Р±РѕР»РєРё Linux.org.ru</a>
+</div>
+        </div>
+      
+  
 </div>
 
 
-
-
-
-
-
-<div class="td_center_list">
-
-<div class="red_line_list"></div>
-
-
-
-<div class="list_date">
-
-	<span>17 ноября 2011 г. </span>
-
-</div>
-
-<!--div class="float_left" style="width: 80px; padding-left: 10px;">
-
-<a id="arclink" href="#" class="arhiv_ico" onclick="show_datepicker('http://www.vesti.ru/news?ldate=', this);">aрхив</a>
-
-</div-->
-
-<!? eng_parse("if(\"paging_exists\",\"design.paging_html\"\)"); ?><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:40</p>
-
-		<a href="/doc.html?id=633250" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_509600.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633250&cid=7">Глава МНТК &quot;Микрохирургия глаза&quot; брал деньги за бесплатную помощь</a></h3>
-
-	<p><a href="/doc.html?id=633250&cid=7">Минздравсоцразвития РФ решило не продлять трудовые отношения с исполняющим обязанности директора МНТК "Микрохирургия глаза" Христо Тахчиди. Основанием для такого решения послужили массовые жалобы пациентов и сотрудников, а также результаты проверки деятельности центра.  </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:34</p>
-
-		<a href="/doc.html?id=633266" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567523.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633266&cid=460">Премьера в Царском селе</a></h3>
-
-	<p><a href="/doc.html?id=633266&cid=460">В Екатерининский дворец Царского села после реставрации вернули люстру работы Манегетти. Бронзовая люстра заняла историческое место в Лионском зале - гостиной императрицы Марии Александровны.  Реставрация длилась полгода, восстанавливали люстру 10 мастеров - литейщики, позолотчики, ювелиры. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:29</p>
-
-		
-
-	</div>
-
-
-
-	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424893">Porsche Panamera GTS прибыл в Лос-Анджелес</a></h3>
-
-	<p><a href="http://auto.vesti.ru/doc.html?id=424893">В Лос-Анджелесе состоялась премьера еще одной модификации большого хэтчбека Porsche Panamera. Версия GTS по энерговооруженности располагается между моделями Panamera S и Panamera Turbo, но конструктивно напоминает их обеих, вместе взятых. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:29</p>
-
-		<a href="/doc.html?id=633258" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_566979.jpg" width="92" height="69" border="0">
-
-<div class="video_ico_s"></div>
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633258&cid=520">Тайна неопознанных объектов в пустыне Гоби почти раскрыта</a></h3>
-
-	<p><a href="/doc.html?id=633258&cid=520">Общими усилиями интернет-пользователям удалось идентифицировать некоторые неопознанные объекты, обнаруженные на этой неделе спутником Google в китайской пустыне Гоби. Впрочем, тема "пустынных объектов" по-прежнему актуальна – там нашли новые странные постройки. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:25</p>
-
-		<a href="/doc.html?id=633255" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567525.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633255&cid=460">Искусство на продажу</a></h3>
-
-	<p><a href="/doc.html?id=633255&cid=460">Российский аукционный дом представляет лоты ноябрьских торгов. На предаукционной выставке - более 200 произведений искусства русских мастеров конца XIX - XX веков. Впервые за 100 лет выставлена уникальная картина Николая Рериха "У рубежа". </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:20</p>
-
-		<a href="/doc.html?id=633249" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567512.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633249&cid=780">Исследователи придумали, как увеличить емкость литий-ионных батарей в 10 раз</a></h3>
-
-	<p><a href="/doc.html?id=633249&cid=780">Ученые из Северо-западного университета в США нашли способ решения двух серьезных недостатков современных литий-ионных аккумуляторов - емкости и времени зарядки. Благодаря новой технологии одного заряда батареи хватит на неделю, а на ее перезарядку будет уходить всего 15 минут. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:19</p>
-
-		<a href="/doc.html?id=633238" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565506.jpg" width="92" height="69" border="0">
-
-<div class="video_ico_s"></div>
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633238&cid=9">Генпрокурор Таджикистана считает, что осужденным летчикам заметно смягчат приговор</a></h3>
-
-	<p><a href="/doc.html?id=633238&cid=9">Генеральный прокурор Таджикистана Шерхон Салимзода считает, что приговор летчикам авиакомпании "Ролкан" "излишне суров". Он надеется, что с учетом протеста прокурора Хатлонской области вышестоящая судебная инстанция вынесет приговор ниже минимального срока, предусмотренного статьями УК республики. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:10</p>
-
-		<a href="/doc.html?id=633244" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_565541.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633244&cid=6">В основе кризиса в Греции лежит неразумная финансовая политика и мошенничество</a></h3>
-
-	<p><a href="/doc.html?id=633244&cid=6">В основе возникновения кризиса в Греции лежит смесь неразумной финансовой политики и нарушения обязательств по раскрытию информации, заявил сегодня на федеральном инвестиционном форуме зампредседателя Банка России Сергей Швецов.
-
- </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:01</p>
-
-		<a href="/doc.html?id=633231" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_557067.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633231&cid=7">Начальник генштаба РФ: локальные конфликты могут перерасти в ядерную войну</a></h3>
-
-	<p><a href="/doc.html?id=633231&cid=7">Вероятность возникновения локальных вооруженных конфликтов по периметру России возросла после распада СССР. С таким заявлением выступил начальник российского Генштаба генерал армии Николай Макаров. По его мнению, при определенных обстоятельствах эти конфликты могут перерасти в ядерную войну. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">12:01</p>
-
-		
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633240&cid=6">Директор европейского департамента МВФ уходит в отставку</a></h3>
-
-	<p><a href="/doc.html?id=633240&cid=6">Международный валютный фонд принял отставку директора по Европе Антонио Боргеша и поставил на его место влиятельного чиновника с хорошими связями, подтвердив курс на жесткую борьбу с долговым кризисом.
-
- </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:58</p>
-
-		<a href="/doc.html?id=633233" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567510.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633233&cid=8">Телефонный террорист парализовал работу калининградского аэропорта</a></h3>
-
-	<p><a href="/doc.html?id=633233&cid=8">В калининградский аэропорт сегодня утром позвонил неизвестный, сообщивший о том, что здание аэровокзала заминировано. Задержали два авиарейса на Москву, их пассажиры и служащие аэропорта были эвакуированы. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:55</p>
-
-		
-
-	</div>
-
-
-
-	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424873">Cadillac показал новый флагман – седан XTS</a></h3>
-
-	<p><a href="http://auto.vesti.ru/doc.html?id=424873">Как и было обещано неделей ранее, марка Cadillac показала на автошоу в Лос-Анджелесе свой новый флагман. Седан XTS заменит собой сразу две модели в линейке марки, получит 300-сильный двигатель и полноприводную версию. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:52</p>
-
-		<a href="/doc.html?id=633234" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_535744.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633234&cid=6">Цена на нефть продолжает снижаться </a></h3>
-
-	<p><a href="/doc.html?id=633234&cid=6">С падения цен на нефть начали сегодня работу ведущие мировые товарные рынки. На Лондонской бирже стоимость барреля смеси Brent снизилась на 54 цента и достигла уровня в $111,34. Цена барреля техасской светлой нефти упала на 39 центов и заняла отметку в $102,2.  </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:42</p>
-
-		<a href="/doc.html?id=633226" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567509.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633226&cid=680">Вячеслав Екимов станет советником президента федерации велоспорта России</a></h3>
-
-	<p><a href="/doc.html?id=633226&cid=680">Двукратный олимпийский чемпион, знаменитый в прошлом российский профессиональный велогонщик Вячеслав Екимов, до недавнего времени работавший спортивным директором профессиональной команды, в сезоне 2012 года займет должность советника президента Федерации велосипедного спорта Игоря Макарова. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:35</p>
-
-		<a href="/doc.html?id=633223" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567293.jpg" width="92" height="69" border="0">
-
-<div class="video_ico_s"></div>
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633223&cid=8">С &quot;Капитана Кузнецова&quot; эвакуируют травмированного старпома</a></h3>
-
-	<p><a href="/doc.html?id=633223&cid=8">Вертолет Ми-8 вылетел сегодня из Архангельска к аварийному сухогрузу "Капитан Кузнецов" в Белом море, чтобы эвакуировать старпома, получившего травму головы. Об этом сообщает пресс-центр ГУ МЧС РФ по Архангельской области. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:26</p>
-
-		<a href="/doc.html?id=633220" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_478116.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633220&cid=8">Часть пассажиров &quot;Аэрофлота&quot;, застрявших на Камчатке, вылетает в Москву</a></h3>
-
-	<p><a href="/doc.html?id=633220&cid=8">Пассажиры "Аэрофлота", которым пришлось задержаться на Камчатке из-за неисправности летной техники, сегодня вылетают в Москву. Об этом сообщили в дирекции аэропорта Петропавловск-Камчатский. Правда, пока что улететь может только часть пассажиров. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:21</p>
-
-		<a href="/doc.html?id=633219" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567490.jpg" width="92" height="69" border="0">
-
-<div class="video_ico_s"></div>
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633219&cid=9">Участники акции &quot;Оккупируй Уолл-стрит&quot; готовятся парализовать жизнь Нью-Йорка</a></h3>
-
-	<p><a href="/doc.html?id=633219&cid=9">Для Нью-Йорка сегодняшний день станет настоящим испытанием. Участники акции "Оккупируй Уолл-стрит" планируют отметить двухмесячный юбилей движения, парализовав жизнь города. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:20</p>
-
-		<a href="/doc.html?id=633213" ><img src="http://auto.vesti.ru/p/s_435223.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424853">Продажи нового Honda CR-V стартуют 15 декабря</a></h3>
-
-	<p><a href="http://auto.vesti.ru/doc.html?id=424853">Новое поколение кроссовера Honda CR-V, премьера которого состоялась сегодня в Лос-Анджелесе, поступит к североамериканским дилерам уже через месяц. Кроссовер получил усовершенствованный двигатель, пять посадочных мест и интеллектуальную систему полного привода. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:16</p>
-
-		
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633216&cid=7">Мошенники пытались продать должность главы правительства Калининградской области</a></h3>
-
-	<p><a href="/doc.html?id=633216&cid=7">Сотрудники управления экономической безопасности столичной полиции задержали двух мошенников, которые за 3 миллиона рублей обещали организовать назначение на должность главы правительства Калининградской области. Об этом сообщили в пресс-службе ГУ МВД по Москве. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:15</p>
-
-		<a href="/doc.html?id=633221" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_396958.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633221&cid=6">Белоруссия против включения пива в технический регламент ТС</a></h3>
-
-	<p><a href="/doc.html?id=633221&cid=6">Белоруссия выступает против включения пива в технический регламент Таможенного союза по безопасности алкогольной продукции. Такое мнение высказал председатель совета Гильдии пивоваров республики Михаил Чеченев. По его словам, для пива должен быть разработан отдельный техрегламент. 
-
- </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:11</p>
-
-		<a href="/doc.html?id=633215" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_552318.jpg" width="92" height="69" border="0">
-
-<div class="video_ico_s"></div>
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633215&cid=8">СК России провел обыски по местам жительства сына главы Приднестровья</a></h3>
-
-	<p><a href="/doc.html?id=633215&cid=8">Следственный комитет РФ провел обыски по местам жительства в России сына главы Приднестровья Олега Смирнова по делу о хищении 160 миллионов рублей, выделенных Россией в качестве гуманитарной помощи. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">11:02</p>
-
-		<a href="/doc.html?id=633212" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_539206.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633212&cid=680">Парусный спорт. Российская яхта удачно стартовала на чемпионате мира</a></h3>
-
-	<p><a href="/doc.html?id=633212&cid=680">Российская парусная команда "Синергия" (капитан Валентин Завадников, рулевой - Евгений Неугодников) выиграла четыре гонки в матч-рейсе на чемпионате мира в классе яхт RC44, который проходит в испанском Пуэрто-Калеро. Тренер "Синергии" француз Тьерри Пепонне выразил удовлетворение результатом. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">10:50</p>
-
-		<a href="/doc.html?id=633211" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_531353.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633211&cid=6">Госдолг США превысил $15 триллионов </a></h3>
-
-	<p><a href="/doc.html?id=633211&cid=6">Госдолг США превысил $15 трлн или новой рекордной отметки. Американские эксперты подчеркивают, что уже сейчас, когда до конца календарного года остается почти полтора месяца, госдолг достиг отметки в 99% от того уровня, который запланировало правительство США.
-
-  </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">10:46</p>
-
-		<a href="/doc.html?id=633206" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_549278.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633206&cid=680">Футбольная &quot;Томь&quot; все ближе к банкротству</a></h3>
-
-	<p><a href="/doc.html?id=633206&cid=680">Существование футбольного клуба российской премьер-лиги "Томь" зависит от итогов разбирательств, связанных с финансово-хозяйственной деятельностью команды. Это выяснилось после встречи футболистов и тренеров "Томи" с президентом клуба Сергеем Ильиных. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">10:45</p>
-
-		<a href="/doc.html?id=633207" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_311707.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633207&cid=6">Fitch может снизить рейтинг банков США </a></h3>
-
-	<p><a href="/doc.html?id=633207&cid=6">Международное рейтинговое агентство Fitch может пересмотреть в сторону понижения нынешний "стабильный" прогноз по кредитному рейтингу ведущих банков США в случае усугубления долгового кризиса в Европе.
-
- </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">10:44</p>
-
-		
-
-	</div>
-
-
-
-	 <h3> <a href="http://auto.vesti.ru/doc.html?id=424833">Состоялась премьера Subaru BRZ Concept STI</a></h3>
-
-	<p><a href="http://auto.vesti.ru/doc.html?id=424833">Компания Subaru наконец-то показала "живой" прототип своего заднеприводного купе BRZ. Премьера состоялась на Лос-Анджелесском автосалоне, причем над концептом потрудились еще и инженеры спортивного подразделения STI. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">10:43</p>
-
-		<a href="/doc.html?id=633200" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_567469.jpg" width="92" height="69" border="0">
-
-<div class="video_ico_s"></div>
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633200&cid=9">Совет управляющих МАГАТЭ обсудит доклад по Ирану</a></h3>
-
-	<p><a href="/doc.html?id=633200&cid=9">Совет управляющих МАГАТЭ сегодня обсудит ядерный доклад по Ирану. Еще на прошлой неделе отдельные положения конфиденциального документа просочились в прессу. В частности, гендиректор агентства указал на то, что Иран ведет деятельность, имеющую отношение к разработке ядерного оружия. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">10:39</p>
-
-		<a href="/doc.html?id=633203" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_554298.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633203&cid=680">Футбол. Европарламент принял резолюцию по договорным матчам</a></h3>
-
-	<p><a href="/doc.html?id=633203&cid=680">Европейский парламент в ходе голосования на пленарном заседании в Страсбурге поддержал позицию Союза европейских футбольных ассоциаций (УЕФА) по вопросам, касающимся игры на тотализаторе и договорных матчей. По словам главы УЕФА Мишеля Платини, он очень доволен принятым решением. </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">10:29</p>
-
-		<a href="/doc.html?id=633201" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_531985.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=633201&cid=6">Доллар немного укрепился </a></h3>
-
-	<p><a href="/doc.html?id=633201&cid=6">Доллар незначительно вырос на ММВБ на старте торгов четверга, рубль чуть снизился к бивалютной корзине на фоне смешанных настроений на глобальных рынках. Первые сделки прошли в пределах 30,75-30,77 руб., что на 1-3 копейки выше уровня предыдущего дня.  </a></p>
-
-</div><div class="list_item">
-
-	<div class="list_item_img">
-
-		<p class="list_item_time">10:25</p>
-
-		<a href="/doc.html?id=630334" ><img src="http://www.vgtrk.cdnvideo.ru/p/s_435365.jpg" width="92" height="69" border="0">
-
-
-
-</a>
-
-	</div>
-
-
-
-	 <h3> <a href="/doc.html?id=630334&cid=460">Нина Шацкая и Ольга Кабо. Посвящение Анне Ахматовой</a></h3>
-
-	<p><a href="/doc.html?id=630334&cid=460">Светлой памяти великой поэтессы посвящается литературно-музыкальный спектакль, в котором на одной сцене предстанут в необычном амплуа две неповторимые женщины – актриса, заслуженная артистка России Ольга Кабо и певица, исполнительница романсов, заслуженная артистка России Нина Шацкая. </a></p>
-
-</div>
-
-<!-- title head -->
-
-<div class="paging">Страницы:&nbsp;&nbsp; <a class=activ>&nbsp;1&nbsp;</a> <a href="?&p=2"> 2 </a> <a href="?&p=3"> 3 </a> <a href="?&p=4"> 4 </a> <a href="?&p=5"> 5 </a> <a href="?&p=6"> 6 </a> <a href="?&p=7"> 7 </a> <a href="?&p=8"> 8 </a> <a href="?&p=9"> 9 </a> <a href="?&p=10"> 10 </a><a href="?&p=11">&raquo;</a>
-</div>
-
-<!-- End title Head -->
-
-
-
-</div>
-
+<div style="clear: both"></div>
 
 
 
@@ -2009,639 +2375,56 @@ $(function(){
 
 
 </div>
-
-</div>
-
-
-
-
-
-<!-- End Left block -->
-
-
-
-
-
-
-
-<div class="clear"></div>
-
-
-
-<div class="search_bottom">
-
-	<form action="/search.html" method="get" name="Srch1">
-
-			<div class="search_area">
-
-			 <input class="search" type="text" value="Поиск:" name="q" onClick="if(document.Srch1.q.value=='Поиск:') document.Srch1.q.value = '';   ">
-
-			
-
-			<input type="submit" id="submit" value="" onClick="if(document.Srch1.q.value=='Поиск:') return false; else return true;">
-
-			</div>
-
-		</form>
-
-	</div>
-
-<div class="bg_bottom_block" style="margin-left: 232px;">&nbsp;</div>
-
-</div>
-
-
-
-
-
-
-
-<div id="footer">
-
-		
-
-	<a href="/"><img src="http://www.vgtrk.cdnvideo.ru/i/logo_small.png" style="float: left;" alt=""></a>
-
-	<div class="footer_nav">
-
-		<h4><a href="/news">Новости </a></h4>
-
-		<ul>
-
-<li><a href="/section.html?cid=5">Политика</a></li>
-
-<li><a href="/section.html?cid=6">Экономика</a></li>
-
-<li><a href="/section.html?cid=8">Происшествия</a></li>
-
-<li><a href="http://auto.vesti.ru/">Авто</a></li>
-
-<li><a href="/section.html?cid=7">Общество</a></li>
-
-<li><a href="/section.html?cid=9">В мире</a></li>
-
-<li><a href="/section.html?cid=680">Спорт</a></li>
-
-<li><a href="/section.html?cid=780">Hi-Tech. Интернет</a></li>
-
-<li><a href="/section.html?cid=460">Культура</a></li>
-
-<li><a href="/section.html?cid=960">Модернизация</a></li>
-
-<li><a href="/section.html?cid=17">Регионы</a></li>
-
-<li><a href="/section.html?cid=1200">Фотолента</a></li>
-
-<li><a href="/section.html?cid=380">Досье</a></li>
-
-
-
-		</ul>
-
-	</div>
-
-	<div class="footer_nav">
-
-		<h4><a href="/videos">Видео  </a></h4>
-
-		<ul>
-
-<li><a href="/videos?cid=5">Политика</a></li>
-
-<li><a href="/videos?cid=6">Экономика</a></li>
-
-<li><a href="/videos?cid=8">Происшествия</a></li>
-
-<li><a href="http://auto.vesti.ru/">Авто</a></li>
-
-<li><a href="/videos?cid=7">Общество</a></li>
-
-<li><a href="/videos?cid=9">В мире</a></li>
-
-<li><a href="/videos?cid=680">Спорт</a></li>
-
-<li><a href="/videos?cid=1201">Программы</a></li>
-
-<li><a href="/videos?cid=780">Hi-Tech. Интернет</a></li>
-
-<li><a href="/videos?cid=460">Культура</a></li>
-
-<li><a href="/videos?cid=960">Модернизация</a></li>
-
-<li><a href="/videos?cid=1202">Документальные фильмы</a></li>
-
-<li><a href="/videos?cid=15">Без комментариев</a></li>
-
-<li><a href="/videos?cid=360">Инфографика</a></li>
-
-
-
-		</ul>
-
-	</div>
-
-	<div class="footer_nav">
-
-		<h4><a href="/program.html">Программы  </a></h4>
-
-		<ul>
-
-
-
-<li><a href="/videos?cid=1701">АвтоВести</a></li>
-
-<li><a href="/videos?cid=1203">Агробизнес</a></li>
-
-<li><a href="/videos?cid=1721">Без галстука</a></li>
-
-<li><a href="/videos?cid=1861">Биржевые вести</a></li>
-
-<!-- li><a href="/videos?cid=1500">Биатлон с Дмитрием Губерниевым</a></li -->
-
-<li><a href="/videos?cid=58">Вести 20:00</a></li>
-
-<li><a href="/videos?cid=1620">Вести в субботу с Сергеем Брилёвым</a></li>
-
-<li><a href="http://www.vesti-moscow.ru/" target="_blank">Вести.Москва</a></li>
-
-<li><a href="http://vesti7.ru/">Вести недели</a></li>
-
-<li><a href="/videos?cid=1204">Вести Содружества</a></li>
-
-<li><a href="/videos?cid=1741">Вести.Дежурная часть</a></li>
-
-<li><a href="/videos?cid=1205">Вести.Телеком</a></li>
-
-<li><a href="/videos?cid=160 ">Вести.net</a></li>
-
-<li><a href="/videos?cid=700">Вести.Ru на "России 2"</a></li>
-
-<li><a href="/videos?cid=2081">Горизонты атома</a></li>
-
-<li><a href="/videos?cid=1901">Городские технологии</a></li>
-
-<li><a href="/videos?cid=2121">Дороги России</a></li>
-
-<li><a href="http://kino.vesti.ru/">Индустрия кино</a></li>
-
-<li><a href="/videos?cid=2001">Инноград</a></li>
-
-<li><a href="/videos?cid=1661">Корпорации монстров</a></li>
-
-<li><a href="/videos?cid=10">Космонавтика</a></li>
-
-<li><a href="/videos?cid=1580">Магия приключений</a></li>
-
-<li><a href="/videos?cid=1206">Машиностроение</a></li>
-
-<!-- li><a href="/videos?cid=1540">Медиаиндустрия</a></li -->
-
-<li><a href="/videos?cid=1600">Мнение</a></li>
-
-<li><a href="/videos?cid=1207 ">Моя планета</a></li>
-
-<li><a href="/videos?cid=1100">Наука 2.0</a></li>
-
-<li><a href="/videos?cid=2101">Облюбование Москвы</a></li>
-
-<li><a href="/videos?cid=1208">Общий рынок</a></li>
-
-<li><a href="/videos?cid=1941">Олимпийские вести</a></li>
-
-<li><a href="/videos?cid=1360">Проекты развития</a></li>
-
-<li><a href="/videos?cid=1209">Пульс </a></li>
-
-<li><a href="/videos?cid=1320">Пятница</a></li>
-
-<li><a href="/videos?cid=1501">Рейтинг Тимофея Баженова</a></li>
-
-<li><a href="/section.html?cid=1210">Реплика </a></li>
-
-<li><a href="/section.html?cid=1211">Российские технологии</a></li>
-
-<li><a href="/videos?cid=1761">Сенат</a></li>
-
-<li><a href="/videos?cid=1213 ">События недели</a></li>
-
-<li><a href="/videos?cid=1214">Страховое время</a></li>
-
-<li><a href="/videos?cid=1502">Там, где нас нет</a></li>
-
-<li><a href="/videos?cid=1215">Телекоммуникации</a></li>
-
-<li><a href="/videos?cid=1341">Технологии жилья</a></li>
-
-<li><a href="/videos?cid=1216 ">Технопарк</a></li>
-
-<li><a href="/videos?cid=1217 ">Транспорт</a></li>
-
-<li><a href="/videos?cid=280 ">Утро России</a></li>
-
-<li><a href="/videos?cid=1240">Фармацевтика</a></li>
-
-<li><a href="/videos?cid=1300">Формула бизнеса</a></li>
-
-<li><a href="/videos?cid=1340">Хоккей-24</a></li>
-
-<li><a href="http://vera.vesti.ru/">Церковь и мир</a></li>
-
-<li><a href="/videos?cid=1219">Энергетика</a> </li>
-
-<li><a href="/videos?cid=1000">ACADEMIA</a></li>
-
-<li><a href="/videos?cid=2061">Proнефть</a></li>
-
-	</ul>
-
-	</div>
-
-	<div class="footer_nav">
-
-		<h4><a href="http://services.vesti.ru/">Сервисы</a></h4>
-
-		<ul>
-
-<li><a href="http://light.vesti.ru/index.html">Вести.Лайт</a> </li>
-
-<li><a href="http://iphone.vesti.ru/">iPhone</a> </li> 
-
-<li><a href="http://ipad.vesti.ru/">iPad</a>     </li>          
-
-<li><a href="http://probki.vesti.ru/">Вести Пробки</a> </li>
-
-<li><a href="http://www.mobile.vesti.ru/">Мобильный информер</a></li>
-
-<li><a href="http://mreporter.ru/">Мобильный репортер</a></li>
-
-<li><a href="http://toolbar.vesti.ru/">Тулбар</a></li>
-
-		</ul>
-
-	</div>
-
-	<div class="footer_nav footer_nav_h">
-
-		<h4></h4>
-
-
-
-		<ul><li><a href="/broadcasts.html">Трансляции </a></li>
-
-
-
-		<li><a href="/vesti.html">О "Вестях"</a></li>
-
-		<li><a href="/vesti.html?cid=600">Пресс-центр</a></li>
-
-	    <li><a href="/section.html?cid=1200">Фотолента  </a></li>
-
-               <li><input id="archive" type="hidden"/>
-
-               <a style="cursor: pointer;" onclick="show_datepicker('http://www.vesti.ru/?date=', this);">Архив</a></li>	
-
-</ul>
-
-	</div>
-
-<!--  AdRiver code START. Type:poster Site: vesti PZ: 0 BN: 0 -->
-
-<script language="javascript" type="text/javascript"><!--
-
-function adriverPoster(L){
-
-    if(typeof(ar_cn)=="undefined")ar_cn=1;
-
-    var W=window,D=document,E=D.documentElement,T=0,N=ar_cn,P=0,C=D.compatMode=="CSS1Compat",
-
-        X='<scr'+'ipt type="text/javascript">var ar_bnum='+N+';setTimeout(function(e){if(!self.CgiHref){document.close();e=parent.document.getElementById("ar_container_"+ar_bnum);e.parentNode.removeChild(e)}},3000);',
-
-        Y='<\/sc'+'ript><sc'+'ript type="text/javascript" src="'+L+'&tail256='+escape(D.referrer||'unknown')+'&rnd='+Math.round(Math.random()*999999999)+'"><\/sc'+'ript>';
-
-    function G(){if(T++<100){var o=D.getElementById('ar_container_'+N);if(o){try{var d=o.contentDocument||(W.ActiveXObject&&W.frames['ar_container_'+N].document);if(d){d.write(X+Y)}else setTimeout(arguments.callee,100)}catch(e){try{o.src = "javascript:{document.write('"+X+'document.domain="'+D.domain+'";'+Y+"')}";return}catch(E){}}}else setTimeout(arguments.callee,100)}}
-
-    function A(e,t,f){if(e.addEventListener)e.addEventListener(t,f,false);else if(e.attachEvent)e.attachEvent('on'+t,f)}
-
-    function R(e,t,f){if(e.removeEventListener)e.removeEventListener(t,f,false);else if(e.detachEvent)e.detachEvent('on'+t,f)}
-
-    function S(){var ch=self.innerHeight||C&&E.clientHeight||D.body.clientHeight,st=self.pageYOffset||C&&E.scrollTop||D.body.scrollTop;if(P>=st&&st+ch>=P){R(W,'scroll',S);G()}}
-
-    A(W,'load',function(){var o=D.getElementById('ad_ph_'+N);if(o){while(o.offsetParent){P+=o.offsetTop;o=o.offsetParent}A(W,'scroll',S);S()}});
-
-    D.write('<div style="position:absolute;visibility:hidden;height:0px;"><iframe id="ar_container_'+N+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div><div id="ad_ph_'+N+'"><\/div>');
-
-    ar_cn++;
-
-}
-
-adriverPoster("http://ad.adriver.ru/cgi-bin/erle.cgi?sid=166256&target=top&bt=49&pz=0");
-
-//--></script><!--  AdRiver code END  -->
-
-
-
-	<p id="mistake"> На сайте функционирует система коррекции ошибок. Обнаружив неточность в тексте, выделите ее и нажмите Ctrl+Enter.</p>
-
-	<p id="footer_info">© Государственный интернет-канал "Россия" 2001 - 2011. Cвидетельство о регистрации СМИ Эл - ФС 77-26539 от 22 декабря 2006 года. Все права на 
-
-любые материалы, опубликованные на сайте, защищены в соответствии с российским и международным законодательством об авторском праве и смежных правах. Использование любых аудио-, фото- и видеоматериалов, размещенных на сайте, допускается только с разрешения правообладателя и со ссылкой на сайт "Вести.Ru" (для интернет-проектов - с гиперссылкой). Email редакции <a href="mailto:info@vesti.ru">info@vesti.ru</a>. Реклама на сайте: отдел по работе с клиентами IMHO VI, е-mail: <a href="mailto:ClientWORK@imho.ru">ClientWORK@imho.ru</a>, <a href="mailto:ad@vesti.ru">ad@vesti.ru</a>. Реклама на сайте: тел. +7 (495) 954-04-61 отдел интернет-рекламы РА "Сигма-Медиа", e-mail: <a href="reklama@sigmamedia.tv">reklama@sigmamedia.tv</a>. Справочный телефон ВГТРК +7 (495) 232-63-33.</p>
-
-
-
-</div>
-
-
-
-<!-- counter -->
-
-<div class="print_displ_none" style="width: 1000px; position : relative; margin: 0 auto; height: 50px;">
-
-<div style="width: 150px; position : absolute; bottom: 0px; left: 0px;">
-
-<!-- begin of Top100 code --> 
-
- 
-
-<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?358744"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?358744" alt="" width="1" height="1" border="0"></noscript> 
-
- 
-
-<!-- end of Top100 code --> 
-
- 
+<div id="ft">
+  <p id="ft-info">
+    <a href="server.jsp">Рћ РЎРµСЂРІРµСЂРµ</a> -
+    <a href="rules.jsp">РџСЂР°РІРёР»Р° С„РѕСЂСѓРјР°</a><br>
+
+  Р Р°Р·СЂР°Р±РѕС‚РєР° Рё&nbsp;РїРѕРґРґРµСЂР¶РєР°&nbsp;&#8212; <a href="/people/maxcom/profile">РњР°РєСЃРёРј Р’Р°Р»СЏРЅСЃРєРёР№</a> 1998&ndash;2011<br>
+  Р Р°Р·РјРµС‰РµРЅРёРµ СЃРµСЂРІРµСЂР° Рё&nbsp;РїРѕРґРєР»СЋС‡РµРЅРёРµ РµРіРѕ Рє&nbsp;СЃРµС‚Рё РРЅС‚РµСЂРЅРµС‚ РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ РєРѕРјРїР°РЅРёРµР№
+  РћРћРћ &laquo;<a href="http://www.ratel.ru">РќРРР -Р Р°РґРёРѕРќРµС‚</a>&raquo;
+  </p>
+
+<div id="ft-buttons">
 
 <!-- begin of Top100 logo -->
-
-<a href="http://top100.rambler.ru/home?id=358744"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-gray2.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
-
+<a href="http://top100.rambler.ru/home?id=29833" target="_blank"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-black2.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
 <!-- end of Top100 logo -->
 
+    <!-- Rating@Mail.ru logo -->
+    <a target="_top" href="http://top.mail.ru/jump?from=71642">
+    <img src="http://d7.c1.b1.a0.top.mail.ru/counter?id=71642;t=11;l=1"
+    border="0" height="31" width="88" alt="Р РµР№С‚РёРЅРі@Mail.ru"></a>
+    <!-- //Rating@Mail.ru logo -->
+
+  
 </div>
 
-<div style="width: 150px; position : absolute; bottom: 0px; left: 50%;"><script language="JavaScript"> 
-
-var img = new Image(); 
-
-img.src = 'http://www.tns-counter.ru/V13a***R>' + document.referrer.replace(/\*/g,'%2a') + '*vgtrk_ru/ru/CP1251/tmsec=vesti_total/'; 
-
-</script> 
-
-<noscript> 
-
-<img src="http://www.tns-counter.ru/V13a****vgtrk_ru/ru/CP1251/tmsec=vesti_total/" width="1" height="1" alt="" /> 
-
-</noscript> </div>
-
-<div style="width: 150px; position : absolute; bottom: 0px; right: 0px;"><!--LiveInternet counter-->
 
 <script type="text/javascript">
-
-<!--
-
-document.write("<a href='http://www.liveinternet.ru/click' "+"target=_blank><img src='http://counter.yadro.ru/hit?t16.2;r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random()+"' alt='' title='LiveInternet:показано число просмотров за 24 часа,посетителей за 24 часа и за сегодн\я' "+"border=0 width=88 height=31><\/a>")
-
-//-->
-
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
-
-<!--/LiveInternet--></div>
-
-</div>
-
-<!-- end counter -->
-
-
-
-<!-- Footer -->
-
-
-
-<!? banner.if_banner_time(3,"banner_vesti_240x400_if"); ?>
-
-<div class="banner_vesti_reclama "></div>
-
-
-
-</div> <!-- content -->
-
-
-
-</div> <!-- bottom_bg -->
-
-</div> <!-- head -->
-
-
-
-
-
-<!-- счетчик Google -->
-
 <script type="text/javascript">
-
-
-
-  var _gaq = _gaq || [];
-
-  _gaq.push(['_setAccount', 'UA-4795608-3']);
-
-  _gaq.push(['_trackPageview']);
-
-
-
-  (function() {
-
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-
-  })();
-
-
-
-</script>
-
-<!-- счетчик Google -->
-
-
-
-
-
-
-
-<div class="banner_order_reclama"><script type="text/javascript" src="http://b2bvideo.ru/js/video.js.php?a=483" charset="UTF-8"></script> </div>
-
-
-
-
-
-<!-- facebook -->
-
-<script>
-
-$(window).load(function(){
-
-
-
-$("#finfo").load("http://www.vesti.ru/fininfo.html?nojquery=1&v=2", null );
-
-
-
-var vgtrkRekl_login = "nedvizhimost";
-
-var vgtrkRekl_options = "options=A";
-
-$('#nedvizhimost').html('<iframe src="http://reklama.mb.vesti.ru/cgi-bin/iframe/'+vgtrkRekl_login+'?56375&'+vgtrkRekl_options+'&n=4&c=1&style=http://468x60.mb.vesti.ru/css/nedvizhimost.css" width="238" height="620" marginwidth="0" marginheight="0" style="border: 1px solid #ffcc66; border-top: none;" scrolling="no" frameborder="0"><a href="http://reklama.mb.vesti.ru/cgi-bin/href/'+vgtrkRekl_login+'?56375" target="_top"><img src="http://reklama.mb.vesti.ru/cgi-bin/banner/'+vgtrkRekl_login+'?56375&'+vgtrkRekl_options+'" alt="VGTRK" width="238" height="620" border="0" ismap="ismap"></a></iframe>')
-
-
-
-  twttr.anywhere(function (T) {
-
-   T('#follow-twitterapi').followButton("vesti_news");
-
-  }); 
-
-
-
-/* JS for FB индекс слева вверху */
-
-
-
- $('#likebox_fb').html('<iframe src="http://www.facebook.com/plugins/likebox.php?id=127803987254114&amp;width=186&amp;connections=1&amp;show_faces=false&amp;stream=false&amp;header=false&amp;height=136" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:186px; height:136px;" allowTransparency="true"></iframe>');
-
-
-
-/* End JS for FB индекс слева вверху */
-
-});
-
-
-
-$(document).ready(function(){
-
-$('#fb_wrap_video').html('');
-
-$('#fb_wrap').html('<fb:like href="http://www.vesti.ru/doc.html?id=0" action="recommend" width="400"></fb:like>');
-
-$('body').append('<script src="http://connect.facebook.net/ru_RU/all.js"></scr'+'ipt><div id="fb-root"></div>');
-
-
-
-/* Блок Рекомендую справа */
-
- $('#fb_recommend_v').html('<fb:recommendations site="http://www.vesti.ru" width="240" height="350" font="tahoma"></fb:recommendations>');
-
-
-
-/* End Блок Рекомендую справа */
-
-
-
- window.fbAsyncInit = function() {
-
-   FB.init({appId: '124849927543891', status: true, cookie: true,
-
-           xfbml: true});
-
-  };
-
- (function() {
-
-    var e = document.createElement('script'); e.async = true;
-
-    e.src = document.location.protocol + '//connect.facebook.net/ru_RU/all.js';
-
-    document.getElementById('fb-root').appendChild(e);
-
-  }());
-
-});
-
-
-
-</script>
-
-<script src="http://connect.facebook.net/ru_RU/all.js"></script><div id="fb-root"></div>
-
-<script src="http://platform.twitter.com/anywhere.js?id=7q7ObYUL9uORlSQi3xKtNA&v=1" type="text/javascript"></script>
-
-<!-- End facebook -->
-
-
-
-
-
-<div class="banner_order_reclama"><script charset="windows-1251" type="text/javascript" src="http://nnn.novoteka.ru/show.cgi?adp=3113&div=DIV_NNN_3113"></script></div>
-
-
-
-
-
-<div class="banner_order_reclama"><!--BEGIN Videoclick Vesti.ru (Videoclick)-->
-
-<script language="JavaScript">
-
-<!--
-
-var _rbn={};
-
-_rbn.v={};
-
-_rbn.v.inline_color = "#009900";
-
-_rbn.v.inline_count_max=5;
-
-_rbn.v.is_use_marked=0;
-
-_rbn.v.autostart_video = 1;
-
-_rbn.v.ad=[];
-
-document.write('<scr' + 'ipt language="JavaScript" src="http://drive.videoclik.ru/code?pid=1105&rid=' + (Math.floor(Math.random() * 1000000000)) +'" charset="utf-8" type="text/JavaScript"></scr' + 'ipt>');
-
-// -->
-
-</script>
-
-<script language="JavaScript" src="http://content.videoclik.ru/rbn.js" charset="utf-8" type="text/JavaScript"></script>
-
-<!--END Videoclick -->
+try {
+var pageTracker = _gat._getTracker("UA-2184304-1");
+pageTracker._setCustomVar(1, "Authorized", "true");
+pageTracker._setCustomVar(2, "Style", "white2");
+
+pageTracker._trackPageview();
+pageTracker._trackPageLoadTime();
+} catch(err) {}</script>
 
 </div>
 
 
 
 
-
-<div class="banner_vesti_reclama "><!--BEGIN VideoInteractive Vesti.ru (VideoInteractive)-->
-
-<script language="JavaScript">
-
-<!--
-
-var _vi_position="down";
-
-document.write('<scr' + 'ipt language="JavaScript" src="http://drive.videoclik.ru/code?pid=1114&rid=' + (Math.floor(Math.random() * 1000000000)) +'" charset="utf-8" type="text/JavaScript"></scr' + 'ipt>');
-
-// -->
-
-</script>
-
-<script language="JavaScript" src="http://content.videoclik.ru/vi.js" charset="utf-8" type="text/JavaScript"></script>
-
-<!--END VideoInteractive -->
-
-</div>
-
-<div class="banner_vesti_reclama "></div>
-
-
-
-
-
+<!-- begin of Top100 code -->
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?29833"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?29833" alt="" width="1" height="1" border="0"/></noscript>
+<!-- end of Top100 code -->
 
 
 </body>
-
 </html>
+

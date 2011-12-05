@@ -22,7 +22,7 @@ IMPLEMENT_DYNAMIC(CInitDialog, CDialog)
 CInitDialog::CInitDialog(CWnd* pParent /*=NULL*/)
 : CDialog(CInitDialog::IDD, pParent) 
     , m_fileName(_T("news"))
-    , m_minFreq(8)
+    , m_minFreq(4)
     , m_minWordlen(8)
     , m_newsNum(0)
 {
@@ -57,9 +57,9 @@ END_MESSAGE_MAP()
 
 struct sortPredicate
 {
-    bool operator () (const vector<pair<int, int>> &left, const vector<pair<int, int>> &right)
+    bool operator () (const CTagSequence &left, const CTagSequence &right)
     {
-        return left.size() > right.size();
+        return left.tagRange.size() > right.tagRange.size();
     }
 };
 
@@ -108,19 +108,15 @@ void CInitDialog::OnBnClickedBtnrun()
 
     news.Init(remDoubleTag, remTag);
     news.GetPossibleRanges();
-    vector<CTagSequence> seq = news.GetRanges();
+    tagRanges = news.GetRanges();
 
-    for (vector<CTagSequence>::iterator it = seq.begin(); it != seq.end(); ++it)
-    {
-        tagRanges.push_back(it->tagRange);
-    }
     std::sort(tagRanges.begin(), tagRanges.end(), sortPredicate());
 
     UpdateData(FALSE);
     OnCancel();
 }
 
-std::vector<std::vector<std::pair<int, int>>> CInitDialog::GetTagRanges()
+std::vector<CTagSequence> CInitDialog::GetTagRanges()
 {
     return tagRanges;
 }

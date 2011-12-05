@@ -34,7 +34,7 @@ private:
     CRichEditCtrl m_RichCtrl;
     std::string m_fileData;
     CListBox m_ListBox;
-    std::vector<std::vector<std::pair<int, int>>> tagRanges;
+    std::vector<CTagSequence> tagRanges;
     bool m_radioBlue;
     bool m_radioGreen;
     bool m_radioRed;

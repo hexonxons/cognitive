@@ -122,8 +122,8 @@ private:
 
     struct pred
     {
-        bool operator()(pair<vector<CTagDescription>, unsigned int> left,
-                        pair<vector<CTagDescription>, unsigned int> right) const
+        bool operator()(pair<vector<CTagDescription>, unsigned int> &left,
+                        pair<vector<CTagDescription>, unsigned int> &right) const
         {
             if(left.second != right.second)
                 return left.second < right.second;
@@ -134,8 +134,7 @@ private:
 
     struct pred1
     {
-        bool operator()(vector<pair<int, int>> left,
-            vector<pair<int, int>> right) const
+        bool operator()(vector<CTagRange> &left, vector<CTagRange> &right) const
         {
             return left.size() < right.size();
         }
@@ -338,5 +337,8 @@ private:
     // 0  : Все нормально
     // -1 : Ошибка выделения памяти.
     long m_lLastError;
+
+    // длина видимого в html текста
+    long m_lVisibleHtmlLen;
 };
 #endif
