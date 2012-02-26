@@ -47,7 +47,7 @@ public:
      */
 
     CNewsFinder(__in LPCSTR fileName, __in int minSize, __in int minFreq, __in int numberOfNews);
-
+    CNewsFinder(__in LPCSTR fileData, __in int minSize, __in int minFreq);
     /**
      * \fn  CNewsFinder::~CNewsFinder();
      *
@@ -340,5 +340,6 @@ private:
 
     // длина видимого в html текста
     long m_lVisibleHtmlLen;
+    bool mStart;
 };
 #endif

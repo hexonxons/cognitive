@@ -1,3 +1,4 @@
+
 // NewsColoringDlg.cpp : файл реализации
 //
 
@@ -11,8 +12,6 @@
 #include "NewsColoringDlg.h"
 
 #include "../newsfinder/tagprocess.h"
-#include "../include/http.h"
-
 
 using std::string;
 using std::vector;
@@ -21,19 +20,19 @@ using std::fstream;
 
 
 #ifdef _DEBUG
-    #define new DEBUG_NEW
+#define new DEBUG_NEW
 #endif
 
 
 // диалоговое окно CNewsColoringDlg
 CNewsColoringDlg::CNewsColoringDlg(CWnd* pParent /*=NULL*/)
 : CDialog(CNewsColoringDlg::IDD, pParent)
-, m_RadioBlue(1)
-, m_RadioGreen(0)
-, m_RadioRed(0)
-, m_NewsBeginNum(-1)
-, m_NewsEndNum(-1)
-, m_IsSingleTagSeq(false)
+, m_radioBlue(1)
+, m_radioGreen(0)
+, m_radioRed(0)
+, newsBeginNum(-1)
+, newsEndNum(-1)
+, isSingleTagSeq(false)
 {
     m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
     AfxInitRichEdit2();
@@ -41,7 +40,7 @@ CNewsColoringDlg::CNewsColoringDlg(CWnd* pParent /*=NULL*/)
     cfDefault.dwMask = CFM_CHARSET | CFM_FACE | CFM_SIZE | CFM_OFFSET | CFM_COLOR;
     cfDefault.dwMask ^= CFM_ITALIC ^ CFM_BOLD ^ CFM_STRIKEOUT ^ CFM_UNDERLINE;;
     cfDefault.dwEffects = 0;
-    cfDefault.yHeight = 180;
+    cfDefault.yHeight = 180; //10pts * 20 twips/point = 200 twips
     cfDefault.bCharSet = RUSSIAN_CHARSET;
     cfDefault.bPitchAndFamily = FIXED_PITCH | FF_MODERN;
     cfDefault.yOffset = 0;
@@ -54,9 +53,9 @@ void CNewsColoringDlg::DoDataExchange(CDataExchange* pDX)
 {
     CDialog::DoDataExchange(pDX);
     DDX_Control(pDX, IDC_RICHEDIT, m_RichCtrl);
-    DDX_Control(pDX, IDC_LISTFREQ, m_ListFreq);
+    DDX_Control(pDX, IDC_LIST, m_ListBox);
     DDX_Control(pDX, IDC_LISTRANGES, m_ListRanges);
-    DDX_Control(pDX, IDC_PROPERTIESLIST, m_PropList);
+    DDX_Control(pDX, IDC_PROPERTIESLIST, m_propList);
     DDX_Control(pDX, IDC_SITESELECT, m_SiteSelect);
 }
 
@@ -67,7 +66,7 @@ BEGIN_MESSAGE_MAP(CNewsColoringDlg, CDialog)
     ON_BN_CLICKED(IDC_RADIORED, &CNewsColoringDlg::OnBnClickedRadiored)
     ON_BN_CLICKED(IDC_RADIOGREEN, &CNewsColoringDlg::OnBnClickedRadiogreen)
     ON_BN_CLICKED(IDC_RADIOBLUE, &CNewsColoringDlg::OnBnClickedRadioblue)
-    ON_LBN_SELCHANGE(IDC_LISTFREQ, &CNewsColoringDlg::OnLbnSelchangeList)
+    ON_LBN_SELCHANGE(IDC_LIST, &CNewsColoringDlg::OnLbnSelchangeList)
     ON_LBN_SELCHANGE(IDC_LISTRANGES, &CNewsColoringDlg::OnLbnSelchangeListranges)
     ON_BN_CLICKED(IDC_BTNRESETSEL, &CNewsColoringDlg::OnBnClickedBtnresetsel)
     ON_BN_CLICKED(IDC_BTNSETBEGIN, &CNewsColoringDlg::OnBnClickedBtnsetbegin)
@@ -90,9 +89,9 @@ BOOL CNewsColoringDlg::OnInitDialog()
     SetIcon(m_hIcon, TRUE);			// Крупный значок
     SetIcon(m_hIcon, FALSE);		// Мелкий значок
     
-    // Считываем набор URL-ов новостных сайтов
+    ClearDialog();
+
     fstream FI("sites.cfg", std::ios::in);
-    m_SiteSelect.AddString("");
     while (!FI.eof())
     {
         string siteURI = "";
@@ -100,9 +99,11 @@ BOOL CNewsColoringDlg::OnInitDialog()
         m_SiteSelect.AddString(siteURI.c_str());
     }
     FI.close();
-    // Выделяем 1ю строчку
     m_SiteSelect.SetCurSel(0);
-    Rebuild();
+    m_SiteSelect.SetDroppedWidth(50);
+
+    
+    Init("news", 4, 8, 0);
 
     return TRUE;  // возврат значения TRUE, если фокус не передан элементу управления
 }
@@ -143,7 +144,7 @@ HCURSOR CNewsColoringDlg::OnQueryDragIcon()
     return static_cast<HCURSOR>(m_hIcon);
 }
 
-void CNewsColoringDlg::Init(string fileData, int minWordlen, int minFreq, int newsNum)
+void CNewsColoringDlg::Init(string fileName, int minWordlen, int minFreq, int newsNum)
 {
     struct sortPredicate
     {
@@ -153,8 +154,12 @@ void CNewsColoringDlg::Init(string fileData, int minWordlen, int minFreq, int ne
         }
     };
 
-    CNewsFinder news(fileData.c_str(), minWordlen, minFreq);
-    m_FileData = fileData;
+    ClearDialog();
+
+    CNewsFinder news(fileName.c_str(), minWordlen, minFreq, newsNum);
+    std::fstream fileIn(fileName.c_str(), std::ios::in);
+    m_fileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
+    fileIn.close();
 
     vector<pair<string, string>> remDoubleTag;
     vector<string> remTag;
@@ -189,15 +194,15 @@ void CNewsColoringDlg::Init(string fileData, int minWordlen, int minFreq, int ne
 
     news.Init(remDoubleTag, remTag);
     news.GetPossibleRanges();
-    m_TagRanges = news.GetRanges();
+    tagRanges = news.GetRanges();
 
-    std::sort(m_TagRanges.begin(), m_TagRanges.end(), sortPredicate());
+    std::sort(tagRanges.begin(), tagRanges.end(), sortPredicate());
 
     m_RichCtrl.HideSelection(FALSE, FALSE);
     m_RichCtrl.SetDefaultCharFormat(cfDefault);
-    m_RichCtrl.SetWindowText(m_FileData.c_str());
+    m_RichCtrl.SetWindowText(m_fileData.c_str());
 
-    for (vector<CTagSequence>::iterator it = m_TagRanges.begin(); it != m_TagRanges.end(); ++it)
+    for (vector<CTagSequence>::iterator it = tagRanges.begin(); it != tagRanges.end(); ++it)
     {
         CString str;
         str.AppendFormat(_T("%d - "), it->tagRange.size());
@@ -205,19 +210,7 @@ void CNewsColoringDlg::Init(string fileData, int minWordlen, int minFreq, int ne
         {
             str.AppendFormat(_T("(%d,%d) "), jt->begin, jt->end);
         }
-        m_ListFreq.AddString(str.GetString());
-    }
-}
-
-void CNewsColoringDlg::Rebuild()
-{
-    // Очищаем весь диалог
-    ClearDialog();
-    if(strlen(m_SiteURL.GetString()) != 0)
-    {
-        // Получаем html-код страницы
-        LPSTR URLContent = GetPageSource(m_SiteURL.GetString());
-        Init(URLContent, 4, 8, 0);
+        m_ListBox.AddString(str.GetString());
     }
 }
 
@@ -228,17 +221,18 @@ void CNewsColoringDlg::ClearDialog()
 
     // очищаем listbox'ы
     m_ListRanges.ResetContent();
-    m_PropList.ResetContent();
-    m_ListFreq.ResetContent();
+    m_propList.ResetContent();
+    m_ListBox.ResetContent();
 
     // кнопки цвета
-    m_RadioBlue = false;
-    m_RadioGreen = false;
-    m_RadioRed = true;
+    m_radioBlue = false;
+    m_radioGreen = false;
+    m_radioRed = true;
 
     // убираем текст
     m_RichCtrl.HideSelection(FALSE, FALSE);
-    m_RichCtrl.SetWindowText("");
+    m_RichCtrl.SetDefaultCharFormat(cfDefault);
+    m_RichCtrl.SetWindowText(m_fileData.c_str());
 
     UpdateData(FALSE);
 }
@@ -262,25 +256,26 @@ void CNewsColoringDlg::OnLbnSelchangeList()
         return;
 
     m_ListRanges.ResetContent();
-    int selElem = m_ListFreq.GetCurSel();
-    int sz = (m_TagRanges.begin() + selElem)->tagRange.size();
+    // Get the indexes of all the selected items.
+    int selElem = m_ListBox.GetCurSel();
+    int sz = (tagRanges.begin() + selElem)->tagRange.size();
 
-    for (vector<CTagRange>::iterator it = (m_TagRanges.begin() + selElem)->tagRange.begin(); it != (m_TagRanges.begin() + selElem)->tagRange.end(); ++it)
+    for (vector<CTagRange>::iterator it = (tagRanges.begin() + selElem)->tagRange.begin(); it != (tagRanges.begin() + selElem)->tagRange.end(); ++it)
     {
         CString str;
         str.AppendFormat(_T("(%d,%d) , len = %d, perc = %f, perc to vis = %f"), it->begin, it->end, it->end - it->begin, it->percToHtml, it->percToVisibleHtml);
         m_ListRanges.AddString(str.GetString());
     }
-    m_PropList.ResetContent();
+    m_propList.ResetContent();
     CString format;
-    format.AppendFormat(_T("Dispersion : %f"), (m_TagRanges.begin() + selElem)->dispersion);
-    m_PropList.AddString(format.GetString());
+    format.AppendFormat(_T("Dispersion : %f"), (tagRanges.begin() + selElem)->dispersion);
+    m_propList.AddString(format.GetString());
     format.Empty();
-    format.AppendFormat(_T("Perc to html : %f"), (m_TagRanges.begin() + selElem)->percToHtml);
-    m_PropList.AddString(format.GetString());
+    format.AppendFormat(_T("Perc to html : %f"), (tagRanges.begin() + selElem)->percToHtml);
+    m_propList.AddString(format.GetString());
     format.Empty();
-    format.AppendFormat(_T("Perc to vis html : %f"), (m_TagRanges.begin() + selElem)->percToVisibleHtml);
-    m_PropList.AddString(format.GetString());
+    format.AppendFormat(_T("Perc to vis html : %f"), (tagRanges.begin() + selElem)->percToVisibleHtml);
+    m_propList.AddString(format.GetString());
     UpdateData(FALSE);
 }
 
@@ -289,10 +284,26 @@ void CNewsColoringDlg::OnLbnSelchangeListranges()
     if(!UpdateData(TRUE))
         return;
 
-    int selElem = m_ListFreq.GetCurSel();
+    int selElem = m_ListBox.GetCurSel();
     int selRange = m_ListRanges.GetCurSel();
-    COLORREF color = RGB(255 * m_RadioRed, 255 * m_RadioGreen, 255 * m_RadioBlue);
-    ColorRichText(((m_TagRanges.begin() + selElem)->tagRange.begin() + selRange)->begin, ((m_TagRanges.begin() + selElem)->tagRange.begin() + selRange)->end + 1, color);
+    COLORREF color = RGB(0, 0, 255);
+
+    if (m_radioRed)
+    {
+        color = RGB(255, 0, 0);
+    }
+
+    if (m_radioGreen)
+    {
+        color = RGB(0, 255, 0);
+    }
+
+    if (m_radioBlue)
+    {
+        color = RGB(0, 0, 255);
+    }
+
+    ColorRichText(((tagRanges.begin() + selElem)->tagRange.begin() + selRange)->begin, ((tagRanges.begin() + selElem)->tagRange.begin() + selRange)->end + 1, color);
 
     UpdateData(FALSE);
 }
@@ -303,7 +314,8 @@ void CNewsColoringDlg::OnBnClickedBtnresetsel()
     if(!UpdateData(TRUE))
         return;
     cfDefault.crTextColor = RGB(0,0,0);
-    m_RichCtrl.SetWindowText(m_FileData.c_str());
+    m_RichCtrl.SetDefaultCharFormat(cfDefault);
+    m_RichCtrl.SetWindowText(m_fileData.c_str());
     UpdateData(FALSE);
 }
 
@@ -312,7 +324,7 @@ void CNewsColoringDlg::OnBnClickedBtnsetbegin()
     if(!UpdateData(TRUE))
         return;
 
-    m_NewsBeginNum = m_ListFreq.GetCurSel();
+    newsBeginNum = m_ListBox.GetCurSel();
 
     UpdateData(FALSE);
 }
@@ -322,7 +334,7 @@ void CNewsColoringDlg::OnBnClickedBtnsetend()
     if(!UpdateData(TRUE))
         return;
 
-    m_NewsEndNum = m_ListFreq.GetCurSel();
+    newsEndNum = m_ListBox.GetCurSel();
 
     UpdateData(FALSE);
 }
@@ -336,18 +348,19 @@ void CNewsColoringDlg::OnBnClickedBtnprintnews()
 
     unsigned int offset = 0;
     // Получаем строчку новости и выводим её
-    for(int i = 0; i < (m_TagRanges.begin() + m_NewsBeginNum)->tagRange.size(); ++i)
+    for(int i = 0; i < (tagRanges.begin() + newsBeginNum)->tagRange.size(); ++i)
     {
+
         string res = "";
-        if (!m_IsSingleTagSeq)
+        if (!isSingleTagSeq)
         {
-            res = string(m_FileData, ((m_TagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->begin,
-                                     ((m_TagRanges.begin() + m_NewsEndNum)->tagRange.begin() +  i)->end - ((m_TagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->begin + 1);
+            res = string(m_fileData, ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->begin,
+                                     ((tagRanges.begin() + newsEndNum)->tagRange.begin() +  i)->end - ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->begin + 1);
         }
         else
         {
-            res = string(m_FileData, ((m_TagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->begin,
-                                     ((m_TagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->end - ((m_TagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->begin + 1);
+            res = string(m_fileData, ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->begin,
+                                     ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->end - ((tagRanges.begin() + newsBeginNum)->tagRange.begin() +  i)->begin + 1);
         }
         fileOut << res;
         fileOut << "\n<br>#########################################################################################\n";
@@ -360,8 +373,8 @@ void CNewsColoringDlg::OnBnClickedBntsingle()
     if(!UpdateData(TRUE))
         return;
 
-    m_IsSingleTagSeq = true;
-    m_NewsBeginNum = m_ListFreq.GetCurSel();
+    isSingleTagSeq = true;
+    newsBeginNum = m_ListBox.GetCurSel();
 
     UpdateData(FALSE);
 }
@@ -371,11 +384,26 @@ void CNewsColoringDlg::OnBnClickedBtncolorall()
     if(!UpdateData(TRUE))
         return;
 
-    int selElem = m_ListFreq.GetCurSel();
-    int sz = (m_TagRanges.begin() + selElem)->tagRange.size();
-    COLORREF color = RGB(255 * m_RadioRed, 255 * m_RadioGreen, 255 * m_RadioBlue);
+    int selElem = m_ListBox.GetCurSel();
+    int sz = (tagRanges.begin() + selElem)->tagRange.size();
+    COLORREF color = RGB(0, 0, 255);
 
-    for (vector<CTagRange>::iterator it = (m_TagRanges.begin() + selElem)->tagRange.begin(); it != (m_TagRanges.begin() + selElem)->tagRange.end(); ++it)
+    if (m_radioRed)
+    {
+        color = RGB(255, 0, 0);
+    }
+
+    if (m_radioGreen)
+    {
+        color = RGB(0, 255, 0);
+    }
+
+    if (m_radioBlue)
+    {
+        color = RGB(0, 0, 255);
+    }
+
+    for (vector<CTagRange>::iterator it = (tagRanges.begin() + selElem)->tagRange.begin(); it != (tagRanges.begin() + selElem)->tagRange.end(); ++it)
     {
         ColorRichText(it->begin, it->end + 1, color);
     }
@@ -393,15 +421,15 @@ void CNewsColoringDlg::OnBnClickedBtnfind()
     int begin = cr.cpMin < cr.cpMax ? cr.cpMin : cr.cpMax;
     int end = cr.cpMin > cr.cpMax ? cr.cpMin - 1 : cr.cpMax - 1;
     int ind = 0;
-    for (vector<CTagSequence>::iterator it = m_TagRanges.begin(); it < m_TagRanges.end(); ++it)
+    for (vector<CTagSequence>::iterator it = tagRanges.begin(); it < tagRanges.end(); ++it)
     {
         ind++;
         for (vector<CTagRange>::iterator jt = it->tagRange.begin(); jt < it->tagRange.end(); ++jt)
         {
             if (jt->begin == begin && jt->end == end)
             {
-                m_ListFreq.SetCurSel(ind - 1);
-                it = m_TagRanges.end() - 1;
+                m_ListBox.SetCurSel(ind - 1);
+                it = tagRanges.end() - 1;
                 break;
             }
 
@@ -411,38 +439,33 @@ void CNewsColoringDlg::OnBnClickedBtnfind()
             }
         }
     }
-    m_ListFreq.SetSel(-1, false);
+    m_ListBox.SetSel(-1, false);
     UpdateData(FALSE);
 }
 
-// получение URL из выпадающего списка
 void CNewsColoringDlg::OnCbnSelchangeSiteselect()
 {
-    m_SiteURL.ReleaseBuffer();
-    int num = m_SiteSelect.GetCurSel();
-    int sz = m_SiteSelect.GetLBTextLen(num);
-    m_SiteSelect.GetLBText(num, m_SiteURL.GetBuffer(sz));
-    Rebuild();
+    // TODO: Add your control notification handler code here
 }
 
 // обработчики выбора цвета раскраски текста
 void CNewsColoringDlg::OnBnClickedRadiored()
 {
-    m_RadioBlue = false;
-    m_RadioGreen = false;
-    m_RadioRed = true;
+    m_radioBlue = false;
+    m_radioGreen = false;
+    m_radioRed = true;
 }
 
 void CNewsColoringDlg::OnBnClickedRadiogreen()
 {
-    m_RadioBlue = false;
-    m_RadioRed = false;
-    m_RadioGreen = true;
+    m_radioBlue = false;
+    m_radioRed = false;
+    m_radioGreen = true;
 }
 
 void CNewsColoringDlg::OnBnClickedRadioblue()
 {
-    m_RadioBlue = true;
-    m_RadioRed = false;
-    m_RadioGreen = false;
+    m_radioBlue = true;
+    m_radioRed = false;
+    m_radioGreen = false;
 }

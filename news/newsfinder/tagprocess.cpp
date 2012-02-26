@@ -37,11 +37,26 @@ CNewsFinder:: CNewsFinder(__in LPCSTR fileName, __in int minSize, __in int minFr
     m_unCurrFileDataPos(0),
     m_lLastError(0),
     m_numberOfNews(numberOfNews),
-    m_lVisibleHtmlLen(0)
+    m_lVisibleHtmlLen(0),
+    mStart(false)
 {
     std::fstream fileIn(fileName, ios::in);
     m_fileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
     fileIn.close();
+}
+
+CNewsFinder:: CNewsFinder(__in LPCSTR fileData, __in int minSize, __in int minFreq):
+    m_minLen(minSize),
+    m_minFreq(minFreq),
+    m_avgLen(0),
+    m_avgFreq(0),
+    m_unCurrFileDataPos(0),
+    m_lLastError(0),
+    m_numberOfNews(0),
+    m_lVisibleHtmlLen(0),
+    mStart(false)
+{
+    m_fileData = fileData;
 }
 
 CNewsFinder::~CNewsFinder()
@@ -60,7 +75,6 @@ void CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string
     // Я знаю((
     // 
     transform(m_fileData.begin(), m_fileData.end(), m_fileData.begin(), tolower);
-
     CTagDescription tag;
     tag = getNextTag();
     // 103 == <body>
@@ -70,14 +84,14 @@ void CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string
     }
 
     tag = getNextTag();
+    mStart = true;
     while (tag.nTagCode != -1)
     {
         m_mod.push_back(tag);
         tag = getNextTag();
     }
-    
-    removeTags(remTag);
-    removeTags(remDoubleTag);
+    //removeTags(remTag);
+    //removeTags(remDoubleTag);
 }
 
 int compare(const CTagDescription &left, const CTagDescription &right)
@@ -104,7 +118,7 @@ void CNewsFinder::GetPossibleRanges()
 
     for (vector< vector<pair<int, int>>>::iterator it = substrings.begin(); it != substrings.end(); ++it)
     {
-        // создаем структуру расположения послудовательности тегов в исходной строке
+        // создаем структуру расположения последовательности тегов в исходной строке
         CTagSequence currTagSeq;
         vector<CTagDescription> word;
         int allSubsLen = 0;
@@ -116,31 +130,48 @@ void CNewsFinder::GetPossibleRanges()
         }
 
         currTagSeq.tag = word;
-
+        currTagSeq.percToVisibleHtml = 0;
+        
         for (vector<pair<int, int>>::iterator j = it->begin(); j != it->end(); ++j)
         {
             CTagRange newRange;
             newRange.begin = m_mod[j->first].nTagBegin;
             newRange.end = m_mod[j->second].nTagEnd;
             newRange.tagString = string(m_fileData, newRange.begin, newRange.end - newRange.begin + 1);
-            newRange.percToHtml = (double)(newRange.end - newRange.begin) / m_fileData.size() * 100;
+            bool flag = false;
             newRange.percToVisibleHtml = 0;
+            for (int i = 0; i < newRange.tagString.size(); ++i)
+            {
+                if(flag && newRange.tagString[i] != '<')
+                    newRange.percToVisibleHtml++;
+                if(newRange.tagString[i] == '>')
+                    flag = true;
+                if(newRange.tagString[i] == '<')
+                    flag = false;
+            }
+            currTagSeq.percToVisibleHtml += newRange.percToVisibleHtml;
+            newRange.percToHtml = (double)(newRange.end - newRange.begin) / m_fileData.size() * 100;
+            newRange.percToVisibleHtml = newRange.percToVisibleHtml / m_lVisibleHtmlLen * 100;
 
             allSubsLen += newRange.end - newRange.begin;
             currTagSeq.tagRange.push_back(newRange);
         }
 
         currTagSeq.percToHtml = (double) allSubsLen / m_fileData.size() * 100;
-        tags.push_back(currTagSeq);
-    }
+        double avgPercToHtml = currTagSeq.percToHtml / it->size();
+        double disp = 0;
 
-    vector<vector<CTagRange>> tagRanges;
-
-    for (vector<CTagSequence>::iterator it = tags.begin(); it != tags.end(); ++it)
-    {
-        tagRanges.push_back(it->tagRange);
+        for (vector<CTagRange>::iterator it = currTagSeq.tagRange.begin(); it != currTagSeq.tagRange.end(); ++it)
+        {
+            disp += (avgPercToHtml - it->percToHtml) * (avgPercToHtml - it->percToHtml);
+        }
+        
+        currTagSeq.percToVisibleHtml = currTagSeq.percToVisibleHtml / m_lVisibleHtmlLen * 100;
+        currTagSeq.dispersion = disp / avgPercToHtml;
+        //if(currTagSeq.dispersion < 0.05)
+        if(currTagSeq.percToVisibleHtml > 5)
+            tags.push_back(currTagSeq);
     }
-    std::sort(tagRanges.begin(), tagRanges.end(), pred1());
 }
 
 void CNewsFinder::GetNewsRange()
@@ -157,7 +188,6 @@ void CNewsFinder::GetNewsRange()
     }
     // сортируем пары
     sort(possibleTags.begin(), possibleTags.end(), CNewsFinder::pred());
-
 
     // стираем элементы, являющиеся подстрокамы более длинных элементов
     unsigned int cnt = 1;
@@ -365,6 +395,16 @@ CTagDescription CNewsFinder::getNextTag()
                 tagCode.bIsClose = 0;
 
             tagCode.tag = tag;
+
+            while (tagCode.nTagCode != 121 && m_fileData[m_unCurrFileDataPos] != '<' && mStart && m_unCurrFileDataPos != m_fileData.size())
+            {
+                m_unCurrFileDataPos++;
+                if (m_fileData[m_unCurrFileDataPos] != '<')
+                {
+                    m_lVisibleHtmlLen++;
+                }    
+            }
+            
             return tagCode;
         }
     }

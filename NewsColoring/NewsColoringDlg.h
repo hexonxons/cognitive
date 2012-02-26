@@ -31,41 +31,28 @@ protected:
     DECLARE_MESSAGE_MAP()
 
 private:
-    // Окно вывода html-текста
+    
     CRichEditCtrl m_RichCtrl;
-    // Выпадающий список выбора сайта
     CComboBox m_SiteSelect;
-    // Список шаблонных повторяющихся подпоследовательностей
-    CListBox m_ListFreq;
-    // Список всех встреч шаблонов
+    CListBox m_ListBox;
     CListBox m_ListRanges;
-    // Список всех сайтов
-    CListBox m_PropList;
+    CListBox m_propList;
 
-    // Кнопки выбора цвета
-    bool m_RadioBlue;
-    bool m_RadioGreen;
-    bool m_RadioRed;
-    // Включается ли вся новость в шаблонную последовательность
-    bool m_IsSingleTagSeq;
+    bool m_radioBlue;
+    bool m_radioGreen;
+    bool m_radioRed;
+    bool isSingleTagSeq;
 
-    // Начальный и конечный шаблон, содержащий новость
-    int m_NewsBeginNum;
-    int m_NewsEndNum;
+    int newsBeginNum;
+    int newsEndNum;
 
-    std::vector<CTagSequence> m_TagRanges;
-    // Содержание файла новостей
-    std::string m_FileData;
-    // Формат текста
+    std::vector<CTagSequence> tagRanges;
+    std::string m_fileData;
     CHARFORMAT2 cfDefault;
-    // URL сайта новостей
-    CString m_SiteURL;
 
     void Init(std::string, int, int, int);
     void ClearDialog();
     void ColorRichText(int start, int end, COLORREF color);
-    // функция перезагрузки диалогового окна
-    void Rebuild();
 public:
     afx_msg void OnBnClickedRadiored();
     afx_msg void OnBnClickedRadiogreen();
