@@ -153,6 +153,11 @@ void CNewsColoringDlg::Init(string fileData, int minWordlen, int minFreq, int ne
         }
     };
 
+    /*std::fstream fileIn("news", std::ios::in);
+    m_FileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
+    CNewsFinder news(m_FileData.c_str(), minWordlen, minFreq);
+    fileIn.close();*/
+
     CNewsFinder news(fileData.c_str(), minWordlen, minFreq);
     m_FileData = fileData;
 
@@ -268,7 +273,7 @@ void CNewsColoringDlg::OnLbnSelchangeList()
     for (vector<CTagRange>::iterator it = (m_TagRanges.begin() + selElem)->tagRange.begin(); it != (m_TagRanges.begin() + selElem)->tagRange.end(); ++it)
     {
         CString str;
-        str.AppendFormat(_T("(%d,%d) , len = %d, perc = %f, perc to vis = %f"), it->begin, it->end, it->end - it->begin, it->percToHtml, it->percToVisibleHtml);
+        str.AppendFormat(_T("(%d,%d) , len = %d, perc = %f, perc to vis = %f, intersection = %d"), it->begin, it->end, it->end - it->begin, it->percToHtml, it->percToVisibleHtml, it->innerIntersection);
         m_ListRanges.AddString(str.GetString());
     }
     m_PropList.ResetContent();
@@ -280,6 +285,9 @@ void CNewsColoringDlg::OnLbnSelchangeList()
     m_PropList.AddString(format.GetString());
     format.Empty();
     format.AppendFormat(_T("Perc to vis html : %f"), (m_TagRanges.begin() + selElem)->percToVisibleHtml);
+    m_PropList.AddString(format.GetString());
+    format.Empty();
+    format.AppendFormat(_T("Intersection : %d"), (m_TagRanges.begin() + selElem)->innerIntersect);
     m_PropList.AddString(format.GetString());
     UpdateData(FALSE);
 }

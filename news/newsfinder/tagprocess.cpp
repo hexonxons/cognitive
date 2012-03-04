@@ -131,6 +131,7 @@ void CNewsFinder::GetPossibleRanges()
 
         currTagSeq.tag = word;
         currTagSeq.percToVisibleHtml = 0;
+        currTagSeq.innerIntersect = 0;
         
         for (vector<pair<int, int>>::iterator j = it->begin(); j != it->end(); ++j)
         {
@@ -152,7 +153,7 @@ void CNewsFinder::GetPossibleRanges()
             currTagSeq.percToVisibleHtml += newRange.percToVisibleHtml;
             newRange.percToHtml = (double)(newRange.end - newRange.begin) / m_fileData.size() * 100;
             newRange.percToVisibleHtml = newRange.percToVisibleHtml / m_lVisibleHtmlLen * 100;
-
+            newRange.innerIntersection = 0;
             allSubsLen += newRange.end - newRange.begin;
             currTagSeq.tagRange.push_back(newRange);
         }
@@ -172,6 +173,39 @@ void CNewsFinder::GetPossibleRanges()
         if(currTagSeq.percToVisibleHtml > 5)
             tags.push_back(currTagSeq);
     }
+
+    // для каждого набора подпоследовательностей
+    for (vector<CTagSequence>::iterator it = tags.begin(); it != tags.end(); it++)
+    {
+        // для каждой подпоследовательности
+        for (vector<CTagRange>::iterator jt = it->tagRange.begin(); jt != it->tagRange.end(); ++jt)
+        {
+            int currBegin = jt->begin;
+            int currEnd = jt->end;
+            // проходим по оставшимся наборам подпоследовательностей
+            for (vector<CTagSequence>::iterator kt = it + 1; kt != tags.end(); kt++)
+            {
+                // для каждой подпоследовательности
+                for (vector<CTagRange>::iterator lt = kt->tagRange.begin(); lt != kt->tagRange.end(); ++lt)
+                {
+                    // если начало новой подпоследовательности больше конца текущей - дальше можно не просматривать
+                    if(lt->begin > currEnd)
+                        break;
+                    // если конец новой меньше начала текущей - переходим к следующей подпоследовательности
+                    if(lt->end < currBegin)
+                        continue;
+                    int intersection = abs(min(lt->end, currEnd) - max(lt->begin, currBegin));
+                    int minn = min(lt->end, currEnd);
+                    int maxx = max(lt->begin, currBegin);
+                    lt->innerIntersection += intersection;
+                    jt->innerIntersection += intersection;
+                    kt->innerIntersect += intersection;
+                    it->innerIntersect += intersection;
+                }
+            }
+        }
+    }
+    
 }
 
 void CNewsFinder::GetNewsRange()

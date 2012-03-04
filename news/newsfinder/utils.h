@@ -8,7 +8,6 @@
 #define __UTILS_H__
 
 #include <vector>
-#include <windows.h>
 
 /**
  * \struct  CTagDescription
@@ -47,6 +46,8 @@ struct CTagRange
     double percToHtml;
     // отношение видимой части последовательности к видимой части всей html странички
     double percToVisibleHtml;
+
+    long innerIntersection;
 };
 
 struct CTagSequence 
