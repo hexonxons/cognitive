@@ -8,7 +8,7 @@
 #define __TAGPROCESS_H__
 
 #include "utils.h"
-#include "../include/debug.h"
+#include "debug.h"
 
 #include <string>
 #include <vector>
@@ -72,7 +72,7 @@ public:
      * \param [in,out]  remTag          Список одинарных тегов.
      */
 
-    void Init(vector<std::pair<std::string, std::string>> &remDoubleTag, vector<std::string> &remTag);
+    void Init();
     vector<CTagSequence> GetRanges();
     void GetPossibleRanges();
 

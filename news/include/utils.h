@@ -128,4 +128,6 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
 std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vStr1,
                                                std::vector<CTagDescription> &vStr2);
 
+char *GetPageSource(const char *URL);
+
 #endif // __UTILS_H__

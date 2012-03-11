@@ -4,13 +4,11 @@
  * \brief   Определение функций, оперирующих со строками.
  */
 
+#include "stdafx.h"
+
 #include <iostream>
 #include <algorithm>
 #include <stack>
-
-#include "../suffixtrie/suffixtrie.h"
-#include "tagprocess.h"
-
 
 using std::ios;
 using std::make_pair;
@@ -63,7 +61,7 @@ CNewsFinder::~CNewsFinder()
 {
 }
 
-void CNewsFinder::Init(vector<pair<string, string>> &remDoubleTag, vector<string> &remTag)
+void CNewsFinder::Init()
 {
     if (m_lLastError == 1)
         return;
@@ -170,7 +168,7 @@ void CNewsFinder::GetPossibleRanges()
         currTagSeq.percToVisibleHtml = currTagSeq.percToVisibleHtml / m_lVisibleHtmlLen * 100;
         currTagSeq.dispersion = disp / avgPercToHtml;
         //if(currTagSeq.dispersion < 0.05)
-        if(currTagSeq.percToVisibleHtml > 5)
+        //if(currTagSeq.percToVisibleHtml > 5)
             tags.push_back(currTagSeq);
     }
 

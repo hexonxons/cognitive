@@ -3,9 +3,9 @@
  * blacklist (c) 2010
  */
 
-#include <stdio.h>
-#include <stdarg.h>
-#include <windows.h>
+#include <cstdio>
+#include <cstdarg>
+#include <Windows.h>
 
 //
 // DebugPrint()

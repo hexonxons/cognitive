@@ -14,8 +14,8 @@
 #include <vector>
 #include <algorithm>
 
-#include "../include/memalloc.h"
-#include "../include/debug.h"
+#include "memalloc.h"
+#include "debug.h"
 
 using std::vector;
 using std::make_pair;

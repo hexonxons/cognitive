@@ -3,8 +3,9 @@
 //
 
 #pragma once
-#include "../newsfinder/utils.h"
+#include "utils.h"
 #include "afxwin.h"
+#include "afxcmn.h"
 
 // диалоговое окно CNewsColoringDlg
 class CNewsColoringDlg : public CDialog
@@ -35,12 +36,11 @@ private:
     CRichEditCtrl m_RichCtrl;
     // Выпадающий список выбора сайта
     CComboBox m_SiteSelect;
-    // Список шаблонных повторяющихся подпоследовательностей
+
     CListBox m_ListFreq;
-    // Список всех встреч шаблонов
     CListBox m_ListRanges;
-    // Список всех сайтов
-    CListBox m_PropList;
+    CListBox m_PropFreq;
+    CListBox m_PropRanges;
 
     // Кнопки выбора цвета
     bool m_RadioBlue;
@@ -54,6 +54,7 @@ private:
     int m_NewsEndNum;
 
     std::vector<CTagSequence> m_TagRanges;
+    std::vector<CTagSequence> m_DisplayedTagRanges;
     // Содержание файла новостей
     std::string m_FileData;
     // Формат текста
@@ -66,6 +67,8 @@ private:
     void ColorRichText(int start, int end, COLORREF color);
     // функция перезагрузки диалогового окна
     void Rebuild();
+    // функция построения последовательностей по эвристике
+    void BuildRanges();
 public:
     afx_msg void OnBnClickedRadiored();
     afx_msg void OnBnClickedRadiogreen();
@@ -80,4 +83,17 @@ public:
     afx_msg void OnBnClickedBtncolorall();
     afx_msg void OnBnClickedBtnfind();
     afx_msg void OnCbnSelchangeSiteselect();
+private:
+    CSliderCtrl m_SlideDisp;
+    CSliderCtrl m_SliderIntersect;
+    CSliderCtrl m_SliderHTML;
+    CSliderCtrl m_SliderVisibleHTML;
+
+    CEdit m_EditDispersion;
+    CEdit m_EditIntersection;
+    CEdit m_EditPercToHtml;
+    CEdit m_EditPercToVisibleHTML;
+public:
+    afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
+    afx_msg void OnBnClickedBtnsaveheuristics();
 };

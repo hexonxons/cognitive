@@ -2,7 +2,7 @@
 // stdafx.h: включите файл для добавления стандартных системных файлов
 //или конкретных файлов проектов, часто используемых,
 // но редко изменяемых
-
+ 
 #pragma once
 
 #ifndef _SECURE_ATL
@@ -51,4 +51,6 @@
 #endif
 #endif
 
-
+#include "suffixtrie.h"
+#include "tagprocess.h"
+#include "utils.h"

@@ -45,7 +45,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="D:\sources\cognitive\news\include"
+				AdditionalIncludeDirectories="$(ProjectDir)include"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -70,7 +70,7 @@
 				AdditionalOptions="/verbose:lib"
 				AdditionalDependencies="libcurl_imp.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="D:\sources\cognitive\news\lib"
+				AdditionalLibraryDirectories="$(ProjectDir)lib"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -129,7 +129,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="D:\sources\cognitive\news\include"
+				AdditionalIncludeDirectories="$(ProjectDir)include"
 				MinimalRebuild="false"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -153,7 +153,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="libcurl_imp.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="D:\sources\cognitive\news\lib"
+				AdditionalLibraryDirectories="$(ProjectDir)lib"
 				IgnoreDefaultLibraryNames="libcpmtd.lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -188,12 +188,28 @@
 	</References>
 	<Files>
 		<Filter
-			Name="Source Files"
-			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File
-				RelativePath="..\include\http.cpp"
+				RelativePath=".\res\NewsColoring.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\NewsColoring.rc"
+				>
+			</File>
+			<File
+				RelativePath=".\res\NewsColoring.rc2"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="src"
+			>
+			<File
+				RelativePath=".\src\debug.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -213,11 +229,11 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\NewsColoring.cpp"
+				RelativePath=".\src\NewsColoring.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\NewsColoringDlg.cpp"
+				RelativePath=".\src\NewsColoringDlg.cpp"
 				>
 			</File>
 			<File
@@ -241,65 +257,39 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\newsfinder\tagprocess.cpp"
+				RelativePath=".\src\tagprocess.cpp"
 				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="0"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="0"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\newsfinder\utils.cpp"
+				RelativePath=".\src\utils.cpp"
 				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="0"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="0"
-					/>
-				</FileConfiguration>
 			</File>
 		</Filter>
 		<Filter
-			Name="Header Files"
-			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			Name="include"
 			>
 			<File
-				RelativePath="..\include\http.h"
+				RelativePath=".\include\banned.h"
 				>
 			</File>
 			<File
-				RelativePath=".\NewsColoring.h"
+				RelativePath=".\include\debug.h"
 				>
 			</File>
 			<File
-				RelativePath=".\NewsColoringDlg.h"
+				RelativePath=".\include\memalloc.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Resource.h"
+				RelativePath=".\include\NewsColoring.h"
+				>
+			</File>
+			<File
+				RelativePath=".\include\NewsColoringDlg.h"
+				>
+			</File>
+			<File
+				RelativePath=".\include\resource.h"
 				>
 			</File>
 			<File
@@ -307,34 +297,92 @@
 				>
 			</File>
 			<File
-				RelativePath="..\newsfinder\tagprocess.h"
+				RelativePath=".\include\suffixtrie.h"
 				>
 			</File>
 			<File
-				RelativePath="..\newsfinder\utils.h"
+				RelativePath=".\include\tagprocess.h"
+				>
+			</File>
+			<File
+				RelativePath=".\targetver.h"
+				>
+			</File>
+			<File
+				RelativePath=".\include\utils.h"
+				>
+			</File>
+			<Filter
+				Name="curl"
+				>
+				<File
+					RelativePath=".\include\curl\curl.h"
+					>
+				</File>
+				<File
+					RelativePath=".\include\curl\curlbuild.h"
+					>
+				</File>
+				<File
+					RelativePath=".\include\curl\curlrules.h"
+					>
+				</File>
+				<File
+					RelativePath=".\include\curl\curlver.h"
+					>
+				</File>
+				<File
+					RelativePath=".\include\curl\easy.h"
+					>
+				</File>
+				<File
+					RelativePath=".\include\curl\mprintf.h"
+					>
+				</File>
+				<File
+					RelativePath=".\include\curl\multi.h"
+					>
+				</File>
+				<File
+					RelativePath=".\include\curl\stdcheaders.h"
+					>
+				</File>
+				<File
+					RelativePath=".\include\curl\typecheck-gcc.h"
+					>
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="lib"
+			>
+			<File
+				RelativePath=".\lib\libcurl_imp.lib"
 				>
 			</File>
 		</Filter>
 		<Filter
-			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			Name="config"
 			>
 			<File
-				RelativePath=".\res\NewsColoring.ico"
+				RelativePath=".\config\heuristics.cfg"
 				>
 			</File>
 			<File
-				RelativePath=".\NewsColoring.rc"
-				>
-			</File>
-			<File
-				RelativePath=".\res\NewsColoring.rc2"
+				RelativePath=".\config\sites.cfg"
 				>
 			</File>
 		</Filter>
 		<File
+			RelativePath=".\ClassDiagram1.cd"
+			>
+		</File>
+		<File
 			RelativePath=".\ReadMe.txt"
+			>
+		</File>
+		<File
+			RelativePath=".\resource.h"
 			>
 		</File>
 	</Files>

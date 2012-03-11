@@ -22,8 +22,19 @@
 #define IDC_BTNPRINTNEWS                1015
 #define IDC_BNTSINGLE                   1016
 #define IDC_BTNCOLORALL                 1017
-#define IDC_PROPERTIESLIST              1018
+#define IDC_LISTPROPFREQ                1018
 #define IDC_BTNFIND                     1019
+#define IDC_SLIDERDISP                  1020
+#define IDC_LISTPROPRANGES              1021
+#define IDC_SLIDERHTML                  1022
+#define IDC_SLIDERVISIBLEHTML           1023
+#define IDC_SLIDERINTERSECT             1024
+#define IDC_EDITDISP                    1025
+#define IDC_EDITINTERSECT               1026
+#define IDC_EDITHTML                    1027
+#define IDC_EDITVISHTML                 1028
+#define IDC_BUTTON1                     1029
+#define IDC_BTNSAVEHEURISTICS           1029
 
 // Next default values for new objects
 // 
@@ -31,7 +42,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        130
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1020
+#define _APS_NEXT_CONTROL_VALUE         1030
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
