@@ -96,4 +96,9 @@ private:
 public:
     afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
     afx_msg void OnBnClickedBtnsaveheuristics();
+private:
+    long m_NewsNumber;
+public:
+    afx_msg void OnEnChangeNewsnumber();
+    afx_msg void OnEnKillfocusEditnewsnumber();
 };
