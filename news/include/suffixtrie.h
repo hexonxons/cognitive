@@ -1,6 +1,5 @@
 /*
  *  suffixtrie.h
- *  suffixtrie.cpp prototypes.
  *  24 October 2011
  *  Hexonxonx
  */
@@ -32,6 +31,8 @@ private:
     {
         bool operator()(const vector<pair<int, int>> &left, const vector<pair<int, int>> &right) const
         {
+            if(left.size() == right.size())
+                return left[0].first > right[0].first;
             return left.size() > right.size();
         }
     };

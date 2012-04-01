@@ -9,6 +9,8 @@
 #include <iostream>
 #include <algorithm>
 #include <stack>
+#include <list>
+#include <functional>
 
 using std::ios;
 using std::make_pair;
@@ -16,6 +18,7 @@ using std::string;
 using std::pair;
 using std::set;
 using std::stack;
+using std::list;
 
 struct pred
 {
@@ -81,13 +84,14 @@ void CNewsFinder::Init()
         tag = getNextTag();
     }
 
-    tag = getNextTag();
     mStart = true;
-    while (tag.nTagCode != -1)
+    // 59 == </body>
+    while (tag.tag.compare("</body>") != 0)
     {
         m_mod.push_back(tag);
         tag = getNextTag();
     }
+    m_mod.push_back(tag);
     //removeTags(remTag);
     //removeTags(remDoubleTag);
 }
@@ -107,69 +111,265 @@ vector<CTagSequence> CNewsFinder::GetRanges()
     return tags;
 }
 
+std::vector<CTagDescription> BuildClosedWord(int &begin, int &end, vector<CTagDescription> &m_mod)
+{
+    list<CTagDescription> word;
+    stack<pair<CTagDescription, int>> stOpen;
+    stack<pair<CTagDescription, int>> stClose;
+
+    std::vector<pair<string, string>> tags;
+    tags.push_back(make_pair("<a>", "</a>"));
+    tags.push_back(make_pair("<div>", "</div>"));
+    tags.push_back(make_pair("<article>", "</article>"));
+    tags.push_back(make_pair("<h1>", "</h1>"));
+    tags.push_back(make_pair("<h2>", "</h2>"));
+    tags.push_back(make_pair("<h3>", "</h3>"));
+    tags.push_back(make_pair("<h4>", "</h4>"));
+    tags.push_back(make_pair("<h5>", "</h5>"));
+    tags.push_back(make_pair("<h6>", "</h6>"));
+    tags.push_back(make_pair("<span>", "</span>"));
+    tags.push_back(make_pair("<nobr>", "</nobr>"));
+    tags.push_back(make_pair("<table>", "</table>"));
+    tags.push_back(make_pair("<dl>", "</dl>"));
+    tags.push_back(make_pair("<td>", "</td>"));
+    tags.push_back(make_pair("<tr>", "</tr>"));
+    // формируем саму подстроку структур тегов
+    for (int i = begin; i <= end; ++i)
+    {
+        word.push_back(m_mod[i]);
+    }
+
+    for (list<CTagDescription>::iterator i = word.begin(); i != word.end(); ++i)
+    {
+        for(vector<pair<string, string>>::iterator it = tags.begin(); it != tags.end(); ++it)
+        {
+            if(it->first.compare(i->tag) == 0)
+            {
+                stOpen.push(make_pair(*i, tags.end() - it));
+                continue;
+            }
+        }
+
+        for(vector<pair<string, string>>::iterator it = tags.begin(); it != tags.end(); ++it)
+        {
+            if(it->second.compare(i->tag) == 0)
+            {
+                if (stOpen.size() != 0 && stOpen.top().first.tag.compare(it->first) == 0)
+                {
+                    stOpen.pop();
+                }
+            }
+        }
+    }
+
+    if (stOpen.size() != 0)
+    {
+        for (int i = end + 1; i < m_mod.size(); ++i)
+        {
+            word.push_back(m_mod[i]);
+
+            for(vector<pair<string, string>>::iterator it = tags.begin(); it != tags.end(); ++it)
+            {
+                if(it->first.compare(m_mod[i].tag) == 0)
+                {
+                    stOpen.push(make_pair(m_mod[i], tags.end() - it));
+                    continue;
+                }
+            }
+
+            for(vector<pair<string, string>>::iterator it = tags.begin(); it != tags.end(); ++it)
+            {
+                if(it->second.compare(m_mod[i].tag) == 0)
+                {
+                    if (stOpen.size() != 0 && stOpen.top().first.tag.compare(it->first) == 0)
+                    {
+                        stOpen.pop();
+                    }
+                }
+            }
+
+            if (stOpen.size() == 0)
+            {
+                end = i;
+                break;
+            }
+        }
+    }
+    
+    for (list<CTagDescription>::iterator i = word.end(); i != word.begin();)
+    {
+        --i;
+        for(vector<pair<string, string>>::iterator it = tags.begin(); it != tags.end(); ++it)
+        {
+            if(it->second.compare(i->tag) == 0)
+            {
+                stClose.push(make_pair(*i, tags.end() - it));
+                continue;
+            }
+        }
+
+        for(vector<pair<string, string>>::iterator it = tags.begin(); it != tags.end(); ++it)
+        {
+            if(it->first.compare(i->tag) == 0)
+            {
+                if (stClose.size() != 0 && stClose.top().first.tag.compare(it->second) == 0)
+                {
+                    stClose.pop();
+                }
+            }
+        }
+    }
+
+    if (stClose.size() != 0)
+    {
+        for (int i = begin - 1; i > 0; --i)
+        {
+            word.push_front(m_mod[i]);
+            
+            for(vector<pair<string, string>>::iterator it = tags.begin(); it != tags.end(); ++it)
+            {
+                if(it->second.compare(m_mod[i].tag) == 0)
+                {
+                    stClose.push(make_pair(m_mod[i], tags.end() - it));
+                    continue;
+                }
+            }
+
+            for(vector<pair<string, string>>::iterator it = tags.begin(); it != tags.end(); ++it)
+            {
+                if(it->first.compare(m_mod[i].tag) == 0)
+                {
+                    if (stClose.size() != 0 && stClose.top().first.tag.compare(it->second) == 0)
+                    {
+                        stClose.pop();
+                    }
+                }
+            }
+
+            if (stClose.size() == 0)
+            {
+                begin = i;
+                break;
+            }
+        }
+    }
+
+    vector<CTagDescription> reti;
+    for (list<CTagDescription>::iterator i = word.begin(); i != word.end(); ++i)
+    {
+      reti.push_back(*i);
+    }
+
+    return reti;
+}
+
+int getVisibleCharNum(int begin, int end, vector<CTagDescription> &m_mod)
+{
+    int len = 0;
+    for (int i = begin; i < end; ++i)
+    {
+        len += m_mod[i + 1].nTagBegin- m_mod[i].nTagEnd - 1;
+    }
+    return len;
+}
+
 void CNewsFinder::GetPossibleRanges()
 {
     // строим суффиксное дерево на основе вектора тегов
     CTrie<vector<CTagDescription>, CTagDescription> tree(m_mod, m_mod.size(), compare);
     // получаем все координаты начала-конца построк более заданной длины и встречающиеся более чем заданное число раз
-    vector< vector<pair<int, int>>> substrings = tree.GetRanges(m_minLen, m_minFreq);
+    vector< vector<pair<int, int>>> treeSubstrings = tree.GetRanges(m_minLen, m_minFreq);
+    vector< vector<pair<int, int>>> substrings;
+    
+    if (treeSubstrings.size() != 0)
+    {
+        vector< vector<pair<int, int>>>::iterator kt = treeSubstrings.end() - 1;
+
+        // чистим-чистим трубочиста....
+        while(kt != treeSubstrings.begin())
+        {
+            vector< vector<pair<int, int>>>::iterator jt = kt - 1;
+            while (jt != treeSubstrings.begin() && (jt->front().first == kt->front().first || jt->front().second == kt->front().second))
+            {
+                --jt;
+            }
+            substrings.insert(substrings.begin(), 1, *kt);
+            kt = jt;
+        }
+    }
+
 
     for (vector< vector<pair<int, int>>>::iterator it = substrings.begin(); it != substrings.end(); ++it)
     {
         // создаем структуру расположения последовательности тегов в исходной строке
         CTagSequence currTagSeq;
-        vector<CTagDescription> word;
         int allSubsLen = 0;
 
         // формируем саму подстроку структур тегов
-        for (int i = it->front().first; i <= it->front().second; ++i)
-        {
-            word.push_back(m_mod[i]);
-        }
+        currTagSeq.tag.assign(m_mod.begin() + it->front().first, 
+                              m_mod.begin() + it->front().second + 1);
 
-        currTagSeq.tag = word;
-        currTagSeq.percToVisibleHtml = 0;
-        currTagSeq.innerIntersect = 0;
-        
         for (vector<pair<int, int>>::iterator j = it->begin(); j != it->end(); ++j)
         {
             CTagRange newRange;
-            newRange.begin = m_mod[j->first].nTagBegin;
-            newRange.end = m_mod[j->second].nTagEnd;
-            newRange.tagString = string(m_fileData, newRange.begin, newRange.end - newRange.begin + 1);
-            bool flag = false;
-            newRange.percToVisibleHtml = 0;
-            for (int i = 0; i < newRange.tagString.size(); ++i)
+
+            newRange.Begin = m_mod[j->first].nTagBegin;
+            newRange.End = m_mod[j->second].nTagEnd;
+            
+            newRange.PercToVisibleHtml = (double)getVisibleCharNum(j->first, j->second, m_mod) / m_lVisibleHtmlLen * 100;
+            newRange.PercToHtml = (double)(newRange.End - newRange.Begin) / m_fileData.size() * 100;
+            
+            newRange.TagString = string(m_fileData, newRange.Begin, newRange.End - newRange.Begin + 1);
+
+            if (j + 1 != it->end())
             {
-                if(flag && newRange.tagString[i] != '<')
-                    newRange.percToVisibleHtml++;
-                if(newRange.tagString[i] == '>')
-                    flag = true;
-                if(newRange.tagString[i] == '<')
-                    flag = false;
+                newRange.DistanceToNextRange = m_mod[(j + 1)->first].nTagBegin - m_mod[j->second].nTagEnd - 1;
+                currTagSeq.InnerDistance += newRange.DistanceToNextRange;
             }
-            currTagSeq.percToVisibleHtml += newRange.percToVisibleHtml;
-            newRange.percToHtml = (double)(newRange.end - newRange.begin) / m_fileData.size() * 100;
-            newRange.percToVisibleHtml = newRange.percToVisibleHtml / m_lVisibleHtmlLen * 100;
-            newRange.innerIntersection = 0;
-            allSubsLen += newRange.end - newRange.begin;
+            
+            newRange.CloseBegin = j->first;
+            newRange.CloseEnd = j->second;
+            BuildClosedWord(newRange.CloseBegin, newRange.CloseEnd, m_mod);
+            newRange.ClosePercToVisibleHtml = (double)getVisibleCharNum(newRange.CloseBegin, newRange.CloseEnd, m_mod) / m_lVisibleHtmlLen * 100;
+            newRange.CloseBegin = m_mod[newRange.CloseBegin].nTagBegin;
+            newRange.CloseEnd = m_mod[newRange.CloseEnd].nTagEnd;
+
+            newRange.CloseTagString = string(m_fileData, newRange.CloseBegin, newRange.CloseEnd - newRange.CloseBegin + 1);
+            
+            
+            newRange.ClosePercToHtml = (double)(newRange.CloseEnd - newRange.CloseBegin) / m_fileData.size() * 100;
+
+            currTagSeq.CloseLen += newRange.CloseEnd - newRange.CloseBegin;
+            currTagSeq.percToVisibleHtml += newRange.PercToVisibleHtml;
+            currTagSeq.percToHtml += newRange.PercToHtml;
+            currTagSeq.ClosePercToHtml += newRange.ClosePercToHtml;
+            currTagSeq.ClosePercToVisibleHtml += newRange.ClosePercToVisibleHtml;
             currTagSeq.tagRange.push_back(newRange);
         }
 
-        currTagSeq.percToHtml = (double) allSubsLen / m_fileData.size() * 100;
+        double avgDistance = currTagSeq.InnerDistance / currTagSeq.tagRange.size();
+        for (vector<CTagRange>::iterator jt = currTagSeq.tagRange.begin(); jt != currTagSeq.tagRange.end() - 1; ++jt)
+        {
+            currTagSeq.InnerDistanceDiffSum += abs(avgDistance - jt->DistanceToNextRange);
+        }
+
+        for (vector<CTagRange>::iterator jt = currTagSeq.tagRange.begin(); jt != currTagSeq.tagRange.end() - 1; ++jt)
+        {
+            int Intersection = jt->CloseEnd - (jt + 1)->CloseBegin - 1; 
+            currTagSeq.InternalIntersection += (Intersection > 0 ? Intersection : 0);
+        }
+        
+        
         double avgPercToHtml = currTagSeq.percToHtml / it->size();
         double disp = 0;
 
         for (vector<CTagRange>::iterator it = currTagSeq.tagRange.begin(); it != currTagSeq.tagRange.end(); ++it)
         {
-            disp += (avgPercToHtml - it->percToHtml) * (avgPercToHtml - it->percToHtml);
+            disp += (avgPercToHtml - it->PercToHtml) * (avgPercToHtml - it->PercToHtml);
         }
         
-        currTagSeq.percToVisibleHtml = currTagSeq.percToVisibleHtml / m_lVisibleHtmlLen * 100;
         currTagSeq.dispersion = disp / avgPercToHtml;
-        //if(currTagSeq.dispersion < 0.05)
-        //if(currTagSeq.percToVisibleHtml > 5)
-            tags.push_back(currTagSeq);
+        tags.push_back(currTagSeq);
     }
 
     // для каждого набора подпоследовательностей
@@ -178,8 +378,8 @@ void CNewsFinder::GetPossibleRanges()
         // для каждой подпоследовательности
         for (vector<CTagRange>::iterator jt = it->tagRange.begin(); jt != it->tagRange.end(); ++jt)
         {
-            int currBegin = jt->begin;
-            int currEnd = jt->end;
+            int currBegin = jt->Begin;
+            int currEnd = jt->End;
             // проходим по оставшимся наборам подпоследовательностей
             for (vector<CTagSequence>::iterator kt = it + 1; kt != tags.end(); kt++)
             {
@@ -187,16 +387,16 @@ void CNewsFinder::GetPossibleRanges()
                 for (vector<CTagRange>::iterator lt = kt->tagRange.begin(); lt != kt->tagRange.end(); ++lt)
                 {
                     // если начало новой подпоследовательности больше конца текущей - дальше можно не просматривать
-                    if(lt->begin > currEnd)
+                    if(lt->Begin > currEnd)
                         break;
                     // если конец новой меньше начала текущей - переходим к следующей подпоследовательности
-                    if(lt->end < currBegin)
+                    if(lt->End < currBegin)
                         continue;
-                    int intersection = abs(min(lt->end, currEnd) - max(lt->begin, currBegin));
-                    int minn = min(lt->end, currEnd);
-                    int maxx = max(lt->begin, currBegin);
-                    lt->innerIntersection += intersection;
-                    jt->innerIntersection += intersection;
+                    int intersection = abs(min(lt->End, currEnd) - max(lt->Begin, currBegin));
+                    int minn = min(lt->End, currEnd);
+                    int maxx = max(lt->Begin, currBegin);
+                    lt->InnerIntersection += intersection;
+                    jt->InnerIntersection += intersection;
                     kt->innerIntersect += intersection;
                     it->innerIntersect += intersection;
                 }
@@ -393,6 +593,7 @@ CTagDescription CNewsFinder::getNextTag()
     tagCode.nTagBegin = -1;
     tagCode.nTagEnd = -1;
     string tag;
+    bool isComment = false;
 
     for(; m_unCurrFileDataPos != m_fileData.size(); ++m_unCurrFileDataPos)
     {
@@ -407,16 +608,32 @@ CTagDescription CNewsFinder::getNextTag()
                 tagCode.nTagBegin = m_unCurrFileDataPos;
 
             // пока не дойдем до пробела/закрывающей скобки - записываем
-            while (m_fileData[m_unCurrFileDataPos] != ' ' && m_fileData[m_unCurrFileDataPos] != '>')
+            while (m_fileData[m_unCurrFileDataPos] != ' ' && m_fileData[m_unCurrFileDataPos] != '>' && m_fileData[m_unCurrFileDataPos] != '\n')
             {
                 tag += m_fileData[m_unCurrFileDataPos];
                 tagCode.nTagCode += m_fileData[m_unCurrFileDataPos];
                 ++m_unCurrFileDataPos;				
             }
+            if(tag.compare(0, 4, "<!--") == 0)
+                isComment = true;
         }
         // если закрывающая скобка - записываем
         if (m_fileData[m_unCurrFileDataPos] == '>' && tagCode.nTagBegin != -1)
         {
+            if(isComment)
+            {
+                if (m_fileData[m_unCurrFileDataPos - 2] != '-' && m_fileData[m_unCurrFileDataPos] != '-')
+                {
+                    ++m_unCurrFileDataPos;
+                    continue;
+                }
+            }
+
+            if (m_fileData[m_unCurrFileDataPos - 1] == '/' && tag.compare("<a") != 0)
+            {
+                tag += m_fileData[m_unCurrFileDataPos - 1];
+            }
+            
             tag += m_fileData[m_unCurrFileDataPos];
             tagCode.nTagCode += m_fileData[m_unCurrFileDataPos];
             tagCode.nTagEnd = m_unCurrFileDataPos;

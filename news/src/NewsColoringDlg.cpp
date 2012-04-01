@@ -35,6 +35,7 @@ CNewsColoringDlg::CNewsColoringDlg(CWnd* pParent /*=NULL*/)
 , m_NewsEndNum(-1)
 , m_IsSingleTagSeq(false)
 , m_NewsNumber(0)
+, m_CloseTagsCheck(FALSE)
 {
     m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
     AfxInitRichEdit2();
@@ -69,7 +70,9 @@ void CNewsColoringDlg::DoDataExchange(CDataExchange* pDX)
     DDX_Control(pDX, IDC_EDITHTML, m_EditPercToHtml);
     DDX_Control(pDX, IDC_EDITVISHTML, m_EditPercToVisibleHTML);
     DDX_Text(pDX, IDC_EDITNEWSNUMBER, m_NewsNumber);
-	DDV_MinMaxLong(pDX, m_NewsNumber, 0, 1000);
+    DDX_Control(pDX, IDC_FILESELECT, m_FileSelect);
+    DDV_MinMaxLong(pDX, m_NewsNumber, 0, 1000);
+    DDX_Check(pDX, IDC_ClOSETAGSCHECK, m_CloseTagsCheck);
 }
 
 BEGIN_MESSAGE_MAP(CNewsColoringDlg, CDialog)
@@ -92,6 +95,7 @@ BEGIN_MESSAGE_MAP(CNewsColoringDlg, CDialog)
     ON_WM_HSCROLL()
     ON_BN_CLICKED(IDC_BTNSAVEHEURISTICS, &CNewsColoringDlg::OnBnClickedBtnsaveheuristics)
     ON_EN_CHANGE(IDC_EDITNEWSNUMBER, &CNewsColoringDlg::OnEnChangeNewsnumber)
+    ON_CBN_SELCHANGE(IDC_FILESELECT, &CNewsColoringDlg::OnCbnSelchangeFileselect)
     ON_EN_KILLFOCUS(IDC_EDITNEWSNUMBER, &CNewsColoringDlg::OnEnKillfocusEditnewsnumber)
 END_MESSAGE_MAP()
 
@@ -110,6 +114,8 @@ BOOL CNewsColoringDlg::OnInitDialog()
     m_SliderVisibleHTML.SetRange(0, 100, 1);
     m_SliderIntersect.SetRange(0, 150000, 1);
     m_SlideDisp.SetRange(0, 1000, 1);
+
+    GetNewsFilenames();
 
     // —читываем набор URL-ов новостных сайтов
     fstream fSites("config/sites.cfg", std::ios::in);
@@ -151,7 +157,7 @@ BOOL CNewsColoringDlg::OnInitDialog()
 
     // ¬ыдел€ем 1ю строчку
     m_SiteSelect.SetCurSel(0);
-    Rebuild();
+    RebuildURL();
 
     UpdateData(FALSE);
     return TRUE;  // возврат значени€ TRUE, если фокус не передан элементу управлени€
@@ -203,11 +209,6 @@ void CNewsColoringDlg::Init(string fileData, int minWordlen, int minFreq, int ne
         }
     };
 
-    /*std::fstream fileIn("news", std::ios::in);
-    m_FileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
-    CNewsFinder news(m_FileData.c_str(), minWordlen, minFreq);
-    fileIn.close();*/
-
     CNewsFinder news(fileData.c_str(), minWordlen, minFreq);
     m_FileData = fileData;
     news.Init();
@@ -221,7 +222,7 @@ void CNewsColoringDlg::Init(string fileData, int minWordlen, int minFreq, int ne
     m_RichCtrl.SetWindowText(m_FileData.c_str());
 }
 
-void CNewsColoringDlg::Rebuild()
+void CNewsColoringDlg::RebuildURL()
 {
     // ќчищаем весь диалог
     ClearDialog();
@@ -234,9 +235,48 @@ void CNewsColoringDlg::Rebuild()
     }
 }
 
+void CNewsColoringDlg::RebuildFILE()
+{
+    // ќчищаем весь диалог
+    ClearDialog();
+    if(strlen(m_SiteURL.GetString()) != 0)
+    {
+        // ѕолучаем html-код страницы
+        string filename = string("pages/") + string(m_SiteURL.GetString());
+        std::fstream fileIn(filename.c_str(), std::ios::in);
+        m_FileData = std::string((std::istreambuf_iterator<char>(fileIn)), std::istreambuf_iterator<char>());
+        fileIn.close();
+        Init(m_FileData, 4, 8, 0);
+        BuildRanges();
+    }
+}
+
+void GetIntersection(vector<CTagRange> &first, vector<CTagRange> &second, int &intersection)
+{
+    for (vector<CTagRange>::iterator it = second.begin(); it != second.end(); ++it)
+    {
+        for (vector<CTagRange>::iterator jt = first.begin(); jt != first.end(); ++jt)
+        {
+            if (it->CloseBegin > jt->CloseEnd)
+                continue;
+            if (it->CloseEnd < jt->CloseBegin)
+                break;
+            if(it->CloseBegin >= jt->CloseBegin && it->CloseEnd <= jt->CloseEnd)
+                intersection += it->CloseEnd - it->CloseBegin;
+        }
+    }
+}
+
+struct DISPRANGESSORT 
+{
+    bool operator() (CTagSequence &left, CTagSequence &right)
+    {
+        return left.ClosePercToVisibleHtml > right.ClosePercToVisibleHtml;
+    }
+};
+
 void CNewsColoringDlg::BuildRanges()
 {
-
     // очищаем listbox'ы
     m_ListFreq.ResetContent();
     m_ListRanges.ResetContent();
@@ -244,63 +284,47 @@ void CNewsColoringDlg::BuildRanges()
     m_PropRanges.ResetContent();
 
     m_DisplayedTagRanges.clear();
-    /*for (vector<CTagSequence>::iterator it = m_TagRanges.begin(); it != m_TagRanges.end(); ++it)
-    {
-        // если выполнены все эвристики
-        if(it->percToVisibleHtml >= (double)m_SliderVisibleHTML.GetPos() &&
-           it->percToHtml >= (double)m_SliderHTML.GetPos() &&
-           it->dispersion <= (double)m_SlideDisp.GetPos() / 1000 &&
-           it->innerIntersect <= m_SliderIntersect.GetPos())
-        {
-            // оставл€ем наиболее лучший вариант среди новостей с одинаковым количеством встреч
-            if(m_DisplayedTagRanges.size() != 0 &&  // если уже есть теговые последовательности
-               it->tagRange.size() == m_DisplayedTagRanges[m_DisplayedTagRanges.size() - 1].tagRange.size()) // и размер теговой последовательности равен размеру уже добавленной
-            {
-                if ((it->tagRange.begin()->begin <= m_DisplayedTagRanges[m_DisplayedTagRanges.size() - 1].tagRange.begin()->begin && 
-                     it->tagRange.begin()->end >= m_DisplayedTagRanges[m_DisplayedTagRanges.size() - 1].tagRange.begin()->end))
-                {
-                    m_DisplayedTagRanges[m_DisplayedTagRanges.size() - 1] = *it;
-                    continue;
-                }
-
-                if ((it->tagRange.begin()->begin >= m_DisplayedTagRanges[m_DisplayedTagRanges.size() - 1].tagRange.begin()->begin && 
-                    it->tagRange.begin()->end <= m_DisplayedTagRanges[m_DisplayedTagRanges.size() - 1].tagRange.begin()->end))
-                {
-                    continue;
-                }  
-            }
-
-            m_DisplayedTagRanges.push_back(*it);
-        }
-    }
-
-    for (vector<CTagSequence>::iterator it = m_DisplayedTagRanges.begin(); it != m_DisplayedTagRanges.end(); ++it)
-    {
-        CString str;
-        str.AppendFormat(_T("%d - "), it->tagRange.size());
-        for (vector<CTagRange>::iterator jt = it->tagRange.begin(); jt != it->tagRange.end(); ++jt)
-        {
-            str.AppendFormat(_T("(%d,%d) "), jt->begin, jt->end);
-        }
-        m_ListFreq.AddString(str.GetString());
-    }*/
 
     for (vector<CTagSequence>::iterator it = m_TagRanges.begin(); it != m_TagRanges.end(); ++it)
     {
         if(it->percToVisibleHtml >= (double)m_SliderVisibleHTML.GetPos() &&
             it->percToHtml >= (double)m_SliderHTML.GetPos() &&
             it->dispersion <= (double)m_SlideDisp.GetPos() / 1000 &&
-            it->innerIntersect <= m_SliderIntersect.GetPos())
+            it->innerIntersect <= m_SliderIntersect.GetPos() &&
+            // вполне рабоча€ эвристика
+            it->InnerDistanceDiffSum < it->InnerDistance &&
+            it->InternalIntersection == 0 &&
+            it->InnerDistanceDiffSum * 1.5 <= it->InnerDistance) 
         {
             if (m_NewsNumber != 0)
             {
                 if (it->tagRange.size() != m_NewsNumber)
                     continue;
             }
-            
             m_DisplayedTagRanges.push_back(*it); 
         }
     }
+    /*vector<CTagSequence> aaa;
+    
+    // стираем последовательности, которые целиком лежат в других последовательност€х
+    for (vector<CTagSequence>::iterator it = m_DisplayedTagRanges.begin(); it != m_DisplayedTagRanges.end(); ++it)
+    {
+        bool flag = true;
+        for (vector<CTagSequence>::iterator jt = m_DisplayedTagRanges.begin(); jt != m_DisplayedTagRanges.end(); ++jt)
+        {
+            if (it == jt)
+                continue;
+
+            int inters = 0;
+            GetIntersection(jt->tagRange, it->tagRange, inters);
+            if(it->CloseLen - inters == 0)
+                flag = false;
+        }
+        if(flag)
+            aaa.push_back(*it);
+    }
+    m_DisplayedTagRanges = aaa;    */
+    sort(m_DisplayedTagRanges.begin(), m_DisplayedTagRanges.end(), DISPRANGESSORT());
 
     for (vector<CTagSequence>::iterator it = m_DisplayedTagRanges.begin(); it != m_DisplayedTagRanges.end(); ++it)
     {
@@ -308,10 +332,15 @@ void CNewsColoringDlg::BuildRanges()
         str.AppendFormat(_T("%d - "), it->tagRange.size());
         for (vector<CTagRange>::iterator jt = it->tagRange.begin(); jt != it->tagRange.end(); ++jt)
         {
-            str.AppendFormat(_T("(%d,%d) "), jt->begin, jt->end);
+            str.AppendFormat(_T("(%d,%d) "), jt->Begin, jt->End);
         }
         m_ListFreq.AddString(str.GetString());
     }
+}
+
+std::vector<CTagRange> CNewsColoringDlg::FinishTagsSeq(std::vector<CTagRange> &seq)
+{
+    return std::vector<CTagRange>();
 }
 
 void CNewsColoringDlg::ClearDialog()
@@ -362,14 +391,29 @@ void CNewsColoringDlg::OnLbnSelchangeList()
     for (vector<CTagRange>::iterator it = (m_DisplayedTagRanges.begin() + selElem)->tagRange.begin();
                                      it != (m_DisplayedTagRanges.begin() + selElem)->tagRange.end(); ++it)
     {
-        CString str;
-        str.AppendFormat(_T("(%d,%d) , len = %d, perc = %f, perc to vis = %f, intersection = %d"), it->begin, it->end, it->end - it->begin, it->percToHtml, it->percToVisibleHtml, it->innerIntersection);
-        m_ListRanges.AddString(str.GetString());
+        if(!m_CloseTagsCheck)
+        {
+            CString str;
+            str.AppendFormat(_T("(%d,%d) , len = %d, perc = %f, perc to vis = %f, intersection = %d"), it->Begin, it->End, it->End - it->Begin, it->PercToHtml, it->PercToVisibleHtml, it->InnerIntersection);
+            m_ListRanges.AddString(str.GetString());
+        }
+        else
+        {
+            CString str;
+            str.AppendFormat(_T("(%d,%d) , len = %d, perc = %f, perc to vis = %f, intersection = %d"), it->CloseBegin, it->CloseEnd, it->CloseEnd - it->CloseBegin, it->ClosePercToHtml, it->ClosePercToVisibleHtml, it->InnerIntersection);
+            m_ListRanges.AddString(str.GetString());
+        }
     }
 
     m_PropFreq.ResetContent();
     CString format;
     format.AppendFormat(_T("Dispersion : %f"), (m_DisplayedTagRanges.begin() + selElem)->dispersion);
+    m_PropFreq.AddString(format.GetString());
+    format.Empty();
+    format.AppendFormat(_T("InnerDistanceDiffSum : %f"), (m_DisplayedTagRanges.begin() + selElem)->InnerDistanceDiffSum);
+    m_PropFreq.AddString(format.GetString());
+    format.Empty();
+    format.AppendFormat(_T("InnerDistance : %d"), (m_DisplayedTagRanges.begin() + selElem)->InnerDistance);
     m_PropFreq.AddString(format.GetString());
     format.Empty();
     format.AppendFormat(_T("Perc to html : %f"), (m_DisplayedTagRanges.begin() + selElem)->percToHtml);
@@ -381,7 +425,15 @@ void CNewsColoringDlg::OnLbnSelchangeList()
     format.AppendFormat(_T("Intersection : %d"), (m_DisplayedTagRanges.begin() + selElem)->innerIntersect);
     m_PropFreq.AddString(format.GetString());
     format.Empty();
-    format.AppendFormat(_T("-//- : %f"), (m_DisplayedTagRanges.begin() + selElem)->innerIntersect / (m_DisplayedTagRanges.begin() + selElem)->percToHtml);
+    format.AppendFormat(_T("innerIntersect / percToHtml : %f"), (m_DisplayedTagRanges.begin() + selElem)->innerIntersect / (m_DisplayedTagRanges.begin() + selElem)->percToHtml);
+    m_PropFreq.AddString(format.GetString());
+    format.Empty();
+    format.AppendFormat(_T("InternalIntersection : %d"), (m_DisplayedTagRanges.begin() + selElem)->InternalIntersection);
+    format.Empty();
+    format.AppendFormat(_T("Close perc to html : %f"), (m_DisplayedTagRanges.begin() + selElem)->ClosePercToHtml);
+    m_PropFreq.AddString(format.GetString());
+    format.Empty();
+    format.AppendFormat(_T("Close perc to vis html : %f"), (m_DisplayedTagRanges.begin() + selElem)->ClosePercToVisibleHtml);
     m_PropFreq.AddString(format.GetString());
 
     UpdateData(FALSE);
@@ -395,19 +447,38 @@ void CNewsColoringDlg::OnLbnSelchangeListranges()
     int selElem = m_ListFreq.GetCurSel();
     int selRange = m_ListRanges.GetCurSel();
     COLORREF color = RGB(255 * m_RadioRed, 255 * m_RadioGreen, 255 * m_RadioBlue);
-    ColorRichText(((m_DisplayedTagRanges.begin() + selElem)->tagRange.begin() + selRange)->begin, ((m_DisplayedTagRanges.begin() + selElem)->tagRange.begin() + selRange)->end + 1, color);
-
     CTagRange seq = *((m_DisplayedTagRanges.begin() + selElem)->tagRange.begin() + selRange);
-    m_PropRanges.ResetContent();
-    CString format;
-    format.AppendFormat(_T("Perc to html : %f"), seq.percToHtml);
-    m_PropRanges.AddString(format.GetString());
-    format.Empty();
-    format.AppendFormat(_T("Perc to vis html : %f"), seq.percToVisibleHtml);
-    m_PropRanges.AddString(format.GetString());
-    format.Empty();
-    format.AppendFormat(_T("Intersection : %d"), seq.innerIntersection);
-    m_PropRanges.AddString(format.GetString());
+
+    if(!m_CloseTagsCheck)
+    {
+        ColorRichText(((m_DisplayedTagRanges.begin() + selElem)->tagRange.begin() + selRange)->Begin, ((m_DisplayedTagRanges.begin() + selElem)->tagRange.begin() + selRange)->End + 1, color);
+
+        m_PropRanges.ResetContent();
+        CString format;
+        format.AppendFormat(_T("Perc to html : %f"), seq.PercToHtml);
+        m_PropRanges.AddString(format.GetString());
+        format.Empty();
+        format.AppendFormat(_T("Perc to vis html : %f"), seq.PercToVisibleHtml);
+        m_PropRanges.AddString(format.GetString());
+        format.Empty();
+        format.AppendFormat(_T("Intersection : %d"), seq.InnerIntersection);
+        m_PropRanges.AddString(format.GetString());
+    }
+    else
+    {
+        ColorRichText(((m_DisplayedTagRanges.begin() + selElem)->tagRange.begin() + selRange)->CloseBegin, ((m_DisplayedTagRanges.begin() + selElem)->tagRange.begin() + selRange)->CloseEnd + 1, color);
+
+        m_PropRanges.ResetContent();
+        CString format;
+        format.AppendFormat(_T("Perc to html : %f"), seq.ClosePercToHtml);
+        m_PropRanges.AddString(format.GetString());
+        format.Empty();
+        format.AppendFormat(_T("Perc to vis html : %f"), seq.ClosePercToVisibleHtml);
+        m_PropRanges.AddString(format.GetString());
+        format.Empty();
+        format.AppendFormat(_T("Intersection : %d"), seq.InnerIntersection);
+        m_PropRanges.AddString(format.GetString());
+    }
 
     UpdateData(FALSE);
 }
@@ -444,9 +515,22 @@ void CNewsColoringDlg::OnBnClickedBtnsetend()
 
 void CNewsColoringDlg::OnBnClickedBtnprintnews()
 {
+    if(!UpdateData(TRUE))
+        return;
+
     ///< ¬ыходной файл.
     std::fstream fileOut("out.html", std::ios::out);
+    std::fstream OutCsv("out.csv", std::ios::app);
 
+    OutCsv << m_SiteURL.GetString();
+    OutCsv << "Num of subseq, innerIntersect, percToHml, percToVisibleHtml" << std::endl;
+    
+    for (vector<CTagSequence>::iterator it = m_DisplayedTagRanges.begin(); it != m_DisplayedTagRanges.end(); ++it)
+    {
+        OutCsv << it->tagRange.size() << "," << it->innerIntersect << "," << it->percToHtml << "," << it->percToVisibleHtml << std::endl;
+    }
+    
+    
     fileOut << "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head>\n<body>\n";
 
     unsigned int offset = 0;
@@ -456,18 +540,25 @@ void CNewsColoringDlg::OnBnClickedBtnprintnews()
         string res = "";
         if (!m_IsSingleTagSeq)
         {
-            res = string(m_FileData, ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->begin,
-                                     ((m_DisplayedTagRanges.begin() + m_NewsEndNum)->tagRange.begin() +  i)->end - ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->begin + 1);
+            res = string(m_FileData, ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->Begin,
+                                     ((m_DisplayedTagRanges.begin() + m_NewsEndNum)->tagRange.begin() +  i)->End - ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->Begin + 1);
         }
         else
         {
-            res = string(m_FileData, ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->begin,
-                                     ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->end - ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->begin + 1);
+            if(!m_CloseTagsCheck)
+                res = string(m_FileData, ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->Begin,
+                                         ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->End - ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->Begin + 1);
+            else
+                res = string(m_FileData, ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->CloseBegin,
+                                         ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->CloseEnd - ((m_DisplayedTagRanges.begin() + m_NewsBeginNum)->tagRange.begin() +  i)->CloseBegin + 1);
         }
         fileOut << res;
         fileOut << "\n<br>#########################################################################################\n";
     }
     fileOut << "\n</body></html>";
+    fileOut.close();
+    OutCsv.close();
+    UpdateData(FALSE);
 }
 
 void CNewsColoringDlg::OnBnClickedBntsingle()
@@ -492,7 +583,7 @@ void CNewsColoringDlg::OnBnClickedBtncolorall()
 
     for (vector<CTagRange>::iterator it = (m_DisplayedTagRanges.begin() + selElem)->tagRange.begin(); it != (m_DisplayedTagRanges.begin() + selElem)->tagRange.end(); ++it)
     {
-        ColorRichText(it->begin, it->end + 1, color);
+        ColorRichText(it->Begin, it->End + 1, color);
     }
 
     UpdateData(FALSE);
@@ -513,14 +604,14 @@ void CNewsColoringDlg::OnBnClickedBtnfind()
         ind++;
         for (vector<CTagRange>::iterator jt = it->tagRange.begin(); jt < it->tagRange.end(); ++jt)
         {
-            if (jt->begin == begin && jt->end == end)
+            if (jt->Begin == begin && jt->End == end)
             {
                 m_ListFreq.SetCurSel(ind - 1);
                 it = m_DisplayedTagRanges.end() - 1;
                 break;
             }
 
-            if (jt->begin > begin)
+            if (jt->Begin > begin)
             {
                 break;
             }
@@ -537,7 +628,7 @@ void CNewsColoringDlg::OnCbnSelchangeSiteselect()
     int num = m_SiteSelect.GetCurSel();
     int sz = m_SiteSelect.GetLBTextLen(num);
     m_SiteSelect.GetLBText(num, m_SiteURL.GetBuffer(sz));
-    Rebuild();
+    RebuildURL();
 }
 
 // обработчики выбора цвета раскраски текста
@@ -691,4 +782,35 @@ void CNewsColoringDlg::OnEnKillfocusEditnewsnumber()
     BuildRanges();
 
     UpdateData(FALSE);
+}
+
+void CNewsColoringDlg::GetNewsFilenames()
+{
+    WIN32_FIND_DATA FindFileData;
+    HANDLE hFind;
+
+    hFind = FindFirstFile("pages/*", &FindFileData);
+
+    if (hFind == INVALID_HANDLE_VALUE) 
+    {
+        printf ("FindFirstFile failed (%d)\n", GetLastError());
+        return;
+    } 
+    FindNextFile(hFind, &FindFileData);
+    FindNextFile(hFind, &FindFileData);
+    do
+    {
+        m_FileSelect.AddString(FindFileData.cFileName);
+    }
+    while (FindNextFile(hFind, &FindFileData) != 0);
+}
+
+
+void CNewsColoringDlg::OnCbnSelchangeFileselect()
+{
+    m_SiteURL.ReleaseBuffer();
+    int num = m_FileSelect.GetCurSel();
+    int sz = m_FileSelect.GetLBTextLen(num);
+    m_FileSelect.GetLBText(num, m_SiteURL.GetBuffer(sz));
+    RebuildFILE();
 }

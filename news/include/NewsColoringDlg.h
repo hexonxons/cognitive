@@ -36,6 +36,7 @@ private:
     CRichEditCtrl m_RichCtrl;
     // Выпадающий список выбора сайта
     CComboBox m_SiteSelect;
+    CComboBox m_FileSelect;
 
     CListBox m_ListFreq;
     CListBox m_ListRanges;
@@ -61,14 +62,19 @@ private:
     CHARFORMAT2 cfDefault;
     // URL сайта новостей
     CString m_SiteURL;
-
     void Init(std::string, int, int, int);
     void ClearDialog();
     void ColorRichText(int start, int end, COLORREF color);
     // функция перезагрузки диалогового окна
-    void Rebuild();
+    void RebuildURL();
+    // функция перезагрузки диалогового окна
+    void RebuildFILE();
     // функция построения последовательностей по эвристике
     void BuildRanges();
+    // функция получения названий файлов в директории
+    void GetNewsFilenames();
+    // достройка тегов
+    std::vector<CTagRange> FinishTagsSeq(std::vector<CTagRange> &);
 public:
     afx_msg void OnBnClickedRadiored();
     afx_msg void OnBnClickedRadiogreen();
@@ -99,6 +105,9 @@ public:
 private:
     long m_NewsNumber;
 public:
+    afx_msg void OnCbnSelchangeFileselect();
     afx_msg void OnEnChangeNewsnumber();
     afx_msg void OnEnKillfocusEditnewsnumber();
+private:
+    BOOL m_CloseTagsCheck;
 };

@@ -1,0 +1,2411 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang=ru>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="/common.css">
+  
+
+<!--[if lt IE 9]>
+<script src="/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+
+
+
+
+<script src="/js/head.js" type="text/javascript"></script>
+
+
+<title>LINUX.ORG.RU - Русская информация об ОС Linux</title>
+<META NAME="Keywords" CONTENT="linux линукс операционная система документация gnu бесплатное свободное програмное обеспечение софт unix юникс software free documentation operating system новости news">
+<META NAME="Description" CONTENT="Все о Linux на русском языке">
+<LINK REL="alternate" TITLE="L.O.R RSS" HREF="section-rss.jsp?section=1" TYPE="application/rss+xml">
+
+
+<style type="text/css">
+    #samsung_text { margin-left: 135px; }
+    @media screen and (max-width: 640px) {
+        #samsung_text { margin-left: 0; }
+    }
+</style>
+
+
+
+
+
+
+<link rel="search" title="Search L.O.R." href="/search.jsp">
+<script src="/js/lor.js" type="text/javascript">;</script>
+
+
+
+
+  <base href="http://www.linux.org.ru/">
+
+
+
+
+
+
+
+<LINK REL="stylesheet" TYPE="text/css" HREF="/tango/combined.css">
+<LINK REL="stylesheet" TYPE="text/css" HREF="/tango/tango-dark.css" TITLE="dark">
+<LINK REL="alternate stylesheet" TYPE="text/css" HREF="/tango/tango-swamp.css" TITLE="swamp">
+<LINK REL="shortcut icon" HREF="/favicon.ico" TYPE="image/x-icon">
+<script type="text/javascript">
+  $.stylesheetInit();
+</script>
+<meta name = "viewport" content = "initial-scale=1.0">
+</head>
+<body>
+  	<div id="hd">
+        <a id="sitetitle" href="/">LINUX.ORG.RU</a>
+
+        <ul class="menu">
+          <li id="loginGreating">
+            
+
+            
+              <div id="regmenu" class="head">
+                <a href="/register.jsp">Регистрация</a> -
+                <a id="loginbutton" href="/login.jsp">Вход</a>
+              </div>
+
+              <form method=POST action="login.jsp" style="display: none" id="regform">
+                <label>Имя: <input type=text name=nick size=15></label><br>
+                <label>Пароль: <input type=password name=passwd size=15></label><br>
+                <input type=submit value="Вход">
+                <input id="hide_loginbutton" type="button" value="Отмена">
+              </form>
+            
+          </li>
+
+          <li><a href="/news/">Новости</a></li>
+          <li><a href="/gallery/">Галерея</a></li>
+
+          <li><a href="/forum/">Форум</a></li>
+          <li><a href="/tracker.jsp">Трекер</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          
+
+          <li><a href="/search.jsp">Поиск</a></li>
+
+        </ul>
+      </div>
+      <div style="clear: both"></div>
+
+
+
+    <!-- Rating@Mail.ru counter -->
+    <img src="http://d7.c1.b1.a0.top.mail.ru/counter?id=71642"
+    border="0" height="1" width="1" alt="" style="position: absolute">
+    <!-- //Rating@Mail.ru counter -->
+
+
+<div id="bd">
+
+
+
+<div style="clear: both"></div>
+<div class="newsblog">
+  <div class="newsblog-in">
+
+
+  <div class="infoblock" style="border: 1px solid #777; text-align: justify;">
+    <a rel="nofollow" href="http://job.samsung.ru/"><img width="130" height="43" src="/adv/Samsung_Logo.png" alt="" style="float: left; border: 0; padding-right: 5px"></a>
+    <div id="samsung_text">
+    SAMSUNG Electronics&nbsp;&mdash; мировой лидер в&nbsp;производстве полупроводников,
+    телекоммуникационного оборудования и&nbsp;цифровой конвергенции&nbsp;&mdash;
+    объявляет о&nbsp;приеме на&nbsp;работу инженеров-программистов,
+    разработчиков в&nbsp;исследовательские центры компании в&nbsp;Южной Корее:
+    Cloud Computing, Cryptography&nbsp;/ Encryption, Security Software, Multimedia
+    (TV, BD, PVR, HTS), Linux Kernel, Android, C/C++ Programming, Widget,
+    DRM, Network Software, LTE eNB Software Design, Modem ASIC, FPGA, SoC.
+    Дополнительная информация:
+    <a href="http://job.samsung.ru/" rel="nofollow" style="color: white">http://job.samsung.ru</a>
+    </div>
+  </div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7536825">
+
+<h2>
+  <a href="/news/opensource/7536825">Ingo Molnar, разработчик ядра Linux &quot;Нам нужно полностью пересмотреть модель распространения ПО&quot;</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Представляю Вашему вниманию мой перевод статьи разработчика ядра Linux Инго Молнара (Ingo Molnar), размещенной в двух частях на его странице в G+. Статья вызвала горячее обсуждение на зарубежных тематических новостных площадках, и, на мой взгляд, заслуживает Вашего внимания.</p><p>( <a href="http://www.linux.org.ru//news/opensource/7536825#cut0">читать дальше...</a> )</p>
+<p>&gt;&gt;&gt; <a href="https://plus.google.com/109922199462633401279/posts/HgdeFDfRzNe">Источник</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=linux">linux</a>, <a rel=tag href="view-news.jsp?tag=opensource">opensource</a>, <a rel=tag href="view-news.jsp?tag=%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8">репозитории</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/ins3y3d/profile">ins3y3d</a>
+
+
+
+(17.03.2012 19:50:35)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7536825">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/opensource/7536825">241&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/opensource/7536825/page1">2</a> <a href="/news/opensource/7536825/page2">3</a> <a href="/news/opensource/7536825/page3">4</a> <a href="/news/opensource/7536825/page4">5</a>)]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7536457">
+
+<h2>
+  <a href="/news/google/7536457">Опубликован список организаций, принимающих участие в GSoC 2012</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/google/">
+  <img src="/tango/img/google-icon.png" width=64 height=64 border=0 alt="Группа Google">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Названы организации, над проектами которых этим летом будут работать сотни студентов со всего мира в рамках программы <a href="https://en.wikipedia.org/wiki/Google_summer_of_code">Google Summer of Code (GSoC)</a>.</p><p>Программа GSoC, проводимая компанией Google с 2005го года, предоставляет студентам и аспирантам возможность поработать над одним из выбранных Open Source-проектов в течение лета. В случае успешного завершения работы студент получит $5000 от Google ($500 также получит представитель соответствующего проекта, курирующий работу студента). </p><p>В 2012 году студенты могут выбрать одну из 180 одобренных организаций (в 2011 году в списке было 175 организаций), среди которых такие известные как <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/lf">The Linux Foundation</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/kernelorg">Kernel.org</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/gnu">GNU Project</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/gcc">GCC</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/gentoo">Gentoo Foundation</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/debian">Debian Project</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/opensuse">openSUSE</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/freebsd">FreeBSD</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/kde">KDE</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/gnome">Gnome</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/mozilla">Mozilla</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/libreoffice">LibreOffice</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/apache">Apache Software Foundation</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/blender">Blender Foundation</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/mono">Mono Project</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/postgresql">PostgreSQL Project</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/twitter">Twitter</a>, <a href="http://www.google-melange.com/gsoc/org/google/gsoc2012/wikimedia">Wikimedia Foundation</a> и <a href="http://www.google-melange.com/gsoc/program/accepted_orgs/google/gsoc2012">другие</a>.</p><p>С 26го марта по 6ое апреля заинтересованные студенты могут подать заявки на участие. С крайними сроками, установленными в программе GSoC, можно ознакомиться <a href="http://www.google-melange.com/gsoc/events/google/gsoc2012">здесь</a>.</p>
+<p>&gt;&gt;&gt; <a href="http://google-opensource.blogspot.com/2012/03/mentoring-organizations-for-google.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+GoogleOpenSourceBlog+%28Google+Open+Source+Blog%29">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=google">google</a>, <a rel=tag href="view-news.jsp?tag=gsoc">gsoc</a>, <a rel=tag href="view-news.jsp?tag=opensource">opensource</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/gizzka/profile">gizzka</a>
+
+
+
+(17.03.2012 18:47:19)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7536457">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/google/7536457">28&nbsp;комментариев</a>]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7533000">
+
+<h2>
+  <a href="/news/conference/7533000">Объединенная конференция «Perl Mova» и YAPC::Russia «May Perl» 2012</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/conference/">
+  <img src="/tango/img/x-office-presentation.png" width=64 height=64 border=0 alt="Группа Конференции и встречи">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>12–13 мая в Киеве пройдет уже пятая по счету конференция YAPC::Russia — YAPC::Russia 2012 «May Perl + Perl Mova».</p><p>Эта конференция особенно привлекательна из-за участия известных Perl-деятелей: <a href="http://metacpan.org/author/MIYAGAWA">Tatsuhiko Miyagawa</a> (Perl-хакер известный в первую очередь как автор спецификации PSGI. Автор более 170 модулей на CPAN) и <a href="https://metacpan.org/author/SZABGAB">Gabor Szabo</a> (организатор еженедельных Perl-новостей Perlweekly, тренер Perl курсов, автор Padre).</p><p>Для участия в конференции необходимо <a href="http://event.perlrussia.org/yr2012/register">зарегистрироваться</a>. Участие бесплатное.</p><p>Предварительная программа конференции будет свёрстана позднее. Следите за официальным сайтом конференции!</p><p> </p>
+<p>&gt;&gt;&gt; <a href="http://event.perlrussia.org/yr2012/">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=perl">perl</a>, <a rel=tag href="view-news.jsp?tag=%D0%BA%D0%B8%D0%B5%D0%B2">киев</a>, <a rel=tag href="view-news.jsp?tag=%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F">конференция</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/ymn/profile">ymn</a>
+
+
+
+(17.03.2012 8:27:18)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7533000">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/conference/7533000">20&nbsp;комментариев</a>]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7533645">
+
+<h2>
+  <a href="/news/ubuntu/7533645">Ubuntu наращивает долю на рынке крупных промышленных систем</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/ubuntu/">
+  <img src="/tango/img/ubuntu-logo.png" width=65 height=75 border=0 alt="Группа Ubuntu Linux">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Марк Шаттлворт опубликовал в своем блоге интересную информацию и заявил о значительном увеличении доли промышленных решений на базе серверной редакции Ubuntu:
+</p><div class="none">&gt;&gt;-----Цитата----&gt;&gt;</div><div class="quote"><p>
+Замечательная вещь случилась в этом году: компании начали внедрение Ubuntu вместо RHEL для крупномасштабных промышленных решений, в массовом порядке.
+</p></div><div class="none">&lt;&lt;-----Цитата----&lt;&lt;</div><p><a href="http://www.markshuttleworth.com/wp-content/uploads/2012/03/20120314093040.png"><b>График: Ubuntu vs RHEL on Public Web Services</b></a></p><p>Он отмечает, что благодаря интеграции компонентов OpenStack, качеству и продуманному дизайну, Ubuntu на сегодня является достаточно сильным игроком на рынке облачных систем и систем для обработки больших объёмов данных, а также веб-серверов.</p><p>Согласно исследованию, проведённому W3Techs по статистике использования и доле рынка Linux для веб-серверов, распределение среди дистрибутивов следующее:
+</p><ul><li>Debian 30%
+</li><li>CentOS 28.9%
+</li><li>Ubuntu 18.4%
+</li><li>Red Hat 12.2%
+</li><li>Fedora 5.0%
+</li><li>SuSE 3.0%
+</li><li>Gentoo 1.2%
+</li><li>(Дистрибутивы расположившиеся ниже набирают каждый от 0.1% и менее)
+</li><li>Unknown 1%
+</li></ul><p><a href="http://w3techs.com/technologies/details/os-linux/all/all"><b>Статистика W3Techs</b></a></p>
+<p>&gt;&gt;&gt; <a href="http://www.markshuttleworth.com/archives/1072">Подробности на markshuttleworth.com</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=linux">linux</a>, <a rel=tag href="view-news.jsp?tag=rhel">rhel</a>, <a rel=tag href="view-news.jsp?tag=shuttleworth">shuttleworth</a>, <a rel=tag href="view-news.jsp?tag=statistics">statistics</a>, <a rel=tag href="view-news.jsp?tag=ubuntu">ubuntu</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/Buy/profile">Buy</a>
+
+
+
+(16.03.2012 20:20:23)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7533645">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/ubuntu/7533645">432&nbsp;комментария</a>&nbsp;(стр. <a href="/news/ubuntu/7533645/page1">2</a> <a href="/news/ubuntu/7533645/page2">3</a> <a href="/news/ubuntu/7533645/page3">4</a> <a href="/news/ubuntu/7533645/page4">5</a> <a href="/news/ubuntu/7533645/page5">6</a> <a href="/news/ubuntu/7533645/page6">7</a> <a href="/news/ubuntu/7533645/page7">8</a> <a href="/news/ubuntu/7533645/page8">9</a>)]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7532512">
+
+<h2>
+  <a href="/news/redhat/7532512">В Ksplice появилась поддержка RHEL</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/redhat/">
+  <img src="/tango/img/redhat-logo.png" width=65 height=75 border=0 alt="Группа Red Hat">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Теперь на платной основе можно получать готовые минорные обновления, не требующие перезагрузки для ядра RHEL. Напомню, что после покупки компании, предоставляющей сервис Ksplice, компанией Oracle поддержка RHEL была прекращена. Также есть бесплатная подписка для Ubuntu 10.04 — 11.10, а также Fedora 15 и 16. Сама программа, обеспечивающая установку и создание обновлений ядра, доступна на условиях GNU GPL.</p>
+<p>&gt;&gt;&gt; <a href="https://www.ksplice.com/rhel-signup">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=ksplice">ksplice</a>, <a rel=tag href="view-news.jsp?tag=linux">linux</a>, <a rel=tag href="view-news.jsp?tag=oracle">oracle</a>, <a rel=tag href="view-news.jsp?tag=rhel">rhel</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/bug12309/profile">bug12309</a>
+
+
+
+(16.03.2012 14:07:03)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7532512">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/redhat/7532512">23&nbsp;комментария</a>]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="infoblock mini-news" id="topic-7531088">
+Мини-новость:
+  <a href="/news/gnome/7531088">Вышел Cinnamon 1.4</a>
+
+
+
+  [<a href="/news/gnome/7531088">81&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/gnome/7531088/page1">2</a>)]
+</article>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="infoblock mini-news" id="topic-7530203">
+Мини-новость:
+  <a href="/news/openoffice/7530203">Корректирующий релиз LibreOffice 3.5.1</a>
+
+
+
+  [<a href="/news/openoffice/7530203">90&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/openoffice/7530203/page1">2</a>)]
+</article>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7526862">
+
+<h2>
+  <a href="/news/multimedia/7526862">Встречайте - Audacity 2.0</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/multimedia/">
+  <img src="/tango/img/multimedia.png" width=65 height=75 border=0 alt="Группа Мультимедиа">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Команда разработчиков популярного кроссплатформенного аудиоредактора с открытым исходным кодом Audacity с большой радостью сообщает о выпуске данного приложения версии 2.0, выросшего из 1.3 beta и пришедшего на замену версиям 1.2.6 и 1.3.14. Среди улучшений можно выделить:
+</p><ul><li> Значительные улучшения качества многих востребованных плагинов, в том числе дополнений «Эквалайзер», «Нормировка», «Удаление шума». 
+</li><li> Увеличение числа удобных комбинаций клавиш для управления дорожками и выделенными фрагментами.
+</li><li> Новая панель для выбора устройств ввода и вывода звука.
+</li><li> Быстрый экспорт в форматы WAV/AIFF при записи звука из внешнего источника.
+</li><li> Полная поддержка FLAC.
+</li><li> Поддержка FFmpeg для открытия и сохранения файлов в форматах AC3/M4A/WMA, а также импорта звуковых дорожек из видеофайлов.
+</li><li> Улучшение работы функции <a href="http://manual.audacityteam.org/man/Sync-Locked_Tracks">Sync-Locked Tracks</a>, позволяющей при удалении или изменении длины фрагментов автоматически изменять аудиодорожки и дорожки пометок, находящиеся в пределах соответствующей группы дорожек.
+</li><li> Добавление диалога микширования треков с измерителями уровня звука для каждой дорожки.
+</li><li> Большое количество исправлений старых ошибок, в том числе, ранее приводивших к падению Audacity.
+</li><li> Автоматическое восстановление несохраненной сессии после аварийного завершения работы приложения.
+</li></ul><p><a href="http://audacity.sourceforge.net/download/">Попробуйте</a> новый Audacity для своих аудиопроектов!</p>
+<p>&gt;&gt;&gt; <a href="http://wiki.audacityteam.org/wiki/Release_Notes_2.0.0">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=audacity">audacity</a>, <a rel=tag href="view-news.jsp?tag=%D0%B0%D1%83%D0%B4%D0%B8%D0%BE">аудио</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/ins3y3d/profile">ins3y3d</a>
+
+
+
+(14.03.2012 19:34:20)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7526862">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/multimedia/7526862">188&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/multimedia/7526862/page1">2</a> <a href="/news/multimedia/7526862/page2">3</a> <a href="/news/multimedia/7526862/page3">4</a>)]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7524875">
+
+<h2>
+  <a href="/news/opensource/7524875">CEAN 2.0</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>После длительного перерыва тихо и незаметно вышел релиз  <a href="http://cean.process-one.net/">CEAN 2.0</a> - Comprehensive Erlang Archive Network - репозиторий с пакетами и фреймворк для разработки на Erlang/OTP.</p><p>Основные преимущества этого инструмента:</p><p> </p><ul><li> Содержит ядро и библиотеки языка Erlang для множества поддерживаемых платформ.
+ </li><li> Возможность поиска среди доступных пакетов.
+ </li><li> Непосредственное использование внутри Erlang shell. 
+ </li><li> Генерация пакетов и инсталляторов.
+ </li><li> Простое развертывание production systems.
+ </li></ul><p>Некоторые новшества этого релиза:</p><ul><li> Фреймворк теперь распространяется на условиях лицензии GPLv3.
+</li><li> Может работать в кластерном окружении.
+</li><li> Простая синхронизация Erlang/CEAN на нескольких хостах.
+</li></ul><p>На данный момент доступно около 550 пакетов для 14 архитектур.</p><p>&gt;&gt;&gt; <a href="https://github.com/cromain/cean">Фреймворк</a></p><p>&gt;&gt;&gt; <a href="https://support.process-one.net/browse/CEAN">Проект</a></p>
+<p>&gt;&gt;&gt; <a href="http://cean.process-one.net/about/">Подробнее о проекте</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=erlang">erlang</a>, <a rel=tag href="view-news.jsp?tag=opensource">opensource</a>, <a rel=tag href="view-news.jsp?tag=%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">программирование</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/ymn/profile">ymn</a>
+
+
+
+(14.03.2012 16:23:20)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7524875">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/opensource/7524875">22&nbsp;комментария</a>]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="infoblock mini-news" id="topic-7524757">
+Мини-новость:
+  <a href="/news/calculate-linux/7524757">Релиз Calculate Linux 11.15 с GNOME 3</a>
+
+
+
+  [<a href="/news/calculate-linux/7524757">86&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/calculate-linux/7524757/page1">2</a>)]
+</article>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7523547">
+
+<h2>
+  <a href="/news/linux-general/7523547">Oracle обновляет версию ядра с 2.6.32 до 3.0.16</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/linux-general/">
+  <img src="/tango/img/general-logo.png" width=55 height=65 border=0 alt="Группа Linux General">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Oracle обновляет ядро unbreakable linux до версии 3.0.16 (предыдущее ядро базировалось на 2.6.32). Это примечательно, потому что:
+</p><ul><li>Относительно свежее ядро попадает в корпоративный сектор (enterprise environment).
+</li><li>Oracle не стала скрывать наложенные патчи, они доступны в <a href="http://oss.oracle.com/git/?p=linux-uek-2.6.39.git;a=summary">репозитории</a>. Бинарные сборки свободно доступны через публичный <a href="http://public-yum.oracle.com/">репозиторий</a>.
+</li><li>Заявлена совместимость с существующими приложениями, а так же с другим подобными дистрибутивами (rhel, centos, и другими).</li></ul><p>Заявлены улучшения в масштабировании на машинах с большим количеством процессоров, в подсистемах виртуализации, кластерной файловой системе ocfs2. </p><p>Этот релиз добавил давно привычные возможности, которые не были представлены в других дистрибутивах уровня предприятий: huge pages (увеличивает производительность для тяжёлых приложений), memory compaction (уменьшение фрагментации памяти), dtrace (средство динамической отладки портированное из solaris), linux containers (lxc).</p><p>В release notes есть косвенные намёки, что поставляемая версия btrfs готова для внедрения.</p>
+<p>&gt;&gt;&gt; <a href="http://www.oracle.com/us/technologies/linux/uek-r2-features-and-benefits-1555063.pdf">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=oracle">oracle</a>, <a rel=tag href="view-news.jsp?tag=unbreakable+linux">unbreakable linux</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/true_admin/profile">true_admin</a>
+
+
+
+(13.03.2012 23:18:37)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7523547">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/linux-general/7523547">93&nbsp;комментария</a>&nbsp;(стр. <a href="/news/linux-general/7523547/page1">2</a>)]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7523293">
+
+<h2>
+  <a href="/news/mozilla/7523293">Увидел свет Firefox 11</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/mozilla/">
+  <img src="/tango/img/moz-logo2.png" width=65 height=75 border=0 alt="Группа Mozilla">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Состоялся выпуск популярного открытого интернет-обозревателя Firefox 11! В связи с найденной <a href="http://www.opennet.ru/opennews/art.shtml?num=33324">критической ошибкой</a> в ходе проведения конкурса Pwn2own, а также с желанием оттестировать выпуск на свежем обновлении для Windows, было принято <a href="http://blog.mozilla.com/futurereleases/2012/03/12/update-on-firefox-release-timing/">решение</a> немного задержать выпуск вопреки строгому графику.</p><p><b>Список изменений:</b></p><ul><li> Импорт закладок, истории и cookie-файлов из Google Chrome.
+</li><li> Поддержка CSS text-size-adjust.
+</li><li> При обзоре исходного кода для подсветки синтаксиса используется парсер HTML5.
+</li><li> Новый инструмент для редактирования CSS.
+</li><li> <a href="http://habrahabr.ru/blogs/browsers/139480/">3D-режим структуры страницы в Инспекторе</a>.
+</li><li> Поддержка SPDY для быстрой загрузки страниц.
+</li><li> XMLHttpRequest поддерживает разбор HTML.
+</li><li> Синхронизация дополнений между компьютерами.
+</li><li> Хранение файлов в IndexedDB.
+</li><li> Websockets теперь не содержит префикс.
+</li><li> Переработано управление HTML5-видео.
+</li><li> Исправлена проблема с уведомлениями и Growl 1.3+.
+</li></ul><p>Загрузить для: <a href="ftp://ftp.mozilla.org/pub/firefox/releases/11.0/linux-i686/ru/firefox-11.0.tar.bz2"><b>Linux 32 bit</b></a>, <a href="ftp://ftp.mozilla.org/pub/firefox/releases/11.0/linux-x86_64/ru/firefox-11.0.tar.bz2"><b>Linux 64 bit</b></a>, <a href="ftp://ftp.mozilla.org/pub/firefox/releases/11.0/win32/ru/Firefox%20Setup%2011.0.exe"><b>Windows</b></a>, <a href="ftp://ftp.mozilla.org/pub/firefox/releases/11.0/mac/ru/Firefox%2011.0.dmg"><b>MacOS</b></a></p>
+<p>&gt;&gt;&gt; <a href="http://www.mozilla.org/en-US/firefox/11.0/releasenotes/">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=firefox">firefox</a>, <a rel=tag href="view-news.jsp?tag=gnu">gnu</a>, <a rel=tag href="view-news.jsp?tag=gpl">gpl</a>, <a rel=tag href="view-news.jsp?tag=mozilla">mozilla</a>, <a rel=tag href="view-news.jsp?tag=opensource">opensource</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/lucky-m/profile">lucky-m</a>
+
+
+
+(13.03.2012 23:04:19)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7523293">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/mozilla/7523293">222&nbsp;комментария</a>&nbsp;(стр. <a href="/news/mozilla/7523293/page1">2</a> <a href="/news/mozilla/7523293/page2">3</a> <a href="/news/mozilla/7523293/page3">4</a> <a href="/news/mozilla/7523293/page4">5</a>)]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7522327">
+
+<h2>
+  <a href="/news/redhat/7522327">Тестовые дни Fedora: USB 3.0 и Gnome Shell and Extensions</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/redhat/">
+  <img src="/tango/img/redhat-logo.png" width=65 height=75 border=0 alt="Группа Red Hat">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p><b>13 марта — тестирование поддержки USB 3.0</b></p><p><a href="https://fedoraproject.org/wiki/Test_Day:2012-03-13_USB_3.0">Инструкция</a></p><p>Для тестирования потребуются:
+</p><ul><li> порт с поддержкой USB 3.0 (можно опознать по синему цвету)
+   </li><li> флешка с поддержкой USB 3.0
+   </li><li> Live-образ с текущей сборкой Fedora 17 (<a href="http://alt.fedoraproject.org/pub/alt/nightly-composes/desktop/">скачать</a>)
+   </li><li> дополнительные USB-устройства по вкусу
+</li></ul><p><b>15 марта — тестирование Gnome Shell и расширений</b></p><p><a href="https://fedoraproject.org/wiki/Test_Day:2012-03-15_Gnome_Shell_and_Extensions">
+Инструкция</a></p><p>Тестовый день посвящен работе с расширениями Gnome Shell с помощью трёх различных инструментов:
+</p><ul><li> yum позволяет устанавливать опакеченные расширения из репозиториев
+</li><li> gnome-tweak-tool — любые расширения из готовых архивов
+</li><li> сайт <a href="https://extensions.gnome.org/">https://extensions.gnome.org/</a> — расширения проверенные командой разработчиков Gnome
+</li></ul><p>Несмотря на то что сайт пока находится на стадии Alpha-тестирования, уже сейчас там доступны около 140 расширений, реализован поиск и сортировка. Поддержку тегов и категорий обещают доделать к релизу Gnome 3.4.</p><p>Также при тестировании следует обращать внимание и на общее поведение Gnome Shell и любые баги интерфейса.</p><p>Участвовать в тестовом дне можно и после его окончания. До официального начала участвовать нежелательно, так как в список тестовых случаев и в образы для тестирования могут быть внесены дополнительные правки.</p><p>Как обычно все вопросы по участию в тестировании вы можете задать в день тестирования непосредственно организаторам на IRC-канале #fedora-test-day (сервер freenode), либо в любое время на Jabber-канале русскоязычной поддержки fedora@conference.jabber.ru.</p>
+<p>&gt;&gt;&gt; <a href="http://thread.gmane.org/gmane.linux.redhat.fedora.testers/96739">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=fedora">fedora</a>, <a rel=tag href="view-news.jsp?tag=gnome">gnome</a>, <a rel=tag href="view-news.jsp?tag=redhat">redhat</a>, <a rel=tag href="view-news.jsp?tag=usb30">usb30</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/alpha/profile">alpha</a>
+
+
+
+(13.03.2012 18:27:12)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7522327">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/redhat/7522327">77&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/redhat/7522327/page1">2</a>)]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7522058">
+
+<h2>
+  <a href="/news/games/7522058">Новая игра от Брайена Фарго — Wasteland 2 — на Kickstarter</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/games/">
+  <img src="/tango/img/games-logo.png" width=64 height=53 border=0 alt="Группа Игры">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Вдохновившись <a href="http://www.kickstarter.com/projects/66710809/double-fine-adventure">успехом</a> Double Fine Adventure, студия inXile, возглавляемая Брайеном Фарго, основателем компании Interplay, решила использовать модель, при которой фанаты финансируют создание игры, для написания сиквела к легендарной игре <a href="http://ru.wikipedia.org/wiki/Wasteland">Wasteland</a>.</p><p>Таким образом, разработчики не будут зависеть от крупных издателей и смогут реализовать в игре те особенности механики, сюжета и графики, которые будут интересны именно игрокам. В результате  <a href="http://wasteland.inxile-entertainment.com/forum/viewtopic.php?f=7&t=128">голосования</a> на форуме, посвящённом разработке игры было, например, решено, что игра будет распространяться без DRM.</p><p>Минимальная сумма, которую расчитывают собрать разработчики - 900000 долларов, если удастся собрать 1250000 долларов, дополнительные средства будут вложены в создание новых локаций и квестов, если удастся собрать 1500000 долларов, то игра будет портирована на MacOS X (решение было принято опять-таки голосованием на форуме), ну а если удастся собрать больше — 'the sky is the limit'.</p><p>Причём же здесь Linux?</p><p>Во-первых, на наших глазах и при нашем участии появляется новый подход к созданию игр, при котором разработчики прислушиваются к пользователям. Именно в результате этого Double Fine Adventure было решено выпускать без DRM и в том числе под Linux. Очевидно, что при должной настойчивости, и, конечно, при должной финансовой поддержке со стороны пользователей Linux одной качественной (со всех точек зрения, от сюжета до графики) игрой для этой платформы может стать больше.</p><p>Поддерживайте <a href="http://www.kickstarter.com/projects/inxile/wasteland-2">проект</a>, высказывайтесь на <a href="http://wasteland.inxile-entertainment.com/forum/index.php">форуме</a>, и нас услышат!</p>
+<p>&gt;&gt;&gt; <a href="http://www.kickstarter.com/projects/inxile/wasteland-2">Страница проекта на Kickstarter</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=games">games</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/Hoodoo/profile">Hoodoo</a>
+
+
+
+(13.03.2012 18:08:45)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7522058">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/games/7522058">301&nbsp;комментарий</a>&nbsp;(стр. <a href="/news/games/7522058/page1">2</a> <a href="/news/games/7522058/page2">3</a> <a href="/news/games/7522058/page3">4</a> <a href="/news/games/7522058/page4">5</a> <a href="/news/games/7522058/page5">6</a> <a href="/news/games/7522058/page6">7</a>)]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7522263">
+
+<h2>
+  <a href="/news/opensource/7522263">Вышел Gnuplot 4.6.0</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Впервые за два года увидел свет новый мажорный релиз известной открытой программы для построения графиков - <a href="http://www.gnuplot.info/">Gnuplot</a> 4.6.0. Наиболее интересные нововведения:</p><ul><li> Добавлена возможность многострочной записи конструкций:
+<ul><li>if (&lt;cond&gt;) { ... } else { ... }
+</li><li>do for [&lt;iteration-spec&gt;] { ... }
+</li><li>while (&lt;cond&gt;) { ... }
+</li></ul>
+</li><li> Формат ввода времени теперь поддерживает точность до 1 микросекунды.
+</li><li> Поддержка пользовательских стилей линий (частота штрихов или точек, очередность цветов).
+</li><li> Можно посмотреть краткую информацию о данных, которые будут выведены на графике (команда stats)
+</li><li> Новые драйвера терминала:  qt, context,  epscairo,  cairolatex
+</li><li> Множественные улучшения версии под Windows (GUI, справка, нативный терминал, инсталлятор)
+</li><li> Улучшена поддержка многобайтовых кодировок текста.
+</li></ul><p>&gt;&gt;&gt; <a href="http://gnuplot.sourceforge.net/demo_4.6/">Демонстрационные графики</a></p>
+<p>&gt;&gt;&gt; <a href="http://www.gnuplot.info/announce.4.6.0">Подробности</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=gnuplot">gnuplot</a>, <a rel=tag href="view-news.jsp?tag=opensource">opensource</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/provaton/profile">provaton</a>
+
+
+
+(13.03.2012 18:06:28)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7522263">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/opensource/7522263">45&nbsp;комментариев</a>]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="infoblock mini-news" id="topic-7517443">
+Мини-новость:
+  <a href="/news/debian/7517443">Анонсирован первый выпуск Debian Edu, основанный на Debian Squeeze</a>
+
+
+
+  [<a href="/news/debian/7517443">19&nbsp;комментариев</a>]
+</article>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7520148">
+
+<h2>
+  <a href="/news/gnu/7520148">Начало очередной программы открытого тестирования NetBeans (NetCAT 7.2)</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/gnu/">
+  <img src="/tango/img/gnu-logo.png" width=65 height=75 border=0 alt="Группа GNU's Not Unix">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>С 10 по 19 марта будет вестись регистрация добровольцев, желающих принять участие в очередной сессии тестирования кроссплатформенной среды разработки с открытым исходным кодом Netbeans 7.2. NetCAT проводится систематически перед релизом каждой мажорной версии Netbeans (мажорными считаются версии со сменой второй цифры) начиная с Netbeans 3.6.</p><p>( <a href="http://www.linux.org.ru//news/gnu/7520148#cut0">Подробнее о программе</a> )</p><p>Для регистрации необходимо внести своё имя и почтовый адрес в <a href="http://wiki.netbeans.org/NetCATParticipants">список участников в Netbeans wiki</a> (нужно будет завести аккаунт в вики) и подписаться на рассылку (для этого нужно отправить пустое письмо на адрес <a href="mailto:sympa@netbeans.org">sympa@netbeans.org</a> с темой &quot;subscribe netcat&quot;).</p><p>&gt;&gt;&gt; <a href="http://wiki.netbeans.org/NetCAT">Статья о NetCAT в Netbeans wiki</a></p>
+<p>&gt;&gt;&gt; <a href="http://netbeans-org.1045718.n5.nabble.com/72cat-news-NetCAT-7-2-starts-today-td5552987.html">Объявление в списке рассылки</a>
+  </div>
+
+  
+
+
+
+
+
+<p class="tags">
+
+  Метки: <span class=tag><a rel=tag href="view-news.jsp?tag=ide">ide</a>, <a rel=tag href="view-news.jsp?tag=netbeans">netbeans</a>, <a rel=tag href="view-news.jsp?tag=netcat">netcat</a>, <a rel=tag href="view-news.jsp?tag=opensource">opensource</a>, <a rel=tag href="view-news.jsp?tag=%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F">документация</a></span>
+</p>
+
+
+
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/Uniqa/profile">Uniqa</a>
+
+
+
+(13.03.2012 15:42:55)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7520148">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/gnu/7520148">35&nbsp;комментариев</a>]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="infoblock mini-news" id="topic-7519409">
+Мини-новость:
+  <a href="/news/debian/7519409">Подкаст русскоязычного сообщества Debian GNU/Linux: выпуск 12.3.1</a>
+
+
+
+  [<a href="/news/debian/7519409">42&nbsp;комментария</a>]
+</article>
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class=news id="topic-7518728">
+
+<h2>
+  <a href="/news/opensource/7518728">Zathura</a>
+</h2>
+
+
+
+
+<div class="entry-userpic">
+  <a href="/news/opensource/">
+  <img src="/tango/img/opensource-logo.png" width=65 height=65 border=0 alt="Группа OpenSource">
+    </a>
+</div>
+
+
+<div class="entry-body">
+<div class=msg>
+  
+  
+  <p>Как всегда, тихо и незаметно вышла новая версия легковесного инструмента для просмотра документов — zathura 0.1.1. В отличие от Okular и Evince, он не тянет за собой KDE и Gnomе, при этом поддерживает все стандартные возможности, а также несколько не доступных этим комбайнам:</p><ul><li> поддержка pdf, djvu, postscript;
+</li><li> возможность работать без мышки;
+</li><li> закладки;
+</li><li> вкладки;
+</li><li> поиск по тексту.
+</li></ul><p>От себя добавлю: после того как автор полностью переписал программу, ей наконец-то стало удобно пользоваться.</p>
+<p>&gt;&gt;&gt; <a href="http://pwmt.org/projects/zathura/">Подробности</a>
+  </div>
+
+
+  <div class=sign>
+  
+    
+      
+
+
+
+
+
+<a rel="author" href="/people/RCV/profile">RCV</a>
+
+
+
+(12.03.2012 23:52:52)
+    
+    
+  
+</div>
+<div class="nav">
+
+  [<a href="comment-message.jsp?topic=7518728">Добавить&nbsp;комментарий</a>]
+
+  
+  [<a href="/news/opensource/7518728">137&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/7518728/page1">2</a> <a href="/news/opensource/7518728/page2">3</a>)]
+  </div>
+  </div>
+</article>
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="infoblock mini-news" id="topic-7510637">
+Мини-новость:
+  <a href="/news/opensource/7510637">Webasyst —  PHP-фреймворк (платформа) для разработки веб-приложений</a>
+
+
+
+  [<a href="/news/opensource/7510637">189&nbsp;комментариев</a>&nbsp;(стр. <a href="/news/opensource/7510637/page1">2</a> <a href="/news/opensource/7510637/page2">3</a> <a href="/news/opensource/7510637/page3">4</a>)]
+</article>
+
+
+    
+<div class="nav">
+  [<a href="/news/?offset=20">< предыдущие</a>]
+  [<a href="add-section.jsp?section=1">добавить новость</a>]
+  [<a href="view-all.jsp?section=1">непроверенные новости</a>]
+  [<a href="section-rss.jsp?section=1">RSS</a>]
+</div>
+</div>
+</div>
+<aside class=column>
+
+  
+
+  
+      
+        <div class="boxlet">
+            
+
+
+<h2>Новые материалы на IBM developerWorks</h2>
+<div class="boxlet_content">
+  <iframe src="dw.jsp?height=400&amp;width=219&amp;main=1" width="222" height="400" scrolling="no"
+          frameborder="0"></iframe>
+  <h3>My developerWorks!</h3>
+  <a rel="nofollow" style="text-decoration: underline" href="http://www.ibm.com/developerworks/mydeveloperworks/?lang=ru" title="">Вступай</a> в сообщество профессионалов&nbsp;IBM!<br>
+Нас уже более 3000 только в России.
+</div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+
+  
+  <h2><a href="/polls/">Опрос</a></h2>
+
+  <div class="boxlet_content">
+    <h3>Выключаете ли Вы компьютер после завершения работы?</h3>
+
+    
+
+
+
+
+
+
+<form action="/vote.jsp" method="POST">
+  <input type="hidden" name="voteid" value="1638">
+
+  
+    <label>
+      
+        
+        
+          <input type="radio"  name="vote" value="12408">
+        
+      
+        Выключаю
+    </label><br>
+  
+    <label>
+      
+        
+        
+          <input type="radio"  name="vote" value="12409">
+        
+      
+        Не выключаю
+    </label><br>
+  
+    <label>
+      
+        
+        
+          <input type="radio"  name="vote" value="12410">
+        
+      
+        Перевожу в ждущий режим (suspend to RAM)
+    </label><br>
+  
+    <label>
+      
+        
+        
+          <input type="radio"  name="vote" value="12411">
+        
+      
+        Перевожу в спящий режим (suspend to disk, hibernation)
+    </label><br>
+  
+    <label>
+      
+        
+        
+          <input type="radio"  name="vote" value="12412">
+        
+      
+        У меня нет компьютера
+    </label><br>
+  
+
+  
+    <input type="submit" value="vote">
+  
+
+</form>
+
+    <br>
+    
+    
+    
+        <a href="/view-vote.jsp?vote=1638">результаты</a> (307 голосов)
+    
+    <br>
+    <a href="/polls/">итоги прошедших опросов...</a>
+    <br>
+    [<a href="/add.jsp?group=19387">добавить опрос</a>]
+  </div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+<h2>Top 10</h2>
+
+<div class="boxlet_content">
+  <h3>Наиболее обсуждаемые темы этого месяца</h3>
+  <ul>
+    
+      <li>
+      
+      <a href="/news/doc/7509783">Компьютерная типография LaTeX в свободном доступе</a>
+      
+        
+        (стр. <a href="/news/doc/7509783/page20?lastmod=1332010757337">21</a>)
+      
+      (1023)
+      </li>
+    
+      <li>
+      
+      <a href="/news/novell/7475647">Линус Торвальдс раскритиковал постоянные запросы root-пароля в пользовательских дистрибутивах</a>
+      
+        
+        (стр. <a href="/news/novell/7475647/page14?lastmod=1331446892538">15</a>)
+      
+      (734)
+      </li>
+    
+      <li>
+      
+      <a href="/news/ubuntu/7492760">Марк Шатлворт считает релиз Ubuntu 12.04 большой победой</a>
+      
+        
+        (стр. <a href="/news/ubuntu/7492760/page14?lastmod=1331812753739">15</a>)
+      
+      (704)
+      </li>
+    
+      <li>
+      
+      <a href="/news/linux-general/7512202">10 лет дистрибутиву Arch Linux</a>
+      
+        
+        (стр. <a href="/news/linux-general/7512202/page10?lastmod=1331886977703">11</a>)
+      
+      (530)
+      </li>
+    
+      <li>
+      
+      <a href="/news/internet/7448536">Adobe отказывается от разработки Flash Player и AIR для Linux</a>
+      
+        
+        (стр. <a href="/news/internet/7448536/page9?lastmod=1331781880462">10</a>)
+      
+      (475)
+      </li>
+    
+      <li>
+      
+      <a href="/news/ubuntu/7533645">Ubuntu наращивает долю на рынке крупных промышленных систем</a>
+      
+        
+        (стр. <a href="/news/ubuntu/7533645/page8?lastmod=1332016183539">9</a>)
+      
+      (432)
+      </li>
+    
+      <li>
+      
+      <a href="/news/opensource/7496605">Debian: clang способен заменить gcc</a>
+      
+        
+        (стр. <a href="/news/opensource/7496605/page7?lastmod=1331921102572">8</a>)
+      
+      (390)
+      </li>
+    
+      <li>
+      
+      <a href="/news/ubuntu/7445787">Анонсирована Ubuntu for Android</a>
+      
+        
+        (стр. <a href="/news/ubuntu/7445787/page6?lastmod=1331910332188">7</a>)
+      
+      (331)
+      </li>
+    
+      <li>
+      
+      <a href="/news/games/7522058">Новая игра от Брайена Фарго — Wasteland 2 — на Kickstarter</a>
+      
+        
+        (стр. <a href="/news/games/7522058/page6?lastmod=1332005608242">7</a>)
+      
+      (301)
+      </li>
+    
+      <li>
+      
+      <a href="/news/opensource/7479152">Вышел PHP 5.4.0</a>
+      
+        
+        (стр. <a href="/news/opensource/7479152/page5?lastmod=1331552070315">6</a>)
+      
+      (289)
+      </li>
+    
+  </ul>
+</div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+  <h2><a href="/gallery/">Галерея</a></h2>
+
+  <div class="boxlet_content">
+    <h3>Последние скриншоты</h3>
+    
+      <div style="margin-bottom: 1em">
+      <div align="center">
+        
+        <a href="/gallery/screenshots/7522477">
+          
+            
+              <img src="gallery/7522477-icon.jpg" alt="Скриншот: Тайлинг для человеков" width=200 height=113>
+            
+            
+          
+        </a>
+      </div>
+      <i>
+        
+          
+            1920x1080
+          
+          
+        
+        
+      </i> Тайлинг для человеков от <a href="/people/YYY/profile">YYY</a> (35)
+      </div>
+    
+      <div style="margin-bottom: 1em">
+      <div align="center">
+        
+        <a href="/gallery/screenshots/7524703">
+          
+            
+              <img src="gallery/7524703-icon.jpg" alt="Скриншот: Мой телефончик" width=200 height=324>
+            
+            
+          
+        </a>
+      </div>
+      <i>
+        
+          
+            1012x1640
+          
+          
+        
+        
+      </i> Мой телефончик от <a href="/people/anonymous_sama/profile">anonymous_sama</a> (45)
+      </div>
+    
+      <div style="margin-bottom: 1em">
+      <div align="center">
+        
+        <a href="/gallery/screenshots/7523174">
+          
+            
+              <img src="gallery/7523174-icon.jpg" alt="Скриншот: Pip-Boy 3000 на рабочем столе" width=200 height=112>
+            
+            
+          
+        </a>
+      </div>
+      <i>
+        
+          
+            1366x768
+          
+          
+        
+        
+      </i> Pip-Boy 3000 на рабочем столе от <a href="/people/vors/profile">vors</a> (103)
+      </div>
+    
+    <a href="/gallery/">другие скриншоты...</a>
+  </div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+  <h2>Облако Меток</h2>
+
+  <div class="boxlet_content">
+    <div align="center">
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=3d">3d</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=amd">amd</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=android">android</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=arch">arch</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=ati">ati</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=bsd">bsd</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=conky">conky</a>
+      
+        
+        <a class="cloud7" href="/view-news.jsp?tag=debian">debian</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=embedded+linux">embedded linux</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=fedora">fedora</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=firefox">firefox</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=gentoo">gentoo</a>
+      
+        
+        <a class="cloud7" href="/view-news.jsp?tag=gnome">gnome</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=gnu">gnu</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=google">google</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=gpl">gpl</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=java">java</a>
+      
+        
+        <a class="cloud6" href="/view-news.jsp?tag=kde">kde</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=kde4">kde4</a>
+      
+        
+        <a class="cloud10" href="/view-news.jsp?tag=linux">linux</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=microsoft">microsoft</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=mozilla">mozilla</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=nvidia">nvidia</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=openbox">openbox</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=openoffice">openoffice</a>
+      
+        
+        <a class="cloud8" href="/view-news.jsp?tag=opensource">opensource</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=oracle">oracle</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=python">python</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=qt">qt</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=redhat">redhat</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=sun">sun</a>
+      
+        
+        <a class="cloud9" href="/view-news.jsp?tag=ubuntu">ubuntu</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=web">web</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=windows">windows</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=wine">wine</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=xfce">xfce</a>
+      
+        
+        <a class="cloud5" href="/view-news.jsp?tag=%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d1%8c">безопасность</a>
+      
+        
+        <a class="cloud1" href="/view-news.jsp?tag=%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b0%d0%bb%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%8f">виртуализация</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d0%ba%d0%b0">графика</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d0%b0%d1%86%d0%b8%d1%8f">документация</a>
+      
+        
+        <a class="cloud4" href="/view-news.jsp?tag=%d0%b4%d1%80%d0%b0%d0%b9%d0%b2%d0%b5%d1%80%d1%8b">драйверы</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%b7%d0%b2%d1%83%d0%ba">звук</a>
+      
+        
+        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d0%b3%d1%80%d1%8b">игры</a>
+      
+        
+        <a class="cloud0" href="/view-news.jsp?tag=%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b2%d1%8c%d1%8e">интервью</a>
+      
+        
+        <a class="cloud6" href="/view-news.jsp?tag=%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d1%8f+%d1%83%d1%81%d0%bf%d0%b5%d1%85%d0%b0">история успеха</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=%d0%ba%d0%be%d0%bd%d1%84%d0%b5%d1%80%d0%b5%d0%bd%d1%86%d0%b8%d1%8f">конференция</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">образование</a>
+      
+        
+        <a class="cloud2" href="/view-news.jsp?tag=%d0%bf%d0%b0%d1%82%d0%b5%d0%bd%d1%82%d1%8b">патенты</a>
+      
+        
+        <a class="cloud7" href="/view-news.jsp?tag=%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5">программирование</a>
+      
+        
+        <a class="cloud3" href="/view-news.jsp?tag=%d1%8f%d0%b4%d1%80%d0%be">ядро</a>
+      
+    </div>
+  </div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+
+
+
+
+
+
+<h2><a href="/news/">Архив Новостей</a></h2>
+
+<div class="boxlet_content">
+  
+    
+    
+    <a href="/news/archive/2012/3">2012 Март
+      (66)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2012/2">2012 Февраль
+      (104)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2012/1">2012 Январь
+      (117)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/12">2011 Декабрь
+      (121)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/11">2011 Ноябрь
+      (101)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/10">2011 Октябрь
+      (91)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/9">2011 Сентябрь
+      (109)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/8">2011 Август
+      (99)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/7">2011 Июль
+      (118)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/6">2011 Июнь
+      (128)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/5">2011 Май
+      (123)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/4">2011 Апрель
+      (111)</a> <br>
+  
+    
+    
+    <a href="/news/archive/2011/3">2011 Март
+      (111)</a> <br>
+  
+  <br>&gt;&gt;&gt; <a href="/news/archive/"> Предыдущие месяцы</a> (с октября 1998)
+</div>
+        </div>
+      
+        <div class="boxlet">
+            
+
+
+<h2>Футболки linux.org.ru</h2>
+<div class="boxlet_content">
+  <a href="/view-message.jsp?msgid=3989453"><img src="/adv/tshirt.jpg" width="150" height="150"> </a><br>
+  <a href="/view-message.jsp?msgid=3989453">Заказ футболки Linux.org.ru</a>
+</div>
+        </div>
+      
+  
+</aside>
+
+
+<div style="clear: both"></div>
+
+
+
+
+
+
+</div>
+<div id="ft">
+  <p id="ft-info">
+    <a href="server.jsp">О Сервере</a> -
+    <a href="rules.jsp">Правила форума</a><br>
+
+  Разработка и&nbsp;поддержка&nbsp;&#8212; <a href="/people/maxcom/profile">Максим Валянский</a> 1998&ndash;2012<br>
+  Размещение сервера и&nbsp;подключение его к&nbsp;сети Интернет осуществляется компанией
+  ООО &laquo;<a href="http://www.ratel.ru">НИИР-РадиоНет</a>&raquo;
+  </p>
+
+<div id="ft-buttons">
+
+<!-- begin of Top100 logo -->
+<a href="http://top100.rambler.ru/home?id=29833" target="_blank"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-black2.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
+<!-- end of Top100 logo -->
+
+    <!-- Rating@Mail.ru logo -->
+    <a target="_top" href="http://top.mail.ru/jump?from=71642">
+    <img src="http://d7.c1.b1.a0.top.mail.ru/counter?id=71642;t=11;l=1"
+    border="0" height="31" width="88" alt="Рейтинг@Mail.ru"></a>
+    <!-- //Rating@Mail.ru logo -->
+
+  <br>
+           Стиль: <a href="#" rel="dark" class="styleswitch">Dark</a> -
+            <a href="#" rel="swamp" class="styleswitch">Swamp</a>
+  
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2184304-1");
+pageTracker._setCustomVar(1, "Authorized", "false");
+pageTracker._setCustomVar(2, "Style", "tango");
+
+pageTracker._trackPageview();
+pageTracker._trackPageLoadTime();
+} catch(err) {}</script>
+
+</div>
+
+
+<!-- begin of Top100 code -->
+<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?29833"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?29833" alt="" width="1" height="1" border="0"/></noscript>
+<!-- end of Top100 code -->
+
+
+</body>
+</html>
+

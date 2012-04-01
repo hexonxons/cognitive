@@ -98,6 +98,7 @@ public:
 
     void WriteNews(LPCSTR lpcszOutFileName);
 
+
     /**
      * \fn  ULONG CNewsFinder::dwGetlastError();
      *
@@ -108,9 +109,7 @@ public:
      */
 
     long GetlastError();
-
 private:
-
     /**
      * \struct  pred
      *
@@ -119,7 +118,7 @@ private:
      * \author  Alexander
      * \date    7/13/2011
      */
-
+    
     struct pred
     {
         bool operator()(pair<vector<CTagDescription>, unsigned int> &left,
@@ -214,7 +213,7 @@ private:
      */
 
     void removeTags(vector<std::string> &tagsToRemove);
-
+    
     /**
      * \fn  void CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
      *

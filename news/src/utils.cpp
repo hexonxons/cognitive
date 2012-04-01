@@ -8,6 +8,36 @@
 #include <curl/curl.h>
 using std::vector;
 
+CTagSequence::CTagSequence()
+{
+    percToVisibleHtml = 0.0;
+    innerIntersect = 0;
+    InnerDistance = 0;
+    InnerDistanceDiffSum = 0.0;
+    percToHtml = 0.0;
+    InternalIntersection = 0;
+    ClosePercToHtml = 0.0;
+    ClosePercToVisibleHtml = 0.0;
+    CloseLen = 0;
+}
+
+CTagRange::CTagRange()
+{
+    Begin = 0;
+    End = 0;    
+    TagString = "";
+    PercToHtml = 0.0;
+    PercToVisibleHtml = 0.0;
+    InnerIntersection = 0;
+    DistanceToNextRange = 0;
+
+    CloseBegin = 0;
+    CloseEnd = 0;
+    CloseTagString = "";
+    ClosePercToHtml = 0.0;
+    ClosePercToVisibleHtml = 0.0;
+}
+
 //#########################################################################################
 
 int vStrCmp(const std::vector<CTagDescription> &left,

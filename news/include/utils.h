@@ -19,48 +19,72 @@
  */
 struct CTagDescription
 {
-    // хеш тега
-    int nTagCode;
-    // закрывающий тег или нет
-    bool bIsClose;
+    // сам тег
+    std::string tag;
     // начала тега в строке
     int nTagBegin;
     // конец тега в строке
     int nTagEnd;
-    // сам тег
-    std::string tag;
-    
+    // хеш тега
+    int nTagCode;
+    // закрывающий тег или нет
+    bool bIsClose;
+ 
     CTagDescription();
     void Clear();
 };
 
 struct CTagRange
 {
+    int CloseBegin;
+    int CloseEnd;
     // начало последовательности тегов в тексте
-    int begin;
+    int Begin;
     // конец последовательности
-    int end;
-    // вся строка между begin и end
-    std::string tagString;
-    // отношение всей длины текущей последовательности ко всей длине html странички
-    double percToHtml;
-    // отношение видимой части последовательности к видимой части всей html странички
-    double percToVisibleHtml;
+    int End;
 
-    long innerIntersection;
+    // вся строка между begin и end
+    std::string TagString;
+    // отношение всей длины текущей последовательности ко всей длине html странички
+    double PercToHtml;
+    // отношение видимой части последовательности к видимой части всей html странички
+    double PercToVisibleHtml;
+
+    long InnerIntersection;
+    long DistanceToNextRange;
+
+    
+    std::string CloseTagString;
+    double ClosePercToHtml;
+    double ClosePercToVisibleHtml;
+
+    CTagRange();
 };
 
 struct CTagSequence 
 {
     std::vector<CTagDescription> tag;
+    std::vector<CTagDescription> closedTag;
     std::vector<CTagRange> tagRange;
-    // сумма пересечений этой последовательности со всеми другими
+    // сумма пересечений этой последоват%ельности со всеми другими
     int innerIntersect;
     double dispersion;
     // отношение суммы всех длин последовательностей ко всей длине html странички
     double percToHtml;
     // отношение видимой части последовательности к видимой части всей html странички
     double percToVisibleHtml;
+    // сумма расстояний между блоками
+    int InnerDistance;
+    // сумма разниц между дистанциями для каждых блоков и средней дистанцией для всей последовательности
+    double InnerDistanceDiffSum;
+    // 
+    int InternalIntersection;
+    // отношение суммы всех длин последовательностей ко всей длине html странички
+    double ClosePercToHtml;
+    // отношение видимой части последовательности к видимой части всей html странички
+    double ClosePercToVisibleHtml;
+    int CloseLen;
+    CTagSequence();
 };
 
 //#########################################################################################
