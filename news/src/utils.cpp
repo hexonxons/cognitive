@@ -8,40 +8,32 @@
 #include <curl/curl.h>
 using std::vector;
 
-CTagSequence::CTagSequence()
+NewsBlockHeuristics::NewsBlockHeuristics()
+:   PercentageToAllHtmlLen(0.0),
+    PercentageToAllVisibleHtmlLen(0.0),
+    Dispersion(0.0),
+    NewsDistanceSumm(0),
+    IntersectionWithOtherBlocks(0),
+    Weight(0)
 {
-    percToVisibleHtml = 0.0;
-    innerIntersect = 0;
-    InnerDistance = 0;
-    InnerDistanceDiffSum = 0.0;
-    percToHtml = 0.0;
-    InternalIntersection = 0;
-    ClosePercToHtml = 0.0;
-    ClosePercToVisibleHtml = 0.0;
-    CloseLen = 0;
 }
 
-CTagRange::CTagRange()
+NewsHeuristics::NewsHeuristics()
+:   DistanceToNextNews(0)
 {
-    Begin = 0;
-    End = 0;    
-    TagString = "";
-    PercToHtml = 0.0;
-    PercToVisibleHtml = 0.0;
-    InnerIntersection = 0;
-    DistanceToNextRange = 0;
+}
 
-    CloseBegin = 0;
-    CloseEnd = 0;
-    CloseTagString = "";
-    ClosePercToHtml = 0.0;
-    ClosePercToVisibleHtml = 0.0;
+CNews::CNews()
+{
+    NewsBegin = 0;
+    NewsEnd = 0;    
+    TagString = "";
 }
 
 //#########################################################################################
 
-int vStrCmp(const std::vector<CTagDescription> &left,
-            const std::vector<CTagDescription> &right)
+int vStrCmp(const std::vector<CTag> &left,
+            const std::vector<CTag> &right)
 {
     unsigned int i = left.size();
     unsigned int j = right.size();
@@ -49,9 +41,9 @@ int vStrCmp(const std::vector<CTagDescription> &left,
     {
         for (i = 0; i < left.size(); ++i)
         {
-            if (left[i].nTagCode != right[i].nTagCode)
+            if (left[i].TagHashCode != right[i].TagHashCode)
             {
-                return left[i].nTagCode - right[i].nTagCode;
+                return left[i].TagHashCode - right[i].TagHashCode;
             }
         }
     }
@@ -60,13 +52,13 @@ int vStrCmp(const std::vector<CTagDescription> &left,
     return 0;
 }
 
-int vIsSubstr(const std::vector<CTagDescription> &vStr1,
-              const std::vector<CTagDescription> &vStr2)
+int vIsSubstr(const std::vector<CTag> &vStr1,
+              const std::vector<CTag> &vStr2)
 {
     unsigned int j = 0;
     for (unsigned int i = 0; i < vStr1.size(); ++i)
     {
-        if (vStr2[j].nTagCode == vStr1[i].nTagCode)
+        if (vStr2[j].TagHashCode == vStr1[i].TagHashCode)
         {
             ++j;
             ++i;
@@ -76,7 +68,7 @@ int vIsSubstr(const std::vector<CTagDescription> &vStr1,
                 {
                     return 1;
                 }
-                if (vStr2[j].nTagCode != vStr1[i].nTagCode)
+                if (vStr2[j].TagHashCode != vStr1[i].TagHashCode)
                 {
                     j = 0;
                     break;
@@ -93,17 +85,17 @@ int vIsSubstr(const std::vector<CTagDescription> &vStr1,
     return 0;
 }
 
-std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vStr1,
-                                              std::vector<CTagDescription> &vStr2,
+std::vector<CTag>::iterator pStrStr(std::vector<CTag> &vStr1,
+                                              std::vector<CTag> &vStr2,
                                               int offset)
 {
-    vector<CTagDescription>::iterator it1 = vStr1.begin() + offset;
-    vector<CTagDescription>::iterator it2 = vStr2.begin();
-    vector<CTagDescription>::iterator reti;
+    vector<CTag>::iterator it1 = vStr1.begin() + offset;
+    vector<CTag>::iterator it2 = vStr2.begin();
+    vector<CTag>::iterator reti;
 
     while (1)
     {
-        while (it1->nTagCode != it2->nTagCode)
+        while (it1->TagHashCode != it2->TagHashCode)
         {
             ++it1;
             if (it1 == vStr1.end())
@@ -112,7 +104,7 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
             }
         }
         reti = it1;
-        while (it1->nTagCode == it2->nTagCode)
+        while (it1->TagHashCode == it2->TagHashCode)
         {
             ++it1;
             ++it2;
@@ -129,16 +121,16 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
     }
 }
 
-std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vStr1,
-                                              std::vector<CTagDescription> &vStr2)
+std::vector<CTag>::iterator pStrStr(std::vector<CTag> &vStr1,
+                                              std::vector<CTag> &vStr2)
 {
-    vector<CTagDescription>::iterator it1 = vStr1.begin();
-    vector<CTagDescription>::iterator it2 = vStr2.begin();
-    vector<CTagDescription>::iterator reti;
+    vector<CTag>::iterator it1 = vStr1.begin();
+    vector<CTag>::iterator it2 = vStr2.begin();
+    vector<CTag>::iterator reti;
 
     while (1)
     {
-        while (it1->nTagCode != it2->nTagCode)
+        while (it1->TagHashCode != it2->TagHashCode)
         {
             ++it1;
             if (it1 == vStr1.end())
@@ -147,7 +139,7 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
             }
         }
         reti = it1;
-        while (it1->nTagCode == it2->nTagCode)
+        while (it1->TagHashCode == it2->TagHashCode)
         {
             ++it1;
             ++it2;
@@ -164,17 +156,17 @@ std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vSt
     }
 }
 
-CTagDescription::CTagDescription()
+CTag::CTag()
 {
     Clear();
 }
 
-void CTagDescription::Clear()
+void CTag::Clear()
 {
-    this->bIsClose = 0;
-    this->nTagCode = -1;
-    this->nTagBegin = -1;
-    this->nTagEnd = -1;
+    this->IsCloseTag = 0;
+    this->TagHashCode = -1;
+    this->TagBegin = -1;
+    this->TagEnd = -1;
 }
 
 struct MemoryStruct 

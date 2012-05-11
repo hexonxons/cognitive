@@ -9,88 +9,101 @@
 
 #include <vector>
 
-/**
- * \struct  CTagDescription
- *
- * \brief   Структура закодированного тега
- *
- * \author  Alexander
- * \date    11/17/2011
- */
-struct CTagDescription
+/************************************************************************/
+/* Возможные эвристики блока новостей
+/************************************************************************/
+struct NewsBlockHeuristics
 {
-    // сам тег
+    // Конструктор
+    NewsBlockHeuristics();
+    // Процентное отношение длины HTML блока к длине всей страницы
+    double PercentageToAllHtmlLen;
+    // Процентное отношение длины видимого текста блока к длине видимого текста всей страницы
+    double PercentageToAllVisibleHtmlLen;
+    // Дисперсия новостей по отношению друг к другу
+    // Вычисляется, как сумма квадратов разности (среднего расстояния между новостями) и 
+    // (расстояния между 2мя соседними новостями * количество новостей)
+    // Является отрицательной характеристикой
+    double Dispersion;
+    // Сумма расстояний между новостями
+    long NewsDistanceSumm;
+    // Сумма пересечений новостей данного блока с новостями других блоков
+    // Увеличивается только тогда, когда новость другого блока полностью попадает в новость этого блока
+    // Является отрицательной характеристикой
+    long IntersectionWithOtherBlocks;
+    // Вес эвристики. Чем меньше - тем лучше.
+    int Weight;
+};
+
+/************************************************************************/
+/* Возможные эвристики каждой новости в отдельности
+/************************************************************************/
+struct NewsHeuristics
+{
+    // Конструктор
+    NewsHeuristics();
+    // Расстояние до следующей новости
+    long DistanceToNextNews;
+    // Процентное отношение длины HTML новости к длине всей страницы
+    double PercentageToAllHtmlLen;
+    // Процентное отношение длины видимого текста новости к длине видимого текста всей страницы
+    double PercentageToAllVisibleHtmlLen;
+};
+
+/************************************************************************/
+/* Структура одного тега
+/************************************************************************/
+struct CTag
+{
+    // текстовое представление тега
     std::string tag;
-    // начала тега в строке
-    int nTagBegin;
+    // начало тега в строке
+    int TagBegin;
     // конец тега в строке
-    int nTagEnd;
+    int TagEnd;
     // хеш тега
-    int nTagCode;
+    int TagHashCode;
     // закрывающий тег или нет
-    bool bIsClose;
+    bool IsCloseTag;
  
-    CTagDescription();
+    CTag();
     void Clear();
 };
 
-struct CTagRange
+/************************************************************************/
+/* Структура одной новости
+/************************************************************************/
+struct CNews
 {
-    int CloseBegin;
-    int CloseEnd;
-    // начало последовательности тегов в тексте
-    int Begin;
-    // конец последовательности
-    int End;
-
-    // вся строка между begin и end
+    // Конструктор
+    CNews();
+    // Начало последовательности тегов новости в тексте
+    int NewsBegin;
+    // Конец последовательности
+    int NewsEnd;
+    // Вся строка новости
     std::string TagString;
-    // отношение всей длины текущей последовательности ко всей длине html странички
-    double PercToHtml;
-    // отношение видимой части последовательности к видимой части всей html странички
-    double PercToVisibleHtml;
-
-    long InnerIntersection;
-    long DistanceToNextRange;
-
-    
-    std::string CloseTagString;
-    double ClosePercToHtml;
-    double ClosePercToVisibleHtml;
-
-    CTagRange();
+    // Структура эвристики новости
+    NewsHeuristics Heuristics;  
 };
 
-struct CTagSequence 
+/************************************************************************/
+/* Структура новостного блока
+/************************************************************************/
+struct CNewsBlock 
 {
-    std::vector<CTagDescription> tag;
-    std::vector<CTagDescription> closedTag;
-    std::vector<CTagRange> tagRange;
-    // сумма пересечений этой последоват%ельности со всеми другими
-    int innerIntersect;
-    double dispersion;
-    // отношение суммы всех длин последовательностей ко всей длине html странички
-    double percToHtml;
-    // отношение видимой части последовательности к видимой части всей html странички
-    double percToVisibleHtml;
-    // сумма расстояний между блоками
-    int InnerDistance;
-    // сумма разниц между дистанциями для каждых блоков и средней дистанцией для всей последовательности
-    double InnerDistanceDiffSum;
-    // 
-    int InternalIntersection;
-    // отношение суммы всех длин последовательностей ко всей длине html странички
-    double ClosePercToHtml;
-    // отношение видимой части последовательности к видимой части всей html странички
-    double ClosePercToVisibleHtml;
-    int CloseLen;
-    CTagSequence();
+    // Последовательность тегов, основывающая блок
+    std::vector<CTag> tag;
+    // Набор всех новостей
+    std::vector<CNews> NewsRange;
+    // Структура эвристики блока
+    NewsBlockHeuristics BlockHeuristics;
 };
 
 //#########################################################################################
 
-int vStrCmp(const std::vector<CTagDescription> &left,
-            const std::vector<CTagDescription> &right);
+int vStrCmp(const std::vector<CTag> &left,
+            const std::vector<CTag> &right);
 
 /**
  * \fn  int vIsSubstr(const std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
@@ -108,8 +121,8 @@ int vStrCmp(const std::vector<CTagDescription> &left,
  * 			0, иначе.
  */
 
-int vIsSubstr(const std::vector<CTagDescription> &vStr1,
-              const std::vector<CTagDescription> &vStr2);
+int vIsSubstr(const std::vector<CTag> &vStr1,
+              const std::vector<CTag> &vStr2);
 
 /**
  * \fn  std::vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
@@ -129,28 +142,13 @@ int vIsSubstr(const std::vector<CTagDescription> &vStr1,
  * 			Итератор на vStr1.end(), если совпадений не было.
  */
 
-std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vStr1,
-                                               std::vector<CTagDescription> &vStr2,
+std::vector<CTag>::iterator pStrStr(std::vector<CTag> &vStr1,
+                                               std::vector<CTag> &vStr2,
                                                int offset);
 
-/**
- * \fn  std::vector<CPair<CTag, CPair<int, int>>>::iterator pStrStr(std::vector<CPair<CTag, CPair<int, int>>> &vStr1,
- *      std::vector<CPair<CTag, CPair<int, int>>> &vStr2);
- *
- * \brief   Функция производит поиск позиции, с которой vStr2 совпадает с vStr1.
- *
- * \author  Alexander
- * \date    7/28/2011
- *
- * \param [in,out]  vStr1   Строка, в которой ищем.
- * \param [in,out]  vStr2   Строка, которую ищем.
- *
- * \return  Итератор на начало совпадения.
- * 			Итератор на vStr1.end(), если совпадений не было.
- */
 
-std::vector<CTagDescription>::iterator pStrStr(std::vector<CTagDescription> &vStr1,
-                                               std::vector<CTagDescription> &vStr2);
+std::vector<CTag>::iterator pStrStr(std::vector<CTag> &vStr1,
+                                               std::vector<CTag> &vStr2);
 
 char *GetPageSource(const char *URL);
 

@@ -15,10 +15,12 @@
 
 #include "memalloc.h"
 #include "debug.h"
+#include <map>
 
 using std::vector;
 using std::make_pair;
 using std::pair;
+using std::multimap;
 
 // class T - сам массив
 // class Y - элемент массива
@@ -32,7 +34,11 @@ private:
         bool operator()(const vector<pair<int, int>> &left, const vector<pair<int, int>> &right) const
         {
             if(left.size() == right.size())
-                return left[0].first > right[0].first;
+                if(left[0].first == right[0].first)
+                    return left[0].second > right[0].second;
+                else
+                    return left[0].first < right[0].first;
+
             return left.size() > right.size();
         }
     };
@@ -115,12 +121,11 @@ public:
         m_stateStorage.~CBasicDataBase();
     }
 
-    vector< vector<pair<int, int>>> GetRanges(int minLength, int minFreq)
+    multimap<int, vector< pair<int, int> > > GetRanges(int minLength, int minFreq)
     {
         buidFreqArrays(m_pRoot, 0);
         getPossibleRanges(m_pRoot, minLength, minFreq);
-        sort(neededSubstrings.begin(), neededSubstrings.end(), ltstr());
-        return neededSubstrings;
+        return substrings;
     }
 
     int Find(const T &str)
@@ -389,22 +394,195 @@ private:
         }
     }
 
+    // проверка на включение одного диапазона в другой
+    // return: -1, если left включается в right
+    //          1, если наоборот
+    //          0, если нет включения
+    inline int checkIncluding(pair<int, int> &left, pair<int, int> &right)
+    {
+        // левая включается в правую
+        if (left.first >= right.first && left.second <= right.second)
+        {
+            return -1;
+        }
+
+        // правая включается в левую
+        if (left.first <= right.first && left.second >= right.second)
+        {
+            return 1;
+        }
+
+        return 0;
+    }
+
+    // проверка на пары начал-концов
+    // return: -1, если left дополняет right
+    //          1, если наоборот
+    //          0, если нет дополнения
+    inline int checkPair(pair<int, int> &left, pair<int, int> &right)
+    {
+        // левая пара - начало, правая - конец
+        if (left.first > right.second && left.first > right.first)
+        {
+            return -1;
+        }
+
+        // правая пара - начало, левая - конец
+        if (right.first > left.second && right.first > left.first)
+        {
+            return 1;
+        }
+
+        return 0;
+    }
+
+    // проверка на дополнение одного диапазона другим.
+    // return: -1, если left дополняет right
+    //          1, если right дополняет left
+    //      
+    inline int checkIntersection (pair<int, int> &left, pair<int, int> &right)
+    {
+        if (left.first <= right.first && left.second >= right.first && left.second < right.second)
+        {
+            return -1;
+        }
+
+        if (right.first <= left.first && right.second >= left.first && right.second < left.second)
+        {
+            return 1;
+        }
+
+        return 0;
+    }
+
     void getPossibleRanges(CSuffixNode *node, int minWordLength, int minWordFreq)
     {
         // если частота встречи текущего нода меньше минимальной, то просматривать детей нет смысла
         if (node->m_description.m_realwordset.size() < minWordFreq)
             return;
-        
-        // если длина подстроки больше необходимой, то сохраняем подстроку
-        if (node->m_description.m_realwordset[0].second - node->m_description.m_realwordset[0].first + 1 >= minWordLength)
-        {
-            neededSubstrings.push_back(node->m_description.m_realwordset);
-        }
 
         // запускаем по детям
         for (int i = 0; i < node->m_children.size(); ++i)
         {
             getPossibleRanges(node->m_children[i], minWordLength, minWordFreq);
+        }
+
+        // если длина подстроки больше необходимой, то сохраняем подстроку
+        if (node->m_description.m_realwordset[0].second - node->m_description.m_realwordset[0].first + 1 >= minWordLength)
+        {       
+            // получаем все последовательности длины node->m_description.m_realwordset.size()
+            pair<multimap<int, vector< pair<int, int> > >::iterator, multimap<int, vector< pair<int, int> > >::iterator> range = substrings.equal_range(node->m_description.m_realwordset.size());
+            if (range.first == range.second)
+            {
+                 substrings.insert(pair<int, vector<pair<int, int>>>(node->m_description.m_realwordset.size(), node->m_description.m_realwordset));
+            }
+            else
+            {
+                bool flag = false;
+                // проходим по всем элементам длины вставляемой последовательности
+                for (multimap<int, vector< pair<int, int> > >::iterator it = range.first; it != range.second; ++it)
+                {
+                    // уже лежащее значение
+                    vector<pair<int, int>> val = it->second;
+                    // то, что мы хотим добавить
+                    vector<pair<int, int>> newVal = node->m_description.m_realwordset;
+                    // итератор по всем элементам лежащего значения
+                    vector<pair<int, int>>::iterator vit = val.begin();
+                    // итератор по всем элементам добавляемого значения
+                    vector<pair<int, int>>::iterator nvit = newVal.begin();
+                    bool pairs = true;
+                    bool intersection = true;
+                    bool including = true;
+
+                    int resultPairs = checkPair(*vit, *nvit);
+                    int resultIntersection = checkIntersection(*vit, *nvit);
+                    int resultIncluding = checkIncluding(*vit, *nvit);
+
+                    vector<pair<int, int>> valuesPairs;
+                    vector<pair<int, int>> valuesIntersection;
+                    vector<pair<int, int>> valuesIncluding;
+
+                    // попарно проходим по всем элементам
+                    while(vit != val.end() && nvit != newVal.end() && (resultPairs + resultIntersection + resultIncluding) != 0)
+                    {
+                        // проверяем на пары
+                        if (resultPairs != 0)
+                        {
+                            // если у нас значение отличное от предыдушего, то больше этой проверки не выполняем
+                            if(resultPairs != checkPair(*vit, *nvit))
+                                resultPairs = 0;
+                            else
+                            {
+                                pair<int, int> value = resultPairs == 1 ? make_pair(vit->first, nvit->second) : make_pair(nvit->first, vit->second);
+                                if(valuesPairs.size() != 0 && valuesPairs[valuesPairs.size() - 1].second > value.first)
+                                    resultPairs = 0;
+                                else
+                                    valuesPairs.push_back(value);
+                            }
+                        }
+
+                        if (resultIntersection != 0)
+                        {
+                            // если у нас значение отличное от предыдушего, то больше этой проверки не выполняем
+                            if(resultIntersection != checkIntersection(*vit, *nvit))
+                                resultIntersection = 0;
+                            else
+                            {
+                                pair<int, int> value = resultIntersection == -1 ? make_pair(vit->first, nvit->second) : make_pair(nvit->first, vit->second);
+                                if(valuesIntersection.size() != 0 && valuesIntersection[valuesIntersection.size() - 1].second >= value.first)
+                                    resultIntersection = 0;
+                                else
+                                    valuesIntersection.push_back(value);
+                            }
+                        }
+
+                        if (resultIncluding != 0)
+                        {
+                            // если у нас значение отличное от предыдушего, то больше этой проверки не выполняем
+                            if(resultIncluding != checkIncluding(*vit, *nvit))
+                                resultIncluding = 0;
+                            else
+                            {
+                                // если jt включается в it, то нам не интересно это значение
+                                // иначе запоминаем
+                                if (resultIncluding == -1)
+                                {
+                                    valuesIncluding.push_back(make_pair(nvit->first, nvit->second));
+                                }
+                                else
+                                {
+                                    flag = true;
+                                    resultIncluding = 0;
+                                }
+                            }
+                        }
+                        ++vit;
+                        ++nvit;
+                    }    
+
+                    if (valuesPairs.size() == val.size())
+                    {
+                        flag = true;
+                        it->second = valuesPairs;
+                    }
+
+                    if (valuesIncluding.size() == val.size())
+                    {
+                        flag = true;
+                        it->second = valuesIncluding;
+                    }
+
+                    if (valuesIntersection.size() == val.size())
+                    {
+                        flag = true;
+                        it->second = valuesIntersection;
+                    }
+                }
+                if(!flag)
+                {
+                    substrings.insert(pair<int, vector<pair<int, int>>>(node->m_description.m_realwordset.size(), node->m_description.m_realwordset));
+                }
+            }
         }
     }
 
@@ -441,7 +619,7 @@ private:
     T m_text;
     int m_textLength;
     Compare m_compareFunction;
-    vector< vector<pair<int, int>>> neededSubstrings;
+    multimap<int, vector< pair<int, int> > > substrings;
 };
 
 #endif  //__SUFFIXTRIE_H__

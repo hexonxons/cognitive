@@ -50,12 +50,14 @@ private:
     // Включается ли вся новость в шаблонную последовательность
     bool m_IsSingleTagSeq;
 
+    double m_AvgDispersion;
+
     // Начальный и конечный шаблон, содержащий новость
     int m_NewsBeginNum;
     int m_NewsEndNum;
 
-    std::vector<CTagSequence> m_TagRanges;
-    std::vector<CTagSequence> m_DisplayedTagRanges;
+    std::vector<CNewsBlock> m_TagRanges;
+    std::vector<CNewsBlock> m_DisplayedTagRanges;
     // Содержание файла новостей
     std::string m_FileData;
     // Формат текста
@@ -74,7 +76,7 @@ private:
     // функция получения названий файлов в директории
     void GetNewsFilenames();
     // достройка тегов
-    std::vector<CTagRange> FinishTagsSeq(std::vector<CTagRange> &);
+    std::vector<CNews> FinishTagsSeq(std::vector<CNews> &);
 public:
     afx_msg void OnBnClickedRadiored();
     afx_msg void OnBnClickedRadiogreen();
@@ -108,6 +110,4 @@ public:
     afx_msg void OnCbnSelchangeFileselect();
     afx_msg void OnEnChangeNewsnumber();
     afx_msg void OnEnKillfocusEditnewsnumber();
-private:
-    BOOL m_CloseTagsCheck;
 };

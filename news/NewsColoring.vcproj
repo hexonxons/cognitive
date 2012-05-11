@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="NewsColoring"
 	ProjectGUID="{650169D0-7CD0-44AB-9B1B-218D826B9677}"
 	RootNamespace="NewsColoring"

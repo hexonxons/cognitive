@@ -73,7 +73,7 @@ public:
      */
 
     void Init();
-    vector<CTagSequence> GetRanges();
+    vector<CNewsBlock> GetRanges();
     void GetPossibleRanges();
 
     /**
@@ -84,31 +84,13 @@ public:
      * \author  Alexander
      * \date    7/20/2011
      */
-
     void GetNewsRange();
 
-    /**
-     * \fn  void CNewsFinder::writeNews(LPCSTR lpcszOutFileName);
-     *
-     * \brief   Запись новостей в файл.
-     *
-     * \author  Alexander
-     * \date    7/20/2011
-     */
+    inline double getAvgDispersion()
+    {
+        return AvgDispersion;
+    }
 
-    void WriteNews(LPCSTR lpcszOutFileName);
-
-
-    /**
-     * \fn  ULONG CNewsFinder::dwGetlastError();
-     *
-     * \brief   Возвращает код последней ошибки.
-     *
-     * \author  Alexander
-     * \date    8/31/2011
-     */
-
-    long GetlastError();
 private:
     /**
      * \struct  pred
@@ -121,8 +103,8 @@ private:
     
     struct pred
     {
-        bool operator()(pair<vector<CTagDescription>, unsigned int> &left,
-                        pair<vector<CTagDescription>, unsigned int> &right) const
+        bool operator()(pair<vector<CTag>, unsigned int> &left,
+                        pair<vector<CTag>, unsigned int> &right) const
         {
             if(left.second != right.second)
                 return left.second < right.second;
@@ -133,7 +115,7 @@ private:
 
     struct pred1
     {
-        bool operator()(vector<CTagRange> &left, vector<CTagRange> &right) const
+        bool operator()(vector<CNews> &left, vector<CNews> &right) const
         {
             return left.size() < right.size();
         }
@@ -150,8 +132,8 @@ private:
 
     struct ltstr
     {
-        bool operator()(pair<vector<CTagDescription>, unsigned int> left,
-                        pair<vector<CTagDescription>, unsigned int> right) const
+        bool operator()(pair<vector<CTag>, unsigned int> left,
+                        pair<vector<CTag>, unsigned int> right) const
         {
             return vStrCmp(left.first, right.first) < 0;
         }
@@ -168,8 +150,8 @@ private:
 
     struct tagcodecpr
     {
-        bool operator()(const vector<CTagDescription> &left,
-                        const vector<CTagDescription> &right) const
+        bool operator()(const vector<CTag> &left,
+                        const vector<CTag> &right) const
         {
                 return vStrCmp(left, right) < 0;
         }
@@ -186,46 +168,6 @@ private:
      */
 
     CNewsFinder();
-
-    /**
-     * \fn  inline void CNewsFinder::LowerCase(string *pStr)
-     *
-     * \brief   Приведение строки к строчным буквам.
-     *
-     * \param [in,out]  pstr    - Изменяемая строка.
-     */
-
-    inline void LowerCase(std::string *pStr)
-    {
-        if(pStr->size())
-            CharLower(&(*pStr->begin()));
-    }
-
-    /**
-     * \fn  void CNewsFinder::removeTags(vector<std::string> &tagsToRemove);
-     *
-     * \brief   Удаляет теги из Vстроки mod.
-     *
-     * \author  Alexander
-     * \date    7/13/2011
-     *
-     * \param [in,out]  tagsToRemove    Массив тегов для удаления.
-     */
-
-    void removeTags(vector<std::string> &tagsToRemove);
-    
-    /**
-     * \fn  void CNewsFinder::removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
-     *
-     * \brief   Удаляет парные теги и содержимое между ними из Vстроки mod.
-     *
-     * \author  Alexander
-     * \date    7/13/2011
-     *
-     * \param [in,out]  tagsToRemove    Массив пар тегов для удаления.
-     */
-
-     void removeTags(vector< std::pair<std::string, std::string> > &tagsToRemove);
 
     /**
      * \fn  unsigned short CNewsFinder::getTagCode(const std::string &tag);
@@ -253,22 +195,7 @@ private:
      * \return  CTriple из тега, пары <начало, конец> тега в тексте и сам тег.
      */
 
-    CTagDescription getNextTag();
-
-    /**
-     * \fn  int CNewsFinder::checksum(const vector<CPair<CTag, CPair<int, int>>> &src);
-     *
-     * \brief   Выполняет проверку на превышение количества открывающих тегов количества закрывающих.
-     *
-     * \author  Alexander
-     * \date    7/13/2011
-     *
-     * \param   src Vстрока тегов.
-     *
-     * \return  1, если количество открывающих тегов больше количества закрывающих 0 иначе.
-     */
-
-    int checkTag(const vector<CTagDescription> &src);
+    CTag getNextTag();
 
     /**
      * \fn  std::string CNewsFinder::getNews(vector<CPair<CTag, CPair<int, int>>> &newsBegin,
@@ -286,10 +213,12 @@ private:
      * \return  Текст новости.
      */
 
-    std::string CNewsFinder::getNews(vector<CTagDescription> &newsBegin,
-                                     vector<CTagDescription> &newsEnd,
+    std::string CNewsFinder::getNews(vector<CTag> &newsBegin,
+                                     vector<CTag> &newsEnd,
                                      unsigned int &unOffset);
+
 private:
+    void calcHeur();
     ///< Минимальный размер последовательности тегов.
     unsigned int m_minLen;
 
@@ -302,7 +231,7 @@ private:
     ///< Set из пар <Vстрока, частота встречи строки>.
     //   Повторяющиеся строки не добавляются.
     //   От частот никак не зависит.
-    std::set <pair<vector<CTagDescription>, unsigned int>, ltstr> m_freq;
+    std::set <pair<vector<CTag>, unsigned int>, ltstr> m_freq;
 
     ///< Средняя длина строки в freq.
     unsigned int m_avgLen;
@@ -311,25 +240,23 @@ private:
     unsigned int m_avgFreq;
 
     ///< массив возможных начал/концов новостей.
-    vector<pair<vector<CTagDescription>, unsigned int>> possibleTags;
+    vector<pair<vector<CTag>, unsigned int>> possibleTags;
 
     ///< Vстрока начала новости
-    vector<CTagDescription> m_newsBegin;
+    vector<CTag> m_newsBegin;
 
     ///< Vстрока конца новости
-    vector<CTagDescription> m_newsEnd;
-
-    ///< Set из всех подстрок
-    std::set <vector<CTagDescription>, tagcodecpr> m_subsArr;
+    vector<CTag> m_newsEnd;
 
     // M.A.P. верктор в данном случае оправдан?
     ///< m_fileData, переведенная в Vстроку тегов
-    vector<CTagDescription> m_mod;
+    vector<CTag> m_mod;
 
     ///< Текущая позиция в m_fileData
     unsigned int m_unCurrFileDataPos;
-    vector<CTagSequence> tags;
+    vector<CNewsBlock> NewsBlocks;
     int m_numberOfNews;
+    double AvgDispersion;
 
     ///< Код последней ошибки
     // 1  : Инициализация пройдена.
@@ -339,6 +266,5 @@ private:
 
     // длина видимого в html текста
     long m_lVisibleHtmlLen;
-    bool mStart;
 };
 #endif
